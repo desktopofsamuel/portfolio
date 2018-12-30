@@ -101,6 +101,14 @@ module.exports = {
         ]
       }
     },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        typekit: {
+          id: 'wbb0iyz'
+        }
+      }
+    },
     "gatsby-plugin-offline",
     {
       resolve: "gatsby-plugin-feed",

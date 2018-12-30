@@ -4,9 +4,23 @@
 
 html {
     height: 100%;
+    font-family: benton-sans, sans-serif;
+    font-style: normal;
 }
 
 body {
     margin: 0;
     padding: 20px;
+}
+
+h1 {
+    font-family: poynter-oldstyle-display,serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+h2 {
+    font-family: poynter-oldstyle-display,serif;
+    font-weight: 700;
+    font-style: normal;
 }
