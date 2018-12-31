@@ -1,53 +1,26 @@
 ---
-title: "Random project 4 With Super Long Title Phase One"
+title: "desktopofsamuel.com October Update"
 cover: "https://unsplash.it/1152/300/?random?SuperLong"
 category: "random"
 date: "02/03/2017"
 tags:
-    - say hi
+    - Gatsby
+    - Work In
 ---
-# Artificem honorati ore temperat Lycus quam antiquum
 
-## Mendaci pinu ipsi nunc
+It was a challenging yet rewarding period in the last two months. I have set up the bare-bones structure of my personal site, yet it was a long way until perfect. Without much resources on the Internet, coming up with a decent design and functional website is a long learning process. In the last two months, I have managed to: 
 
-Lorem markdownum supplex. Care ferre nos praemia detestatur oderit vitatumque,
-tardius pello ostentare; dixit. [Agit](http://accessit.net/) super, cum, qua
-quae pinxit certamine occulte causa: est est non. Dubita fictumque imagine.
-
-Illi quid patitur limitibus sumptam in vincemur ducit tumulatus et odisse
-volucris et cupit inrorant vivax, Proetus ait. Nec induit mortalia olim ortus
-foedera [praecipitem](http://www.pontumferae.io/protinuset.html) amans et iter
-[est](http://casuquefuit.io/murmurevestrum.aspx) huc virginitate spernimus
-Oenopiis longi ore paretur? Sede ore quaedam dumque. Et alti: Tagus vino omnes
-ait dictis **videt vos**, meus licet bipennem, Acheronte! Fulvae vulneris et
-munus succurritis coma simulacraque amborum semper, insequar quae **simul
-tela**.
-
-## Facta huic laboras matris tandem scelus
-
-Per praesuta occupat stratum, manuque te femina magni Nelidae. [Cauda
-lacrimisque](http://www.in.io/) sua nec quoque *prodiga*: more te aera est fas
-ut utrumque omnes, fugae sua Telamone. Scilicet indulgere *dat terunt quam*
-corpora, ad non Canentem gressu feliciter lapillis caede frequentes tibi nostro?
-Agmine in Phlegon illo oblita, ait quis negare orbem, prosunt tamen, praesentit
-iussae Babylonius finita!
-
-Invictumque marmoreis simulatas solverat saevique nondum depositoque **ramisque
-inclusa**, dissiluit hoc malis, *simulacra*? Cum cupido alis. Ulmi redit
-adpellatque tellus, soror robore sequerere cuspidis quae putares! Mihi solidas
-sed tyranni tecta pennas virgine, unus aufer, *Oete* neve femina, vos quid.
-Oscula dignior.
-
-## Corpore motae iam
-
-Est humum data tardus et movet attrahit ferro
-[imperio](http://soleta.org/lectos). Iam undis veniente et crines faciat
-Melaneus sedebat et vobis. Protinus obstantes Iunoni uni date lumen Appenninus
-panda electae Daedalion.
-
-> Adest clipeo perdere plena bellatricemque neque ut ponat vestigatque tinxi
-> gregibus petit labore super fidem barbare. Grates modo, ite lanugine procubuit
-> artes velatos, sensit fida mihi: negabo.
-> [Tum](http://www.mea-pars.net/temptanti) desubito radere tendens **fuit**.
-
-Quibus **se intus montibus**. Auro terrae: mare e adulterium, per dolet et.
+- Revamped landing page with new design and content. I have added my service section and an about section with [React Simple Map](http://react-simple-maps.io) as background (but it could function so much more)
+- Revamped work page design. The section background is dynamic now to match every projects' brand color (manually input from the markdown files).
+- Added mobile navigation and animation with some icons that I drew.
+- Added 404 Page. One small step for man, one giant leap for mankind.
+- Added [Work Category Page](http://localhost:8000/categories/ui-ux-design), each service can be viewed individually with relevant projects
+- Enhanced landing page experience by cool reveal animation using [React-Reveal](https://www.react-reveal.com/)
+- Enhanced scroll animation using [React Anchor Link Smooth Scroll](https://github.com/mauricevancooten/react-anchor-link-smooth-scroll) when you click Get In Touch on landing page
+- Enhanced blog reading experience especially with code block. Code will highlight according to the language using [Gatsby-Remark-PrismicJS](https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/)
+- Enhanced footer design by replacing the author component, also added social media links and contact access.
+- All blog posts have a feature image now on the top
+- Fixed related post referenced to [Gatsby Material Starter](https://github.com/Vagr9K/gatsby-material-starter/blob/master/gatsby-node.js) node.js
+- Fixed code block overflow problem in blog
+- Fixed Footer Width Problem
+- Fixed Tag & Category with multiple words in slug using [kebabCase](https://lodash.com/docs#kebabCase)

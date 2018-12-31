@@ -5,6 +5,7 @@ import Layout from "../layout";
 import PostListing from "../components/PostListing/PostListing";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
+import PostHero from "../components/PostHero/PostHero";
 
 class Index extends React.Component {
   render() {
@@ -15,6 +16,7 @@ class Index extends React.Component {
           <Helmet title={config.siteTitle} />
           <SEO />
           <PostListing postEdges={postEdges} />
+          <PostHero postEdges={postEdges} />
         </div>
       </Layout>
     );

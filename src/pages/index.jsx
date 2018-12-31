@@ -5,7 +5,6 @@ import Layout from "../layout";
 import PostListing from "../components/PostListing/PostListing";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
-import PostWithHero from "../components/PostWithHero/PostWithHero";
 
 class Index extends React.Component {
   render() {
