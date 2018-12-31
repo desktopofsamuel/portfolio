@@ -1,7 +1,7 @@
 ---
 title: "desktopofsamuel.com October Update"
 cover: "https://unsplash.it/1152/300/?random?SuperLong"
-category: "random"
+category: "Work In Progress"
 date: "02/03/2017"
 tags:
     - Gatsby

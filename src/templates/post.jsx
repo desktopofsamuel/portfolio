@@ -19,6 +19,13 @@ const Grid = styled.section`
   max-width: 1280px;
   display: grid;
   grid-template-columns: 30% 50% 20%;
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 50% 100%; /*pending */
+  }
+  @media only screen and (max-width: 480px) {
+    grid-template-columns: 100%; /*pending */
+  }
 `
 
 const Header = styled.div`
