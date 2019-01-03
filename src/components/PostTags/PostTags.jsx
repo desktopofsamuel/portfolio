@@ -12,7 +12,7 @@ const Tag = styled.button`
   cursor: pointer;
 
   &:hover {
-    background: #FFD644;
+    background: var(--color-palette-500);
     color: #FFFFFF;
   }
 

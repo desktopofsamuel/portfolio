@@ -112,7 +112,14 @@ query BlogPostBySlug($slug: String!, $category: String!) {
       date
     }
   }
-  related: allMarkdownRemark(sort: {fields: [fields___date], order: DESC},limit: 3, filter: {frontmatter: {category: {eq: $category}}}) {
+  related: allMarkdownRemark(
+    sort: {fields: [fields___date], 
+      order: DESC},limit: 3, 
+      filter: {
+        frontmatter: {category: {eq: $category}},
+        fields: { slug: { ne: $slug}},
+      }
+  ) {
     edges {
       node {
         frontmatter {
