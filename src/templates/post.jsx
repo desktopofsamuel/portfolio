@@ -50,7 +50,8 @@ const PostMeta = styled.h6`
 export default class PostTemplate extends React.Component {
   render() {
     const { slug } = this.props.pageContext;
-    const postNode = this.props.data.markdownRemark;
+    const postNode = this.props.data.post;
+    const relateNode = this.props.data.related;
     const post = postNode.frontmatter;
     if (!post.id) {
       post.id = slug;
@@ -76,9 +77,10 @@ export default class PostTemplate extends React.Component {
             <Main><div dangerouslySetInnerHTML={{ __html: postNode.html }} /></Main>
             <Sidebar>
               <h6>Also in <Link to={`/categories/${kebabCase(post.category)}`}>{post.category}</Link></h6>
-              <h3><Link to="/blog">Building Gatsby With Multiple Post Type</Link></h3>
-              <h3><Link to="/blog">Why designers need a personal website?</Link></h3>
-              <h3><Link to="/blog">Practical Tips on Evernote</Link></h3>
+              {relateNode.edges.map(relatepost => {
+                    return (
+                      <h3 key={relatepost.node.id}><Link to={relatepost.node.fields.slug}>{relatepost.node.frontmatter.title}</Link></h3>
+                      )})}
             </Sidebar>
           </Grid>
         </div>
@@ -89,26 +91,39 @@ export default class PostTemplate extends React.Component {
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      timeToRead
-      excerpt
-      frontmatter {
-        title
-        cover
-        date
-        category
-        tags
-      }
-      fields {
-        nextTitle
-        nextSlug
-        prevTitle
-        prevSlug
-        slug
-        date
+query BlogPostBySlug($slug: String!, $category: String!) {
+  post: markdownRemark(fields: {slug: {eq: $slug}}) {
+    html
+    timeToRead
+    excerpt
+    frontmatter {
+      title
+      cover
+      date
+      category
+      tags
+    }
+    fields {
+      nextTitle
+      nextSlug
+      prevTitle
+      prevSlug
+      slug
+      date
+    }
+  }
+  related: allMarkdownRemark(sort: {fields: [fields___date], order: DESC},limit: 3, filter: {frontmatter: {category: {eq: $category}}}) {
+    edges {
+      node {
+        frontmatter {
+          title
+        }
+        fields {
+          slug
+        }
       }
     }
   }
+}
+
 `;

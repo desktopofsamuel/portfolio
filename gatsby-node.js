@@ -170,7 +170,8 @@ exports.createPages = ({ graphql, actions }) => {
             path: `/work${edge.node.fields.slug}`,
             component: workPage,
             context: {
-              slug: edge.node.fields.slug
+              slug: edge.node.fields.slug,
+              category: edge.node.frontmatter.category,
             }
           });
         } else { // blog post
@@ -178,7 +179,8 @@ exports.createPages = ({ graphql, actions }) => {
             path: edge.node.fields.slug,
             component: postPage,
             context: {
-              slug: edge.node.fields.slug
+              slug: edge.node.fields.slug, 
+              category: edge.node.frontmatter.category,
             }
           });
         }
