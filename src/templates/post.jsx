@@ -16,9 +16,14 @@ import "./post.css";
 
 const Grid = styled.section`
   margin: 0 auto;
-  max-width: 1280px;
+  max-width: 1920px;
   display: grid;
   grid-template-columns: 30% 50% 20%;
+
+  @media only screen and (max-width: 1440px) {
+    grid-template-columns: 30% 50% 20%;
+    max-width: 1280px;
+  }
 
   @media only screen and (max-width: 768px) {
     grid-template-columns: 50% 100%; /*pending */

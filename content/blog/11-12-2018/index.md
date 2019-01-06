@@ -1,5 +1,5 @@
 ---
-title: "Lessons learned from my personal project"
+title: "Lessons learned from personal project"
 cover: "https://unsplash.it/400/300/?random?TheFallenTime"
 date: "2018-12-11"
 category: "Work In Progress"
