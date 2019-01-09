@@ -51,6 +51,7 @@
       content: "";
       display: block; }
     .hamburger-inner::before {
+      width: 40px;
       top: -10px; }
     .hamburger-inner::after {
       bottom: -10px; }

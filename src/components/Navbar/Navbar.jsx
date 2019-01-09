@@ -24,13 +24,14 @@ const NavHide = styled.div`
     justify-items: center;
     margin: auto;
 
-&.is-active {
-    opacity: 1;
-    animation: menu-reveal 0.3s ease-in-out;
     @keyframes menu-reveal {
         from {grid-gap: 16px;}
         to {grid-gap: 24px;}
-}
+    }
+
+&.is-active {
+    opacity: 1;
+    animation: menu-reveal 0.3s ease-in-out;
 } 
 
 @media (min-width: 480px) {
