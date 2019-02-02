@@ -19,7 +19,7 @@ const Container = styled.div`
 
 const Row = styled.div`
     display: grid;
-    padding: 48px 0;
+    padding: var(--padding-m) 0;
     grid-template-columns: repeat(23, 1fr);
     grid-template-rows: 1fr;
 
@@ -47,6 +47,8 @@ const Block = styled.div`
         border: 1px solid var(--color-black-500);
         grid-column: 1 / 24;
         grid-row: 1 / 2;
+        padding: var(--padding-s) 0;
+        margin-bottom: 0;
         text-align: center;
     }
 `
@@ -71,7 +73,7 @@ const Black = styled.div`
 
 const BlogBlock = styled.div`
     background: #000;
-    padding: 24px;
+    padding: var(--padding-m);
     color: var(--color-background-500);
     grid-template-rows: 1fr;
     min-height: 400px;
@@ -102,7 +104,7 @@ const BlogBlock = styled.div`
 `
 
 const WorkGrid = styled(Row)`
-grid-row-gap: 42px;
+grid-row-gap: var(--padding-m);
 
 `
 
@@ -110,7 +112,7 @@ const WorkBlock = styled.div`
     
     background: #fff;
     color: var(--color--black-500);
-    padding: 24px;
+    padding: var(--padding-m);
 
 
     &:nth-child(1) {

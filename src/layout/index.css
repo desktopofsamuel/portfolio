@@ -5,6 +5,9 @@
     --color-black-500: #0d0d0d;
     --device-tablet: 768px;
     --device-phone: 480px;
+    --padding-s: 1rem;
+    --padding-m: 2rem;
+    --padding-l: 4rem;
 }
 
 * {
@@ -42,7 +45,7 @@ h2 {
 h3 {
     font-family: Proxima Nova, sans-serif;
     font-style: normal;
-    font-weight: bold;
+    font-weight: 700;
     line-height: 130%;
     font-size: 24px;
     margin-top: 0;
@@ -51,7 +54,7 @@ h3 {
 h4 {
     font-family: Proxima Nova, sans-serif;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     text-transform: uppercase;
     line-height: 130%;
     letter-spacing: 0.075rem;
@@ -106,3 +109,8 @@ blockquote {
     border-image: linear-gradient(to bottom, #6469DA, #5FA4EE) 1 100%;
     color: #757F89;
     }
+
+button {
+    background: var(--color-palette-500);
+    box-shadow: none;
+}
