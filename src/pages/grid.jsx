@@ -1,0 +1,261 @@
+import React from "react";
+import Helmet from "react-helmet";
+import styled from "styled-components"
+import { graphql } from "gatsby";
+import Layout from "../layout/";
+
+const Grid = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(32, 1fr);
+    grid-template-rows: repeat(32, 1fr);
+`
+
+const Container = styled.div`
+    grid-area: 10 / 5 / span 23 / span 23;
+`
+
+const Row = styled.div`
+    display: grid;
+    padding: 48px 0;
+    grid-template-columns: repeat(23, 1fr);
+    grid-template-rows: 1fr;
+
+    &.two-row {
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    &.three-row {
+        grid-template-rows: repeat(3, 1fr);
+    }
+`
+
+const Block = styled.div`
+    &.intro {
+        grid-column: 1 / 16;
+        grid-row: 1 / 4 ;
+    }
+
+    &.timeline {
+        grid-column: 17 / 24;
+        grid-row: 2 / 4 ;
+    }
+
+    &.work-title {
+        border: 1px solid var(--color-black-500);
+        grid-column: 1 / 24;
+        grid-row: 1 / 2;
+        text-align: center;
+    }
+`
+const Black = styled.div`
+    background: #000;
+
+    &.one {
+      grid-column: 3 / 4;
+      grid-row: 2 / 8;
+    }
+
+    &.two {
+      grid-column: 18 / 34;
+      grid-row: 3 / 5;
+    }
+
+    &.three {
+      grid-column: 1 / 3;
+      grid-row: 12 / 18;
+    }
+`
+
+const BlogBlock = styled.div`
+    background: #000;
+    padding: 24px;
+    color: var(--color-background-500);
+    grid-template-rows: 1fr;
+    min-height: 400px;
+
+    h3 {
+        margin: 0;
+    }
+
+    h1 {
+        margin: 1rem 0;
+    }
+    
+    &:nth-child(1) {
+        grid-column: 1 / 6;
+    }
+
+    &:nth-child(2) {
+        grid-column: 7 / 12;
+    }
+
+    &:nth-child(3) {
+        grid-column: 13 / 18;
+    }
+
+    &:nth-child(4) {
+        grid-column: 19 / 24;
+    }
+`
+
+const WorkGrid = styled(Row)`
+grid-row-gap: 42px;
+
+`
+
+const WorkBlock = styled.div`
+    
+    background: #fff;
+    color: var(--color--black-500);
+    padding: 24px;
+
+
+    &:nth-child(1) {
+        grid-column: 1 / 16;
+        grid-row: 1 / 2;
+    }
+
+    &:nth-child(2) {
+        grid-column: 17 / 24;
+        grid-row: 1 / 3;
+    }
+
+    &:nth-child(3) {
+        grid-column: 1 / 16;
+    }
+
+    &:nth-child(4) {
+        grid-column: 1 / 8;
+    }
+
+    &:nth-child(5) {
+        grid-column: 9 / 24;
+    }
+`
+
+
+class Index extends React.Component {
+    render() {
+      const postEdges = this.props.data.allMarkdownRemark.edges;
+      return (
+        <Layout>
+            <Grid>
+            <Black className="one" />
+            <Black className="two" />
+            <Black className="three" />
+            <Container>
+            <Row className="three-row">
+                <Block className="intro">
+                  <h3>#01</h3>
+                  <h1>Hi, I', Samuel!</h1>
+                  <h3>I’m a Product Designer.</h3>
+                  <p> I deliver web / app projects in Playa, a web / app agency that I've co-founded. Before that, I worked as Cross-Content Intern at iTunes & App Store, Apple during college.</p>
+                  <p>I started my agency Playa in 2015, hoping to help small entrepreneurs and non-profits launching their projects, bridging the gap between project owners and end-users. I am constantly learning and treasure every opportunity to design better. I’m learning to code right now and this website is my first attempt.</p>
+                </Block>
+                <Block className="timeline">
+                  <h4>Timeline</h4>
+                  <h3>Apple Inc.</h3>
+                  <p>Before that, I worked as Cross-Content Intern at iTunes & App Store, Apple during college.</p>
+                  <h3>Playa</h3>
+                  <p>Before that, I worked as Cross-Content Intern at iTunes & App Store, Apple during college.</p>
+                  <h3>HyperAir</h3>
+                  <p>Before that, I worked as Cross-Content Intern at iTunes & App Store, Apple during college.</p>
+                </Block>
+            </Row>
+            <Row>
+                <BlogBlock>
+                    <h3>#02</h3>
+                    <h1>Blog</h1>
+                    <p>I write about design, technology and productivity.</p>
+                </BlogBlock>
+                <BlogBlock>
+                    <h3>Lessons learned from my personal project</h3>
+                    <p>Feel free to ping me about design & technology or let's grab coffee if you are in town.</p>
+                </BlogBlock>
+                <BlogBlock>
+                    <h3>Practical Tips on Evernote</h3>
+                    <p>Feel free to ping me about design & technology or let's grab coffee if you are in town.</p>
+                </BlogBlock>
+                <BlogBlock>
+                    <h3>Why you dont need a read-it-later service?</h3>
+                    <p>Feel free to ping me about design & technology or let's grab coffee if you are in town.</p>
+                </BlogBlock>
+            </Row>
+            <Row>
+                <Block className="work-title">
+                    <h4>#03</h4>
+                    <h1>Work</h1>
+                    <p>Projects that I am working on and initiated in the past.</p>
+                </Block>
+            </Row>
+            <WorkGrid className="three-row">
+                <WorkBlock>
+                    <h4>UI/UX Design, Graphic Design</h4>
+                    <h3>Pingspace.io</h3>
+                    <p>Pingspace checks your site uptime every minute with real user monitoring and let you know when your sites are down.</p>
+                    <button>Learn More</button>
+                </WorkBlock>
+                <WorkBlock>
+                    <h4>UI/UX Design, Graphic Design</h4>
+                    <h3>Pingspace.io</h3>
+                    <p>Pingspace checks your site uptime every minute with real user monitoring and let you know when your sites are down.</p>
+                    <button>Learn More</button>
+                </WorkBlock>
+                <WorkBlock>
+                    <h4>UI/UX Design, Graphic Design</h4>
+                    <h3>Pingspace.io</h3>
+                    <p>Pingspace checks your site uptime every minute with real user monitoring and let you know when your sites are down.</p>
+                    <button>Learn More</button>
+                </WorkBlock>
+                <WorkBlock>
+                    <h4>UI/UX Design, Graphic Design</h4>
+                    <h3>Pingspace.io</h3>
+                    <p>Pingspace checks your site uptime every minute with real user monitoring and let you know when your sites are down.</p>
+                    <button>Learn More</button>
+                </WorkBlock>
+                <WorkBlock>
+                    <h4>UI/UX Design, Graphic Design</h4>
+                    <h3>Pingspace.io</h3>
+                    <p>Pingspace checks your site uptime every minute with real user monitoring and let you know when your sites are down.</p>
+                    <button>Learn More</button>
+                </WorkBlock>
+            </WorkGrid>
+            </Container>
+            </Grid>
+        </Layout>
+            );
+        }
+      }
+      
+      export default Index;
+      
+      /* eslint no-undef: "off" */
+      export const pageQuery = graphql`
+        query GridQuery {
+          allMarkdownRemark(
+            limit: 2000
+            sort: { fields: [fields___date], order: DESC }
+          ) {
+            edges {
+              node {
+                fields {
+                  slug
+                  date
+                }
+                excerpt
+                timeToRead
+                frontmatter {
+                  title
+                  tags
+                  cover
+                  date
+                }
+              }
+            }
+          }
+        }
+      `;
+      

@@ -2,6 +2,7 @@
     --color-brand-500: red;
     --color-palette-500: #FFD644;
     --color-background-500: #f7f7f7;
+    --color-black-500: #0d0d0d;
     --device-tablet: 768px;
     --device-phone: 480px;
 }
@@ -20,7 +21,7 @@ html {
 
 body {
     margin: 0;
-    padding: 20px;
+    background: var(--color-background-500);
 }
 
 h1 {
@@ -29,11 +30,13 @@ h1 {
     font-weight: black;
     font-size: 48px;
     line-height: 130%;
+    margin-top: 0;
 }
 
 h2 {
     font-family: Proxima-nova, sans-serif;
     font-style: semi-bold;
+    margin-top: 0;
 }
 
 h3 {
@@ -42,6 +45,18 @@ h3 {
     font-weight: bold;
     line-height: 130%;
     font-size: 24px;
+    margin-top: 0;
+}
+
+h4 {
+    font-family: Proxima Nova, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 130%;
+    letter-spacing: 0.075rem;
+    font-size: 16px;
+    margin-top: 0;
 }
 
 h5 {
@@ -50,6 +65,7 @@ h5 {
     font-weight: 600;
     line-height: normal;
     font-size: 16px;
+    margin-top: 0;
 }
 
 h6 {
@@ -58,6 +74,7 @@ h6 {
     font-weight: normal;
     line-height: normal;
     font-size: 16px;
+    margin-top: 0;
 }
 
 .Text-S {

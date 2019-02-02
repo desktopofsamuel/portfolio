@@ -6,7 +6,6 @@ import "./index.css";
 
 const Border = styled.section`
     background-color: var(--color-background-500);
-    margin: 0.5em;
     overflow: wrap;
 `
 
