@@ -14,11 +14,26 @@ import config from "../../data/SiteConfig";
 import "./b16-tomorrow-dark.css";
 import "./post.css";
 
-const Grid = styled.section`
-  margin: 0 auto;
-  max-width: 1920px;
+const Grid = styled.div`
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(auto-fit, minmax(50px, 1fr));
+
+    & > * {
+        grid-column: col-start / span 12;
+    }
+    
+`
+const Container = styled.main`
+    grid-column: 3 / span 8;
+
+    & > * {
+        grid-column: col-start / span 12;
+    }
+`
+const Post = styled.section`
   display: grid;
-  grid-template-columns: 30% 50% 20%;
+  grid-template-columns: minmax(10ch, 40ch) minmax(23ch,65ch) 20%;
 
   @media only screen and (max-width: 1440px) {
     grid-template-columns: 30% 50% 20%;
@@ -71,7 +86,9 @@ export default class PostTemplate extends React.Component {
             <title>{`${post.title} | ${config.siteTitle}`}</title>
           </Helmet>
           <SEO postPath={slug} postNode={postNode} postSEO />
-          <Grid>
+          <Link to="/lab"><h6>Back</h6></Link>
+          <Grid><Container>
+          <Post>
             <Header>
               <PostTitle>{post.title}</PostTitle>
               <PostMeta>Posted on {post.date}</PostMeta>
@@ -87,7 +104,8 @@ export default class PostTemplate extends React.Component {
                       <h3 key={relatepost.node.id}><Link to={relatepost.node.fields.slug}>{relatepost.node.frontmatter.title}</Link></h3>
                       )})}
             </Sidebar>
-          </Grid>
+          </Post>
+          </Container></Grid>
         </div>
       </Layout>
     );

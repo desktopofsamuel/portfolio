@@ -3,18 +3,20 @@ import Helmet from "react-helmet";
 import styled from "styled-components"
 import { graphql } from "gatsby";
 import Layout from "../layout/";
+import PostListing from "../components/PostListing/PostListing";
 
 const Grid = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(32, 1fr);
-    grid-template-rows: repeat(32, 1fr);
+    grid-template-columns: repeat(12, [col-start] 1fr);
+    grid-gap: 24px;
 `
 
 const Container = styled.div`
-    grid-area: 10 / 5 / span 23 / span 23;
+    margin: 0 auto;
+    grid-area: 8 / 8 / span 23 / span 23;
 `
 
 const Row = styled.div`
@@ -29,6 +31,9 @@ const Row = styled.div`
 
     &.three-row {
         grid-template-rows: repeat(3, 1fr);
+    }
+
+    &.blog {
     }
 `
 
@@ -66,7 +71,7 @@ const Black = styled.div`
     }
 
     &.three {
-      grid-column: 1 / 3;
+      grid-column: 1 / 2;
       grid-row: 12 / 18;
     }
 `
@@ -77,34 +82,15 @@ const BlogBlock = styled.div`
     color: var(--color-background-500);
     grid-template-rows: 1fr;
     min-height: 400px;
-
-    h3 {
-        margin: 0;
-    }
-
-    h1 {
-        margin: 1rem 0;
-    }
-    
-    &:nth-child(1) {
-        grid-column: 1 / 6;
-    }
-
-    &:nth-child(2) {
-        grid-column: 7 / 12;
-    }
-
-    &:nth-child(3) {
-        grid-column: 13 / 18;
-    }
-
-    &:nth-child(4) {
-        grid-column: 19 / 24;
-    }
+    grid-area: 1 / span 3;
 `
-
 const WorkGrid = styled(Row)`
-grid-row-gap: var(--padding-m);
+display: grid;
+grid-gap: var(--padding-m);
+grid-template-area: 
+' one one two'
+'one one two'
+'three four four';
 
 `
 
@@ -116,21 +102,19 @@ const WorkBlock = styled.div`
 
 
     &:nth-child(1) {
-        grid-column: 1 / 16;
-        grid-row: 1 / 2;
+        grid-area: one;
     }
 
     &:nth-child(2) {
-        grid-column: 17 / 24;
-        grid-row: 1 / 3;
+        grid-area: two;
     }
 
     &:nth-child(3) {
-        grid-column: 1 / 16;
+        grid-area: three;
     }
 
     &:nth-child(4) {
-        grid-column: 1 / 8;
+        grid-area: four;
     }
 
     &:nth-child(5) {
@@ -167,24 +151,13 @@ class Index extends React.Component {
                   <p>Before that, I worked as Cross-Content Intern at iTunes & App Store, Apple during college.</p>
                 </Block>
             </Row>
-            <Row>
+            <Row className="blog">
                 <BlogBlock>
                     <h3>#02</h3>
                     <h1>Blog</h1>
                     <p>I write about design, technology and productivity.</p>
                 </BlogBlock>
-                <BlogBlock>
-                    <h3>Lessons learned from my personal project</h3>
-                    <p>Feel free to ping me about design & technology or let's grab coffee if you are in town.</p>
-                </BlogBlock>
-                <BlogBlock>
-                    <h3>Practical Tips on Evernote</h3>
-                    <p>Feel free to ping me about design & technology or let's grab coffee if you are in town.</p>
-                </BlogBlock>
-                <BlogBlock>
-                    <h3>Why you dont need a read-it-later service?</h3>
-                    <p>Feel free to ping me about design & technology or let's grab coffee if you are in town.</p>
-                </BlogBlock>
+                <PostListing postEdges={postEdges} />
             </Row>
             <Row>
                 <Block className="work-title">
@@ -238,7 +211,7 @@ class Index extends React.Component {
       export const pageQuery = graphql`
         query GridQuery {
           allMarkdownRemark(
-            limit: 2000
+            limit: 3
             sort: { fields: [fields___date], order: DESC }
           ) {
             edges {

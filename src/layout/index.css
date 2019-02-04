@@ -8,6 +8,8 @@
     --padding-s: 1rem;
     --padding-m: 2rem;
     --padding-l: 4rem;
+    --grid-gap: 24px;
+    --viewport-s: 768px;
 }
 
 * {
