@@ -4,6 +4,8 @@ import styled from "styled-components"
 import { graphql } from "gatsby";
 import Layout from "../layout/";
 import PostListing from "../components/PostListing/PostListing";
+import Button from "../components/Button/button";
+
 
 const Grid = styled.div`
     display: grid;
@@ -201,7 +203,7 @@ class Index extends React.Component {
                     <h4>UI/UX Design</h4>
                     <h3>Water For Free</h3>
                     <p>Pingspace checks your site uptime every minute with real user monitoring and let you know when your sites are down.</p>
-                    <button>Learn More</button>
+                    <Button href="/grid" text="Learn More" />
                 </WorkBlock>
             </WorkGrid>
             </Container>

@@ -6,6 +6,10 @@ title: "Lessons learned from personal project"
 
 category: "Work In Progress"
 
+tags: 
+- "gatsby"
+- "personal project"
+
 cover: "./Pin.png"
 
 
