@@ -1,4 +1,5 @@
 ---
+path: "how-to-do-localization-right"
 date: "2018-07-03"
 category: "Design Journal"
 title: "How to do localization right - Citymapper in Hong Kong"

@@ -1,5 +1,5 @@
 ---
-
+path: "/why-designers-need-a-personal-website"
 date: "2018-08-26"
 title: "Why designers need a personal website?"
 category: "Work In Progress"

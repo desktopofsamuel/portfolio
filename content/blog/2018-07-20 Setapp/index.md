@@ -1,4 +1,5 @@
 ---
+path: "/setapp"
 date: "2018-07-20"
 title: "Do Subscription Models Work with Apps?"
 category: "Productivity"

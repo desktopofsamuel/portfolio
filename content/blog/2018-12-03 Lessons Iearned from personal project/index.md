@@ -1,5 +1,5 @@
 ---
-
+path: "lessons-learned-from-personal-project"
 date: "2018-12-11"
 
 title: "Lessons learned from personal project"

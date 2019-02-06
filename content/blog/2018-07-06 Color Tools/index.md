@@ -1,4 +1,5 @@
 ---
+path: "/essential-color-tool-2018"
 
 date: "2018-07-06"
 

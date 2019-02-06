@@ -1,4 +1,5 @@
 ---
+path: "/water-for-free"
 title: "Water For Free"
 cover: "https://unsplash.it/1152/300/?random?BirchintheRoses"
 date: "01/03/2017"

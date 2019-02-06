@@ -1,5 +1,5 @@
 ---
-
+path: "2018-Oct-Update"
 date: "2018-10-31"
 
 title: "desktopofsamuel.com October Update"

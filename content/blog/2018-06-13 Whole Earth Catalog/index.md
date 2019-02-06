@@ -1,7 +1,8 @@
 ---
+path: "/whole-earth-catalog"
 date: "2018-06-03"
 title: "Whole Earth Catalog"
-category: "journal"
+category: "Design Journal"
 tags: 
 - "localization"
 - "whole earth"

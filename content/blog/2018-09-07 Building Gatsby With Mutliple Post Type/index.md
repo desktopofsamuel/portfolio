@@ -1,4 +1,5 @@
 ---
+path: "/building-gatsby-with-multiple-post-type"
 date: "2018-09-17"
 
 title: "Building Gatsby With Multiple Post Type"

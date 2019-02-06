@@ -67,8 +67,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     }
 
     if (Object.prototype.hasOwnProperty.call(node, "frontmatter")) {
-      if (Object.prototype.hasOwnProperty.call(node.frontmatter, "slug"))
-        slug = `/${_.kebabCase(node.frontmatter.slug)}`;
+      if (Object.prototype.hasOwnProperty.call(node.frontmatter, "path"))
+        slug = `/${_.kebabCase(node.frontmatter.path)}`;
       if (Object.prototype.hasOwnProperty.call(node.frontmatter, "date")) {
         const date = moment(node.frontmatter.date, siteConfig.dateFromFormat);
         if (!date.isValid)
@@ -110,6 +110,7 @@ exports.createPages = ({ graphql, actions }) => {
               edges {
                 node {
                   frontmatter {
+                    path
                     tags
                     category
                     posttype
@@ -167,19 +168,19 @@ exports.createPages = ({ graphql, actions }) => {
 
         if (edge.node.frontmatter.posttype === 'work') {
           createPage({
-            path: `/work${edge.node.fields.slug}`,
+            path: `/work${edge.node.frontmatter.path}`,
             component: workPage,
             context: {
-              slug: edge.node.fields.slug,
+              slug:edge.node.frontmatter.path,
               category: edge.node.frontmatter.category,
             }
           });
         } else { // blog post
           createPage({
-            path: edge.node.fields.slug,
+            path: edge.node.frontmatter.path,
             component: postPage,
             context: {
-              slug: edge.node.fields.slug, 
+              slug: edge.node.frontmatter.path, 
               category: edge.node.frontmatter.category,
             }
           });

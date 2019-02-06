@@ -1,5 +1,5 @@
 ---
-
+path: "/journey-to-design-matters"
 date: "2018-09-29"
 
 title: "Journey to Design Matters"

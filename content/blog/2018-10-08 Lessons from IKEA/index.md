@@ -1,5 +1,5 @@
 ---
-
+path: "/lessons-from-ikea"
 date: "2018-10-08"
 
 title: "Lessons from IKEA"
