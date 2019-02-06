@@ -100,7 +100,6 @@ class Index extends React.Component {
                 frontmatter {
                   title
                   tags
-                  cover
                   date
                 }
               }

@@ -121,7 +121,23 @@ query BlogPostBySlug($slug: String!, $category: String!) {
     excerpt
     frontmatter {
       title
-      cover
+      cover {
+        publicURL
+        size
+        childImageSharp {
+          sizes(maxWidth: 1140) {
+            base64
+            aspectRatio
+            src
+            srcSet
+            srcWebp
+            srcSetWebp
+            sizes
+            originalImg
+            originalName
+          }
+        }
+      }
       date
       category
       tags

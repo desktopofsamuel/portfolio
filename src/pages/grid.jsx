@@ -87,7 +87,7 @@ const BlogBlock = styled.div`
 const WorkGrid = styled(Row)`
 display: grid;
 grid-gap: var(--padding-m);
-grid-template-area: 
+grid-template-areas: 
 ' one one two'
 'one one two'
 'three four four';
@@ -225,7 +225,6 @@ class Index extends React.Component {
                 frontmatter {
                   title
                   tags
-                  cover
                   date
                 }
               }
