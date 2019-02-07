@@ -4,18 +4,44 @@ import { graphql } from "gatsby";
 import Layout from "../layout";
 import PostListing from "../components/PostListing/PostListing";
 import config from "../../data/SiteConfig";
+import styled from "styled-components";
+
+
+const Post = styled(PostListing)`
+  grid-area: post;
+  width: 25vw;
+`
+
+
+const Grid = styled.div`
+display: grid;
+grid-template-columns: auto;
+grid-template-rows: auto;
+`
+
+const Hero = styled.div`
+grid-area: "hero";
+height: 100%;
+width: 100vw;
+`
 
 export default class CategoryTemplate extends React.Component {
-  render() {
+  render(
+
+    
+  ) {
     const { category } = this.props.pageContext;
     const postEdges = this.props.data.allMarkdownRemark.edges;
     return (
       <Layout>
         <div className="category-container">
           <Helmet
-            title={`Posts in category "${category}" | ${config.siteTitle}`}
+            title={`Posts in "${category}" | ${config.siteTitle}`}
           />
-          Posts in <PostListing postEdges={postEdges} />
+          <Grid>
+          <Hero><h1>Posts in {category}</h1></Hero>
+          <Post postEdges={postEdges} />
+          </Grid>
         </div>
       </Layout>
     );
