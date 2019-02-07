@@ -80,7 +80,12 @@ const Row = styled.div`
     display: grid;
     padding: var(--padding-m) 0;
 
-    
+    &.blog {
+        grid-column: 4 / span 8;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-gap: 24px;
+    }
 `
 
 const WorkGrid = styled(Row)`
@@ -143,13 +148,19 @@ const Block = styled.div`
     }
 `
 
+const BlogIntro = styled.div`
+ background: #000;
+    padding: var(--padding-m);
+    color: var(--color-background-500);
+    h3 { 
+      margin: 0;
+    }
 
-
-const PostBlock = styled(PostListing)`
-    grid-column: 4 / span 8;
+    h1 {
+      margin: 1rem 0;
+    }
 `
-
-class Index extends React.Component {
+class Post extends React.Component {
     render() {
       const postEdges = this.props.data.allMarkdownRemark.edges;
       return (
@@ -179,7 +190,12 @@ class Index extends React.Component {
                     </Block>
                 </Row>
                 <Row className="blog">
-                <PostBlock postEdges={postEdges} />
+                <BlogIntro>
+                    <h3>#02</h3>
+                    <h1>Blog</h1>
+                    <p>I write about design, technology and productivity.</p>
+                </BlogIntro>
+                <PostListing postEdges={postEdges}/>
                 </Row>
                 <Row className="work-title">
                     <h4>#03</h4>
@@ -211,9 +227,10 @@ class Index extends React.Component {
         </Layout>
             );
         }
-      }
+    }
       
-      export default Index;
+      
+      export default Post;
       
       /* eslint no-undef: "off" */
       export const pageQuery = graphql`

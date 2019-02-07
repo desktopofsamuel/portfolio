@@ -2,11 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 
-const PostBlock = styled.div`
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-grid-gap: 24px;
-`
+
 
 const Block = styled.div`
     background: #000;
@@ -40,21 +36,15 @@ class PostListing extends React.Component {
   render() {
     const postList = this.getPostList();
     return (
-      <PostBlock>
-        <Block>
-            <h3>#02</h3>
-            <h1>Blog</h1>
-            <p>I write about design, technology and productivity.</p>
-        </Block>
-        {/* Your post list here. */
+      
         postList.map(post => (
           <Block><Link to={post.path} key={post.title}>
             <h3><a>{post.title}</a></h3>
             <p>{post.excerpt}</p>
           </Link>
           </Block>
-        ))}
-      </PostBlock>
+        ))
+       
     );
   }
 }
