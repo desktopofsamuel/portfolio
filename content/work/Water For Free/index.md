@@ -1,7 +1,7 @@
 ---
 path: "/water-for-free"
 title: "Water For Free"
-cover: "https://unsplash.it/1152/300/?random?BirchintheRoses"
+cover: "./W4F-1.png"
 date: "01/03/2017"
 category: "ui design"
 tags: 

@@ -1,14 +1,10 @@
 ---
-path: "2018-Oct-Update"
+path: "/2018-oct-update"
 date: "2018-10-31"
-
-title: "desktopofsamuel.com October Update"
-
+title: "2018 October Update"
 category: "Work In Progress"
-
 tags: 
-    - gatsby
-
+    - "gatsby"
 cover: "./2018-Oct.png"
 
 ---

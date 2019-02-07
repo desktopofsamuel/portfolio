@@ -120,6 +120,7 @@ query BlogPostBySlug($slug: String!, $category: String!) {
     timeToRead
     excerpt
     frontmatter {
+      path
       title
       cover {
         publicURL
