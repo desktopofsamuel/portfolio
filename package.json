@@ -4,6 +4,9 @@
   "version": "1.1.0",
   "author": "Ruben Harutyunyan <vagr9k@gmail.com>",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.15",
+    "@fortawesome/free-solid-svg-icons": "^5.7.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "babel-plugin-styled-components": "^1.10.0",
     "classnames": "^2.2.6",
     "gatsby-cli": "^2.4.8",
@@ -33,6 +36,7 @@
     "react": "^16.6.0",
     "react-disqus-comments": "^1.4.0",
     "react-dom": "^16.6.0",
+    "react-fontawesome": "^1.6.1",
     "react-helmet": "^5.2.0",
     "react-share": "^2.0.0",
     "react-twitter-widgets": "^1.7.1",

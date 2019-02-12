@@ -245,7 +245,7 @@ class Post extends React.Component {
                   slug
                   date
                 }
-                excerpt
+                excerpt(pruneLength: 200)
                 timeToRead
                 frontmatter {
                   title

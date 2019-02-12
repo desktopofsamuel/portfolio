@@ -107,7 +107,10 @@ module.exports = {
       options: {
         typekit: {
           id: 'wbb0iyz'
-        }
+        },
+        google: {
+          families: ['Merriweather']
+        },
       }
     },
     "gatsby-plugin-offline",
