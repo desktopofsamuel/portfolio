@@ -22,8 +22,9 @@ import config from "../../../data/SiteConfig";
 import "./SocialLinks.css";
 import styled from "styled-components"
 
-const Description = styled.h6`
-color: #A9A9A9;
+const Description = styled.small`
+color: var(--color-grey-500);
+margin: 0 0 8px 0;
 `
 
 class SocialLinks extends Component {
@@ -40,6 +41,7 @@ class SocialLinks extends Component {
     return (
       <div >
         <div className="social-links">
+        <Description>Share Your Love</Description>
           <FacebookShareButton url={url} quote={postNode.excerpt}>
             <FacebookIcon round size={iconSize} />
             <FacebookShareCount url={url}>

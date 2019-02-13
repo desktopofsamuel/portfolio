@@ -41,7 +41,18 @@ const Post = styled.article`
 const Header = styled.div`
   overflow-wrap: break-word;
   grid-area: head;
+  display: block;
+  padding-bottom: 3rem;
+
+  @media screen and (min-width: 425px) and (max-width: 768px) {
+  display: grid;
+  grid-gap: 8px;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: "title title"
+  "date category"
+  "tag share";
   
+}
 `
 
 const Main = styled.div`
@@ -54,15 +65,36 @@ const Sidebar = styled.div`
 `
 
 const PostTitle = styled.h1`
+  grid-area: title;
 `
 const PostMeta = styled.small`
 margin: 0;
+color: var(--color-grey-500);
 `
 
-const PostDate = styled.h5`
+const PostDate = styled.div`
+grid-area: date;
 `
 
-const PostCategory = styled(Link)``
+const PostCategory = styled.div`
+grid-area: category;
+
+@media screen and (max-width: 425px) {
+  display: none;
+}
+`
+
+const PostTag = styled.div`
+grid-area: tag;
+@media screen and (max-width: 425px) {
+  display: none;
+}
+`
+
+const PostShare = styled.div`
+grid-area: share;
+
+`
 
 export default class PostTemplate extends React.Component {
   render() {
@@ -86,14 +118,21 @@ export default class PostTemplate extends React.Component {
           <Post>
             <Header>
               <PostTitle>{post.title}</PostTitle>
-              <PostMeta>Published On</PostMeta>
-              <PostDate>{post.date}</PostDate> 
-              <PostMeta>Category</PostMeta>
-              <h5><Link to={`/categories/${kebabCase(post.category)}`}>{post.category}</Link> </h5>
-              <PostMeta>Tag</PostMeta>
-              <PostTags tags={post.tags} />
-              <PostMeta>Share Your Love</PostMeta>
-              <SocialLinks postPath={slug} postNode={postNode} />
+              <PostDate>
+                <PostMeta>Published On</PostMeta>
+                <h5>{post.date}</h5>
+              </PostDate>
+              <PostCategory>
+                <PostMeta>Category</PostMeta>
+                <h5><Link to={`/categories/${kebabCase(post.category)}`}>{post.category}</Link> </h5>
+              </PostCategory>
+              <PostTag>
+                <PostMeta>Tag</PostMeta>
+                <PostTags tags={post.tags} />
+              </PostTag>
+              <PostShare>
+                <SocialLinks postPath={slug} postNode={postNode} />
+              </PostShare>
             </Header>
             <Main><div dangerouslySetInnerHTML={{ __html: postNode.html }} /></Main>
             <Sidebar>

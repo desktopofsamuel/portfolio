@@ -9,7 +9,7 @@ const Tag = styled.button`
   border: none;
   padding: 0.5em 1em;
   margin-right: 8px;
-  margin-bottom: 1.67em;
+  margin-bottom: 8px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 
