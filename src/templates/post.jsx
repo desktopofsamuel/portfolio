@@ -22,7 +22,7 @@ const Post = styled.article`
 
   @media screen and (min-width: 1280px) {
     display: grid;
-    grid-gap: 24px;
+    grid-gap: 36px;
     grid-template-columns: [head] minmax(auto, 40ch) [main] minmax(23ch,55ch) [meta] 20%;
     width: 80%;
   }
@@ -51,7 +51,7 @@ const Main = styled.div`
 
 const Sidebar = styled.div`
   grid-area: meta;
-  `
+`
 
 const PostTitle = styled.h1`
 `

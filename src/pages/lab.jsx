@@ -84,7 +84,7 @@ const Row = styled.div`
     &.blog {
         grid-column: 4 / span 8;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         grid-gap: 24px;
     }
 `

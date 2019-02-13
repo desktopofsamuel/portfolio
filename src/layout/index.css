@@ -123,3 +123,7 @@ button {
     background: var(--color-palette-500);
     box-shadow: none;
 }
+
+p:first-child {
+    margin-block-start: 0;
+}
