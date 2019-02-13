@@ -7,6 +7,7 @@ import PostListing from "../components/PostListing/PostListing";
 import Button from "../components/Button/button";
 
 
+
 const Grid = styled.div`
     display: grid;
     grid-template-columns: repeat(12, 1fr);

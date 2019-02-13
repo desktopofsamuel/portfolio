@@ -17,7 +17,7 @@ import "./post.css";
 const Grid = styled.div`
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(auto-fit, minmax(50px, 1fr));
+    margin: 0;
 
     & > * {
         grid-column: col-start / span 12;
@@ -25,13 +25,14 @@ const Grid = styled.div`
     
 `
 const Container = styled.main`
-    grid-column: 3 / span 8;
+    margin: 0 auto;
+    grid-column: col-start / span 12;
 
     & > * {
         grid-column: col-start / span 12;
     }
 `
-const Post = styled.section`
+const Post = styled.article`
   display: grid;
   grid-template-columns: minmax(10ch, 40ch) minmax(23ch,65ch) 20%;
 
@@ -81,7 +82,6 @@ export default class PostTemplate extends React.Component {
     }
     return (
       <Layout>
-        <div>
           <Helmet>
             <title>{`${post.title} | ${config.siteTitle}`}</title>
           </Helmet>
@@ -106,7 +106,6 @@ export default class PostTemplate extends React.Component {
             </Sidebar>
           </Post>
           </Container></Grid>
-        </div>
       </Layout>
     );
   }

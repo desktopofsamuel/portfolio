@@ -32,26 +32,28 @@ body {
 }
 
 h1 {
-    font-family: Inter, sans-serif;
+    font-family: Inter, Helvetica, Arial, sans-serif;
     font-style: normal;
-    font-weight: black;
+    font-weight: 700;
     font-size: 48px;
     line-height: 130%;
     margin-top: 0;
+    letter-spacing: -0.02em;
 }
 
 h2 {
-    font-family: Inter, sans-serif;
-    font-style: semi-bold;
+    font-family: Inter, Helvetica, Arial, sans-serif;
+    letter-spacing: -0.01rem;
+    font-weight: 700;
     margin-top: 0;
 }
 
 h3 {
-    font-family: Inter, sans-serif;
-    font-style: normal;
+    font-family: Inter, Helvetica, Arial, sans-serif;
     font-weight: 700;
     line-height: 150%;
     font-size: 24px;
+    letter-spacing: -0.01rem;
     margin-top: 0;
 }
 

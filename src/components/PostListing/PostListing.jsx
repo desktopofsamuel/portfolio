@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-
+import { FaArrowRight } from "react-icons/fa";
 
 
 const Block = styled.div`
@@ -36,6 +36,7 @@ const Button = styled(Link)`
   text-transform: uppercase;
   letter-spacing: 0.075em;
   cursor: pointer;
+  display: inline;
 `
 
 class PostListing extends React.Component {
@@ -62,7 +63,8 @@ class PostListing extends React.Component {
           <Block key={post.title}><Link to={post.path} >
             <h3><a>{post.title}</a></h3></Link>
             <p>{post.excerpt}</p>
-            <Button to={post.path}><h5>Read On</h5></Button>
+            <Button to={post.path}><h5>Read On </h5><FaArrowRight /></Button>
+            
           </Block>
         ))
        
