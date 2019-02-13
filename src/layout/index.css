@@ -1,6 +1,8 @@
 @import url('https://rsms.me/inter/inter.css');
 
 :root {
+    --primary-font: Inter, Helvetica, Arial, sans-serif;
+    --secondary-font: Merriweather, Times, serif;
     --color-brand-500: red;
     --color-palette-500: #FFD644;
     --color-background-500: #f7f7f7;
@@ -31,7 +33,7 @@ body {
 }
 
 h1 {
-    font-family: Inter, Helvetica, Arial, sans-serif;
+    font-family: var(--primary-font);
     font-style: normal;
     font-weight: 700;
     font-size: 48px;
@@ -41,14 +43,14 @@ h1 {
 }
 
 h2 {
-    font-family: Inter, Helvetica, Arial, sans-serif;
+    font-family: var(--primary-font);
     letter-spacing: -0.01rem;
     font-weight: 700;
     margin-top: 0;
 }
 
 h3 {
-    font-family: Inter, Helvetica, Arial, sans-serif;
+    font-family: var(--primary-font);
     font-weight: 700;
     line-height: 150%;
     font-size: 24px;
@@ -57,18 +59,18 @@ h3 {
 }
 
 h4 {
-    font-family: Proxima Nova, sans-serif;
+    font-family: var(--primary-font);
     font-style: normal;
     font-weight: 600;
     text-transform: uppercase;
     line-height: 130%;
     letter-spacing: 0.075rem;
-    font-size: 16px;
+    font-size: 20px;
     margin-top: 0;
 }
 
 h5 {
-    font-family: Proxima Nova, sans-serif;
+    font-family: var(--primary-font);
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -77,11 +79,22 @@ h5 {
 }
 
 h6 {
-    font-family: Merriweather, serif;
-    font-style: italic;
-    font-weight: normal;
+    font-family: var(--secondary-font);
+    font-weight: 400;
+    text-transform: uppercase;
     line-height: normal;
-    font-size: 16px;
+    font-size: 14px;
+    letter-spacing: 0.075rem;
+    margin-top: 0;
+}
+
+small {
+    font-family: var(--primary-font);
+    font-weight: 300;
+    text-transform: uppercase;
+    line-height: normal;
+    font-size: 12px;
+    letter-spacing: 0.075rem;
     margin-top: 0;
 }
 

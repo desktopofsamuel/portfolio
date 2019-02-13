@@ -55,8 +55,14 @@ const Sidebar = styled.div`
 
 const PostTitle = styled.h1`
 `
-const PostMeta = styled.h6`
+const PostMeta = styled.small`
+margin: 0;
 `
+
+const PostDate = styled.h5`
+`
+
+const PostCategory = styled(Link)``
 
 export default class PostTemplate extends React.Component {
   render() {
@@ -80,14 +86,18 @@ export default class PostTemplate extends React.Component {
           <Post>
             <Header>
               <PostTitle>{post.title}</PostTitle>
-              <PostMeta>Posted on {post.date}</PostMeta>
-              <PostMeta>in <Link to={`/categories/${kebabCase(post.category)}`}>{post.category}</Link> </PostMeta>
+              <PostMeta>Published On</PostMeta>
+              <PostDate>{post.date}</PostDate> 
+              <PostMeta>Category</PostMeta>
+              <h5><Link to={`/categories/${kebabCase(post.category)}`}>{post.category}</Link> </h5>
+              <PostMeta>Tag</PostMeta>
               <PostTags tags={post.tags} />
+              <PostMeta>Share Your Love</PostMeta>
               <SocialLinks postPath={slug} postNode={postNode} />
             </Header>
             <Main><div dangerouslySetInnerHTML={{ __html: postNode.html }} /></Main>
             <Sidebar>
-              <h6>Also in <Link to={`/categories/${kebabCase(post.category)}`}>{post.category}</Link></h6>
+              <small>Also in</small> <h5><Link to={`/categories/${kebabCase(post.category)}`}>{post.category}</Link></h5>
               {relateNode.edges.map(relatepost => {
                     return (
                       <h3 key={relatepost.node.id}><Link to={relatepost.node.fields.slug}>{relatepost.node.frontmatter.title}</Link></h3>
@@ -126,7 +136,7 @@ query BlogPostBySlug($slug: String!, $category: String!) {
           }
         }
       }
-      date
+      date(formatString: "MMM DD, YYYY", locale: "en")
       category
       tags
     }
