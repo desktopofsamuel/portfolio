@@ -14,53 +14,43 @@ import config from "../../data/SiteConfig";
 import "./b16-tomorrow-dark.css";
 import "./post.css";
 
-const Grid = styled.div`
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    margin: 0;
-
-    & > * {
-        grid-column: col-start / span 12;
-    }
-    
-`
-const Container = styled.main`
-    margin: 0 auto;
-    grid-column: col-start / span 12;
-
-    & > * {
-        grid-column: col-start / span 12;
-    }
-`
 const Post = styled.article`
-  display: grid;
-  grid-template-columns: minmax(10ch, 40ch) minmax(23ch,65ch) 20%;
+  display: block;
+  margin: 0 auto;
+  padding: 16px;
+  width: 90%;
 
-  @media only screen and (max-width: 1440px) {
-    grid-template-columns: 30% 50% 20%;
-    max-width: 1280px;
+  @media screen and (min-width: 1280px) {
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: [head] minmax(auto, 40ch) [main] minmax(23ch,55ch) [meta] 20%;
+    width: 80%;
   }
 
-  @media only screen and (max-width: 768px) {
-    grid-template-columns: 50% 100%; /*pending */
+  @media screen and (min-width: 768px) and (max-width: 1280px)  {
+    display: grid;
+    grid-gap: 48px;
+    grid-template-columns: 2fr 3fr;
+    grid-template-areas: "head main"
+    "meta main";
+    width: 75%;
   }
-  @media only screen and (max-width: 480px) {
-    grid-template-columns: 100%; /*pending */
-  }
+
 `
 
 const Header = styled.div`
-  padding: 0 1em;
   overflow-wrap: break-word;
+  grid-area: head;
   
 `
 
 const Main = styled.div`
-  padding: 0 4em;
+  grid-area: main;
+  overflow: auto;
 `
 
 const Sidebar = styled.div`
-  padding: 1em;
+  grid-area: meta;
   `
 
 const PostTitle = styled.h1`
@@ -87,7 +77,6 @@ export default class PostTemplate extends React.Component {
           </Helmet>
           <SEO postPath={slug} postNode={postNode} postSEO />
           <Link to="/lab"><h6>Back</h6></Link>
-          <Grid><Container>
           <Post>
             <Header>
               <PostTitle>{post.title}</PostTitle>
@@ -105,7 +94,6 @@ export default class PostTemplate extends React.Component {
                       )})}
             </Sidebar>
           </Post>
-          </Container></Grid>
       </Layout>
     );
   }

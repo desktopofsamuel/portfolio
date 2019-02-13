@@ -6,7 +6,6 @@ import "./index.css";
 
 const Border = styled.section`
     background-color: var(--color-background-500);
-    overflow: wrap;
 `
 
 export default class MainLayout extends React.Component {
