@@ -41,19 +41,26 @@ const Post = styled.article`
 const Header = styled.div`
   overflow-wrap: break-word;
   grid-area: head;
-  display: block;
   padding-bottom: 3rem;
+`
+
+const Meta = styled.div`
+  display: grid;
+  grid-gap: 8px 0;
+  grid-template-rows: [date] 1fr [category] 1fr [tag] 1fr [share] 1fr;
+  grid-template-columns: [date category tag share] 1fr;
 
   @media screen and (min-width: 425px) and (max-width: 768px) {
   display: grid;
   grid-gap: 8px;
   grid-template-columns: 2fr 1fr;
-  grid-template-areas: "title title"
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
   "date category"
   "tag share";
-  
-}
+  }
 `
+
 
 const Main = styled.div`
   grid-area: main;
@@ -116,30 +123,33 @@ export default class PostTemplate extends React.Component {
           <SEO postPath={slug} postNode={postNode} postSEO />
           <Link to="/lab"><h6>Back</h6></Link>
           <Post>
+            
             <Header>
               <PostTitle>{post.title}</PostTitle>
-              <PostDate>
-                <PostMeta>Published On</PostMeta>
-                <h5>{post.date}</h5>
-              </PostDate>
-              <PostCategory>
-                <PostMeta>Category</PostMeta>
-                <h5><Link to={`/categories/${kebabCase(post.category)}`}>{post.category}</Link> </h5>
-              </PostCategory>
-              <PostTag>
-                <PostMeta>Tag</PostMeta>
-                <PostTags tags={post.tags} />
-              </PostTag>
-              <PostShare>
-                <SocialLinks postPath={slug} postNode={postNode} />
-              </PostShare>
+              <Meta>
+                <PostDate>
+                  <PostMeta>Published On</PostMeta>
+                  <h5>{post.date}</h5>
+                </PostDate>
+                <PostCategory>
+                  <PostMeta>Category</PostMeta>
+                  <h5><Link to={`/categories/${kebabCase(post.category)}`}>{post.category}</Link></h5>
+                </PostCategory>
+                <PostTag>
+                  <PostMeta>Tag</PostMeta>
+                  <PostTags tags={post.tags} />
+                </PostTag>
+                <PostShare>
+                  <SocialLinks postPath={slug} postNode={postNode} />
+                </PostShare>
+              </Meta>
             </Header>
             <Main><div dangerouslySetInnerHTML={{ __html: postNode.html }} /></Main>
             <Sidebar>
               <small>Also in</small> <h5><Link to={`/categories/${kebabCase(post.category)}`}>{post.category}</Link></h5>
               {relateNode.edges.map(relatepost => {
                     return (
-                      <h3 key={relatepost.node.id}><Link to={relatepost.node.fields.slug}>{relatepost.node.frontmatter.title}</Link></h3>
+                      <h3 key={relatepost.node.id}><Link to={relatepost.node.frontmatter.path}>{relatepost.node.frontmatter.title}</Link></h3>
                       )})}
             </Sidebar>
           </Post>
@@ -200,6 +210,7 @@ query BlogPostBySlug($slug: String!, $category: String!) {
       node {
         frontmatter {
           title
+          path
         }
         fields {
           slug

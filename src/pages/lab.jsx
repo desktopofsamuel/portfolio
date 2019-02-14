@@ -250,6 +250,7 @@ class Post extends React.Component {
                 timeToRead
                 frontmatter {
                   title
+                  path
                   tags
                   cover {
                     publicURL

@@ -68,6 +68,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             tags
+            path
             cover {
               publicURL
               size

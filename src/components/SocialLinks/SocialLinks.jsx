@@ -40,8 +40,8 @@ class SocialLinks extends Component {
 
     return (
       <div >
-        <div className="social-links">
         <Description>Share Your Love</Description>
+        <div className="social-links">
           <FacebookShareButton url={url} quote={postNode.excerpt}>
             <FacebookIcon round size={iconSize} />
             <FacebookShareCount url={url}>

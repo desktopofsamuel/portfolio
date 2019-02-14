@@ -43,6 +43,7 @@ export const pageQuery = graphql`
           timeToRead
           frontmatter {
             title
+            path
             tags
             date
           }

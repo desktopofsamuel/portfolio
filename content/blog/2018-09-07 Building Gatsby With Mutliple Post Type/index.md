@@ -7,14 +7,15 @@ title: "Building Gatsby With Multiple Post Type"
 category: "Work In Progress"
 
 tags: 
-- "Work In Progress"
 - "gatsby"
+- "react"
+- "portfolio"
 
 cover: "./Gatsby-Multiple-Post-Type.png"
 
 ---
 
-**2018/10/25: Updated the post on how to create Category and Tag page for multiple post type.**
+#####2018/10/25: Updated the post on how to create Category and Tag page for multiple post type.
 
 TLDR: I'm sharing my way of setting up multiple post types in GatsbyJS. It works for portfolio setup with blog + projects. 
 
