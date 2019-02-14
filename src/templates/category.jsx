@@ -12,7 +12,6 @@ const Post = styled(PostListing)`
   width: 25vw;
 `
 
-
 const Grid = styled.div`
 display: grid;
 grid-template-columns: auto;
@@ -69,6 +68,7 @@ export const pageQuery = graphql`
             title
             tags
             path
+            category
             cover {
               publicURL
               size

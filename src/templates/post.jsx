@@ -18,7 +18,7 @@ const Post = styled.article`
   display: block;
   margin: 0 auto;
   padding: 16px;
-  width: 90%;
+  width: 95%;
 
   @media screen and (min-width: 1280px) {
     display: grid;
@@ -49,6 +49,11 @@ const Meta = styled.div`
   grid-gap: 8px 0;
   grid-template-rows: [date] 1fr [category] 1fr [tag] 1fr [share] 1fr;
   grid-template-columns: [date category tag share] 1fr;
+
+  @media screen and (max-width: 425px) {
+    grid-template-columns: [date] 1fr [share] 1fr;
+    grid-template-rows: [date share] 1fr;
+  }
 
   @media screen and (min-width: 425px) and (max-width: 768px) {
   display: grid;
