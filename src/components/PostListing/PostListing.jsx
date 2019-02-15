@@ -63,7 +63,7 @@ class PostListing extends React.Component {
           <Block key={post.title}><Link to={post.path} >
             <h3><a>{post.title}</a></h3></Link>
             <p>{post.excerpt}</p>
-            <Button to={post.path}><h5>Read On </h5><FaArrowRight /></Button>
+            <Button to={post.path}><h5>Read On <FaArrowRight /></h5></Button>
             
           </Block>
         ))
