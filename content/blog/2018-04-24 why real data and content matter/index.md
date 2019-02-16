@@ -1,5 +1,5 @@
 ---
-path: "/1"
+path: "/real-data"
 date: "2018-04-24"
 title: "Why real data & content matter"
 category: "Design Journal"

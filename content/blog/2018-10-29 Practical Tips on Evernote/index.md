@@ -1,5 +1,5 @@
 ---
-path: "/practical-evernote-tips"
+path: "/Practical-Evernote-Tips"
 date: "2018-10-29"
 
 title: "Practical Evernote Tips"

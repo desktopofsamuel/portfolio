@@ -157,7 +157,7 @@ export default class PostTemplate extends React.Component {
               {relateNode !=null && 
               <div>{relateNode.edges.map(relatepost => {
                     return (
-                      <h3 key={relatepost.node.id}><Link to={relatepost.node.frontmatter.path}>{relatepost.node.frontmatter.title}</Link></h3>
+                      <h3 key={relatepost.node.id}><Link to={relatepost.node.fields.slug}>{relatepost.node.frontmatter.title}</Link></h3>
                       )})}
               </div>
               }
