@@ -17,14 +17,11 @@ import "./post.css";
 const Post = styled.article`
   display: block;
   margin: 0 auto;
-  padding: 16px;
-  width: 95%;
 
   @media screen and (min-width: 1280px) {
     display: grid;
     grid-gap: 36px;
     grid-template-columns: [head] minmax(auto, 40ch) [main] minmax(23ch,55ch) [meta] 20%;
-    width: 80%;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1280px)  {
@@ -33,7 +30,6 @@ const Post = styled.article`
     grid-template-columns: 2fr 3fr;
     grid-template-areas: "head main"
     "meta main";
-    width: 75%;
   }
 
 `
@@ -120,8 +116,14 @@ export default class PostTemplate extends React.Component {
     if (!post.category_id) {
       post.category_id = config.postDefaultCategoryID;
     }
+    if (relateNode === null) {
+      console.log("error")
+    } else {
+
+    }
+
     return (
-      <Layout>
+      <Layout>  
           <Helmet>
             <title>{`${post.title} | ${config.siteTitle}`}</title>
           </Helmet>
@@ -152,10 +154,13 @@ export default class PostTemplate extends React.Component {
             <Main><div dangerouslySetInnerHTML={{ __html: postNode.html }} /></Main>
             <Sidebar>
               <small>Also in</small> <h5><Link to={`/categories/${kebabCase(post.category)}`}>{post.category}</Link></h5>
-              {relateNode.edges.map(relatepost => {
+              {relateNode !=null && 
+              <div>{relateNode.edges.map(relatepost => {
                     return (
                       <h3 key={relatepost.node.id}><Link to={relatepost.node.frontmatter.path}>{relatepost.node.frontmatter.title}</Link></h3>
                       )})}
+              </div>
+              }
             </Sidebar>
           </Post>
       </Layout>

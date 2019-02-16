@@ -4,7 +4,7 @@ date: "2018-10-29"
 
 title: "Practical Evernote Tips"
 
-category: "App Talk"
+category: "Productivity"
 
 tags: 
 - "Evernote"

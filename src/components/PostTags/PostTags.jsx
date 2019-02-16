@@ -3,7 +3,9 @@ import _ from "lodash";
 import styled from 'styled-components';
 import { Link } from "gatsby";
 
-const Tag = styled.button`
+const Tag = styled.div`
+  display: inline-block;
+  text-transform: capitalize;
   background: #EDEDED;
   color: #A9A9A9;
   border: none;

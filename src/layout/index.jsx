@@ -3,9 +3,21 @@ import Helmet from "react-helmet";
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import "./index.css";
+import Navigation from "../components/Navigation/navigation";
 
-const Border = styled.section`
+const Layout = styled.div`
     background-color: var(--color-background-500);
+`
+
+const Main = styled.main`
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: minmax(0,10vw) [content] auto minmax(0,10vw);
+  margin: 0 auto;
+`
+
+const Content = styled.div`
+  grid-area: content;
 `
 
 export default class MainLayout extends React.Component {
@@ -16,9 +28,14 @@ export default class MainLayout extends React.Component {
         <Helmet>
           <meta name="description" content={config.siteDescription} />
         </Helmet>
-        <Border>
+        <Layout>
+        <Navigation />
+        <Main>
+        <Content>
         {children}
-        </Border>
+        </Content>
+        </Main>
+        </Layout>
       </div>
     );
   }

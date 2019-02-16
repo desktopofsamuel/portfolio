@@ -13,15 +13,9 @@ const Post = styled(PostListing)`
 `
 
 const Grid = styled.div`
-display: grid;
-grid-template-columns: auto;
-grid-template-rows: auto;
 `
 
 const Hero = styled.div`
-grid-area: "hero";
-height: 100%;
-width: 100vw;
 `
 
 export default class CategoryTemplate extends React.Component {
@@ -33,7 +27,7 @@ export default class CategoryTemplate extends React.Component {
     const postEdges = this.props.data.allMarkdownRemark.edges;
     return (
       <Layout>
-        <div className="category-container">
+        <div>
           <Helmet
             title={`Posts in "${category}" | ${config.siteTitle}`}
           />

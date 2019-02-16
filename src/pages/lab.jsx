@@ -5,7 +5,7 @@ import { graphql } from "gatsby";
 import Layout from "../layout/";
 import PostListing from "../components/PostListing/PostListing";
 import Button from "../components/Button/button";
-
+import { FaApple } from "react-icons/fa";
 
 
 const Grid = styled.div`
@@ -19,16 +19,6 @@ const Grid = styled.div`
     
 `
 const Container = styled.main`
-    grid-column: 3 / span 8;
-
-    @media only screen and (max-width: var(--viewport-s)) {
-        grid-column: 2 / span 10;
-    }
-    
-
-    & > * {
-        grid-column: col-start / span 12;
-    }
 
     .hero { 
         display: grid;
@@ -174,7 +164,7 @@ class Post extends React.Component {
                 <Row className="hero">
                     <Block className="intro">
                         <h3>#01</h3>
-                        <h1>Hi, I', Samuel!</h1>
+                        <h1>Hi, I'm Samuel!</h1>
                         <h3>I’m a Product Designer.</h3>
                         <p> I deliver web / app projects in Playa, a web / app agency that I've co-founded. Before that, I worked as Cross-Content Intern at iTunes & App Store, Apple during college.</p>
                         <p>I started my agency Playa in 2015, hoping to help small entrepreneurs and non-profits launching their projects, bridging the gap between project owners and end-users. I am constantly learning and treasure every opportunity to design better. I’m learning to code right now and this website is my first attempt.</p>
@@ -182,7 +172,7 @@ class Post extends React.Component {
                     </Block>
                     <Block className="timeline">
                         <h4>Timeline</h4>
-                        <h3>Apple Inc.</h3>
+                        <h3><FaApple/>Apple Inc.</h3>
                         <p>Before that, I worked as Cross-Content Intern at iTunes & App Store, Apple during college.</p>
                         <h3>Playa</h3>
                         <p>Before that, I worked as Cross-Content Intern at iTunes & App Store, Apple during college.</p>

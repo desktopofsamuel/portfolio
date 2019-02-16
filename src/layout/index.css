@@ -6,6 +6,7 @@
     --color-brand-500: red;
     --color-palette-500: #FFD644;
     --color-background-500: #f7f7f7;
+    --color-white-500: #f7f7f7;
     --color-black-500: #0d0d0d;
     --color-grey-500:#737373;
     --device-tablet: 768px;
@@ -126,6 +127,16 @@ a[href$=".jpg"], a[href$=".png"], a[href$=".svg"]  {
 
 a > button {
     border-bottom: none;
+}
+
+button {
+    font-family: var(--primary-font);
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: normal;
+    font-size: 12px;
+    letter-spacing: 0.075rem;
+    cursor: pointer;
 }
 
 blockquote {
