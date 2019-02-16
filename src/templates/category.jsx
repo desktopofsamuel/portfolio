@@ -12,6 +12,12 @@ const Post = styled(PostListing)`
   width: 25vw;
 `
 
+const Row = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: var(--padding-l);
+`
+
 const Grid = styled.div`
 `
 
@@ -33,7 +39,9 @@ export default class CategoryTemplate extends React.Component {
           />
           <Grid>
           <Hero><h1>Posts in {category}</h1></Hero>
-          <Post postEdges={postEdges} />
+          <Row>
+          <Post invert postEdges={postEdges} />
+          </Row>
           </Grid>
         </div>
       </Layout>
@@ -56,7 +64,7 @@ export const pageQuery = graphql`
             slug
             date
           }
-          excerpt
+          excerpt(pruneLength: 500)
           timeToRead
           frontmatter {
             title

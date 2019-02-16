@@ -2,42 +2,46 @@ import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { FaArrowRight } from "react-icons/fa";
-
+import PropTypes from "prop-types";
 
 const Block = styled.div`
-    position: relative;
-    background:#121212;
-    padding: var(--padding-m);
-    color: var(--color-background-500);
+  position: relative;
+  background: ${props => (props.invert ? `var(--color-background-500)` : `var(--color-black-500)` )} ;
+  padding: ${props => (props.invert ? `none` : `var(--padding-m)` )}; 
+  color: ${props => (props.invert ? `var(--color-black-500)` : `var(--color-white-500)` )};
 
-    p {
-      font-size: 14px;
-      background: linear-gradient( to bottom, var(--color-background-500) 30%, rgba(18, 18, 18, 0) );
-      -webkit-background-clip: text;
-      background-clip: text;
-	    -webkit-text-fill-color: transparent;
-    }
+  p {
+    font-size: 14px;
+    background: ${props => (props.invert ? `linear-gradient(to bottom,var(--color-black-500) 30%,rgba(18, 18, 18, 0))` : `linear-gradient(to bottom,var(--color-white-500) 30%,rgba(18, 18, 18, 0))` )};
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
-    h3 { 
-      margin: 0;
-    }
+  h3 {
+    margin: 0;
+  }
 
-    h1 {
-      margin: 1rem 0;
-    }
-`
+  h1 {
+    margin: 1rem 0;
+  }
+
+  button {
+    color: ${props => (props.invert ? `var(--color-white-500)` : `var(--color-black-500)` )};
+  }
+`;
 
 const Button = styled(Link)`
   margin: 0;
   padding: 8px 0px;
   background: none;
-  color: var(--color-background-500);
+  
   border: none;
   text-transform: uppercase;
   letter-spacing: 0.075em;
   cursor: pointer;
   display: inline;
-`
+`;
 
 class PostListing extends React.Component {
   getPostList() {
@@ -56,20 +60,32 @@ class PostListing extends React.Component {
     return postList;
   }
   render() {
+    const { invert } = this.props;
     const postList = this.getPostList();
-    return (
-      
-        postList.map(post => (
-          <Block key={post.title}><Link to={post.path} >
-            <h3><a>{post.title}</a></h3></Link>
-            <p>{post.excerpt}</p>
-            <Button to={post.path}><h5>Read On <FaArrowRight /></h5></Button>
-            
-          </Block>
-        ))
-       
-    );
+    return postList.map(post => (
+      <Block invert={invert} key={post.title}>
+        <Link to={post.path}>
+          <h3>
+            <a>{post.title}</a>
+          </h3>
+        </Link>
+        <p>{post.excerpt}</p>
+        <Button invert={invert} to={post.path}>
+          <h5>
+            Read On <FaArrowRight />
+          </h5>
+        </Button>
+      </Block>
+    ));
   }
 }
 
 export default PostListing;
+
+PostListing.propTypes = {
+  invert: PropTypes.bool,
+};
+
+PostListing.defaultProps = {
+  invert: false,
+}; 
