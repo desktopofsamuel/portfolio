@@ -9,12 +9,11 @@ import styled from "styled-components";
 
 const Post = styled(PostListing)`
   grid-area: post;
-  width: 25vw;
 `
 
 const Row = styled.div`
   display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+  grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
   grid-gap: var(--padding-l);
 `
 
@@ -22,6 +21,7 @@ const Grid = styled.div`
 `
 
 const Hero = styled.div`
+padding: var(--padding-m) 0 var(--padding-m) 0;
 `
 
 export default class CategoryTemplate extends React.Component {

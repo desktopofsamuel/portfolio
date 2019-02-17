@@ -195,19 +195,19 @@ class Post extends React.Component {
                 </Row>
                 <WorkGrid className="three-row">
                 <WorkBlock>
-                    <h4>UI/UX Design, Brand Design</h4>
+                    <h5>UI/UX Design, Brand Design</h5>
                     <h3>HyperAir Travel</h3>
                     <p>Pingspace checks your site uptime every minute with real user monitoring and let you know when your sites are down.</p>
                     <button>Learn More</button>
                 </WorkBlock>
                 <WorkBlock>
-                    <h4>UI/UX Design, Brand Design</h4>
+                    <h5>UI/UX Design, Brand Design</h5>
                     <h3>Pingspace.io</h3>
                     <p>Pingspace checks your site uptime every minute with real user monitoring and let you know when your sites are down.</p>
                     <button>Learn More</button>
                 </WorkBlock>
                 <WorkBlock>
-                    <h4>UI/UX Design</h4>
+                    <h5>UI/UX Design</h5>
                     <h3>Water For Free</h3>
                     <p>Pingspace checks your site uptime every minute with real user monitoring and let you know when your sites are down.</p>
                     <Button href="/grid" text="Learn More" />
