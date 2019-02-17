@@ -13,6 +13,7 @@ import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 import "./b16-tomorrow-dark.css";
 import "./post.css";
+import { FaAngleRight }from "react-icons/fa"
 
 const Post = styled.article`
   display: block;
@@ -43,22 +44,43 @@ const Header = styled.div`
 const Meta = styled.div`
   display: grid;
   grid-gap: 8px 0;
-  grid-template-rows: [date] 1fr [category] 1fr [tag] 1fr [share] 1fr;
-  grid-template-columns: [date category tag share] 1fr;
+  grid-template-rows: [date] 1fr [tag] 1fr [share] 1fr;
+  grid-template-columns: [date tag share] 1fr;
 
   @media screen and (max-width: 425px) {
-    grid-template-columns: [date] 1fr [share] 1fr;
+    grid-template-columns: [date] 1fr [share] max-content;
     grid-template-rows: [date share] 1fr;
   }
 
   @media screen and (min-width: 425px) and (max-width: 768px) {
   display: grid;
   grid-gap: 8px;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 2fr max-content;
   grid-template-rows: 1fr 1fr;
   grid-template-areas:
-  "date category"
-  "tag share";
+  "date share"
+  "tag tag";
+  }
+`
+const Breadcrumb = styled.div`
+  display: inline-grid;
+  grid-auto-flow: column;
+  grid-gap: 8px;
+  color: var(--color-black-500);
+  align-items: center;
+  margin: 0 0 16px 0;
+
+  & a {
+    color: var(--color-grey-500);
+    border-bottom: none;
+
+    &:hover {
+      border-bottom: 2px solid var(--color-palette-500);
+    }
+  }
+
+  h5 {
+    margin: 0;
   }
 `
 
@@ -82,13 +104,9 @@ color: var(--color-grey-500);
 
 const PostDate = styled.div`
 grid-area: date;
-`
 
-const PostCategory = styled.div`
-grid-area: category;
-
-@media screen and (max-width: 425px) {
-  display: none;
+h5 {
+  margin-bottom: 0;
 }
 `
 
@@ -128,7 +146,7 @@ export default class PostTemplate extends React.Component {
             <title>{`${post.title} | ${config.siteTitle}`}</title>
           </Helmet>
           <SEO postPath={slug} postNode={postNode} postSEO />
-          <Link to="/lab"><h6>Back</h6></Link>
+          <Breadcrumb><h5><Link to="/lab">Blog</Link></h5>< FaAngleRight /> <h5><Link to={`/categories/${kebabCase(post.category)}`}>{post.category}</Link></h5></Breadcrumb>
           <Post>
             
             <Header>
@@ -138,10 +156,6 @@ export default class PostTemplate extends React.Component {
                   <PostMeta>Published On</PostMeta>
                   <h5>{post.date}</h5>
                 </PostDate>
-                <PostCategory>
-                  <PostMeta>Category</PostMeta>
-                  <h5><Link to={`/categories/${kebabCase(post.category)}`}>{post.category}</Link></h5>
-                </PostCategory>
                 <PostTag>
                   <PostMeta>Tag</PostMeta>
                   <PostTags tags={post.tags} />

@@ -171,7 +171,7 @@ exports.createPages = ({ graphql, actions }) => {
             path: `/work${edge.node.frontmatter.path}`,
             component: workPage,
             context: {
-              slug:edge.node.frontmatter.path,
+              slug: `/work${edge.node.frontmatter.path}`,
               category: edge.node.frontmatter.category,
             }
           });

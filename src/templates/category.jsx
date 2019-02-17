@@ -14,7 +14,7 @@ const Post = styled(PostListing)`
 
 const Row = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
   grid-gap: var(--padding-l);
 `
 

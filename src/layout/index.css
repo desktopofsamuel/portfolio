@@ -38,7 +38,7 @@ h1 {
     font-family: var(--primary-font);
     font-style: normal;
     font-weight: 700;
-    font-size: 48px;
+    font-size: calc(36px + (48 - 36) * ((100vw - 300px) / (1600 - 300)));
     line-height: 130%;
     margin-top: 0;
     letter-spacing: -0.02em;

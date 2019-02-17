@@ -10,9 +10,8 @@ const Layout = styled.div`
 `
 
 const Main = styled.main`
-  margin-top: 100px;
   display: grid;
-  grid-template-columns: minmax(0,10vw) [content] auto minmax(0,10vw);
+  grid-template-columns: minmax(0,10vw) [content] minmax(23ch, auto) minmax(0,10vw);
   margin: 0 auto;
 `
 
