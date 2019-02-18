@@ -67,8 +67,15 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     }
 
     if (Object.prototype.hasOwnProperty.call(node, "frontmatter")) {
+      {/*if (
+        Object.prototype.hasOwnProperty.call(node.frontmatter, "posttype") && 
+        Object.prototype.hasOwnProperty.call(node.frontmatter.posttype, "work") &&
+        Object.prototype.hasOwnProperty.call(node.frontmatter, "path")
+      )
+        slug = `/work/${_.kebabCase(node.frontmatter.path)}`;*/}
       if (Object.prototype.hasOwnProperty.call(node.frontmatter, "path"))
         slug = `/${_.kebabCase(node.frontmatter.path)}`;
+
       if (Object.prototype.hasOwnProperty.call(node.frontmatter, "date")) {
         const date = moment(node.frontmatter.date, siteConfig.dateFromFormat);
         if (!date.isValid)
@@ -171,7 +178,7 @@ exports.createPages = ({ graphql, actions }) => {
             path: `/work${edge.node.frontmatter.path}`,
             component: workPage,
             context: {
-              slug: `/work${edge.node.frontmatter.path}`,
+              slug: edge.node.frontmatter.path,
               category: edge.node.frontmatter.category,
             }
           });
