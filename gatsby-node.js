@@ -67,7 +67,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     }
 
     if (Object.prototype.hasOwnProperty.call(node, "frontmatter")) {
-      {/*if (
+[]      {/*if (
         Object.prototype.hasOwnProperty.call(node.frontmatter, "posttype") && 
         Object.prototype.hasOwnProperty.call(node.frontmatter.posttype, "work") &&
         Object.prototype.hasOwnProperty.call(node.frontmatter, "path")
