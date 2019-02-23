@@ -1,0 +1,27 @@
+.tab {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 16px; 
+    max-width: 40vw;
+    min-width: 100%;
+}
+
+.tablistitem {
+    width: 100%;
+    background: none;
+    border: none;
+    text-transform: none;
+    text-align: left;
+    border-left: 2px rgba(0,0,0,0) solid;
+    transition: all 0.3s ease-in-out;
+    padding-left: 16px;
+}
+
+.tablistitem:focus {
+    border-left: 2px var(--color-palette-500) solid;
+    outline: none;
+}
+
+.tablistitem:hover {
+    background: #f7f7f7;
+}

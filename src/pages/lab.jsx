@@ -6,7 +6,8 @@ import Layout from "../layout/";
 import PostListing from "../components/PostListing/PostListing";
 import Button from "../components/Button/button";
 import { FaApple } from "react-icons/fa";
-
+import { Tabs, Tab, TabPanel, TabList } from 'react-web-tabs';
+import "./lab.css";
 
 const Grid = styled.div`
     display: grid;
@@ -23,12 +24,10 @@ const Container = styled.main`
     .hero { 
         display: grid;
         grid-gap: var(--grid-gap);
-        grid-template-columns: 70% 30%;
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
         grid-template-areas:
-        'intro .'
-        'intro timeline'
-        '. timeline';
+        'intro'
+        'timeline';
 
         @media only screen and (max-width: 768px) {
             display: block;
@@ -100,6 +99,11 @@ grid-template-areas:
 'five';
 }`
 
+const PrettyTabs = styled(Tab)`
+display: grid;
+grid-template-columns: 1fr 2fr;
+`
+
 
 const WorkBlock = styled.div`
     
@@ -136,6 +140,8 @@ const Block = styled.div`
 
     &.timeline {
         grid-area: timeline;
+        margin: 0 auto;
+        padding: var(--padding-m) 0;
     }
 `
 
@@ -172,12 +178,28 @@ class Post extends React.Component {
                     </Block>
                     <Block className="timeline">
                         <h4>Timeline</h4>
-                        <h3><FaApple/>Apple Inc.</h3>
-                        <p>Before that, I worked as Cross-Content Intern at iTunes & App Store, Apple during college.</p>
-                        <h3>Playa</h3>
-                        <p>Before that, I worked as Cross-Content Intern at iTunes & App Store, Apple during college.</p>
-                        <h3>HyperAir</h3>
-                        <p>Before that, I worked as Cross-Content Intern at iTunes & App Store, Apple during college.</p>
+                        <Tabs defaultTab="vertical-tab-one" vertical className="tab">
+                          <TabList>
+                            <Tab className="tablistitem" tabFor="vertical-tab-one"><h3>Apple Inc.</h3></Tab>
+                            <Tab className="tablistitem"tabFor="vertical-tab-two"><h3>Playa</h3></Tab>
+                            <Tab className="tablistitem "tabFor="vertical-tab-three"><h3>HyperAir</h3></Tab>
+                          </TabList>
+                          <TabPanel tabId="vertical-tab-one">
+                            <h4><FaApple/>Apple Inc.</h4>
+                            <p>Before that, I worked as Cross-Content Intern at iTunes & App Store, Apple during college. I assist in the daily operation for iTunes Movies, Music Store and App Store. </p>
+                          </TabPanel>
+                          <TabPanel tabId="vertical-tab-two">
+                          <h4>Playa</h4>
+                        <p>I started my agency Playa in 2015, hoping to help small entrepreneurs and non-profits launching their projects, bridging the gap between project owners and end-users. </p>
+                          </TabPanel>
+                          <TabPanel tabId="vertical-tab-three">
+                          <h4>HyperAir</h4>
+                        <p>I'm working in HyperAir as a Principal Designer</p>
+                          </TabPanel>
+                        </Tabs>
+                       
+                       
+                        
                     </Block>
                 </Row>
                 <Row className="blog">
