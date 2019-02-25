@@ -19,13 +19,13 @@ const Post = styled.article`
   display: block;
   margin: 0 auto;
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1440px) {
     display: grid;
     grid-gap: 36px;
     grid-template-columns: [head] minmax(auto, 40ch) [main] minmax(23ch,55ch) [meta] 20%;
   }
 
-  @media screen and (min-width: 768px) and (max-width: 1280px)  {
+  @media screen and (min-width: 768px) and (max-width: 1440px)  {
     display: grid;
     grid-gap: 48px;
     grid-template-columns: 2fr 3fr;

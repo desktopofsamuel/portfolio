@@ -10,11 +10,11 @@ tags:
 - "Read-It-Later"
 - "Todoist"
 
-cover: "/read-it-later-v2.png"
+cover: "/read-it-later-v3.png"
 
 ---
 
-![](/read-it-later-v2.png)
+![](/read-it-later-v3.png)
 
 And here's a month passed in 2019. 11 more to go. By this time, your new  year resolutions probably are either a failure or a good start. While I was refining my Todoist workflow, I have realised I don’t need a read-it-later service. The idea is to replace read-it-later app by your todo app and note app. 
 
