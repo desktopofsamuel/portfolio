@@ -63,18 +63,20 @@ class PostListing extends React.Component {
     const { invert } = this.props;
     const postList = this.getPostList();
     return postList.map(post => (
-      <Block invert={invert} key={post.title}>
-        <Link to={post.path}>
-          <h3>
-            <a>{post.title}</a>
+      <Block className="block" invert={invert} key={post.title}>
+        
+          <h3><Link to={post.path}>
+            <a>{post.title}</a></Link>
           </h3>
-        </Link>
+        
+        <div>
         <p>{post.excerpt}</p>
         <Button invert={invert} to={post.path}>
           <h5>
             Read On <FaArrowRight />
           </h5>
         </Button>
+        </div>
       </Block>
     ));
   }

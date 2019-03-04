@@ -162,3 +162,11 @@ button {
 p:first-child {
     margin-block-start: 0;
 }
+
+.nav {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.125rem;
+    color: var(--color-white-500);
+    margin-bottom: 0;
+}
