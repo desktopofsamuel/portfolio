@@ -12,7 +12,7 @@ const Layout = styled.div`
 
 const Main = styled.main`
   display: grid;
-  grid-template-columns: minmax(0,10vw) [content] minmax(23ch, auto) minmax(0,10vw);
+  grid-template-columns: minmax(1vw,10vw) [content] minmax(23ch, auto) minmax(1vw,10vw);
   margin: 0 auto;
 `
 

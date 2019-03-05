@@ -146,7 +146,7 @@ export default class PostTemplate extends React.Component {
             <title>{`${post.title} | ${config.siteTitle}`}</title>
           </Helmet>
           <SEO postPath={slug} postNode={postNode} postSEO />
-          <Breadcrumb><h5><Link to="/lab">Blog</Link></h5>< FaAngleRight /> <h5><Link to={`/categories/${kebabCase(post.category)}`}>{post.category}</Link></h5></Breadcrumb>
+          <Breadcrumb><h5><Link to="/blog">Blog</Link></h5>< FaAngleRight /> <h5><Link to={`/categories/${kebabCase(post.category)}`}>{post.category}</Link></h5></Breadcrumb>
           <Post>
             
             <Header>

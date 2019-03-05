@@ -8,6 +8,14 @@ import Button from "../components/Button/button";
 import { FaApple } from "react-icons/fa";
 import { Tabs, Tab, TabPanel, TabList } from 'react-web-tabs';
 import "./index.css";
+import HyperAirSVG from "../../static/SVG/hyperair.svg"
+import Circle from "../../static/SVG/circle.svg"
+
+const Subtitle = styled.h3`
+  font-size: 1.5rem;
+  font-family: var(--secondary-font);
+  font-weight: 500;
+`
 
 const Grid = styled.div`
     display: grid;
@@ -89,7 +97,7 @@ grid-template-areas:
 'four five five';
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1260px) {
     grid-template-columns: 1fr;
     grid-template-areas: 
 'one'
@@ -106,21 +114,39 @@ grid-template-columns: 1fr 2fr;
 
 
 const WorkBlock = styled.div`
-    
+    overflow: hidden;
     background: #fff;
     color: var(--color--black-500);
+    display: grid;
     padding: var(--padding-m);
+
+    .graphics {
+        z-index: 2;
+        position: relative;
+        width: 80%;
+        max-height: 300px;
+      }
 
     &:nth-child(1) {
         grid-area: one;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 
     &:nth-child(2) {
         grid-area: two;
+        grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns:  none;
+      @media only screen and (max-width: 1256px) {
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          grid-template-rows: none;
+      }
+
+   
     }
 
     &:nth-child(3) {
         grid-area: three;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 
     &:nth-child(4) {
@@ -135,7 +161,6 @@ const WorkBlock = styled.div`
 const Block = styled.div`
     &.intro {
         grid-area: intro;
-        
     }
 
     &.timeline {
@@ -157,6 +182,20 @@ const BlogIntro = styled.div`
       margin: 1rem 0;
     }
 `
+
+const Intro = styled.p`
+  font-size: 2rem;
+  line-height: 150%;
+
+`
+
+const WorkPhoto = styled.div`
+align-self: center;
+text-align: center;
+`
+
+const WorkText = styled.div`
+`
 class Post extends React.Component {
     render() {
       const postEdges = this.props.data.allMarkdownRemark.edges;
@@ -170,11 +209,8 @@ class Post extends React.Component {
                 <Row className="hero">
                     <Block className="intro">
                         <h3>#01</h3>
-                        <h1>Hi, I'm Samuel!</h1>
-                        <h3>I’m a Product Designer.</h3>
-                        <p> I deliver web / app projects in Playa, a web / app agency that I've co-founded. Before that, I worked as Cross-Content Intern at iTunes & App Store, Apple during college.</p>
-                        <p>I started my agency Playa in 2015, hoping to help small entrepreneurs and non-profits launching their projects, bridging the gap between project owners and end-users. I am constantly learning and treasure every opportunity to design better. I’m learning to code right now and this website is my first attempt.</p>
-                    
+                        <h1>Hello!</h1>
+                        <Subtitle>My name is Samuel. I'm a Product Designer currently based in Hong Kong</Subtitle>
                     </Block>
                     <Block className="timeline">
                         <h4>Timeline</h4>
@@ -215,22 +251,32 @@ class Post extends React.Component {
                 </Row>
                 <WorkGrid className="three-row">
                 <WorkBlock>
+                    <WorkPhoto><img width="80%" src={HyperAirSVG} className="graphics"/></WorkPhoto>
+                    <WorkText>
                     <h5>UI/UX Design, Brand Design</h5>
                     <h3>HyperAir Travel</h3>
                     <p>Pingspace checks your site uptime every minute with real user monitoring and let you know when your sites are down.</p>
-                    <button>Learn More</button>
+                    <Button href="/grid" text="Learn More" />
+                    </WorkText>
                 </WorkBlock>
                 <WorkBlock>
-                    <h5>UI/UX Design, Brand Design</h5>
-                    <h3>Pingspace.io</h3>
-                    <p>Pingspace checks your site uptime every minute with real user monitoring and let you know when your sites are down.</p>
-                    <button>Learn More</button>
-                </WorkBlock>
-                <WorkBlock>
+                  <WorkPhoto><img width="80%" src={HyperAirSVG} className="graphics reverse"/></WorkPhoto>
+                    <WorkText>
                     <h5>UI/UX Design</h5>
                     <h3>Water For Free</h3>
                     <p>Pingspace checks your site uptime every minute with real user monitoring and let you know when your sites are down.</p>
                     <Button href="/grid" text="Learn More" />
+                    </WorkText>
+                </WorkBlock>
+                <WorkBlock>
+                  <WorkPhoto><img width="80%" src={HyperAirSVG} className="graphics"/></WorkPhoto>
+                  <WorkText className="reverse">
+                    <h5>UI/UX Design, Brand Design</h5>
+                    <h3>Pingspace.io</h3>
+                    <p>Pingspace checks your site uptime every minute with real user monitoring and let you know when your sites are down.</p>
+                    <Button href="/grid" text="Learn More" />
+                    </WorkText>
+                    
                 </WorkBlock>
             </WorkGrid>
             </Container>

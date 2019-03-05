@@ -6,9 +6,7 @@ import { FaEnvelope } from "react-icons/fa";
 const Main = styled.div`
   display: grid;
   grid-template-columns: minmax(0,10vw) [content] auto;
-  margin: 0 auto;
-  top: 0;
-  margin: 0 auto;
+  margin: 5vh auto 0 auto;
   
   @media screen and (max-width: 425px) {
     grid-template-columns: [content] auto;

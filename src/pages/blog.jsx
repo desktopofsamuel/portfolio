@@ -20,7 +20,8 @@ const BlogBlock = styled.div`
 
   .block {
     display: grid;
-    grid-template-columns:  repeat(auto-fit, minmax(400px, 1fr));
+    margin: 0 auto;
+    grid-template-columns:  repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: var(--padding-m);
     border-bottom: 1px var(--color-black-500) solid;
 
@@ -65,7 +66,7 @@ export const pageQuery = graphql`
             slug
             date
           }
-          excerpt(pruneLength: 600)
+          excerpt(pruneLength: 300)
           timeToRead
           frontmatter {
             title
