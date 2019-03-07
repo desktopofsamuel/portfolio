@@ -6,6 +6,8 @@ import PropTypes from "prop-types";
 
 const Block = styled.div`
   position: relative;
+  display: grid;
+  grid-template-rows: repeat(3, auto);
   background: ${props => (props.invert ? `var(--color-background-500)` : `var(--color-black-500)` )} ;
   padding: ${props => (props.invert ? `none` : `var(--padding-m)` )}; 
   color: ${props => (props.invert ? `var(--color-black-500)` : `var(--color-white-500)` )};
@@ -16,6 +18,7 @@ const Block = styled.div`
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    align-self: center;
   }
 
   h3 {
@@ -35,12 +38,15 @@ const Button = styled(Link)`
   margin: 0;
   padding: 8px 0px;
   background: none;
-  
+  align-self: flex-end;
   border: none;
   text-transform: uppercase;
   letter-spacing: 0.075em;
   cursor: pointer;
   display: inline;
+  border-bottom: none;
+
+  
 `;
 
 class PostListing extends React.Component {
@@ -64,19 +70,15 @@ class PostListing extends React.Component {
     const postList = this.getPostList();
     return postList.map(post => (
       <Block className="block" invert={invert} key={post.title}>
-        
-          <h3><Link to={post.path}>
+        <h3><Link to={post.path}>
             <a>{post.title}</a></Link>
-          </h3>
-        
-        <div>
+        </h3>
         <p>{post.excerpt}</p>
         <Button invert={invert} to={post.path}>
           <h5>
             Read On <FaArrowRight />
           </h5>
         </Button>
-        </div>
       </Block>
     ));
   }

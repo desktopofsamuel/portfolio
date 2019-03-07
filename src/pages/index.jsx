@@ -7,11 +7,9 @@ import PostListing from "../components/PostListing/PostListing";
 import Button from "../components/Button/button";
 import "./index.css";
 import HyperAirSVG from "../../static/SVG/hyperair.svg";
+import Now from "../components/Now/Now"
 
-const Subtitle = styled.h3`
-  font-size: 1.5rem;
-  font-family: var(--secondary-font);
-  font-weight: 500;
+const Subtitle = styled.h2`
 `;
 
 const Grid = styled.div`
@@ -77,7 +75,6 @@ const Row = styled.div`
 const WorkGrid = styled(Row)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
   grid-gap: 24px;
   grid-template-areas:
     "one one two"
@@ -101,6 +98,7 @@ const WorkBlock = styled.div`
   color: var(--color--black-500);
   display: grid;
   padding: var(--padding-m);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
   .graphics {
     z-index: 2;
@@ -126,7 +124,7 @@ const WorkBlock = styled.div`
 
   &:nth-child(3) {
     grid-area: three;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    
   }
 
   &:nth-child(4) {
@@ -208,8 +206,8 @@ class Post extends React.Component {
                   <img width="80%" src={HyperAirSVG} className="graphics" />
                 </WorkPhoto>
                 <WorkText>
-                  <h5>UI/UX Design, Brand Design</h5>
                   <h3>HyperAir Travel</h3>
+                  <h5>UI/UX Design, Brand Design</h5>
                   <p>
                     Pingspace checks your site uptime every minute with real
                     user monitoring and let you know when your sites are down.
@@ -226,11 +224,10 @@ class Post extends React.Component {
                   />
                 </WorkPhoto>
                 <WorkText>
-                  <h5>UI/UX Design</h5>
                   <h3>Water For Free</h3>
+                  <h5>Hong Kong Water Dispenser Map</h5>
                   <p>
-                    Pingspace checks your site uptime every minute with real
-                    user monitoring and let you know when your sites are down.
+                    I have designed the revamped crowd-source water dispenser map in Hong Kong and Macau that reduces plastic bottle usage. 
                   </p>
                   <Button href="/grid" text="Learn More" />
                 </WorkText>
@@ -239,9 +236,9 @@ class Post extends React.Component {
                 <WorkPhoto>
                   <img width="80%" src={HyperAirSVG} className="graphics" />
                 </WorkPhoto>
-                <WorkText className="reverse">
-                  <h5>UI/UX Design, Brand Design</h5>
+                <WorkText className="reverse"> 
                   <h3>Pingspace.io</h3>
+                  <h5>Cost-effective website uptime monitor</h5>
                   <p>
                     Pingspace checks your site uptime every minute with real
                     user monitoring and let you know when your sites are down.
@@ -250,6 +247,7 @@ class Post extends React.Component {
                 </WorkText>
               </WorkBlock>
             </WorkGrid>
+            <Now className="full-width"/>
           </Container>
         </Grid>
       </Layout>
