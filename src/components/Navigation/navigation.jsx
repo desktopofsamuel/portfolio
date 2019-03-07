@@ -8,8 +8,8 @@ const Main = styled.div`
   grid-template-columns: minmax(0,10vw) [content] auto;
   margin: 5vh auto 0 auto;
   
-  @media screen and (max-width: 425px) {
-    grid-template-columns: [content] auto;
+  @media screen and (max-width: 1080px) {
+    grid-template-columns: minmax(0,10vw) [content] auto minmax(0,10vw);
   }
 `;
 
@@ -22,9 +22,6 @@ const Title = styled.div`
   float: left;
   padding: var(--padding-m) 0;
   height: 10vh;
-  @media screen and (max-width: 425px) {
-      padding: var(--padding-m) var(--padding-s) var(--padding-m) var(--padding-s);
-  }
 `;
 
 const Contact = styled.button`
@@ -36,7 +33,7 @@ const Contact = styled.button`
   border: none;
   float: right;
   height: 10vh;
-  padding: var(--padding-m) var(--padding-s) var(--padding-m) var(--padding-s);
+  padding: var(--padding-m) 0 var(--padding-m) 0;
   transition: all 0.2s ease-in-out;
   
   
@@ -46,7 +43,10 @@ const Contact = styled.button`
   
   &:hover {
     background: var(--color-black-500);
+
+    a {
     color: var(--color-white-500);
+    }
   }
 
   & > a {
