@@ -81,11 +81,11 @@ export default props =>
             </Content>
         </Box>
         <Box>
-            <Name><h3>Consuming recently</h3></Name>
+            <Name><h3>Recent Favorite</h3></Name>
             <Content>
                 <Text>The Good Place</Text>
-                <Text>A City Made by People</Text>
-                <Text>The Black Keys</Text>
+                <Text><a href="https://www.acitymadebypeople.com/">A City Made by People</a></Text>
+                <Text><a href="https://www.youtube.com/watch?v=JILfwu5AWIQ">The Black Keys</a></Text>
             </Content>
         </Box>
         </Main>

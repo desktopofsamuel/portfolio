@@ -8,6 +8,7 @@ import Button from "../components/Button/button";
 import "./index.css";
 import HyperAirSVG from "../../static/SVG/hyperair.svg";
 import Now from "../components/Now/Now"
+import Footer from "../components/Footer/Footer"
 
 const Subtitle = styled.h2`
 `;
@@ -248,6 +249,7 @@ class Post extends React.Component {
               </WorkBlock>
             </WorkGrid>
             <Now className="full-width"/>
+            <Footer></Footer>
           </Container>
         </Grid>
       </Layout>

@@ -47,7 +47,7 @@ h1 {
 
 h2 {
     margin-top: 0;
-    font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1600 - 320)));
+    font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (1600 - 320)));
   font-family: var(--secondary-font);
   font-weight: 500;
 }
