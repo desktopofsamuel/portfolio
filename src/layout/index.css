@@ -48,8 +48,10 @@ h1 {
 h2 {
     margin-top: 0;
     font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (1600 - 320)));
-  font-family: var(--secondary-font);
-  font-weight: 500;
+    font-family: var(--secondary-font);
+    font-weight: 500;
+    line-height: calc(24px + (36 - 24) * ((100vw - 320px) / (1600 - 320)));
+
 }
 
 h3 {
