@@ -1,7 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import styled from "styled-components";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import Layout from "../layout/";
 import PostListing from "../components/PostListing/PostListing";
 import Button from "../components/Button/button";
@@ -9,23 +9,14 @@ import "./index.css";
 import HyperAirSVG from "../../static/SVG/hyperair.svg";
 import Now from "../components/Now/Now"
 import Footer from "../components/Footer/Footer"
+import SvgLines from 'react-mt-svg-lines';
 
 const Subtitle = styled.h2`
 `;
 
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(auto-fit, minmax(50px, 1fr));
-
-  & > * {
-    grid-column: col-start / span 12;
-  }
-`;
 const Container = styled.main`
   .hero {
     display: grid;
-    height: 50vh;
     position: relative;
     width: minmax( auto,64ch);
   }
@@ -41,35 +32,18 @@ const Container = styled.main`
   }
 `;
 
-const Black = styled.div`
-  background: #000;
-
-  &.one {
-    grid-column: 3 / 4;
-    grid-row: 2 / 8;
-  }
-
-  &.two {
-    grid-column: 18 / 34;
-    grid-row: 3 / 5;
-  }
-
-  &.three {
-    grid-column: 1 / 2;
-    grid-row: 12 / 18;
-  }
-`;
-
 const Row = styled.div`
   margin: 0 auto;
   display: grid;
   padding: var(--padding-m) 0;
+  min-height: 80vh;
 
   &.blog {
-    grid-column: 4 / span 8;
+    padding: var(--padding-l) 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: var(--padding-s);
+    min-height: 40vh;
   }
 `;
 
@@ -99,7 +73,10 @@ const WorkBlock = styled.div`
   color: var(--color--black-500);
   display: grid;
   padding: var(--padding-m);
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 
   .graphics {
     z-index: 2;
@@ -110,15 +87,12 @@ const WorkBlock = styled.div`
 
   &:nth-child(1) {
     grid-area: one;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 
   &:nth-child(2) {
     grid-area: two;
     grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
-    grid-template-columns: none;
-    @media only screen and (max-width: 1256px) {
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    @media only screen and (max-width: 768px) {
       grid-template-rows: none;
     }
   }
@@ -140,7 +114,8 @@ const WorkBlock = styled.div`
 const Block = styled.div`
   &.intro {
     align-self: center;
-    justify-self: flex-start;
+    justify-self: center;
+    text-align: center;
   }
 `;
 
@@ -157,10 +132,10 @@ const BlogIntro = styled.div`
   }
 `;
 
-const Intro = styled.p`
-  font-size: 2rem;
-  line-height: 150%;
-`;
+const Graphic = styled.div`
+padding: var(--padding-m);
+`
+
 
 const WorkPhoto = styled.div`
   align-self: center;
@@ -173,34 +148,49 @@ class Post extends React.Component {
     const postEdges = this.props.data.allMarkdownRemark.edges;
     return (
       <Layout>
-        <Grid>
-          <Black className="one" />
-          <Black className="two" />
-          <Black className="three" />
           <Container>
             <Row className="hero">
               <Block className="intro">
                 <h3>#01</h3>
-                <h1>Hello!</h1>
-                <Subtitle>
-                  My name is Samuel. I'm a Product Designer currently based in
-                  Hong Kong
-                </Subtitle>
+                <Graphic>
+                <SvgLines className="svg" animate={ true } duration={ 3000 } fade >
+                    <svg id="hello-svg" data-name="hello" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 582 197">
+                    <title>Hello</title>
+                    <path strokeWidth="15" strokeLinecap="round" strokeLinejoin="round" stroke="black" fill="none"  d="M9,155c38-16.7,73.7-45.7,97.3-66c21.3-18.3,32.7-35.7,37.3-52.7C148.1,20.1,145,9,133,9
+	c-11,0-21,10.3-24.9,27.7c-4.5,19.9-22.1,107.8-29.4,149c15.7-72.3,36.3-81.3,53.7-81.3c22.3,0,24.7,18.7,19.4,39
+	c-5.4,21.1-7.4,44.3,17.9,44.3c18,0,35.5-8.2,52.7-20c14-9.7,23-24,23-40c0-13.4-8-23.3-20.7-23.3s-24.3,12-24.3,33.3
+	c0,27,16.3,48,44,48c25.7,0,47.7-19.7,62-44.7c13.6-23.7,30.7-64.7,33.3-92.7s-5.3-36-18.7-36s-24.7,17.3-28.7,43.3
+	s-5.3,63.3,0,91.3s28,37.7,46,37.7s38.2-15.7,52-37c16.5-25.5,35.9-67.5,38.7-102c2-24.7-8.7-33.3-20-33.3c-14.7,0-23.3,13.3-28,38
+	c-4.5,23.8-8,64-2,94c4.6,23.2,25.3,40.3,44.7,40.3c11.8,0,19.6-12.8,37.5-47.1c27.3-52.1,54.6-25.5,54.6-25.5
+	C493.7,88.8,462.3,122,460,144c-0.7,6.8-0.4,12.9,0.8,18.1c3.5,15.2,14.5,23.6,28.8,23.6c22,0,34.5-20.8,36.7-40.7
+	c2-18.7-10.5-32.9-10.5-32.9c12.1,12.3,43.5,9.5,56.5-5.8"/>
+                     </svg>
+                </SvgLines>
+              
+                </Graphic>
+                
+                
+                
+                <Subtitle>My name is Samuel. I'm a Product Designer currently based in Hong Kong.</Subtitle>
               </Block>
             </Row>
             <Row className="blog">
               <BlogIntro>
                 <h3>#02</h3>
                 <h1>Blog</h1>
-                <p>I write about design, technology and productivity.</p>
+                <p>I write about</p>
+                <h3><Link to="categories/design-journal">#design</Link></h3>
+                <h3><Link to="categories/app-talk">#technology</Link> and</h3>
+                <h3><Link to="categories/productivity">#productivity</Link>.</h3>
               </BlogIntro>
               <PostListing postEdges={postEdges} />
             </Row>
-            <Row className="work-title">
+            <Row className="Work">
+            <Block className="work-title">
               <h4>#03</h4>
               <h1>Work</h1>
               <p>Projects that I am working on and initiated in the past.</p>
-            </Row>
+            </Block>
             <WorkGrid className="three-row">
               <WorkBlock>
                 <WorkPhoto>
@@ -248,10 +238,10 @@ class Post extends React.Component {
                 </WorkText>
               </WorkBlock>
             </WorkGrid>
+            </Row>
             <Now className="full-width"/>
             <Footer></Footer>
           </Container>
-        </Grid>
       </Layout>
     );
   }

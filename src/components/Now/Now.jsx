@@ -1,17 +1,17 @@
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 
 
 const NowGrid = styled.section`
-margin: 0 auto;
 width: 100vw;
 position: relative;
+left: 50%;
+right: 50%;
 margin-left: -50vw;
+margin-right: -50vw;
 height: auto;
 margin-top: 100px;
-left: 50%;
 display: grid; 
 grid-template-columns: minmax(1vw,10vw) [main] auto minmax(1vw,10vw);
 background: #f1f0e7;
@@ -20,10 +20,13 @@ background: #f1f0e7;
 const Main = styled.div`
 grid-area: main;
 display: grid;
-grid-template-columns: repeat(8, minmax(5%, 1fr));
+grid-template-columns: repeat(8, minmax(0, 1fr));
 padding: var(--padding-xl) 0;
 grid-gap: var(--padding-l);
 
+@media only screen and (max-width: 768px) {
+    grid-gap: var(--padding-s);
+}
 `
 
 const Box = styled.div`
@@ -35,18 +38,13 @@ grid-gap: var(--padding-m);
 @media only screen and (max-width: 768px) {
     grid-column-start: span 8;
     grid-template-columns: 1fr;
+    padding: var(--padding-s);
+    grid-gap: 0;
 }
 
 `
 
 const Name = styled.div`
-h3 {
-text-transform: uppercase;
-/*display: inline;
-writing-mode: vertical-rl;
-
-text-orientation: mixed;*/
-}
 `
 
 const Content = styled.div`
