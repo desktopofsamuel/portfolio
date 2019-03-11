@@ -17,7 +17,7 @@ align-self: center;
 margin: var(--padding-m) auto;
 `;
 
-const Graphic = styled.div`
+const Graphic = styled.figure`
 padding: var(--padding-m);
 max-width: 768px;
 margin: 0 auto;
@@ -204,7 +204,7 @@ class Post extends React.Component {
                     Pingspace checks your site uptime every minute with real
                     user monitoring and let you know when your sites are down.
                   </p>
-                  <Button href="/grid" text="Learn More" />
+                  <Button href="/work/hyperair" text="Learn More" />
                 </WorkText>
               </WorkBlock>
               <WorkBlock>
@@ -221,7 +221,7 @@ class Post extends React.Component {
                   <p>
                     I have designed the revamped crowd-source water dispenser map in Hong Kong and Macau that reduces plastic bottle usage. 
                   </p>
-                  <Button href="/grid" text="Learn More" />
+                  <Button href="/work/water-for-free" text="Learn More" />
                 </WorkText>
               </WorkBlock>
               <WorkBlock>
