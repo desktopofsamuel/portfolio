@@ -109,6 +109,7 @@ module.exports = {
         },
       }
     },
+    "gatsby-plugin-sitemap",
     "gatsby-plugin-offline",
     {
       resolve: "gatsby-plugin-feed",
