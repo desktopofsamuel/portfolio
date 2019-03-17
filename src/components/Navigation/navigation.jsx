@@ -2,10 +2,11 @@ import React, { Component } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { FaEnvelope } from "react-icons/fa";
+import Layout from "../../layout/";
 
 const Main = styled.div`
   display: grid;
-  grid-template-columns: minmax(0,10vw) [content] auto minmax(0,10vw);
+  grid-template-columns: minmax(0.5vw,10vw) [content] auto minmax(0.5vw,10vw);
   margin: 5vh auto 0 auto;
 `;
 
@@ -29,22 +30,22 @@ const Contact = styled.button`
   height: 10vh;
   padding: var(--padding-m);
   transition: all 0.2s ease-in-out;
+  margin-right: -2rem;
   
-  
+  a > * {
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+
   .nav {
     color: var(--color-black-500);
   }
   
   &:hover {
     background: var(--color-black-500);
-
-    a {
+    a > * {
     color: var(--color-white-500);
     }
-  }
-
-  & > a {
-    border-bottom: none;
   }
 
   .with-icon {

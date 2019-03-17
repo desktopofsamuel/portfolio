@@ -13,7 +13,6 @@ const Block = styled.div`
   color: ${props => (props.invert ? `var(--color-black-500)` : `var(--color-black-500)` )};
   align-content: flex-start;
   p {
-    font-size: 14px;
     background: ${props => (props.invert ? `linear-gradient(to bottom,var(--color-black-500) 30%,rgba(18, 18, 18, 0))` : `linear-gradient(to bottom,var(--color-black-500) 30%,rgba(18, 18, 18, 0))` )};
     -webkit-background-clip: text;
     background-clip: text;

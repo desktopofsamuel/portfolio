@@ -74,16 +74,16 @@ export default props =>
         <Box>
             <Name><h3>My Passions</h3></Name>
             <Content>
-                <Text>Building my first design system</Text>
-            <Text>Learning Swedish on Duolingo</Text>
+                <Text>Design and Technology</Text>
+                <Text>Visit cities throught the lens</Text>
             </Content>
         </Box>
         <Box>
             <Name><h3>Recent Favorite</h3></Name>
             <Content>
-                <Text>The Good Place</Text>
-                <Text><a href="https://www.acitymadebypeople.com/">A City Made by People</a></Text>
-                <Text><a href="https://www.youtube.com/watch?v=JILfwu5AWIQ">The Black Keys</a></Text>
+                <Text><a href="https://open.spotify.com/album/1pKIMs0GEePXjDC2EiYEb7?si=ch4tDn3RRf-fFiiwNb7zXw" target="blank">Stella Donnelly's Beware of the dogs</a></Text>
+                <Text><a href="https://www.acitymadebypeople.com/" target="blank">A City Made by People</a></Text>
+                <Text><a href="https://media.giphy.com/media/l3mZ36q0iqikJhzWw/giphy.gif" target="blank">The Good Place</a></Text>
             </Content>
         </Box>
         </Main>

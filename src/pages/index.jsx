@@ -6,17 +6,10 @@ import Layout from "../layout/";
 import PostListing from "../components/PostListing/PostListing";
 import Button from "../components/Button/button";
 import "./index.css";
-
 import Now from "../components/Now/Now"
-import Footer from "../components/Footer/Footer"
 import SvgLines from 'react-mt-svg-lines';
 
-const Subtitle = styled.h1`
-font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (1600 - 320)));
-line-height: calc(32px + (40 - 32) * ((100vw - 320px) / (1600 - 320)));
-font-family: var(--secondary-font);
-font-weight: 400;
-text-align: right;
+const Subtitle = styled.h2`
 
 @media only screen and (max-width: 1024px) {
   text-align: center;
@@ -27,10 +20,11 @@ text-align: right;
 const Graphic = styled.figure`
 text-align: left;
 margin-left: -10%;
+padding: var(--padding-s);
 
 @media only screen and (max-width: 1024px) {
-  padding: var(--padding-s);
-  margin-left: 0;
+  padding: 10%;
+  margin: 0 auto;
 
 }
 `
@@ -57,7 +51,7 @@ const Row = styled.div`
     padding: var(--padding-l) 0;
     display: grid;
     grid-gap: var(--padding-s);
-    
+
     @media only screen and (min-width: 768px) {
       grid-template-columns: 1fr 1fr;
   }
@@ -108,9 +102,11 @@ const BlogIntro = styled.div`
 
 const DetailGrid = styled.div`
 display: grid;
-grid-template-columns: 1fr 1fr;
+grid-gap: 5rem;
+grid-template-columns: 42ch auto;
 @media only screen and (max-width: 1024px) {
   display: block;
+  max-width: 42ch;
 }
 `
 
@@ -138,22 +134,24 @@ class Post extends React.Component {
                 </SvgLines>
                 </Graphic>
                 <Block className="HeroText">
-                <Subtitle>My name is Samuel Wong <br/> I like to design and write. <br/> <Link className="textlink">About Me</Link><Link className="textlink" to="/work/hyperair">Blog</Link> </Subtitle>
+                <Subtitle className="subheading">My name is Samuel Wong <br/> I like to design and write. <br/></Subtitle>
+                <p className="subheading">
+                  <Link className="textlink rightspace" to="about">About Me</Link><Link className="textlink rightspace" to="/work/hyperair">Blog</Link>
+                </p>
                 
                 </Block>
               </Block>
             </Row>
             <Row className="whatido">
-              <h5 className="">What I Do</h5>
+              <small>What I Do</small>
               <DetailGrid>
                 <div>
-                  <h3>Product Designer</h3>
-                  <h2>HyperAir Travel</h2>
-                  <p>2019 - Present</p>
+                  <h3>I'm a Product Designer.</h3>
+                  <p>I lead design in  HyperAir, a travel startup based in Hong Kong.</p>
+                  <p>Before that, I worked as Cross-Content Intern at iTunes & App Store, Apple.</p>
+                  <Link to="/work/hyperair"> Case Study</Link>
                 </div>
                 <div>
-                  <p>I have designed the revamped crowd-source water dispenser map in Hong Kong and Macau that reduces plastic bottle usage.</p>
-                  <Link to="/work/hyperair"> Case Studies</Link>
                 </div>
                 </DetailGrid>
             </Row>
@@ -168,7 +166,7 @@ class Post extends React.Component {
               <PostListing postEdges={postEdges} invert/>
             </Row>
             <Now className="full-width"/>
-            <Footer></Footer>
+
           </Container>
       </Layout>
     );

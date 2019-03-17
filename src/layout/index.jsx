@@ -4,6 +4,7 @@ import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import "./index.css";
 import Navigation from "../components/Navigation/navigation";
+import Footer from "../components/Footer/Footer"
 
 const Layout = styled.div`
     background-color: var(--color-background-500);
@@ -12,7 +13,7 @@ const Layout = styled.div`
 
 const Main = styled.main`
   display: grid;
-  grid-template-columns: minmax(1vw,10vw) [content] minmax(23ch, auto) minmax(1vw,10vw);
+  grid-template-columns: minmax(0.5vw,10vw) [content] minmax(23ch, auto) minmax(0.5vw,10vw);
   margin: 0 auto;
 `
 
@@ -35,6 +36,7 @@ export default class MainLayout extends React.Component {
         {children}
         </Content>
         </Main>
+        <Footer/>
         </Layout>
       </div>
     );

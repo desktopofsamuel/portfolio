@@ -10,6 +10,9 @@
     --color-white-700: whitesmoke;
     --color-black-500: #0d0d0d;
     --color-grey-500:#737373;
+    --color-secondary-500: #535E7C;
+    --color-secondary-300: #7082b5;
+    --color-transparent: rgba(0,0,0,0);
     --device-tablet: 768px;
     --device-phone: 480px;
     --padding-s: 1rem;
@@ -172,10 +175,29 @@ p:first-child {
 }
 
 .textlink {
-    color: #535E7C;
-    border-bottom: none;
+    color: var(--color-secondary-500);
+    border-bottom: 1px var(--color-transparent) solid;
+    transition: all 0.3s ease-in-out;
 }
 
-.textlink:not(:last-child) {
+.textlink:hover {
+    border-bottom: 1px var(--color-secondary-500) solid;
+    color: var(--color-secondary-300);
+}
+
+.rightspace:not(:last-child) {
     margin-right: 20px;
+}
+
+.subheading {
+    font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1600 - 320)));
+    line-height: calc(32px + (40 - 32) * ((100vw - 320px) / (1600 - 320)));
+    font-family: var(--secondary-font);
+    font-weight: 400;
+    text-align: right;
+}
+
+.textbig{
+    font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1600 - 320)));
+    line-height: calc(32px + (40 - 32) * ((100vw - 320px) / (1600 - 320)));
 }

@@ -90,7 +90,7 @@ const Main = styled.div`
   overflow: auto;
 `
 
-const Sidebar = styled.div`
+const Sidebar = styled.aside`
   grid-area: meta;
 `
 
