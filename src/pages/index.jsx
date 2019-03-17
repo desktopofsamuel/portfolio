@@ -6,14 +6,14 @@ import Layout from "../layout/";
 import PostListing from "../components/PostListing/PostListing";
 import Button from "../components/Button/button";
 import "./index.css";
-import HyperAirSVG from "../../static/SVG/hyperair.svg";
+
 import Now from "../components/Now/Now"
 import Footer from "../components/Footer/Footer"
 import SvgLines from 'react-mt-svg-lines';
 
 const Subtitle = styled.h1`
 font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (1600 - 320)));
-line-height: 3rem;
+line-height: calc(32px + (40 - 32) * ((100vw - 320px) / (1600 - 320)));
 font-family: var(--secondary-font);
 font-weight: 400;
 text-align: right;
@@ -70,75 +70,14 @@ const Row = styled.div`
   &.hero {
     min-height: 30rem;
     align-content: center;
+    display: grid;
   }
 `;
 
-const WorkGrid = styled(Row)`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 24px;
-  grid-template-areas:
-    "one one two"
-    "three three two"
-    "four five five";
-
-  @media only screen and (max-width: 1260px) {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "one"
-      "two"
-      "three"
-      "four"
-      "five";
-  }
-`;
-
-const WorkBlock = styled.div`
-  overflow: hidden;
-  background: #fff;
-  color: var(--color--black-500);
-  display: grid;
-  padding: var(--padding-m);
-
-  @media only screen and (min-width: 768px) {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  }
-
-  .graphics {
-    z-index: 2;
-    position: relative;
-    max-height: 300px;
-    text-align: center;
-  }
-
-  &:nth-child(1) {
-    grid-area: one;
-  }
-
-  &:nth-child(2) {
-    grid-area: two;
-    grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
-    @media only screen and (max-width: 768px) {
-      grid-template-rows: none;
-    }
-  }
-
-  &:nth-child(3) {
-    grid-area: three;
-    
-  }
-
-  &:nth-child(4) {
-    grid-area: four;
-  }
-
-  &:nth-child(5) {
-    grid-area: five;
-  }
-`;
 
 const Block = styled.div`
   &.intro {
+    align-self: center;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-content: center;
@@ -175,13 +114,6 @@ grid-template-columns: 1fr 1fr;
 }
 `
 
-
-const WorkPhoto = styled.div`
-  align-self: center;
-  text-align: center;
-`;
-
-const WorkText = styled.div``;
 class Post extends React.Component {
   render() {
     const postEdges = this.props.data.allMarkdownRemark.edges;
@@ -212,7 +144,7 @@ class Post extends React.Component {
               </Block>
             </Row>
             <Row className="whatido">
-              <h5>What I Do</h5>
+              <h5 className="">What I Do</h5>
               <DetailGrid>
                 <div>
                   <h3>Product Designer</h3>
@@ -234,60 +166,6 @@ class Post extends React.Component {
                 <h3><Link to="categories/productivity">#productivity</Link>.</h3>
               </BlogIntro>
               <PostListing postEdges={postEdges} invert/>
-            </Row>
-            <Row className="Work">
-            <Block className="work-title">
-              <h4>#03</h4>
-              <h1>Work</h1>
-              <p>Projects that I am working on and initiated in the past.</p>
-            </Block>
-            <WorkGrid className="three-row">
-              <WorkBlock>
-                <WorkPhoto>
-                  <img width="80%" src={HyperAirSVG} className="graphics" />
-                </WorkPhoto>
-                <WorkText>
-                  <h3>HyperAir Travel</h3>
-                  <h5>UI/UX Design, Brand Design</h5>
-                  <p>
-                    Pingspace checks your site uptime every minute with real
-                    user monitoring and let you know when your sites are down.
-                  </p>
-                  <Button href="/work/hyperair" text="Learn More" />
-                </WorkText>
-              </WorkBlock>
-              <WorkBlock>
-                <WorkPhoto>
-                  <img
-                    width="80%"
-                    src={HyperAirSVG}
-                    className="graphics reverse"
-                  />
-                </WorkPhoto>
-                <WorkText>
-                  <h3>Water For Free</h3>
-                  <h5>Hong Kong Water Dispenser Map</h5>
-                  <p>
-                    I have designed the revamped crowd-source water dispenser map in Hong Kong and Macau that reduces plastic bottle usage. 
-                  </p>
-                  <Button href="/work/water-for-free" text="Learn More" />
-                </WorkText>
-              </WorkBlock>
-              <WorkBlock>
-                <WorkPhoto>
-                  <img width="80%" src={HyperAirSVG} className="graphics" />
-                </WorkPhoto>
-                <WorkText className="reverse"> 
-                  <h3>Pingspace.io</h3>
-                  <h5>Cost-effective website uptime monitor</h5>
-                  <p>
-                    Pingspace checks your site uptime every minute with real
-                    user monitoring and let you know when your sites are down.
-                  </p>
-                  <Button href="/grid" text="Learn More" />
-                </WorkText>
-              </WorkBlock>
-            </WorkGrid>
             </Row>
             <Now className="full-width"/>
             <Footer></Footer>
