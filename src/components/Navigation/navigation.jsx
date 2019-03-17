@@ -5,12 +5,8 @@ import { FaEnvelope } from "react-icons/fa";
 
 const Main = styled.div`
   display: grid;
-  grid-template-columns: minmax(0,10vw) [content] auto;
+  grid-template-columns: minmax(0,10vw) [content] auto minmax(0,10vw);
   margin: 5vh auto 0 auto;
-  
-  @media screen and (max-width: 1080px) {
-    grid-template-columns: minmax(0,10vw) [content] auto minmax(0,10vw);
-  }
 `;
 
 const Content = styled.div`
@@ -25,15 +21,13 @@ const Title = styled.div`
 `;
 
 const Contact = styled.button`
-  visibility: hidden;
-  opacity: 0;
   background: none;
   text-align: center;
   box-shadow: none;
   border: none;
   float: right;
   height: 10vh;
-  padding: var(--padding-m) 0 var(--padding-m) 0;
+  padding: var(--padding-m);
   transition: all 0.2s ease-in-out;
   
   
@@ -101,13 +95,13 @@ export default class Navigation extends React.Component {
           <Title>
             <h5><Link to="/">Samuel W.</Link></h5>
           </Title>
-          <Bar>
+          {/*<Bar>
             <Link to="/blog"><h5 className="nav">Blog</h5></Link>
             <a href="https://pin.desktopofsamuel.com/"><h5 className="nav">Pins</h5></a>
             <a href="https://photo.desktopofsamuel.com/"><h5 className="nav">Photos</h5></a>
             <a href="mailto:desktopofsamuel@gmail.com" ><h5 className="nav">Contact</h5></a>
             <Separator/>
-          </Bar>
+          </Bar>*/}
           <Contact>
           <a href="mailto:desktopofsamuel@gmail.com" ><h5 className="nav"><FaEnvelope className="with-icon"/>Contact</h5></a>
           </Contact>

@@ -11,16 +11,28 @@ import Now from "../components/Now/Now"
 import Footer from "../components/Footer/Footer"
 import SvgLines from 'react-mt-svg-lines';
 
-const Subtitle = styled.h2`
-max-width: 32ch;
-align-self: center;
-margin: var(--padding-m) auto;
+const Subtitle = styled.h1`
+font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (1600 - 320)));
+line-height: 3rem;
+font-family: var(--secondary-font);
+font-weight: 400;
+text-align: right;
+
+@media only screen and (max-width: 1024px) {
+  text-align: center;
+  padding: var(--padding-s);
+}
 `;
 
 const Graphic = styled.figure`
-padding: var(--padding-m);
-max-width: 768px;
-margin: 0 auto;
+text-align: left;
+margin-left: -10%;
+
+@media only screen and (max-width: 1024px) {
+  padding: var(--padding-s);
+  margin-left: 0;
+
+}
 `
 
 const Container = styled.main`
@@ -38,20 +50,26 @@ const Container = styled.main`
 
 const Row = styled.div`
   margin: 0 auto;
-  display: grid;
   padding: var(--padding-m) 0;
   
 
   &.blog {
     padding: var(--padding-l) 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: var(--padding-s);
-    min-height: 40vh;
+    
+    @media only screen and (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
   }
 
+    @media only screen and (min-width: 1280px) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
   &.hero {
-    min-height: 40vh;
+    min-height: 30rem;
+    align-content: center;
   }
 `;
 
@@ -121,7 +139,18 @@ const WorkBlock = styled.div`
 
 const Block = styled.div`
   &.intro {
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: center;
+
+    @media only screen and (max-width: 1024px) {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  &.HeroText {
+    align-self: center;
   }
 `;
 
@@ -138,7 +167,13 @@ const BlogIntro = styled.div`
   }
 `;
 
-
+const DetailGrid = styled.div`
+display: grid;
+grid-template-columns: 1fr 1fr;
+@media only screen and (max-width: 1024px) {
+  display: block;
+}
+`
 
 
 const WorkPhoto = styled.div`
@@ -169,22 +204,36 @@ class Post extends React.Component {
     c2-18.7-10.5-32.9-10.5-32.9c12.1,12.3,43.5,9.5,56.5-5.8"/>
                      </svg>
                 </SvgLines>
-
                 </Graphic>
-
-                <Subtitle>My name is Samuel. I'm a Product Designer currently based in Hong Kong.</Subtitle>
+                <Block className="HeroText">
+                <Subtitle>My name is Samuel Wong <br/> I like to design and write. <br/> <Link className="textlink">About Me</Link><Link className="textlink" to="/work/hyperair">Blog</Link> </Subtitle>
+                
+                </Block>
               </Block>
+            </Row>
+            <Row className="whatido">
+              <h5>What I Do</h5>
+              <DetailGrid>
+                <div>
+                  <h3>Product Designer</h3>
+                  <h2>HyperAir Travel</h2>
+                  <p>2019 - Present</p>
+                </div>
+                <div>
+                  <p>I have designed the revamped crowd-source water dispenser map in Hong Kong and Macau that reduces plastic bottle usage.</p>
+                  <Link to="/work/hyperair"> Case Studies</Link>
+                </div>
+                </DetailGrid>
             </Row>
             <Row className="blog">
               <BlogIntro>
-                <h3>#02</h3>
                 <h1>Blog</h1>
                 <p>I write about</p>
                 <h3><Link to="categories/design-journal">#design</Link></h3>
                 <h3><Link to="categories/app-talk">#technology</Link> and</h3>
                 <h3><Link to="categories/productivity">#productivity</Link>.</h3>
               </BlogIntro>
-              <PostListing postEdges={postEdges} />
+              <PostListing postEdges={postEdges} invert/>
             </Row>
             <Row className="Work">
             <Block className="work-title">
