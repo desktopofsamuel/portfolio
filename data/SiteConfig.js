@@ -2,7 +2,7 @@ module.exports = {
   siteTitle: "Desktop of Samuel", // Site title.
   siteTitleShort: "Desktop of Samuel", // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
   siteTitleAlt: "Desktop of Samuel", // Alternative site title for SEO.
-  siteLogo: "/logo/Favicon.png", // Logo used for SEO and manifest.
+  siteLogo: "../src/favicon.png", // Logo used for SEO and manifest.
   siteUrl: "https://desktopofsamuel.com", // Domain of your website without pathPrefix.
   pathPrefix: "/", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription: "Intersection of Design and Technology", // Website description used for RSS feeds/meta description tag.
