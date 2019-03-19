@@ -1,8 +1,8 @@
 ---
+posttype: "work"
 path: "/ftc"
 date: "2016-05-13"
 title: "Fair Training Center"
-posttype: "work"
 image: "./ftc2.png"
 subtitle: "Non-profit training center that offer training opportunities"
 category: "Brand Design"
