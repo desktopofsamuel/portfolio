@@ -9,8 +9,7 @@ import "./index.css";
 import Now from "../components/Now/Now"
 import SvgLines from 'react-mt-svg-lines';
 
-const Subtitle = styled.h3`
-text-align: right;
+const Subtitle = styled.h2`
 
 @media only screen and (max-width: 1024px) {
   text-align: center;
@@ -135,10 +134,10 @@ class Post extends React.Component {
                 </SvgLines>
                 </Graphic>
                 <Block className="HeroText">
-                <Subtitle>My name is Samuel Wong <br/> I like to design and write. <br/></Subtitle>
-                <Subtitle><p className="subheading">
-                  <Link className="textlink rightspace" to="/about">About Me</Link><Link className="textlink rightspace" to="/blog">Blog</Link>
-                </p></Subtitle>
+                <Subtitle className="subheading">My name is Samuel Wong <br/> I like to design and write. <br/></Subtitle>
+                <p className="subheading">
+                  <Link className="textlink rightspace" to="about">About Me</Link><Link className="textlink rightspace" to="/work/hyperair">Blog</Link>
+                </p>
                 
                 </Block>
               </Block>
@@ -148,9 +147,9 @@ class Post extends React.Component {
               <DetailGrid>
                 <div>
                   <h3>I'm a Product Designer.</h3>
-                  <p>I lead design at HyperAir, a travel startup based in Hong Kong.</p>
+                  <p>I lead design in  HyperAir, a travel startup based in Hong Kong.</p>
                   <p>Before that, I worked as Cross-Content Intern at iTunes & App Store, Apple.</p>
-                  <Link to="/work/hyperair">About Work</Link>
+                  <Link to="/work/hyperair"> Case Study</Link>
                 </div>
                 <div>
                 </div>

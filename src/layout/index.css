@@ -102,7 +102,7 @@ h6 {
 
 small {
     font-family: var(--primary-font);
-    font-weight: 400;
+    font-weight: 300;
     text-transform: uppercase;
     line-height: normal;
     font-size: 12px;
@@ -194,6 +194,7 @@ p:first-child {
     line-height: calc(32px + (40 - 32) * ((100vw - 320px) / (1600 - 320)));
     font-family: var(--secondary-font);
     font-weight: 400;
+    text-align: right;
 }
 
 .textbig{
