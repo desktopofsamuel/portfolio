@@ -2,7 +2,7 @@
 path: "/road-not-taken"
 date: "2016-02-01"
 title: "Road Not Taken"
-posttype: "project"
+posttype: "work"
 image: "./RNT-Feature.png"
 subtitle: "Independent Documentary"
 category: "Documentary"
