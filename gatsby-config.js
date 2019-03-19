@@ -73,7 +73,7 @@ module.exports = {
         color: config.themeColor
       }
     },
-    "g  atsby-plugin-styled-components",
+    "gatsby-plugin-styled-components",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-catch-links",
