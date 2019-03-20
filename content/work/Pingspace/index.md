@@ -9,6 +9,8 @@ category: "UI/UX Design"
 intro: "Pingspace checks your site uptime every minute with real user monitoring and let you know when your sites are down."
 color: "#2C1E80"
 url: "https://pingspace.io"
+tags: 
+    - 'Work'
 
 ---
 

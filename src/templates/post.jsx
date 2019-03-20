@@ -214,10 +214,6 @@ query BlogPostBySlug($slug: String!, $category: String!) {
       tags
     }
     fields {
-      nextTitle
-      nextSlug
-      prevTitle
-      prevSlug
       slug
       date
     }
