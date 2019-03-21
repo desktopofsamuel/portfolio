@@ -8,6 +8,7 @@ import Button from "../components/Button/button";
 import "./index.css";
 import Now from "../components/Now/Now"
 import SvgLines from 'react-mt-svg-lines';
+import config from "../../data/SiteConfig";
 
 const Subtitle = styled.h3`
 text-align: right;
@@ -110,12 +111,12 @@ grid-template-columns: 42ch auto;
   max-width: 42ch;
 }
 `
-
 class Post extends React.Component {
   render() {
     const postEdges = this.props.data.allMarkdownRemark.edges;
     return (
       <Layout>
+        <Helmet title={config.siteTitle} />
           <Container>
             <Row className="hero">
               <Block className="intro">

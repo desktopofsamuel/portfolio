@@ -40,7 +40,7 @@ class Index extends React.Component {
     return (
       <Layout>
         <div className="index-container">
-          <Helmet title={config.siteTitle} />
+          <Helmet title={`Blog | ${config.siteTitle}`} />
           <SEO />
           <BlogBlock><PostListing postEdges={postEdges} /></BlogBlock>
           <PostHero postEdges={listEdges} />
