@@ -146,7 +146,7 @@ export default class PostTemplate extends React.Component {
             <title>{`${post.title} | ${config.siteTitle}`}</title>
           </Helmet>
           <SEO postPath={slug} postNode={postNode} postSEO />
-          <Breadcrumb><small><Link to="/blog">Blog</Link></small> <small>—</small> <small><Link to={`/categories/${kebabCase(post.category)}`}>{post.category}</Link></small></Breadcrumb>
+          <Breadcrumb><small><Link to="/blog">Blog - </Link></small><small><Link to={`/categories/${kebabCase(post.category)}`}>{post.category}</Link></small></Breadcrumb>
           <Post>
             
             <Header>
@@ -214,10 +214,6 @@ query BlogPostBySlug($slug: String!, $category: String!) {
       tags
     }
     fields {
-      nextTitle
-      nextSlug
-      prevTitle
-      prevSlug
       slug
       date
     }

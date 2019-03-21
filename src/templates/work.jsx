@@ -72,15 +72,6 @@ export const pageQuery = graphql`
         }
         date
         category
-        tags
-      }
-      fields {
-        nextTitle
-        nextSlug
-        prevTitle
-        prevSlug
-        slug
-        date
       }
     }
   }
