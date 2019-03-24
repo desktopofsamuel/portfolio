@@ -9,7 +9,7 @@ category: "App Talk"
 tags: 
 - "app"
 
-cover: "/Pin.png"
+cover: "./Pin.png"
 
 
 ---

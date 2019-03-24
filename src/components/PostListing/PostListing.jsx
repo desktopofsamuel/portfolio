@@ -3,15 +3,16 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import { FaArrowRight } from "react-icons/fa";
 import PropTypes from "prop-types";
+import Img from "gatsby-image";
 
 const Block = styled.div`
   position: relative;
-  display: grid;
-  grid-template-rows: repeat(3, auto);
+  display: flex;
+  flex-flow: column;
   background: ${props => (props.invert ? `var(--color-white-700)` : `` )} ;
   padding: ${props => (props.invert ? `var(--padding-m)` : `var(--padding-m)` )}; 
   color: ${props => (props.invert ? `var(--color-black-500)` : `var(--color-black-500)` )};
-  align-content: flex-start;
+  justify-content: space-between;
   p {
     background: ${props => (props.invert ? `linear-gradient(to bottom,var(--color-black-500) 30%,rgba(18, 18, 18, 0))` : `linear-gradient(to bottom,var(--color-black-500) 30%,rgba(18, 18, 18, 0))` )};
     -webkit-background-clip: text;
@@ -35,17 +36,14 @@ const Block = styled.div`
 
 const Button = styled(Link)`
   margin: 0;
-  padding: 8px 0px;
   background: none;
-  align-self: flex-end;
   border: none;
   text-transform: uppercase;
   letter-spacing: 0.075em;
   cursor: pointer;
   display: inline;
   border-bottom: none;
-
-  
+  justify-self: flex-end;
 `;
 
 class PostListing extends React.Component {
@@ -67,6 +65,7 @@ class PostListing extends React.Component {
   render() {
     const { invert } = this.props;
     const postList = this.getPostList();
+
     return postList.map(post => (
       <Block className="block" invert={invert} key={post.title}>
         <h3><Link to={post.path}>
@@ -91,4 +90,5 @@ PostListing.propTypes = {
 
 PostListing.defaultProps = {
   invert: false,
+  
 }; 

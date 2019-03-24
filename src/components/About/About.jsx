@@ -28,7 +28,6 @@ const Intro = styled.div`
 class About extends Component {
   render() {
     return (
-
         <Content>        
           <div><img className="profile" src={Profile} width="100%" alt="Samuel W. Profile Photo"></img></div>
           <Intro className="textbig">
