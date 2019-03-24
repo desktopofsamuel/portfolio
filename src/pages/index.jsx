@@ -93,6 +93,9 @@ const BlogIntro = styled.div`
   background: #000;
   padding: var(--padding-m);
   color: var(--color-background-500);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   h3 {
     margin: 0;
   }
@@ -101,6 +104,14 @@ const BlogIntro = styled.div`
     margin: 1rem 0;
   }
 `;
+
+const BlogIntro_Top = styled.div``
+
+const BlogIntro_Bottom = styled.div``
+
+const BlogPost = styled(PostListing)`
+  
+`
 
 const DetailGrid = styled.div`
 display: grid;
@@ -159,13 +170,18 @@ class Post extends React.Component {
             </Row>
             <Row className="blog">
               <BlogIntro>
-                <h1>Blog</h1>
-                <p>I write about</p>
+                <BlogIntro_Top>
+                <h1>Blog</h1> 
+                </BlogIntro_Top>
+                <BlogIntro_Bottom>
+               <small>I write about</small>
                 <h3><Link to="categories/design-journal">#design</Link></h3>
                 <h3><Link to="categories/app-talk">#technology</Link> and</h3>
                 <h3><Link to="categories/productivity">#productivity</Link>.</h3>
+                </BlogIntro_Bottom>
               </BlogIntro>
-              <PostListing postEdges={postEdges} invert/>
+              
+              <BlogPost postEdges={postEdges} invert/>
             </Row>
             <Now className="full-width"/>
 

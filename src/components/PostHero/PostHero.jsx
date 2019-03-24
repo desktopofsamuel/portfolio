@@ -2,14 +2,26 @@ import React, { Component } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 
-const Grid = styled.div`
+const Grid = styled.section`
+
+`
+
+const ListItem = styled.article`
 display: grid;
-grid-template-columns: repeat(2fr, auto);
+grid-template-columns: 20% 80%;
+border-bottom: 1px #CED8E0 solid;
+margin-bottom: 1.5rem;
 `
 
-const Hero = styled.div`
+const Hero = styled.h1`
+font-size: 1.5rem;
+
+`
+const ListLeft = styled.div`
 `
 
+const ListRight = styled.div`
+`
 class PostHero extends React.Component {
   getPostList() {
     const postList = [];
@@ -32,9 +44,14 @@ class PostHero extends React.Component {
       <Grid>
         {/* Your post list here. */
         postList.map(post => (
+          <ListItem>
+          <ListLeft><small>{post.date}</small></ListLeft>
+          <ListRight>
           <Link to={post.path} key={post.title}>
-            <Hero><h1>{post.title}</h1></Hero>
+            <Hero>{post.title}</Hero>
           </Link>
+          </ListRight>
+          </ListItem>
         ))}
       </Grid>
     );
