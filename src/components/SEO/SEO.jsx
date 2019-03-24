@@ -70,9 +70,9 @@ class SEO extends Component {
     return (
       <Helmet>
         {/* General tags */}
+        <meta name="title" content={title} />
         <meta name="description" content={description} />
         <meta name="image" content={image} />
-
         {/* Schema.org tags */}
         <script type="application/ld+json">
           {JSON.stringify(schemaOrgJSONLD)}
