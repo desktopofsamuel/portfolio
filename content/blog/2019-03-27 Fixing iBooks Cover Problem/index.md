@@ -1,5 +1,5 @@
 ---
-path: "fixing-iOS-books-cover-problem-with-ePub"
+path: "fixing-iOS-books-cover-problem-with-epub"
 date: "2019-02-17"
 
 title: "Fixing iOS Books Cover Problem with ePUB"
@@ -10,7 +10,7 @@ tags:
 - "Read-It-Later"
 - "Todoist"
 
-cover: "/iPad.png"
+cover: "./iPad.png"
 
 ---
 
