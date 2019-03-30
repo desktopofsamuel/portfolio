@@ -10,7 +10,7 @@ tags:
 - "Read-It-Later"
 - "Todoist"
 
-cover: "/read-it-later-v3.png"
+cover: "./read-it-later-v3.png"
 
 ---
 
