@@ -22,6 +22,12 @@
     --grid-gap: 24px;
 }
 
+@media only screen and (max-width: 768px) {
+    :root {
+       font-size: 18px;
+    }
+}
+
 * {
     box-sizing: border-box;
 }
