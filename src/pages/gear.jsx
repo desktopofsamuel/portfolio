@@ -15,7 +15,7 @@ const Content = styled.main`
   }
 `
 
-class GearPage extends React.Component {
+class SetupPage extends React.Component {
   render() {
     return (
       <Layout>
@@ -27,14 +27,15 @@ class GearPage extends React.Component {
             <IconList image={this.props.data.ipad.childImageSharp.fluid} title="iPad Mini 5" subtitle="2019" content="I have recently updated"></IconList>
             <IconList image={this.props.data.ipad.childImageSharp.fluid} title="Macbook Pro 13'" subtitle="2019" content="I have recently updated"></IconList>
             <h3>Apps</h3>
-            <IconList image={this.props.data.figma.childImageSharp.fluid} title="Figma" subtitle="UI/UX Design" content={["I have recently updated", <a href="www.figma.com"> Figma </a> ]}></IconList>
+            <IconList image={this.props.data.figma.childImageSharp.fluid} title="Figma" subtitle="UI/UX Design" content={["I have recently updated", <a href="www.figma.com">Figma </a> ]}></IconList> 
+            <IconList image={this.props.data.todoist.childImageSharp.fluid} title="Todoist" subtitle="Daily task management" content={["i have been using Todoist", <a href="www.todoist.com">Todoist </a> ]}></IconList>
           </Content>
       </Layout>
     );
   }
 }
 
-export default GearPage;
+export default SetupPage;
 
 export const fluidImage = graphql`
 fragment fluidImage on File {
@@ -52,6 +53,9 @@ query {
     ...fluidImage
   }
   figma: file(relativePath: { eq: "images/gear/figma.png" }) {
+    ...fluidImage
+  }
+  todoist: file(relativePath: { eq: "images/gear/todoist.png" }) {
     ...fluidImage
   }    
 }
