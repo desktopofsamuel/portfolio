@@ -75,7 +75,7 @@ export default props =>
             <Name><h3>My Passions</h3></Name>
             <Content>
                 <Text>Design and Technology</Text>
-                <Text>Visit cities throught the lens</Text>
+                <Text>Visit cities <a href="https://photo.desktopofsamuel.com">throught the lens</a></Text>
             </Content>
         </Box>
         <Box>

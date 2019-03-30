@@ -32,9 +32,11 @@ margin: 0 auto;
 const Main = styled.main`
 `
 
-const Title = styled.h3``
+const Title = styled.h3`
+margin: 0;
+`
 
-const Subtitle = styled.h4``
+const Subtitle = styled.small``
 
 const Content = styled.p``
 
