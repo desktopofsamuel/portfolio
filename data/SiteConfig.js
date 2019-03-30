@@ -5,7 +5,7 @@ module.exports = {
   siteLogo: "../src/favicon.png", // Logo used for SEO and manifest.
   siteUrl: "https://desktopofsamuel.com", // Domain of your website without pathPrefix.
   pathPrefix: "/", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
-  siteDescription: "Intersection of Design and Technology", // Website description used for RSS feeds/meta description tag.
+  siteDescription: "Intersection of Design & Technology - Hong Kong UI/UX Designer, User Interface Design, User Experience Design, Product Design, Design Thinking, Product Development, Brand Design - A personal design portfolio, also journal for designers' side-projects.", // Website description used for RSS feeds/meta description tag.
   siteRss: "/rss.xml", // Path to the RSS file.
   googleAnalyticsID: "UA-114278308-5", // GA tracking ID.
   postDefaultCategoryID: "Technology", // Default category for posts.

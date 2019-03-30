@@ -2,35 +2,31 @@ import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
-import PostListing from "../components/PostListing/PostListing";
+import BigPostList from "../components/BigPostList/BigPostList";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 import PostHero from "../components/PostHero/PostHero";
 import styled from "styled-components";
 
-const BlogBlock = styled.div`
+
+const BlogLayout = styled.main`
+  width: 70vw;
+  margin: 10vh auto;
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
+`
+const Container = styled.section`
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-gap: var(--padding-l);
- 
+  grid-gap: 5rem;
+  grid-template-columns: 1fr 1fr;
 
-  h3 {
-    font-size: calc(30px + (48 - 36) * ((100vw - 300px) / (1600 - 300)));
+  @media only screen and (max-width: 1280px) {
+    display: block;
   }
+`
 
-  .block {
-    display: grid;
-    margin: 0 auto;
-    grid-template-columns:  repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: var(--padding-m);
-    border-bottom: 1px var(--color-black-500) solid;
-
-    p {
-      font-size: 1rem;
-      background-clip: none;
-      -webkit-text-fill-color: unset;
-    }
-  }
+const PostList = styled(BigPostList)`
 `
 
 class Index extends React.Component {
@@ -39,12 +35,15 @@ class Index extends React.Component {
     const listEdges = this.props.data.list.edges;
     return (
       <Layout>
-        <div className="index-container">
-          <Helmet title={config.siteTitle} />
+          <Helmet title={`Blog | ${config.siteTitle}`} />
           <SEO />
-          <BlogBlock><PostListing postEdges={postEdges} /></BlogBlock>
-          <PostHero postEdges={listEdges} />
-        </div>
+          <BlogLayout>
+            <h1>Blog</h1>
+            <Container>
+              <PostList postEdges={postEdges} />
+            </Container>
+            <PostHero postEdges={listEdges} />
+          </BlogLayout>
       </Layout>
     );
   }
@@ -64,14 +63,31 @@ export const pageQuery = graphql`
         node {
           fields {
             slug
-            date
+            date(formatString: "MMM DD, YYYY", locale: "en")
           }
           excerpt(pruneLength: 300)
           timeToRead
           frontmatter {
             title
             tags
-            date
+            category
+            cover {
+              publicURL
+              size
+              childImageSharp {
+                sizes(maxWidth: 1140) {
+                  base64
+                  aspectRatio
+                  src
+                  srcSet
+                  srcWebp
+                  srcSetWebp
+                  sizes
+                  originalImg
+                  originalName
+                }
+              }
+            }
           }
         }
       }
@@ -86,14 +102,13 @@ export const pageQuery = graphql`
         node {
           fields {
             slug
-            date
+            date(formatString: "MMM DD, YYYY", locale: "en")
           }
           excerpt(pruneLength: 600)
           timeToRead
           frontmatter {
             title
             tags
-            date
           }
         }
       }

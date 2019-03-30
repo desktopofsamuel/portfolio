@@ -5,8 +5,17 @@ import Layout from "../layout";
 import PostListing from "../components/PostListing/PostListing";
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
+import BigPostList from "../components/BigPostList/BigPostList";
 
+const Container = styled.section`
+  display: grid;
+  grid-gap: 5rem;
+  grid-template-columns: 1fr 1fr;
 
+  @media only screen and (max-width: 1280px) {
+    display: block;
+  }
+`
 const Post = styled(PostListing)`
   grid-area: post;
 `
@@ -40,7 +49,7 @@ export default class CategoryTemplate extends React.Component {
           <Grid>
           <Hero><h1>Posts in {category}</h1></Hero>
           <Row>
-          <Post invert postEdges={postEdges} />
+          <Container><BigPostList postEdges={postEdges} /></Container>
           </Row>
           </Grid>
         </div>
@@ -62,7 +71,7 @@ export const pageQuery = graphql`
         node {
           fields {
             slug
-            date
+            date(formatString: "MMM DD, YYYY", locale: "en")
           }
           excerpt(pruneLength: 500)
           timeToRead
