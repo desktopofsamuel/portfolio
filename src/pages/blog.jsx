@@ -39,9 +39,9 @@ class Index extends React.Component {
           <SEO />
           <BlogLayout>
             <h1>Blog</h1>
-            <Container>
+            {/*<Container>
               <PostList postEdges={postEdges} />
-            </Container>
+            </Container>*/}
             <PostHero postEdges={listEdges} />
           </BlogLayout>
       </Layout>
@@ -94,7 +94,6 @@ export const pageQuery = graphql`
     }
     list: allMarkdownRemark(
       limit: 2000
-      skip: 10
       sort: { fields: [fields___date], order: DESC }
       filter: {fileAbsolutePath: {regex: "/blog/"}}
     ) {
@@ -104,7 +103,7 @@ export const pageQuery = graphql`
             slug
             date(formatString: "MMM DD, YYYY", locale: "en")
           }
-          excerpt(pruneLength: 600)
+          excerpt(pruneLength: 150)
           timeToRead
           frontmatter {
             title

@@ -2,8 +2,16 @@ import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
-import PostListing from "../components/PostListing/PostListing";
+import BigPostList from "../components/BigPostList/BigPostList";
 import config from "../../data/SiteConfig";
+import styled from "styled-components";
+
+const Grid = styled.section`
+max-width: 768px;
+margin: 0 auto;`
+
+const PostList = styled(BigPostList)`
+`
 
 export default class TagTemplate extends React.Component {
   render() {
@@ -13,7 +21,7 @@ export default class TagTemplate extends React.Component {
       <Layout>
         <div className="tag-container">
           <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitle}`} />
-          <PostListing postEdges={postEdges} />
+          <Grid><PostList postEdges={postEdges} /></Grid>
         </div>
       </Layout>
     );

@@ -175,9 +175,9 @@ class Post extends React.Component {
                 </BlogIntro_Top>
                 <BlogIntro_Bottom>
                <small>I write about</small>
-                <h3><Link to="categories/design-journal">#design</Link></h3>
-                <h3><Link to="categories/app-talk">#technology</Link> and</h3>
-                <h3><Link to="categories/productivity">#productivity</Link>.</h3>
+                <h3><a href="categories/design-journal">#design</a></h3>
+                <h3><a href="categories/app-talk">#technology</a> and</h3>
+                <h3><a href="categories/productivity">#productivity</a>.</h3>
                 </BlogIntro_Bottom>
               </BlogIntro>
               

@@ -21,6 +21,7 @@ const Container = styled.article`
 
 const ListImage = styled(Img)`
   grid-area: image;
+  margin-bottom: 1rem;
 `
 
 const ListTitle = styled.h1`

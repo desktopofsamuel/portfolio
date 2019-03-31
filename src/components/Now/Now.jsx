@@ -68,14 +68,14 @@ export default props =>
             <Name><h3>Projects</h3></Name>
             <Content>
                 <Text>Collecting Design <a href="https://pin.desktopofsamuel.com">Pins</a></Text>
-                <Text>My React Portfolio</Text>
+                <Text>What you are visiting...this website</Text>
             </Content>
         </Box>
         <Box>
             <Name><h3>My Passions</h3></Name>
             <Content>
                 <Text>Design and Technology</Text>
-                <Text>Visit cities <a href="https://photo.desktopofsamuel.com">throught the lens</a></Text>
+                <Text>Visiting cities <a href="https://photo.desktopofsamuel.com">through the lens</a></Text>
             </Content>
         </Box>
         <Box>
