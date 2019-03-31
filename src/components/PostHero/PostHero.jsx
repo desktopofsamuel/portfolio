@@ -10,7 +10,8 @@ const ListItem = styled.article`
 display: grid;
 grid-template-columns: 20% 80%;
 border-bottom: 1px #CED8E0 solid;
-margin-bottom: 1.5rem;
+margin-bottom: var(--padding-m);
+width: 80%;
 `
 
 const Hero = styled.h1`
@@ -50,6 +51,7 @@ class PostHero extends React.Component {
           <Link to={post.path} key={post.title}>
             <Hero>{post.title}</Hero>
           </Link>
+          <p>{post.excerpt}</p>
           </ListRight>
           </ListItem>
         ))}
