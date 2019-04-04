@@ -37,4 +37,12 @@ Both options look similar but it functions separately. By turning them on, all b
 
 ## How to fix book cover display problem?
 
-Current workaround requires you t
+Current workaround requires you to have either original ePUB copy or a Mac, which you can retrieve the ePUB from Books App after syncing with the cloud. 
+
+My workaround basically removes your books and reimport it immediately. Since all reading metadata (bookmark, highlights and notes) supposingly remain in the Books app, as long as the files imported are identical to your library. None of the data will be lost. 
+
+![](./ipad-2.png)
+
+After retrieve book source files, I uploaded all of them to Google Drive. Then I used “Open in” feature to move the ePUB to Books. Cover should be recovered immediately. Of course you should start with one book first and proceed cautiously one by one.
+
+That’s it! Feel free to reach out if there are any questions, I will answer them if it help.
