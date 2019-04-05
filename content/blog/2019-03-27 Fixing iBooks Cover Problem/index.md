@@ -27,8 +27,8 @@ After testing on several devices, I realise the cover is still there but unable 
 
 Make sure you have plenty of space on your iCloud. I'm using 5GB free plan right now but my books only occupy around 200MBs. There are two places in Settings you will need to check. 
 
-|  ![](./ipad-settings-1.PNG)  |  ![](./ipad-settings-2.PNG)|
-| --- | --- |
+![](./ipad-settings.jpg)
+
 
 1. Settings - Passwords & Accounts - iCloud - iCloud Drive - Books
 2. Settings - Books - Reading Now & iCloud Drive
