@@ -22,6 +22,12 @@
     --grid-gap: 24px;
 }
 
+@media only screen and (max-width: 768px) {
+    :root {
+       font-size: 18px;
+    }
+}
+
 * {
     box-sizing: border-box;
 }
@@ -52,7 +58,7 @@ h1 {
 
 h2 {
     margin-top: 0;
-    font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (1600 - 320)));
+    font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1600 - 320)));
     font-family: var(--secondary-font);
     font-weight: 500;
     line-height: calc(24px + (36 - 24) * ((100vw - 320px) / (1600 - 320)));
