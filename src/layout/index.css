@@ -9,6 +9,7 @@
     --color-white-500: #f7f7f7;
     --color-white-700: whitesmoke;
     --color-black-500: #0d0d0d;
+    --color-grey-300:#939393;
     --color-grey-500:#737373;
     --color-secondary-500: #535E7C;
     --color-secondary-300: #7082b5;
@@ -130,11 +131,16 @@ a {
     border-bottom: 2px solid var(--color-palette-500);
     color: inherit;
     text-decoration: none;
+    cursor: pointer;
 }
 
 a[href$=".jpg"], a[href$=".png"], a[href$=".svg"]  {
     border: none;
   }
+
+a.noeffect {
+    border: none;
+}
 
 a > button {
     border-bottom: none;
@@ -148,6 +154,15 @@ button {
     font-size: 12px;
     letter-spacing: 0.075rem;
     cursor: pointer;
+}
+
+a.linkicon {
+    color: var(--color-grey-500);
+    transition: color 0.3s ease-in-out;
+}
+
+a.linkicon:hover {
+    color: var(--color-grey-300);
 }
 
 blockquote {
