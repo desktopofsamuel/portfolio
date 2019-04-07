@@ -51,7 +51,9 @@ const Content = styled.div`
 `
 
 const Text = styled.h2`
-
+font-family: var(--secondary-font);
+font-weight: 500;
+font-size: 1.25rem;
 `
 export default props => 
 

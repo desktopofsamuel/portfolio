@@ -14,8 +14,6 @@
     --color-secondary-500: #535E7C;
     --color-secondary-300: #7082b5;
     --color-transparent: rgba(0,0,0,0);
-    --device-tablet: 768px;
-    --device-phone: 480px;
     --padding-s: 1rem;
     --padding-m: 2rem;
     --padding-l: 4rem;
@@ -59,10 +57,10 @@ h1 {
 
 h2 {
     margin-top: 0;
-    font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1600 - 320)));
-    font-family: var(--secondary-font);
-    font-weight: 500;
-    line-height: calc(24px + (36 - 24) * ((100vw - 320px) / (1600 - 320)));
+    font-size: calc(24px + (28 - 24) * ((100vw - 320px) / (1600 - 320)));
+    font-family: var(--primary-font);
+    font-weight: 700;
+    line-height: calc(32px + (36 - 32) * ((100vw - 320px) / (1600 - 320)));
 
 }
 

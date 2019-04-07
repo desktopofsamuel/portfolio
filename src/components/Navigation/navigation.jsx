@@ -16,7 +16,7 @@ z-index: 1000;
 padding: 8px;
 justify-content: center;
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   display: none;
 }
 `
@@ -28,18 +28,24 @@ grid-gap: 16px;
 align-content: flex-end;
 `
 
-const NavBar = styled.div`
-margin-left: 50px;
-padding: var(--padding-m);
+const Main = styled.div`
+display: grid;
+grid-template-columns: minmax(auto,5%) [content] auto minmax(auto,5%);
+`
 
-@media only screen and (max-width: 768px) {
+const NavBar = styled.div`
+padding: 2rem 0;
+margin-left: 50px;
+grid-area: content;
+
+@media only screen and (max-width: 1024px) {
   margin-left: 0px;
+  padding: 1.5rem 0;
 }
 `
 
-const SiteTitle = styled.h2 `
+const SiteTitle = styled.h3 `
 font-family: var(--primary-font);
-font-weight: 700;
 
 `
 
@@ -49,14 +55,16 @@ export default class Navigation extends React.Component {
       <div>
         <LeftSidebar>
           <IconWrapper>
-            <a class="noeffect linkicon" href="/"><FaDribbble size="1.25rem"/></a>
-            <a class="noeffect linkicon" href="/"><FaTwitter  size="1.25rem"/></a>
-            <a class="noeffect linkicon" href="/"><FaInstagram  size="1.25rem"/></a>
+            <a class="noeffect linkicon" href="https://dribbble.com/desktopofsamuel" target="blank"><FaDribbble size="1.25rem"/></a>
+            <a class="noeffect linkicon" href="https://twitter.com/desktopofsamuel" target="blank"><FaTwitter  size="1.25rem"/></a>
+            <a class="noeffect linkicon" href="https://instagram.com/desktopofsamuelwong" target="blank"><FaInstagram  size="1.25rem"/></a>
           </IconWrapper>
         </LeftSidebar>
+        <Main>
         <NavBar>
         <SiteTitle><Link to="/">Samuel Wong</Link> - Product Designer</SiteTitle>
         </NavBar>
+        </Main>
         </div>
             );
           }

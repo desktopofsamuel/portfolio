@@ -2,7 +2,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
-import "./index.css";
+import "../layout/index.css";
 import Navigation from "../components/Navigation/navigation";
 import Footer from "../components/Footer/Footer"
 
@@ -14,13 +14,16 @@ const Layout = styled.div`
 
 const Main = styled.main`
   display: grid;
-  grid-template-columns: minmax(auto,5%) [content] minmax(auto, 1000px) minmax(auto,5%);
-  max-width: 1000px;
-  margin: 0 auto;
+  grid-template-columns: minmax(auto,5%) [content] minmax(auto, 1440px) minmax(auto,5%);
+  margin-left: 50px;
+  @media screen and (max-width: 1024px) {
+    margin-left: 0px
+  }
 `
 
 const Content = styled.div`
   grid-area: content;
+  margin: 0 auto;
 `
 
 export default class MainLayout extends React.Component {

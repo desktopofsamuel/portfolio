@@ -1,7 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
-import Layout from "../layout";
+import Layout from "../layout-full";
 import styled from "styled-components";
 import Link from "gatsby-link";
 import UserInfo from "../components/UserInfo/UserInfo";
@@ -96,6 +96,7 @@ const Sidebar = styled.aside`
 
 const PostTitle = styled.h1`
   grid-area: title;
+  font-size: 2rem;
 `
 const PostMeta = styled.small`
 margin: 0;
