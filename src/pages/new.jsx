@@ -3,29 +3,26 @@ import Helmet from "react-helmet";
 import styled from "styled-components";
 import { graphql, Link } from "gatsby";
 import config from "../../data/SiteConfig"
-import Navigation from "../components/Navigation/navigation";
-import Layout from "../layout-full/";
+import Layout from "../layout"
 import WorkHero from "../components/WorkHero/WorkHero";
+import BlogListing from "../components/PostListing/PostListing"
+import BlogIcon from "../../static/SVG/Blog.svg"
+import Now from "../components/Now/Now"
 
 const Row = styled.section`
-width: 100%;
-padding: 3rem 0;
-margin: 0 auto;
+padding: 8rem 0;
 background: white; 
 `
 
 const BoxContent = styled.div`
-max-width: 960px;
-padding: 1rem 0;
+max-width: 60rem;
 margin: 0 auto;
-
 @media only screen and (max-width: 768px) {
-padding: 1rem 1rem;
+padding: 1rem 2rem;
 }
-
 `
 
-const Intro = styled(BoxContent)`
+const Intro = styled(Row)`
 justify-content: center;
 text-align: center;
 
@@ -55,7 +52,7 @@ display: flex;
 flex-direction: row;
 justify-content: flex-end;
 align-items: flex-end;
-
+margin-top: -24px;
 
 & > * {
   margin-right: 16px;
@@ -63,7 +60,7 @@ align-items: flex-end;
   position: relative;
   left: 0;
   bottom: 20px;
-  transition: all 0.1s ease-in;
+  transition: all 0.3s ease-in;
 
   &:hover {
     bottom: 30px;
@@ -111,6 +108,11 @@ const FullGreyRow = styled(Row)`
 background: var(--color-white-700);
 `
 
+const FullYellowRow = styled(Row)`
+background: #FEFDF4;
+
+`
+
 const AboutBox = styled.div`
 `
 
@@ -125,7 +127,7 @@ width: 55ch;
 const Subtitle = styled.p`
 font-family: var(--primary-font);
 font-weight: 500;
-text-align: center;
+
 `
 
 const Center = styled.div`
@@ -134,16 +136,66 @@ width: 100%;
 align-items: center;
 `
 
+const Blog = styled.section`
+display: block;
+position: relative;
+
+
+@media only screen and (min-width: 768px) {
+  display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+overflow-x: auto;
+  
+& > * {
+  flex: 0 0 auto;
+  width: 40%;
+}
+}
+
+
+
+}
+
+
+
+&::-webkit-scrollbar {
+  display: none; /*no use now*/
+  height: 8px;
+  overflow: visible;
+  background: var(--color-white-500);
+}
+
+::-webkit-scrollbar-thumb:horizontal{
+  background-color: var(--color-grey-300);
+  border-radius: 10px;
+  width: 10px;
+}
+`
+
+const Overlay = styled.div`
+position: absolute;
+right: 0;
+height: 100%;
+width: 10%;
+background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
+z-index: 1000;
+`
+
+const BlogIntro = styled.div`
+max-width: 30ch;
+`
 
 class New extends React.Component {
   render() {
-    const postEdges = this.props.data.Work.edges;
+    const blogEdges = this.props.data.Blog.edges;
+    const workEdges = this.props.data.Work.edges;
     return (
       <div>
         <Helmet>
           <meta name="description" content={config.siteDescription} />
         </Helmet>
-        <Navigation/>
+        <Layout>
         <Intro>
           <Hero>
           <small>When Design Meets Technology</small>
@@ -173,16 +225,14 @@ class New extends React.Component {
           <CTAButton>Get In Touch</CTAButton>
         </Intro>
         <Row>
-          <BoxContent>
             <HalfBox>
             <small>I'm working as</small>
             <h2>Product Designer</h2>
             <p>I’m currently based in Hong Kong, specialising in interface and user-experience design, crafting outstanding products. <br/> <br/> Currently, I lead design at Hyperair as Principal Designer. Before that, I worked as Cross-Content Intern at iTunes & App Store, Apple.</p>
             <Link to="/about">About Me →</Link>
             </HalfBox>
-          </BoxContent>
         </Row>
-        <FullGreyRow>
+        <FullGreyRow className="full-bleed">
           <BoxContent>
             <AboutBox>
               <small>Let's See</small>
@@ -190,15 +240,26 @@ class New extends React.Component {
               <p>I’m currently based in Hong Kong, specialising in interface and user-experienc design, crafting outstanding products.  <br/>
               Currently, I lead design at Hyperair as Principal Designer. Before that, I worked as Cross-Content Intern at iTunes & App Store, Apple.</p>
             </AboutBox>
-            <WorkHero postEdges={postEdges}/>
+            <WorkHero postEdges={workEdges}/>
             <Center><MoreButton>View More →</MoreButton></Center>
           </BoxContent>
         </FullGreyRow>
         <Row>
-          <BoxContent>
-
-          </BoxContent>
+          <Blog>
+            <BlogIntro>
+              <img width="72px" src={BlogIcon}></img>
+              <h2>Blog</h2>
+              <Subtitle>I write about design, technology and productivity.</Subtitle>
+            </BlogIntro>
+            <BlogListing postEdges={blogEdges}/>
+          </Blog>
         </Row>
+        <FullYellowRow className="full-bleed">
+          <BoxContent>
+            <Now/>
+          </BoxContent>
+        </FullYellowRow>
+        </Layout>
       </div>
 
 );
@@ -250,7 +311,7 @@ query IndexQuery {
     }
   }
   Blog: allMarkdownRemark(
-    limit: 3
+    limit: 4
     sort: { fields: [fields___date], order: DESC }
   ) {
     edges {

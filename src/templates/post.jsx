@@ -1,7 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
-import Layout from "../layout-full";
+import Layout from "../layout";
 import styled from "styled-components";
 import Link from "gatsby-link";
 import UserInfo from "../components/UserInfo/UserInfo";
@@ -22,7 +22,8 @@ const Post = styled.article`
   @media screen and (min-width: 1440px) {
     display: grid;
     grid-gap: 36px;
-    grid-template-columns: [head] minmax(auto, 40ch) [main] minmax(23ch,55ch) [meta] 20%;
+    grid-template-columns: [head] minmax(auto, 60ch) [main] minmax(23ch,55ch) [meta] minmax(auto,20%);
+
   }
 
   @media screen and (min-width: 768px) and (max-width: 1440px)  {
@@ -142,7 +143,7 @@ export default class PostTemplate extends React.Component {
     }
 
     return (
-      <Layout>  
+      <Layout className="post-template">  
           <Helmet>
             <title>{`${post.title} | ${config.siteTitle}`}</title>
           </Helmet>

@@ -224,3 +224,9 @@ p:first-child {
 .brand {
     color: var(--color-brand-500);
 }
+
+.full-bleed {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
