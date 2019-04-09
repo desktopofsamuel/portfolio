@@ -74,7 +74,7 @@ class PostListing extends React.Component {
         <p>{post.excerpt}</p>
         <Button invert={invert} to={post.path}>
           <h5>
-            Read On <FaArrowRight />
+            Read On →
           </h5>
         </Button>
       </Block>

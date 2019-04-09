@@ -3,7 +3,7 @@ import Helmet from "react-helmet";
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import "../layout/index.css";
-import Navigation from "../components/Navigation/navigation";
+import Navigation from "../components/Navigation/Navigation";
 import Footer from "../components/Footer/Footer"
 
 
