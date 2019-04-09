@@ -3,7 +3,7 @@ import Helmet from "react-helmet";
 import styled from "styled-components";
 import { graphql, Link } from "gatsby";
 import config from "../../data/SiteConfig"
-import Navigation from "../components/Navigation/Navigation";
+import Navigation from "../components/Navigation/navigation";
 import Layout from "../layout-full/";
 import WorkHero from "../components/WorkHero/WorkHero";
 
