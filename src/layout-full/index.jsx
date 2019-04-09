@@ -3,7 +3,7 @@ import Helmet from "react-helmet";
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import "../layout/index.css";
-import Navigation from "../components/Navigation/Navigation";
+import Nav from "../components/Navigation/Navigation";
 import Footer from "../components/Footer/Footer"
 
 
@@ -35,7 +35,7 @@ export default class MainLayout extends React.Component {
           <meta name="description" content={config.siteDescription} />
         </Helmet>
         <Layout>
-        <Navigation />
+        <Nav />
         <Main>
         <Content>
         {children}
