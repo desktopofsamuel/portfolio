@@ -12,7 +12,7 @@ grid-template-columns: [main] auto;
 const Main = styled.div`
 grid-area: main;
 display: grid;
-grid-template-columns: repeat(8, minmax(0, 1fr));
+grid-template-columns: repeat(10, minmax(0, 1fr));
 
 grid-gap: var(--padding-l);
 
@@ -23,12 +23,12 @@ grid-gap: var(--padding-l);
 
 const Box = styled.div`
 display: grid;
-grid-column-start: span 4;
-grid-template-columns: minmax(auto, 30%) auto;
+grid-column-start: span 5;
+grid-template-columns: 30% auto;
 grid-gap: var(--padding-s);
 
 @media only screen and (max-width: 768px) {
-    grid-column-start: span 8;
+    grid-column-start: span 10;
     grid-template-columns: 1fr;
     padding: var(--padding-s);
     grid-gap: 0;

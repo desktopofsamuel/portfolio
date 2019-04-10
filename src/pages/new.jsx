@@ -12,6 +12,10 @@ import Now from "../components/Now/Now"
 const Row = styled.section`
 padding: 8rem 0;
 background: white; 
+
+&:first-child {
+  padding-bottom: 0;
+}
 `
 
 const BoxContent = styled.div`
@@ -155,10 +159,6 @@ overflow-x: auto;
 
 
 
-}
-
-
-
 &::-webkit-scrollbar {
   display: none; /*no use now*/
   height: 8px;
@@ -166,7 +166,7 @@ overflow-x: auto;
   background: var(--color-white-500);
 }
 
-::-webkit-scrollbar-thumb:horizontal{
+&::-webkit-scrollbar-thumb:horizontal{
   background-color: var(--color-grey-300);
   border-radius: 10px;
   width: 10px;

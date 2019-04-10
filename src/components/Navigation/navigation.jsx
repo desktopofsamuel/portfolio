@@ -44,9 +44,8 @@ grid-area: content;
 }
 `
 
-const SiteTitle = styled.h3 `
+const SiteTitle = styled.h5`
 font-family: var(--primary-font);
-
 `
 
 export default class Navigation extends React.Component {
