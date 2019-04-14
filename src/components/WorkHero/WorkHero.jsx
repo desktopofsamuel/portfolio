@@ -10,7 +10,7 @@ const Grid = styled.section`
 const ListItem = styled.div`
 display: grid;
 grid-template-columns: minmax(auto,30%) minmax(auto,1200px);
-border-left: 3px ${props => props.color || 'var(--color-brand-500)'} solid;
+border-left: 3px var(--color-brand-500) solid;
 margin-bottom: var(--padding-m);
 
 @media only screen and (max-width: 768px) {
@@ -26,7 +26,6 @@ font-size: 1.5rem;
 `
 
 const WorkImg = styled(Img)`
-max-height: 300px;
 `
 const ListLeft = styled.div`
 background: white;
@@ -55,6 +54,7 @@ class WorkHero extends React.Component {
         excerpt: postEdge.node.excerpt,
         timeToRead: postEdge.node.timeToRead,
         color: postEdge.node.frontmatter.color,
+        project: postEdge.node.frontmatter.project,
       });
     });
     return postList;
@@ -66,10 +66,10 @@ class WorkHero extends React.Component {
         {/* Your post list here. */
         postList.map(post => (
           <Link to={`/work/${post.path}`} key={post.title}>
-            <ListItem>
+            <ListItem style={{ borderLeftColor: `${post.color}`}}>
               <ListLeft>
                 <div>
-                <small>01.hello</small>
+                <small>{post.project}</small>
                 <h3>{post.title}</h3>
                 </div>
                 <ReadButton to={`/work/${post.path}`}><h5>Read On →</h5></ReadButton>

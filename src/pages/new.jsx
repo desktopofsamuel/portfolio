@@ -6,8 +6,10 @@ import config from "../../data/SiteConfig"
 import Layout from "../layout"
 import WorkHero from "../components/WorkHero/WorkHero";
 import BlogListing from "../components/PostListing/PostListing"
+import WorkIcon from "../../static/SVG/Work.svg"
 import BlogIcon from "../../static/SVG/Blog.svg"
 import Now from "../components/Now/Now"
+
 
 const Row = styled.section`
 padding: 8rem 0;
@@ -114,10 +116,23 @@ background: var(--color-white-700);
 
 const FullYellowRow = styled(Row)`
 background: #FEFDF4;
-
+`
+const ContactButton = styled(CTAButton)`
+color: var(--color-secondary-500);
+a {
+  border: none;
+}
+`
+const AboutBox = styled.div`
+width: 100%;
+display: flex;
 `
 
-const AboutBox = styled.div`
+const AboutIntro = styled.div`
+`
+
+const AboutIcon = styled.div`
+justify-self: flex-end;
 `
 
 const HalfBox = styled.div`
@@ -138,6 +153,7 @@ const Center = styled.div`
 display: flex;
 width: 100%;
 align-items: center;
+text-align: center;
 `
 
 const Blog = styled.section`
@@ -186,6 +202,14 @@ const BlogIntro = styled.div`
 max-width: 30ch;
 `
 
+const Contact = styled.div`
+display: inline-block;
+
+h2 {
+  color: var(--color-secondary-500)
+}
+`
+
 class New extends React.Component {
   render() {
     const blogEdges = this.props.data.Blog.edges;
@@ -226,7 +250,7 @@ class New extends React.Component {
         </Intro>
         <Row>
             <HalfBox>
-            <small>I'm working as</small>
+            <small>I'm working as a</small>
             <h2>Product Designer</h2>
             <p>I’m currently based in Hong Kong, specialising in interface and user-experience design, crafting outstanding products. <br/> <br/> Currently, I lead design at Hyperair as Principal Designer. Before that, I worked as Cross-Content Intern at iTunes & App Store, Apple.</p>
             <Link to="/about">About Me →</Link>
@@ -235,10 +259,10 @@ class New extends React.Component {
         <FullGreyRow className="full-bleed">
           <BoxContent>
             <AboutBox>
-              <small>Let's See</small>
+              <AboutIntro><small>Let's See</small>
               <h2>My Work</h2>
-              <p>I’m currently based in Hong Kong, specialising in interface and user-experienc design, crafting outstanding products.  <br/>
-              Currently, I lead design at Hyperair as Principal Designer. Before that, I worked as Cross-Content Intern at iTunes & App Store, Apple.</p>
+              <p>I’m currently based in Hong Kong, specialising in interface and user-experienc design</p></AboutIntro>
+              <AboutIcon><img width="72px" src={WorkIcon}></img></AboutIcon>
             </AboutBox>
             <WorkHero postEdges={workEdges}/>
             <Center><MoreButton>View More →</MoreButton></Center>
@@ -259,6 +283,13 @@ class New extends React.Component {
             <Now/>
           </BoxContent>
         </FullYellowRow>
+        <Row>
+          <Contact>
+            <small>SIMPLICITY IS A STATE OF MIND.</small>
+            <h2>Start the conversation to manage complexity.</h2>
+            <ContactButton><a href="mailto:sammatwong@gmail.com"><small>Let's Talk</small></a></ContactButton>
+          </Contact>
+        </Row>
         </Layout>
       </div>
 
@@ -288,11 +319,13 @@ query IndexQuery {
           title
           path
           tags
+          color
+          project
           cover {
             publicURL
             size
             childImageSharp {
-              sizes(maxWidth: 1140) {
+              sizes(maxWidth: 1200) {
                 base64
                 aspectRatio
                 src
