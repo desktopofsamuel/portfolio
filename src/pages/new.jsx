@@ -144,6 +144,7 @@ width: 55ch;
 `
 
 const Subtitle = styled.p`
+font-size: 1.125rem;
 font-family: var(--primary-font);
 font-weight: 500;
 
@@ -261,7 +262,7 @@ class New extends React.Component {
             <AboutBox>
               <AboutIntro><small>Let's See</small>
               <h2>My Work</h2>
-              <p>I’m currently based in Hong Kong, specialising in interface and user-experienc design</p></AboutIntro>
+              <p>Years of experience in delivering elegant solutions for web and app.</p></AboutIntro>
               <AboutIcon><img width="72px" src={WorkIcon}></img></AboutIcon>
             </AboutBox>
             <WorkHero postEdges={workEdges}/>
