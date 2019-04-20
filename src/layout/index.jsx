@@ -13,6 +13,7 @@ const Layout = styled.div`
 
 const Main = styled.main`
   max-width: 60rem;
+  padding: 0 2rem;
   margin-left: auto;
   margin-right: auto;
 

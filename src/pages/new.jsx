@@ -22,6 +22,7 @@ background: white;
 
 const BoxContent = styled.div`
 max-width: 60rem;
+padding: 0 2rem;
 margin: 0 auto;
 @media only screen and (max-width: 768px) {
 padding: 1rem 2rem;
