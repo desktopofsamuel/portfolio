@@ -1,8 +1,9 @@
 ---
 posttype: "work"
 path: "/hyperair"
-title: "HyperAir Travel"
-cover: "./Hyperair-Feature-v5.png"
+title: "Crafting travel experience."
+cover: "./hyper.png"
+project: "HyperAir Travel"
 date: "2018-08-24"
 category: "UI/UX Design"
 tags: 

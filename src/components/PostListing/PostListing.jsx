@@ -10,7 +10,8 @@ const Block = styled.div`
   display: flex;
   flex-flow: column;
   background: ${props => (props.invert ? `var(--color-white-700)` : `` )} ;
-  padding: ${props => (props.invert ? `var(--padding-m)` : `var(--padding-m)` )}; 
+  padding: 0 var(--padding-m) var(--padding-s) var(--padding-m) ; 
+
   color: ${props => (props.invert ? `var(--color-black-500)` : `var(--color-black-500)` )};
   justify-content: space-between;
   p {
@@ -32,7 +33,16 @@ const Block = styled.div`
   button {
     color: ${props => (props.invert ? `var(--color-white-500)` : `var(--color-black-500)` )};
   }
+
+  @media only screen and (max-width: 768px) {
+  padding: 0;
+  margin-bottom: 2rem;
+  }
 `;
+
+const PostListImage = styled(Img)`
+margin-bottom: 1rem;
+`
 
 const Button = styled(Link)`
   margin: 0;
@@ -68,14 +78,15 @@ class PostListing extends React.Component {
 
     return postList.map(post => (
       <Block className="block" invert={invert} key={post.title}>
+        <PostListImage sizes={post.cover.childImageSharp.sizes} />
+        <div>
         <h3><Link to={post.path}>
             <a>{post.title}</a></Link>
         </h3>
         <p>{post.excerpt}</p>
+        </div>
         <Button invert={invert} to={post.path}>
-          <h5>
-            Read On <FaArrowRight />
-          </h5>
+          <h5>Read On →</h5>
         </Button>
       </Block>
     ));

@@ -22,7 +22,8 @@ const Post = styled.article`
   @media screen and (min-width: 1440px) {
     display: grid;
     grid-gap: 36px;
-    grid-template-columns: [head] minmax(auto, 40ch) [main] minmax(23ch,55ch) [meta] 20%;
+    grid-template-columns: [head] minmax(auto, 60ch) [main] minmax(23ch,55ch) [meta] minmax(auto,20%);
+
   }
 
   @media screen and (min-width: 768px) and (max-width: 1440px)  {
@@ -96,6 +97,7 @@ const Sidebar = styled.aside`
 
 const PostTitle = styled.h1`
   grid-area: title;
+  font-size: 2rem;
 `
 const PostMeta = styled.small`
 margin: 0;
@@ -141,7 +143,7 @@ export default class PostTemplate extends React.Component {
     }
 
     return (
-      <Layout>  
+      <Layout className="post-template">  
           <Helmet>
             <title>{`${post.title} | ${config.siteTitle}`}</title>
           </Helmet>

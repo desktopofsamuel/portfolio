@@ -2,11 +2,10 @@
 posttype: "work"
 path: "/ftc"
 date: "2016-05-13"
-title: "Fair Training Center"
+title: "Empowering migrant women for life overseas."
+project: "Fair Training Center"
 cover: "./ftc2.png"
-subtitle: "Non-profit training center that offer training opportunities"
 category: "Brand Design"
-intro: "Fair Training Center is a non-profit, social business in the Philippines that prepares migrant women for life overseas as a domestic worker."
 color: "#7CBB63"
 url: "https://www.fairtraining.org/"
 tags: 

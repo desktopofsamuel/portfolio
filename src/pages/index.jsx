@@ -184,7 +184,6 @@ class Post extends React.Component {
               <BlogPost postEdges={postEdges} invert/>
             </Row>
             <Now className="full-width"/>
-
           </Container>
       </Layout>
     );

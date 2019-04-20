@@ -3,9 +3,8 @@ import Helmet from "react-helmet";
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import "./index.css";
-import Navigation from "../components/Navigation/navigation";
+import Nav from "../components/Navigation/navigation";
 import Footer from "../components/Footer/Footer"
-
 
 const Layout = styled.div`
     background-color: var(--color-background-500);
@@ -13,33 +12,29 @@ const Layout = styled.div`
 `
 
 const Main = styled.main`
-  display: grid;
-  grid-template-columns: minmax(0.5vw,10vw) [content] minmax(23ch, auto) minmax(0.5vw,10vw);
-  margin: 0 auto;
-`
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
 
-const Content = styled.div`
-  grid-area: content;
+@media only screen and (max-width: 768px) {
+padding: 1rem 2rem;
+}
 `
 
 export default class MainLayout extends React.Component {
   render() {
     const { children } = this.props;
     return (
-      <div>
+      <Layout>
         <Helmet>
           <meta name="description" content={config.siteDescription} />
         </Helmet>
-        <Layout>
-        <Navigation />
+        <Nav />
         <Main>
-        <Content>
         {children}
-        </Content>
         </Main>
         <Footer/>
-        </Layout>
-      </div>
+      </Layout>
     );
   }
 }
