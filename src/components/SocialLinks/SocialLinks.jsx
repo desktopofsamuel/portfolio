@@ -51,12 +51,6 @@ class SocialLinks extends Component {
           <TwitterShareButton url={url} title={post.title}>
             <TwitterIcon round size={iconSize} />
           </TwitterShareButton>
-          <GooglePlusShareButton url={url}>
-            <GooglePlusIcon round size={iconSize} />
-            <GooglePlusShareCount url={url}>
-              {count => renderShareCount(count)}
-            </GooglePlusShareCount>
-          </GooglePlusShareButton>
         </div>
       </div>
     );

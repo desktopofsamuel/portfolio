@@ -1,20 +1,22 @@
 ---
 posttype: "work"
 path: "/water-for-free"
-title: "Building Hong Kong first Water Dispencer Map"
-project: "Water For Free"
+subtitle: "Building Hong Kong first Water Dispencer Map"
+title: "Water For Free"
 cover: "./W4F-Cover.png"
 date: "2017-07-01"
 category: "UI/UX Design"
-tags: 
+seotags: 
+    - 'Water For Free'
+    - 'Water Dispencers'
+    - 'Bring Your Own Bottle'
+    - 'BYOB'
     - 'Map'
+    - 'Crowdsourcing'
 intro: "Water for Free is a mobile app that shows over 1600 locations of water dispensers in Hong Kong and Macau. It is an effort to reduce the vast amounts single-use beverage containers entering our landfills and oceans everyday."
-subtitle: "Hong Kong Water Dispenser Map"
 color: "#0181DE"
 url: "https://www.waterforfree.org"
 ---
-
-##Water For Free
 
 Water for Free is a mobile app that shows over 1600 locations of water dispensers in Hong Kong and Macau. It is an effort to reduce the vast amounts single-use beverage containers entering our landfills and oceans everyday.
 

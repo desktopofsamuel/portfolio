@@ -35,7 +35,11 @@ const Main = styled.div`
 
 @media only screen and (max-width: 1024px) {
   max-width: 95vw;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
+}
+
+@media only screen and (max-width: 768px) {
+  padding: 0 1rem;
 }
 `
 
@@ -70,6 +74,10 @@ const NavItem = styled.div`
 display: flex;
 flex-direction: column;
 text-align: right;
+
+@media only screen and (max-width: 768px) {
+  display: none;
+}
 `
 
 
@@ -79,9 +87,9 @@ export default class Navigation extends React.Component {
       <div>
         <LeftSidebar>
           <IconWrapper>
-            <a class="noeffect linkicon" href="https://dribbble.com/desktopofsamuel" target="blank"><FaDribbble size="1.25rem"/></a>
-            <a class="noeffect linkicon" href="https://twitter.com/desktopofsamuel" target="blank"><FaTwitter  size="1.25rem"/></a>
-            <a class="noeffect linkicon" href="https://instagram.com/desktopofsamuelwong" target="blank"><FaInstagram  size="1.25rem"/></a>
+            <a className="noeffect linkicon" href="https://dribbble.com/desktopofsamuel" target="blank"><FaDribbble size="1.25rem"/></a>
+            <a className="noeffect linkicon" href="https://twitter.com/desktopofsamuel" target="blank"><FaTwitter  size="1.25rem"/></a>
+            <a className="noeffect linkicon" href="https://instagram.com/desktopofsamuelwong" target="blank"><FaInstagram  size="1.25rem"/></a>
           </IconWrapper>
         </LeftSidebar>
         <Main>
@@ -89,7 +97,6 @@ export default class Navigation extends React.Component {
         <SiteID><Title><Link to="/">SAMUEL W.</Link></Title><Description>Product Designer based in Hong Kong. Reinventing travel experience at <a ref="https://www.hyperair.com" className="textlink" target="blank"> HyperAir</a>.</Description></SiteID>
         <NavItem>
           <Link to="/about" class="textlink"><small>About</small></Link>
-          <Link to="/work" class="textlink"><small>Work</small></Link>
           <Link to="/blog" class="textlink"><small>Blog</small></Link>
         </NavItem>
         </NavBar>

@@ -2,16 +2,33 @@
 posttype: "work"
 path: "/ftc"
 date: "2016-05-13"
-title: "Empowering migrant women for life overseas."
-project: "Fair Training Center"
+title: "Fair Training Center"
+subtitle: "Empowering migrant women for life overseas."
 cover: "./ftc2.png"
 category: "Brand Design"
 color: "#7CBB63"
 url: "https://www.fairtraining.org/"
-tags: 
-    - 'Work'
+seotags: 
+    - 'Domestic Worker'
+    - 'Fair Agency'
+    - 'Fair Training Center'
+    - 'Brand Design'
+    - 'Logo'
+    - 'Social Enterprise'
+    - 'Social Design'
+    - 'Fair Employment Foundation'
 ---
+
 
 Fair Training Center is a non-profit, social business in the Philippines that prepares migrant women for life overseas as a domestic worker.
 
+![](./logo-brand.jpg)
+
 In 2016, I have worked with Fair Employment Foundation, the non-profit foundation behind Fair Employment Agency to develop a new brand for its oversea training center. With the mission to end forced labour of migrant workers in Southeast Asia, training center's logo hope to shred light on workers by offering them training opportunities. 
+
+![](./ftc-ph-photo.jpg)
+
+<center>Photos taken Fair Training Center in Manila, The Philippines</center>
+
+![](./ftc-web.png)
+
