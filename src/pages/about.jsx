@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
+import { StaticQuery, graphql } from "gatsby"
 import Layout from "../layout";
-import About from "../components/About/About";
+import Img from "gatsby-image";
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
-import Cover from "../../static/About-Cover.jpg"
 import Link from "../components/GatsbyLink/GatsbyLink";
 import DocuSVG from "../../static/SVG/docu.svg"
 
@@ -50,6 +50,7 @@ grid-template-columns: repeat(8, 1fr);
 margin-top: -100px;
 padding-bottom: 100px;
 
+
 @media only screen and (max-width: 768px) {
   margin-top: 0;
   display: block;
@@ -82,6 +83,7 @@ const Intro = styled.div`
 grid-column: span 5 / 8;
 background: var(--color-background-500);
 padding: 2rem;
+z-index: 1000;
 @media only screen and (max-width: 768px) {
   padding: 0;
   background: none;
@@ -180,8 +182,8 @@ class AboutPage extends Component {
           <RowHero className="full-bleed">
             <BoxContent>
               <small>Little things about myself</small>
-              <h1>About <span class="brand">Me</span></h1>
-              <PhotoFrame><img src={Cover} width="100%" alt="About Cover Photo"/></PhotoFrame>
+              <h1>About <span className="brand">Me</span></h1>
+              <PhotoFrame><Img fluid={this.props.data.cover.childImageSharp.fluid} width="100%" alt="About Cover Photo"/></PhotoFrame>
               <WrapperIntro>
                 <Intro>
                   <small>Welcome!</small>
@@ -201,7 +203,7 @@ class AboutPage extends Component {
             <small>01. Bio</small>
             <h2>Journey to Design</h2>
             <p >I studied cultural and film theories at The University of Hong Kong. But it wasn’t until I took a year-long leave and worked in iTunes & App Store, Apple as Cross-Content Intern during college, during which it sparked my interest in digital products and web.</p></P1>
-            <PhotoFrame><img src={Cover} width="100%" alt="About Cover Photo"/></PhotoFrame>
+            <PhotoFrame><Img fluid={this.props.data.cover.childImageSharp.fluid} width="100%" alt="About Cover Photo"/></PhotoFrame>
             <GridBio>
             <P2><p>After my internship, I took freelance projects as well as volunteered for students and community organisations, 
 acquring various skillsets to be a hybrid designer.
@@ -243,3 +245,11 @@ Currently, I lead design at Hyperair as Principal Designer. Reinventing all-roun
 }
 
 export default AboutPage;
+
+export const pageQuery = graphql`
+query {
+  cover: file(relativePath: { eq: "images/About-Cover.jpg" }) {
+    ...fluidImage
+  }
+}
+`
