@@ -10,6 +10,8 @@ tags:
 - "Read-It-Later"
 - "Todoist"
 
-cover: ""
+cover: "./Living With Complexity.png"
 
 ---
+
+Don Norman’s work is truly inspiring, in making myself re-thinking on the role of a designer. 
