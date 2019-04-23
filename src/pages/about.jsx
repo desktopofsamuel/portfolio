@@ -7,6 +7,8 @@ import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import Link from "../components/GatsbyLink/GatsbyLink";
 import DocuSVG from "../../static/SVG/docu.svg"
+import WaterSVG from "../../static/SVG/Water.svg"
+import PinSVG from "../../static/SVG/Pin.svg"
 
 const Row = styled.section`
 padding: var(--var-padding-l) 0;
@@ -103,6 +105,7 @@ const DesignContent = styled.div`
 
 `
 const DesignContentGrid = styled.div`
+  margin-top: var(--var-padding-m);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 1rem;
@@ -133,6 +136,12 @@ align-content: space-between;
 padding: 2rem;
 display: flex;
 flex-flow: column;
+transition: transform 0.2s ease-in, box-shadow 0.3s ease-in-out;
+
+&:hover {
+  transform: scale(1.025, 1.025);
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+}
 `
 
 const ProjectContent = styled.div``
@@ -150,7 +159,8 @@ margin-bottom: 2rem;
 
 const ProjectTitle = styled.h3``
 
-const ProjectBlurb = styled.p``
+const ProjectBlurb = styled.p`
+font-size: 0.975rem;`
 
 const ProjectYear = styled.small`
 margin-bottom: 0;`
@@ -166,7 +176,7 @@ const ProjectBox = props => (
     </ProjectContent>
     <ProjectBottom>
       <ProjectYear>{props.year}</ProjectYear>
-      <ProjectLink to={props.url}>↗</ProjectLink>
+      <ProjectLink className="noeffect" to={props.url} target="blank">↗</ProjectLink>
     </ProjectBottom>
   </ProjectWrapper>
 
@@ -203,14 +213,14 @@ class AboutPage extends Component {
             <small>01. Bio</small>
             <h2>Journey to Design</h2>
             <p >I studied cultural and film theories at The University of Hong Kong. But it wasn’t until I took a year-long leave and worked in iTunes & App Store, Apple as Cross-Content Intern during college, during which it sparked my interest in digital products and web.</p></P1>
-            <PhotoFrame><Img fluid={this.props.data.cover.childImageSharp.fluid} width="100%" alt="About Cover Photo"/></PhotoFrame>
+            <PhotoFrame><Img fluid={this.props.data.bio.childImageSharp.fluid} width="100%" alt="About Cover Photo"/></PhotoFrame>
             <GridBio>
             <P2><p>After my internship, I took freelance projects as well as volunteered for students and community organisations, 
 acquring various skillsets to be a hybrid designer.
 <br/><br/>
 I started my agency Playa with my partner in 2015, hoping to help small business, entrepreneurs and non-profits launching their projects, bridging the gap between project owners and end-users. We have launched dozen websites and apps in Hong Kong with multiple recognitions. 
 <br/><br/>
-Currently, I lead design at Hyperair as Principal Designer. Reinventing all-round travel experience.
+Currently, I lead design at Hyperair as Principal Designer. Reinventing experience all around travel.
 
 </p></P2>
             </GridBio>
@@ -221,10 +231,10 @@ Currently, I lead design at Hyperair as Principal Designer. Reinventing all-roun
               <h1>Design, Photography, Writing.</h1>
               <GridSkill>
                 <DesignPart><h3>Design</h3></DesignPart>
-                <DesignContent><p>Throughout the years, I always like design.</p><DesignContentGrid><small>Web & App UI Design</small><small>User Experience Design</small><small>Interaction Design</small><small>Prototyping</small><small>Wireframing</small><small>Frontend Development</small></DesignContentGrid></DesignContent>
+                <DesignContent><p>Design has always been a part of who I am. I have acquired a wide range of skillset to delivering functional and elegance design. </p><DesignContentGrid><small>Web & App UI Design</small><small>User Experience Design</small><small>Interaction Design</small><small>Prototyping</small><small>Wireframing</small><small>Frontend Development</small></DesignContentGrid></DesignContent>
               </GridSkill>
               <GridSkill>
-                <PassionPart><h3>Passion</h3></PassionPart><PassionContent><p>I have also gained wide range of skill set. </p><DesignContentGrid><small>Photography</small><small>Videography</small><small>Social Media</small><small>Copywriting</small></DesignContentGrid></PassionContent>
+                <PassionPart><h3>Passion</h3></PassionPart><PassionContent><p>Through the years of freelancing, I'm also practicing in the field of digital products and media, to become a hybrid creative.</p><DesignContentGrid><small>Photography</small><small>Videography</small><small>Social Media</small><small>Copywriting</small></DesignContentGrid></PassionContent>
               </GridSkill>
             </BoxContent>
           </RowHero>
@@ -233,8 +243,8 @@ Currently, I lead design at Hyperair as Principal Designer. Reinventing all-roun
             <h2>Your Support</h2>
             <GridProject>
               <ProjectBox img={DocuSVG} title="Road Not Taken" blurb="A documentary I directed with multiple Asian film festival selected." year="2016" url="https://vimeo.com/ondemand/roadnottaken"/>
-              <ProjectBox img={DocuSVG} title="Pins" blurb="A curated design resources site built by Gatsby JS." year="2018" url="https://pin.desktopofsamuel.com"/>
-              <ProjectBox img={DocuSVG} title="Water For Free" blurb="An crowdsourcing initiative that everyone can support." year="2017" url="https://vimeo.com/ondemand/roadnottaken"/>
+              <ProjectBox img={PinSVG} title="Pins" blurb="A curated design resources site built by Gatsby JS." year="2018" url="https://pin.desktopofsamuel.com"/>
+              <ProjectBox img={WaterSVG} title="Water For Free" blurb="An crowdsourcing initiative that everyone can support." year="2017" url="https://vimeo.com/ondemand/roadnottaken"/>
               
             </GridProject>
           </Row>
@@ -249,6 +259,9 @@ export default AboutPage;
 export const pageQuery = graphql`
 query {
   cover: file(relativePath: { eq: "images/About-Cover.jpg" }) {
+    ...fluidImage
+  }
+  bio: file(relativePath: { eq: "images/Bio.jpg" }) {
     ...fluidImage
   }
 }
