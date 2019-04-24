@@ -54,7 +54,7 @@ class WorkHero extends React.Component {
         excerpt: postEdge.node.excerpt,
         timeToRead: postEdge.node.timeToRead,
         color: postEdge.node.frontmatter.color,
-        project: postEdge.node.frontmatter.project,
+        subtitle: postEdge.node.frontmatter.subtitle,
       });
     });
     return postList;
@@ -69,8 +69,8 @@ class WorkHero extends React.Component {
             <ListItem style={{ borderLeftColor: `${post.color}`}}>
               <ListLeft>
                 <div>
-                <small>{post.project}</small>
-                <h3>{post.title}</h3>
+                <small>{post.title}</small>
+                <h3>{post.subtitle}</h3>
                 </div>
                 <ReadButton to={`/work/${post.path}`}><h5>Read On →</h5></ReadButton>
               </ListLeft>

@@ -18,12 +18,16 @@
     --padding-m: 2rem;
     --padding-l: 4rem;
     --padding-xl: 8rem;
+    --var-padding-l: 6rem;
+    --var-padding-m: 2rem;
     --grid-gap: 24px;
 }
 
 @media only screen and (max-width: 768px) {
     :root {
        font-size: 18px;
+       --var-padding-l: 4rem;
+       --var-padding-m: 1rem;
     }
 }
 
@@ -37,7 +41,7 @@ html {
     font-size: 16px;
     font-weight: 400;
     line-height: 2em;
-    color: #200400;
+    color: var(--color-black-500);
 }
 
 body {

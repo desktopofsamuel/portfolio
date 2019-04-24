@@ -1,10 +1,12 @@
 import React from "react";
 import Helmet from "react-helmet";
 import styled from "styled-components";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
+import Link from "../components/GatsbyLink/GatsbyLink"
 import config from "../../data/SiteConfig"
 import Layout from "../layout"
 import WorkHero from "../components/WorkHero/WorkHero";
+import CTAButton from "../components/MajorButton/MajorButton";
 import BlogListing from "../components/PostListing/PostListing"
 import WorkIcon from "../../static/SVG/Work.svg"
 import BlogIcon from "../../static/SVG/Blog.svg"
@@ -12,7 +14,7 @@ import Now from "../components/Now/Now"
 
 
 const Row = styled.section`
-padding: 8rem 0;
+padding: var(--var-padding-l) 0;
 background: white; 
 
 &:first-child {
@@ -21,17 +23,24 @@ background: white;
 `
 
 const BoxContent = styled.div`
-max-width: 60rem;
+max-width: 60vw;
+padding: 0 2rem;
 margin: 0 auto;
-@media only screen and (max-width: 768px) {
-padding: 1rem 2rem;
+
+  @media only screen and (max-width: 1024px) {
+    max-width: 70vw;
+    padding: 0 1.5rem;
+  }
+
+  @media only screen and (max-width: 768px) {
+    max-width: 90vw;
+    padding: 0 1rem;
 }
 `
 
 const Intro = styled(Row)`
 justify-content: center;
 text-align: center;
-
 `
 
 const Hero = styled.div`
@@ -41,7 +50,6 @@ text-align: left;
 const HeroGraphics = styled.figure`
 margin: 0;
 padding: 0;
-
 `
 
 const WhiteBox = styled.div`
@@ -83,21 +91,7 @@ text-align: center;
 padding: 0 0 2rem 0;
 max-width: 400px;
 `
-
-const CTAButton = styled.button`
-border: 1px solid var(--color-brand-500);
-box-sizing: border-box;
-background: none;
-padding: 1rem 2rem;
-transition: all 0.3s ease-in-out;
-
-&:hover {
-background: var(--color-brand-500);
-color: var(--color-black-500);
-}
-`
-
-const MoreButton = styled.button`
+const More2Button = styled.button`
 box-sizing: border-box;
 background: none;
 padding: 1rem 2rem;
@@ -117,11 +111,19 @@ background: var(--color-white-700);
 const FullYellowRow = styled(Row)`
 background: #FEFDF4;
 `
-const ContactButton = styled(CTAButton)`
-color: var(--color-secondary-500);
-a {
-  border: none;
-}
+const ContactButton = styled.button`
+border: none;
+    box-sizing: border-box;
+    background: none;
+    padding: 1rem 2rem;
+    transition: all 0.3s ease-in-out;
+    margin: 0 auto;
+
+    &:hover {
+        background: var(--color-brand-500);
+        color: var(--color-black-500);
+    }
+
 `
 const AboutBox = styled.div`
 width: 100%;
@@ -218,6 +220,7 @@ class New extends React.Component {
     return (
       <div>
         <Helmet>
+          <title>{config.siteTitle}</title>
           <meta name="description" content={config.siteDescription} />
         </Helmet>
         <Layout>
@@ -247,7 +250,7 @@ class New extends React.Component {
             <small>Hi! My name is Samuel</small>
             <Subtitle>I believe design is the way to navigate today's complex world. Join me in this journey.</Subtitle>
           </IntroBox>
-          <CTAButton>Get In Touch</CTAButton>
+          <CTAButton href="/blog" text="Get In Touch"></CTAButton>
         </Intro>
         <Row>
             <HalfBox>
@@ -266,7 +269,7 @@ class New extends React.Component {
               <AboutIcon><img width="72px" src={WorkIcon}></img></AboutIcon>
             </AboutBox>
             <WorkHero postEdges={workEdges}/>
-            <Center><MoreButton>View More →</MoreButton></Center>
+            <Center><ContactButton><Link to="/work" className="noeffect">View More →</Link></ContactButton></Center>
           </BoxContent>
         </FullGreyRow>
         <Row>
@@ -288,7 +291,7 @@ class New extends React.Component {
           <Contact>
             <small>SIMPLICITY IS A STATE OF MIND.</small>
             <h2>Start the conversation to manage complexity.</h2>
-            <ContactButton><a href="mailto:sammatwong@gmail.com"><small>Let's Talk</small></a></ContactButton>
+            <CTAButton href="mailto:sammatwong@gmail.com" text="Let's Talk"/>
           </Contact>
         </Row>
         </Layout>
@@ -318,10 +321,10 @@ query IndexQuery {
         timeToRead
         frontmatter {
           title
+          subtitle
           path
           tags
           color
-          project
           cover {
             publicURL
             size

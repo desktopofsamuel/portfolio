@@ -29,24 +29,57 @@ align-content: flex-end;
 `
 
 const Main = styled.div`
-display: grid;
-grid-template-columns: minmax(auto,5%) [content] auto minmax(auto,5%);
+  max-width: 85vw;
+  padding-left: 50px;
+  margin: 0 auto;
+
+@media only screen and (max-width: 1024px) {
+  max-width: 95vw;
+  padding: 0 1.5rem;
+}
+
+@media only screen and (max-width: 768px) {
+  padding: 0 1rem;
+}
 `
 
 const NavBar = styled.div`
 padding: 2rem 0;
-margin-left: 50px;
-grid-area: content;
+width: 100%;
+display: flex;
+justify-content: space-between;
 
 @media only screen and (max-width: 1024px) {
-  margin-left: 0px;
   padding: 1.5rem 0;
 }
 `
 
-const SiteTitle = styled.h5`
+const SiteID = styled.div``
+
+const Title = styled.h2`
+font-size: 1rem;
 font-family: var(--primary-font);
+margin-bottom: 1.5rem;
 `
+
+const Description = styled.h2`
+color: var(--color-secondary-500);
+font-size: 0.95rem;
+line-height: 1.5rem;
+width: 35ch;
+font-weight: 400;
+`
+
+const NavItem = styled.div`
+display: flex;
+flex-direction: column;
+text-align: right;
+
+@media only screen and (max-width: 768px) {
+  display: none;
+}
+`
+
 
 export default class Navigation extends React.Component {
   render() {
@@ -54,14 +87,18 @@ export default class Navigation extends React.Component {
       <div>
         <LeftSidebar>
           <IconWrapper>
-            <a class="noeffect linkicon" href="https://dribbble.com/desktopofsamuel" target="blank"><FaDribbble size="1.25rem"/></a>
-            <a class="noeffect linkicon" href="https://twitter.com/desktopofsamuel" target="blank"><FaTwitter  size="1.25rem"/></a>
-            <a class="noeffect linkicon" href="https://instagram.com/desktopofsamuelwong" target="blank"><FaInstagram  size="1.25rem"/></a>
+            <a className="noeffect linkicon" href="https://dribbble.com/desktopofsamuel" target="blank"><FaDribbble size="1.25rem"/></a>
+            <a className="noeffect linkicon" href="https://twitter.com/desktopofsamuel" target="blank"><FaTwitter  size="1.25rem"/></a>
+            <a className="noeffect linkicon" href="https://instagram.com/desktopofsamuelwong" target="blank"><FaInstagram  size="1.25rem"/></a>
           </IconWrapper>
         </LeftSidebar>
         <Main>
         <NavBar>
-        <SiteTitle><Link to="/">Samuel Wong</Link> - Product Designer</SiteTitle>
+        <SiteID><Title><Link to="/">SAMUEL W.</Link></Title><Description>Product Designer based in Hong Kong. Reinventing travel experience at <a ref="https://www.hyperair.com" className="textlink" target="blank"> HyperAir</a>.</Description></SiteID>
+        <NavItem>
+          <Link to="/about" class="textlink"><small>About</small></Link>
+          <Link to="/blog" class="textlink"><small>Blog</small></Link>
+        </NavItem>
         </NavBar>
         </Main>
         </div>

@@ -101,5 +101,4 @@ PostListing.propTypes = {
 
 PostListing.defaultProps = {
   invert: false,
-  
 }; 
