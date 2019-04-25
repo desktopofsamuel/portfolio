@@ -1,5 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
+import SEO from "../components/SEO/SEO"
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import "./index.css";
@@ -32,9 +33,7 @@ export default class MainLayout extends React.Component {
     const { children } = this.props;
     return (
       <Layout>
-        <Helmet>
-          <meta name="description" content={config.siteDescription} />
-        </Helmet>
+        <SEO />
         <Nav />
         <Main>
         {children}

@@ -77,6 +77,8 @@ class SEO extends Component {
         <meta name="description" content={description} />
         <meta name="image" content={image} />
         <meta name="keywords" content={keywords} />
+        <meta name="publisher" content={config.siteTitleShort} />
+        <meta name="copyright" content={config.copyright} />
         {/* Schema.org tags */}
         <script type="application/ld+json">
           {JSON.stringify(schemaOrgJSONLD)}
@@ -84,7 +86,7 @@ class SEO extends Component {
 
         {/* OpenGraph tags */}
         <meta property="og:url" content={postSEO ? postURL : blogURL} />
-        {postSEO ? <meta property="og:type" content="article" /> : null}
+        {postSEO ? <meta property="og:type" content="article" /> : <meta property="og:type" content="website" />}
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={image} />
@@ -102,6 +104,7 @@ class SEO extends Component {
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
+
       </Helmet>
     );
   }
