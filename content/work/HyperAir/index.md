@@ -6,7 +6,7 @@ subtitle: "Crafting travel experience."
 cover: "./Frame 6.png"
 date: "2018-08-24"
 category: "UI/UX Design"
-seotags: 
+tags: 
     - 'HyperAir'
     - 'Travel Tech'
     - '唱錢神器'
