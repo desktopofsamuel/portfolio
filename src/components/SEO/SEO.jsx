@@ -9,6 +9,7 @@ class SEO extends Component {
     let title;
     let description;
     let image;
+    let keywords;
     let postURL;
     if (postSEO) {
       const postMeta = postNode.frontmatter;
@@ -18,10 +19,12 @@ class SEO extends Component {
         : postNode.excerpt;
       image = postMeta.cover;
       postURL = config.siteUrl + config.pathPrefix + postPath;
+      keywords = postMeta.tags;
     } else {
       title = config.siteTitle;
       description = config.siteDescription;
       image = config.siteLogo;
+      keywords = config.siteKeywords;
     }
 
     image = config.siteUrl + config.pathPrefix + image;
@@ -73,6 +76,7 @@ class SEO extends Component {
         <meta name="title" content={title} />
         <meta name="description" content={description} />
         <meta name="image" content={image} />
+        <meta name="keywords" content={keywords} />
         {/* Schema.org tags */}
         <script type="application/ld+json">
           {JSON.stringify(schemaOrgJSONLD)}

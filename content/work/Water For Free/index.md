@@ -6,7 +6,7 @@ title: "Water For Free"
 cover: "./W4F-Cover.png"
 date: "2017-07-01"
 category: "UI/UX Design"
-seotags: 
+tags: 
     - 'Water For Free'
     - 'Water Dispencers'
     - 'Bring Your Own Bottle'

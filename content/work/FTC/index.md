@@ -8,7 +8,7 @@ cover: "./ftc2.png"
 category: "Brand Design"
 color: "#7CBB63"
 url: "https://www.fairtraining.org/"
-seotags: 
+tags: 
     - 'Domestic Worker'
     - 'Fair Agency'
     - 'Fair Training Center'
