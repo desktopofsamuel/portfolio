@@ -36,17 +36,17 @@ class Index extends React.Component {
     const listEdges = this.props.data.list.edges;
     return (
       <Layout>
-          <Helmet title={`Design Blog | ${config.siteTitle}`}>
-            <meta property="twitter:title" content={`Design Blog | ${config.siteTitle}`}/>
+          <Helmet title={`Design Blog | ${config.siteTitle}` }>
+            <meta name="twitter:title" content={`Design Blog | ${config.siteTitle}`}/>
             <meta property="og:title" content={`Design Blog | ${config.siteTitle}`}/>
-            <meta property="description" content="Hi! My name is Samuel. I write blog about web design, user interface and experiecne design." />
-            <meta property="twitter:description" content="Hi! My name is Samuel. I write blog about web design, user interface and experiecne design." />
+            <meta name="description" content="Hi! My name is Samuel. I write blog about web design, user interface and experiecne design." />
+            <meta name="twitter:description" content="Hi! My name is Samuel. I write blog about web design, user interface and experiecne design." />
             <meta property="og:description" content="Hi! My name is Samuel. I write blog about web design, user interface and experiecne design." />
-            <meta property="keywords" content="Design,Blog,Web,App,UI,UX,Interface,Portfolio,Hong Kong,Writing" />
+            <meta name="keywords" content="Design,Blog,Web,App,UI,UX,Interface,Portfolio,Hong Kong,Writing" />
           </Helmet>
           <Row>
               <h1>Blog</h1>
-              <h3>This is the place I write about Design, Technology and Productivity. </h3>
+              <h3>A collection of posts I wrote about design, technology and productivity. </h3>
           </Row>
           <Row>
             {/*<Container>

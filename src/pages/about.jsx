@@ -199,15 +199,15 @@ class AboutPage extends Component {
                   <small>Welcome!</small>
                   <p>I am constantly learning and treasure every opportunity to design better. I’m learning to code right now and this website is my first attempt. <br/> <br/> I’m hoping to express my creativity in this site though design, code and writing. </p>
                   <WrapperNav>
-                  <small className="textlink">01. Bio </small>
-                  <small className="textlink">02. Skills </small>
-                  <small className="textlink">03. Projects </small>
+                  <Link to="#bio" className="textlink"><small>01. Bio </small></Link>
+                  <Link to="#skills" className="textlink"><small>02. Skills </small></Link>
+                  <Link to="#projects" className="textlink"><small>03. Projects </small></Link>
                   </WrapperNav>
                 </Intro>
               </WrapperIntro>
             </BoxContent>
           </RowHero>
-          <Row>
+          <Row id="bio">
             
             <P1>
             <small>01. Bio</small>
@@ -225,9 +225,9 @@ Currently, I lead design at Hyperair as Principal Designer. Reinventing experien
 </p></P2>
             </GridBio>
           </Row>
-          <RowHero className="full-bleed">
+          <RowHero id="skills" className="full-bleed">
             <BoxContent>
-              <small>02. Skill</small>
+              <small>02. Skills</small>
               <h1>Design, Photography, Writing.</h1>
               <GridSkill>
                 <DesignPart><h3>Design</h3></DesignPart>
@@ -238,7 +238,7 @@ Currently, I lead design at Hyperair as Principal Designer. Reinventing experien
               </GridSkill>
             </BoxContent>
           </RowHero>
-          <Row>
+          <Row id="projects">
             <small>03. Projects</small>
             <h2>Your Support</h2>
             <GridProject>

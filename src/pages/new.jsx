@@ -250,7 +250,7 @@ class New extends React.Component {
             <small>Hi! My name is Samuel</small>
             <Subtitle>I believe design is the way to navigate today's complex world. Join me in this journey.</Subtitle>
           </IntroBox>
-          <CTAButton href="/blog" text="Get In Touch"></CTAButton>
+          <CTAButton href="#contact" text="Get In Touch"></CTAButton>
         </Intro>
         <Row>
             <HalfBox>
@@ -287,7 +287,7 @@ class New extends React.Component {
           </BoxContent>
         </FullYellowRow>
         <Row>
-          <Contact>
+          <Contact id="contact">
             <small>SIMPLICITY IS A STATE OF MIND.</small>
             <h2>Start the conversation to manage complexity.</h2>
             <CTAButton href="mailto:sammatwong@gmail.com" text="Let's Talk"/>

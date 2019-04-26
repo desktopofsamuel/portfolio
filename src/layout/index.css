@@ -209,6 +209,10 @@ p:first-child {
     color: var(--color-secondary-300);
 }
 
+.navblock {
+    display: block;
+}
+
 .rightspace:not(:last-child) {
     margin-right: 20px;
 }
