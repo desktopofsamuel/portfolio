@@ -92,7 +92,7 @@ export default class Navigation extends React.Component {
         </LeftSidebar>
         <Main>
         <NavBar>
-        <SiteID><Title><Link to="/">SAMUEL W.</Link></Title><Description>Product Designer based in Hong Kong. Reinventing travel experience at <a ref="https://www.hyperair.com" className="textlink" target="blank"> HyperAir</a>.</Description></SiteID>
+        <SiteID><Title><Link to="/">SAMUEL W.</Link></Title><Description>Product Designer based in Hong Kong. Reinventing travel experience at <a href="https://www.hyperair.com" className="textlink" target="blank"> HyperAir</a>.</Description></SiteID>
         <NavItem>
           <Link to="/about" class="navblock noeffect"><small>About</small></Link>
           <Link to="/blog" class="navblock noeffect"><small>Blog</small></Link>

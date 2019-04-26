@@ -10,13 +10,20 @@ const Grid = styled.section`
 const ListItem = styled.div`
 display: grid;
 grid-template-columns: minmax(auto,30%) minmax(auto,1200px);
-border-left: 3px var(--color-brand-500) solid;
 margin-bottom: var(--padding-m);
+border-left: 3px var(--color-brand-500) solid;
+transition: transform 0.2s ease-in, box-shadow 0.3s ease-in-out;
+
+&:hover {
+  transform: scale(1.010, 1.010);
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+}
 
 @media only screen and (max-width: 768px) {
   display: flex;
   flex-direction: column-reverse;
   text-align: center;
+  border-left: 3px var(--color-transparent-500) solid;
 }
 `
 
