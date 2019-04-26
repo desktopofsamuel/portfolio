@@ -266,7 +266,6 @@ class New extends React.Component {
               <AboutIntro><small>Let's See</small>
               <h2>My Work</h2>
               <p>Years of experience in delivering elegant solutions for web and app.</p></AboutIntro>
-              <AboutIcon><img width="72px" src={WorkIcon}></img></AboutIcon>
             </AboutBox>
             <WorkHero postEdges={workEdges}/>
             <Center><ContactButton><Link to="/work" className="noeffect">View More →</Link></ContactButton></Center>
@@ -350,6 +349,7 @@ query IndexQuery {
   Blog: allMarkdownRemark(
     limit: 4
     sort: { fields: [fields___date], order: DESC }
+    filter: { frontmatter: { category: { eq: "Design Journal"}}}
   ) {
     edges {
       node {
@@ -363,6 +363,7 @@ query IndexQuery {
           title
           path
           tags
+          category
           cover {
             publicURL
             size

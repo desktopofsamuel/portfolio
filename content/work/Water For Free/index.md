@@ -3,7 +3,7 @@ posttype: "work"
 path: "/water-for-free"
 subtitle: "Building Hong Kong first Water Dispencer Map"
 title: "Water For Free"
-cover: "./W4F-Cover.png"
+cover: "./WaterForFree-Cover.png"
 date: "2017-07-01"
 category: "UI/UX Design"
 tags: 
