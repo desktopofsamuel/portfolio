@@ -49,6 +49,25 @@ body {
     background: var(--color-background-500);
 }
 
+div > main {
+    max-width: 60vw;;
+    margin: 0 auto;
+  }
+
+@media only screen and (max-width: 1024px) {
+    div > main {
+    max-width: 70vw;
+    padding: 0 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+div > main {
+    max-width: 90vw;
+    padding: 0 1rem;
+    }
+}
+
 h1 {
     font-family: var(--primary-font);
     font-style: normal;
@@ -207,6 +226,10 @@ p:first-child {
 .textlink:hover {
     border-bottom: 1px var(--color-secondary-500) solid;
     color: var(--color-secondary-300);
+}
+
+.navblock {
+    display: block;
 }
 
 .rightspace:not(:last-child) {

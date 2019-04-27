@@ -5,7 +5,7 @@ import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import "./index.css";
 import Nav from "../components/Navigation/navigation";
-import Footer from "../components/Footer/Footer"
+import Footer from "../components/Footer/Footer";
 
 const Layout = styled.div`
     background-color: var(--color-background-500);
@@ -13,20 +13,21 @@ const Layout = styled.div`
 `
 
 const Main = styled.main`
-  max-width: 60vw;
   padding: 0 2rem;
   margin: 0 auto;
 
 @media only screen and (max-width: 1024px) {
-max-width: 70vw;
 padding: 0 1.5rem;
 }
 
 @media only screen and (max-width: 768px) {
-max-width: 90vw;
 padding: 0 1rem;
 }
 `
+if (typeof window !== "undefined") {
+  // eslint-disable-next-line global-require
+  require("smooth-scroll")('a[href*="#"]')
+}
 
 export default class MainLayout extends React.Component {
   render() {

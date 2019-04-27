@@ -13,7 +13,7 @@ module.exports = {
   dateFromFormat: "YYYY-MM-DD", // Date format used in the frontmatter.
   dateFormat: "MMM DD, YYYY", locale: "en", // Date format for display.
   userName: "Samuel Wong", // Username to display in the author segment.
-  userTwitter: "desktopofsamuel", // Optionally renders "Follow Me" in the UserInfo segment.
+  userTwitter: "@desktopofsamuel", // Optionally renders "Follow Me" in the UserInfo segment.
   userLocation: "Hong Kong", // User location to display in the author segment.
   userAvatar: "https://api.adorable.io/avatars/150/test.png", // User avatar to display in the author segment.
   userDescription:

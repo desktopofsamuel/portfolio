@@ -71,8 +71,6 @@ font-weight: 400;
 `
 
 const NavItem = styled.div`
-display: flex;
-flex-direction: column;
 text-align: right;
 
 @media only screen and (max-width: 768px) {
@@ -94,10 +92,10 @@ export default class Navigation extends React.Component {
         </LeftSidebar>
         <Main>
         <NavBar>
-        <SiteID><Title><Link to="/">SAMUEL W.</Link></Title><Description>Product Designer based in Hong Kong. Reinventing travel experience at <a ref="https://www.hyperair.com" className="textlink" target="blank"> HyperAir</a>.</Description></SiteID>
+        <SiteID><Title><Link to="/">SAMUEL W.</Link></Title><Description>Product Designer based in Hong Kong. Reinventing travel experience at <a href="https://www.hyperair.com" className="textlink" target="blank"> HyperAir</a>.</Description></SiteID>
         <NavItem>
-          <Link to="/about" class="textlink"><small>About</small></Link>
-          <Link to="/blog" class="textlink"><small>Blog</small></Link>
+          <Link to="/about" class="navblock noeffect"><small>About</small></Link>
+          <Link to="/blog" class="navblock noeffect"><small>Blog</small></Link>
         </NavItem>
         </NavBar>
         </Main>
