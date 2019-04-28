@@ -257,3 +257,7 @@ p:first-child {
     margin-left: 50%;
     transform: translateX(-50%);
 }
+
+img {
+    max-width: 100%;
+}
