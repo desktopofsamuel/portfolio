@@ -18,12 +18,16 @@
     --padding-m: 2rem;
     --padding-l: 4rem;
     --padding-xl: 8rem;
+    --var-padding-l: 6rem;
+    --var-padding-m: 2rem;
     --grid-gap: 24px;
 }
 
 @media only screen and (max-width: 768px) {
     :root {
        font-size: 18px;
+       --var-padding-l: 4rem;
+       --var-padding-m: 1rem;
     }
 }
 
@@ -37,12 +41,31 @@ html {
     font-size: 16px;
     font-weight: 400;
     line-height: 2em;
-    color: #200400;
+    color: var(--color-black-500);
 }
 
 body {
     margin: 0;
     background: var(--color-background-500);
+}
+
+div > main {
+    max-width: 60vw;;
+    margin: 0 auto;
+  }
+
+@media only screen and (max-width: 1024px) {
+    div > main {
+    max-width: 70vw;
+    padding: 0 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+div > main {
+    max-width: 90vw;
+    padding: 0 1rem;
+    }
 }
 
 h1 {
@@ -203,6 +226,10 @@ p:first-child {
 .textlink:hover {
     border-bottom: 1px var(--color-secondary-500) solid;
     color: var(--color-secondary-300);
+}
+
+.navblock {
+    display: block;
 }
 
 .rightspace:not(:last-child) {

@@ -1,10 +1,11 @@
 import React from "react";
 import Helmet from "react-helmet";
+import SEO from "../components/SEO/SEO"
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import "./index.css";
 import Nav from "../components/Navigation/navigation";
-import Footer from "../components/Footer/Footer"
+import Footer from "../components/Footer/Footer";
 
 const Layout = styled.div`
     background-color: var(--color-background-500);
@@ -12,23 +13,28 @@ const Layout = styled.div`
 `
 
 const Main = styled.main`
-  max-width: 60rem;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 0 2rem;
+  margin: 0 auto;
+
+@media only screen and (max-width: 1024px) {
+padding: 0 1.5rem;
+}
 
 @media only screen and (max-width: 768px) {
-padding: 1rem 2rem;
+padding: 0 1rem;
 }
 `
+if (typeof window !== "undefined") {
+  // eslint-disable-next-line global-require
+  require("smooth-scroll")('a[href*="#"]')
+}
 
 export default class MainLayout extends React.Component {
   render() {
     const { children } = this.props;
     return (
       <Layout>
-        <Helmet>
-          <meta name="description" content={config.siteDescription} />
-        </Helmet>
+        <SEO />
         <Nav />
         <Main>
         {children}

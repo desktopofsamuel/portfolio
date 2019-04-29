@@ -15,6 +15,31 @@ import "./b16-tomorrow-dark.css";
 import "./post.css";
 import { FaAngleRight }from "react-icons/fa"
 
+const Row = styled.section`
+padding: var(--var-padding-l) 0;
+background: white; 
+
+&:first-child {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+`
+
+const BoxContent = styled.div`
+max-width: 85vw;
+padding-left: 50px;
+margin: 0 auto;
+
+  @media only screen and (max-width: 1024px) {
+    max-width: 95vw;
+    padding: 0 1.5rem;
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding: 0 1rem;
+}
+`
+
 const Post = styled.article`
   display: block;
   margin: 0 auto;
@@ -22,7 +47,7 @@ const Post = styled.article`
   @media screen and (min-width: 1440px) {
     display: grid;
     grid-gap: 36px;
-    grid-template-columns: [head] minmax(auto, 60ch) [main] minmax(23ch,55ch) [meta] minmax(auto,20%);
+    grid-template-columns: [head] minmax(auto, 60ch) [main] minmax(23ch,55ch) [meta] auto;
 
   }
 
@@ -63,27 +88,6 @@ const Meta = styled.div`
   "tag tag";
   }
 `
-const Breadcrumb = styled.div`
-  display: inline-grid;
-  grid-auto-flow: column;
-  grid-gap: 8px;
-  color: var(--color-black-500);
-  align-items: center;
-  margin: 0 0 16px 0;
-
-  & a {
-    color: var(--color-grey-500);
-    border-bottom: none;
-
-    &:hover {
-      border-bottom: 2px solid var(--color-palette-500);
-    }
-  }
-
-  h5 {
-    margin: 0;
-  }
-`
 
 
 const Main = styled.div`
@@ -97,7 +101,6 @@ const Sidebar = styled.aside`
 
 const PostTitle = styled.h1`
   grid-area: title;
-  font-size: 2rem;
 `
 const PostMeta = styled.small`
 margin: 0;
@@ -145,12 +148,12 @@ export default class PostTemplate extends React.Component {
     return (
       <Layout className="post-template">  
           <Helmet>
-            <title>{`${post.title} | ${config.siteTitle}`}</title>
+            <title>{`${post.title} | ${config.siteTitleAlt}`}</title>
           </Helmet>
           <SEO postPath={slug} postNode={postNode} postSEO />
-          <Breadcrumb><small><Link to="/blog">Blog - </Link></small><small><Link to={`/categories/${kebabCase(post.category)}`}>{post.category}</Link></small></Breadcrumb>
-          <Post>
-            
+          <Row className="full-bleed">
+            <BoxContent>
+         <Post>
             <Header>
               <PostTitle>{post.title}</PostTitle>
               <Meta>
@@ -179,6 +182,8 @@ export default class PostTemplate extends React.Component {
               }
             </Sidebar>
           </Post>
+          </BoxContent>
+          </Row>
       </Layout>
     );
   }

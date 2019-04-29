@@ -2,48 +2,109 @@ import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
-import BigPostList from "../components/BigPostList/BigPostList";
-import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 import PostHero from "../components/PostHero/PostHero";
+import PostList from "../components/PostListing/PostListing";
+import Link from "../components/GatsbyLink/GatsbyLink";
+import SEO from "../components/SEO/SEO";
+import BlogFeature from "../components/BlogFeature/BlogFeature"
 import styled from "styled-components";
 
+const Row = styled.section`
+padding: var(--var-padding-l) 0;
+background: white; 
 
-const BlogLayout = styled.main`
-  width: 70vw;
-  margin: 10vh auto;
+&:first-child {
+  padding-bottom: 0;
+}
+`
+
+const BoxContent = styled.div`
+max-width: 85vw;
+padding-left: 50px;
+margin: 0 auto;
+
+  @media only screen and (max-width: 1024px) {
+    max-width: 95vw;
+    padding: 0 1.5rem;
+  }
+
   @media only screen and (max-width: 768px) {
-    width: 100%;
-  }
-`
-const Container = styled.section`
-  display: grid;
-  grid-gap: 5rem;
-  grid-template-columns: 1fr 1fr;
-
-  @media only screen and (max-width: 1280px) {
-    display: block;
-  }
+    padding: 0 1rem;
+}
 `
 
-const PostList = styled(BigPostList)`
+
+const Main = styled.div`
+display: grid;
+grid-template-columns: [left] 30% [right] 70%;
+grid-gap: var(--var-padding-m);
+
+@media only screen and (max-width: 768px) {
+  display: block;
+}
+ 
+`
+const Left = styled.aside`
+grid-area: left;
+`
+
+const Right = styled.div`
+grid-area: right;
+`
+
+const BlogSubtitle = styled.h3`
+  @media only screen and (max-width: 768px) {
+    display: none;
+}
+`
+
+const CategoryBlock = styled.div`
+margin-top: 8rem;
+
+@media only screen and (max-width: 768px) {
+    display: none;
+}
 `
 
 class Index extends React.Component {
   render() {
     const postEdges = this.props.data.post.edges;
     const listEdges = this.props.data.list.edges;
+    const Feature1Edges = this.props.data.feature1.edges;
     return (
       <Layout>
-          <Helmet title={`Blog | ${config.siteTitle}`} />
-          <SEO />
-          <BlogLayout>
-            <h1>Blog</h1>
-            {/*<Container>
-              <PostList postEdges={postEdges} />
-            </Container>*/}
-            <PostHero postEdges={listEdges} />
-          </BlogLayout>
+          <Helmet title={`Design Blog | ${config.siteTitle}` }>
+            <meta name="twitter:title" content={`Design Blog | ${config.siteTitle}`}/>
+            <meta property="og:title" content={`Design Blog | ${config.siteTitle}`}/>
+            <meta name="description" content="Hi! My name is Samuel. I write blog about web design, user interface and experiecne design." />
+            <meta name="twitter:description" content="Hi! My name is Samuel. I write blog about web design, user interface and experiecne design." />
+            <meta property="og:description" content="Hi! My name is Samuel. I write blog about web design, user interface and experiecne design." />
+            <meta name="keywords" content="Design,Blog,Web,App,UI,UX,Interface,Portfolio,Hong Kong,Writing" />
+          </Helmet>
+          <Row>
+            <Main>
+            <Left>
+              <h1>Blog</h1>
+              <BlogSubtitle>A collection of posts I wrote about design, technology and productivity. </BlogSubtitle>
+              <CategoryBlock>
+                <small>Top Categories</small>
+                <h3><Link to="/categories/design-journal">Design</Link></h3>
+                <h3><Link to="/categories/work-in-progress">Development</Link></h3>
+                <h3><Link to="/categories/productivity">Productivity</Link></h3>
+                <h3><Link to="/categories/ctrl-alt-setup">Ctrl Alt Setup</Link></h3>
+                </CategoryBlock>
+            </Left>
+            <Right>
+              <small>Featured</small>
+              <BlogFeature postEdges={Feature1Edges}/>
+              <Row id="latest">
+              <small>Latest</small>
+              <PostHero postEdges={listEdges} />
+              </Row>
+            </Right>
+            </Main>
+          </Row>
       </Layout>
     );
   }
@@ -54,6 +115,42 @@ export default Index;
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query BlogQuery {
+    feature1: allMarkdownRemark(
+      filter: {fileAbsolutePath: {regex: "/blog/2018-07-06 Color Tools/"}}
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+            date(formatString: "MMM DD, YYYY", locale: "en")
+          }
+          excerpt(pruneLength: 300)
+          timeToRead
+          frontmatter {
+            title
+            tags
+            category
+            cover {
+              publicURL
+              size
+              childImageSharp {
+                sizes(maxWidth: 1140) {
+                  base64
+                  aspectRatio
+                  src
+                  srcSet
+                  srcWebp
+                  srcSetWebp
+                  sizes
+                  originalImg
+                  originalName
+                }
+              }
+            }
+          }
+        }
+      }
+    }
     post: allMarkdownRemark(
       limit: 10
       sort: { fields: [fields___date], order: DESC }
@@ -75,7 +172,7 @@ export const pageQuery = graphql`
               publicURL
               size
               childImageSharp {
-                sizes(maxWidth: 1140) {
+                sizes(maxWidth: 1200) {
                   base64
                   aspectRatio
                   src

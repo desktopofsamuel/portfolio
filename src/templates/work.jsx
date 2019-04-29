@@ -26,14 +26,14 @@ export default class PostTemplate extends React.Component {
       <Layout>
         <div>
           <Helmet>
-            <title>{`${post.title} | ${config.siteTitle}`}</title>
+            <title>{`${post.title} | ${config.siteTitleAlt}`}</title>
           </Helmet>
           <SEO postPath={slug} postNode={postNode} postSEO />
           <div>
             <h1>{post.title}</h1>
+            <h2>{post.subtitle}</h2>
             <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
             <div className="post-meta">
-              <PostTags tags={post.tags} />
               <SocialLinks postPath={slug} postNode={postNode} />
             </div>
           </div>
@@ -53,6 +53,7 @@ export const pageQuery = graphql`
       frontmatter {
         path
         title
+        subtitle
         cover {
           publicURL
           size
@@ -72,6 +73,7 @@ export const pageQuery = graphql`
         }
         date
         category
+        tags
       }
     }
   }

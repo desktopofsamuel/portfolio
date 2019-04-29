@@ -44,10 +44,10 @@ export default class CategoryTemplate extends React.Component {
       <Layout>
         <div>
           <Helmet
-            title={`Posts in "${category}" | ${config.siteTitle}`}
+            title={`Discover Posts in "${category}" | ${config.siteTitleAlt}`}
           />
           <Grid>
-          <Hero><h1>Posts in {category}</h1></Hero>
+          <Hero><h1>Discover Posts in {category}</h1></Hero>
           <Row>
           <Container><BigPostList postEdges={postEdges} /></Container>
           </Row>
