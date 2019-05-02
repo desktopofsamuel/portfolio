@@ -29,7 +29,7 @@ The most convenient app to grab color code is the one built-in to your Mac. Digi
 
 ![](./3.gif)
 
-Press “Command + L” to lock the inspectorYou can copy the RGB Hex Code easily by pressing “Shift + Command + S”
+Press “Command + L” to lock the inspector. You can copy the RGB Hex Code easily by pressing “Shift + Command + S”
 
 ![](./4.gif)
 

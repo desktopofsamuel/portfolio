@@ -17,7 +17,8 @@ position: absolute;
 bottom: 0;
 left: 0;
 z-index: 1000;
-width: 20vw;
+min-width: 320px;
+max-width: 500px;
 margin: 1rem;
 `
 
