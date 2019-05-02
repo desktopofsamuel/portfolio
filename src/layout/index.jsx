@@ -1,11 +1,11 @@
 import React from "react";
 import Helmet from "react-helmet";
+import SEO from "../components/SEO/SEO"
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import "./index.css";
-import Navigation from "../components/Navigation/navigation";
-import Footer from "../components/Footer/Footer"
-
+import Nav from "../components/Navigation/navigation";
+import Footer from "../components/Footer/Footer";
 
 const Layout = styled.div`
     background-color: var(--color-background-500);
@@ -13,33 +13,34 @@ const Layout = styled.div`
 `
 
 const Main = styled.main`
-  display: grid;
-  grid-template-columns: minmax(0.5vw,10vw) [content] minmax(23ch, auto) minmax(0.5vw,10vw);
+  padding: 0 2rem;
   margin: 0 auto;
-`
 
-const Content = styled.div`
-  grid-area: content;
+@media only screen and (max-width: 1024px) {
+padding: 0 1.5rem;
+}
+
+@media only screen and (max-width: 768px) {
+padding: 0 1rem;
+}
 `
+if (typeof window !== "undefined") {
+  // eslint-disable-next-line global-require
+  require("smooth-scroll")('a[href*="#"]')
+}
 
 export default class MainLayout extends React.Component {
   render() {
     const { children } = this.props;
     return (
-      <div>
-        <Helmet>
-          <meta name="description" content={config.siteDescription} />
-        </Helmet>
-        <Layout>
-        <Navigation />
+      <Layout>
+        <SEO />
+        <Nav />
         <Main>
-        <Content>
         {children}
-        </Content>
         </Main>
         <Footer/>
-        </Layout>
-      </div>
+      </Layout>
     );
   }
 }

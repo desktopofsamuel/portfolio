@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components"
 
-const Text = styled.h5`
-    font-weight: 500;
-    font-family: var(--primary-font);
+const Text = styled.small`
     color: ${props => props.textColor || "white"};
     text-decoration: none;
     margin-bottom: 0;
@@ -12,9 +10,10 @@ const Text = styled.h5`
 `
 
 const Wrapper = styled.button`
-    background-color: ${props => props.bgColor || 'var(--color-black-500)'};
+    background-color: ${props => props.bgColor || 'var(--color-white-500'};
     padding: 10px 25px;
-    border: none;
+    border: 1px var(--color-brand-500) solid;
+    box-shadow: none;
     margin-bottom: 5vh;
     cursor: pointer;
     border-radius: 5px;

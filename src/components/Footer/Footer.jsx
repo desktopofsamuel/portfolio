@@ -27,7 +27,7 @@ export default class Footer extends React.Component {
           <Link className="subheading textlink rightspace" to="/blog">Blog</Link>
           <a href="https://pin.desktopofsamuel.com" className="subheading textlink rightspace">Pin</a>
           <a href="https://photo.desktopofsamuel.com" className="subheading textlink rightspace">Photo</a>
-          <Link className="subheading textlink rightspace" to="/gear">My Gear</Link>
+          {/*<Link className="subheading textlink rightspace" to="/gear">My Gear</Link>*/}
         </Container>
       </Main>
     );

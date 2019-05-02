@@ -2,11 +2,15 @@
 posttype: "work"
 path: "/hyperair"
 title: "HyperAir Travel"
-cover: "./Hyperair-Feature-v5.png"
+subtitle: "Crafting travel experience."
+cover: "./Hyperair-Cover.png"
 date: "2018-08-24"
 category: "UI/UX Design"
 tags: 
-    - 'Travel'
+    - 'HyperAir'
+    - 'Travel Tech'
+    - '唱錢神器'
+    - 'Foreign Currency Exchange'
 intro: "HyperAir Incorporation is a start-up in Hong Kong specialising in all-rounded travel service. I have worked on their debut app focusing on currency exchange."
 color: "#125E8A"
 url: "http://hyperair.com/"

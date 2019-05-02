@@ -9,6 +9,7 @@ class SEO extends Component {
     let title;
     let description;
     let image;
+    let keywords;
     let postURL;
     if (postSEO) {
       const postMeta = postNode.frontmatter;
@@ -18,10 +19,12 @@ class SEO extends Component {
         : postNode.excerpt;
       image = postMeta.cover;
       postURL = config.siteUrl + config.pathPrefix + postPath;
+      keywords = postMeta.tags;
     } else {
       title = config.siteTitle;
       description = config.siteDescription;
       image = config.siteLogo;
+      keywords = config.siteKeywords;
     }
 
     image = config.siteUrl + config.pathPrefix + image;
@@ -73,6 +76,9 @@ class SEO extends Component {
         <meta name="title" content={title} />
         <meta name="description" content={description} />
         <meta name="image" content={image} />
+        <meta name="keywords" content={keywords} />
+        <meta name="publisher" content={config.siteTitleShort} />
+        <meta name="copyright" content={config.copyright} />
         {/* Schema.org tags */}
         <script type="application/ld+json">
           {JSON.stringify(schemaOrgJSONLD)}
@@ -80,7 +86,7 @@ class SEO extends Component {
 
         {/* OpenGraph tags */}
         <meta property="og:url" content={postSEO ? postURL : blogURL} />
-        {postSEO ? <meta property="og:type" content="article" /> : null}
+        {postSEO ? <meta property="og:type" content="article" /> : <meta property="og:type" content="website" />}
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={image} />
@@ -95,9 +101,14 @@ class SEO extends Component {
           name="twitter:creator"
           content={config.userTwitter ? config.userTwitter : ""}
         />
+        <meta
+          name="twitter:site"
+          content={config.userTwitter ? config.userTwitter : ""}
+        />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
+
       </Helmet>
     );
   }
