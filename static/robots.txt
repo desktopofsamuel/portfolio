@@ -1,3 +1,5 @@
 User-agent: *
 
 sitemap: http://desktopofsamuel.com/sitemap.xml
+
+Disallow: /gear/
