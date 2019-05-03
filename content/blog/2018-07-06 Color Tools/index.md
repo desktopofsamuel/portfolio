@@ -12,7 +12,7 @@ tags:
 - "productivity"
 - "color"
 
-cover: "./1.jpg"
+cover: "./color.png"
 
 ---
 

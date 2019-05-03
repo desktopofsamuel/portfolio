@@ -72,6 +72,7 @@ class Index extends React.Component {
     const postEdges = this.props.data.post.edges;
     const listEdges = this.props.data.list.edges;
     const Feature1Edges = this.props.data.feature1.edges;
+    const Feature2Edges = this.props.data.feature2.edges;
     return (
       <Layout>
           <Helmet title={`Design Blog | ${config.siteTitle}` }>
@@ -98,6 +99,7 @@ class Index extends React.Component {
             <Right>
               <small>Featured</small>
               <BlogFeature postEdges={Feature1Edges}/>
+              <BlogFeature postEdges={Feature2Edges}/>
               <Row id="latest">
               <small>Latest</small>
               <PostHero postEdges={listEdges} />
@@ -154,6 +156,42 @@ export const pageQuery = graphql`
       edges {
         node {
           ...bloglisting
+        }
+      }
+    }
+    feature2: allMarkdownRemark(
+      filter: {fileAbsolutePath: {regex: "/blog/2019-05-01 Building Gatsby v2 With Multiple Post Type/"}}
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+            date(formatString: "MMM DD, YYYY", locale: "en")
+          }
+          excerpt(pruneLength: 300)
+          timeToRead
+          frontmatter {
+            title
+            tags
+            category
+            cover {
+              publicURL
+              size
+              childImageSharp {
+                sizes(maxWidth: 1140) {
+                  base64
+                  aspectRatio
+                  src
+                  srcSet
+                  srcWebp
+                  srcSetWebp
+                  sizes
+                  originalImg
+                  originalName
+                }
+              }
+            }
+          }
         }
       }
     }
