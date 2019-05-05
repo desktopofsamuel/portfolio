@@ -115,6 +115,39 @@ class Index extends React.Component {
 export default Index;
 
 /* eslint no-undef: "off" */
+
+export const bloglisting = graphql`
+fragment bloglisting on MarkdownRemark {
+  fields {
+    slug
+    date(formatString: "MMM DD, YYYY", locale: "en")
+  }
+  excerpt(pruneLength: 300)
+  timeToRead
+  frontmatter {
+    title
+    tags
+    category
+    cover {
+      publicURL
+      size
+      childImageSharp {
+        sizes(maxWidth: 1140) {
+          base64
+          aspectRatio
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          sizes
+          originalImg
+          originalName
+      }
+    }
+  }
+}
+}
+`;
 export const pageQuery = graphql`
   query BlogQuery {
     feature1: allMarkdownRemark(
@@ -122,34 +155,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          fields {
-            slug
-            date(formatString: "MMM DD, YYYY", locale: "en")
-          }
-          excerpt(pruneLength: 300)
-          timeToRead
-          frontmatter {
-            title
-            tags
-            category
-            cover {
-              publicURL
-              size
-              childImageSharp {
-                sizes(maxWidth: 1140) {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  srcWebp
-                  srcSetWebp
-                  sizes
-                  originalImg
-                  originalName
-                }
-              }
-            }
-          }
+          ...bloglisting
         }
       }
     }
@@ -158,34 +164,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          fields {
-            slug
-            date(formatString: "MMM DD, YYYY", locale: "en")
-          }
-          excerpt(pruneLength: 300)
-          timeToRead
-          frontmatter {
-            title
-            tags
-            category
-            cover {
-              publicURL
-              size
-              childImageSharp {
-                sizes(maxWidth: 1140) {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  srcWebp
-                  srcSetWebp
-                  sizes
-                  originalImg
-                  originalName
-                }
-              }
-            }
-          }
+          ...bloglisting
         }
       }
     }

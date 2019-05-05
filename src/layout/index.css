@@ -56,14 +56,14 @@ div > main {
 
 @media only screen and (max-width: 1024px) {
     div > main {
-    max-width: 70vw;
+    max-width: 90vw;
     padding: 0 1.5rem;
   }
 }
 
 @media only screen and (max-width: 768px) {
 div > main {
-    max-width: 90vw;
+    max-width: 95vw;
     padding: 0 1rem;
     }
 }

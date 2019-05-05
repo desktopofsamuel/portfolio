@@ -20,6 +20,13 @@ z-index: 1000;
 min-width: 320px;
 max-width: 500px;
 margin: 1rem;
+
+@media only screen and (max-width: 1024px) {
+  position: relative;
+  padding: 0;
+  margin: 1rem 0 0 0;
+  background-color: var(--color-transparent);
+}
 `
 
 const PostListImage = styled(Img)`

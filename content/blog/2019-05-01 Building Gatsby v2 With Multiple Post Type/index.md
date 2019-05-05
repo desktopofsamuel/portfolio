@@ -9,7 +9,7 @@ tags:
 - "Design Portfolio"
 - "Personal Website"
 - "How To"
-cover: "./5.png"
+cover: "./3.png"
 ---
 
 ##Intro
