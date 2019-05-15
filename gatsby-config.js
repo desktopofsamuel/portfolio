@@ -113,6 +113,13 @@ module.exports = {
     "gatsby-plugin-favicon",
     "gatsby-plugin-offline",
     {
+      resolve: `gatsby-mdx`,
+      options: {
+        extensions: 
+          [`.mdx`],
+      }
+    },
+    {
       resolve: "gatsby-plugin-feed",
       options: {
         setup(ref) {
