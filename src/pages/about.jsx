@@ -9,6 +9,7 @@ import Link from "../components/GatsbyLink/GatsbyLink";
 import DocuSVG from "../../static/SVG/docu.svg"
 import WaterSVG from "../../static/SVG/Water.svg"
 import PinSVG from "../../static/SVG/Pin.svg"
+import ImageZoom from "react-medium-image-zoom"
 
 const Row = styled.section`
 padding: var(--var-padding-l) 0;
