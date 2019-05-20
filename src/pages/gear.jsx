@@ -19,7 +19,7 @@ class SetupPage extends React.Component {
   render() {
     return (
       <Layout>
-          <Helmet title={`Gear | ${config.siteTitle}`} />
+          <Helmet title={`Gear of Samuel`} />
           <SEO />
           <Content>    
             <h1>Gear</h1>
