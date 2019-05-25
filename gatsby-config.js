@@ -50,13 +50,6 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "travel",
-        path: `${__dirname}/content/travel/`
-      }
-    },
-    {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
