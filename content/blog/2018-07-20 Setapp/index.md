@@ -8,6 +8,7 @@ tags:
 - "App"
 - "Technology"
 cover: "./Does-subscription.png"
+tldr: "Thoughts on Setapp — subscription-based collection for Mac apps"
 ---
 
 ##Thoughts on Setapp — subscription-based collection for Mac apps 

@@ -7,12 +7,10 @@ tags:
 - "gatsby"
 - "web design"
 - "portfolio"
-intro: "I'm summing up the reasons why a designer should build a custom site using Gatsby.JS." 
+tldr: "I'm summing up the reasons why a designer should build a custom site using Gatsby.JS." 
 cover: "./why-designer.jpg"
 
 ---
-
-TLDR: I'm summing up the reasons why a designer should build a custom site using Gatsby.JS. 
 
 One of my year resolution for 2018 is to learn front-end coding. I feel that being a designer, learning how to code is the way how I could step up the game in web design, by understanding how every bit and piece fall into places. 
 

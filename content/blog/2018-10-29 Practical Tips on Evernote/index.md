@@ -12,6 +12,7 @@ tags:
   - "App"
 
 cover: "./Evernote.png"
+tldr: "Practical Evernote tips that help you to build your own knowledge base and get things done"
 ---
 
 TLDR: Practical Evernote tips that help you to build your own knowledge base and get things done (GTD)
