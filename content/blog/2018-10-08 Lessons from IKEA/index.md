@@ -21,15 +21,13 @@ My journey to Scandinavia continued in  Älmhult, Sweden (2 hours of train ride 
 
 ##Experience Design in 1950s
 
-![](./IMG_6215-Web-1.jpg)
-<small>Print ad of IKEA in 1950.</small>
+![Print ad of IKEA in 1950.](./IMG_6215-Web-1.jpg)
 
 IKEA was founded as a mail-order business by Ingvar Kampradin 1943. It grew and started selling furniture a few years later. In 1951, The first IKEA catalog is published.
 
 IKEA catalog is such an iconic part of the brand, this has been the tradition carried on for nearly 70 years. The catalog embodies the vision of IKEA, also putting their product in context. Reading the catalog made it unstoppable imagining IKEA furniture in your home. 
 
-![](./IMG_6232-Web-3.jpg)
-<small>First cover of IKEA catalog in 1951.</small>
+![First cover of IKEA catalog in 1951.](./IMG_6232-Web-3.jpg)
 
 Of course, the journey of experience design expanded through the showroom. Furniture is delicately decorated as a full bedroom, dining room, kitchen etc. Everything has to be seen and touched, in order to demonstrate the quality of the product. 
 
