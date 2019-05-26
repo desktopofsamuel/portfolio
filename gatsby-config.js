@@ -117,7 +117,6 @@ module.exports = {
       }
     },
     "gatsby-plugin-sitemap",
-    "gatsby-plugin-favicon",
     "gatsby-plugin-offline",
     {
       resolve: `gatsby-mdx`,
