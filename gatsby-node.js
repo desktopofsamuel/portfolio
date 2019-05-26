@@ -205,3 +205,18 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     },
   })
 }
+
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === "build-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: '/favicons-webpack-plugin/lib/favicons.js',
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
+}
