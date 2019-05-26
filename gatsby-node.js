@@ -197,3 +197,26 @@ exports.createPages = ({ graphql, actions }) => {
     ));
   });
 };
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    },
+  })
+}
+
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === "build-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: '/favicons-webpack-plugin/lib/favicons.js',
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
+}

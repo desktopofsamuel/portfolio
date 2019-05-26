@@ -43,6 +43,13 @@ module.exports = {
       }
     },
     {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "page",
+        path: `${__dirname}/src/pages/`
+      }
+    },
+    {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
@@ -110,8 +117,23 @@ module.exports = {
       }
     },
     "gatsby-plugin-sitemap",
-    "gatsby-plugin-favicon",
     "gatsby-plugin-offline",
+    {
+      resolve: `gatsby-mdx`,
+      options: {
+        extensions: 
+          [`.mdx`],
+          gatsbyRemarkPlugins: [
+            {
+              resolve: "gatsby-remark-images",
+              options: {
+                maxWidth: 1035,
+                sizeByPixelDensity: true
+              }
+            },
+          ]
+      }
+    },
     {
       resolve: "gatsby-plugin-feed",
       options: {
