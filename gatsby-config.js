@@ -56,7 +56,8 @@ module.exports = {
           {
             resolve: "gatsby-remark-images",
             options: {
-              maxWidth: 690
+              linkImagesToOriginal: false,
+              maxWidth: 690,
             }
           },
           {
@@ -64,7 +65,8 @@ module.exports = {
           },
           "gatsby-remark-prismjs",
           "gatsby-remark-copy-linked-files",
-          "gatsby-remark-autolink-headers"
+          "gatsby-remark-autolink-headers",
+          "gatsby-remark-images-zoom",
         ]
       }
     },
