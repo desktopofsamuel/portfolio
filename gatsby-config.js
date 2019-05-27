@@ -138,6 +138,7 @@ module.exports = {
         extensions: 
           [`.mdx`],
           gatsbyRemarkPlugins: [
+            "gatsby-remark-images-zoom",
             {
               resolve: "gatsby-remark-images-grid",
               options: {
@@ -164,7 +165,6 @@ module.exports = {
             "gatsby-remark-prismjs",
             "gatsby-remark-copy-linked-files",
             "gatsby-remark-autolink-headers",
-            "gatsby-remark-images-zoom",
           ]
       }
     },
