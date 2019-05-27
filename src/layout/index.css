@@ -26,7 +26,7 @@
 @media only screen and (max-width: 768px) {
     :root {
        font-size: 18px;
-       --var-padding-l: 4rem;
+       --var-padding-l: 3rem;
        --var-padding-m: 1rem;
     }
 }
@@ -272,3 +272,12 @@ p:first-child {
 img {
     max-width: 100%;
 }
+
+hr {
+    margin: var(--var-padding-l) 0;
+    border-top: 1px #f7f7f7 solid;
+}
+
+.gatsby-resp-image-wrapper {
+    width: 100%;
+  }
