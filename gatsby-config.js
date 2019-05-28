@@ -50,28 +50,35 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "travel",
-        path: `${__dirname}/content/travel/`
-      }
-    },
-    {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
           {
+            resolve: "gatsby-remark-images-grid",
+            options: {
+                className: "remark-grid",
+                gridGap: "16px",
+                margin: "2rem auto",
+            },
+          },  
+          {
             resolve: "gatsby-remark-images",
             options: {
-              maxWidth: 690
+              linkImagesToOriginal: false,
+              maxWidth: 1200,
             }
           },
           {
             resolve: "gatsby-remark-responsive-iframe"
           },
+          {
+            resolve: `gatsby-remark-figure-caption`,
+            options: {figureClassName: 'remark-figure'},
+          },
           "gatsby-remark-prismjs",
           "gatsby-remark-copy-linked-files",
-          "gatsby-remark-autolink-headers"
+          "gatsby-remark-autolink-headers",
+          "gatsby-remark-images-zoom",
         ]
       }
     },
@@ -124,7 +131,6 @@ module.exports = {
       }
     },
     "gatsby-plugin-sitemap",
-    "gatsby-plugin-favicon",
     "gatsby-plugin-offline",
     {
       resolve: `gatsby-mdx`,
@@ -132,13 +138,33 @@ module.exports = {
         extensions: 
           [`.mdx`],
           gatsbyRemarkPlugins: [
+            "gatsby-remark-images-zoom",
+            {
+              resolve: "gatsby-remark-images-grid",
+              options: {
+                  className: "remark-grid",
+                  gridGap: "16px",
+                  margin: "2rem auto",
+              },
+            },  
             {
               resolve: "gatsby-remark-images",
               options: {
-                maxWidth: 1035,
-                sizeByPixelDensity: true
+                linkImagesToOriginal: false,
+                maxWidth: 1200,
+                showCaptions: true,
               }
             },
+            {
+              resolve: "gatsby-remark-responsive-iframe"
+            },
+            {
+              resolve: `gatsby-remark-figure-caption`,
+              options: {figureClassName: 'remark-figure'},
+            },
+            "gatsby-remark-prismjs",
+            "gatsby-remark-copy-linked-files",
+            "gatsby-remark-autolink-headers",
           ]
       }
     },

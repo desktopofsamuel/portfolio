@@ -2,7 +2,7 @@
 title: "Changelog"
 ---
 import Layout from "../layout"
-import ZoomImage from "components/ZoomImage/ZoomImage"
+import ZoomImage from "../components/ZoomImage/ZoomImage"
 
 
 import cam from "./IMG_5492.jpg"
@@ -11,11 +11,38 @@ import cam from "./IMG_5492.jpg"
 
  
 # Changelog 
-##### Last Update: May 16, 2019
+_Last Update: May 26, 2019_
 
 ---
-  
-### May 16, 2019
-Added [Gatsby-MDX](https://github.com/search?q=gatsby-mdx) to the website 
- 
+
+
+
+### May 26, 2019 
+- Added [Gatsby-MDX](https://github.com/search?q=gatsby-mdx) to the website 
+- Added [GatsbyRemark-Image-Zoom](https://github.com/premieroctet/gatsby-remark-images-zoom) to add lightbox to all images processed on Gatsby Image
+- Added new Gear page using MDX, more content and photos will be added
+- Added new Changelog page using MDX
+- Added TLDR field in markdown, Blog listing will prioritize to show TLDR, and rest will show excerpt of first 300 characters.
+- Updated footer with Gear and Changelog
+
+### Mar 21, 2019
+- Launched v2 using Gatsby 2.0
+
+### Oct 31, 2018 
+
+- Revamped landing page with new design and content. I have added my service section and an about section with [React Simple Map](http://react-simple-maps.io) as background (but it could function so much more)
+- Revamped work page design. The section background is dynamic now to match every projects' brand color (manually input from the markdown files).
+- Added mobile navigation and animation with some icons that I drew.
+- Added 404 Page. One small step for man, one giant leap for mankind
+- Added [Work Category Page](http://localhost:8000/categories/ui-ux-design), each service can be viewed individually with relevant projects
+- Enhanced landing page experience by cool reveal animation using [React-Reveal](https://www.react-reveal.com/)
+- Enhanced scroll animation using [React Anchor Link Smooth Scroll](https://github.com/mauricevancooten/react-anchor-link-smooth-scroll) when you click Get In Touch on landing page
+- Enhanced blog reading experience especially with code block. Code will highlight according to the language using [Gatsby-Remark-PrismicJS](https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/)
+- Enhanced footer design by replacing the author component, also added social media links and contact access.
+- All blog posts have a feature image now on the top
+- Fixed related post referenced to [Gatsby Material Starter](https://github.com/Vagr9K/gatsby-material-starter/blob/master/gatsby-node.js) node.js
+- Fixed code block overflow problem in blog
+- Fixed Footer Width Problem
+- Fixed Tag & Category with multiple words in slug using [kebabCase](https://lodash.com/docs#kebabCase)
+
 </Layout>

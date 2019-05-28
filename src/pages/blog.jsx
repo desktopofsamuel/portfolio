@@ -128,6 +128,7 @@ fragment bloglisting on MarkdownRemark {
     title
     tags
     category
+    tldr
     cover {
       publicURL
       size
@@ -185,6 +186,7 @@ export const pageQuery = graphql`
             title
             tags
             category
+            tldr
             cover {
               publicURL
               size
@@ -222,6 +224,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             tags
+            tldr
           }
         }
       }

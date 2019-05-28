@@ -8,6 +8,7 @@ tags:
 - "App"
 - "Technology"
 cover: "./Does-subscription.png"
+tldr: "Thoughts on Setapp — subscription-based collection for Mac apps"
 ---
 
 ##Thoughts on Setapp — subscription-based collection for Mac apps 
@@ -18,7 +19,7 @@ cover: "./Does-subscription.png"
 Mac apps are great. They are beautifully designed, crafted with a bunch of handy features, and they have won over the hearts of their users, willing to pay for every update. Mac App Store was launched in 2011, it was Apple’s attempt to replicate the success of iOS App Store.
 However, I would hardly call Mac App Store a success today.
 
-##Walls of the App Store
+## Walls of the App Store
 ![](./2.jpg)
 
 Despite a cheque with a lot of zeroes are written on the slide of Apple’s keynote every year at WWDC, developers share their loves & hatred at the same time toward the monstrous platform. There are a lot of Mac apps (especially those with subscription service) have yet to become available today on Mac App Store. 

@@ -31,7 +31,7 @@ class PostHero extends React.Component {
         cover: postEdge.node.frontmatter.cover,
         title: postEdge.node.frontmatter.title,
         date: postEdge.node.fields.date,
-        excerpt: postEdge.node.excerpt,
+        excerpt: postEdge.node.frontmatter.tldr || postEdge.node.excerpt,
         timeToRead: postEdge.node.timeToRead
       });
     });

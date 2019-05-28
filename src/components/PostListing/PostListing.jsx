@@ -66,7 +66,7 @@ class PostListing extends React.Component {
         cover: postEdge.node.frontmatter.cover,
         title: postEdge.node.frontmatter.title,
         date: postEdge.node.fields.date,
-        excerpt: postEdge.node.excerpt,
+        excerpt: postEdge.node.frontmatter.tldr || postEdge.node.excerpt,
         timeToRead: postEdge.node.timeToRead
       });
     });
@@ -83,7 +83,7 @@ class PostListing extends React.Component {
         <h3><Link to={post.path}>
             <a>{post.title}</a></Link>
         </h3>
-        <p>{post.excerpt}</p>
+        <p>{post.tldr} || {post.excerpt}</p>
         </div>
         <Button invert={invert} to={post.path}>
           <h5>Read On →</h5>
