@@ -364,6 +364,7 @@ query IndexQuery {
           path
           tags
           category
+          tldr
           cover {
             publicURL
             size

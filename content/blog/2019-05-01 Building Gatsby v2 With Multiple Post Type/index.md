@@ -10,9 +10,11 @@ tags:
 - "Personal Website"
 - "How To"
 cover: "./3.png"
+tldr: "This is an update to my previous article Building Gatsby With Multiple Post Type, as I have rebuilt my whole site using GatsbyJS v2. "
 ---
 
 ##Intro
+
 This is an update to my previous article [Building Gatsby With Multiple Post Type](./building-gatsby-with-multiple-post-type), as I have rebuilt my whole site using GatsbyJS v2. I switched from [Gatsby default starter](https://github.com/gatsbyjs/gatsby-starter-default) to [Gatsby Advanced Starter](https://github.com/Vagr9K/gatsby-advanced-starter) which save me some time setting up foundation of the website. (e.g. Tags, Category, SEO etc)
 
 But please note that this starter contains no UI or any style, you will need to build it on our own. If you are a designer with some front-end development experience, this is the place.
@@ -265,8 +267,9 @@ After that, create ProjectEdges in order to start another GraphQL query. `const 
 
 This should wrap up everything you need in order to create multiple post types in Gatsby. If you encountered any problems in setting it up. Make sure you:
 
-- Restart localhost server every time if you have edited the  gatsby-node.js
-- Test it step by step to eliminate any cause of error.
+- Restart localhost server every time if you have edited the `gatsby-node.js`
+- Test it step by step to eliminate any cause of error
+- Check out my repo [Multiple Post Type](https://github.com/sparklesam/multiple-post-types)
 
-Feel free to share your ways of creating your own personal site using Gatsby. If you have a better solution or encountered any problems, talk to me on [Twitter](http://www.twitter.com/dekstopofsamuel) Stay tuned if you are interested in more Gatsby tutorial and walkthroughs! 
+Feel free to share your ways of creating your own personal site using Gatsby. If you have a better solution or encountered any problems, talk to me on [Twitter](http://www.twitter.com/desktopofsamuel). Stay tuned if you are interested in more Gatsby tutorial and walkthroughs! 
 
