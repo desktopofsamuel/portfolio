@@ -14,10 +14,8 @@ class SEO extends Component {
     if (postSEO) {
       const postMeta = postNode.frontmatter;
       ({ title } = postMeta);
-      description = postMeta.description
-        ? postMeta.description
-        : postNode.excerpt;
-      image = postMeta.cover;
+      description = postMeta.tldr ? postMeta.tldr : postNode.excerpt;
+      image = postMeta.cover.publicURL;
       postURL = config.siteUrl + config.pathPrefix + postPath;
       keywords = postMeta.tags;
     } else {
@@ -86,7 +84,11 @@ class SEO extends Component {
 
         {/* OpenGraph tags */}
         <meta property="og:url" content={postSEO ? postURL : blogURL} />
-        {postSEO ? <meta property="og:type" content="article" /> : <meta property="og:type" content="website" />}
+        {postSEO ? (
+          <meta property="og:type" content="article" />
+        ) : (
+          <meta property="og:type" content="website" />
+        )}
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={image} />
@@ -108,7 +110,6 @@ class SEO extends Component {
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
-
       </Helmet>
     );
   }
