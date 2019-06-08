@@ -56,16 +56,16 @@ module.exports = {
           {
             resolve: "gatsby-remark-images-grid",
             options: {
-                className: "remark-grid",
-                gridGap: "16px",
-                margin: "2rem auto",
-            },
-          },  
+              className: "remark-grid",
+              gridGap: "16px",
+              margin: "2rem auto"
+            }
+          },
           {
             resolve: "gatsby-remark-images",
             options: {
               linkImagesToOriginal: false,
-              maxWidth: 1200,
+              maxWidth: 1200
             }
           },
           {
@@ -73,12 +73,12 @@ module.exports = {
           },
           {
             resolve: `gatsby-remark-figure-caption`,
-            options: {figureClassName: 'remark-figure'},
+            options: { figureClassName: "remark-figure" }
           },
           "gatsby-remark-prismjs",
           "gatsby-remark-copy-linked-files",
           "gatsby-remark-autolink-headers",
-          "gatsby-remark-images-zoom",
+          "gatsby-remark-images-zoom"
         ]
       }
     },
@@ -120,14 +120,14 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
         typekit: {
-          id: 'wbb0iyz'
+          id: "wbb0iyz"
         },
         google: {
-          families: ['Merriweather']
-        },
+          families: ["Merriweather"]
+        }
       }
     },
     "gatsby-plugin-sitemap",
@@ -135,37 +135,39 @@ module.exports = {
     {
       resolve: `gatsby-mdx`,
       options: {
-        extensions: 
-          [`.mdx`],
-          gatsbyRemarkPlugins: [
-            "gatsby-remark-images-zoom",
-            {
-              resolve: "gatsby-remark-images-grid",
-              options: {
-                  className: "remark-grid",
-                  gridGap: "16px",
-                  margin: "2rem auto",
-              },
-            },  
-            {
-              resolve: "gatsby-remark-images",
-              options: {
-                linkImagesToOriginal: false,
-                maxWidth: 1200,
-                showCaptions: true,
-              }
-            },
-            {
-              resolve: "gatsby-remark-responsive-iframe"
-            },
-            {
-              resolve: `gatsby-remark-figure-caption`,
-              options: {figureClassName: 'remark-figure'},
-            },
-            "gatsby-remark-prismjs",
-            "gatsby-remark-copy-linked-files",
-            "gatsby-remark-autolink-headers",
-          ]
+        extensions: [`.mdx`],
+        gatsbyRemarkPlugins: [
+          "gatsby-remark-images-zoom",
+          {
+            resolve: "gatsby-remark-images-grid",
+            options: {
+              className: "remark-grid",
+              gridGap: "16px",
+              margin: "2rem auto"
+            }
+          },
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              linkImagesToOriginal: false,
+              maxWidth: 1200,
+              showCaptions: true
+            }
+          },
+          {
+            resolve: "gatsby-remark-responsive-iframe"
+          },
+          {
+            resolve: `gatsby-remark-figure-caption`,
+            options: { figureClassName: "remark-figure" }
+          },
+          "gatsby-remark-prismjs",
+          "gatsby-remark-copy-linked-files",
+          "gatsby-remark-autolink-headers"
+        ],
+        defaultLayouts: {
+          default: require.resolve("./src/components/default-page-layout.jsx")
+        }
       }
     },
     {
