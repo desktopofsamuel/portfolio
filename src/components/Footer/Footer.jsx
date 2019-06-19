@@ -5,16 +5,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRss, faCog, faCameraRetro } from "@fortawesome/free-solid-svg-icons";
 
 const FooterItem = styled(Link)`
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: center;
-margin-right: 2rem;
-color: var(--color-secondary-500);
-border-bottom: 0;
-text-align: center;
-&:last-child {
-  margin-right: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-right: 2rem;
+  color: var(--color-secondary-500);
+  border-bottom: 0;
+  text-align: center;
+  &:last-child {
+    margin-right: 0;
+  }
 `;
 
 const FooterIcon = styled(FontAwesomeIcon)`
