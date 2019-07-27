@@ -9,13 +9,17 @@ const Block = styled.div`
   position: relative;
   display: flex;
   flex-flow: column;
-  background: ${props => (props.invert ? `var(--color-white-700)` : `` )} ;
-  padding: 0 var(--padding-m) var(--padding-s) var(--padding-m) ; 
+  background: ${props => (props.invert ? `var(--color-white-700)` : ``)};
+  padding: 0 var(--padding-m) var(--padding-s) var(--padding-m);
 
-  color: ${props => (props.invert ? `var(--color-black-500)` : `var(--color-black-500)` )};
+  color: ${props =>
+    props.invert ? `var(--color-black-500)` : `var(--color-black-500)`};
   justify-content: space-between;
   p {
-    background: ${props => (props.invert ? `linear-gradient(to bottom,var(--color-black-500) 30%,rgba(18, 18, 18, 0))` : `linear-gradient(to bottom,var(--color-black-500) 30%,rgba(18, 18, 18, 0))` )};
+    background: ${props =>
+      props.invert
+        ? `linear-gradient(to bottom,var(--color-black-500) 30%,rgba(18, 18, 18, 0))`
+        : `linear-gradient(to bottom,var(--color-black-500) 30%,rgba(18, 18, 18, 0))`};
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -31,18 +35,19 @@ const Block = styled.div`
   }
 
   button {
-    color: ${props => (props.invert ? `var(--color-white-500)` : `var(--color-black-500)` )};
+    color: ${props =>
+      props.invert ? `var(--color-white-500)` : `var(--color-black-500)`};
   }
 
   @media only screen and (max-width: 768px) {
-  padding: 0;
-  margin-bottom: 2rem;
+    padding: 0;
+    margin-bottom: 2rem;
   }
 `;
 
 const PostListImage = styled(Img)`
-margin-bottom: 1rem;
-`
+  margin-bottom: 1rem;
+`;
 
 const Button = styled(Link)`
   margin: 0;
@@ -80,10 +85,12 @@ class PostListing extends React.Component {
       <Block className="block" invert={invert} key={post.title}>
         <PostListImage sizes={post.cover.childImageSharp.sizes} />
         <div>
-        <h3><Link to={post.path}>
-            <a>{post.title}</a></Link>
-        </h3>
-        <p>{post.tldr} || {post.excerpt}</p>
+          <h3>
+            <Link to={post.path}>
+              <a>{post.title}</a>
+            </Link>
+          </h3>
+          <p> {post.excerpt}</p>
         </div>
         <Button invert={invert} to={post.path}>
           <h5>Read On →</h5>
@@ -96,9 +103,9 @@ class PostListing extends React.Component {
 export default PostListing;
 
 PostListing.propTypes = {
-  invert: PropTypes.bool,
+  invert: PropTypes.bool
 };
 
 PostListing.defaultProps = {
-  invert: false,
-}; 
+  invert: false
+};
