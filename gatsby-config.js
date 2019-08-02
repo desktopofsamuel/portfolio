@@ -68,9 +68,7 @@ module.exports = {
               maxWidth: 1200
             }
           },
-          {
-            resolve: "gatsby-remark-responsive-iframe"
-          },
+          "gatsby-remark-responsive-iframe",
           {
             resolve: `gatsby-remark-figure-caption`,
             options: { figureClassName: "remark-figure" }
@@ -133,7 +131,7 @@ module.exports = {
     "gatsby-plugin-sitemap",
     "gatsby-plugin-offline",
     {
-      resolve: `gatsby-mdx`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`],
         gatsbyRemarkPlugins: [
@@ -154,9 +152,7 @@ module.exports = {
               showCaptions: true
             }
           },
-          {
-            resolve: "gatsby-remark-responsive-iframe"
-          },
+            "gatsby-remark-responsive-iframe",
           {
             resolve: `gatsby-remark-figure-caption`,
             options: { figureClassName: "remark-figure" }
