@@ -133,7 +133,7 @@ module.exports = {
     "gatsby-plugin-sitemap",
     "gatsby-plugin-offline",
     {
-      resolve: `gatsby-plugin-mdx`,
+      resolve: `gatsby-mdx`,
       options: {
         extensions: [`.mdx`],
         gatsbyRemarkPlugins: [
