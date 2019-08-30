@@ -104,11 +104,11 @@ const More2Button = styled.button`
 `;
 
 const FullGreyRow = styled(Row)`
-  background: var(--color-white-700);
+  background: var(--color-white-300);
 `;
 
 const FullYellowRow = styled(Row)`
-  background: #fefdf4;
+  background: var(--color-brand-300);
 `;
 const ContactButton = styled.button`
   border: none;
@@ -202,7 +202,7 @@ const Contact = styled.div`
   display: inline-block;
 
   h2 {
-    color: var(--color-secondary-500);
+    color: var(--color-secondary-700);
   }
 `;
 
@@ -302,9 +302,9 @@ class Index extends React.Component {
               <small>I'm working as a</small>
               <h2>Product Designer</h2>
               <p>
-                I’m currently based in Hong Kong, specialising in interface and
-                user-experience design, crafting outstanding products. <br />{" "}
-                <br /> Currently, I lead design at Hyperair as Principal
+                Currently I'm based in Hong Kong, specialising in user-interface
+                and user-experience design, crafting outstanding digital
+                products. <br /> <br /> I lead design at Hyperair as Principal
                 Designer. Before that, I worked as Cross-Content Intern at
                 iTunes & App Store, Apple.
               </p>
