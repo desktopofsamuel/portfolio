@@ -23,13 +23,13 @@ Serious competitors like [Bear](https://itunes.apple.com/us/app/bear/id101636644
 
 With the brand revamp last month and foreseeable major app revamp upcoming. Let’s take a look at the existing Evernote and introduce a few tips that I’ve recently discovered.
 
-## Better to be late than sorry: **Templates**
+## Better to be late than sorry: Templates
 
 ![](./Template.png)
 
 Templates should have been on Evernote since it was ever released. Before that, I always had a template tag with all the reusable documents. But it's better to be late than sorry. Templates might not be very useful for long-time pro users since I assume most of them developed their own workflow already. But it is always nice to check out how do other people work, it would be even better if people can submit and share their own template. At least you can do it in your notebook, by clicking "Save as Template" in context menu next to the title.
 
-## **Tables have been revamped**
+## Tables have been revamped
 
 ![](./Tables.png)
 
@@ -37,7 +37,7 @@ My impression of the old Evernote tables was always lack of style and function. 
 
 New table features revamped a year ago, but I have discovered only recently. Supporting drag-and-drop rows and intuitive controls allow my notes become more systematic. Usually, I use tables as a header template for document type, like meeting notes and agendas. It is much easier than writing on a completely blank note.
 
-## **To-do List + Saved Search with Filters**
+## To-do List + Saved Search with Filters
 
 ![](./Saved-Search.png)
 
