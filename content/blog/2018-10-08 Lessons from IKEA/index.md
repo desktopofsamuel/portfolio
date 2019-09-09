@@ -7,9 +7,9 @@ title: "Lessons from IKEA"
 category: "Design Journal"
 
 tags: 
-- "IKEA"
-- "Sweden"
-- "Experience Design"
+  - "IKEA"
+  - "Sweden"
+  - "Experience Design"
 
 cover: "./IMG_6232-Web-3.jpg"
 

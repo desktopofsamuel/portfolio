@@ -180,6 +180,7 @@ exports.createPages = ({ graphql, actions }) => {
             context: {
               slug: edge.node.frontmatter.path,
               category: edge.node.frontmatter.category,
+              tag: edge.node.frontmatter.tags,
             }
           });
         } else { // blog post
@@ -189,6 +190,7 @@ exports.createPages = ({ graphql, actions }) => {
             context: {
               slug: edge.node.frontmatter.path, 
               category: edge.node.frontmatter.category,
+              tag: edge.node.frontmatter.tags,
             }
           });
         }

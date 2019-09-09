@@ -10,7 +10,15 @@ const Grid = styled.section`
 max-width: 768px;
 margin: 0 auto;`
 
-const PostList = styled(BigPostList)`
+
+const Container = styled.section`
+  display: grid;
+  grid-gap: 5rem;
+  grid-template-columns: 1fr 1fr;
+
+  @media only screen and (max-width: 1280px) {
+    display: block;
+  }
 `
 
 export default class TagTemplate extends React.Component {
@@ -21,7 +29,7 @@ export default class TagTemplate extends React.Component {
       <Layout>
         <div className="tag-container">
           <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitleAlt}`} />
-          <Grid><PostList postEdges={postEdges} /></Grid>
+          <Container><BigPostList postEdges={postEdges} /></Container>
         </div>
       </Layout>
     );
@@ -41,14 +49,15 @@ export const pageQuery = graphql`
         node {
           fields {
             slug
-            date
+            date(formatString: "MMM DD, YYYY", locale: "en")
           }
-          excerpt
+          excerpt(pruneLength: 500)
           timeToRead
           frontmatter {
             title
-            path
             tags
+            path
+            category
             cover {
               publicURL
               size
@@ -63,9 +72,9 @@ export const pageQuery = graphql`
                   sizes
                   originalImg
                   originalName
-                }
               }
             }
+          }
             date
           }
         }

@@ -7,8 +7,8 @@ title: "Lessons learned from personal project"
 category: "Work In Progress"
 
 tags: 
-- "gatsby"
-- "personal project"
+  - "Gatsby"
+  - "Personal Project"
 
 cover: "./Pin.png"
 

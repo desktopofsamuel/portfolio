@@ -7,8 +7,9 @@ title: "I realise I dont need a read-it-later service. You should too."
 category: "Productivity"
 
 tags: 
-- "Read-It-Later"
-- "Todoist"
+  - "Read-It-Later"
+  - "Todoist"
+  - "Productivity"
 
 cover: "./read-it-later-v3.png"
 

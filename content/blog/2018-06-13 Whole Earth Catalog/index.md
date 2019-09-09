@@ -4,8 +4,9 @@ date: "2018-06-03"
 title: "Whole Earth Catalog"
 category: "Design Journal"
 tags: 
-- "localization"
-- "whole earth"
+  - "Localization"
+  - "Whole Earth"
+  - "Steve Jobs"
 cover: "./we-0.jpg"
 ---
 

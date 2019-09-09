@@ -4,9 +4,9 @@ date: "2018-07-20"
 title: "Do Subscription Models Work with Apps?"
 category: "Productivity"
 tags: 
-- "Subscription"
-- "App"
-- "Technology"
+  - "Subscription"
+  - "App"
+  - "Technology"
 cover: "./Does-subscription.png"
 tldr: "Thoughts on Setapp — subscription-based collection for Mac apps"
 ---

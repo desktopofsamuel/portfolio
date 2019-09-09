@@ -8,9 +8,10 @@ title: "Essential Color Tools to Step Up Your Design Game"
 category: "Design Journal"
 
 tags: 
-- "design"
-- "productivity"
-- "color"
+  - "Color"
+  - "Design"
+  - "Productivity"
+  - "Visual Design"
 
 cover: "./color.png"
 

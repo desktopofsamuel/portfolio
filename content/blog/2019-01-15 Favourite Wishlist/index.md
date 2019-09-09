@@ -7,7 +7,7 @@ title: "Feature Wishlist for My Favorites Apps in 2018"
 category: "App Talk"
 
 tags: 
-- "app"
+  - "App"
 
 cover: "./Pin.png"
 
