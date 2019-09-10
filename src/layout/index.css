@@ -1,8 +1,10 @@
 @import url("https://rsms.me/inter/inter.css");
+@import url("https://use.typekit.net/hey8lez.css");
 
 :root {
-  --primary-font: Inter, Helvetica, Arial, sans-serif;
+  --primary-font: grad, Georgia, serif;
   --secondary-font: Inter, Helvetica, Arial, sans-serif;
+  --tertiary-font: grad, Georgia, serif;
   --color-brand-300: #fefdf4;
   --color-brand-500: #feb101;
   --color-palette-500: #ffd644;
@@ -72,7 +74,7 @@ div > main {
 }
 
 h1 {
-  font-family: var(--primary-font);
+  font-family: var(--secondary-font);
   font-style: normal;
   font-weight: 700;
   font-size: calc(36px + (48 - 36) * ((100vw - 320px) / (1600 - 320)));
@@ -111,7 +113,7 @@ h4 {
 }
 
 h5 {
-  font-family: var(--primary-font);
+  font-family: var(--secondary-font);
   font-style: normal;
   font-weight: 700;
   line-height: 150%;
@@ -131,7 +133,7 @@ h6 {
 }
 
 small {
-  font-family: var(--primary-font);
+  font-family: var(--secondary-font);
   font-weight: 400;
   text-transform: uppercase;
   line-height: normal;

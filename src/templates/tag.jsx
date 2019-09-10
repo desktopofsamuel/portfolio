@@ -53,7 +53,7 @@ export const pageQuery = graphql`
             slug
             date(formatString: "MMM DD, YYYY", locale: "en")
           }
-          excerpt(pruneLength: 500)
+          excerpt(pruneLength: 200)
           timeToRead
           frontmatter {
             title

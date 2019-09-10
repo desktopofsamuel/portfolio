@@ -7,6 +7,9 @@ import kebabCase from 'lodash/kebabCase';
 
 const Container = styled.article`
   margin-bottom: var(--padding-m);
+  display: grid;
+  grid-gap: 48px;
+  grid-template-columns: [left] 30% [right] 70%;
 
   @media only screen and (max-width: 425px) {
       margin-bottom: 100px;
@@ -16,6 +19,7 @@ const Container = styled.article`
 
 const ListTitle = styled.h1`
   cursor: pointer;
+  font-family: var(--tertiary-font);
   font-size: 2rem;
 `
 const ListRight = styled.div`
@@ -28,6 +32,8 @@ const ListExcerpt = styled.p`
 
 const ListLeft = styled.div`
   grid-area: left;
+  margin-top: 20px;
+  border-top: 1px solid #000;
 `
 
 const ListMeta = styled.small`
@@ -57,12 +63,12 @@ class WidePostList extends React.Component {
     return postList.map(post => (
       <Container>
         <ListLeft>
-          <ListTitle><Link to={post.path}>{post.title}</Link></ListTitle>
-          <ListMeta>{post.date} in </ListMeta>
-          <ListMeta><Link to={`/categories/${kebabCase(post.category)}`}>{post.category}</Link></ListMeta>
         </ListLeft>
         <ListRight>
+          <ListTitle><Link to={post.path}>{post.title}</Link></ListTitle>
           <ListExcerpt>{post.excerpt}</ListExcerpt>
+          <ListMeta>{post.date} in </ListMeta>
+          <ListMeta><Link to={`/categories/${kebabCase(post.category)}`}>{post.category}</Link></ListMeta>
         </ListRight>
       </Container>
     ));

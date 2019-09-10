@@ -40,10 +40,18 @@ padding: 1rem;
 display: flex;
 flex-flow: column;
 justify-content: space-between;
+
+ small {
+   font-family: var(--secondary-font);
+ }
 `
 const ReadButton = styled(Link)`
 justify-self: flex-end;
 border-bottom: 0;
+
+h5 {
+font-family: var(--secondary-font);
+}
 `
 
 const ListRight = styled.div`
@@ -71,22 +79,22 @@ class WorkHero extends React.Component {
     return (
       <Grid>
         {/* Your post list here. */
-        postList.map(post => (
-          <Link to={`/work/${post.path}`} key={post.title}>
-            <ListItem style={{ borderLeftColor: `${post.color}`}}>
-              <ListLeft>
-                <div>
-                <small>{post.title}</small>
-                <h3>{post.subtitle}</h3>
-                </div>
-                <ReadButton to={`/work/${post.path}`}><h5>Read On →</h5></ReadButton>
-              </ListLeft>
-              <ListRight>
-                <WorkImg sizes={post.cover.childImageSharp.sizes}></WorkImg>
-              </ListRight>
+          postList.map(post => (
+            <Link to={`/work/${post.path}`} key={post.title}>
+              <ListItem style={{ borderLeftColor: `${post.color}` }}>
+                <ListLeft>
+                  <div>
+                    <small>{post.title}</small>
+                    <h3>{post.subtitle}</h3>
+                  </div>
+                  <ReadButton to={`/work/${post.path}`}><h5>Read On →</h5></ReadButton>
+                </ListLeft>
+                <ListRight>
+                  <WorkImg sizes={post.cover.childImageSharp.sizes}></WorkImg>
+                </ListRight>
               </ListItem>
-          </Link>
-        ))}
+            </Link>
+          ))}
       </Grid>
     );
   }

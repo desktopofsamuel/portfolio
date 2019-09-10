@@ -11,6 +11,7 @@ import SocialLinks from "../components/SocialLinks/SocialLinks";
 import kebabCase from "lodash/kebabCase";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
+import Safe from "react-safe";
 import "./b16-tomorrow-dark.css";
 import "./post.css";
 import { FaAngleRight } from "react-icons/fa";
@@ -168,6 +169,7 @@ export default class PostTemplate extends React.Component {
               </Header>
               <Main>
                 <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
+
               </Main>
               <Sidebar>
                 <small>Also in</small>{" "}
