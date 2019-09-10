@@ -7,9 +7,9 @@ title: "Journey to Design Matters"
 category: "Design Journal"
 
 tags: 
-- "Design"
-- "Conference"
-- "DesignMatters18"
+  - "Design"
+  - "Conference"
+  - "DesignMatters18"
 
 cover: "./IMG_20180927_145719.jpg"
 

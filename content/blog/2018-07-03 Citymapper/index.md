@@ -4,9 +4,9 @@ date: "2018-07-03"
 category: "Design Journal"
 title: "How to do localization right - Citymapper in Hong Kong"
 tags: 
-- "localization"
-- "app"
-- "design"
+  - "Localization"
+  - "App"
+  - "Design"
 cover: "./1.jpg"
 ---
 ![](./1.jpg)

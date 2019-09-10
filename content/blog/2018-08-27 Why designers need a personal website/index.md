@@ -4,9 +4,9 @@ date: "2018-08-26"
 title: "Why designers need a personal website?"
 category: "Work In Progress"
 tags: 
-- "gatsby"
-- "web design"
-- "portfolio"
+  - "Gatsby"
+  - "Web Design"
+  - "Portfolio"
 tldr: "I'm summing up the reasons why a designer should build a custom site using Gatsby.JS." 
 cover: "./why-designer.jpg"
 

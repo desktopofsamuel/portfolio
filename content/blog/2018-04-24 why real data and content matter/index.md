@@ -4,8 +4,9 @@ date: "2018-04-24"
 title: "Why real data & content matter"
 category: "Design Journal"
 tags: 
-- "prototype"
-- "design"
+  - "Design"
+  - "Prototype"
+  - "Data"
 cover: "./main.jpg"
 ---
 

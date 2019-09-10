@@ -4,7 +4,7 @@ date: "2018-10-31"
 title: "2018 October Update"
 category: "Work In Progress"
 tags: 
-    - "gatsby"
+  - "Gatsby"
 cover: "./2018-Oct.png"
 
 ---

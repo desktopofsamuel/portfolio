@@ -4,11 +4,11 @@ date: "2017-10-21"
 title: "A Brief Guide to Setting up Mac … (again)"
 category: "Ctrl Alt Setup"
 tags: 
-- "Mac OS"
-- "OS X"
-- "Apple"
-- "Macbook Pro"
-- "Tutorial"
+  - "Mac OS"
+  - "OS X"
+  - "Apple"
+  - "Macbook Pro"
+  - "Tutorial"
 cover: "./main.jpg"
 ---
 

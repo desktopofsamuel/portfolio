@@ -7,9 +7,9 @@ title: "Fixing iOS Books Cover Problem with custom ePUB"
 category: "iOS"
 
 tags: 
-- "iOS"
-- "Books"
-- "ePub"
+  - "iOS"
+  - "Books"
+  - "ePub"
 
 cover: "./ipad.png"
 
