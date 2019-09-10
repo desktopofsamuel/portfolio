@@ -85,7 +85,7 @@ class WorkHero extends React.Component {
                 <ListLeft>
                   <div>
                     <small>{post.title}</small>
-                    <h3>{post.subtitle}</h3>
+                    <h2>{post.subtitle}</h2>
                   </div>
                   <ReadButton to={`/work/${post.path}`}><h5>Read On →</h5></ReadButton>
                 </ListLeft>

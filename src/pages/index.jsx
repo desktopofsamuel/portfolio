@@ -44,6 +44,7 @@ const Intro = styled(Row)`
 
 const Hero = styled.div`
   text-align: left;
+  
 `;
 
 const HeroGraphics = styled.figure`

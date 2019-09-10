@@ -11,7 +11,6 @@ import SocialLinks from "../components/SocialLinks/SocialLinks";
 import kebabCase from "lodash/kebabCase";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
-import Safe from "react-safe";
 import "./b16-tomorrow-dark.css";
 import "./post.css";
 import { FaAngleRight } from "react-icons/fa";
@@ -100,6 +99,7 @@ const Sidebar = styled.aside`
 
 const PostTitle = styled.h1`
   grid-area: title;
+  font-family: var(--primary-font);
 `;
 const PostMeta = styled.small`
   margin: 0;
