@@ -2,7 +2,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
-import BigPostList from "../components/BigPostList/BigPostList";
+import PostList from "../components/WidePostList/WidePostList";
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
 
@@ -12,13 +12,14 @@ margin: 0 auto;`
 
 
 const Container = styled.section`
-  display: grid;
-  grid-gap: 5rem;
-  grid-template-columns: 1fr 1fr;
 
   @media only screen and (max-width: 1280px) {
     display: block;
   }
+`
+
+const Hero = styled.div`
+padding: var(--padding-m) 0 var(--padding-m) 0;
 `
 
 export default class TagTemplate extends React.Component {
@@ -29,7 +30,8 @@ export default class TagTemplate extends React.Component {
       <Layout>
         <div className="tag-container">
           <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitleAlt}`} />
-          <Container><BigPostList postEdges={postEdges} /></Container>
+          <Hero><h1>Discover Posts in {tag}</h1></Hero>
+          <Container><PostList postEdges={postEdges} /></Container>
         </div>
       </Layout>
     );
