@@ -2,7 +2,7 @@
 posttype: "work"
 path: "/hyperair"
 title: "HyperAir Travel"
-subtitle: "Crafting travel experience."
+subtitle: "Crafting All-Round Travel Experience"
 cover: "./Hyperair-Cover.png"
 date: "2018-08-24"
 category: "UI/UX Design"

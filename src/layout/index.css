@@ -85,7 +85,7 @@ h1 {
 
 h2 {
   margin-top: 0;
-  font-size: calc(24px + (28 - 24) * ((100vw - 320px) / (1600 - 320)));
+  font-size: calc(26px + (30 - 26) * ((100vw - 320px) / (1600 - 320)));
   font-family: var(--primary-font);
   font-weight: 700;
   line-height: calc(36px + (36 - 32) * ((100vw - 320px) / (1600 - 320)));

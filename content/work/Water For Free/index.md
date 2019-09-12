@@ -1,14 +1,14 @@
 ---
 posttype: "work"
 path: "/water-for-free"
-subtitle: "Building Hong Kong first Water Dispencer Map"
+subtitle: "Building Hong Kong's Water Dispenser Map"
 title: "Water For Free"
 cover: "./WaterForFree-Cover.png"
 date: "2017-07-01"
 category: "UI/UX Design"
 tags: 
     - 'Water For Free'
-    - 'Water Dispencers'
+    - 'Water Dispenser'
     - 'Bring Your Own Bottle'
     - 'BYOB'
     - 'Map'

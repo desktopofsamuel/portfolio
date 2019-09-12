@@ -44,6 +44,7 @@ justify-content: space-between;
  small {
    font-family: var(--secondary-font);
  }
+
 `
 const ReadButton = styled(Link)`
 justify-self: flex-end;
