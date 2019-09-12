@@ -5,8 +5,13 @@ import { FaArrowRight } from "react-icons/fa";
 import PropTypes from "prop-types";
 import Img from "gatsby-image";
 
-const HeroArticle = styled(Link)`
+const HeroArticleWrapper = styled.div`
 position: relative;
+width: 100%;
+`
+
+
+const HeroArticle = styled(Link)`
 
 `
 
@@ -59,11 +64,13 @@ class BlogFeature extends React.Component {
 
     return postList.map(post => (
     <HeroArticle to={post.path} key={post.title} >
+      <HeroArticleWrapper>
         <PostListImage sizes={post.cover.childImageSharp.sizes}/>
         <HeroTitleWrapper >
-        <HeroTitle><a>{post.title}</a></HeroTitle>
+          <HeroTitle><a>{post.title}</a></HeroTitle>
         </HeroTitleWrapper>
-  </HeroArticle>
+      </HeroArticleWrapper>
+    </HeroArticle>
     ));
   }
 }

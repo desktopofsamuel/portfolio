@@ -44,6 +44,7 @@ const Intro = styled(Row)`
 
 const Hero = styled.div`
   text-align: left;
+  
 `;
 
 const HeroGraphics = styled.figure`
@@ -144,7 +145,7 @@ const HalfBox = styled.div`
 
 const Subtitle = styled.p`
   font-size: 1.125rem;
-  font-family: var(--primary-font);
+  font-family: var(--secondary-font);
   font-weight: 500;
 `;
 
@@ -200,6 +201,10 @@ const BlogIntro = styled.div`
 
 const Contact = styled.div`
   display: inline-block;
+
+  small {
+    font-family: var(--secondary-font);
+  }
 
   h2 {
     color: var(--color-secondary-700);

@@ -1,8 +1,10 @@
 @import url("https://rsms.me/inter/inter.css");
+@import url("https://use.typekit.net/hey8lez.css");
 
 :root {
-  --primary-font: Inter, Helvetica, Arial, sans-serif;
+  --primary-font: grad, Georgia, serif;
   --secondary-font: Inter, Helvetica, Arial, sans-serif;
+  --tertiary-font: grad, Georgia, serif;
   --color-brand-300: #fefdf4;
   --color-brand-500: #feb101;
   --color-palette-500: #ffd644;
@@ -23,6 +25,7 @@
   --padding-xl: 8rem;
   --var-padding-l: 6rem;
   --var-padding-m: 2rem;
+  --var-padding-s: 1rem;
   --grid-gap: 24px;
 }
 
@@ -31,6 +34,7 @@
     font-size: 18px;
     --var-padding-l: 3rem;
     --var-padding-m: 1rem;
+    --var-padding-m: 0.5rem;
   }
 }
 
@@ -72,7 +76,7 @@ div > main {
 }
 
 h1 {
-  font-family: var(--primary-font);
+  font-family: var(--secondary-font);
   font-style: normal;
   font-weight: 700;
   font-size: calc(36px + (48 - 36) * ((100vw - 320px) / (1600 - 320)));
@@ -83,7 +87,7 @@ h1 {
 
 h2 {
   margin-top: 0;
-  font-size: calc(24px + (28 - 24) * ((100vw - 320px) / (1600 - 320)));
+  font-size: calc(26px + (30 - 26) * ((100vw - 320px) / (1600 - 320)));
   font-family: var(--primary-font);
   font-weight: 700;
   line-height: calc(36px + (36 - 32) * ((100vw - 320px) / (1600 - 320)));
@@ -111,7 +115,7 @@ h4 {
 }
 
 h5 {
-  font-family: var(--primary-font);
+  font-family: var(--secondary-font);
   font-style: normal;
   font-weight: 700;
   line-height: 150%;
@@ -131,7 +135,7 @@ h6 {
 }
 
 small {
-  font-family: var(--primary-font);
+  font-family: var(--secondary-font);
   font-weight: 400;
   text-transform: uppercase;
   line-height: normal;
@@ -197,9 +201,10 @@ blockquote {
   border-color: #eee;
   padding: 1.5em 0 0.5em;
   margin: 3rem 0;
-  font-size: 1.2rem;
+  font-family: var(--primary-font);
+  font-size: 2rem;
   font-weight: 600;
-  line-height: 2.4rem;
+  line-height: 1.4;
   position: relative;
 }
 blockquote:before {
@@ -207,11 +212,11 @@ blockquote:before {
   position: absolute;
   top: 0em;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -55%);
   background: #fff;
   width: 3rem;
   height: 4rem;
-  font: 6em/1.08em "PT Sans", sans-serif;
+  font: 8rem "PT Sans", sans-serif;
   color: #666;
   text-align: center;
 }

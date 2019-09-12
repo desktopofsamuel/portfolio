@@ -45,6 +45,12 @@ grid-gap: var(--var-padding-m);
 }
  
 `
+
+const BlogFeatureWrapper = styled.div`
+width: 100%;
+position: relative;
+`
+
 const Left = styled.aside`
 grid-area: left;
 `
@@ -53,7 +59,7 @@ const Right = styled.div`
 grid-area: right;
 `
 
-const BlogSubtitle = styled.h3`
+const BlogSubtitle = styled.h5`
   @media only screen and (max-width: 768px) {
     display: none;
 }
@@ -98,8 +104,10 @@ class Index extends React.Component {
             </Left>
             <Right>
               <small>Featured</small>
+              <BlogFeatureWrapper>
               <BlogFeature postEdges={Feature1Edges}/>
               <BlogFeature postEdges={Feature2Edges}/>
+              </BlogFeatureWrapper>
               <Row id="latest">
               <small>Latest</small>
               <PostHero postEdges={listEdges} />
