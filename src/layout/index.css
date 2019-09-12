@@ -25,6 +25,7 @@
   --padding-xl: 8rem;
   --var-padding-l: 6rem;
   --var-padding-m: 2rem;
+  --var-padding-s: 1rem;
   --grid-gap: 24px;
 }
 
@@ -33,6 +34,7 @@
     font-size: 18px;
     --var-padding-l: 3rem;
     --var-padding-m: 1rem;
+    --var-padding-m: 0.5rem;
   }
 }
 

@@ -5,12 +5,9 @@ import Layout from "../layout";
 import PostListing from "../components/PostListing/PostListing";
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
-import BigPostList from "../components/BigPostList/BigPostList";
+import PostList from "../components/WidePostList/WidePostList";
 
 const Container = styled.section`
-  display: grid;
-  grid-gap: 5rem;
-  grid-template-columns: 1fr 1fr;
 
   @media only screen and (max-width: 1280px) {
     display: block;
@@ -49,7 +46,7 @@ export default class CategoryTemplate extends React.Component {
           <Grid>
           <Hero><h1>Discover Posts in {category}</h1></Hero>
           <Row>
-          <Container><BigPostList postEdges={postEdges} /></Container>
+          <Container><PostList category="none" postEdges={postEdges} /></Container>
           </Row>
           </Grid>
         </div>

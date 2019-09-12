@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { Link } from "gatsby";
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import Img from 'gatsby-image';
-import kebabCase from 'lodash/kebabCase';
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import Img from "gatsby-image";
+import kebabCase from "lodash/kebabCase";
 
 const Container = styled.article`
   margin-bottom: var(--padding-m);
@@ -12,33 +12,40 @@ const Container = styled.article`
   grid-template-columns: [left] 30% [right] 70%;
 
   @media only screen and (max-width: 425px) {
-      margin-bottom: 100px;
-      display: block;
+    margin-bottom: 100px;
+    display: block;
   }
-`
+`;
 
 const ListTitle = styled.h1`
   cursor: pointer;
-  font-family: var(--tertiary-font);
+  font-family: var(--primary-font);
   font-size: 2rem;
-`
+`;
 const ListRight = styled.div`
   grid-area: right;
-  
-`
+`;
 const ListExcerpt = styled.p`
-  margin: 0;
-`
+  margin-bottom: var(--var-padding-s);
+`;
 
 const ListLeft = styled.div`
   grid-area: left;
   margin-top: 20px;
   border-top: 1px solid #000;
-`
 
-const ListMeta = styled.small`
-`
+  @media only screen and (max-width: 425px) {
+    border-top: none;
+  }
+`;
 
+const ListMetaWrapper = styled.div``;
+
+const ListMeta = styled.small``;
+
+const ListCategory = styled.div`
+  display: ${props => props.category || "inline"};
+`;
 
 class WidePostList extends React.Component {
   getPostList() {
@@ -59,16 +66,26 @@ class WidePostList extends React.Component {
   }
   render() {
     const postList = this.getPostList();
-
+    const props = this.props;
     return postList.map(post => (
       <Container>
-        <ListLeft>
-        </ListLeft>
+        <ListLeft />
         <ListRight>
-          <ListTitle><Link to={post.path}>{post.title}</Link></ListTitle>
+          <ListTitle>
+            <Link to={post.path}>{post.title}</Link>
+          </ListTitle>
           <ListExcerpt>{post.excerpt}</ListExcerpt>
-          <ListMeta>{post.date} in </ListMeta>
-          <ListMeta><Link to={`/categories/${kebabCase(post.category)}`}>{post.category}</Link></ListMeta>
+          <ListMetaWrapper>
+            <ListMeta>{post.date}</ListMeta>
+            <ListCategory style={{ display: `${props.category}` }}>
+              <ListMeta> in </ListMeta>
+              <ListMeta>
+                <Link to={`/categories/${kebabCase(post.category)}`}>
+                  {post.category}
+                </Link>
+              </ListMeta>
+            </ListCategory>
+          </ListMetaWrapper>
         </ListRight>
       </Container>
     ));
@@ -78,5 +95,5 @@ class WidePostList extends React.Component {
 export default WidePostList;
 
 WidePostList.propTypes = {
-  invert: PropTypes.bool,
+  invert: PropTypes.bool
 };
