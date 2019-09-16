@@ -16,6 +16,10 @@ const FooterItem = styled(Link)`
   &:last-child {
     margin-right: 0;
   }
+
+  @media only screen and (max-width: 768px) {
+    margin-right: 0;
+    justify-content: left;
 `;
 
 const FooterIcon = styled(FontAwesomeIcon)`
@@ -34,31 +38,35 @@ const FooterText = styled.p`
   font-family: var(--secondary-font);
   font-weight: 400;
   text-align: center;
+
+   @media only screen and (max-width: 768px) {
+     text-align: left;
+   }
 `;
 
 const Container = styled.div`
   text-align: center;
   display: flex;
-  min-height: 30vh;
 
   @media only screen and (max-width: 768px) {
-    display: flex;
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: 1fr 1fr;
   }
 `;
 
 const Main = styled.footer`
   max-width: 60vw;
-  padding: 0 2rem;
+  padding: 1rem 2rem;
   margin: 0 auto;
 
   @media only screen and (max-width: 1024px) {
-    max-width: 70vw;
-    padding: 0 1.5rem;
+    padding: 2rem 1.5rem;
   }
 
   @media only screen and (max-width: 768px) {
-    max-width: 90vw;
-    padding: 0 1rem;
+    max-width: 100%;
+    padding: 3rem 1.5rem;
   }
 `;
 
