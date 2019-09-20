@@ -11,7 +11,7 @@ tags:
   - "UI Design"
   - "Productivity"
 cover: "./plugin-main.png"
-tldr: "Introducing Figma Plugins, third-party support in the up-and-coming interface and prototype design tool can speed up your design workflow."
+tldr: "Introducing Figma Plugins, third-party support the up-and-coming interface and prototype design tool that can speed up your design workflow."
 ---
 
 It’s been a while since beta but [Figma Plugins](https://www.figma.com/c) is finally here. While Sketch is catching up with their cloud capabilities, Figma has also been working on proper third party support.
@@ -51,7 +51,7 @@ Set up the spreadsheet with all data and map first column name with Figma’s la
 
 A part of my design time includes preparation for developer handoff. The process includes cleaning up layers, grouping up and re-naming them. Sorting layers visually from top to bottom enables developers to understand the visual hierarchy. These tasks are useful but can also be menial. But those days are over with Sorter. 
 
-Sorter is able to sort all selected layers automatically according to the rules you set. This is pretty amazing by speeding up your workflow 10x. 
+[Sorter](https://www.figma.com/c/plugin/742038190980789811/Sorter) is able to sort all selected layers automatically according to the rules you set. This is pretty amazing by speeding up your workflow 10x. 
 
 For example, in the previous demo, the movie card components are sorted randomly. Select all layers within the component and open Sorter, it will allow you to pick different sorting rules. For me _“Position (Top Left to Bottom Right)”_ is the most useful for HTML or any component structures. It’s just one simple click. 
 
@@ -63,7 +63,7 @@ There are plenty of color contrast checkers online, but either you have to input
 
 ![](./stark.png)
 
-Stark simplified the process by selecting two layers in Figma. It also can simulate 4-8 colorblind situations. 
+[Stark](https://www.figma.com/c/plugin/732603254453395948/Stark?ref=desktopofsamuel) simplified the process by selecting two layers in Figma. It also can simulate 4-8 colorblind situations. 
 
 Let’s check the color contrast of the movie card’s director field. For normal size text, the recommended standard is to meet [W3C](https://www.w3.org/TR/WCAG20/)’s minimum AA rating, a contrast ratio of at least 4.5:1 (AA). The current color does not match the rating, so we have to increase to contrast. I have changed the color from #848BAF to #636B94, now we have passed the contrast checker. 
 
@@ -75,7 +75,7 @@ Stark also offers a PRO subscription that includes more colorblind situations as
 ## Similayer - Selecting similar layers all at once
 ![](./similayer.png)
 
-As you can tell from the name, the plugin allows you to select all layers that share the same properties. I found it extremely useful when you have created a bunch of components and want to edit some of the instances. All the properties from the design panel can be used as select criteria.  
+As you can tell from the name, [Similayer](https://www.figma.com/c/plugin/735733267883397781/Similayer) allows you to select all layers that share the same properties. I found it extremely useful when you have created a bunch of components and want to edit some of the instances. All the properties from the design panel can be used as select criteria.  
 
 
 ## Conclusion: Just the beginning
