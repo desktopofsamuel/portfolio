@@ -57,12 +57,15 @@ const NavBar = styled.div`
 const SiteID = styled.div``;
 
 const Title = styled.h2`
-  font-size: 1rem;
-  font-family: var(--primary-font);
-  margin-bottom: 1.5rem;
+  a {
+    font-size: 1rem;
+    font-family: var(--font-secondary);
+    margin-bottom: 1.5rem;
+  }
 `;
 
 const Description = styled.h2`
+  font-family: var(--font-secondary);
   color: var(--color-secondary-500);
   font-size: 0.95rem;
   line-height: 1.5rem;

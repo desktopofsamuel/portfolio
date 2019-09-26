@@ -1,9 +1,10 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { FaArrowRight } from "react-icons/fa";
 import PropTypes from "prop-types";
 import Img from "gatsby-image";
+import { ReadOn } from "../UI";
 
 const Block = styled.div`
   position: relative;
@@ -54,6 +55,7 @@ const Button = styled(Link)`
   background: none;
   border: none;
   text-transform: uppercase;
+  font-weight: 400;
   letter-spacing: 0.075em;
   cursor: pointer;
   display: inline;
@@ -92,9 +94,7 @@ class PostListing extends React.Component {
           </h3>
           <p> {post.excerpt}</p>
         </div>
-        <Button invert={invert} to={post.path}>
-          <h5>Read On →</h5>
-        </Button>
+        <ReadOn href={post.path} />
       </Block>
     ));
   }

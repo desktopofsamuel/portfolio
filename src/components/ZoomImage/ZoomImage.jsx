@@ -1,12 +1,12 @@
-import React from 'react';
-import ImageZoom from 'react-medium-image-zoom';
-import styled from 'styled-components';
+import React from "react";
+import ImageZoom from "react-medium-image-zoom";
+import styled from "styled-components";
 
 const StyledFigcaption = styled.figcaption`
-  font-family: var(--primary-font);
+  font-family: var(--font-primary);
   text-align: right;
   font-size: 0.8em;
-  padding: 0.25em 0; 
+  padding: 0.25em 0;
   color: var(--color-grey-500);
 `;
 

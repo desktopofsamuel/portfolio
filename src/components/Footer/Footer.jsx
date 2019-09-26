@@ -35,13 +35,13 @@ const FooterText = styled.p`
   margin: 0;
   font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1600 - 320)));
   line-height: calc(32px + (40 - 32) * ((100vw - 320px) / (1600 - 320)));
-  font-family: var(--secondary-font);
+  font-family: var(--font-secondary);
   font-weight: 400;
   text-align: center;
 
-   @media only screen and (max-width: 768px) {
-     text-align: left;
-   }
+  @media only screen and (max-width: 768px) {
+    text-align: left;
+  }
 `;
 
 const Container = styled.div`

@@ -11,6 +11,7 @@ import BlogListing from "../components/PostListing/PostListing";
 import WorkIcon from "../../static/SVG/Work.svg";
 import BlogIcon from "../../static/SVG/Blog.svg";
 import Now from "../components/Now/Now";
+import { ReadOn } from "../components/UI";
 
 const Row = styled.section`
   padding: var(--var-padding-l) 0;
@@ -44,7 +45,6 @@ const Intro = styled(Row)`
 
 const Hero = styled.div`
   text-align: left;
-  
 `;
 
 const HeroGraphics = styled.figure`
@@ -145,7 +145,7 @@ const HalfBox = styled.div`
 
 const Subtitle = styled.p`
   font-size: 1.125rem;
-  font-family: var(--secondary-font);
+  font-family: var(--font-secondary);
   font-weight: 500;
 `;
 
@@ -203,7 +203,7 @@ const Contact = styled.div`
   display: inline-block;
 
   small {
-    font-family: var(--secondary-font);
+    font-family: var(--font-secondary);
   }
 
   h2 {
@@ -313,7 +313,8 @@ class Index extends React.Component {
                 Designer. Before that, I worked as Cross-Content Intern at
                 iTunes & App Store, Apple.
               </p>
-              <Link to="/about">About Me →</Link>
+              <Link to="/about">About Me →</Link>{" "}
+              <ReadOn text="About Me" href="/about" />
             </HalfBox>
           </Row>
           <FullGreyRow className="full-bleed">

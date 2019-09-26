@@ -19,7 +19,7 @@ const Container = styled.article`
 
 const ListTitle = styled.h1`
   cursor: pointer;
-  font-family: var(--primary-font);
+  font-family: var(--font-primary);
   font-size: 2rem;
 `;
 const ListRight = styled.div`

@@ -45,7 +45,7 @@ const Content = styled.div``;
 const Title = styled.h4``;
 
 const Text = styled.p`
-  font-family: var(--secondary-font);
+  font-family: var(--font-secondary);
 `;
 export default props => (
   <NowGrid>

@@ -2,8 +2,8 @@
 @import url("https://use.typekit.net/hey8lez.css");
 
 :root {
-  --primary-font: grad, Georgia, serif;
-  --secondary-font: Inter, Helvetica, Arial, sans-serif;
+  --font-primary: grad, Georgia, serif;
+  --font-secondary: Inter, Helvetica, Arial, sans-serif;
   --tertiary-font: grad, Georgia, serif;
   --color-brand-300: #fefdf4;
   --color-brand-500: #feb101;
@@ -44,7 +44,7 @@
 
 html {
   height: 100%;
-  font-family: var(--secondary-font);
+  font-family: var(--font-secondary);
   font-size: 16px;
   font-weight: 400;
   line-height: 2em;
@@ -76,7 +76,7 @@ div > main {
 }
 
 h1 {
-  font-family: var(--secondary-font);
+  font-family: var(--font-secondary);
   font-style: normal;
   font-weight: 700;
   font-size: calc(36px + (48 - 36) * ((100vw - 320px) / (1600 - 320)));
@@ -88,13 +88,13 @@ h1 {
 h2 {
   margin-top: 0;
   font-size: calc(26px + (30 - 26) * ((100vw - 320px) / (1600 - 320)));
-  font-family: var(--primary-font);
+  font-family: var(--font-primary);
   font-weight: 700;
   line-height: calc(36px + (36 - 32) * ((100vw - 320px) / (1600 - 320)));
 }
 
 h3 {
-  font-family: var(--primary-font);
+  font-family: var(--font-primary);
   font-weight: 700;
   line-height: 150%;
   font-size: 24px;
@@ -104,7 +104,7 @@ h3 {
 }
 
 h4 {
-  font-family: var(--primary-font);
+  font-family: var(--font-primary);
   font-style: normal;
   font-weight: 600;
   text-transform: uppercase;
@@ -115,7 +115,7 @@ h4 {
 }
 
 h5 {
-  font-family: var(--secondary-font);
+  font-family: var(--font-secondary);
   font-style: normal;
   font-weight: 700;
   line-height: 150%;
@@ -125,7 +125,7 @@ h5 {
 }
 
 h6 {
-  font-family: var(--secondary-font);
+  font-family: var(--font-secondary);
   font-weight: 400;
   text-transform: uppercase;
   line-height: normal;
@@ -135,7 +135,7 @@ h6 {
 }
 
 small {
-  font-family: var(--secondary-font);
+  font-family: var(--font-secondary);
   font-weight: 400;
   text-transform: uppercase;
   line-height: normal;
@@ -146,7 +146,7 @@ small {
 }
 
 strong {
-  font-family: var(--secondary-font);
+  font-family: var(--font-secondary);
   font-weight: 900;
 }
 
@@ -176,7 +176,7 @@ a > button {
 }
 
 button {
-  font-family: var(--primary-font);
+  font-family: var(--font-primary);
   font-weight: 500;
   text-transform: uppercase;
   line-height: normal;
@@ -201,7 +201,7 @@ blockquote {
   border-color: #eee;
   padding: 1.5em 0 0.5em;
   margin: 3rem 0;
-  font-family: var(--primary-font);
+  font-family: var(--font-primary);
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.4;
@@ -258,7 +258,7 @@ p:first-child {
 .subheading {
   font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1600 - 320)));
   line-height: calc(32px + (40 - 32) * ((100vw - 320px) / (1600 - 320)));
-  font-family: var(--secondary-font);
+  font-family: var(--font-secondary);
   font-weight: 400;
 }
 

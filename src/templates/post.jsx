@@ -99,7 +99,7 @@ const Sidebar = styled.aside`
 
 const PostTitle = styled.h1`
   grid-area: title;
-  font-family: var(--primary-font);
+  font-family: var(--font-primary);
 `;
 const PostMeta = styled.small`
   margin: 0;
@@ -169,7 +169,6 @@ export default class PostTemplate extends React.Component {
               </Header>
               <Main>
                 <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
-
               </Main>
               <Sidebar>
                 <small>Also in</small>{" "}
