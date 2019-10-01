@@ -14,7 +14,7 @@ import "./post.css";
 export default class PostTemplate extends React.Component {
   render() {
     const { slug } = this.props.pageContext;
-    const postNode = this.props.data.markdownRemark;
+    const postNode = this.props.data.mdx;
     const post = postNode.frontmatter;
     if (!post.id) {
       post.id = slug;
@@ -46,7 +46,7 @@ export default class PostTemplate extends React.Component {
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query WorkPostBySlug($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    mdx(fields: { slug: { eq: $slug } }) {
       html
       timeToRead
       excerpt

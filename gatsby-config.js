@@ -106,14 +106,14 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
         typekit: {
-          id: 'wbb0iyz'
+          id: "wbb0iyz"
         },
         google: {
-          families: ['Merriweather']
-        },
+          families: ["Merriweather"]
+        }
       }
     },
     "gatsby-plugin-sitemap",
@@ -122,17 +122,16 @@ module.exports = {
     {
       resolve: `gatsby-mdx`,
       options: {
-        extensions: 
-          [`.mdx`],
-          gatsbyRemarkPlugins: [
-            {
-              resolve: "gatsby-remark-images",
-              options: {
-                maxWidth: 1035,
-                sizeByPixelDensity: true
-              }
-            },
-          ]
+        extensions: [`.mdx`, `md`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 1035,
+              sizeByPixelDensity: true
+            }
+          }
+        ]
       }
     },
     {

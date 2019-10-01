@@ -67,7 +67,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     }
 
     if (Object.prototype.hasOwnProperty.call(node, "frontmatter")) {
-      []; /*if (
+[]     /*if (
         Object.prototype.hasOwnProperty.call(node.frontmatter, "posttype") && 
         Object.prototype.hasOwnProperty.call(node.frontmatter.posttype, "work") &&
         Object.prototype.hasOwnProperty.call(node.frontmatter, "path")
@@ -101,53 +101,107 @@ exports.setFieldsOnGraphQLNodeType = ({ type, actions }) => {
   }
 };
 
-const postPage = path.resolve("src/templates/post.jsx");
-const workPage = path.resolve("src/templates/work.jsx");
-const tagPage = path.resolve("src/templates/tag.jsx");
-const categoryPage = path.resolve("src/templates/category.jsx");
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
 
-const query = `
-{
-  work: allMdx(filter: { fileAbsolutePath: {regex: "/work/"}})
-  {
-    edges {
-      node {
-        id
+  return new Promise((resolve, reject) => {
+    const postPage = path.resolve("src/templates/post.jsx");
+    const workPage = path. resolve("src/templates/work.jsx");
+    const tagPage = path.resolve("src/templates/tag.jsx");
+    const categoryPage = path.resolve("src/templates/category.jsx");
+    resolve(
+      graphql(
+        `
+          {
+            allMarkdownRemark {
+              edges {
+                node {
+                  frontmatter {
+                    path
+                    tags
+                    category
+                    posttype
+                  }
+                  fields {
+                    slug
+                  }
+                }
+              }
+            }
+          }
+        `
+      ).then(result => {
+        if (result.errors) {
+          /* eslint no-console: "off" */
+          console.log(result.errors);
+          reject(result.errors);
         }
-      }
-    }
-  post: allMdx
-  {
-    edges {
-      node {
-        id
-      }
-    }
-  }
-}
-`;
 
-exports.createPages = async ({ graphql, actions: { createPage } }) => {
-  const response = await graphql(query);
-  if (response.errors) throw new Error(response.errors);
-  const { work, blog } = response.data;
+        const tagSet = new Set();
+        const categorySet = new Set();
+        result.data.allMarkdownRemark.edges.forEach(edge => {
+          
+          if (edge.node.frontmatter.tags) {
+            edge.node.frontmatter.tags.forEach(tag => {
+              tagSet.add(tag);
+            });
+          }
 
-  work.edges.forEach(({ node }) => {
-    createPage({
-      path: `/work/${work.node.frontmatter.path}`,
-      component: workPage,
-      context: {
-        slug: edge.node.frontmatter.path,
-        category: edge.node.frontmatter.category
-      }
-    });
+          if (edge.node.frontmatter.category) {
+            categorySet.add(edge.node.frontmatter.category);
+          }
+        
+        const tagList = Array.from(tagSet);
+        tagList.forEach(tag => {
+          createPage({
+            path: `/tags/${_.kebabCase(tag)}/`,
+            component: tagPage,
+            context: {
+              tag
+            }
+          });
+        });
+
+        const categoryList = Array.from(categorySet);
+        categoryList.forEach(category => {
+          createPage({
+            path: `/categories/${_.kebabCase(category)}/`,
+            component: categoryPage,
+            context: {
+              category
+            }
+          });
+        });
+
+        if (edge.node.frontmatter.posttype === 'work') {
+          createPage({
+            path: `/work${edge.node.frontmatter.path}`,
+            component: workPage,
+            context: {
+              slug: edge.node.frontmatter.path,
+              category: edge.node.frontmatter.category,
+            }
+          });
+        } else { // blog post
+          createPage({
+            path: edge.node.frontmatter.path,
+            component: postPage,
+            context: {
+              slug: edge.node.frontmatter.path, 
+              category: edge.node.frontmatter.category,
+            }
+          });
+        }
+      })
+    }
+    ));
   });
 };
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
-      modules: [path.resolve(__dirname, "src"), "node_modules"]
-    }
-  });
-};
+      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    },
+  })
+}
