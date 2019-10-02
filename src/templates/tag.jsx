@@ -7,11 +7,11 @@ import config from "../../data/SiteConfig";
 import styled from "styled-components";
 
 const Grid = styled.section`
-max-width: 768px;
-margin: 0 auto;`
+  max-width: 768px;
+  margin: 0 auto;
+`;
 
-const PostList = styled(BigPostList)`
-`
+const PostList = styled(BigPostList)``;
 
 export default class TagTemplate extends React.Component {
   render() {
@@ -21,7 +21,9 @@ export default class TagTemplate extends React.Component {
       <Layout>
         <div className="tag-container">
           <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitleAlt}`} />
-          <Grid><PostList postEdges={postEdges} /></Grid>
+          <Grid>
+            <PostList postEdges={postEdges} />
+          </Grid>
         </div>
       </Layout>
     );
@@ -31,9 +33,9 @@ export default class TagTemplate extends React.Component {
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query TagPage($tag: String) {
-    allMarkdownRemark(
+    allMdx(
       limit: 1000
-      sort: { fields: [fields___date], order: DESC }
+      sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
       totalCount

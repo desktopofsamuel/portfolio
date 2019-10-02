@@ -50,18 +50,19 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: `gatsby-mdx`,
       options: {
-        plugins: [
+        defaultLayouts: {},
+        extensions: [`.mdx`, `md`],
+        gatsbyRemarkPlugins: [
           {
             resolve: "gatsby-remark-images",
             options: {
-              maxWidth: 690
+              maxWidth: 1035,
+              sizeByPixelDensity: true
             }
           },
-          {
-            resolve: "gatsby-remark-responsive-iframe"
-          },
+          "gatsby-remark-responsive-iframe",
           "gatsby-remark-prismjs",
           "gatsby-remark-copy-linked-files",
           "gatsby-remark-autolink-headers"
@@ -119,21 +120,6 @@ module.exports = {
     "gatsby-plugin-sitemap",
     "gatsby-plugin-favicon",
     "gatsby-plugin-offline",
-    {
-      resolve: `gatsby-mdx`,
-      options: {
-        extensions: [`.mdx`, `md`],
-        gatsbyRemarkPlugins: [
-          {
-            resolve: "gatsby-remark-images",
-            options: {
-              maxWidth: 1035,
-              sizeByPixelDensity: true
-            }
-          }
-        ]
-      }
-    },
     {
       resolve: "gatsby-plugin-feed",
       options: {

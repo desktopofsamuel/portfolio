@@ -1,4 +1,5 @@
 import React from "react";
+import { MDXProvider } from "@mdx-js/react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
@@ -11,7 +12,15 @@ import config from "../../data/SiteConfig";
 import "./b16-tomorrow-dark.css";
 import "./post.css";
 
-export default class PostTemplate extends React.Component {
+export default function WorkTemplate({ children }) {
+  return (
+    <MDXProvider>
+      <Layout>{children}</Layout>
+    </MDXProvider>
+  );
+}
+
+/*export default class PostTemplate extends React.Component {
   render() {
     const { slug } = this.props.pageContext;
     const postNode = this.props.data.mdx;
@@ -25,9 +34,7 @@ export default class PostTemplate extends React.Component {
     return (
       <Layout>
         <div>
-          <Helmet>
-            <title>{`${post.title} | ${config.siteTitleAlt}`}</title>
-          </Helmet>
+          
           <SEO postPath={slug} postNode={postNode} postSEO />
           <div>
             <h1>{post.title}</h1>
@@ -41,7 +48,7 @@ export default class PostTemplate extends React.Component {
       </Layout>
     );
   }
-}
+}*/
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
