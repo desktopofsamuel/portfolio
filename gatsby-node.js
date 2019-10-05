@@ -37,6 +37,7 @@ const query = `
     edges {
       node {
         id
+        body
         frontmatter {
           path
           date
@@ -75,7 +76,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
     createPage({
       path: `/work${slug}`,
       component: workPage,
-      context: { slug, nextSlug, prevSlug }
+      context: { slug, nextSlug, prevSlug, id: node.id }
     });
   });
 };
