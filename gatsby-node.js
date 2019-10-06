@@ -4,16 +4,24 @@ const _ = require("lodash");
 const moment = require("moment");
 const siteConfig = require("./data/SiteConfig");
 
-const postNodes = [];
-
-exports.onCreateNode = ({ node, actions, getNode }) => {
+exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions;
-  let slug;
-  if (Object.prototype.hasOwnProperty.call(node, "frontmatter")) {
-    [];
-    if (Object.prototype.hasOwnProperty.call(node.frontmatter, "path"))
-      slug = `/${_.kebabCase(node.frontmatter.path)}`;
 
+  let slug;
+
+  if (node.internal.type === "Mdx") {
+    if (
+      Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
+      Object.prototype.hasOwnProperty.call(node.frontmatter, "path")
+    ) {
+      slug = `/${_.kebabCase(node.frontmatter.path)}`;
+    } else if (
+      Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
+      Object.prototype.hasOwnProperty.call(node.frontmatter, "title")
+    ) {
+      slug = `/${_.kebabCase(node.frontmatter.title)}`;
+    }
+    createNodeField({ node, name: "slug", value: slug });
     if (Object.prototype.hasOwnProperty.call(node.frontmatter, "date")) {
       const date = moment(node.frontmatter.date, siteConfig.dateFromFormat);
       if (!date.isValid)
@@ -26,8 +34,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       });
     }
   }
-  createNodeField({ node, name: "slug", value: slug });
-  postNodes.push(node);
 };
 
 const query = ` 
