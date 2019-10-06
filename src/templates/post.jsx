@@ -185,7 +185,7 @@ export default class BlogPageTemplate extends React.Component {
 }
 
 export const pageQuery = graphql`
-  query BlogPostQuery($id: String) {
+  query BlogPostQuery($id: String, $category: String) {
     post: mdx(id: { eq: $id }) {
       id
       body
@@ -216,6 +216,26 @@ export const pageQuery = graphql`
       fields {
         slug
         date
+      }
+    }
+    related: allMdx(
+      filter: {
+        frontmatter: { category: { eq: $category } }
+        id: { ne: $id }
+        fileAbsolutePath: { regex: "/blog/" }
+      }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            path
+          }
+          fields {
+            slug
+          }
+        }
       }
     }
   }

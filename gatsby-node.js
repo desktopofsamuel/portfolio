@@ -58,7 +58,7 @@ const query = `
   }
 }
 `;
-
+const Page = path.resolve("src/templates/default-page.jsx");
 const postPage = path.resolve("src/templates/post.jsx");
 const workPage = path.resolve("src/templates/work.jsx");
 const tagPage = path.resolve("src/templates/tag.jsx");
