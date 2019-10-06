@@ -37,21 +37,22 @@ const query = `
     edges {
       node {
         id
-        body
         frontmatter {
           path
           date
-          title
-          subtitle
         }
         }
       }
     }
-  post: allMdx
+  blog: allMdx(filter: { fileAbsolutePath: {regex: "/blog/"}})
   {
     edges {
       node {
         id
+        frontmatter {
+          path
+          date
+        }
       }
     }
   }
@@ -67,6 +68,18 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
   const response = await graphql(query);
   if (response.errors) throw new Error(response.errors);
   const { work, blog } = response.data;
+
+  blog.edges.forEach(({ node }, index, arr) => {
+    const nextSlug = index === 0 ? `` : arr[index - 1].node.frontmatter.path;
+    const prevSlug =
+      index === arr.length - 1 ? `` : arr[index + 1].node.frontmatter.path;
+    const slug = node.frontmatter.path;
+    createPage({
+      path: `${slug}`,
+      component: postPage,
+      context: { slug, nextSlug, prevSlug, id: node.id }
+    });
+  });
 
   work.edges.forEach(({ node }, index, arr) => {
     const nextSlug = index === 0 ? `` : arr[index - 1].node.frontmatter.path;

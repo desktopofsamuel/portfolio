@@ -129,7 +129,7 @@ class Index extends React.Component {
               <BlogFeature postEdges={Feature2Edges} />
               <Row id="latest">
                 <small>Latest</small>
-                <PostHero postEdges={listEdges} />
+                <PostHero postEdges={postEdges} />
               </Row>
             </Right>
           </Main>
@@ -143,8 +143,8 @@ export default Index;
 
 /* eslint no-undef: "off" */
 
-/*export const bloglisting = graphql`
-  fragment bloglisting on MarkdownRemark {
+export const bloglisting = graphql`
+  fragment bloglisting on Mdx {
     fields {
       slug
       date(formatString: "MMM DD, YYYY", locale: "en")
@@ -177,7 +177,7 @@ export default Index;
 `;
 export const pageQuery = graphql`
   query BlogQuery {
-    feature1: allMarkdownRemark(
+    feature1: allMdx(
       filter: { fileAbsolutePath: { regex: "/blog/2018-07-06 Color Tools/" } }
     ) {
       edges {
@@ -186,7 +186,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    feature2: allMarkdownRemark(
+    feature2: allMdx(
       filter: {
         fileAbsolutePath: {
           regex: "/blog/2019-05-01 Building Gatsby v2 With Multiple Post Type/"
@@ -199,10 +199,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    post: allMarkdownRemark(
-      limit: 10
-      filter: { fileAbsolutePath: { regex: "/blog/" } }
-    ) {
+    post: allMdx(limit: 10, filter: { fileAbsolutePath: { regex: "/blog/" } }) {
       edges {
         node {
           fields {
@@ -236,7 +233,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    list: allMarkdownRemark(limit: 2000) {
+    list: allMdx(limit: 2000) {
       edges {
         node {
           fields {
@@ -254,4 +251,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-*/
