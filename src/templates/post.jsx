@@ -230,6 +230,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             path
+            category
           }
           fields {
             slug

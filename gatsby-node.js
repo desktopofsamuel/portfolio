@@ -85,7 +85,14 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
     createPage({
       path: `${slug}`,
       component: postPage,
-      context: { slug, nextSlug, prevSlug, id: node.id }
+      context: {
+        slug,
+        nextSlug,
+        prevSlug,
+        id: node.id,
+        category: node.frontmatter.category,
+        tag: node.frontmatter.tags
+      }
     });
 
     const tagSet = new Set();
@@ -133,7 +140,12 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
     createPage({
       path: `/work${slug}`,
       component: workPage,
-      context: { slug, nextSlug, prevSlug, id: node.id }
+      context: {
+        slug,
+        nextSlug,
+        prevSlug,
+        id: node.id
+      }
     });
   });
 };

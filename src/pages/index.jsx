@@ -313,7 +313,6 @@ class Index extends React.Component {
                 Designer. Before that, I worked as Cross-Content Intern at
                 iTunes & App Store, Apple.
               </p>
-              <Link to="/about">About Me →</Link>{" "}
               <ReadOn text="About Me" href="/about" />
             </HalfBox>
           </Row>
