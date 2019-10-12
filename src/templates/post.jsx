@@ -220,11 +220,9 @@ export const pageQuery = graphql`
       }
     }
     related: allMdx(
-      filter: {
-        frontmatter: { category: { eq: $category } }
-        id: { ne: $id }
-        fileAbsolutePath: { regex: "/blog/" }
-      }
+      sort: { fields: [fields___date], order: DESC }
+      limit: 10
+      filter: { frontmatter: { category: { eq: $category } } }
     ) {
       edges {
         node {

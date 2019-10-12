@@ -52,22 +52,17 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        defaultLayouts: {},
+        defaultLayouts: {
+          default: require.resolve("./src/components/default-page-layout.jsx")
+        },
         extensions: [`.mdx`, `md`],
         gatsbyRemarkPlugins: [
-          {
-            resolve: "gatsby-remark-images-grid",
-            options: {
-              className: "remark-grid",
-              gridGap: "16px",
-              margin: "2rem auto"
-            }
-          },
           {
             resolve: "gatsby-remark-images",
             options: {
               linkImagesToOriginal: false,
-              maxWidth: 1200
+              maxWidth: 1235,
+              sizeByPixelDensity: true
             }
           },
           "gatsby-remark-responsive-iframe",
@@ -77,8 +72,7 @@ module.exports = {
           },
           "gatsby-remark-prismjs",
           "gatsby-remark-copy-linked-files",
-          "gatsby-remark-autolink-headers",
-          "gatsby-remark-images-zoom"
+          "gatsby-remark-autolink-headers"
         ]
       }
     },
@@ -133,47 +127,11 @@ module.exports = {
     "gatsby-plugin-sitemap",
     "gatsby-plugin-offline",
     {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        extensions: [`.mdx`],
-        gatsbyRemarkPlugins: [
-          "gatsby-remark-images-zoom",
-          {
-            resolve: "gatsby-remark-images-grid",
-            options: {
-              className: "remark-grid",
-              gridGap: "16px",
-              margin: "2rem auto"
-            }
-          },
-          {
-            resolve: "gatsby-remark-images",
-            options: {
-              linkImagesToOriginal: false,
-              maxWidth: 1200,
-              showCaptions: true
-            }
-          },
-          "gatsby-remark-responsive-iframe",
-          {
-            resolve: `gatsby-remark-figure-caption`,
-            options: { figureClassName: "remark-figure" }
-          },
-          "gatsby-remark-prismjs",
-          "gatsby-remark-copy-linked-files",
-          "gatsby-remark-autolink-headers"
-        ],
-        defaultLayouts: {
-          default: require.resolve("./src/components/default-page-layout.jsx")
-        }
-      }
-    },
-    {
       resolve: "gatsby-plugin-feed",
       options: {
         setup(ref) {
           const ret = ref.query.site.siteMetadata.rssMetadata;
-          ret.allMarkdownRemark = ref.query.allMarkdownRemark;
+          ret.allMdx = ref.query.allMdx;
           ret.generator = "GatsbyJS Material Starter";
           return ret;
         },

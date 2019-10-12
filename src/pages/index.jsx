@@ -214,6 +214,7 @@ const Contact = styled.div`
 class Index extends React.Component {
   render() {
     const workEdges = this.props.data.Work.edges;
+    const blogEdges = this.props.data.Blog.edges;
     return (
       <div>
         <Helmet>
@@ -397,6 +398,47 @@ export const pageQuery = graphql`
               size
               childImageSharp {
                 sizes(maxWidth: 1200) {
+                  base64
+                  aspectRatio
+                  src
+                  srcSet
+                  srcWebp
+                  srcSetWebp
+                  sizes
+                  originalImg
+                  originalName
+                }
+              }
+            }
+            date
+          }
+        }
+      }
+    }
+    Blog: allMdx(
+      limit: 4
+      sort: { fields: [fields___date], order: DESC }
+      filter: { frontmatter: { category: { eq: "Design Journal" } } }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+            date
+          }
+          excerpt(pruneLength: 200)
+          timeToRead
+          frontmatter {
+            title
+            path
+            tags
+            category
+            tldr
+            cover {
+              publicURL
+              size
+              childImageSharp {
+                sizes(maxWidth: 1140) {
                   base64
                   aspectRatio
                   src
