@@ -35,7 +35,7 @@ const Hero = styled.div`
 export default class CategoryTemplate extends React.Component {
   render() {
     const { category } = this.props.pageContext;
-    const postEdges = this.props.data.allMarkdownRemark.edges;
+    const postEdges = this.props.data.allMdx.edges;
     return (
       <Layout>
         <div>

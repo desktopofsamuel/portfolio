@@ -58,6 +58,8 @@ const query = `
         frontmatter {
           path
           date
+          tags
+          category
         }
       }
     }
@@ -84,6 +86,42 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
       path: `${slug}`,
       component: postPage,
       context: { slug, nextSlug, prevSlug, id: node.id }
+    });
+
+    const tagSet = new Set();
+    const categorySet = new Set();
+    blog.edges.forEach(edge => {
+      if (edge.node.frontmatter.tags) {
+        edge.node.frontmatter.tags.forEach(tag => {
+          tagSet.add(tag);
+        });
+      }
+
+      if (edge.node.frontmatter.category) {
+        categorySet.add(edge.node.frontmatter.category);
+      }
+
+      const tagList = Array.from(tagSet);
+      tagList.forEach(tag => {
+        createPage({
+          path: `/tags/${_.kebabCase(tag)}/`,
+          component: tagPage,
+          context: {
+            tag
+          }
+        });
+      });
+
+      const categoryList = Array.from(categorySet);
+      categoryList.forEach(category => {
+        createPage({
+          path: `/categories/${_.kebabCase(category)}/`,
+          component: categoryPage,
+          context: {
+            category
+          }
+        });
+      });
     });
   });
 

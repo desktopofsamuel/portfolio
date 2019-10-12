@@ -50,7 +50,7 @@ function addSiblingNodes(createNodeField) {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
   let slug;
-  if (node.internal.type === "MarkdownRemark") {
+  if (node.internal.type === "Mdx") {
     const fileNode = getNode(node.parent);
     const parsedFilePath = path.parse(fileNode.relativePath);
     if (
@@ -67,7 +67,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     }
 
     if (Object.prototype.hasOwnProperty.call(node, "frontmatter")) {
-[]     /*if (
+      []; /*if (
         Object.prototype.hasOwnProperty.call(node.frontmatter, "posttype") && 
         Object.prototype.hasOwnProperty.call(node.frontmatter.posttype, "work") &&
         Object.prototype.hasOwnProperty.call(node.frontmatter, "path")
@@ -96,7 +96,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 exports.setFieldsOnGraphQLNodeType = ({ type, actions }) => {
   const { name } = type;
   const { createNodeField } = actions;
-  if (name === "MarkdownRemark") {
+  if (name === "Mdx") {
     addSiblingNodes(createNodeField);
   }
 };
@@ -106,14 +106,14 @@ exports.createPages = ({ graphql, actions }) => {
 
   return new Promise((resolve, reject) => {
     const postPage = path.resolve("src/templates/post.jsx");
-    const workPage = path. resolve("src/templates/work.jsx");
+    const workPage = path.resolve("src/templates/work.jsx");
     const tagPage = path.resolve("src/templates/tag.jsx");
     const categoryPage = path.resolve("src/templates/category.jsx");
     resolve(
       graphql(
         `
           {
-            allMarkdownRemark {
+            allMdx {
               edges {
                 node {
                   frontmatter {
@@ -139,8 +139,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         const tagSet = new Set();
         const categorySet = new Set();
-        result.data.allMarkdownRemark.edges.forEach(edge => {
-          
+        result.data.allMdx.edges.forEach(edge => {
           if (edge.node.frontmatter.tags) {
             edge.node.frontmatter.tags.forEach(tag => {
               tagSet.add(tag);
@@ -150,58 +149,59 @@ exports.createPages = ({ graphql, actions }) => {
           if (edge.node.frontmatter.category) {
             categorySet.add(edge.node.frontmatter.category);
           }
-        
-        const tagList = Array.from(tagSet);
-        tagList.forEach(tag => {
-          createPage({
-            path: `/tags/${_.kebabCase(tag)}/`,
-            component: tagPage,
-            context: {
-              tag
-            }
-          });
-        });
 
-        const categoryList = Array.from(categorySet);
-        categoryList.forEach(category => {
-          createPage({
-            path: `/categories/${_.kebabCase(category)}/`,
-            component: categoryPage,
-            context: {
-              category
-            }
+          const tagList = Array.from(tagSet);
+          tagList.forEach(tag => {
+            createPage({
+              path: `/tags/${_.kebabCase(tag)}/`,
+              component: tagPage,
+              context: {
+                tag
+              }
+            });
           });
-        });
 
-        if (edge.node.frontmatter.posttype === 'work') {
-          createPage({
-            path: `/work${edge.node.frontmatter.path}`,
-            component: workPage,
-            context: {
-              slug: edge.node.frontmatter.path,
-              category: edge.node.frontmatter.category,
-            }
+          const categoryList = Array.from(categorySet);
+          categoryList.forEach(category => {
+            createPage({
+              path: `/categories/${_.kebabCase(category)}/`,
+              component: categoryPage,
+              context: {
+                category
+              }
+            });
           });
-        } else { // blog post
-          createPage({
-            path: edge.node.frontmatter.path,
-            component: postPage,
-            context: {
-              slug: edge.node.frontmatter.path, 
-              category: edge.node.frontmatter.category,
-            }
-          });
-        }
+
+          if (edge.node.frontmatter.posttype === "work") {
+            createPage({
+              path: `/work${edge.node.frontmatter.path}`,
+              component: workPage,
+              context: {
+                slug: edge.node.frontmatter.path,
+                category: edge.node.frontmatter.category
+              }
+            });
+          } else {
+            // blog post
+            createPage({
+              path: edge.node.frontmatter.path,
+              component: postPage,
+              context: {
+                slug: edge.node.frontmatter.path,
+                category: edge.node.frontmatter.category
+              }
+            });
+          }
+        });
       })
-    }
-    ));
+    );
   });
 };
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
-      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
-    },
-  })
-}
+      modules: [path.resolve(__dirname, "src"), "node_modules"]
+    }
+  });
+};
