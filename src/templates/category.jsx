@@ -8,35 +8,30 @@ import styled from "styled-components";
 import PostList from "../components/WidePostList/WidePostList";
 
 const Container = styled.section`
-
   @media only screen and (max-width: 1280px) {
     display: block;
   }
-`
+`;
 const Post = styled(PostListing)`
   grid-area: post;
-`
+`;
 
 const Row = styled.div`
   display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: var(--padding-l);
-`
+`;
 
-const Grid = styled.div`
-`
+const Grid = styled.div``;
 
 const Hero = styled.div`
-padding: var(--padding-m) 0 var(--padding-m) 0;
-`
+  padding: var(--padding-m) 0 var(--padding-m) 0;
+`;
 
 export default class CategoryTemplate extends React.Component {
-  render(
-
-    
-  ) {
+  render() {
     const { category } = this.props.pageContext;
-    const postEdges = this.props.data.allMarkdownRemark.edges;
+    const postEdges = this.props.data.allMdx.edges;
     return (
       <Layout>
         <div>
@@ -44,10 +39,14 @@ export default class CategoryTemplate extends React.Component {
             title={`Discover Posts in "${category}" | ${config.siteTitleAlt}`}
           />
           <Grid>
-          <Hero><h1>Discover Posts in {category}</h1></Hero>
-          <Row>
-          <Container><PostList category="none" postEdges={postEdges} /></Container>
-          </Row>
+            <Hero>
+              <h1>Discover Posts in {category}</h1>
+            </Hero>
+            <Row>
+              <Container>
+                <PostList category="none" postEdges={postEdges} />
+              </Container>
+            </Row>
           </Grid>
         </div>
       </Layout>
@@ -58,9 +57,9 @@ export default class CategoryTemplate extends React.Component {
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query CategoryPage($category: String) {
-    allMarkdownRemark(
+    allMdx(
       limit: 1000
-      sort: { fields: [fields___date], order: DESC }
+      sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { category: { eq: $category } } }
     ) {
       totalCount
@@ -91,9 +90,9 @@ export const pageQuery = graphql`
                   sizes
                   originalImg
                   originalName
+                }
               }
             }
-          }
             date
           }
         }

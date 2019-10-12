@@ -7,31 +7,34 @@ import config from "../../data/SiteConfig";
 import styled from "styled-components";
 
 const Grid = styled.section`
-max-width: 768px;
-margin: 0 auto;`
-
+  max-width: 768px;
+  margin: 0 auto;
+`;
 
 const Container = styled.section`
-
   @media only screen and (max-width: 1280px) {
     display: block;
   }
-`
+`;
 
 const Hero = styled.div`
-padding: var(--padding-m) 0 var(--padding-m) 0;
-`
+  padding: var(--padding-m) 0 var(--padding-m) 0;
+`;
 
 export default class TagTemplate extends React.Component {
   render() {
     const { tag } = this.props.pageContext;
-    const postEdges = this.props.data.allMarkdownRemark.edges;
+    const postEdges = this.props.data.allMdx.edges;
     return (
       <Layout>
         <div className="tag-container">
           <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitleAlt}`} />
-          <Hero><h1>Discover Posts in {tag}</h1></Hero>
-          <Container><PostList postEdges={postEdges} /></Container>
+          <Hero>
+            <h1>Discover Posts in {tag}</h1>
+          </Hero>
+          <Container>
+            <PostList postEdges={postEdges} />
+          </Container>
         </div>
       </Layout>
     );
@@ -41,9 +44,9 @@ export default class TagTemplate extends React.Component {
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query TagPage($tag: String) {
-    allMarkdownRemark(
+    allMdx(
       limit: 1000
-      sort: { fields: [fields___date], order: DESC }
+      sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
       totalCount
@@ -74,9 +77,9 @@ export const pageQuery = graphql`
                   sizes
                   originalImg
                   originalName
+                }
               }
             }
-          }
             date
           }
         }

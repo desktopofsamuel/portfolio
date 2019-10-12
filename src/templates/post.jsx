@@ -1,19 +1,15 @@
 import React from "react";
-import Helmet from "react-helmet";
 import { graphql } from "gatsby";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 import Layout from "../layout";
 import styled from "styled-components";
 import Link from "gatsby-link";
-import UserInfo from "../components/UserInfo/UserInfo";
-import Disqus from "../components/Disqus/Disqus";
+import Helmet from "react-helmet";
+import config from "../../data/SiteConfig";
+import SEO from "../components/SEO/SEO";
 import PostTags from "../components/PostTags/PostTags";
 import SocialLinks from "../components/SocialLinks/SocialLinks";
 import kebabCase from "lodash/kebabCase";
-import SEO from "../components/SEO/SEO";
-import config from "../../data/SiteConfig";
-import "./b16-tomorrow-dark.css";
-import "./post.css";
-import { FaAngleRight } from "react-icons/fa";
 
 const Row = styled.section`
   padding: var(--var-padding-l) 0;
@@ -125,22 +121,12 @@ const PostShare = styled.div`
   grid-area: share;
 `;
 
-export default class PostTemplate extends React.Component {
+export default class BlogPageTemplate extends React.Component {
   render() {
     const { slug } = this.props.pageContext;
     const postNode = this.props.data.post;
     const relateNode = this.props.data.related;
     const post = postNode.frontmatter;
-    if (!post.id) {
-      post.id = slug;
-    }
-    if (!post.category_id) {
-      post.category_id = config.postDefaultCategoryID;
-    }
-    if (relateNode === null) {
-      console.log("error");
-    } else {
-    }
 
     return (
       <Layout className="post-template">
@@ -168,7 +154,7 @@ export default class PostTemplate extends React.Component {
                 </Meta>
               </Header>
               <Main>
-                <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
+                <MDXRenderer>{postNode.body}</MDXRenderer>
               </Main>
               <Sidebar>
                 <small>Also in</small>{" "}
@@ -199,17 +185,14 @@ export default class PostTemplate extends React.Component {
   }
 }
 
-/* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!, $category: String!) {
-    post: markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      timeToRead
-      excerpt
+  query BlogPostQuery($id: String, $category: String) {
+    post: mdx(id: { eq: $id }) {
+      id
+      body
       frontmatter {
         path
         title
-        tldr
         cover {
           publicURL
           size
@@ -236,16 +219,16 @@ export const pageQuery = graphql`
         date
       }
     }
-    related: allMarkdownRemark(
-      sort: { fields: [fields___date], order: DESC }
-      limit: 3
+    related: allMdx(
       filter: {
         frontmatter: { category: { eq: $category } }
-        fields: { slug: { ne: $slug } }
+        id: { ne: $id }
+        fileAbsolutePath: { regex: "/blog/" }
       }
     ) {
       edges {
         node {
+          id
           frontmatter {
             title
             path

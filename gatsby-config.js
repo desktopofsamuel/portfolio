@@ -50,9 +50,11 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        plugins: [
+        defaultLayouts: {},
+        extensions: [`.mdx`, `md`],
+        gatsbyRemarkPlugins: [
           {
             resolve: "gatsby-remark-images-grid",
             options: {
@@ -152,7 +154,7 @@ module.exports = {
               showCaptions: true
             }
           },
-            "gatsby-remark-responsive-iframe",
+          "gatsby-remark-responsive-iframe",
           {
             resolve: `gatsby-remark-figure-caption`,
             options: { figureClassName: "remark-figure" }
@@ -196,7 +198,7 @@ module.exports = {
           {
             serialize(ctx) {
               const { rssMetadata } = ctx.query.site.siteMetadata;
-              return ctx.query.allMarkdownRemark.edges.map(edge => ({
+              return ctx.query.allMdx.edges.map(edge => ({
                 categories: edge.node.frontmatter.tags,
                 date: edge.node.fields.date,
                 title: edge.node.frontmatter.title,
@@ -209,7 +211,7 @@ module.exports = {
             },
             query: `
             {
-              allMarkdownRemark(
+              allMdx(
                 limit: 1000,
                 sort: { order: DESC, fields: [fields___date] },
               ) {

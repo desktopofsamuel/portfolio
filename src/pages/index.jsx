@@ -213,7 +213,6 @@ const Contact = styled.div`
 
 class Index extends React.Component {
   render() {
-    const blogEdges = this.props.data.Blog.edges;
     const workEdges = this.props.data.Work.edges;
     return (
       <div>
@@ -227,7 +226,7 @@ class Index extends React.Component {
               <small>When Design Meets Technology</small>
               <h1>
                 Designing with <br />
-                <span class="brand">complexity</span>
+                <span className="brand">complexity</span>
               </h1>
               <HeroGraphics>
                 <GraphicBox>
@@ -373,88 +372,47 @@ export default Index;
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
-query IndexQuery {
-  Work: allMarkdownRemark(
-    limit: 5
-    sort: { fields: [fields___date], order: DESC }
-    filter: {fileAbsolutePath: {regex: "/work/.*\\.md$/"}}
-  ) {
-    edges {
-      node {
-        fields {
-          slug
-          date
-        }
-        excerpt(pruneLength: 200)
-        timeToRead
-        frontmatter {
-          title
-          subtitle
-          path
-          tags
-          color
-          cover {
-            publicURL
-            size
-            childImageSharp {
-              sizes(maxWidth: 1200) {
-                base64
-                aspectRatio
-                src
-                srcSet
-                srcWebp
-                srcSetWebp
-                sizes
-                originalImg
-                originalName
+  query IndexQuery {
+    Work: allMdx(
+      limit: 5
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { fileAbsolutePath: { regex: "/work/" } }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+            date
+          }
+          excerpt(pruneLength: 200)
+          timeToRead
+          frontmatter {
+            title
+            subtitle
+            path
+            tags
+            color
+            cover {
+              publicURL
+              size
+              childImageSharp {
+                sizes(maxWidth: 1200) {
+                  base64
+                  aspectRatio
+                  src
+                  srcSet
+                  srcWebp
+                  srcSetWebp
+                  sizes
+                  originalImg
+                  originalName
+                }
               }
             }
+            date
           }
-          date
         }
       }
     }
   }
-  Blog: allMarkdownRemark(
-    limit: 4
-    sort: { fields: [fields___date], order: DESC }
-    filter: { frontmatter: { category: { eq: "Design Journal"}}}
-  ) {
-    edges {
-      node {
-        fields {
-          slug
-          date
-        }
-        excerpt(pruneLength: 200)
-        timeToRead
-        frontmatter {
-          title
-          path
-          tags
-          category
-          tldr
-          cover {
-            publicURL
-            size
-            childImageSharp {
-              sizes(maxWidth: 1140) {
-                base64
-                aspectRatio
-                src
-                srcSet
-                srcWebp
-                srcSetWebp
-                sizes
-                originalImg
-                originalName
-              }
-            }
-          }
-          date
-        }
-      }
-    }
-  }
-}
 `;
