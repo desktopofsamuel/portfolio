@@ -10,10 +10,7 @@ module.exports = {
       feed_url: urljoin(config.siteUrl, config.pathPrefix, config.siteRss),
       title: config.siteTitle,
       description: config.siteDescription,
-      image_url: `${urljoin(
-        config.siteUrl,
-        config.pathPrefix
-      )}/logos/logo-512.png`,
+      image_url: `${urljoin(config.siteUrl, config.pathPrefix)}/favicon.png`,
       author: config.userName,
       copyright: config.copyright
     }
@@ -72,7 +69,12 @@ module.exports = {
           },
           "gatsby-remark-prismjs",
           "gatsby-remark-copy-linked-files",
-          "gatsby-remark-autolink-headers"
+          {
+            resolve: "gatsby-remark-autolink-headers",
+            options: {
+              icon: false
+            }
+          }
         ]
       }
     },
@@ -93,6 +95,7 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-catch-links",
     "gatsby-plugin-twitter",
+    "gatsby-plugin-favicon",
     "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-manifest",
@@ -106,8 +109,8 @@ module.exports = {
         display: "minimal-ui",
         icons: [
           {
-            src: "/logos/Logo-1024.png",
-            sizes: "1024x1024",
+            src: "/favicon.png",
+            sizes: "1500x1500",
             type: "image/png"
           }
         ]

@@ -13,17 +13,17 @@ cover: "./3.png"
 tldr: "This is an update to my previous article Building Gatsby With Multiple Post Type, as I have rebuilt my whole site using GatsbyJS v2. "
 ---
 
-##Intro
+## Intro
 
 This is an update to my previous article [Building Gatsby With Multiple Post Type](./building-gatsby-with-multiple-post-type), as I have rebuilt my whole site using GatsbyJS v2. I switched from [Gatsby default starter](https://github.com/gatsbyjs/gatsby-starter-default) to [Gatsby Advanced Starter](https://github.com/Vagr9K/gatsby-advanced-starter) which save me some time setting up foundation of the website. (e.g. Tags, Category, SEO etc)
 
 But please note that this starter contains no UI or any style, you will need to build it on our own. If you are a designer with some front-end development experience, this is the place.
 
-##Use Case
+## Use Case
 
 I want setup my website supporting multiple post types, both blog articles and my previous work will be found within the same site. This freelance / career portfolio setup works the best for designers who love to write.
 
-##Overview
+## Overview
 
 This tutorial has been one of my most viewed article since launch since there are only a few tutorials online. Assuming you have already setup a Gatsby site already.
 
@@ -37,7 +37,7 @@ Things we need to do:
 6. Edit Blog Main page not to query project post
 7. Create Tag & Category Page for Project
 
-##1. Create New Project Folder
+## 1. Create New Project Folder
 
 ```
 src
@@ -76,7 +76,7 @@ cover: "./main.jpg"
 ---
 ```
 
-##2.Edit Gatsby-Config.js
+## 2.Edit Gatsby-Config.js
 
 We will need to edit gatsby-config.js in order to let Gatsby know where to look when creating a new post page. You will need to rename for blog post as well as we moved them in a folder.
 
@@ -99,7 +99,7 @@ We will need to edit gatsby-config.js in order to let Gatsby know where to look 
 ```
 Type `gatsby develop` in  command line, you should be able to see both blog and project files showing in the home page.
 
-##3. Create Project Post Template
+## 3. Create Project Post Template
 
 Then, we will need to duplicate a new post template for project. Duplicate `post.jsx` in `src/template/` folder and rename it as `project.jsx`.
 
@@ -112,7 +112,7 @@ export const pageQuery = graphql`
 
 ```
 
-##4.Edit Gatsby-Node.js
+## 4.Edit Gatsby-Node.js
 Being a static site generator, `gatsby-node.js` handles how your site is generated. Personally speaking, without knowledge in Node.js and JavaScript, it is rather complicated to understand the meaning of each line.
 
 On the bright side, that is the reason why I started with the advance starter. It already offers basic Gatsby architecture (e.g. rendering path and creating tags and category) in this file and all we need is 3 changes.
@@ -194,7 +194,7 @@ Try run `gatsby-develop` in command line making sure everything works. Also, rem
 
 Before we go on, because Gatsby Advance Starter already built with Tag and Category taxonomies. I will skip this part in this tutorial, you can still reference to the old article for more details. (Codes are the same since Gatsby Advance Starter was based on Gatsby Material Starter). We would move on fixing the index page PostListing component instead. 
 
-##5. Fix PostListing Component
+## 5. Fix PostListing Component
 
 I assume the new project content type will showcase differently with larger photos and less text, let build a brand new component for it. Let's create ProjectListing folder and `ProjectListing.jsx` in component folder. Let's copy everything from `PostListing.jsx`. I have only renamed the component name to ProjectListing and changed the Link to support path prefix.
 
@@ -208,7 +208,7 @@ I assume the new project content type will showcase differently with larger phot
 ```
 
 
-##6. Fix Index Page
+## 6. Fix Index Page
 Then we will need to edit `index.jsx`. Import the ProjectListing component
 ```import ProjectListing from "../components/ProjectListing/ProjectListing";``` 
 
