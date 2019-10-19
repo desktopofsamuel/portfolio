@@ -20,6 +20,7 @@ const FooterItem = styled(Link)`
   @media only screen and (max-width: 768px) {
     margin-right: 0;
     justify-content: left;
+  }
 `;
 
 const FooterIcon = styled(FontAwesomeIcon)`
