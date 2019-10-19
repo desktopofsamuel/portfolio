@@ -64,18 +64,47 @@ const query = `
       }
     }
   }
+  photo: allMdx(filter: { fileAbsolutePath: {regex: "/photo/"}})
+  {
+    edges {
+      node {
+        id
+        frontmatter {
+          path
+          date
+        }
+      }
+    }
+  }
 }
 `;
-const Page = path.resolve("src/templates/default-page.jsx");
 const postPage = path.resolve("src/templates/post.jsx");
 const workPage = path.resolve("src/templates/work.jsx");
+const photoPage = path.resolve("src/templates/photo.jsx");
 const tagPage = path.resolve("src/templates/tag.jsx");
 const categoryPage = path.resolve("src/templates/category.jsx");
 
 exports.createPages = async ({ graphql, actions: { createPage } }) => {
   const response = await graphql(query);
   if (response.errors) throw new Error(response.errors);
-  const { work, blog } = response.data;
+  const { work, blog, photo } = response.data;
+
+  photo.edges.forEach(({ node }, index, arr) => {
+    const nextSlug = index === 0 ? `` : arr[index - 1].node.frontmatter.path;
+    const prevSlug =
+      index === arr.length - 1 ? `` : arr[index + 1].node.frontmatter.path;
+    const slug = node.frontmatter.path;
+    createPage({
+      path: `/photo${slug}`,
+      component: photoPage,
+      context: {
+        slug,
+        nextSlug,
+        prevSlug,
+        id: node.id
+      }
+    });
+  });
 
   blog.edges.forEach(({ node }, index, arr) => {
     const nextSlug = index === 0 ? `` : arr[index - 1].node.frontmatter.path;
