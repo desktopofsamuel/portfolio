@@ -4,9 +4,15 @@ import styled from "styled-components";
 
 const Block = styled.div``;
 
-const Label = styled.p``;
+const Label = styled.p`
+  text-transform: uppercase;
+  letter-spacing: 5%;
+  font-size: 12px;
+`;
 
-const Number = styled.h5``;
+const Number = styled.h5`
+  font-size: 24px;
+`;
 
 class Data extends React.Component {
   render() {
