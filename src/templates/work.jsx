@@ -1,12 +1,17 @@
 import React from "react";
 import { graphql } from "gatsby";
+import styled from "styled-components";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Layout from "../layout";
+
+const Title = styled.h1`
+  font-family: var(--font-primary);
+`;
 
 export default function WorkPageTemplate({ data: { mdx } }) {
   return (
     <Layout>
-      <h1>{mdx.frontmatter.title}</h1>
+      <Title>{mdx.frontmatter.title}</Title>
       <MDXRenderer>{mdx.body}</MDXRenderer>
     </Layout>
   );
@@ -18,6 +23,7 @@ export const pageQuery = graphql`
       body
       frontmatter {
         title
+        subtitle
         path
       }
     }
