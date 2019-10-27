@@ -15,10 +15,6 @@ const LeftSidebar = styled.aside`
   z-index: 1000;
   padding: 8px;
   justify-content: center;
-
-  @media only screen and (max-width: 1024px) {
-    display: none;
-  }
 `;
 
 const IconWrapper = styled.div`
@@ -85,7 +81,7 @@ export default class Navigation extends React.Component {
   render() {
     return (
       <div>
-        <LeftSidebar>
+        {/* <LeftSidebar>
           <IconWrapper>
             <a
               className="noeffect linkicon"
@@ -102,7 +98,7 @@ export default class Navigation extends React.Component {
               <FaInstagram size="1.25rem" />
             </a>
           </IconWrapper>
-        </LeftSidebar>
+        </LeftSidebar> */}
         <Main>
           <NavBar>
             <SiteID>
@@ -126,6 +122,9 @@ export default class Navigation extends React.Component {
             <NavItem>
               <Link to="/about" class="navblock noeffect">
                 <small>About</small>
+              </Link>
+              <Link to="/work" class="navblock noeffect">
+                <small>Work</small>
               </Link>
               <Link to="/blog" class="navblock noeffect">
                 <small>Blog</small>

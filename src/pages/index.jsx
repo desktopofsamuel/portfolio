@@ -45,6 +45,10 @@ const Intro = styled(Row)`
 
 const Hero = styled.div`
   text-align: left;
+
+  h1 {
+    font-family: var(--font-primary);
+  }
 `;
 
 const HeroGraphics = styled.figure`
@@ -355,13 +359,6 @@ class Index extends React.Component {
               <Now />
             </BoxContent>
           </FullYellowRow>
-          <Row>
-            <Contact id="contact">
-              <small>SIMPLICITY IS A STATE OF MIND.</small>
-              <h2>Start the conversation to manage complexity.</h2>
-              <CTAButton href="mailto:sammatwong@gmail.com" text="Let's Talk" />
-            </Contact>
-          </Row>
         </Layout>
       </div>
     );
