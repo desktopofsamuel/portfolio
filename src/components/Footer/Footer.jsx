@@ -106,7 +106,7 @@ export default class Footer extends React.Component {
     return (
       <Main>
         <Boxx>
-          <SubContainer className="full-bleed">
+          <SubContainer className="full-bleed" id="#contact">
             <Boxed>
               <SubTitle>Follow Me To Manage Complexity</SubTitle>
               <SubText>

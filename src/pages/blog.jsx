@@ -37,7 +37,7 @@ const BoxContent = styled.div`
 const Main = styled.div`
   display: grid;
   grid-template-columns: [left] 30% [right] 70%;
-  grid-gap: var(--var-padding-m);
+  grid-gap: var(--grid-gap);
 
   @media only screen and (max-width: 768px) {
     display: block;

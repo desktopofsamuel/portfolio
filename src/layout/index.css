@@ -58,7 +58,7 @@ body {
 }
 
 div > main {
-  max-width: 60vw;
+  max-width: 85vw;
   margin: 0 auto;
 }
 
@@ -148,7 +148,7 @@ small {
 
 strong {
   font-family: var(--font-secondary);
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .Text-S {
@@ -203,7 +203,7 @@ blockquote {
   padding: 1.5em 0 0.5em;
   margin: 3rem 0;
   font-family: var(--font-primary);
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.4;
   position: relative;

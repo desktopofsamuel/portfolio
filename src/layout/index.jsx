@@ -14,7 +14,6 @@ const Layout = styled.div`
 `;
 
 const Main = styled.main`
-  padding: 0 2rem;
   margin: 0 auto var(--var-padding-m) auto;
 
   @media only screen and (max-width: 1024px) {

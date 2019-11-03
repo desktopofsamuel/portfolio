@@ -26,8 +26,8 @@ const BoxContent = styled.div`
   margin: 0 auto;
 
   @media only screen and (max-width: 1024px) {
-    max-width: 70vw;
-    padding: 0 1.5rem;
+    max-width: 80vw;
+    padding: 0 1rem;
   }
 
   @media only screen and (max-width: 768px) {

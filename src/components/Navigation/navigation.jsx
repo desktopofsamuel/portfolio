@@ -26,7 +26,6 @@ const IconWrapper = styled.div`
 
 const Main = styled.div`
   max-width: 85vw;
-  padding-left: 50px;
   margin: 0 auto;
 
   @media only screen and (max-width: 1024px) {

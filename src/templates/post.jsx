@@ -23,7 +23,6 @@ const Row = styled.section`
 
 const BoxContent = styled.div`
   max-width: 85vw;
-  padding-left: 50px;
   margin: 0 auto;
 
   @media only screen and (max-width: 1024px) {
@@ -221,7 +220,7 @@ export const pageQuery = graphql`
     }
     related: allMdx(
       sort: { fields: [fields___date], order: DESC }
-      limit: 10
+      limit: 5
       filter: { frontmatter: { category: { eq: $category } } }
     ) {
       edges {
