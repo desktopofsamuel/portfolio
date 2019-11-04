@@ -6,6 +6,7 @@ const NowGrid = styled.section`
   height: auto;
   display: grid;
   grid-template-columns: [main] auto;
+  margin-bottom: -2rem;
 `;
 
 const Main = styled.div`
@@ -53,18 +54,15 @@ export default props => (
       <Box>
         <Name>Now</Name>
         <Content>
-          <Text>
-            Shipping design at{" "}
-            <a href="https://www.hyperair.com/zh-HK">HyperAir</a>
-          </Text>
-          <Text>Learning Swedish on Duolingo</Text>
+          <Text>Stand With Hong Kong</Text>
         </Content>
       </Box>
       <Box>
         <Name>Projects</Name>
         <Content>
           <Text>
-            Collecting Design <a href="https://pin.desktopofsamuel.com">Pins</a>
+            Collecting Design{" "}
+            <a href="https://pins.desktopofsamuel.com">Pins</a>
           </Text>
           <Text>
             Visiting cities{" "}
@@ -76,13 +74,16 @@ export default props => (
         <Name>Read In Progress</Name>
         <Content>
           <Text>
-            <a href="https://amzn.to/31GYIyZ" target="blank">
-              Leonardo da Vinci - Walter Isaacson
+            <a href="https://maketime.blog" target="blank">
+              Make Time
             </a>
           </Text>
           <Text>
-            <a href="https://amzn.to/31HPMJL" target="blank">
-              Thanks for the Feedback - Douglas Stone
+            <a
+              href="https://www.books.com.tw/products/0010834124"
+              target="blank"
+            >
+              你看港楷招牌
             </a>
           </Text>
         </Content>
@@ -92,34 +93,31 @@ export default props => (
         <Content>
           <Text>
             <a
-              href="https://www.youtube.com/watch?v=-xZFQjeZwaw"
+              href="https://open.spotify.com/artist/4NZvixzsSefsNiIqXn0NDe?si=v4HKt8o1STa3Ybr6wC7G3g"
               target="blank"
             >
-              Barry
+              Maggie Rogers
             </a>
           </Text>
           <Text>
             <a
-              href="https://open.spotify.com/track/7wsRS8wZuK1SxsS1XZCmaW?si=ApnKjSAwRfiqMNnCqUxHHw"
+              href="https://www.youtube.com/watch?v=eTzBIH51Irc"
               target="blank"
             >
-              Always Be My Maybe
+              1987 When The Day Comes
             </a>
           </Text>
           <Text>
             <a
-              href="https://media.giphy.com/media/l3mZ36q0iqikJhzWw/giphy.gif"
+              href="https://www.youtube.com/watch?v=6uWCNHQgfnc"
               target="blank"
             >
-              The Good Place
+              Undone
             </a>
           </Text>
           <Text>
-            <a
-              href="https://www.facebook.com/%E9%BA%B5%E5%8C%A0%E9%A2%A8%E9%BE%8D-537470633371893/"
-              target="blank"
-            >
-              This ramen restaurant
+            <a href="https://www.apple.com/iphone-11-pro/" target="blank">
+              Wide Angle Lens
             </a>
           </Text>
         </Content>

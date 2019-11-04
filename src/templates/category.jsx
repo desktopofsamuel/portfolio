@@ -2,20 +2,16 @@ import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
-import PostListing from "../components/PostListing/PostListing";
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import PostList from "../components/WidePostList/WidePostList";
+import Boxed from "elements/Boxed";
 
 const Container = styled.section`
   @media only screen and (max-width: 1280px) {
     display: block;
   }
 `;
-const Post = styled(PostListing)`
-  grid-area: post;
-`;
-
 const Row = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -38,16 +34,18 @@ export default class CategoryTemplate extends React.Component {
           <Helmet
             title={`Discover Posts in "${category}" | ${config.siteTitleAlt}`}
           />
-          <Grid>
-            <Hero>
-              <h1>Discover Posts in {category}</h1>
-            </Hero>
-            <Row>
-              <Container>
-                <PostList category="none" postEdges={postEdges} />
-              </Container>
-            </Row>
-          </Grid>
+          <Boxed>
+            <Grid>
+              <Hero>
+                <h1>Discover Posts in {category}</h1>
+              </Hero>
+              <Row>
+                <Container>
+                  <PostList category="none" postEdges={postEdges} />
+                </Container>
+              </Row>
+            </Grid>
+          </Boxed>
         </div>
       </Layout>
     );

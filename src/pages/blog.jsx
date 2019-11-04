@@ -4,10 +4,10 @@ import { graphql } from "gatsby";
 import Layout from "../layout";
 import config from "../../data/SiteConfig";
 import PostHero from "../components/PostHero/PostHero";
-import PostList from "../components/PostListing/PostListing";
 import Link from "../components/GatsbyLink/GatsbyLink";
 import SEO from "../components/SEO/SEO";
 import BlogFeature from "../components/BlogFeature/BlogFeature";
+import Boxed from "elements/Boxed";
 import styled from "styled-components";
 
 const Row = styled.section`
@@ -106,41 +106,43 @@ class Index extends React.Component {
           />
         </Helmet>
         <Row>
-          <Main>
-            <Left>
-              <h1>Blog</h1>
-              <BlogSubtitle>
-                A collection of posts I wrote about design, technology and
-                productivity.{" "}
-              </BlogSubtitle>
-              <CategoryBlock>
-                <small>Top Categories</small>
-                <h3>
-                  <Link to="/categories/design-journal">Design</Link>
-                </h3>
-                <h3>
-                  <Link to="/categories/work-in-progress">Development</Link>
-                </h3>
-                <h3>
-                  <Link to="/categories/productivity">Productivity</Link>
-                </h3>
-                <h3>
-                  <Link to="/categories/ctrl-alt-setup">Ctrl Alt Setup</Link>
-                </h3>
-              </CategoryBlock>
-            </Left>
-            <Right>
-              <small>Featured</small>
-              <BlogFeatureWrapper>
-                <BlogFeature postEdges={Feature1Edges} />
-                <BlogFeature postEdges={Feature2Edges} />
-              </BlogFeatureWrapper>
-              <Row id="latest">
-                <small>Latest</small>
-                <PostHero postEdges={postEdges} />
-              </Row>
-            </Right>
-          </Main>
+          <Boxed>
+            <Main>
+              <Left>
+                <h1>Blog</h1>
+                <BlogSubtitle>
+                  A collection of posts I wrote about design, technology and
+                  productivity.{" "}
+                </BlogSubtitle>
+                <CategoryBlock>
+                  <small>Top Categories</small>
+                  <h3>
+                    <Link to="/categories/design-journal">Design</Link>
+                  </h3>
+                  <h3>
+                    <Link to="/categories/work-in-progress">Development</Link>
+                  </h3>
+                  <h3>
+                    <Link to="/categories/productivity">Productivity</Link>
+                  </h3>
+                  <h3>
+                    <Link to="/categories/ctrl-alt-setup">Ctrl Alt Setup</Link>
+                  </h3>
+                </CategoryBlock>
+              </Left>
+              <Right>
+                <small>Featured</small>
+                <BlogFeatureWrapper>
+                  <BlogFeature postEdges={Feature1Edges} />
+                  <BlogFeature postEdges={Feature2Edges} />
+                </BlogFeatureWrapper>
+                <Row id="latest">
+                  <small>Latest</small>
+                  <PostHero postEdges={postEdges} />
+                </Row>
+              </Right>
+            </Main>
+          </Boxed>
         </Row>
       </Layout>
     );

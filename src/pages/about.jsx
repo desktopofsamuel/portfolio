@@ -10,6 +10,7 @@ import DocuSVG from "../../static/SVG/docu.svg";
 import WaterSVG from "../../static/SVG/Water.svg";
 import PinSVG from "../../static/SVG/Pin.svg";
 import ImageZoom from "react-medium-image-zoom";
+import Boxed from "elements/Boxed";
 
 const Row = styled.section`
   padding: var(--var-padding-l) 0;
@@ -229,43 +230,45 @@ class AboutPage extends Component {
             </BoxContent>
           </RowHero>
           <Row id="bio">
-            <P1>
-              <small>01. Bio</small>
-              <h2>Journey to Design</h2>
-              <p>
-                I studied cultural and film theories at The University of Hong
-                Kong. But it wasn’t until I took a year-long leave and worked in
-                iTunes & App Store, Apple as Cross-Content Intern during
-                college, during which it sparked my interest in digital products
-                and web.
-              </p>
-            </P1>
-            <PhotoFrame>
-              <Img
-                fluid={this.props.data.bio.childImageSharp.fluid}
-                width="100%"
-                alt="About Cover Photo"
-              />
-            </PhotoFrame>
-            <GridBio>
-              <P2>
+            <Boxed>
+              <P1>
+                <small>01. Bio</small>
+                <h2>Journey to Design</h2>
                 <p>
-                  After my internship, I took freelance projects as well as
-                  volunteered for students and community organisations, acquring
-                  various skillsets to be a hybrid designer.
-                  <br />
-                  <br />I started my agency Playa with my partner in 2015,
-                  hoping to help small business, entrepreneurs and non-profits
-                  launching their projects, bridging the gap between project
-                  owners and end-users. We have launched dozen websites and apps
-                  in Hong Kong with multiple recognitions.
-                  <br />
-                  <br />
-                  Currently, I lead design at Hyperair as Principal Designer.
-                  Reinventing experience all around travel.
+                  I studied cultural and film theories at The University of Hong
+                  Kong. But it wasn’t until I took a year-long leave and worked
+                  in iTunes & App Store, Apple as Cross-Content Intern during
+                  college, during which it sparked my interest in digital
+                  products and web.
                 </p>
-              </P2>
-            </GridBio>
+              </P1>
+              <PhotoFrame>
+                <Img
+                  fluid={this.props.data.bio.childImageSharp.fluid}
+                  width="100%"
+                  alt="About Cover Photo"
+                />
+              </PhotoFrame>
+              <GridBio>
+                <P2>
+                  <p>
+                    After my internship, I took freelance projects as well as
+                    volunteered for students and community organisations,
+                    acquring various skillsets to be a hybrid designer.
+                    <br />
+                    <br />I started my agency Playa with my partner in 2015,
+                    hoping to help small business, entrepreneurs and non-profits
+                    launching their projects, bridging the gap between project
+                    owners and end-users. We have launched dozen websites and
+                    apps in Hong Kong with multiple recognitions.
+                    <br />
+                    <br />
+                    Currently, I lead design at Hyperair as Principal Designer.
+                    Reinventing experience all around travel.
+                  </p>
+                </P2>
+              </GridBio>
+            </Boxed>
           </Row>
           <RowHero id="skills" className="full-bleed">
             <BoxContent>
@@ -312,31 +315,33 @@ class AboutPage extends Component {
             </BoxContent>
           </RowHero>
           <Row id="projects">
-            <small>03. Projects</small>
-            <h2>Your Support</h2>
-            <GridProject>
-              <ProjectBox
-                img={DocuSVG}
-                title="Road Not Taken"
-                blurb="A documentary I directed with multiple Asian film festival selected."
-                year="2016"
-                url="https://vimeo.com/ondemand/roadnottaken"
-              />
-              <ProjectBox
-                img={PinSVG}
-                title="Pins"
-                blurb="A curated design resources site built by Gatsby JS."
-                year="2018"
-                url="https://pins.desktopofsamuel.com"
-              />
-              <ProjectBox
-                img={WaterSVG}
-                title="Water For Free"
-                blurb="An crowdsourcing initiative that everyone can support."
-                year="2017"
-                url="https://vimeo.com/ondemand/roadnottaken"
-              />
-            </GridProject>
+            <Boxed>
+              <small>03. Projects</small>
+              <h2>Your Support</h2>
+              <GridProject>
+                <ProjectBox
+                  img={DocuSVG}
+                  title="Road Not Taken"
+                  blurb="A documentary I directed with multiple Asian film festival selected."
+                  year="2016"
+                  url="https://vimeo.com/ondemand/roadnottaken"
+                />
+                <ProjectBox
+                  img={PinSVG}
+                  title="Pins"
+                  blurb="A curated design resources site built by Gatsby JS."
+                  year="2018"
+                  url="https://pins.desktopofsamuel.com"
+                />
+                <ProjectBox
+                  img={WaterSVG}
+                  title="Water For Free"
+                  blurb="An crowdsourcing initiative that everyone can support."
+                  year="2017"
+                  url="https://vimeo.com/ondemand/roadnottaken"
+                />
+              </GridProject>
+            </Boxed>
           </Row>
         </Layout>
       </div>

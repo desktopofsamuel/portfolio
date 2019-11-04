@@ -3,30 +3,34 @@ import { graphql } from "gatsby";
 import styled from "styled-components";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Layout from "../layout";
+import Helmet from "react-helmet";
+import SEO from "../components/SEO/SEO";
+import config from "../../data/SiteConfig";
 
 const Title = styled.h1`
   font-family: var(--font-primary);
 `;
 
-const Container = styled.div`
-  max-width: 45vw;
-  margin: 0 auto;
+export default class WorkPageTemplate extends React.Component {
+  render() {
+    const { slug } = this.props.pageContext;
+    const path = "work" + `${slug}`;
+    const postNode = this.props.data.mdx;
+    const work = this.props.data.mdx.frontmatter;
 
-  @media only screen and (max-width: 768px) {
-    max-width: 90vw;
+    return (
+      <Layout>
+        <Helmet>
+          <title>{`${work.title} | ${config.siteTitleAlt}`}</title>
+        </Helmet>
+        <SEO postPath={path} postNode={postNode} postSEO />
+        <Title>{work.title}</Title>
+        <MDXRenderer>{postNode.body}</MDXRenderer>
+      </Layout>
+    );
   }
-`;
-
-export default function WorkPageTemplate({ data: { mdx } }) {
-  return (
-    <Layout>
-      <Container>
-        <Title>{mdx.frontmatter.title}</Title>
-        <MDXRenderer>{mdx.body}</MDXRenderer>
-      </Container>
-    </Layout>
-  );
 }
+
 export const pageQuery = graphql`
   query WorkPostQuery($id: String) {
     mdx(id: { eq: $id }) {
@@ -36,6 +40,10 @@ export const pageQuery = graphql`
         title
         subtitle
         path
+        tags
+        cover {
+          publicURL
+        }
       }
     }
   }

@@ -2,12 +2,11 @@ import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
-import PostListing from "../components/PostListing/PostListing";
 import WorkHero from "../components/WorkHero/WorkHero";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
-
+import Boxed from "elements/Boxed";
 const Row = styled.section`
   padding: var(--var-padding-l) 0;
   background: white;
@@ -37,14 +36,16 @@ class Index extends React.Component {
     const postEdges = this.props.data.allMdx.edges;
     return (
       <Layout>
-        <Row>
-          <small>Projects</small>
-          <h1>My Work</h1>
-        </Row>
-        <Row>
-          <Helmet title={config.siteTitle} />
-          <WorkHero postEdges={postEdges} />
-        </Row>
+        <Boxed>
+          <Row>
+            <small>Projects</small>
+            <h1>My Work</h1>
+          </Row>
+          <Row>
+            <Helmet title={config.siteTitle} />
+            <WorkHero postEdges={postEdges} />
+          </Row>
+        </Boxed>
       </Layout>
     );
   }

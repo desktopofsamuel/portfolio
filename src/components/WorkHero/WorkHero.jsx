@@ -15,7 +15,7 @@ const ListItem = styled.div`
 
   &:hover {
     transform: scale(1.01, 1.01);
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 25px 40px 0 rgba(0, 0, 0, 0.08);
   }
 
   @media only screen and (max-width: 768px) {

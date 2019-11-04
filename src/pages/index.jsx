@@ -161,32 +161,25 @@ const Center = styled.div`
 `;
 
 const Blog = styled.section`
-  display: block;
-  position: relative;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-row-gap: 8rem;
+  grid-column-gap: 6rem;
+  align-items: flex-start;
 
-  @media only screen and (min-width: 768px) {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    overflow-x: auto;
+  & > div:nth-child(2) {
+    grid-column: span 2;
 
-    & > * {
-      flex: 0 0 auto;
-      width: 40%;
+    p {
+      max-width: 80%;
+      margin: 0 auto;
     }
   }
 
-  &::-webkit-scrollbar {
-    display: none; /*no use now*/
-    height: 8px;
-    overflow: visible;
-    background: var(--color-white-500);
-  }
-
-  &::-webkit-scrollbar-thumb:horizontal {
-    background-color: var(--color-grey-300);
-    border-radius: 10px;
-    width: 10px;
+  @media only screen and (max-width: 768px) {
+    display: block;
   }
 `;
 
@@ -200,7 +193,10 @@ const Overlay = styled.div`
 `;
 
 const BlogIntro = styled.div`
-  max-width: 30ch;
+  margin-bottom: var(--var-padding-m);
+  p {
+    color: var(--color-secondary-700);
+  }
 `;
 
 const Contact = styled.div`
@@ -227,98 +223,103 @@ class Index extends React.Component {
         </Helmet>
         <Layout>
           <Intro>
-            <Hero>
-              <small>When Design Meets Technology</small>
-              <h1>
-                Designing with <br />
-                <span className="brand">complexity</span>
-              </h1>
-              <HeroGraphics>
-                <GraphicBox>
-                  <svg
-                    class="triangle"
-                    width="96"
-                    height="83"
-                    viewBox="0 0 96 83"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M2.96668 81L48 3L93.0333 81H2.96668Z"
-                      stroke="#535E7C"
-                      stroke-width="3"
-                    />
-                  </svg>
-                  <svg
-                    width="107"
-                    height="107"
-                    viewBox="0 0 107 107"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle
-                      cx="53.5"
-                      cy="53.5"
-                      r="52"
-                      stroke="#535E7C"
-                      stroke-width="3"
-                    />
-                  </svg>
-                  <svg
-                    width="82"
-                    height="82"
-                    viewBox="0 0 82 82"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      x="1.5"
-                      y="1.5"
-                      width="79"
-                      height="79"
-                      stroke="#535E7C"
-                      stroke-width="3"
-                    />
-                  </svg>
-                  <svg
-                    width="133"
-                    height="126"
-                    viewBox="0 0 133 126"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M2.16493 48.5963L66.5 1.8541L130.835 48.5963L106.261 124.227H26.7387L2.16493 48.5963Z"
-                      stroke="#535E7C"
-                      stroke-width="3"
-                    />
-                  </svg>
-                </GraphicBox>
-                <WhiteBox />
-              </HeroGraphics>
-            </Hero>
-            <IntroBox>
-              <small>Hi! My name is Samuel</small>
-              <Subtitle>
-                I believe design is the way to navigate today's complex world.
-                Join me in this journey.
-              </Subtitle>
-            </IntroBox>
-            <CTAButton href="#contact" text="Get In Touch" />
+            <BoxContent>
+              <Hero>
+                <small>When Design Meets Technology</small>
+                <h1>
+                  Designing with <br />
+                  <span className="brand">complexity</span>
+                </h1>
+                <HeroGraphics>
+                  <GraphicBox>
+                    <svg
+                      class="triangle"
+                      width="96"
+                      height="83"
+                      viewBox="0 0 96 83"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M2.96668 81L48 3L93.0333 81H2.96668Z"
+                        stroke="#535E7C"
+                        stroke-width="3"
+                      />
+                    </svg>
+                    <svg
+                      width="107"
+                      height="107"
+                      viewBox="0 0 107 107"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="53.5"
+                        cy="53.5"
+                        r="52"
+                        stroke="#535E7C"
+                        stroke-width="3"
+                      />
+                    </svg>
+                    <svg
+                      width="82"
+                      height="82"
+                      viewBox="0 0 82 82"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect
+                        x="1.5"
+                        y="1.5"
+                        width="79"
+                        height="79"
+                        stroke="#535E7C"
+                        stroke-width="3"
+                      />
+                    </svg>
+                    <svg
+                      width="133"
+                      height="126"
+                      viewBox="0 0 133 126"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M2.16493 48.5963L66.5 1.8541L130.835 48.5963L106.261 124.227H26.7387L2.16493 48.5963Z"
+                        stroke="#535E7C"
+                        stroke-width="3"
+                      />
+                    </svg>
+                  </GraphicBox>
+                  <WhiteBox />
+                </HeroGraphics>
+              </Hero>
+              <IntroBox>
+                <small>Hi! My name is Samuel</small>
+                <Subtitle>
+                  I believe design is the way to navigate today's complex world.
+                  Join me in this journey.
+                </Subtitle>
+              </IntroBox>
+              <CTAButton href="#contact" text="Get In Touch" />
+            </BoxContent>
           </Intro>
+
           <Row>
-            <HalfBox>
-              <small>I'm working as a</small>
-              <h2>Product Designer</h2>
-              <p>
-                Currently I'm based in Hong Kong, specialising in user-interface
-                and user-experience design, crafting outstanding digital
-                products. <br /> <br /> I lead design at Hyperair as Principal
-                Designer. Before that, I worked as Cross-Content Intern at
-                iTunes & App Store, Apple.
-              </p>
-              <ReadOn text="About Me" href="/about" />
-            </HalfBox>
+            <BoxContent>
+              <HalfBox>
+                <small>I'm working as a</small>
+                <h2>Product Designer</h2>
+                <p>
+                  Currently I'm based in Hong Kong, specialising in
+                  user-interface and user-experience design, crafting
+                  outstanding digital products. <br /> <br /> I lead design at
+                  Hyperair as Principal Designer. Before that, I worked as
+                  Cross-Content Intern at iTunes & App Store, Apple.
+                </p>
+                <ReadOn text="About Me" href="/about" />
+              </HalfBox>
+            </BoxContent>
           </Row>
           <FullGreyRow className="full-bleed">
             <BoxContent>
@@ -343,16 +344,18 @@ class Index extends React.Component {
             </BoxContent>
           </FullGreyRow>
           <Row>
-            <Blog>
+            <BoxContent>
               <BlogIntro>
-                <img width="72px" src={BlogIcon} />
                 <h2>Blog</h2>
                 <Subtitle>
                   I write about design, technology and productivity.
                 </Subtitle>
               </BlogIntro>
-              <BlogListing postEdges={blogEdges} />
-            </Blog>
+              <Blog>
+                <BlogListing postEdges={blogEdges} />
+                <ReadOn text="Read All Blog Posts →" href="/blog" />
+              </Blog>
+            </BoxContent>
           </Row>
           <FullYellowRow className="full-bleed">
             <BoxContent>
@@ -422,7 +425,7 @@ export const pageQuery = graphql`
             slug
             date
           }
-          excerpt(pruneLength: 200)
+          excerpt(pruneLength: 100)
           timeToRead
           frontmatter {
             title
