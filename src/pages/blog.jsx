@@ -169,16 +169,8 @@ export const bloglisting = graphql`
         publicURL
         size
         childImageSharp {
-          sizes(maxWidth: 1140) {
-            base64
-            aspectRatio
-            src
-            srcSet
-            srcWebp
-            srcSetWebp
-            sizes
-            originalImg
-            originalName
+          fixed {
+            ...GatsbyImageSharpFixed
           }
         }
       }

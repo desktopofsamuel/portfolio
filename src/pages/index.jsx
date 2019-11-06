@@ -166,7 +166,7 @@ const Blog = styled.section`
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto auto;
   grid-row-gap: 8rem;
-  grid-column-gap: 6rem;
+  grid-column-gap: 4rem;
   align-items: flex-start;
 
   & > div:nth-child(2) {

@@ -6,42 +6,38 @@ import PropTypes from "prop-types";
 import Img from "gatsby-image";
 
 const HeroArticleWrapper = styled.div`
-position: relative;
-width: 100%;
-`
+  position: relative;
+  width: 100%;
+`;
 
-
-const HeroArticle = styled(Link)`
-
-`
+const HeroArticle = styled(Link)``;
 
 const HeroTitleWrapper = styled.div`
-padding: 1rem;
-background-color: var(--color-white-500);
-position: absolute;
-bottom: 0;
-left: 0;
-z-index: 1000;
-min-width: 320px;
-max-width: 500px;
-margin: 1rem;
+  padding: 1rem;
+  background-color: var(--color-white-500);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  min-width: 320px;
+  max-width: 500px;
+  margin: 1rem;
 
-@media only screen and (max-width: 1024px) {
-  position: relative;
-  padding: 0;
-  margin: 1rem 0 0 0;
-  background-color: var(--color-transparent);
-}
-`
+  @media only screen and (max-width: 1024px) {
+    position: relative;
+    padding: 0;
+    margin: 1rem 0 0 0;
+    background-color: var(--color-transparent);
+  }
+`;
 
 const PostListImage = styled(Img)`
-margin-top: 2rem;
-`
+  margin-top: 2rem;
+`;
 
 const HeroTitle = styled.h3`
-margin-bottom: 0;
-
-`
+  margin-bottom: 0;
+`;
 
 class BlogFeature extends React.Component {
   getPostList() {
@@ -63,14 +59,16 @@ class BlogFeature extends React.Component {
     const postList = this.getPostList();
 
     return postList.map(post => (
-    <HeroArticle to={post.path} key={post.title} >
-      <HeroArticleWrapper>
-        <PostListImage sizes={post.cover.childImageSharp.sizes}/>
-        <HeroTitleWrapper >
-          <HeroTitle><a>{post.title}</a></HeroTitle>
-        </HeroTitleWrapper>
-      </HeroArticleWrapper>
-    </HeroArticle>
+      <HeroArticle to={post.path} key={post.title}>
+        <HeroArticleWrapper>
+          <PostListImage fixed={post.cover.childImageSharp.fixed} />
+          <HeroTitleWrapper>
+            <HeroTitle>
+              <a>{post.title}</a>
+            </HeroTitle>
+          </HeroTitleWrapper>
+        </HeroArticleWrapper>
+      </HeroArticle>
     ));
   }
 }
@@ -78,9 +76,9 @@ class BlogFeature extends React.Component {
 export default BlogFeature;
 
 BlogFeature.propTypes = {
-  invert: PropTypes.bool,
+  invert: PropTypes.bool
 };
 
 BlogFeature.defaultProps = {
-  invert: false,
-}; 
+  invert: false
+};
