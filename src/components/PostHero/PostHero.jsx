@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
+import Img from "gatsby-image";
 
 const Grid = styled.section`
   margin-top: 2rem;
@@ -23,6 +24,10 @@ const ListItem = styled.article`
 
 const Hero = styled.a`
   margin-bottom: 0;
+`;
+
+const PostImage = styled(Img)`
+  margin-bottom: var(--var-padding-m);
 `;
 
 class PostHero extends React.Component {
@@ -49,6 +54,7 @@ class PostHero extends React.Component {
         postList.map(post => (
           <ListItem>
             <Link to={post.path} key={post.title}>
+              <PostImage sizes={post.cover.childImageSharp.sizes} />
               <h3>
                 <Hero>{post.title}</Hero>
               </h3>

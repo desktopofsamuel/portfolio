@@ -11,27 +11,8 @@ import Boxed from "elements/Boxed";
 import styled from "styled-components";
 
 const Row = styled.section`
-  padding: var(--var-padding-l) 0;
+  padding: var(--var-padding-s) 0;
   background: white;
-
-  &:first-child {
-    padding-bottom: 0;
-  }
-`;
-
-const BoxContent = styled.div`
-  max-width: 85vw;
-  padding-left: 50px;
-  margin: 0 auto;
-
-  @media only screen and (max-width: 1600px) {
-    max-width: 95vw;
-    padding: 0 1.5rem;
-  }
-
-  @media only screen and (max-width: 768px) {
-    padding: 0 1rem;
-  }
 `;
 
 const Main = styled.div`
@@ -41,6 +22,10 @@ const Main = styled.div`
 
   @media only screen and (max-width: 768px) {
     display: block;
+  }
+
+  h1 {
+    font-family: var(--font-primary);
   }
 `;
 
@@ -58,14 +43,13 @@ const Right = styled.div`
 `;
 
 const BlogSubtitle = styled.h5`
+  font-style: normal;
   @media only screen and (max-width: 768px) {
     display: none;
   }
 `;
 
 const CategoryBlock = styled.div`
-  margin-top: 8rem;
-
   @media only screen and (max-width: 768px) {
     display: none;
   }
@@ -107,35 +91,41 @@ class Index extends React.Component {
         </Helmet>
         <Row>
           <Boxed>
+            <Row>
+              <h1>Blog</h1>
+              <BlogSubtitle>
+                A collection of posts I wrote about design, technology and
+                productivity.{" "}
+              </BlogSubtitle>
+            </Row>
             <Main>
               <Left>
-                <h1>Blog</h1>
-                <BlogSubtitle>
-                  A collection of posts I wrote about design, technology and
-                  productivity.{" "}
-                </BlogSubtitle>
-                <CategoryBlock>
-                  <small>Top Categories</small>
-                  <h3>
-                    <Link to="/categories/design-journal">Design</Link>
-                  </h3>
-                  <h3>
-                    <Link to="/categories/work-in-progress">Development</Link>
-                  </h3>
-                  <h3>
-                    <Link to="/categories/productivity">Productivity</Link>
-                  </h3>
-                  <h3>
-                    <Link to="/categories/ctrl-alt-setup">Ctrl Alt Setup</Link>
-                  </h3>
-                </CategoryBlock>
+                <Row>
+                  <CategoryBlock>
+                    <small>Top Categories</small>
+                    <h3>
+                      <Link to="/categories/design-journal">Design</Link>
+                    </h3>
+                    <h3>
+                      <Link to="/categories/work-in-progress">Development</Link>
+                    </h3>
+                    <h3>
+                      <Link to="/categories/productivity">Productivity</Link>
+                    </h3>
+                    <h3>
+                      <Link to="/categories/ctrl-alt-setup">
+                        Ctrl Alt Setup
+                      </Link>
+                    </h3>
+                  </CategoryBlock>
+                </Row>
               </Left>
               <Right>
-                <small>Featured</small>
-                <BlogFeatureWrapper>
+                {/* <small>Featured</small>
+               <BlogFeatureWrapper>
                   <BlogFeature postEdges={Feature1Edges} />
                   <BlogFeature postEdges={Feature2Edges} />
-                </BlogFeatureWrapper>
+                </BlogFeatureWrapper> */}
                 <Row id="latest">
                   <small>Latest</small>
                   <PostHero postEdges={postEdges} />
@@ -169,8 +159,16 @@ export const bloglisting = graphql`
         publicURL
         size
         childImageSharp {
-          fixed {
-            ...GatsbyImageSharpFixed
+          sizes(maxWidth: 1140) {
+            base64
+            aspectRatio
+            src
+            srcSet
+            srcWebp
+            srcSetWebp
+            sizes
+            originalImg
+            originalName
           }
         }
       }

@@ -8,7 +8,11 @@ import styled from "styled-components";
 import Link from "../components/GatsbyLink/GatsbyLink";
 import DocuSVG from "../../static/SVG/docu.svg";
 import WaterSVG from "../../static/SVG/Water.svg";
+import BookSVG from "../../static/SVG/Book.svg";
+import HyperAirSVG from "../../static/SVG/HyperAir.svg";
 import PinSVG from "../../static/SVG/Pin.svg";
+import PlayaSVG from "../../static/SVG/Playa.svg";
+import PingspaceSVG from "../../static/SVG/Pingspace.svg";
 import ImageZoom from "react-medium-image-zoom";
 import Boxed from "elements/Boxed";
 
@@ -109,8 +113,8 @@ const DesignContentGrid = styled.div`
   p {
     font-family: var(--font-primary);
     text-transform: none;
-    font-size: 1rem;
-    color: var(--color-secondary-300);
+    font-size: 1.2rem;
+    color: var(--color-secondary-500);
     font-weight: 600;
     display: block;
     margin-bottom: var(--var-padding-m);
@@ -192,7 +196,7 @@ class AboutPage extends Component {
         </Helmet>
         <Layout>
           <RowHero className="full-bleed">
-            <BoxContent>
+            <Boxed>
               <small>Little things about myself</small>
               <h1>
                 About <span className="brand">Me</span>
@@ -208,10 +212,10 @@ class AboutPage extends Component {
                 <Intro>
                   <small>Welcome!</small>
                   <p>
-                    I am constantly learning and treasure every opportunity to
+                    I am constantly learning and I treasure every opportunity to
                     design better. I’m learning to code right now and this
-                    website is my first attempt. <br /> <br /> I’m hoping to
-                    express my creativity in this site though design, code and
+                    website is my first attempt. <br /> <br /> ’m hoping to
+                    express my creativity in this site though design, coding and
                     writing.{" "}
                   </p>
                   <WrapperNav>
@@ -222,12 +226,12 @@ class AboutPage extends Component {
                       <small>02. Skills </small>
                     </Link>
                     <Link to="#projects">
-                      <small>03. Projects </small>
+                      <small>03. Portfolio </small>
                     </Link>
                   </WrapperNav>
                 </Intro>
               </WrapperIntro>
-            </BoxContent>
+            </Boxed>
           </RowHero>
           <Row id="bio">
             <Boxed>
@@ -236,10 +240,10 @@ class AboutPage extends Component {
                 <h2>Journey to Design</h2>
                 <p>
                   I studied cultural and film theories at The University of Hong
-                  Kong. But it wasn’t until I took a year-long leave and worked
-                  in iTunes & App Store, Apple as Cross-Content Intern during
-                  college, during which it sparked my interest in digital
-                  products and web.
+                  Kong. I took a gap year and worked in iTunes & App Store,
+                  Apple as a Cross-Content Intern during college and this
+                  valuable experience sparked my interest in digital products
+                  and web.
                 </p>
               </P1>
               <PhotoFrame>
@@ -252,26 +256,27 @@ class AboutPage extends Component {
               <GridBio>
                 <P2>
                   <p>
-                    After my internship, I took freelance projects as well as
-                    volunteered for students and community organisations,
-                    acquring various skillsets to be a hybrid designer.
+                    After my internship, I took on some freelance projects as
+                    well as volunteered for students and community
+                    organisations, acquiring various skill sets to be a hybrid
+                    designer.
                     <br />
-                    <br />I started my agency Playa with my partner in 2015,
-                    hoping to help small business, entrepreneurs and non-profits
-                    launching their projects, bridging the gap between project
-                    owners and end-users. We have launched dozen websites and
-                    apps in Hong Kong with multiple recognitions.
+                    <br />I started an agency Playa with a partner in 2015,
+                    hoping to help small businesses, entrepreneurs and
+                    nonprofits launch their projects and bridge the gap between
+                    project owners and end-users. We have launched dozens of
+                    websites and apps in Hong Kong with multiple recognitions.
                     <br />
                     <br />
-                    Currently, I lead design at Hyperair as Principal Designer.
-                    Reinventing experience all around travel.
+                    Currently, I work as the Principal Designer at Hyperair, a
+                    start-up that aims to reinvent travel experiences.
                   </p>
                 </P2>
               </GridBio>
             </Boxed>
           </Row>
           <RowHero id="skills" className="full-bleed">
-            <BoxContent>
+            <Boxed>
               <small>02. Skills</small>
               <h1>Design, Photography, Writing.</h1>
               <GridSkill>
@@ -280,8 +285,8 @@ class AboutPage extends Component {
                 </DesignPart>
                 <DesignContent>
                   <p>
-                    Design has always been a part of who I am. I have acquired a
-                    wide range of skillset to delivering functional and elegance
+                    Design has been an integral part of my life. It’s been my
+                    passion to learn how to deliver functional and elegant
                     design.{" "}
                   </p>
                   <DesignContentGrid>
@@ -300,9 +305,8 @@ class AboutPage extends Component {
                 </PassionPart>
                 <PassionContent>
                   <p>
-                    Through the years of freelancing, I'm also practicing in the
-                    field of digital products and media, to become a hybrid
-                    creative.
+                    Through freelancing, I'm also practicing in the field of
+                    digital products and media, to become a hybrid creative.
                   </p>
                   <DesignContentGrid>
                     <p>Photography</p>
@@ -312,33 +316,67 @@ class AboutPage extends Component {
                   </DesignContentGrid>
                 </PassionContent>
               </GridSkill>
-            </BoxContent>
+            </Boxed>
           </RowHero>
           <Row id="projects">
             <Boxed>
-              <small>03. Projects</small>
-              <h2>Your Support</h2>
+              <small>03. Portfolio</small>
+              <h2>More Works</h2>
+              <p>
+                For more detailed design process and case studies of my work.
+                Feel free to view them at <a href="/work">Work</a>.
+                Additionally, you can also check out some sites that I have
+                built.
+              </p>
               <GridProject>
                 <ProjectBox
+                  img={HyperAirSVG}
+                  title="HyperAir "
+                  blurb="Travel platform website and app that I've worked full-time."
+                  year="2019"
+                  url="https://www.hyperair.com"
+                />
+                <ProjectBox
+                  img={PinSVG}
+                  title="Pins"
+                  blurb="Curated design resource site coded by myself using GatsbyJS."
+                  year="2018"
+                  url="https://pins.desktopofsamuel.com"
+                />
+                {/* <ProjectBox
                   img={DocuSVG}
                   title="Road Not Taken"
                   blurb="A documentary I directed with multiple Asian film festival selected."
                   year="2016"
                   url="https://vimeo.com/ondemand/roadnottaken"
+                /> */}
+                <ProjectBox
+                  img={PingspaceSVG}
+                  title="Pingspace"
+                  blurb="Websites uptime monitor as a personal project"
+                  year="2018"
+                  url="https://pingspace.webflow.io/"
                 />
                 <ProjectBox
-                  img={PinSVG}
-                  title="Pins"
-                  blurb="A curated design resources site built by Gatsby JS."
+                  img={PlayaSVG}
+                  title="Playa"
+                  blurb="Revamped portfolio and landing page of my agency"
                   year="2018"
-                  url="https://pins.desktopofsamuel.com"
+                  url="https://playa.hk/portfolio.htmlk"
                 />
                 <ProjectBox
                   img={WaterSVG}
                   title="Water For Free"
-                  blurb="An crowdsourcing initiative that everyone can support."
+                  blurb="First crowdsourcing water dispenser map in Hong kong"
                   year="2017"
-                  url="https://vimeo.com/ondemand/roadnottaken"
+                  url="https://waterforfree.org/zh/%E4%B8%8B%E8%BC%89%E6%87%89%E7%94%A8/"
+                />
+                <ProjectBox
+                  img={BookSVG}
+                  title="Creation Cabin"
+                  blurb="Online novel platform supported by an independent publisher"
+                  year="2017"
+                  url="https://playa.hk/projects/creation-cabin-reading-platform.html"
                 />
               </GridProject>
             </Boxed>
