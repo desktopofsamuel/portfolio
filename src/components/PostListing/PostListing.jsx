@@ -1,33 +1,28 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { FaArrowRight } from "react-icons/fa";
 import PropTypes from "prop-types";
 import Img from "gatsby-image";
+import { ReadOn } from "../UI";
 
 const Block = styled.div`
   position: relative;
   display: flex;
   flex-flow: column;
   background: ${props => (props.invert ? `var(--color-white-700)` : ``)};
-  padding: 0 var(--padding-m) var(--padding-s) var(--padding-m);
+  text-align: center;
+  align-content: flex-start;
 
   color: ${props =>
     props.invert ? `var(--color-black-500)` : `var(--color-black-500)`};
   justify-content: space-between;
   p {
-    background: ${props =>
-      props.invert
-        ? `linear-gradient(to bottom,var(--color-black-500) 30%,rgba(18, 18, 18, 0))`
-        : `linear-gradient(to bottom,var(--color-black-500) 30%,rgba(18, 18, 18, 0))`};
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
     align-self: center;
   }
 
   h3 {
-    margin: 0;
+    margin-bottom: var(--var-padding-s);
   }
 
   h1 {
@@ -47,6 +42,16 @@ const Block = styled.div`
 
 const PostListImage = styled(Img)`
   margin-bottom: 1rem;
+  transition: transform 0.2s ease-in, box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.01, 1.01);
+    box-shadow: 0 25px 40px 0 rgba(0, 0, 0, 0.08);
+  }
+`;
+
+const Container = styled(Link)`
+  border-bottom: none;
 `;
 
 const Button = styled(Link)`
@@ -54,6 +59,7 @@ const Button = styled(Link)`
   background: none;
   border: none;
   text-transform: uppercase;
+  font-weight: 400;
   letter-spacing: 0.075em;
   cursor: pointer;
   display: inline;
@@ -61,6 +67,11 @@ const Button = styled(Link)`
   justify-self: flex-end;
 `;
 
+const Paragraph = styled.p`
+  font-size: 0.95rem;
+  line-height: 200%;
+  color: var(--color-secondary-500);
+`;
 class PostListing extends React.Component {
   getPostList() {
     const postList = [];
@@ -83,18 +94,15 @@ class PostListing extends React.Component {
 
     return postList.map(post => (
       <Block className="block" invert={invert} key={post.title}>
-        <PostListImage sizes={post.cover.childImageSharp.sizes} />
-        <div>
-          <h3>
-            <Link to={post.path}>
+        <Container to={post.path}>
+          <PostListImage sizes={post.cover.childImageSharp.sizes} />
+          <div>
+            <h3>
               <a>{post.title}</a>
-            </Link>
-          </h3>
-          <p> {post.excerpt}</p>
-        </div>
-        <Button invert={invert} to={post.path}>
-          <h5>Read On →</h5>
-        </Button>
+            </h3>
+            <Paragraph className="noeffect"> {post.excerpt}</Paragraph>
+          </div>
+        </Container>
       </Block>
     ));
   }

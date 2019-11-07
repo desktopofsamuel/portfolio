@@ -1,79 +1,52 @@
 import React from "react";
-import Helmet from "react-helmet";
 import { graphql } from "gatsby";
+import styled from "styled-components";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 import Layout from "../layout";
-import UserInfo from "../components/UserInfo/UserInfo";
-import Disqus from "../components/Disqus/Disqus";
-import PostTags from "../components/PostTags/PostTags";
-import SocialLinks from "../components/SocialLinks/SocialLinks";
+import Helmet from "react-helmet";
 import SEO from "../components/SEO/SEO";
+import Boxed from "elements/Boxed";
 import config from "../../data/SiteConfig";
-import "./b16-tomorrow-dark.css";
-import "./post.css";
 
-export default class PostTemplate extends React.Component {
+const Title = styled.h1`
+  font-family: var(--font-primary);
+`;
+
+export default class WorkPageTemplate extends React.Component {
   render() {
     const { slug } = this.props.pageContext;
-    const postNode = this.props.data.markdownRemark;
-    const post = postNode.frontmatter;
-    if (!post.id) {
-      post.id = slug;
-    }
-    if (!post.category_id) {
-      post.category_id = config.postDefaultCategoryID;
-    }
+    const path = "work" + `${slug}`;
+    const postNode = this.props.data.mdx;
+    const work = this.props.data.mdx.frontmatter;
+
     return (
       <Layout>
-        <div>
-          <Helmet>
-            <title>{`${post.title} | ${config.siteTitleAlt}`}</title>
-          </Helmet>
-          <SEO postPath={slug} postNode={postNode} postSEO />
-          <div>
-            <h1>{post.title}</h1>
-            <h2>{post.subtitle}</h2>
-            <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
-            <div className="post-meta">
-              <SocialLinks postPath={slug} postNode={postNode} />
-            </div>
-          </div>
-        </div>
+        <Helmet>
+          <title>{`${work.title} | ${config.siteTitleAlt}`}</title>
+        </Helmet>
+        <SEO postPath={path} postNode={postNode} postSEO />
+        <Boxed>
+          <Title>{work.title}</Title>
+          <MDXRenderer>{postNode.body}</MDXRenderer>
+        </Boxed>
       </Layout>
     );
   }
 }
 
-/* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query WorkPostBySlug($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      timeToRead
-      excerpt
+  query WorkPostQuery($id: String) {
+    mdx(id: { eq: $id }) {
+      id
+      body
       frontmatter {
-        path
         title
         subtitle
+        path
+        tags
         cover {
           publicURL
-          size
-          childImageSharp {
-            sizes(maxWidth: 1140) {
-              base64
-              aspectRatio
-              src
-              srcSet
-              srcWebp
-              srcSetWebp
-              sizes
-              originalImg
-              originalName
-            }
-          }
         }
-        date
-        category
-        tags
       }
     }
   }

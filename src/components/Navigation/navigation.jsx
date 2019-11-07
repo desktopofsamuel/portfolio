@@ -15,10 +15,6 @@ const LeftSidebar = styled.aside`
   z-index: 1000;
   padding: 8px;
   justify-content: center;
-
-  @media only screen and (max-width: 1024px) {
-    display: none;
-  }
 `;
 
 const IconWrapper = styled.div`
@@ -30,7 +26,6 @@ const IconWrapper = styled.div`
 
 const Main = styled.div`
   max-width: 85vw;
-  padding-left: 50px;
   margin: 0 auto;
 
   @media only screen and (max-width: 1024px) {
@@ -57,12 +52,15 @@ const NavBar = styled.div`
 const SiteID = styled.div``;
 
 const Title = styled.h2`
-  font-size: 1rem;
-  font-family: var(--primary-font);
-  margin-bottom: 1.5rem;
+  a {
+    font-size: 1rem;
+    font-family: var(--font-secondary);
+    margin-bottom: 1.5rem;
+  }
 `;
 
 const Description = styled.h2`
+  font-family: var(--font-secondary);
   color: var(--color-secondary-500);
   font-size: 0.95rem;
   line-height: 1.5rem;
@@ -82,7 +80,7 @@ export default class Navigation extends React.Component {
   render() {
     return (
       <div>
-        <LeftSidebar>
+        {/* <LeftSidebar>
           <IconWrapper>
             <a
               className="noeffect linkicon"
@@ -99,7 +97,7 @@ export default class Navigation extends React.Component {
               <FaInstagram size="1.25rem" />
             </a>
           </IconWrapper>
-        </LeftSidebar>
+        </LeftSidebar> */}
         <Main>
           <NavBar>
             <SiteID>
@@ -123,6 +121,9 @@ export default class Navigation extends React.Component {
             <NavItem>
               <Link to="/about" class="navblock noeffect">
                 <small>About</small>
+              </Link>
+              <Link to="/work" class="navblock noeffect">
+                <small>Work</small>
               </Link>
               <Link to="/blog" class="navblock noeffect">
                 <small>Blog</small>

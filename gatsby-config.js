@@ -10,10 +10,7 @@ module.exports = {
       feed_url: urljoin(config.siteUrl, config.pathPrefix, config.siteRss),
       title: config.siteTitle,
       description: config.siteDescription,
-      image_url: `${urljoin(
-        config.siteUrl,
-        config.pathPrefix
-      )}/logos/logo-512.png`,
+      image_url: `${urljoin(config.siteUrl, config.pathPrefix)}/favicon.png`,
       author: config.userName,
       copyright: config.copyright
     }
@@ -50,22 +47,25 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: "gatsby-source-filesystem",
       options: {
-        plugins: [
-          {
-            resolve: "gatsby-remark-images-grid",
-            options: {
-              className: "remark-grid",
-              gridGap: "16px",
-              margin: "2rem auto"
-            }
-          },
+        name: "photo",
+        path: `${__dirname}/content/photo/`
+      }
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          default: require.resolve("./src/components/default-page-layout.jsx")
+        },
+        extensions: [`.mdx`, `md`],
+        gatsbyRemarkPlugins: [
           {
             resolve: "gatsby-remark-images",
             options: {
               linkImagesToOriginal: false,
-              maxWidth: 1200
+              maxWidth: 1235
             }
           },
           "gatsby-remark-responsive-iframe",
@@ -75,8 +75,12 @@ module.exports = {
           },
           "gatsby-remark-prismjs",
           "gatsby-remark-copy-linked-files",
-          "gatsby-remark-autolink-headers",
-          "gatsby-remark-images-zoom"
+          {
+            resolve: "gatsby-remark-autolink-headers",
+            options: {
+              icon: false
+            }
+          }
         ]
       }
     },
@@ -97,6 +101,7 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-catch-links",
     "gatsby-plugin-twitter",
+    "gatsby-plugin-favicon",
     "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-manifest",
@@ -110,8 +115,8 @@ module.exports = {
         display: "minimal-ui",
         icons: [
           {
-            src: "/logos/Logo-1024.png",
-            sizes: "1024x1024",
+            src: "/favicon.png",
+            sizes: "1500x1500",
             type: "image/png"
           }
         ]
@@ -131,47 +136,11 @@ module.exports = {
     "gatsby-plugin-sitemap",
     "gatsby-plugin-offline",
     {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        extensions: [`.mdx`],
-        gatsbyRemarkPlugins: [
-          "gatsby-remark-images-zoom",
-          {
-            resolve: "gatsby-remark-images-grid",
-            options: {
-              className: "remark-grid",
-              gridGap: "16px",
-              margin: "2rem auto"
-            }
-          },
-          {
-            resolve: "gatsby-remark-images",
-            options: {
-              linkImagesToOriginal: false,
-              maxWidth: 1200,
-              showCaptions: true
-            }
-          },
-            "gatsby-remark-responsive-iframe",
-          {
-            resolve: `gatsby-remark-figure-caption`,
-            options: { figureClassName: "remark-figure" }
-          },
-          "gatsby-remark-prismjs",
-          "gatsby-remark-copy-linked-files",
-          "gatsby-remark-autolink-headers"
-        ],
-        defaultLayouts: {
-          default: require.resolve("./src/components/default-page-layout.jsx")
-        }
-      }
-    },
-    {
       resolve: "gatsby-plugin-feed",
       options: {
         setup(ref) {
           const ret = ref.query.site.siteMetadata.rssMetadata;
-          ret.allMarkdownRemark = ref.query.allMarkdownRemark;
+          ret.allMdx = ref.query.allMdx;
           ret.generator = "GatsbyJS Material Starter";
           return ret;
         },
@@ -196,7 +165,7 @@ module.exports = {
           {
             serialize(ctx) {
               const { rssMetadata } = ctx.query.site.siteMetadata;
-              return ctx.query.allMarkdownRemark.edges.map(edge => ({
+              return ctx.query.allMdx.edges.map(edge => ({
                 categories: edge.node.frontmatter.tags,
                 date: edge.node.fields.date,
                 title: edge.node.frontmatter.title,
@@ -209,7 +178,7 @@ module.exports = {
             },
             query: `
             {
-              allMarkdownRemark(
+              allMdx(
                 limit: 1000,
                 sort: { order: DESC, fields: [fields___date] },
               ) {
