@@ -5,6 +5,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import Layout from "../layout";
 import Helmet from "react-helmet";
 import SEO from "../components/SEO/SEO";
+import Boxed from "elements/Boxed";
 import config from "../../data/SiteConfig";
 
 const Title = styled.h1`
@@ -24,8 +25,10 @@ export default class WorkPageTemplate extends React.Component {
           <title>{`${work.title} | ${config.siteTitleAlt}`}</title>
         </Helmet>
         <SEO postPath={path} postNode={postNode} postSEO />
-        <Title>{work.title}</Title>
-        <MDXRenderer>{postNode.body}</MDXRenderer>
+        <Boxed>
+          <Title>{work.title}</Title>
+          <MDXRenderer>{postNode.body}</MDXRenderer>
+        </Boxed>
       </Layout>
     );
   }

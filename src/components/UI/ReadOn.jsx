@@ -8,8 +8,10 @@ const Button = styled(Link)`
   background: none;
   border: none;
   text-transform: uppercase;
+  color: var(--color-secondary-500);
+  font-size: 0.85rem;
   font-weight: 400;
-  letter-spacing: 0.075em;
+  letter-spacing: 0.075rem;
   cursor: pointer;
   display: inline;
   border-bottom: none;

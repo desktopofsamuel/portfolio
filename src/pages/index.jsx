@@ -8,6 +8,7 @@ import Layout from "../layout";
 import WorkHero from "../components/WorkHero/WorkHero";
 import CTAButton from "../components/MajorButton/MajorButton";
 import BlogListing from "../components/PostListing/PostListing";
+import BoxContent from "elements/Boxed";
 import WorkIcon from "../../static/SVG/Work.svg";
 import BlogIcon from "../../static/SVG/Blog.svg";
 import Now from "../components/Now/Now";
@@ -19,22 +20,6 @@ const Row = styled.section`
 
   &:first-child {
     padding-bottom: 0;
-  }
-`;
-
-const BoxContent = styled.div`
-  max-width: 60vw;
-  padding: 0 2rem;
-  margin: 0 auto;
-
-  @media only screen and (max-width: 1024px) {
-    max-width: 70vw;
-    padding: 0 1.5rem;
-  }
-
-  @media only screen and (max-width: 768px) {
-    max-width: 90vw;
-    padding: 0rem;
   }
 `;
 
