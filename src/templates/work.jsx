@@ -12,6 +12,10 @@ const Title = styled.h1`
   font-family: var(--font-primary);
 `;
 
+const Box = styled(Boxed)`
+  max-width: 768px;
+`;
+
 export default class WorkPageTemplate extends React.Component {
   render() {
     const { slug } = this.props.pageContext;
@@ -25,10 +29,10 @@ export default class WorkPageTemplate extends React.Component {
           <title>{`${work.title} | ${config.siteTitleAlt}`}</title>
         </Helmet>
         <SEO postPath={path} postNode={postNode} postSEO />
-        <Boxed>
+        <Box>
           <Title>{work.title}</Title>
           <MDXRenderer>{postNode.body}</MDXRenderer>
-        </Boxed>
+        </Box>
       </Layout>
     );
   }
