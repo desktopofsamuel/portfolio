@@ -9,7 +9,7 @@ import Link from "../components/GatsbyLink/GatsbyLink";
 import DocuSVG from "../../static/SVG/docu.svg";
 import WaterSVG from "../../static/SVG/Water.svg";
 import BookSVG from "../../static/SVG/Book.svg";
-import HyperAirSVG from "../../static/SVG/HyperAir.svg";
+import HyperAirSVG from "../../static/SVG/HyperAir-2.svg";
 import PinSVG from "../../static/SVG/Pin.svg";
 import PlayaSVG from "../../static/SVG/Playa.svg";
 import PingspaceSVG from "../../static/SVG/Pingspace.svg";
