@@ -362,7 +362,7 @@ class AboutPage extends Component {
                   title="Playa"
                   blurb="Revamped portfolio and landing page of my agency"
                   year="2018"
-                  url="https://playa.hk/portfolio.htmlk"
+                  url="https://playa.hk/portfolio.html"
                 />
                 <ProjectBox
                   img={WaterSVG}
