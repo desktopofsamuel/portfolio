@@ -87,7 +87,7 @@ h1 {
 }
 
 h2 {
-  margin-top: 0;
+  margin-top: 4rem;
   font-size: calc(26px + (30 - 26) * ((100vw - 320px) / (1600 - 320)));
   font-family: var(--font-primary);
   font-weight: 700;

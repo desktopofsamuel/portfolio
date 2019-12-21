@@ -77,7 +77,7 @@ const LinkContainer = styled.div`
 
 const CreditContainer = styled.div`
   margin-top: 2rem;
-  padding: var(--var-padding-s);
+  padding: var(--var-padding-xs);
   text-align: center;
 
   @media only screen and (max-width: 768px) {

@@ -74,16 +74,19 @@ export default props => (
         <Name>Read In Progress</Name>
         <Content>
           <Text>
-            <a href="https://maketime.blog" target="blank">
-              Make Time
+            <a
+              href="https://www.bookdepository.com/The-Everything-Store--Jeff-Bezos-and-the-Age-of-Amazon/9780552167833/?a_aid=desktopofsamuel"
+              target="blank"
+            >
+              The Everything Store
             </a>
           </Text>
           <Text>
             <a
-              href="https://www.books.com.tw/products/0010834124"
+              href="https://www.bookdepository.com/Atomic-Habits-James-Clear/9781847941831/?a_aid=desktopofsamuel"
               target="blank"
             >
-              你看港楷招牌
+              Atomic Habits
             </a>
           </Text>
         </Content>
@@ -93,31 +96,26 @@ export default props => (
         <Content>
           <Text>
             <a
-              href="https://open.spotify.com/artist/4NZvixzsSefsNiIqXn0NDe?si=v4HKt8o1STa3Ybr6wC7G3g"
+              href="https://image.insider.com/5de2bba479d7577cd722e553?width=1100&format=jpeg&auto=webp"
               target="blank"
             >
-              Maggie Rogers
+              The Mandalorian
             </a>
           </Text>
           <Text>
             <a
-              href="https://www.youtube.com/watch?v=eTzBIH51Irc"
+              href="https://www.youtube.com/watch?v=ktuwTuuoQIE"
               target="blank"
             >
-              1987 When The Day Comes
+              The Detention
             </a>
           </Text>
           <Text>
             <a
-              href="https://www.youtube.com/watch?v=6uWCNHQgfnc"
+              href="https://open.spotify.com/album/2FeyIYDDAQqcOJKOKhvHdr?si=GM_O3XopT4qX_qw-7Yx-iw"
               target="blank"
             >
-              Undone
-            </a>
-          </Text>
-          <Text>
-            <a href="https://www.apple.com/iphone-11-pro/" target="blank">
-              Wide Angle Lens
+              Everyday Life
             </a>
           </Text>
         </Content>
