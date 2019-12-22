@@ -99,6 +99,7 @@ const Main = styled.footer`
 const Boxx = styled.div`
   width: 90vw;
   margin: 0 auto;
+  padding: var(--var-padding-s);
 `;
 
 export default class Footer extends React.Component {
