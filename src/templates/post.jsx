@@ -141,7 +141,7 @@ export default class BlogPageTemplate extends React.Component {
                 <Meta>
                   <PostDate>
                     <PostMeta>Published On</PostMeta>
-                    <h5>{post.date}</h5>
+                    <h5>{postNode.fields.date}</h5>
                   </PostDate>
                   <PostTag>
                     <PostMeta>Tag</PostMeta>
@@ -209,13 +209,13 @@ export const pageQuery = graphql`
             }
           }
         }
-        date(formatString: "MMM DD, YYYY", locale: "en")
+        date
         category
         tags
       }
       fields {
         slug
-        date
+        date(formatString: "MMM DD, YYYY", locale: "en")
       }
     }
     related: allMdx(
