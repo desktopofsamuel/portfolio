@@ -4,6 +4,9 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import Layout from "../layout";
 import styled from "styled-components";
 import Img from "gatsby-image";
+import Helmet from "react-helmet";
+import SEO from "../components/SEO/SEO";
+import config from "../../data/SiteConfig";
 
 const Cover = styled(Img)`
   width: 100%;
@@ -12,7 +15,7 @@ const Cover = styled(Img)`
 `;
 
 const PhotoLayout = styled.div`
-  max-width: 70vw;
+  max-width: 90vh;
   margin: 0 auto;
 
   @media screen and (max-width: 1024px) {
@@ -45,7 +48,7 @@ const TitleWrapper = styled.div`
   position: absolute;
   bottom: 0;
   z-index: 1000;
-  padding: var(--var-padding-l);
+  padding: var(--var-padding-l) var(--var-padding-m);
   width: 100%;
 
   @media screen and (max-width: 1024px) {
@@ -61,7 +64,7 @@ const Title = styled.h1`
   color: var(--color-white-300);
   font-family: var(--font-primary);
   font-weight: 600;
-  font-size: calc(36px + (72 - 16) * ((100vw - 320px) / (1600 - 320)));
+  font-size: calc(48px + (64 - 16) * ((100vw - 320px) / (1920 - 320)));
   line-height: 100%;
   text-align: center;
   margin-bottom: 0;
@@ -72,23 +75,36 @@ const MDX = styled(MDXRenderer)`
     text-align: center;
   }
 `;
-export default function PhotoPageTemplate({ data: { mdx } }) {
-  return (
-    <Layout>
-      <PhotoLayout>
-        <Header>
-          <Overlay />
-          <Cover sizes={mdx.frontmatter.cover.childImageSharp.sizes} />
-          <TitleWrapper>
-            <Title>{mdx.frontmatter.title}</Title>
-          </TitleWrapper>
-        </Header>
 
-        <MDX>{mdx.body}</MDX>
-      </PhotoLayout>
-    </Layout>
-  );
+export default class PhotoPageTemplate extends React.Component {
+  render() {
+    const { slug } = this.props.pageContext;
+    const path = "photo" + `${slug}`;
+    const photoNode = this.props.data.mdx;
+    const photo = this.props.data.mdx.frontmatter;
+
+    return (
+      <Layout>
+        <Helmet>
+          <title>{`${photo.title} | ${config.siteTitleAlt}`}</title>
+        </Helmet>
+        <SEO postPath={path} postNode={photoNode} postSEO />
+        <PhotoLayout>
+          <Header>
+            <Overlay />
+            <Cover fluid={photo.cover.childImageSharp.fluid} fadeIn="true" />
+            <TitleWrapper>
+              <Title>{photo.title}</Title>
+            </TitleWrapper>
+          </Header>
+
+          <MDX>{photoNode.body}</MDX>
+        </PhotoLayout>
+      </Layout>
+    );
+  }
 }
+
 export const pageQuery = graphql`
   query PhotoPostQuery($id: String) {
     mdx(id: { eq: $id }) {
@@ -101,16 +117,8 @@ export const pageQuery = graphql`
           publicURL
           size
           childImageSharp {
-            sizes {
-              base64
-              aspectRatio
-              src
-              srcSet
-              srcWebp
-              srcSetWebp
-              sizes
-              originalImg
-              originalName
+            fluid(maxWidth: 2440) {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }

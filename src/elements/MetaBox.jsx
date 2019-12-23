@@ -5,10 +5,9 @@ const Meta = styled.div`
   position: relative;
   margin: -4rem auto 0 auto;
   max-width: 80%;
-  padding: var(--var-padding-m) var(--var-padding-l);
+  padding: var(--var-padding-s) var(--var-padding-m);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  grid-gap: 8px;
   background-color: var(--color-white-500);
   border-radius: 16px;
   z-index: 1001;

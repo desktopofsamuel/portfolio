@@ -8,6 +8,7 @@ const Label = styled.p`
   text-transform: uppercase;
   letter-spacing: 5%;
   font-size: 12px;
+  margin-bottom: 0;
 `;
 
 const Number = styled.h5`

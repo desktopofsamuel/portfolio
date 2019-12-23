@@ -129,7 +129,7 @@ module.exports = {
           id: "wbb0iyz"
         },
         google: {
-          families: ["Merriweather"]
+          families: ["Merriweather", "IBM Plex Sans"]
         }
       }
     },
