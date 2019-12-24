@@ -92,7 +92,10 @@ export default class PhotoPageTemplate extends React.Component {
         <PhotoLayout>
           <Header>
             <Overlay />
-            <Cover fluid={photo.cover.childImageSharp.fluid} fadeIn="true" />
+            <Cover
+              fluid={photo.cover.childImageSharp.fluid}
+              durationFadeIn="1000"
+            />
             <TitleWrapper>
               <Title>{photo.title}</Title>
             </TitleWrapper>
