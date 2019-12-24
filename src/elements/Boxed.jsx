@@ -15,6 +15,10 @@ const BoxContent = styled.div`
     max-width: 85%;
     padding: 0rem;
   }
+
+  h2 {
+    margin-top: 0;
+  }
 `;
 
 const Boxed = ({ children, className }) => (

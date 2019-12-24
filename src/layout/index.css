@@ -3,7 +3,7 @@
 
 :root {
   --font-primary: grad, Georgia, serif;
-  --font-secondary: Inter, Helvetica, Arial, sans-serif;
+  --font-secondary: IBM Plex Sans, Helvetica, Arial, sans-serif;
   --tertiary-font: grad, Georgia, serif;
   --color-brand-300: #fefdf4;
   --color-brand-500: #feb101;
@@ -87,11 +87,14 @@ h1 {
 }
 
 h2 {
-  margin-top: 4rem;
   font-size: calc(26px + (30 - 26) * ((100vw - 320px) / (1600 - 320)));
   font-family: var(--font-primary);
   font-weight: 700;
   line-height: calc(36px + (36 - 32) * ((100vw - 320px) / (1600 - 320)));
+}
+
+.blog h2 {
+  margin-top: 4rem;
 }
 
 h3 {
@@ -289,4 +292,16 @@ hr {
 
 .gatsby-resp-image-wrapper {
   width: 100%;
+}
+
+cite {
+  position: relative;
+  font-style: normal;
+  font-size: 0.9rem;
+  font-family: var(--font-secondary);
+  font-weight: 400;
+}
+
+figure {
+  margin: 0 0 var(--var-padding-s) 0;
 }

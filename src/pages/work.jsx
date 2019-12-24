@@ -117,6 +117,12 @@ class Index extends React.Component {
           <Row>
             <Helmet title={config.siteTitle} />
             <WorkHero postEdges={postEdges} />
+            <h2>More Works</h2>
+            <p>
+              For more detailed design process and case studies of my work. Feel
+              free to view them at <a href="/work">Work</a>. Additionally, you
+              can also check out some sites that I have built.
+            </p>
             <GridProject>
               <ProjectBox
                 img={HyperAirSVG}
