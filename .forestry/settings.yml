@@ -7,7 +7,7 @@ sections:
 - type: directory
   path: content/blog
   label: Blog
-  create: all
+  create: documents
   match: "**/*"
   new_doc_ext: mdx
 upload_dir: uploads
