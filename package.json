@@ -99,7 +99,8 @@
     "lint:jyarn s": "eslint --ext .js,.jsx .",
     "lint:md": "remark content/posts/",
     "write-good": "write-good $(glob 'content/posts/**/*.md')",
-    "format:js": "prettier '**/*.{js,jsx}' --write"
+    "format:js": "prettier '**/*.{js,jsx}' --write",
+    "forestry:preview": "gatsby develop -p 8080 -H 0.0.0.0"
   },
   "remarkConfig": {
     "plugins": [
