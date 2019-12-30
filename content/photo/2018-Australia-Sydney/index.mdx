@@ -1,0 +1,43 @@
+---
+title: "Spectacular Sydney"
+path: "/spectacular-sydney"
+date: "2018-4-30"
+cover: "./02-IMG_2654-PC.jpg"
+---
+
+import IMG_2606 from "./01-IMG_2606-PC.jpg"
+import IMG_2654 from "./02-IMG_2654-PC.jpg"
+import IMG_2788 from "./03-IMG_2788-PC.jpg"
+import IMG_2800 from "./04-IMG_2800-PC.jpg"
+import IMG_2827 from "./05-IMG_2827-PC.jpg"
+import IMG_3087 from "./06-IMG_3087-PC.jpg"
+import IMG_3122 from "./07-IMG_3122-PC.jpg"
+import IMG_3196 from "./08-IMG_3196-PC.jpg"
+import IMG_3309 from "./09-IMG_3309-PC.jpg"
+
+import ZoomImage from "components/ZoomImage/ZoomImage"
+import GridBlock from "elements/GridBlock"
+import MetaBox from "elements/MetaBox"
+import Data from "elements/Data"
+
+<MetaBox>
+<Data caption="Year" nodata="2018"/>
+<Data caption="Country" nodata="Australia"/>
+<Data caption="Camera" nodata="Canon 6D"/>
+</MetaBox>
+
+It only become obvious when I browsed through my Lightroom, that most photos I shot include Sydney Opera House and the Sydney Harbour Bridge. Putting on the tourist spectacles, landmarks of the city has become part of the visual experience when travel.  
+
+<ZoomImage src={IMG_2606} />
+<ZoomImage src={IMG_2654} />
+<ZoomImage src={IMG_2788} />
+<ZoomImage src={IMG_2800} />
+<ZoomImage src={IMG_2827} />
+
+<GridBlock>
+    <ZoomImage src={IMG_3087} />
+    <ZoomImage src={IMG_3122} />
+</GridBlock>
+
+<ZoomImage src={IMG_3196} />
+<ZoomImage src={IMG_3309} />

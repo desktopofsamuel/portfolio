@@ -7,13 +7,14 @@ import PhotoHero from "../components/PhotoCard/PhotoCard";
 import Link from "../components/GatsbyLink/GatsbyLink";
 import SEO from "../components/SEO/SEO";
 import BlogFeature from "../components/BlogFeature/BlogFeature";
-import Boxed from "elements/Boxed";
 import styled from "styled-components";
 
 const Row = styled.section`
   padding: var(--var-padding-s) 0;
   background: white;
 `;
+
+const Grid = styled.section``;
 
 const Main = styled.div`
   h1 {
@@ -47,6 +48,8 @@ const CategoryBlock = styled.div`
   }
 `;
 
+const PhotoGrid = styled(PhotoHero)``;
+
 class Photo extends React.Component {
   render() {
     const postEdges = this.props.data.photo.edges;
@@ -79,7 +82,7 @@ class Photo extends React.Component {
           />
         </Helmet>
         <Row>
-          <Boxed>
+          <Grid>
             <Row>
               <h1>Photography</h1>
               <BlogSubtitle>
@@ -87,13 +90,8 @@ class Photo extends React.Component {
                 publish sets of photos according to cities that I have visited.{" "}
               </BlogSubtitle>
             </Row>
-            <Main>
-              <Row id="latest">
-                <small>Latest</small>
-                <PhotoHero postEdges={postEdges} />
-              </Row>
-            </Main>
-          </Boxed>
+            <PhotoGrid postEdges={postEdges} />
+          </Grid>
         </Row>
       </Layout>
     );
