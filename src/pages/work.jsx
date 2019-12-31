@@ -10,6 +10,7 @@ import HyperAirSVG from "../../static/SVG/HyperAir-2.svg";
 import PinSVG from "../../static/SVG/Pin.svg";
 import PlayaSVG from "../../static/SVG/Playa.svg";
 import PingspaceSVG from "../../static/SVG/Pingspace.svg";
+import PageTitle from "../elements/PageTitle";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
@@ -111,26 +112,17 @@ class Index extends React.Component {
       <Layout>
         <Boxed>
           <Row>
-            <small>Projects</small>
-            <h1>My Work</h1>
+            <PageTitle title="My Work" subtitle="My Case Studies" />
           </Row>
           <Row>
-            <Helmet title={config.siteTitle} />
+            <h2>Case Studies</h2>
             <WorkHero postEdges={postEdges} />
+          </Row>
+
+          <Row>
             <h2>More Works</h2>
-            <p>
-              For more detailed design process and case studies of my work. Feel
-              free to view them at <a href="/work">Work</a>. Additionally, you
-              can also check out some sites that I have built.
-            </p>
+            <p>Check out some sites and apps that I have built.</p>
             <GridProject>
-              <ProjectBox
-                img={HyperAirSVG}
-                title="HyperAir "
-                blurb="Travel platform website and app that I've worked full-time."
-                year="2019"
-                url="https://www.hyperair.com"
-              />
               <ProjectBox
                 img={PinSVG}
                 title="Pins"
@@ -153,6 +145,13 @@ class Index extends React.Component {
                 url="https://pingspace.webflow.io/"
               />
               <ProjectBox
+                img={WaterSVG}
+                title="CDC Connects"
+                blurb="Goals Tracking for Children With Special Educational Needs"
+                year="2019"
+                url="https://www.cdchk.org/news/cdc-app-launch/"
+              />
+              <ProjectBox
                 img={PlayaSVG}
                 title="Playa"
                 blurb="Revamped portfolio and landing page of my agency"
@@ -161,10 +160,10 @@ class Index extends React.Component {
               />
               <ProjectBox
                 img={WaterSVG}
-                title="Water For Free"
-                blurb="First crowdsourcing water dispenser map in Hong kong"
+                title="New Asia Institue"
+                blurb="Chinese Cultural Courses & Events"
                 year="2017"
-                url="https://waterforfree.org/zh/%E4%B8%8B%E8%BC%89%E6%87%89%E7%94%A8/"
+                url="https://newasia.org.hk/"
               />
               <ProjectBox
                 img={BookSVG}

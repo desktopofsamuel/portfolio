@@ -152,13 +152,13 @@ export default class Footer extends React.Component {
             <FooterItem to="https://pins.desktopofsamuel.com">
               <FooterText>Pins</FooterText>
             </FooterItem>
-            <FooterItem to="https://photo.desktopofsamuel.com">
+            <FooterItem to="/photo">
               <FooterText>Photo</FooterText>
             </FooterItem>
           </LinkContainer>
           <CreditContainer>
             <CreditText>
-              Design & Code © 2018 - 2019 Samuel W. | Built with{" "}
+              Design & Code © 2018 - 2020 Samuel W. | Built with{" "}
               <Link to="https://www.gatsbyjs.org">Gatsby</Link>, powered by{" "}
               <Link to="https://www.netlify.com/">Netlify</Link>.{" "}
             </CreditText>

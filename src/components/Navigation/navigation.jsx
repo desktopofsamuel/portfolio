@@ -63,7 +63,7 @@ const Description = styled.h2`
   color: var(--color-secondary-500);
   font-size: 0.95rem;
   line-height: 1.5rem;
-  width: 35ch;
+  max-width: 35ch;
   font-weight: 400;
 `;
 

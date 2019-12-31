@@ -8,6 +8,7 @@ import Link from "../components/GatsbyLink/GatsbyLink";
 import SEO from "../components/SEO/SEO";
 import BlogFeature from "../components/BlogFeature/BlogFeature";
 import Boxed from "elements/Boxed";
+import PageTitle from "elements/PageTitle";
 import styled from "styled-components";
 
 const Row = styled.section`
@@ -40,13 +41,6 @@ const Left = styled.aside`
 
 const Right = styled.div`
   grid-area: right;
-`;
-
-const BlogSubtitle = styled.h5`
-  font-style: normal;
-  @media only screen and (max-width: 768px) {
-    display: none;
-  }
 `;
 
 const CategoryBlock = styled.div`
@@ -92,11 +86,12 @@ class Index extends React.Component {
         <Row>
           <Boxed>
             <Row>
-              <h1>Blog</h1>
-              <BlogSubtitle>
-                A collection of posts I wrote about design, technology and
-                productivity.{" "}
-              </BlogSubtitle>
+              <PageTitle
+                title="Blog"
+                subtitle="Article"
+                description="A collection of posts I wrote about design process, technology and
+                productivity."
+              />
             </Row>
             <Main>
               <Left>

@@ -17,6 +17,7 @@ const Main = styled.main`
   margin: 0 auto var(--var-padding-m) auto;
 
   @media only screen and (max-width: 1024px) {
+    max-width: 95vw;
     padding: 0 1.5rem;
   }
 
