@@ -5,6 +5,8 @@ import Layout from "../layout";
 import PostList from "../components/WidePostList/WidePostList";
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
+import PageTitle from "elements/PageTitle";
+import Boxed from "elements/Boxed";
 
 const Grid = styled.section`
   max-width: 768px;
@@ -27,15 +29,13 @@ export default class TagTemplate extends React.Component {
     const postEdges = this.props.data.allMdx.edges;
     return (
       <Layout>
-        <div className="tag-container">
-          <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitleAlt}`} />
-          <Hero>
-            <h1>Discover Posts in {tag}</h1>
-          </Hero>
-          <Container>
-            <PostList postEdges={postEdges} />
-          </Container>
-        </div>
+        <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitleAlt}`} />
+        <Hero>
+          <PageTitle title={`Discover Post in ${tag}`} />
+        </Hero>
+        <Container>
+          <PostList postEdges={postEdges} />
+        </Container>
       </Layout>
     );
   }

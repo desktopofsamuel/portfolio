@@ -6,13 +6,7 @@ import Img from "gatsby-image";
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import Link from "../components/GatsbyLink/GatsbyLink";
-import DocuSVG from "../../static/SVG/docu.svg";
-import WaterSVG from "../../static/SVG/Water.svg";
-import BookSVG from "../../static/SVG/Book.svg";
-import HyperAirSVG from "../../static/SVG/HyperAir-2.svg";
-import PinSVG from "../../static/SVG/Pin.svg";
-import PlayaSVG from "../../static/SVG/Playa.svg";
-import PingspaceSVG from "../../static/SVG/Pingspace.svg";
+import PageTitle from "elements/PageTitle";
 import ImageZoom from "react-medium-image-zoom";
 import Boxed from "elements/Boxed";
 
@@ -197,10 +191,10 @@ class AboutPage extends Component {
         <Layout>
           <RowHero className="full-bleed">
             <Boxed>
-              <small>Little things about myself</small>
-              <h1>
-                About <span className="brand">Me</span>
-              </h1>
+              <PageTitle
+                title="About Me"
+                subtitle="Little things about myself"
+              />
               <PhotoFrame>
                 <Img
                   fluid={this.props.data.cover.childImageSharp.fluid}
@@ -224,9 +218,6 @@ class AboutPage extends Component {
                     </Link>
                     <Link to="#skills">
                       <small>02. Skills </small>
-                    </Link>
-                    <Link to="#projects">
-                      <small>03. Portfolio </small>
                     </Link>
                   </WrapperNav>
                 </Intro>
@@ -318,69 +309,6 @@ class AboutPage extends Component {
               </GridSkill>
             </Boxed>
           </RowHero>
-          <Row id="projects">
-            <Boxed>
-              <small>03. Portfolio</small>
-              <h2>More Works</h2>
-              <p>
-                For more detailed design process and case studies of my work.
-                Feel free to view them at <a href="/work">Work</a>.
-                Additionally, you can also check out some sites that I have
-                built.
-              </p>
-              <GridProject>
-                <ProjectBox
-                  img={HyperAirSVG}
-                  title="HyperAir "
-                  blurb="Travel platform website and app that I've worked full-time."
-                  year="2019"
-                  url="https://www.hyperair.com"
-                />
-                <ProjectBox
-                  img={PinSVG}
-                  title="Pins"
-                  blurb="Curated design resource site coded by myself using GatsbyJS."
-                  year="2018"
-                  url="https://pins.desktopofsamuel.com"
-                />
-                {/* <ProjectBox
-                  img={DocuSVG}
-                  title="Road Not Taken"
-                  blurb="A documentary I directed with multiple Asian film festival selected."
-                  year="2016"
-                  url="https://vimeo.com/ondemand/roadnottaken"
-                /> */}
-                <ProjectBox
-                  img={PingspaceSVG}
-                  title="Pingspace"
-                  blurb="Websites uptime monitor as a personal project"
-                  year="2018"
-                  url="https://pingspace.webflow.io/"
-                />
-                <ProjectBox
-                  img={PlayaSVG}
-                  title="Playa"
-                  blurb="Revamped portfolio and landing page of my agency"
-                  year="2018"
-                  url="https://playa.hk/portfolio.html"
-                />
-                <ProjectBox
-                  img={WaterSVG}
-                  title="Water For Free"
-                  blurb="First crowdsourcing water dispenser map in Hong kong"
-                  year="2017"
-                  url="https://waterforfree.org/zh/%E4%B8%8B%E8%BC%89%E6%87%89%E7%94%A8/"
-                />
-                <ProjectBox
-                  img={BookSVG}
-                  title="Creation Cabin"
-                  blurb="Online novel platform supported by an independent publisher"
-                  year="2017"
-                  url="https://playa.hk/projects/creation-cabin-reading-platform.html"
-                />
-              </GridProject>
-            </Boxed>
-          </Row>
         </Layout>
       </div>
     );

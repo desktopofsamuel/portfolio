@@ -6,6 +6,7 @@ import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import PostList from "../components/WidePostList/WidePostList";
 import Boxed from "elements/Boxed";
+import PageTitle from "elements/PageTitle";
 
 const Container = styled.section`
   @media only screen and (max-width: 1280px) {
@@ -37,7 +38,7 @@ export default class CategoryTemplate extends React.Component {
           <Boxed>
             <Grid>
               <Hero>
-                <h1>Discover Posts in {category}</h1>
+                <PageTitle title={`Discover Post in ${category}`} />
               </Hero>
               <Row>
                 <Container>
@@ -67,7 +68,7 @@ export const pageQuery = graphql`
             slug
             date(formatString: "MMM DD, YYYY", locale: "en")
           }
-          excerpt(pruneLength: 500)
+          excerpt(pruneLength: 200)
           timeToRead
           frontmatter {
             title
