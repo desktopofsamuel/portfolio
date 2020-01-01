@@ -56,14 +56,14 @@ class Photo extends React.Component {
     const postEdges = this.props.data.photo.edges;
     return (
       <Layout>
-        <Helmet title={`Design Blog | ${config.siteTitle}`}>
+        <Helmet title={`Photography  | ${config.siteTitle}`}>
           <meta
             name="twitter:title"
-            content={`Design Blog | ${config.siteTitle}`}
+            content={`Photo Portfolio | ${config.siteTitle}`}
           />
           <meta
             property="og:title"
-            content={`Design Blog | ${config.siteTitle}`}
+            content={`Photo Portfoliog | ${config.siteTitle}`}
           />
           <meta
             name="description"
@@ -79,7 +79,7 @@ class Photo extends React.Component {
           />
           <meta
             name="keywords"
-            content="Design,Blog,Web,App,UI,UX,Interface,Portfolio,Hong Kong,Writing"
+            content="Photography, Travel, Sightseeing, Canon, iPhone, City, Journey"
           />
         </Helmet>
         <Row>
