@@ -8,15 +8,15 @@ const CardContainer = styled.div`
   grid-gap: 36px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 
-  .helper:nth-child(2) {
+  .noeffect:nth-child(2) {
     grid-column: span 2;
   }
 
-  .helper:nth-child(6) {
+  .noeffect:nth-child(6) {
     grid-column: span 2;
   }
 
-  .helper:nth-child(7) {
+  .noeffect:nth-child(7) {
     grid-column: span 2;
   }
 `;
@@ -48,9 +48,9 @@ class PhotoCard extends React.Component {
     return (
       <CardContainer>
         {postList.map(post => (
-          <Link to={post.path} key={post.title} className="helper">
+          <Link to={post.path} key={post.title} className="noeffect">
             <Image sizes={post.cover.childImageSharp.sizes} />
-            <Title className="s">{post.title}</Title>
+            <Title>{post.title}</Title>
           </Link>
         ))}
       </CardContainer>

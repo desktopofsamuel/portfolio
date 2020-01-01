@@ -8,25 +8,32 @@ import kebabCase from "lodash/kebabCase";
 const Container = styled.article`
   margin-bottom: var(--padding-m);
   display: grid;
-  grid-gap: 48px;
+  grid-gap: var(--var-padding-m);
   grid-template-columns: [left] 30% [right] 70%;
 
   @media only screen and (max-width: 425px) {
     margin-bottom: 100px;
     display: block;
   }
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: [left] 20% [right] 80%;
+  }
 `;
 
-const ListTitle = styled.h1`
+const ListTitle = styled.h2`
   cursor: pointer;
   font-family: var(--font-primary);
-  font-size: 2rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin-top: 0;
 `;
 const ListRight = styled.div`
   grid-area: right;
 `;
 const ListExcerpt = styled.p`
   margin-bottom: var(--var-padding-s);
+  color: var(--color-secondary-500);
 `;
 
 const ListLeft = styled.div`
@@ -39,7 +46,11 @@ const ListLeft = styled.div`
   }
 `;
 
-const ListMetaWrapper = styled.div``;
+const ListMetaWrapper = styled.div`
+  small {
+    color: var(--color-grey-300);
+  }
+`;
 
 const ListMeta = styled.small``;
 
