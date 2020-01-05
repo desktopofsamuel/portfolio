@@ -9,6 +9,7 @@ import Link from "../components/GatsbyLink/GatsbyLink";
 import PageTitle from "elements/PageTitle";
 import ImageZoom from "react-medium-image-zoom";
 import Boxed from "elements/Boxed";
+import Resume from "components/Resume/Resume";
 
 const Row = styled.section`
   padding: var(--var-padding-l) 0;
@@ -16,6 +17,15 @@ const Row = styled.section`
 
   &:first-child {
     padding-bottom: 0;
+  }
+`;
+
+const ShortBoxed = styled(Boxed)`
+  max-width: 50vw;
+  margin: 0 auto;
+
+  @media only screen and (max-width: 1024px) {
+    max-width: 80vw;
   }
 `;
 
@@ -35,10 +45,13 @@ const BoxContent = styled.div`
   }
 `;
 
-const RowHero = styled(Row)`
+const AltRow = styled(Row)`
   background: var(--color-white-700);
 `;
 
+const InvertRow = styled(Row)`
+  background: var(--color-secondary-700);
+`;
 const PhotoFrame = styled.figure`
   grid-area: Photo;
   width: 100%;
@@ -189,7 +202,7 @@ class AboutPage extends Component {
           <title>{`About | ${config.siteTitle}`}</title>
         </Helmet>
         <Layout>
-          <RowHero className="full-bleed">
+          <AltRow className="full-bleed">
             <Boxed>
               <PageTitle
                 title="About Me"
@@ -208,7 +221,7 @@ class AboutPage extends Component {
                   <p>
                     I am constantly learning and I treasure every opportunity to
                     design better. I’m learning to code right now and this
-                    website is my first attempt. <br /> <br /> ’m hoping to
+                    website is my first attempt. <br /> <br /> I’m hoping to
                     express my creativity in this site though design, coding and
                     writing.{" "}
                   </p>
@@ -216,14 +229,17 @@ class AboutPage extends Component {
                     <Link to="#bio">
                       <small>01. Bio </small>
                     </Link>
+                    <Link to="#resume">
+                      <small>02. Resume </small>
+                    </Link>
                     <Link to="#skills">
-                      <small>02. Skills </small>
+                      <small>03. Skills </small>
                     </Link>
                   </WrapperNav>
                 </Intro>
               </WrapperIntro>
             </Boxed>
-          </RowHero>
+          </AltRow>
           <Row id="bio">
             <Boxed>
               <P1>
@@ -266,9 +282,16 @@ class AboutPage extends Component {
               </GridBio>
             </Boxed>
           </Row>
-          <RowHero id="skills" className="full-bleed">
+          <InvertRow id="resume" className="full-bleed">
+            <ShortBoxed>
+              <small>02. Resume</small>
+              <Resume />
+            </ShortBoxed>
+          </InvertRow>
+
+          <AltRow id="skills" className="full-bleed">
             <Boxed>
-              <small>02. Skills</small>
+              <small>03. Skills</small>
               <h1>Design, Photography, Writing.</h1>
               <GridSkill>
                 <DesignPart>
@@ -308,7 +331,7 @@ class AboutPage extends Component {
                 </PassionContent>
               </GridSkill>
             </Boxed>
-          </RowHero>
+          </AltRow>
         </Layout>
       </div>
     );

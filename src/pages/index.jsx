@@ -327,7 +327,7 @@ class Index extends React.Component {
               </Center>
             </BoxContent>
           </FullGreyRow>
-          <Row>
+          <Row className="full-bleed">
             <BoxContent>
               <BlogIntro>
                 <h2>Blog</h2>
