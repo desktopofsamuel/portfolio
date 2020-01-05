@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import Link from "../GatsbyLink/GatsbyLink";
 import styled from "styled-components";
 import Boxed from "elements/Boxed";
+import Column from "elements/Column";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTwitter,
   faInstagram,
-  faMedium
+  faMedium,
+  faLinkedin
 } from "@fortawesome/free-brands-svg-icons";
 
 const FooterItem = styled(Link)`
@@ -30,6 +32,7 @@ const FooterItem = styled(Link)`
 
 const FooterIcon = styled(FontAwesomeIcon)`
   margin-right: 1rem;
+  font-size: 24px;
   border-bottom: none;
 `;
 
@@ -49,6 +52,7 @@ const SubTitle = styled.h3``;
 
 const SubText = styled.p`
   color: var(--color-secondary-500);
+  max-width: 40ch;
 `;
 
 const CreditText = styled.p`
@@ -109,34 +113,53 @@ export default class Footer extends React.Component {
         <Boxx>
           <SubContainer className="full-bleed" id="#contact">
             <Boxed>
-              <SubTitle>Follow Me To Manage Complexity</SubTitle>
-              <SubText>
-                You can subscribe to the <Link to="/rss.xml">RSS feed</Link> or
-                follow me on social media for updates.
-              </SubText>
-              <div>
-                <Link
-                  to="http://www.twitter.com/desktopofsamuel"
-                  className="noeffect linkicon"
-                  target="_blank"
-                >
-                  <FooterIcon icon={faTwitter} size="lg" />
-                </Link>
-                <Link
-                  to="http://www.instagram.com/desktopofsamuel"
-                  className="noeffect linkicon"
-                  target="_blank"
-                >
-                  <FooterIcon icon={faInstagram} size="lg" />
-                </Link>
-                <Link
-                  to="https://medium.com/@desktopofsamuel"
-                  className="noeffect linkicon"
-                  target="_blank"
-                >
-                  <FooterIcon icon={faMedium} size="lg" />
-                </Link>
-              </div>
+              <SubTitle>Follow Me or Get In Touch</SubTitle>
+              <Column>
+                <div>
+                  <SubText>
+                    You can subscribe my design blog via my{" "}
+                    <Link to="/rss.xml">RSS feed</Link>, or follow me on social
+                    media for updates.
+                  </SubText>
+                </div>
+                <div>
+                  <div>
+                    <Link
+                      to="http://www.twitter.com/desktopofsamuel"
+                      className="noeffect linkicon"
+                      target="_blank"
+                    >
+                      <FooterIcon icon={faTwitter} size="lg" />
+                    </Link>
+                    <Link
+                      to="http://www.instagram.com/desktopofsamuel"
+                      className="noeffect linkicon"
+                      target="_blank"
+                    >
+                      <FooterIcon icon={faInstagram} size="lg" />
+                    </Link>
+                    <Link
+                      to="https://medium.com/@desktopofsamuel"
+                      className="noeffect linkicon"
+                      target="_blank"
+                    >
+                      <FooterIcon icon={faMedium} size="lg" />
+                    </Link>
+                    <Link
+                      to="https://www.linkedin.com/in/wongchunlong/"
+                      className="noeffect linkicon"
+                      target="_blank"
+                    >
+                      <FooterIcon icon={faLinkedin} size="lg" />
+                    </Link>
+                  </div>
+                  <div>
+                    <Link to="mailto:desktopofsamuel@gmail.com">
+                      Let's Chat{" "}
+                    </Link>
+                  </div>
+                </div>
+              </Column>
             </Boxed>
           </SubContainer>
           <LinkContainer>

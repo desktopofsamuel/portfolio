@@ -126,10 +126,10 @@ module.exports = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         typekit: {
-          id: "wbb0iyz"
+          id: "hey8lez"
         },
         google: {
-          families: ["Merriweather", "IBM Plex Sans"]
+          families: ["Merriweather", "IBM Plex Sans:700,400"]
         }
       }
     },
