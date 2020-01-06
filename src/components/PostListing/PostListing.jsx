@@ -7,18 +7,19 @@ import Img from "gatsby-image";
 import { ReadOn } from "../UI";
 
 const Block = styled.div`
+  grid-column: span 4;
   position: relative;
   display: flex;
   flex-flow: column;
   background: ${props => (props.invert ? `var(--color-white-700)` : ``)};
-  text-align: center;
+  text-align: left;
   align-content: flex-start;
 
   color: ${props =>
     props.invert ? `var(--color-black-500)` : `var(--color-black-500)`};
   justify-content: space-between;
   p {
-    align-self: center;
+    align-self: flex-start;
   }
 
   h3 {

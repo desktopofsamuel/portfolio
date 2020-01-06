@@ -2,7 +2,7 @@
 @import url("https://use.typekit.net/hey8lez.css");
 
 :root {
-  --font-primary: grad, Georgia, serif;
+  --font-primary: freight-big-pro, Georgia, serif;
   --font-secondary: IBM Plex Sans, Helvetica, Arial, sans-serif;
   --tertiary-font: grad, Georgia, serif;
   --color-brand-300: #fefdf4;
@@ -80,17 +80,16 @@ h1 {
   font-family: var(--font-secondary);
   font-style: normal;
   font-weight: 700;
-  font-size: calc(36px + (48 - 36) * ((100vw - 320px) / (1600 - 320)));
-  line-height: 130%;
+  font-size: calc(36px + (56 - 36) * ((100vw - 320px) / (1600 - 320)));
+  line-height: 120%;
   margin-top: 0;
-  letter-spacing: -0.02em;
 }
 
 h2 {
-  font-size: calc(26px + (30 - 26) * ((100vw - 320px) / (1600 - 320)));
+  font-size: calc(26px + (40 - 26) * ((100vw - 320px) / (1600 - 320)));
   font-family: var(--font-primary);
-  font-weight: 700;
-  line-height: calc(36px + (36 - 32) * ((100vw - 320px) / (1600 - 320)));
+  font-weight: 600;
+  line-height: calc(32px + (48 - 32) * ((100vw - 320px) / (1600 - 320)));
 }
 
 .blog h2 {
@@ -99,10 +98,11 @@ h2 {
 
 h3 {
   font-family: var(--font-primary);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 150%;
-  font-size: 24px;
-  letter-spacing: -0.01rem;
+  font-size: calc(24px + (30 - 24) * ((100vw - 320px) / (1600 - 320)));
+  line-height: calc(32px + (40 - 32) * ((100vw - 320px) / (1600 - 320)));
+  letter-spacing: -0.025rem;
   margin-top: 0;
   margin-bottom: 1rem;
 }
@@ -121,7 +121,7 @@ h4 {
 h5 {
   font-family: var(--font-secondary);
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 150%;
   font-size: 16px;
   margin-top: 0;

@@ -12,7 +12,7 @@ const Grid = styled.div`
 `;
 
 const Column = ({ children, className }) => (
-  <Grid classname={className}>{children}</Grid>
+  <Grid className={className}>{children}</Grid>
 );
 
 export default Column;

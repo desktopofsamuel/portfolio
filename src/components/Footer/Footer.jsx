@@ -2,12 +2,18 @@ import React, { Component } from "react";
 import Link from "../GatsbyLink/GatsbyLink";
 import styled from "styled-components";
 import Boxed from "elements/Boxed";
+import Column from "elements/Column";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTwitter,
   faInstagram,
-  faMedium
+  faMedium,
+  faLinkedin
 } from "@fortawesome/free-brands-svg-icons";
+
+const Row = styled.section`
+  padding: var(--var-padding-s) 0;
+`;
 
 const FooterItem = styled(Link)`
   display: flex;
@@ -30,6 +36,7 @@ const FooterItem = styled(Link)`
 
 const FooterIcon = styled(FontAwesomeIcon)`
   margin-right: 1rem;
+  font-size: 24px;
   border-bottom: none;
 `;
 
@@ -49,6 +56,7 @@ const SubTitle = styled.h3``;
 
 const SubText = styled.p`
   color: var(--color-secondary-500);
+  max-width: 40ch;
 `;
 
 const CreditText = styled.p`
@@ -85,86 +93,89 @@ const CreditContainer = styled.div`
   }
 `;
 
-const Main = styled.footer`
-  @media only screen and (max-width: 1024px) {
-    padding: 2rem 0;
-  }
-
-  @media only screen and (max-width: 768px) {
-    max-width: 100%;
-    padding: 3rem 0;
-  }
-`;
-
-const Boxx = styled.div`
-  width: 90vw;
-  margin: 0 auto;
-  padding: var(--var-padding-s);
-`;
-
 export default class Footer extends React.Component {
   render() {
     return (
-      <Main>
-        <Boxx>
-          <SubContainer className="full-bleed" id="#contact">
-            <Boxed>
-              <SubTitle>Follow Me To Manage Complexity</SubTitle>
-              <SubText>
-                You can subscribe to the <Link to="/rss.xml">RSS feed</Link> or
-                follow me on social media for updates.
-              </SubText>
+      <footer>
+        <Row id="#contact">
+          <Boxed>
+            <SubTitle>Follow Me</SubTitle>
+            <Column>
               <div>
-                <Link
-                  to="http://www.twitter.com/desktopofsamuel"
-                  className="noeffect linkicon"
-                  target="_blank"
-                >
-                  <FooterIcon icon={faTwitter} size="lg" />
-                </Link>
-                <Link
-                  to="http://www.instagram.com/desktopofsamuel"
-                  className="noeffect linkicon"
-                  target="_blank"
-                >
-                  <FooterIcon icon={faInstagram} size="lg" />
-                </Link>
-                <Link
-                  to="https://medium.com/@desktopofsamuel"
-                  className="noeffect linkicon"
-                  target="_blank"
-                >
-                  <FooterIcon icon={faMedium} size="lg" />
-                </Link>
+                <SubText>
+                  You can subscribe my design blog via{" "}
+                  <Link to="/rss.xml">RSS feed</Link>, or follow me on social
+                  media for updates.
+                </SubText>
+                <SubText>
+                  <Link to="mailto:desktopofsamuel@gmail.com">Let's chat</Link>{" "}
+                  and talk about working togther.
+                </SubText>
               </div>
-            </Boxed>
-          </SubContainer>
-          <LinkContainer>
-            <FooterItem to="/about">
-              <FooterText>About</FooterText>
-            </FooterItem>
-            <FooterItem to="/work">
-              <FooterText>Work</FooterText>
-            </FooterItem>
-            <FooterItem to="/blog">
-              <FooterText>Blog</FooterText>
-            </FooterItem>
-            <FooterItem to="https://pins.desktopofsamuel.com">
-              <FooterText>Pins</FooterText>
-            </FooterItem>
-            <FooterItem to="/photo">
-              <FooterText>Photo</FooterText>
-            </FooterItem>
-          </LinkContainer>
-          <CreditContainer>
-            <CreditText>
-              Design & Code © 2018 - 2020 Samuel W. | Built with{" "}
-              <Link to="https://www.gatsbyjs.org">Gatsby</Link>, powered by{" "}
-              <Link to="https://www.netlify.com/">Netlify</Link>.{" "}
-            </CreditText>
-          </CreditContainer>
-        </Boxx>
-      </Main>
+              <div>
+                <div>
+                  <Link
+                    to="http://www.twitter.com/desktopofsamuel"
+                    className="noeffect linkicon"
+                    target="_blank"
+                  >
+                    <FooterIcon icon={faTwitter} size="lg" />
+                  </Link>
+                  <Link
+                    to="http://www.instagram.com/desktopofsamuel"
+                    className="noeffect linkicon"
+                    target="_blank"
+                  >
+                    <FooterIcon icon={faInstagram} size="lg" />
+                  </Link>
+                  <Link
+                    to="https://medium.com/@desktopofsamuel"
+                    className="noeffect linkicon"
+                    target="_blank"
+                  >
+                    <FooterIcon icon={faMedium} size="lg" />
+                  </Link>
+                  <Link
+                    to="https://www.linkedin.com/in/wongchunlong/"
+                    className="noeffect linkicon"
+                    target="_blank"
+                  >
+                    <FooterIcon icon={faLinkedin} size="lg" />
+                  </Link>
+                </div>
+              </div>
+            </Column>
+          </Boxed>
+        </Row>
+        <Row>
+          <Boxed>
+            <LinkContainer>
+              <FooterItem to="/about">
+                <FooterText>About</FooterText>
+              </FooterItem>
+              <FooterItem to="/work">
+                <FooterText>Work</FooterText>
+              </FooterItem>
+              <FooterItem to="/blog">
+                <FooterText>Blog</FooterText>
+              </FooterItem>
+              <FooterItem to="https://pins.desktopofsamuel.com">
+                <FooterText>Pins</FooterText>
+              </FooterItem>
+              <FooterItem to="/photo">
+                <FooterText>Photo</FooterText>
+              </FooterItem>
+            </LinkContainer>
+            <CreditContainer>
+              <CreditText>
+                Design & Code © 2018 - 2020 Samuel W. | Built with{" "}
+                <Link to="https://www.gatsbyjs.org">Gatsby</Link>, powered by{" "}
+                <Link to="https://www.netlify.com/">Netlify</Link>.{" "}
+              </CreditText>
+            </CreditContainer>
+          </Boxed>
+        </Row>
+      </footer>
     );
   }
 }

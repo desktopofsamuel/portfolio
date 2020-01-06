@@ -54,6 +54,7 @@ const SiteID = styled.div``;
 const Title = styled.h2`
   margin: 0 auto 1.5rem;
   font-size: 1rem;
+  font-weight: 600;
   font-family: var(--font-secondary);
 `;
 
@@ -104,17 +105,8 @@ export default class Navigation extends React.Component {
                 <Link to="/">SAMUEL W.</Link>
               </Title>
               <Description>
-                Product Designer based in Hong Kong. Reinventing travel
-                experience at{" "}
-                <a
-                  href="https://www.hyperair.com"
-                  className="textlink"
-                  target="blank"
-                >
-                  {" "}
-                  HyperAir
-                </a>
-                .
+                User Experience Designer in Hong Kong <br />
+                Reinventing Travel Experience at HyperAir
               </Description>
             </SiteID>
             <NavItem>
@@ -126,6 +118,9 @@ export default class Navigation extends React.Component {
               </Link>
               <Link to="/blog" class="navblock noeffect">
                 <small>Blog</small>
+              </Link>
+              <Link to="/photo" class="navblock noeffect">
+                <small>Photo</small>
               </Link>
             </NavItem>
           </NavBar>

@@ -148,19 +148,18 @@ const Center = styled.div`
 const Blog = styled.section`
   display: grid;
   grid-auto-flow: row;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(8, 1fr);
   grid-template-rows: auto auto;
-  grid-row-gap: 8rem;
-  grid-column-gap: 4rem;
+  grid-row-gap: 4rem;
+  grid-column-gap: 2rem;
   align-items: flex-start;
 
   & > div:nth-child(2) {
-    grid-column: span 2;
+    grid-column: span 3;
+  }
 
-    p {
-      max-width: 80%;
-      margin: 0 auto;
-    }
+  & > div:nth-child(3) {
+    grid-column: span 3;
   }
 
   @media only screen and (max-width: 768px) {
@@ -328,7 +327,7 @@ class Index extends React.Component {
               </Center>
             </BoxContent>
           </FullGreyRow>
-          <Row>
+          <Row className="full-bleed">
             <BoxContent>
               <BlogIntro>
                 <h2>Blog</h2>
