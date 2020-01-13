@@ -28,6 +28,18 @@ const FooterItem = styled(Link)`
     margin-right: 0;
   }
 
+  p {
+    margin: 0;
+    font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1600 - 320)));
+    line-height: calc(32px + (40 - 32) * ((100vw - 320px) / (1600 - 320)));
+    font-family: var(--font-secondary);
+    text-align: center;
+
+    @media only screen and (max-width: 768px) {
+      text-align: left;
+    }
+  }
+
   @media only screen and (max-width: 767px) {
     margin-right: 0;
     justify-content: left;
@@ -38,18 +50,6 @@ const FooterIcon = styled(FontAwesomeIcon)`
   margin-right: 1rem;
   font-size: 24px;
   border-bottom: none;
-`;
-
-const FooterText = styled.p`
-  margin: 0;
-  font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1600 - 320)));
-  line-height: calc(32px + (40 - 32) * ((100vw - 320px) / (1600 - 320)));
-  font-family: var(--font-secondary);
-  text-align: center;
-
-  @media only screen and (max-width: 768px) {
-    text-align: left;
-  }
 `;
 
 const SubTitle = styled.h3``;
@@ -150,21 +150,13 @@ export default class Footer extends React.Component {
         <Row className="full-bleed">
           <Boxed>
             <LinkContainer>
-              <FooterItem to="/about">
-                <FooterText>About</FooterText>
-              </FooterItem>
-              <FooterItem to="/work">
-                <FooterText>Work</FooterText>
-              </FooterItem>
-              <FooterItem to="/blog">
-                <FooterText>Blog</FooterText>
-              </FooterItem>
+              <FooterItem to="/about">About</FooterItem>
+              <FooterItem to="/work">Work</FooterItem>
+              <FooterItem to="/blog">Blog</FooterItem>
               <FooterItem to="https://pins.desktopofsamuel.com">
-                <FooterText>Pins</FooterText>
+                Pins
               </FooterItem>
-              <FooterItem to="/photo">
-                <FooterText>Photo</FooterText>
-              </FooterItem>
+              <FooterItem to="/photo">Photo</FooterItem>
             </LinkContainer>
             <CreditContainer>
               <CreditText>
