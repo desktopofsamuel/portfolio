@@ -35,7 +35,7 @@ const Block = styled.div`
       props.invert ? `var(--color-white-500)` : `var(--color-black-500)`};
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 767px) {
     padding: 0;
     margin-bottom: 2rem;
   }

@@ -127,7 +127,7 @@ const AboutIcon = styled.div`
 const HalfBox = styled.div`
   width: 55ch;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 767px) {
     width: 100%;
   }
 `;
@@ -162,7 +162,7 @@ const Blog = styled.section`
     grid-column: span 3;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 767px) {
     display: block;
   }
 `;

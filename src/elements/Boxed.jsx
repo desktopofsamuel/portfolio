@@ -3,8 +3,12 @@ import styled from "styled-components";
 
 const BoxContent = styled.div`
   max-width: 1024px;
-  padding: 0 var(--var-padding-m);
+  padding: 0 1rem;
   margin: 0 auto;
+
+  @media only screen and (max-width: 1024px) {
+    max-width: 768px;
+  }
 
   h2 {
     margin-top: 0;

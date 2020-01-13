@@ -28,7 +28,7 @@ const FooterItem = styled(Link)`
     margin-right: 0;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 767px) {
     margin-right: 0;
     justify-content: left;
   }
@@ -76,7 +76,7 @@ const LinkContainer = styled.div`
   justify-content: center;
   display: flex;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 767px) {
     display: grid;
     grid-gap: 16px;
     grid-template-columns: 1fr 1fr;
@@ -88,7 +88,7 @@ const CreditContainer = styled.div`
   padding: var(--var-padding-xs);
   text-align: center;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 767px) {
     text-align: left;
   }
 `;
@@ -96,8 +96,8 @@ const CreditContainer = styled.div`
 export default class Footer extends React.Component {
   render() {
     return (
-      <footer>
-        <Row id="#contact">
+      <footer id="#contact">
+        <Row className="full-bleed">
           <Boxed>
             <SubTitle>Follow Me</SubTitle>
             <Column>
@@ -147,7 +147,7 @@ export default class Footer extends React.Component {
             </Column>
           </Boxed>
         </Row>
-        <Row>
+        <Row className="full-bleed">
           <Boxed>
             <LinkContainer>
               <FooterItem to="/about">
