@@ -129,7 +129,7 @@ module.exports = {
           id: "hey8lez"
         },
         google: {
-          families: ["Merriweather", "IBM Plex Sans:700,400"]
+          families: ["Merriweather", "IBM Plex Sans:400,400i,700"]
         }
       }
     },
