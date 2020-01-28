@@ -71,7 +71,7 @@ const Description = styled.h2`
 const NavItem = styled.div`
   text-align: right;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 767px) {
     display: none;
   }
 `;

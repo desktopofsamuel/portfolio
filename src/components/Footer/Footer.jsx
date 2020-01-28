@@ -13,7 +13,15 @@ import {
 
 const Row = styled.section`
   padding: var(--var-padding-s) 0;
+
+
 `;
+
+const BgRow = styled(Row)` 
+ @media only screen and (max-width: 767px) {
+  background-color: var(--color-white-700);
+  padding: var(--var-padding-l) 0;
+  }`
 
 const FooterItem = styled(Link)`
   display: flex;
@@ -28,7 +36,19 @@ const FooterItem = styled(Link)`
     margin-right: 0;
   }
 
-  @media only screen and (max-width: 768px) {
+  p {
+    margin: 0;
+    font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1600 - 320)));
+    line-height: calc(32px + (40 - 32) * ((100vw - 320px) / (1600 - 320)));
+    font-family: var(--font-secondary);
+    text-align: center;
+
+    @media only screen and (max-width: 768px) {
+      text-align: left;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
     margin-right: 0;
     justify-content: left;
   }
@@ -38,18 +58,6 @@ const FooterIcon = styled(FontAwesomeIcon)`
   margin-right: 1rem;
   font-size: 24px;
   border-bottom: none;
-`;
-
-const FooterText = styled.p`
-  margin: 0;
-  font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1600 - 320)));
-  line-height: calc(32px + (40 - 32) * ((100vw - 320px) / (1600 - 320)));
-  font-family: var(--font-secondary);
-  text-align: center;
-
-  @media only screen and (max-width: 768px) {
-    text-align: left;
-  }
 `;
 
 const SubTitle = styled.h3``;
@@ -76,7 +84,7 @@ const LinkContainer = styled.div`
   justify-content: center;
   display: flex;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 767px) {
     display: grid;
     grid-gap: 16px;
     grid-template-columns: 1fr 1fr;
@@ -88,7 +96,7 @@ const CreditContainer = styled.div`
   padding: var(--var-padding-xs);
   text-align: center;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 767px) {
     text-align: left;
   }
 `;
@@ -96,8 +104,8 @@ const CreditContainer = styled.div`
 export default class Footer extends React.Component {
   render() {
     return (
-      <footer>
-        <Row id="#contact">
+      <footer id="#contact">
+        <BgRow className="full-bleed">
           <Boxed>
             <SubTitle>Follow Me</SubTitle>
             <Column>
@@ -146,25 +154,17 @@ export default class Footer extends React.Component {
               </div>
             </Column>
           </Boxed>
-        </Row>
-        <Row>
+        </BgRow>
+        <Row className="full-bleed">
           <Boxed>
             <LinkContainer>
-              <FooterItem to="/about">
-                <FooterText>About</FooterText>
-              </FooterItem>
-              <FooterItem to="/work">
-                <FooterText>Work</FooterText>
-              </FooterItem>
-              <FooterItem to="/blog">
-                <FooterText>Blog</FooterText>
-              </FooterItem>
+              <FooterItem to="/about">About</FooterItem>
+              <FooterItem to="/work">Work</FooterItem>
+              <FooterItem to="/blog">Blog</FooterItem>
               <FooterItem to="https://pins.desktopofsamuel.com">
-                <FooterText>Pins</FooterText>
+                Pins
               </FooterItem>
-              <FooterItem to="/photo">
-                <FooterText>Photo</FooterText>
-              </FooterItem>
+              <FooterItem to="/photo">Photo</FooterItem>
             </LinkContainer>
             <CreditContainer>
               <CreditText>

@@ -18,7 +18,7 @@ const ListItem = styled.div`
     box-shadow: 0 25px 40px 0 rgba(0, 0, 0, 0.08);
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 767px) {
     display: flex;
     flex-direction: column-reverse;
     text-align: center;
