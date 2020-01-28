@@ -217,13 +217,16 @@ class AboutPage extends Component {
               </PhotoFrame>
               <WrapperIntro>
                 <Intro>
-                  <small>Welcome!</small>
+                  <small>Hi! My name is Samuel.</small>
                   <p>
-                    I am constantly learning and I treasure every opportunity to
-                    design better. I’m learning to code right now and this
-                    website is my first attempt. <br /> <br /> I’m hoping to
-                    express my creativity in this site though design, coding and
-                    writing.{" "}
+                    I’m pursuing a career in the field of UI/UX Design because
+                    I'm deeply passionate about technology and how it profoundly
+                    changes our way of living. <br />
+                    <br />
+                    The process of turning an idea into a viable product gives
+                    me great satisfaction. Being a self-starter, I’m highly
+                    motivated staying up-to-date with the latest technology,
+                    industry practice and design trends.
                   </p>
                   <WrapperNav>
                     <Link to="#bio">

@@ -11,6 +11,7 @@ const Section = styled.section`
 
 const Title = styled.h3`
   font-family: var(--font-primary);
+  color: var(--color-secondary-100);
   letter-spacing: 0;
 `;
 
@@ -60,12 +61,12 @@ const ResumeParagraph = styled.p`
 export default props => (
   <Section>
     <Title as="h1">Samuel Wong</Title>
-    <Subtitle>
+    {/*     <Subtitle>
       I’m now pursuing a career in the field of UI/UX Design because I'm deeply
       passionate about technology and how it profoundly changes our way of
       living. The process of turning an idea into a viable product gives me
       great satisfaction.
-    </Subtitle>
+    </Subtitle> */}
     <Block>
       <ResumeSectionTitle>Career</ResumeSectionTitle>
       <ResumeSection>
