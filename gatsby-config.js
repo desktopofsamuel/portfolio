@@ -101,7 +101,6 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-catch-links",
     "gatsby-plugin-twitter",
-    "gatsby-plugin-favicon",
     "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-manifest",
