@@ -8,6 +8,7 @@ const BoxContent = styled.div`
 
   @media only screen and (max-width: 1024px) {
     max-width: 768px;
+    padding: 0;
   }
 
   h2 {
