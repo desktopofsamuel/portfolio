@@ -29,6 +29,10 @@
   --var-padding-m: 2rem;
   --var-padding-s: 1rem;
   --grid-gap: 24px;
+  --font-size-xxl: calc(56px + (72 - 56) * ((100vw - 320px) / (1600 - 320)));
+  --font-size-xl: calc(36px + (56 - 36) * ((100vw - 320px) / (1600 - 320)));
+  --font-size-l: calc(24px + (36 - 24) * ((100vw - 320px) / (1600 - 320)));
+  --font-size-m: calc(18px + (20 - 18) * ((100vw - 320px) / (1600 - 320)));
 }
 
 @media only screen and (max-width: 768px) {

@@ -93,7 +93,7 @@ const Description = styled.h2`
   margin: 0 auto;
   font-family: var(--font-secondary);
   color: var(--color-secondary-500);
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   line-height: 1.5rem;
   max-width: 35ch;
   font-weight: 400;
@@ -123,7 +123,7 @@ class Navigation3 extends React.Component {
         <Main>
           <NavBar>
             <NavLeft>
-              <Title to="/">SAMUEL W.</Title>
+              <Title to="/">Samuel W.</Title>
               <Description>User Experience Designer</Description>
             </NavLeft>
             <NavRight>

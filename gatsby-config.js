@@ -54,6 +54,20 @@ module.exports = {
       }
     },
     {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: `${__dirname}/static/images/`
+      }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "photography",
+        path: `${__dirname}/static/images/photography/`
+      }
+    },
+    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
@@ -128,7 +142,7 @@ module.exports = {
           id: "hey8lez"
         },
         google: {
-          families: ["Merriweather", "IBM Plex Sans:400,400i,700"]
+          families: ["Merriweather", "IBM Plex Sans:400,400i,500,700"]
         }
       }
     },
