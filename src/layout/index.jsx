@@ -5,6 +5,7 @@ import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import { MDXProvider } from "@mdx-js/react";
 import "./index.css";
+import "../templates/b16-tomorrow-dark.css";
 import Nav from "../components/Navigation/navigation";
 import Footer from "../components/Footer/Footer";
 
