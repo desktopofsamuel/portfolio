@@ -61,13 +61,6 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "photography",
-        path: `${__dirname}/static/images/photography/`
-      }
-    },
-    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
