@@ -12,16 +12,15 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 const Row = styled.section`
-  padding: var(--var-padding-s) 0;
-
-
+  padding: var(--var-padding-s) 1rem;
 `;
 
-const BgRow = styled(Row)` 
- @media only screen and (max-width: 767px) {
-  background-color: var(--color-white-700);
-  padding: var(--var-padding-l) 0;
-  }`
+const BgRow = styled(Row)`
+  @media only screen and (max-width: 767px) {
+    background-color: var(--color-white-700);
+    padding: var(--var-padding-l) 1rem;
+  }
+`;
 
 const FooterItem = styled(Link)`
   display: flex;

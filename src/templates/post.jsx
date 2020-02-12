@@ -1,8 +1,9 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
+import { MDXProvider, MDXRenderer } from "gatsby-plugin-mdx";
 import Layout from "../layout";
 import styled from "styled-components";
+
 import Link from "gatsby-link";
 import Helmet from "react-helmet";
 import config from "../../data/SiteConfig";
@@ -10,6 +11,7 @@ import SEO from "../components/SEO/SEO";
 import PostTags from "../components/PostTags/PostTags";
 import SocialLinks from "../components/SocialLinks/SocialLinks";
 import kebabCase from "lodash/kebabCase";
+import ZoomImage from "components/ZoomImage/ZoomImage";
 
 const Row = styled.section`
   padding: var(--var-padding-l) 0;
@@ -30,14 +32,15 @@ const BoxContent = styled.div`
     padding: 0 1.5rem;
   }
 
-  @media only screen and (max-width: 768px) {
-    padding: 0 1rem;
+  @media only screen and (max-width: 1024px) {
+    max-width: 768px;
+    padding: 0;
   }
 `;
 
 const Post = styled.article`
   display: block;
-  margin: 0 auto;
+  margin: var(--padding-m) auto 0 auto;
 
   @media screen and (min-width: 1440px) {
     display: grid;
@@ -76,7 +79,7 @@ const Meta = styled.div`
     display: grid;
     grid-gap: 8px;
     grid-template-columns: 2fr max-content;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:
       "date share"
       "tag tag";
@@ -109,6 +112,10 @@ const PostDate = styled.div`
   }
 `;
 
+const PostPhoto = styled(ZoomImage)`
+  grid-area: photo;
+`;
+
 const PostTag = styled.div`
   grid-area: tag;
   @media screen and (max-width: 425px) {
@@ -133,7 +140,7 @@ export default class BlogPageTemplate extends React.Component {
           <title>{`${post.title} | ${config.siteTitleAlt}`}</title>
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
-        <Row className="full-bleed">
+        <Row>
           <BoxContent>
             <Post>
               <Header>
@@ -153,6 +160,9 @@ export default class BlogPageTemplate extends React.Component {
                 </Meta>
               </Header>
               <Main>
+                <PostPhoto
+                  src={postNode.frontmatter.cover.childImageSharp.sizes.src}
+                />
                 <MDXRenderer>{postNode.body}</MDXRenderer>
               </Main>
               <Sidebar>

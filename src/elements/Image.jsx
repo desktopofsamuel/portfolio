@@ -12,16 +12,16 @@ const StyledFigcaption = styled.figcaption`
   color: var(--color-grey-500);
 `;
 
-const ZoomImage = ({ src, alt, caption, width }) => {
+const Image = ({ src, alt, caption, width }) => {
   const text = alt || caption;
   return (
     <Zoom>
       <figure>
-        <img src={src} alt={text} width={width} />
+        <Img fixed={src} alt={text} />
         {text && <StyledFigcaption>{text}</StyledFigcaption>}
       </figure>
     </Zoom>
   );
 };
 
-export default ZoomImage;
+export default Image;

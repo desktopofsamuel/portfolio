@@ -11,7 +11,7 @@
   --color-background-500: #ffffff;
   --color-white-300: #fbfbfb;
   --color-white-500: #f7f7f7;
-  --color-white-700: #f5f5f5;
+  --color-white-700: #eeeeee;
   --color-black-500: #0d0d0d;
   --color-grey-100: #c0c0c0;
   --color-grey-300: #939393;
@@ -29,6 +29,10 @@
   --var-padding-m: 2rem;
   --var-padding-s: 1rem;
   --grid-gap: 24px;
+  --font-size-xxl: calc(56px + (72 - 56) * ((100vw - 320px) / (1600 - 320)));
+  --font-size-xl: calc(36px + (56 - 36) * ((100vw - 320px) / (1600 - 320)));
+  --font-size-l: calc(24px + (36 - 24) * ((100vw - 320px) / (1600 - 320)));
+  --font-size-m: calc(18px + (20 - 18) * ((100vw - 320px) / (1600 - 320)));
 }
 
 @media only screen and (max-width: 768px) {
@@ -83,7 +87,7 @@ h1 {
   font-weight: 700;
   font-size: calc(36px + (56 - 36) * ((100vw - 320px) / (1600 - 320)));
   line-height: 120%;
-  margin-top: 0;
+  margin-top: var(--padding-s);
 }
 
 h2 {
@@ -226,6 +230,17 @@ blockquote:before {
   text-align: center;
 }
 
+cite {
+  display: block;
+  position: relative;
+  color: var(--color-secondary-300);
+  font-style: normal;
+  font-size: 0.9rem;
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  text-align: right;
+}
+
 button {
   background: var(--color-palette-500);
   box-shadow: none;
@@ -301,14 +316,11 @@ hr {
   width: 100%;
 }
 
-cite {
-  position: relative;
-  font-style: normal;
-  font-size: 0.9rem;
-  font-family: var(--font-secondary);
-  font-weight: 400;
-}
-
 figure {
   margin: 0 0 var(--var-padding-s) 0;
+}
+
+/* Nav Item Active Indication */
+.nav-item-active {
+  background: #ffffff;
 }

@@ -5,13 +5,11 @@ import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import { MDXProvider } from "@mdx-js/react";
 import "./index.css";
-import "../templates/b16-tomorrow-dark.css";
-import Nav from "../components/Navigation/navigation";
+import Nav from "../components/Navigation/navigation-3";
 import Footer from "../components/Footer/Footer";
 
 const Layout = styled.div`
   background-color: var(--color-background-500);
-  border-top: 3px var(--color-palette-500) solid;
 `;
 
 const Main = styled.main`
@@ -35,7 +33,20 @@ export default class MainLayout extends React.Component {
   render() {
     const { children } = this.props;
     return (
-      <MDXProvider>
+      <MDXProvider
+        components={{
+          h2: props => (
+            <h2
+              {...props}
+              style={{
+                fontFamily: "var(--secondary-font)",
+                fontWeight: "500",
+                marginTop: "var(--padding-m"
+              }}
+            />
+          )
+        }}
+      >
         <Layout>
           <SEO />
           <Nav />
