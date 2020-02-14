@@ -66,6 +66,7 @@ class Photo extends React.Component {
     const postEdges = this.props.data.photo.edges;
     const coverPhoto = this.props.data.cover;
     const featurePhoto = this.props.data.feature;
+    const happy = this.props.data.featureCloud;
     return (
       <Layout>
         <Helmet title={`Photography  | ${config.siteTitle}`}>
@@ -121,6 +122,9 @@ class Photo extends React.Component {
                     /*                     <Img fixed={edge.node.childImageSharp.fixed} /> */
                     <Image src={edge.node.childImageSharp.fixed} />
                   ))}
+                </FeaturePhoto_Wrapper>
+                <FeaturePhoto_Wrapper>
+                  <Image src={happy.secure_url} />
                 </FeaturePhoto_Wrapper>
               </Row>
               <PhotoGrid postEdges={postEdges} />
@@ -191,6 +195,12 @@ export const pageQuery = graphql`
           }
         }
       }
+    }
+    featureCloud: cloudinaryMedia(
+      public_id: { in: "gatsby-cloudinary/06-IMG_8087-PC" }
+    ) {
+      public_id
+      secure_url
     }
   }
 `;
