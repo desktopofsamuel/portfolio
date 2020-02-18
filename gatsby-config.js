@@ -1,6 +1,10 @@
 const config = require("./data/SiteConfig");
 const urljoin = require("url-join");
 
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`
+});
+
 module.exports = {
   pathPrefix: config.pathPrefix,
   siteMetadata: {
@@ -126,6 +130,16 @@ module.exports = {
             type: "image/png"
           }
         ]
+      }
+    },
+    {
+      resolve: `gatsby-source-cloudinary`,
+      options: {
+        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+        apiKey: process.env.CLOUDINARY_API_KEY,
+        apiSecret: process.env.CLOUDINARY_API_SECRET,
+        resourceType: `image`,
+        tags: true
       }
     },
     {
