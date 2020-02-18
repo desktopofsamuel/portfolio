@@ -54,9 +54,7 @@ const CategoryBlock = styled.div`
 `;
 
 const FeaturePhoto_Wrapper = styled.div`
-  display: grid;
-  grid-gap: var(--padding-s);
-  grid-template-columns: 1fr 1fr;
+  column-count: 3;
 `;
 
 const PhotoGrid = styled(PhotoHero)``;
@@ -66,7 +64,6 @@ class Photo extends React.Component {
     const postEdges = this.props.data.photo.edges;
     const coverPhoto = this.props.data.cover;
     const featurePhoto = this.props.data.feature;
-    const happy = this.props.data.featureCloud;
     return (
       <Layout>
         <Helmet title={`Photography  | ${config.siteTitle}`}>
@@ -120,11 +117,8 @@ class Photo extends React.Component {
                 <FeaturePhoto_Wrapper>
                   {featurePhoto.edges.map(edge => (
                     /*                     <Img fixed={edge.node.childImageSharp.fixed} /> */
-                    <Image src={edge.node.childImageSharp.fixed} />
+                    <Image src={edge.node.secure_url} />
                   ))}
-                </FeaturePhoto_Wrapper>
-                <FeaturePhoto_Wrapper>
-                  <Image src={happy.secure_url} />
                 </FeaturePhoto_Wrapper>
               </Row>
               <PhotoGrid postEdges={postEdges} />
@@ -179,7 +173,7 @@ export const pageQuery = graphql`
     cover: file(relativePath: { eq: "images/Photo-Cover.jpg" }) {
       ...fluidImage
     }
-    feature: allFile(
+    featureretired: allFile(
       filter: {
         relativeDirectory: { in: "images" }
         name: { regex: "/Photography/" }
@@ -196,11 +190,13 @@ export const pageQuery = graphql`
         }
       }
     }
-    featureCloud: cloudinaryMedia(
-      public_id: { in: "gatsby-cloudinary/06-IMG_8087-PC" }
-    ) {
-      public_id
-      secure_url
+    feature: allCloudinaryMedia(filter: { tags: { eq: "highlight" } }) {
+      edges {
+        node {
+          id
+          secure_url
+        }
+      }
     }
   }
 `;
