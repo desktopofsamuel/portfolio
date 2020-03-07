@@ -47,6 +47,9 @@ jspm_packages
 # Yarn Integrity file
 .yarn-integrity
 
+# Environmental Variable
+.env
+
 
 # Build Files
 public/

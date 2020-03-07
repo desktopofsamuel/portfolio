@@ -13,7 +13,7 @@
   --color-white-500: #f7f7f7;
   --color-white-700: #eeeeee;
   --color-black-500: #0d0d0d;
-  --color-grey-100: #c0c0c0;
+  --color-grey-100: #a8a9ab;
   --color-grey-300: #939393;
   --color-grey-500: #737373;
   --color-secondary-700: #2c3242;
@@ -87,7 +87,7 @@ h1 {
   font-weight: 700;
   font-size: calc(36px + (56 - 36) * ((100vw - 320px) / (1600 - 320)));
   line-height: 120%;
-  margin-top: 0;
+  margin-top: var(--padding-s);
 }
 
 h2 {
@@ -230,6 +230,17 @@ blockquote:before {
   text-align: center;
 }
 
+cite {
+  display: block;
+  position: relative;
+  color: var(--color-secondary-300);
+  font-style: normal;
+  font-size: 0.9rem;
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  text-align: right;
+}
+
 button {
   background: var(--color-palette-500);
   box-shadow: none;
@@ -303,14 +314,6 @@ hr {
 
 .gatsby-resp-image-wrapper {
   width: 100%;
-}
-
-cite {
-  position: relative;
-  font-style: normal;
-  font-size: 0.9rem;
-  font-family: var(--font-secondary);
-  font-weight: 400;
 }
 
 figure {

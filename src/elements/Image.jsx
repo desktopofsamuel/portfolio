@@ -17,7 +17,7 @@ const Image = ({ src, alt, caption, width }) => {
   return (
     <Zoom>
       <figure>
-        <Img fixed={src} alt={text} />
+        <img src={src} alt={text} />
         {text && <StyledFigcaption>{text}</StyledFigcaption>}
       </figure>
     </Zoom>

@@ -54,9 +54,7 @@ const CategoryBlock = styled.div`
 `;
 
 const FeaturePhoto_Wrapper = styled.div`
-  display: grid;
-  grid-gap: var(--padding-s);
-  grid-template-columns: 1fr 1fr;
+  column-count: 3;
 `;
 
 const PhotoGrid = styled(PhotoHero)``;
@@ -119,7 +117,7 @@ class Photo extends React.Component {
                 <FeaturePhoto_Wrapper>
                   {featurePhoto.edges.map(edge => (
                     /*                     <Img fixed={edge.node.childImageSharp.fixed} /> */
-                    <Image src={edge.node.childImageSharp.fixed} />
+                    <Image src={edge.node.secure_url} />
                   ))}
                 </FeaturePhoto_Wrapper>
               </Row>
@@ -175,7 +173,7 @@ export const pageQuery = graphql`
     cover: file(relativePath: { eq: "images/Photo-Cover.jpg" }) {
       ...fluidImage
     }
-    feature: allFile(
+    featureretired: allFile(
       filter: {
         relativeDirectory: { in: "images" }
         name: { regex: "/Photography/" }
@@ -189,6 +187,14 @@ export const pageQuery = graphql`
               ...GatsbyImageSharpFixed_withWebp
             }
           }
+        }
+      }
+    }
+    feature: allCloudinaryMedia(filter: { tags: { eq: "highlight" } }) {
+      edges {
+        node {
+          id
+          secure_url
         }
       }
     }
