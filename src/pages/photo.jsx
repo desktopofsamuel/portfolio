@@ -3,7 +3,7 @@ import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
 import config from "../../data/SiteConfig";
-import PhotoHero from "../components/PhotoCard/PhotoCard";
+import PhotoMagazine from "../components/PhotoMagazine/PhotoMagazine";
 import Link from "../components/GatsbyLink/GatsbyLink";
 import SEO from "../components/SEO/SEO";
 import BlogFeature from "../components/BlogFeature/BlogFeature";
@@ -56,8 +56,6 @@ const CategoryBlock = styled.div`
 const FeaturePhoto_Wrapper = styled.div`
   column-count: 3;
 `;
-
-const PhotoGrid = styled(PhotoHero)``;
 
 class Photo extends React.Component {
   render() {
@@ -121,7 +119,7 @@ class Photo extends React.Component {
                   ))}
                 </FeaturePhoto_Wrapper>
               </Row>
-              <PhotoGrid postEdges={postEdges} />
+              <PhotoMagazine postEdges={postEdges} />
             </Grid>
           </Boxed>
         </Row>

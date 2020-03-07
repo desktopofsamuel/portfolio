@@ -15,7 +15,7 @@ const GridExcerpt = styled.p``;
 
 const GridButton = styled(Link)``;
 
-class PhotoHero extends React.Component {
+class PhotoMagazine extends React.Component {
   getPostList() {
     const postList = [];
     this.props.postEdges.forEach(postEdge => {
@@ -35,17 +35,18 @@ class PhotoHero extends React.Component {
     const postList = this.getPostList();
     return (
       <Grid>
-        <GridItem></GridItem>
+        <GridItem>On Photography</GridItem>
+        {/* Your post list here. */
         postList.map(post => (
-        <GridItem>
-          <Link to={post.path} key={post.title}>
-            <GridPhoto sizes={post.cover.childImageSharp.sizes} />
-            <GridTitle>{post.title}</GridTitle>
-          </Link>
-          <GridExcerpt>{post.excerpt}</GridExcerpt>
-          <GridButton to={post.path}> View Series </GridButton>
-        </GridItem>
-        ))
+          <GridItem>
+            <Link to={post.path} key={post.title}>
+              <GridPhoto sizes={post.cover.childImageSharp.sizes} />
+              <GridTitle>{post.title}</GridTitle>
+            </Link>
+            <GridExcerpt>{post.excerpt}</GridExcerpt>
+            <GridButton to={post.path}> View Series </GridButton>
+          </GridItem>
+        ))}
       </Grid>
     );
   }
