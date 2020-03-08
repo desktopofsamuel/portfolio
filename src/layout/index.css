@@ -33,6 +33,7 @@
   --font-size-xl: calc(36px + (56 - 36) * ((100vw - 320px) / (1600 - 320)));
   --font-size-l: calc(24px + (36 - 24) * ((100vw - 320px) / (1600 - 320)));
   --font-size-m: calc(18px + (20 - 18) * ((100vw - 320px) / (1600 - 320)));
+  --transition: all 0.3s ease-in-out;
 }
 
 @media only screen and (max-width: 768px) {
