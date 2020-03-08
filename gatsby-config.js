@@ -132,7 +132,7 @@ module.exports = {
         ]
       }
     },
-    {
+    /* {
       resolve: `gatsby-source-cloudinary`,
       options: {
         cloudName: process.env.CLOUDINARY_CLOUD_NAME,
@@ -141,7 +141,7 @@ module.exports = {
         resourceType: `image`,
         tags: true
       }
-    },
+    }, */
     {
       resolve: "gatsby-plugin-web-font-loader",
       options: {

@@ -142,34 +142,34 @@ export const pageQuery = graphql`
         }
       }
     }
-    cover: file(relativePath: { eq: "images/Photo-Cover.jpg" }) {
-      ...fluidImage
-    }
-    featureretired: allFile(
-      filter: {
-        relativeDirectory: { in: "images" }
-        name: { regex: "/Photography/" }
-      }
-    ) {
-      edges {
-        node {
-          base
-          childImageSharp {
-            fixed {
-              ...GatsbyImageSharpFixed_withWebp
-            }
-          }
-        }
-      }
-    }
-    feature: allCloudinaryMedia(filter: { tags: { eq: "highlight" } }) {
-      edges {
-        node {
-          id
-          secure_url
-        }
-      }
-    }
+    #   cover: file(relativePath: { eq: "images/Photo-Cover.jpg" }) {
+    #     ...fluidImage
+    #   }
+    #   featureretired: allFile(
+    #     filter: {
+    #       relativeDirectory: { in: "images" }
+    #       name: { regex: "/Photography/" }
+    #     }
+    #   ) {
+    #     edges {
+    #       node {
+    #         base
+    #         childImageSharp {
+    #           fixed {
+    #             ...GatsbyImageSharpFixed_withWebp
+    #           }
+    #         }
+    #       }
+    #     }
+    #   }
+    #   feature: allCloudinaryMedia(filter: { tags: { eq: "highlight" } }) {
+    #     edges {
+    #       node {
+    #         id
+    #         secure_url
+    #       }
+    #     }
+    #   }
   }
 `;
 
