@@ -22,12 +22,7 @@ const Grid = styled.div`
 
     ${GridItem} & {
       display: grid;
-
       grid-gap: 16px;
-
-      ${GridButton} & {
-        opacity: 1;
-      }
     }
   }
 `;
@@ -78,7 +73,8 @@ const GridExcerpt = styled.p`
   }
 `;
 
-const GridButton = styled(Link)`
+const GridButton = styled.div`
+  display: inline-block;
   opacity: 0;
   margin-top: 1rem;
   padding: 1rem 2rem;
@@ -87,13 +83,13 @@ const GridButton = styled(Link)`
   border-bottom: none;
   transition: var(--transition);
 
-  ${GridItem}:hover & {
-    opacity: 1;
-  }
-
   @media only screen and (max-width: 767px) {
     padding: 0.5rem 1rem;
     font-size: 0.75rem;
+  }
+
+  ${GridItem}:hover & {
+    opacity: 1;
   }
 `;
 
@@ -138,7 +134,9 @@ class PhotoMagazine extends React.Component {
             </Link>
             <GridContentWrapper>
               <GridExcerpt>{post.excerpt}</GridExcerpt>
-              <GridButton to={post.path}> View Series </GridButton>
+              <Link to={post.path}>
+                <GridButton className="noeffect"> View Series </GridButton>
+              </Link>
             </GridContentWrapper>
           </GridItem>
         ))}
