@@ -3,7 +3,7 @@ import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
 import config from "../../data/SiteConfig";
-import PhotoHero from "../components/PhotoCard/PhotoCard";
+import PhotoMagazine from "../components/PhotoMagazine/PhotoMagazine";
 import Link from "../components/GatsbyLink/GatsbyLink";
 import SEO from "../components/SEO/SEO";
 import BlogFeature from "../components/BlogFeature/BlogFeature";
@@ -19,32 +19,22 @@ const Row = styled.section`
   background: white;
 `;
 
+const PageHeader1 = styled.div`
+  border-top: 3px solid var(--color-black-500);
+  margin-bottom: 8px;
+`;
+
+const PageHeader2 = styled.div`
+  border-top: 1px solid var(--color-black-500);
+`;
+
 const Grid = styled.section``;
 
-const Main = styled.div`
-  h1 {
-    font-family: var(--font-primary);
-  }
-`;
+const Main = styled.div``;
 
-const BlogFeatureWrapper = styled.div`
-  width: 100%;
-  position: relative;
-`;
-
-const Left = styled.aside`
-  grid-area: left;
-`;
-
-const Right = styled.div`
-  grid-area: right;
-`;
-
-const BlogSubtitle = styled.h5`
-  font-style: normal;
-  @media only screen and (max-width: 768px) {
-    display: none;
-  }
+const Title = styled(PageTitle)`
+  font-family: var(--font-primary);
+  margin-bottom: 0;
 `;
 
 const CategoryBlock = styled.div`
@@ -54,12 +44,8 @@ const CategoryBlock = styled.div`
 `;
 
 const FeaturePhoto_Wrapper = styled.div`
-  display: grid;
-  grid-gap: var(--padding-s);
-  grid-template-columns: 1fr 1fr;
+  column-count: 3;
 `;
-
-const PhotoGrid = styled(PhotoHero)``;
 
 class Photo extends React.Component {
   render() {
@@ -98,32 +84,15 @@ class Photo extends React.Component {
           <Boxed>
             <Grid>
               <Row>
-                <Img
-                  fluid={coverPhoto.childImageSharp.fluid}
-                  alt="Photo By Samuel Wong"
-                />
+                <Title title="Photography" />
               </Row>
               <Row>
-                <PageTitle
-                  title="Photography"
-                  description={[
-                    "I’m greatly inspired by cities and stories within. Therefore I publish sets of photos according to cities that I have visited. More photos on my ",
-                    <a href="http://www.instagram.com/desktopofsamuel">
-                      Instagram
-                    </a>,
-                    "."
-                  ]}
-                />
+                <PageHeader1 />
+                <PageHeader2 />
               </Row>
               <Row>
-                <FeaturePhoto_Wrapper>
-                  {featurePhoto.edges.map(edge => (
-                    /*                     <Img fixed={edge.node.childImageSharp.fixed} /> */
-                    <Image src={edge.node.childImageSharp.fixed} />
-                  ))}
-                </FeaturePhoto_Wrapper>
+                <PhotoMagazine postEdges={postEdges} />
               </Row>
-              <PhotoGrid postEdges={postEdges} />
             </Grid>
           </Boxed>
         </Row>
@@ -148,9 +117,10 @@ export const pageQuery = graphql`
             slug
             date(formatString: "MMM DD, YYYY", locale: "en")
           }
-          excerpt(pruneLength: 300)
+          excerpt(pruneLength: 70)
           frontmatter {
             title
+            tldr
             cover {
               publicURL
               size
@@ -172,25 +142,52 @@ export const pageQuery = graphql`
         }
       }
     }
-    cover: file(relativePath: { eq: "images/Photo-Cover.jpg" }) {
-      ...fluidImage
-    }
-    feature: allFile(
-      filter: {
-        relativeDirectory: { in: "images" }
-        name: { regex: "/Photography/" }
-      }
-    ) {
-      edges {
-        node {
-          base
-          childImageSharp {
-            fixed {
-              ...GatsbyImageSharpFixed_withWebp
-            }
-          }
-        }
-      }
-    }
+    #   cover: file(relativePath: { eq: "images/Photo-Cover.jpg" }) {
+    #     ...fluidImage
+    #   }
+    #   featureretired: allFile(
+    #     filter: {
+    #       relativeDirectory: { in: "images" }
+    #       name: { regex: "/Photography/" }
+    #     }
+    #   ) {
+    #     edges {
+    #       node {
+    #         base
+    #         childImageSharp {
+    #           fixed {
+    #             ...GatsbyImageSharpFixed_withWebp
+    #           }
+    #         }
+    #       }
+    #     }
+    #   }
+    #   feature: allCloudinaryMedia(filter: { tags: { eq: "highlight" } }) {
+    #     edges {
+    #       node {
+    #         id
+    #         secure_url
+    #       }
+    #     }
+    #   }
   }
 `;
+
+/* 
+// Cloudinary Feature Photo 
+
+const BlogFeatureWrapper = styled.div`
+  width: 100%;
+  position: relative;
+`;
+
+<FeaturePhoto_Wrapper>
+  {featurePhoto.edges.map(edge => (
+    /*                     <Img fixed={edge.node.childImageSharp.fixed} /> 
+    <Image src={edge.node.secure_url} />
+  ))}
+</FeaturePhoto_Wrapper> 
+
+// Feautre Top Photo
+<Img fluid={coverPhoto.childImageSharp.fluid} alt="Photo By Samuel Wong"/>
+*/

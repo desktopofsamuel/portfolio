@@ -1,13 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-const PageTitleWrapper = styled.section`
+const PageTitleWrapper = styled.div`
   margin-top: var(--var-padding-m);
-`;
-
-const PageDescriptionWrapper = styled.div`
-  /*  width: 70ch;
-  margin: 0 auto 2rem auto; */
 `;
 
 const Subtitle = styled.h2`
@@ -27,29 +22,14 @@ const Title = styled.h1`
   margin-bottom: 4rem;
 `;
 
-const Description = styled.p`
-  font-size: var(--font-size-m);
-  line-height: 170%;
-  font-weight: 500;
-
-  @media only screen and (max-width: 768px) {
-    width: 100%;
-  }
-`;
-
 class PageTitle extends React.Component {
   render() {
     const props = this.props;
     return (
-      <div>
-        <PageTitleWrapper>
-          <Subtitle>{props.subtitle}</Subtitle>
-          <Title>{props.title}</Title>
-        </PageTitleWrapper>
-        <PageDescriptionWrapper>
-          <Description>{props.description}</Description>
-        </PageDescriptionWrapper>
-      </div>
+      <PageTitleWrapper>
+        <Subtitle>{props.subtitle}</Subtitle>
+        <Title>{props.title}</Title>
+      </PageTitleWrapper>
     );
   }
 }
