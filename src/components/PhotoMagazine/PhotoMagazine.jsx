@@ -19,15 +19,11 @@ const Grid = styled.div`
   .noeffect:nth-child(4n + 1) {
     grid-column: span 2;
     display: grid;
-
-    ${GridItem} & {
-      display: grid;
-      grid-gap: 16px;
-    }
   }
 `;
 
-const GridItem = styled.div``;
+const GridItem = styled.div`
+grid-gap: 16px;`;
 
 const GridHeading = styled.h3`
   font-weight: 800;
@@ -72,8 +68,11 @@ const GridExcerpt = styled.p`
   }
 `;
 
-const GridButton = styled.div`
-  display: inline-block;
+const GridButton = styled.button`
+font-family: var(--font-secondary);
+box-shadow: none;
+font-weight: 400;
+border: 0;
   opacity: 0;
   margin-top: 1rem;
   padding: 1rem 2rem;
@@ -87,7 +86,7 @@ const GridButton = styled.div`
     font-size: 0.75rem;
   }
 
-  ${GridItem}:hover & {
+  .photo-item:hover & {
     opacity: 1;
   }
 `;
@@ -124,7 +123,7 @@ class PhotoMagazine extends React.Component {
         </GridItem>
         {/* Your post list here. */
         postList.map(post => (
-          <GridItem className="noeffect" key={post.title}>
+          <GridItem className="photo-item noeffect" key={post.title}>
             <Link to={post.path} className="noeffect">
               <GridPhoto sizes={post.cover.childImageSharp.sizes} />
             </Link>
