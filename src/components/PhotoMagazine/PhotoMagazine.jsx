@@ -39,7 +39,6 @@ const GridSeparator = styled.div`
     border-right: 1px solid var(--color-grey-300);
     width: 0rem;
     height: 2rem;
-  }
 `;
 
 const GridPhoto = styled(Img)`
