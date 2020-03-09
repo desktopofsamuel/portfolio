@@ -157,7 +157,8 @@ class Navigation3 extends React.Component {
               alignItems: "center",
               justifyContent: "center",
               border: "none",
-              background: "rgba(255,255,255,0.95)"
+              background: "rgba(255,255,255,0.95)",
+              zIndex: "10000"
             }}
             overlayStyle={{}}
             open={this.state.open}
