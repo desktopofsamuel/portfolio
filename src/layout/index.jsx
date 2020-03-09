@@ -41,7 +41,7 @@ export default class MainLayout extends React.Component {
               style={{
                 fontFamily: "var(--secondary-font)",
                 fontWeight: "500",
-                marginTop: "var(--padding-m"
+                marginTop: "var(--padding-m)"
               }}
             />
           )
