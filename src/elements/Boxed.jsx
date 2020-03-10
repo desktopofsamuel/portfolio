@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const BoxContent = styled.div`
+const Grid = styled.div`
   max-width: 1024px;
   padding: 0 1rem;
   margin: 0 auto;
@@ -11,20 +11,13 @@ const BoxContent = styled.div`
     padding: 0;
   }
 
-  @media only screen and (max-width: 768px) {
-    .full-bleed > * {
-      max-width: 95vw;
-      margin: 0 1rem;
-    }
-  }
-
   h2 {
     margin-top: 0;
   }
 `;
 
 const Boxed = ({ children, className }) => (
-  <BoxContent classname={className}>{children}</BoxContent>
+  <Grid classname={className}>{children}</Grid>
 );
 
-export default BoxContent;
+export default Boxed;
