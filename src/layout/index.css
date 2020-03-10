@@ -292,16 +292,15 @@ p:first-child {
   color: var(--color-brand-500);
 }
 
-@media only screen and (max-width: 768px) {
-  .full-bleed > * {
-    max-width: 95vw;
-    margin: 0 1rem;
-  }
-}
 .full-bleed {
   width: 100vw;
   margin-left: 50%;
   transform: translateX(-50%);
+}
+@media only screen and (max-width: 768px) {
+  .full-bleed > div {
+    padding: 0 1rem;
+  }
 }
 
 img {

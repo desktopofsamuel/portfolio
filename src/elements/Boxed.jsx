@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const BoxContent = styled.div`
+const Grid = styled.div`
   max-width: 1024px;
   padding: 0 1rem;
   margin: 0 auto;
@@ -17,7 +17,7 @@ const BoxContent = styled.div`
 `;
 
 const Boxed = ({ children, className }) => (
-  <BoxContent classname={className}>{children}</BoxContent>
+  <Grid classname={className}>{children}</Grid>
 );
 
-export default BoxContent;
+export default Boxed;
