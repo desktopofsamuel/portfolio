@@ -17,10 +17,14 @@ const Row = styled.section`
 
 const BgRow = styled(Row)`
   @media only screen and (max-width: 767px) {
-    background-color: var(--color-white-700);
-    padding: var(--var-padding-l) 1rem;
+    padding: var(--var-padding-m);
+    background-color: var(--color-white-500);
+    box-shadow: 0 10px 0 -5px var(--color-white-700);
+    margin: 24px;
   }
 `;
+
+const BoxNow = styled(Boxed)``;
 
 const FooterItem = styled(Link)`
   display: flex;
@@ -104,8 +108,8 @@ export default class Footer extends React.Component {
   render() {
     return (
       <footer id="#contact">
-        <BgRow className="full-bleed">
-          <Boxed>
+        <BgRow>
+          <BoxNow>
             <SubTitle>Follow Me</SubTitle>
             <Column>
               <div>
@@ -152,7 +156,7 @@ export default class Footer extends React.Component {
                 </div>
               </div>
             </Column>
-          </Boxed>
+          </BoxNow>
         </BgRow>
         <Row className="full-bleed">
           <Boxed>

@@ -20,10 +20,22 @@ const Grid = styled.div`
     grid-column: span 2;
     display: grid;
   }
+
+  @media only screen and (max-width: 767px) {
+    display: block;
+
+    .noeffect:nth-child(4n + 1) {
+      display: block;
+  }
 `;
 
 const GridItem = styled.div`
-grid-gap: 16px;`;
+  grid-gap: 16px;
+
+  @media only screen and (max-width: 767px) {
+    margin-bottom: 16px;
+  }
+`;
 
 const GridHeading = styled.h3`
   font-weight: 800;
@@ -31,10 +43,10 @@ const GridHeading = styled.h3`
 `;
 
 const GridSeparator = styled.div`
-    display: block;
-    border-right: 1px solid var(--color-grey-300);
-    width: 0rem;
-    height: 2rem;
+  display: block;
+  border-right: 1px solid var(--color-grey-300);
+  width: 0rem;
+  height: 2rem;
 `;
 
 const GridPhoto = styled(Img)`
@@ -69,10 +81,10 @@ const GridExcerpt = styled.p`
 `;
 
 const GridButton = styled.button`
-font-family: var(--font-secondary);
-box-shadow: none;
-font-weight: 400;
-border: 0;
+  font-family: var(--font-secondary);
+  box-shadow: none;
+  font-weight: 400;
+  border: 0;
   opacity: 0;
   margin-top: 1rem;
   padding: 1rem 2rem;
