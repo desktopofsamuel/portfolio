@@ -123,13 +123,7 @@ module.exports = {
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
         display: "minimal-ui",
-        icons: [
-          {
-            src: "/favicon.png",
-            sizes: "1500x1500",
-            type: "image/png"
-          }
-        ]
+        icon: "src/favicon.png"
       }
     },
     /* {
