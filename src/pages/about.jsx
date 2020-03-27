@@ -202,7 +202,7 @@ class AboutPage extends Component {
           <title>{`About | ${config.siteTitle}`}</title>
         </Helmet>
         <Layout>
-          <AltRow className="full-bleed">
+          <Row>
             <Boxed>
               <PageTitle
                 title="About Me"
@@ -242,8 +242,8 @@ class AboutPage extends Component {
                 </Intro>
               </WrapperIntro>
             </Boxed>
-          </AltRow>
-          <Row id="bio">
+          </Row>
+          <AltRow id="bio" className="full-bleed">
             <Boxed>
               <P1>
                 <small>01. Bio</small>
@@ -284,7 +284,7 @@ class AboutPage extends Component {
                 </P2>
               </GridBio>
             </Boxed>
-          </Row>
+          </AltRow>
           <InvertRow id="resume" className="full-bleed">
             <ShortBoxed>
               <small>02. Resume</small>
