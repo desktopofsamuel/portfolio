@@ -1,10 +1,13 @@
 @import url("https://rsms.me/inter/inter.css");
 @import url("https://use.typekit.net/hey8lez.css");
 
+/** Typography **/
 :root {
-  --font-primary: freight-big-pro, Georgia, serif;
-  --font-secondary: IBM Plex Sans, Helvetica, Arial, sans-serif;
+  --font-primary: canada-type-gibson, Helvetica, Arial, sans-serif;
+  --font-secondary: Merriweather, freight-big-pro, Georgia, serif;
   --tertiary-font: grad, Georgia, serif;
+  --font-weight-bold: 600;
+  --font-weight-regular: 400;
   --color-brand-300: #fefdf4;
   --color-brand-500: #feb101;
   --color-palette-500: #ffd644;
@@ -52,13 +55,14 @@
 html {
   height: 100%;
   font-family: var(--font-secondary);
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: var(--font-weight-regular);
   line-height: 2em;
   color: var(--color-black-500);
 }
 
 body {
+  -webkit-font-smoothing: antialiased;
   margin: 0;
   background: var(--color-background-500);
 }
@@ -85,16 +89,17 @@ div > main {
 h1 {
   font-family: var(--font-secondary);
   font-style: normal;
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   font-size: calc(36px + (56 - 36) * ((100vw - 320px) / (1600 - 320)));
   line-height: 120%;
   margin-top: var(--padding-s);
+  letter-spacing: -0.75;
 }
 
 h2 {
   font-size: calc(26px + (40 - 26) * ((100vw - 320px) / (1600 - 320)));
-  font-family: var(--font-primary);
-  font-weight: 600;
+  font-family: var(--font-weight-bold);
+  font-weight: 700;
   line-height: calc(32px + (48 - 32) * ((100vw - 320px) / (1600 - 320)));
 }
 
@@ -104,7 +109,7 @@ h2 {
 
 h3 {
   font-family: var(--font-primary);
-  font-weight: 600;
+  font-weight: var(--font-weight-bold);
   line-height: 150%;
   font-size: calc(24px + (30 - 24) * ((100vw - 320px) / (1600 - 320)));
   line-height: calc(32px + (40 - 32) * ((100vw - 320px) / (1600 - 320)));
@@ -115,8 +120,7 @@ h3 {
 
 h4 {
   font-family: var(--font-primary);
-  font-style: normal;
-  font-weight: 600;
+  font-weight: var(--font-weight-bold);
   text-transform: uppercase;
   line-height: 130%;
   letter-spacing: 0.075rem;
@@ -127,7 +131,7 @@ h4 {
 h5 {
   font-family: var(--font-secondary);
   font-style: normal;
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
   line-height: 150%;
   font-size: 16px;
   margin-top: 0;
@@ -136,7 +140,7 @@ h5 {
 
 h6 {
   font-family: var(--font-secondary);
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
   text-transform: uppercase;
   line-height: normal;
   font-size: 14px;
@@ -146,7 +150,7 @@ h6 {
 
 small {
   font-family: var(--font-secondary);
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
   text-transform: uppercase;
   line-height: normal;
   font-size: 12px;
@@ -157,7 +161,7 @@ small {
 
 strong {
   font-family: var(--font-secondary);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 .Text-S {
@@ -187,7 +191,7 @@ a > button {
 
 button {
   font-family: var(--font-primary);
-  font-weight: 500;
+  font-weight: var(--font-weight-regular);
   text-transform: uppercase;
   line-height: normal;
   font-size: 12px;
@@ -213,7 +217,7 @@ blockquote {
   margin: 3rem 0;
   font-family: var(--font-primary);
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-bold);
   line-height: 1.4;
   position: relative;
 }
