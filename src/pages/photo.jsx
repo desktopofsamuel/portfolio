@@ -32,10 +32,7 @@ const Grid = styled.section``;
 
 const Main = styled.div``;
 
-const Title = styled(PageTitle)`
-  font-family: var(--font-primary);
-  margin-bottom: 0;
-`;
+const Title = styled(PageTitle)``;
 
 const CategoryBlock = styled.div`
   @media only screen and (max-width: 768px) {

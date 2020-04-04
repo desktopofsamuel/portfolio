@@ -9,11 +9,22 @@ import Boxed from "elements/Boxed";
 import config from "../../data/SiteConfig";
 
 const Title = styled.h1`
+  padding-top: 10vh;
   font-family: var(--font-primary);
 `;
 
-const Box = styled(Boxed)`
-  max-width: 768px;
+const WorkWrapper = styled(Boxed)`
+  max-width: 600px;
+`;
+
+const MDX = styled(MDXRenderer)`
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: var(--font-primary);
+  }
 `;
 
 export default class WorkPageTemplate extends React.Component {
@@ -29,10 +40,10 @@ export default class WorkPageTemplate extends React.Component {
           <title>{`${work.title} | ${config.siteTitleAlt}`}</title>
         </Helmet>
         <SEO postPath={path} postNode={postNode} postSEO />
-        <Box>
+        <WorkWrapper>
           <Title>{work.title}</Title>
-          <MDXRenderer>{postNode.body}</MDXRenderer>
-        </Box>
+          <MDX>{postNode.body}</MDX>
+        </WorkWrapper>
       </Layout>
     );
   }

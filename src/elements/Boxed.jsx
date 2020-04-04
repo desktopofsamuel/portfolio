@@ -17,7 +17,7 @@ const Grid = styled.div`
 `;
 
 const Boxed = ({ children, className }) => (
-  <Grid classname={className}>{children}</Grid>
+  <Grid className={className}>{children}</Grid>
 );
 
 export default Boxed;

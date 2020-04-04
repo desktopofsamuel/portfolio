@@ -8,7 +8,7 @@ const Grid = styled.div`
 `;
 
 const GridBlock = ({ children, className }) => (
-  <Grid classname={className}>{children}</Grid>
+  <Grid className={className}>{children}</Grid>
 );
 
 export default GridBlock;

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import Img from "gatsby-image";
-import { ReadOn } from "../UI";
+import ReadOn from "elements/ReadOn";
 
 const Grid = styled.section``;
 
@@ -37,18 +37,6 @@ const ListLeft = styled.div`
   display: flex;
   flex-flow: column;
   justify-content: space-between;
-
-  small {
-    font-family: var(--font-secondary);
-  }
-`;
-const ReadButton = styled(Link)`
-  justify-self: flex-end;
-  border-bottom: 0;
-
-  h5 {
-    font-family: var(--font-secondary);
-  }
 `;
 
 const ListRight = styled.div``;

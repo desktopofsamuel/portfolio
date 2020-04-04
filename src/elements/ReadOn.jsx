@@ -10,22 +10,27 @@ const Button = styled(Link)`
   text-transform: uppercase;
   color: var(--color-secondary-500);
   font-size: 0.85rem;
-  font-weight: 400;
   letter-spacing: 0.075rem;
   cursor: pointer;
   display: inline;
   border-bottom: none;
   justify-self: flex-end;
+
+  h5 {
+    font-family: var(--font-primary);
+  }
 `;
 
-function ReadOn(props) {
-  return (
-    <Button to={props.href}>
-      <p>{props.text}</p>
-    </Button>
-  );
+class ReadOn extends React.Component {
+  render() {
+    const props = this.props;
+    return (
+      <Button to={props.href}>
+        <h5>{props.text}</h5>
+      </Button>
+    );
+  }
 }
-
 export default ReadOn;
 
 ReadOn.defaultProps = {

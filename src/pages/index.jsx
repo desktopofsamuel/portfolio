@@ -1,6 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import styled from "styled-components";
+import Img from "gatsby-image";
 import { graphql } from "gatsby";
 import Link from "../components/GatsbyLink/GatsbyLink";
 import config from "../../data/SiteConfig";
@@ -12,7 +13,9 @@ import BoxContent from "elements/Boxed";
 import WorkIcon from "../../static/SVG/Work.svg";
 import BlogIcon from "../../static/SVG/Blog.svg";
 import Now from "../components/Now/Now";
-import { ReadOn } from "../components/UI";
+import Column from "elements/Column";
+import ReadOn from "elements/ReadOn";
+import Profile from "../../static/images/Profile.webp";
 
 const Row = styled.section`
   padding: var(--var-padding-l) 0;
@@ -93,6 +96,10 @@ const More2Button = styled.button`
   }
 `;
 
+const ColumnSpaced = styled(Column)`
+  grid-gap: 3rem;
+`;
+
 const FullGreyRow = styled(Row)`
   background: var(--color-white-300);
 `;
@@ -124,11 +131,13 @@ const AboutIcon = styled.div`
   justify-self: flex-end;
 `;
 
-const HalfBox = styled.div`
-  width: 55ch;
+const HalfBox = styled.div``;
 
-  @media only screen and (max-width: 767px) {
-    width: 100%;
+const ProfileImage = styled.div`
+  width: 100%;
+
+  img {
+    box-shadow: 10px 10px 0px 1px rgba(237, 237, 237, 1);
   }
 `;
 
@@ -291,18 +300,25 @@ class Index extends React.Component {
 
           <Row>
             <BoxContent>
-              <HalfBox>
-                <small>I'm working as a</small>
-                <h2>Product Designer</h2>
-                <p>
-                  Currently I'm based in Hong Kong, specialising in
-                  user-interface and user-experience design, crafting
-                  outstanding digital products. <br /> <br /> I lead design at
-                  Hyperair as Principal Designer. Before that, I worked as
-                  Cross-Content Intern at iTunes & App Store, Apple.
-                </p>
-                <ReadOn text="About Me" href="/about" />
-              </HalfBox>
+              <ColumnSpaced>
+                <HalfBox>
+                  <small>I'm working as a</small>
+                  <h2>Product Designer</h2>
+                  <p>
+                    Currently I'm based in Hong Kong, specialising in
+                    user-interface and user-experience design, crafting
+                    outstanding digital products. <br /> <br /> I lead design at
+                    Hyperair as Principal Designer. Before that, I worked as
+                    Cross-Content Intern at iTunes & App Store, Apple.
+                  </p>
+                  <ReadOn text="About Me" href="/about" />
+                </HalfBox>
+                <HalfBox>
+                  <ProfileImage>
+                    <img src={Profile} />
+                  </ProfileImage>
+                </HalfBox>
+              </ColumnSpaced>
             </BoxContent>
           </Row>
           <FullGreyRow className="full-bleed">
@@ -327,7 +343,7 @@ class Index extends React.Component {
               </Center>
             </BoxContent>
           </FullGreyRow>
-          <Row className="full-bleed">
+          <Row>
             <BoxContent>
               <BlogIntro>
                 <h2>Blog</h2>
@@ -341,11 +357,11 @@ class Index extends React.Component {
               </Blog>
             </BoxContent>
           </Row>
-          <FullYellowRow className="full-bleed">
+          {/*           <FullYellowRow className="full-bleed">
             <BoxContent>
               <Now />
             </BoxContent>
-          </FullYellowRow>
+          </FullYellowRow> */}
         </Layout>
       </div>
     );

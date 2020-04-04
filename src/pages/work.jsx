@@ -15,6 +15,7 @@ import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import Boxed from "elements/Boxed";
+
 const Row = styled.section`
   padding: var(--var-padding-l) 0;
   background: white;

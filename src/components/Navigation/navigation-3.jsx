@@ -84,15 +84,15 @@ const MobileNav = styled.div`
 const Title = styled(Link)`
   margin: 0 auto;
   font-size: 1rem;
-  font-weight: 600;
-  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-primary);
   border-bottom: none;
 `;
 
 const Description = styled.h2`
   margin: 0 auto;
-  font-family: var(--font-secondary);
-  color: var(--color-secondary-500);
+  font-weight: var(--font-weight-regular);
+  font-family: var(--font-primary);
   font-size: 0.85rem;
   line-height: 1.5rem;
   max-width: 35ch;

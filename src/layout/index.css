@@ -35,7 +35,7 @@
   --font-size-xxl: calc(56px + (72 - 56) * ((100vw - 320px) / (1600 - 320)));
   --font-size-xl: calc(36px + (56 - 36) * ((100vw - 320px) / (1600 - 320)));
   --font-size-l: calc(24px + (36 - 24) * ((100vw - 320px) / (1600 - 320)));
-  --font-size-m: calc(18px + (20 - 18) * ((100vw - 320px) / (1600 - 320)));
+  --font-size-m: 1.75rem;
   --transition: all 0.3s ease-in-out;
 }
 
@@ -55,7 +55,7 @@
 html {
   height: 100%;
   font-family: var(--font-secondary);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: var(--font-weight-regular);
   line-height: 2em;
   color: var(--color-black-500);
@@ -87,8 +87,7 @@ div > main {
 }
 
 h1 {
-  font-family: var(--font-secondary);
-  font-style: normal;
+  font-family: var(--font-primary);
   font-weight: var(--font-weight-bold);
   font-size: calc(36px + (56 - 36) * ((100vw - 320px) / (1600 - 320)));
   line-height: 120%;
@@ -97,9 +96,9 @@ h1 {
 }
 
 h2 {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
   font-size: calc(26px + (40 - 26) * ((100vw - 320px) / (1600 - 320)));
-  font-family: var(--font-weight-bold);
-  font-weight: 700;
   line-height: calc(32px + (48 - 32) * ((100vw - 320px) / (1600 - 320)));
 }
 
@@ -149,7 +148,7 @@ h6 {
 }
 
 small {
-  font-family: var(--font-secondary);
+  font-family: var(--font-primary);
   font-weight: var(--font-weight-regular);
   text-transform: uppercase;
   line-height: normal;
@@ -186,6 +185,10 @@ a.noeffect {
 }
 
 a > button {
+  border-bottom: none;
+}
+
+a > small {
   border-bottom: none;
 }
 
@@ -303,7 +306,7 @@ p:first-child {
 }
 @media only screen and (max-width: 768px) {
   .full-bleed > div {
-    padding: 0 1rem;
+    padding: 0 7vw;
   }
 }
 

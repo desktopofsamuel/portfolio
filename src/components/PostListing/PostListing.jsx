@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { FaArrowRight } from "react-icons/fa";
 import PropTypes from "prop-types";
 import Img from "gatsby-image";
-import { ReadOn } from "../UI";
+import ReadOn from "elements/ReadOn";
 
 const Block = styled.div`
   grid-column: span 4;

@@ -54,7 +54,6 @@ const SiteID = styled.div``;
 const Title = styled.h2`
   margin: 0 auto 1.5rem;
   font-size: 1rem;
-  font-weight: 600;
   font-family: var(--font-secondary);
 `;
 

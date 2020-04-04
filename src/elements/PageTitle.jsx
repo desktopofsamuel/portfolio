@@ -18,7 +18,7 @@ const Subtitle = styled.h2`
 
 const Title = styled.h1`
   font-family: var(--font-primary);
-  font-size: var(--font-size-xxl);
+  font-size: 5rem;
   margin-bottom: 4rem;
 `;
 

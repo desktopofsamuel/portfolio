@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import Img from "gatsby-image";
+import PageTitle from "elements/PageTitle";
 
 const Grid = styled.div`
   display: grid;
@@ -25,7 +26,8 @@ const Grid = styled.div`
     display: block;
 
     .noeffect:nth-child(4n + 1) {
-      display: block;
+      display: inline;
+    }
   }
 `;
 
@@ -38,7 +40,7 @@ const GridItem = styled.div`
 `;
 
 const GridHeading = styled.h3`
-  font-weight: 800;
+  font-weight: var(--font-weight-bold);
   font-size: var(--font-size-l);
 `;
 
@@ -54,8 +56,8 @@ const GridPhoto = styled(Img)`
 `;
 
 const GridTitle = styled.h2`
-  font-size: var(--font-size-l);
-  font-weight: 800;
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-bold);
   line-height: 120%;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -80,17 +82,15 @@ const GridExcerpt = styled.p`
   }
 `;
 
-const GridButton = styled.button`
-  font-family: var(--font-secondary);
-  box-shadow: none;
-  font-weight: 400;
-  border: 0;
+const GridButton = styled.small`
+  display: inline;
+  border-bottom: 0;
+  margin: 0 auto;
   opacity: 0;
   margin-top: 1rem;
   padding: 1rem 2rem;
   background-color: #b6aa8e;
   color: var(--color-white-300);
-  border-bottom: none;
   transition: var(--transition);
 
   @media only screen and (max-width: 767px) {

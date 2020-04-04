@@ -19,7 +19,7 @@ const Meta = styled.div`
 `;
 
 const MetaBox = ({ children, className }) => (
-  <Meta classname={className}>{children}</Meta>
+  <Meta className={className}>{children}</Meta>
 );
 
 export default MetaBox;
