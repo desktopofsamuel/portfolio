@@ -5,7 +5,7 @@
 :root {
   --font-primary: canada-type-gibson, Helvetica, Arial, sans-serif;
   --font-secondary: Merriweather, freight-big-pro, Georgia, serif;
-  --tertiary-font: grad, Georgia, serif;
+  --font-tertiary: freight-big-pro, Georgia, serif;
   --font-weight-bold: 600;
   --font-weight-regular: 400;
   --color-brand-300: #fefdf4;
@@ -218,7 +218,7 @@ blockquote {
   border-color: #eee;
   padding: 1.5em 0 0.5em;
   margin: 3rem 0;
-  font-family: var(--font-primary);
+  font-family: var(--font-tertiary);
   font-size: 1.5rem;
   font-weight: var(--font-weight-bold);
   line-height: 1.4;

@@ -199,6 +199,7 @@ export const pageQuery = graphql`
     post: mdx(id: { eq: $id }) {
       id
       body
+      excerpt
       frontmatter {
         path
         title

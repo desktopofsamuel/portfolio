@@ -1,8 +1,9 @@
 import { Link as GatsbyLink } from "gatsby";
 import React, { Component } from "react";
+import "../../layout/index.css";
 
 const ActiveLink = {
-  fontWeight: "bold"
+  fontWeight: 600
 };
 
 // Since DOM elements <a> cannot receive activeClassName
