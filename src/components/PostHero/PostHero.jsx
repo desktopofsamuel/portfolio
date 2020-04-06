@@ -56,8 +56,8 @@ class PostHero extends React.Component {
     return (
       <Grid>
         {postList.map((post) => (
-          <ListItem>
-            <Link to={post.path} key={post.path}>
+          <ListItem key={post.path}>
+            <Link to={post.path}>
               <PostImage
                 sizes={post.cover.childImageSharp.sizes}
                 alt={post.title}

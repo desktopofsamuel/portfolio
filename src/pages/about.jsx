@@ -112,20 +112,17 @@ const P2 = styled.div`
 
 const DesignPart = styled.div``;
 const DesignContent = styled.div``;
-const DesignContentGrid = styled.div`
-  margin-top: var(--var-padding-m);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 0.5rem;
-  p {
+const SkillList = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  li {
     font-family: var(--font-primary);
-    text-transform: none;
     font-size: 1.2rem;
     color: var(--color-secondary-500);
-    font-weight: 600;
-    display: block;
+    font-weight: var(--font-weight-bold);
     margin-bottom: var(--var-padding-m);
-    margin-block-start: 0;
   }
 `;
 
@@ -177,7 +174,7 @@ const ProjectYear = styled.small`
 
 const ProjectLink = styled(Link)``;
 
-const ProjectBox = props => (
+const ProjectBox = (props) => (
   <ProjectWrapper>
     <ProjectIcon>
       <img src={props.img} width="50px" />
@@ -306,14 +303,14 @@ class AboutPage extends Component {
                     passion to learn how to deliver functional and elegant
                     design.{" "}
                   </p>
-                  <DesignContentGrid>
-                    <p>Web & App UI Design</p>
-                    <p>User Experience Design</p>
-                    <p>Interaction Design</p>
-                    <p>Prototyping</p>
-                    <p>Wireframing</p>
-                    <p>Frontend Development</p>
-                  </DesignContentGrid>
+                  <SkillList>
+                    <li>Web & App UI Design</li>
+                    <li>User Experience Design</li>
+                    <li>Interaction Design</li>
+                    <li>Prototyping</li>
+                    <li>Wireframing</li>
+                    <li>Frontend Development</li>
+                  </SkillList>
                 </DesignContent>
               </GridSkill>
               <GridSkill>
@@ -325,12 +322,12 @@ class AboutPage extends Component {
                     Through freelancing, I'm also practicing in the field of
                     digital products and media, to become a hybrid creative.
                   </p>
-                  <DesignContentGrid>
-                    <p>Photography</p>
-                    <p>Videography</p>
-                    <p>Social Media</p>
-                    <p>Copywriting</p>
-                  </DesignContentGrid>
+                  <SkillList>
+                    <li>Photography</li>
+                    <li>Videography</li>
+                    <li>Social Media</li>
+                    <li>Copywriting</li>
+                  </SkillList>
                 </PassionContent>
               </GridSkill>
             </Boxed>

@@ -33,27 +33,30 @@ export default class MainLayout extends React.Component {
   render() {
     const { children } = this.props;
     return (
-      <MDXProvider
-        components={{
-          h2: props => (
-            <h2
-              {...props}
-              style={{
-                fontFamily: "var(--secondary-font)",
-                fontWeight: "500",
-                marginTop: "var(--padding-m)"
-              }}
-            />
-          )
-        }}
-      >
-        <Layout>
-          <SEO />
-          <Nav />
-          <Main>{children}</Main>
-          <Footer />
-        </Layout>
-      </MDXProvider>
+      <Layout>
+        <SEO />
+        <Nav />
+        <Main>{children}</Main>
+        <Footer />
+      </Layout>
     );
   }
 }
+
+{
+  /* <MDXProvider
+        components={{
+          h2: (props) => (
+            <h2
+              {...props}
+              style={{
+                fontFamily: "var(--primary-font)",
+                fontWeight: "var(--font-weight-bold)",
+                marginTop: "var(--padding-m)",
+              }}
+            />
+          ),
+        }}
+      > */
+}
+/*       </MDXProvider> */
