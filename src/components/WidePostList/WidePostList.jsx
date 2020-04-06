@@ -21,11 +21,9 @@ const Container = styled.article`
   }
 `;
 
-const ListTitle = styled.h2`
+const ListTitle = styled.h3`
   cursor: pointer;
   font-family: var(--font-primary);
-  font-size: 1.5rem;
-  line-height: 1.5;
   margin-top: 0;
 `;
 const ListRight = styled.div`
@@ -33,7 +31,7 @@ const ListRight = styled.div`
 `;
 const ListExcerpt = styled.p`
   margin-bottom: var(--var-padding-s);
-  color: var(--color-secondary-500);
+  color: var(--color-secondary-700);
 `;
 
 const ListLeft = styled.div`
@@ -52,25 +50,27 @@ const ListMetaWrapper = styled.div`
   }
 `;
 
-const ListMeta = styled.small``;
+const ListMeta = styled.small`
+  color: var(--color-secondary-500);
+`;
 
 const ListCategory = styled.div`
-  display: ${props => props.category || "inline"};
+  display: ${(props) => props.category || "inline"};
 `;
 
 class WidePostList extends React.Component {
   getPostList() {
     const postList = [];
-    this.props.postEdges.forEach(postEdge => {
+    this.props.postEdges.forEach((postEdge) => {
       postList.push({
         path: postEdge.node.fields.slug,
         tags: postEdge.node.frontmatter.tags,
         cover: postEdge.node.frontmatter.cover,
         title: postEdge.node.frontmatter.title,
         date: postEdge.node.fields.date,
-        excerpt: postEdge.node.excerpt,
+        excerpt: postEdge.node.frontmatter.tldr || postEdge.node.excerpt,
         category: postEdge.node.frontmatter.category,
-        timeToRead: postEdge.node.timeToRead
+        timeToRead: postEdge.node.timeToRead,
       });
     });
     return postList;
@@ -78,7 +78,7 @@ class WidePostList extends React.Component {
   render() {
     const postList = this.getPostList();
     const props = this.props;
-    return postList.map(post => (
+    return postList.map((post) => (
       <Container>
         <ListLeft />
         <ListRight>
@@ -106,5 +106,5 @@ class WidePostList extends React.Component {
 export default WidePostList;
 
 WidePostList.propTypes = {
-  invert: PropTypes.bool
+  invert: PropTypes.bool,
 };

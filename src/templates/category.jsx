@@ -19,7 +19,14 @@ const Row = styled.div`
   grid-gap: var(--padding-l);
 `;
 
-const Grid = styled.div``;
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+  @media only screen and (max-width: 768px) {
+    display: block;
+  }
+`;
 
 const Hero = styled.div`
   padding: var(--padding-m) 0 var(--padding-m) 0;
@@ -38,7 +45,10 @@ export default class CategoryTemplate extends React.Component {
           <Boxed>
             <Grid>
               <Hero>
-                <PageTitle title={`Discover Post in ${category}`} />
+                <PageTitle
+                  subtitle={`Discover Post in`}
+                  title={`${category}`}
+                />
               </Hero>
               <Row>
                 <Container>

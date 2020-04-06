@@ -6,12 +6,12 @@ const PageTitleWrapper = styled.div`
 `;
 
 const Subtitle = styled.h2`
-  font-family: var(--font-secondary);
-  font-weight: 400;
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-regular);
   text-transform: uppercase;
   line-height: normal;
   font-size: 12px;
-  letter-spacing: 0.075rem;
+  letter-spacing: 0.1rem;
   margin-top: 0;
   color: var(--color-secondary-500);
 `;

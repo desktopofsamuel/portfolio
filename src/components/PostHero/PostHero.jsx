@@ -15,6 +15,11 @@ const ListItem = styled.article`
 
   p {
     margin-bottom: 0.5rem;
+    color: var(--color-secondary-700);
+  }
+
+  small {
+    color: var(--color-secondary-500);
   }
 
   :last-child {
@@ -22,7 +27,7 @@ const ListItem = styled.article`
   }
 `;
 
-const Hero = styled.a`
+const Hero = styled.h3`
   margin-bottom: 0;
 `;
 
@@ -33,7 +38,7 @@ const PostImage = styled(Img)`
 class PostHero extends React.Component {
   getPostList() {
     const postList = [];
-    this.props.postEdges.forEach(postEdge => {
+    this.props.postEdges.forEach((postEdge) => {
       postList.push({
         path: postEdge.node.fields.slug,
         tags: postEdge.node.frontmatter.tags,
@@ -41,7 +46,7 @@ class PostHero extends React.Component {
         title: postEdge.node.frontmatter.title,
         date: postEdge.node.fields.date,
         excerpt: postEdge.node.frontmatter.tldr || postEdge.node.excerpt,
-        timeToRead: postEdge.node.timeToRead
+        timeToRead: postEdge.node.timeToRead,
       });
     });
     return postList;
@@ -50,14 +55,14 @@ class PostHero extends React.Component {
     const postList = this.getPostList();
     return (
       <Grid>
-        {/* Your post list here. */
-        postList.map(post => (
+        {postList.map((post) => (
           <ListItem>
-            <Link to={post.path} key={post.title}>
-              <PostImage sizes={post.cover.childImageSharp.sizes} />
-              <h3>
-                <Hero>{post.title}</Hero>
-              </h3>
+            <Link to={post.path} key={post.path}>
+              <PostImage
+                sizes={post.cover.childImageSharp.sizes}
+                alt={post.title}
+              />
+              <Hero>{post.title}</Hero>
             </Link>
             <p>{post.excerpt}</p>
             <small>{post.date}</small>
