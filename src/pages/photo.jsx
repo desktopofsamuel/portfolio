@@ -14,6 +14,10 @@ import Img from "gatsby-image";
 import ZoomImage from "../components/ZoomImage/ZoomImage";
 import Image from "elements/Image";
 
+const PhotoBoxed = styled(Boxed)`
+  max-width: 1080px;
+`;
+
 const Row = styled.section`
   padding: var(--var-padding-s) 0;
   background: white;
@@ -78,7 +82,7 @@ class Photo extends React.Component {
           />
         </Helmet>
         <Row>
-          <Boxed>
+          <PhotoBoxed>
             <Grid>
               <Row>
                 <Title title="Photography" />
@@ -91,7 +95,7 @@ class Photo extends React.Component {
                 <PhotoMagazine postEdges={postEdges} />
               </Row>
             </Grid>
-          </Boxed>
+          </PhotoBoxed>
         </Row>
       </Layout>
     );

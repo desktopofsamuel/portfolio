@@ -6,7 +6,7 @@ import PageTitle from "elements/PageTitle";
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 300px));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 332px));
   grid-gap: 36px 24px;
 
   .intro {
@@ -106,7 +106,7 @@ const GridButton = styled.small`
 class PhotoMagazine extends React.Component {
   getPostList() {
     const postList = [];
-    this.props.postEdges.forEach(postEdge => {
+    this.props.postEdges.forEach((postEdge) => {
       postList.push({
         path: "/photo" + postEdge.node.fields.slug,
         tags: postEdge.node.frontmatter.tags,
@@ -114,7 +114,7 @@ class PhotoMagazine extends React.Component {
         title: postEdge.node.frontmatter.title,
         date: postEdge.node.fields.date,
         excerpt: postEdge.node.frontmatter.tldr || postEdge.node.excerpt,
-        timeToRead: postEdge.node.timeToRead
+        timeToRead: postEdge.node.timeToRead,
       });
     });
     return postList;
@@ -134,7 +134,7 @@ class PhotoMagazine extends React.Component {
           </p>
         </GridItem>
         {/* Your post list here. */
-        postList.map(post => (
+        postList.map((post) => (
           <GridItem className="photo-item noeffect" key={post.title}>
             <Link to={post.path} className="noeffect">
               <GridPhoto sizes={post.cover.childImageSharp.sizes} />
@@ -144,8 +144,8 @@ class PhotoMagazine extends React.Component {
             </Link>
             <GridContentWrapper>
               <GridExcerpt>{post.excerpt}</GridExcerpt>
-              <Link to={post.path}>
-                <GridButton className="noeffect"> View Series </GridButton>
+              <Link to={post.path} className="noeffect">
+                <GridButton> View Series </GridButton>
               </Link>
             </GridContentWrapper>
           </GridItem>

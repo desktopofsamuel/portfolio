@@ -161,7 +161,8 @@ export default class BlogPageTemplate extends React.Component {
               </Header>
               <Main>
                 <PostPhoto
-                  src={postNode.frontmatter.cover.childImageSharp.sizes.src}
+                  src={post.cover.childImageSharp.sizes.src}
+                  alt={post.title}
                 />
                 <MDXRenderer>{postNode.body}</MDXRenderer>
               </Main>
@@ -174,7 +175,7 @@ export default class BlogPageTemplate extends React.Component {
                 </h5>
                 {relateNode != null && (
                   <div>
-                    {relateNode.edges.map(relatepost => {
+                    {relateNode.edges.map((relatepost) => {
                       return (
                         <h3 key={relatepost.node.id}>
                           <Link to={relatepost.node.fields.slug}>

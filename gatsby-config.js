@@ -79,11 +79,12 @@ module.exports = {
               maxWidth: 1235,
             },
           },
+          "gatsby-remark-images-zoom",
           "gatsby-remark-responsive-iframe",
-          {
-            resolve: `gatsby-remark-figure-caption`,
-            options: { figureClassName: "remark-figure" },
-          },
+          // {
+          //   resolve: `gatsby-remark-figure-caption`,
+          //   options: { figureClassName: "remark-figure" },
+          // },
           "gatsby-remark-prismjs",
           "gatsby-remark-copy-linked-files",
           {
