@@ -16,6 +16,10 @@ import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import Boxed from "elements/Boxed";
 
+const WorkBoxed = styled(Boxed)`
+  max-width: 1080px;
+`;
+
 const Row = styled.section`
   padding: var(--var-padding-l) 0;
   background: white;
@@ -88,7 +92,7 @@ const ProjectYear = styled.small`
 
 const ProjectLink = styled(Link)``;
 
-const ProjectBox = props => (
+const ProjectBox = (props) => (
   <ProjectWrapper>
     <ProjectIcon>
       <img src={props.img} width="50px" />
@@ -111,7 +115,7 @@ class Index extends React.Component {
     const postEdges = this.props.data.allMdx.edges;
     return (
       <Layout>
-        <Boxed>
+        <WorkBoxed>
           <Row>
             <PageTitle title="My Work" subtitle="My Case Studies" />
           </Row>
@@ -175,7 +179,7 @@ class Index extends React.Component {
               />
             </GridProject>
           </Row>
-        </Boxed>
+        </WorkBoxed>
       </Layout>
     );
   }

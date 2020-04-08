@@ -11,6 +11,10 @@ import ImageZoom from "react-medium-image-zoom";
 import Boxed from "elements/Boxed";
 import Resume from "components/Resume/Resume";
 
+const AboutBoxed = styled(Boxed)`
+  max-width: 1080px;
+`;
+
 const Row = styled.section`
   padding: var(--var-padding-l) 0;
   background: white;
@@ -200,7 +204,7 @@ class AboutPage extends Component {
         </Helmet>
         <Layout>
           <Row>
-            <Boxed>
+            <AboutBoxed>
               <PageTitle
                 title="About Me"
                 subtitle="Little things about myself"
@@ -238,7 +242,7 @@ class AboutPage extends Component {
                   </WrapperNav>
                 </Intro>
               </WrapperIntro>
-            </Boxed>
+            </AboutBoxed>
           </Row>
           <AltRow id="bio" className="full-bleed">
             <Boxed>
