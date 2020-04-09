@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
-import { StaticQuery, graphql } from "gatsby";
-import Layout from "../layout";
+import { graphql } from "gatsby";
 import Img from "gatsby-image";
-import config from "../../data/SiteConfig";
 import styled from "styled-components";
-import Link from "../components/GatsbyLink/GatsbyLink";
-import PageTitle from "elements/PageTitle";
-import ImageZoom from "react-medium-image-zoom";
-import Boxed from "elements/Boxed";
 import Resume from "components/Resume/Resume";
+import Boxed from "elements/Boxed";
+import Link from "../components/GatsbyLink/GatsbyLink";
+import Layout from "../layout";
+import config from "../../data/SiteConfig";
+import PageTitle from "elements/PageTitle";
 
 const AboutBoxed = styled(Boxed)`
   max-width: 1080px;
@@ -181,7 +180,7 @@ const ProjectLink = styled(Link)``;
 const ProjectBox = (props) => (
   <ProjectWrapper>
     <ProjectIcon>
-      <img src={props.img} width="50px" />
+      <img src={props.img} alt={props.title} width="50px" />
     </ProjectIcon>
     <ProjectContent>
       <ProjectTitle>{props.title}</ProjectTitle>
