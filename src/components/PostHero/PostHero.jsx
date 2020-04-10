@@ -28,7 +28,7 @@ const ListItem = styled.article`
 `;
 
 const Hero = styled.h3`
-  margin-bottom: 0;
+  margin: 0;
 `;
 
 const PostImage = styled(Img)`

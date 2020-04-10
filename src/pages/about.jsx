@@ -295,7 +295,7 @@ class AboutPage extends Component {
           <AltRow id="skills" className="full-bleed">
             <Boxed>
               <small>03. Skills</small>
-              <h1>Design, Photography, Writing.</h1>
+              <h2>Design, Photography, Writing.</h2>
               <GridSkill>
                 <DesignPart>
                   <h3>Design</h3>

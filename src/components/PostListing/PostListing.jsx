@@ -23,7 +23,7 @@ const Block = styled.div`
   }
 
   h3 {
-    margin-bottom: var(--var-padding-s);
+    margin: 0;
   }
 
   h1 {

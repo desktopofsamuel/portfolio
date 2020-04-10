@@ -37,7 +37,28 @@
   --font-size-l: calc(24px + (36 - 24) * ((100vw - 320px) / (1600 - 320)));
   --font-size-m: 1.75rem;
   --transition: all 0.3s ease-in-out;
-  font-size: 18px;
+  --font-size-root: 100;
+  --font-size-base: 18px;
+  --font-size-small: 16px;
+  --font-base-line-height: 1.8;
+  --font-small-letter-spacing: 0.5px;
+  --font-leading: cal(
+    cal(16 * (var(--font-size-root) / 100)) * var(--font-base-line-height)
+  );
+}
+
+html {
+  height: 100%;
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--font-base-line-height);
+  font-size: var(--font-size-base);
+  color: var(--color-black-500);
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Mobile */
@@ -54,16 +75,7 @@
   box-sizing: border-box;
 }
 
-html {
-  height: 100%;
-  font-family: var(--font-secondary);
-  font-weight: var(--font-weight-regular);
-  line-height: 2em;
-  color: var(--color-black-500);
-}
-
 body {
-  -webkit-font-smoothing: antialiased;
   margin: 0;
   background: var(--color-background-500);
 }
@@ -88,34 +100,35 @@ div > main {
 }
 
 h1 {
+  font-size: calc(var(--font-size-base) * 2.5);
+  line-height: calc(var(--font-base-line-height) * var(--font-size-base) * 2);
   font-family: var(--font-primary);
   font-weight: var(--font-weight-bold);
-  font-size: 2.5em;
-  line-height: 120%;
-  margin-top: var(--padding-s);
-  letter-spacing: -0.75;
+  margin-top: calc(var(--font-base-line-height) * var(--font-size-base) * 4);
+  margin-bottom: calc(var(--font-base-line-height) * var(--font-size-base) * 1);
+  letter-spacing: -0.75px;
 }
 
 h2 {
+  font-size: calc(var(--font-size-base) * 1.6875);
+  line-height: calc(var(--font-base-line-height) * var(--font-size-base) * 1.5);
   font-family: var(--font-primary);
   font-weight: var(--font-weight-bold);
-  font-size: calc(26px + (40 - 26) * ((100vw - 320px) / (1600 - 320)));
-  line-height: calc(32px + (48 - 32) * ((100vw - 320px) / (1600 - 320)));
-}
-
-.blog h2 {
-  margin-top: 4rem;
+  margin-top: calc(var(--font-base-line-height) * var(--font-size-base) * 2);
+  margin-bottom: calc(
+    var(--font-base-line-height) * var(--font-size-base) * 0.5
+  );
 }
 
 h3 {
+  font-size: calc(var(--font-size-base) * 1.375);
+  line-height: calc(var(--font-base-line-height) * var(--font-size-base) * 1);
   font-family: var(--font-primary);
   font-weight: var(--font-weight-bold);
-  line-height: 150%;
-  font-size: calc(24px + (30 - 24) * ((100vw - 320px) / (1600 - 320)));
-  line-height: calc(32px + (40 - 32) * ((100vw - 320px) / (1600 - 320)));
-  letter-spacing: -0.025rem;
-  margin-top: 0;
-  margin-bottom: 1rem;
+  margin-top: calc(var(--font-base-line-height) * var(--font-size-base) * 2);
+  margin-bottom: calc(
+    var(--font-base-line-height) * var(--font-size-base) * 0.5
+  );
 }
 
 h4 {
@@ -159,16 +172,13 @@ small {
   color: var(--color-secondary-500);
 }
 
+b,
 strong {
   font-weight: var(--font-weight-bold);
 }
 
-.Text-S {
-  font-size: 12px;
-}
-
 a {
-  border-bottom: 2px solid var(--color-palette-500);
+  border-bottom: 2px dotted var(--color-grey-700);
   color: inherit;
   text-decoration: none;
   cursor: pointer;
@@ -312,11 +322,6 @@ p:first-child {
 
 img {
   max-width: 100%;
-}
-
-hr {
-  margin: var(--var-padding-l) 0;
-  border-top: 1px #f7f7f7 solid;
 }
 
 .gatsby-resp-image-wrapper {

@@ -5,12 +5,11 @@ const PageTitleWrapper = styled.div`
   margin-top: var(--var-padding-m);
 `;
 
-const Subtitle = styled.h2`
+const Subtitle = styled.small`
   font-family: var(--font-primary);
   font-weight: var(--font-weight-regular);
   text-transform: uppercase;
   line-height: normal;
-  font-size: 12px;
   letter-spacing: 0.1rem;
   margin-top: 0;
   color: var(--color-secondary-500);
@@ -18,8 +17,7 @@ const Subtitle = styled.h2`
 
 const Title = styled.h1`
   font-family: var(--font-primary);
-  font-size: 5rem;
-  margin-bottom: 4rem;
+  margin: 0;
 `;
 
 class PageTitle extends React.Component {

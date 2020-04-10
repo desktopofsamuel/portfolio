@@ -10,7 +10,7 @@ const Block = styled.div`
 const Title = styled.h3`
   font-size: 1.5rem;
   color: var(--color-white-500);
-  margin-bottom: 0;
+  margin: 0;
 `;
 
 const Content = styled.p`

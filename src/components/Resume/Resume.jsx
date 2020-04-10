@@ -5,14 +5,13 @@ import ResumeItem from "elements/ResumeItem";
 import Column from "elements/Column";
 
 const Section = styled.section`
-  padding: var(--var-padding-m) 0;
   color: var(--color-white-500);
 `;
 
 const Title = styled.h3`
   font-family: var(--font-primary);
   color: var(--color-secondary-100);
-  letter-spacing: 0;
+  margin: 0;
 `;
 
 const Subtitle = styled.p`
@@ -58,7 +57,7 @@ const ResumeParagraph = styled.p`
   }
 `;
 
-export default props => (
+export default (props) => (
   <Section>
     <Title as="h1">Samuel Wong</Title>
     {/*     <Subtitle>

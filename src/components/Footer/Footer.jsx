@@ -9,7 +9,7 @@ import {
   faTwitter,
   faInstagram,
   faMedium,
-  faLinkedin
+  faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 
 const Row = styled.section`
@@ -28,13 +28,7 @@ const BgRow = styled(Row)`
 const BoxNow = styled(Boxed)``;
 
 const FooterGrid = styled.div`
-  display: grid;
-  grid-template-columns: minmax(150px, 200px) auto;
-  grid-gap: 10vw;
-
-  @media only screen and (max-width: 768px) {
-    display: block;
-  }
+  display: block;
 `;
 
 const FooterItem = styled(Link)`
@@ -91,8 +85,7 @@ const Heading = styled.small`
   font-weight: var(--font-weight-bold);
 `;
 
-const Paragraph = styled.h5`
-  font-family: var(--font-primary);
+const Paragraph = styled.p`
   font-size: 1.25rem;
   max-width: 40ch;
 `;
@@ -140,52 +133,45 @@ export default class Footer extends React.Component {
           <BoxNow>
             <div>
               <FooterGrid>
-                <ImageWrapper>
-                  <img src={social} />
-                </ImageWrapper>
-                <div>
-                  <Heading>Follow Me</Heading>
-                  <Paragraph>
-                    <Link to="mailto:desktopofsamuel@gmail.com">
-                      Let's chat
-                    </Link>{" "}
-                    and talk about working togther.
-                  </Paragraph>
-                  <Paragraph>
-                    Follow my blog via <Link to="/rss.xml">RSS</Link>, or follow
-                    me on social media.
-                  </Paragraph>
-                  <IconList>
-                    <Link
-                      to="http://www.twitter.com/desktopofsamuel"
-                      className="noeffect linkicon"
-                      target="_blank"
-                    >
-                      <FooterIcon icon={faTwitter} size="lg" />
-                    </Link>
-                    <Link
-                      to="http://www.instagram.com/desktopofsamuel"
-                      className="noeffect linkicon"
-                      target="_blank"
-                    >
-                      <FooterIcon icon={faInstagram} size="lg" />
-                    </Link>
-                    <Link
-                      to="https://medium.com/@desktopofsamuel"
-                      className="noeffect linkicon"
-                      target="_blank"
-                    >
-                      <FooterIcon icon={faMedium} size="lg" />
-                    </Link>
-                    <Link
-                      to="https://www.linkedin.com/in/wongchunlong/"
-                      className="noeffect linkicon"
-                      target="_blank"
-                    >
-                      <FooterIcon icon={faLinkedin} size="lg" />
-                    </Link>
-                  </IconList>
-                </div>
+                <Heading>Follow Me</Heading>
+                <Paragraph>
+                  <Link to="mailto:desktopofsamuel@gmail.com">Let's chat</Link>{" "}
+                  and talk about working togther.
+                </Paragraph>
+                <Paragraph>
+                  Follow my blog via <Link to="/rss.xml">RSS</Link>, or follow
+                  me on social media.
+                </Paragraph>
+                <IconList>
+                  <Link
+                    to="http://www.twitter.com/desktopofsamuel"
+                    className="noeffect linkicon"
+                    target="_blank"
+                  >
+                    <FooterIcon icon={faTwitter} size="lg" />
+                  </Link>
+                  <Link
+                    to="http://www.instagram.com/desktopofsamuel"
+                    className="noeffect linkicon"
+                    target="_blank"
+                  >
+                    <FooterIcon icon={faInstagram} size="lg" />
+                  </Link>
+                  <Link
+                    to="https://medium.com/@desktopofsamuel"
+                    className="noeffect linkicon"
+                    target="_blank"
+                  >
+                    <FooterIcon icon={faMedium} size="lg" />
+                  </Link>
+                  <Link
+                    to="https://www.linkedin.com/in/wongchunlong/"
+                    className="noeffect linkicon"
+                    target="_blank"
+                  >
+                    <FooterIcon icon={faLinkedin} size="lg" />
+                  </Link>
+                </IconList>
               </FooterGrid>
             </div>
           </BoxNow>

@@ -36,6 +36,7 @@ const Hero = styled.div`
 
   h1 {
     font-family: var(--font-primary);
+    margin-top: 0;
   }
 `;
 
@@ -164,7 +165,7 @@ const Blog = styled.section`
   align-items: flex-start;
 
   & > div:nth-child(2) {
-    grid-column: span 3;
+    grid-column: span 4;
   }
 
   & > div:nth-child(3) {

@@ -39,7 +39,7 @@ const Left = styled.aside`
   grid-area: left;
 `;
 
-const Right = styled.div`
+const Right = styled.main`
   grid-area: right;
 `;
 

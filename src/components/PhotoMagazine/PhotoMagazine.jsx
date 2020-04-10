@@ -58,9 +58,7 @@ const GridPhoto = styled(Img)`
 const GridTitle = styled.h2`
   font-size: var(--font-size-m);
   font-weight: var(--font-weight-bold);
-  line-height: 120%;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 `;
 
 const GridContentWrapper = styled.div``;
