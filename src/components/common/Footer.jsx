@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Link from "../GatsbyLink/GatsbyLink";
 import styled from "styled-components";
 import Boxed from "elements/Boxed";
 import Column from "elements/Column";
@@ -11,6 +10,7 @@ import {
   faMedium,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
+import Link from "./GatsbyLink";
 
 const Row = styled.section`
   padding: var(--var-padding-s) 1rem;

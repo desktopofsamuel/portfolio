@@ -3,18 +3,18 @@ import Helmet from "react-helmet";
 import styled from "styled-components";
 import Img from "gatsby-image";
 import { graphql } from "gatsby";
-import Link from "../components/GatsbyLink/GatsbyLink";
-import config from "../../data/SiteConfig";
-import Layout from "../layout";
-import WorkHero from "../components/WorkHero/WorkHero";
-import CTAButton from "../components/MajorButton/MajorButton";
-import BlogListing from "../components/PostListing/PostListing";
 import BoxContent from "elements/Boxed";
-import WorkIcon from "../../static/SVG/Work.svg";
-import BlogIcon from "../../static/SVG/Blog.svg";
-import Now from "../components/Now/Now";
 import Column from "elements/Column";
 import ReadOn from "elements/ReadOn";
+import Link from "../components/common/GatsbyLink";
+import config from "../../data/SiteConfig";
+import Layout from "../layout";
+import WorkHero from "../components/WorkHero";
+import CTAButton from "../components/common/MajorButton";
+import BlogListing from "../components/PostListing/PostListing";
+import WorkIcon from "../../static/SVG/Work.svg";
+import BlogIcon from "../../static/SVG/Blog.svg";
+import Now from "../components/Now";
 import Profile from "../../static/images/Profile.webp";
 
 const Row = styled.section`
@@ -221,13 +221,14 @@ class Index extends React.Component {
               <Hero>
                 <small>When Design Meets Technology</small>
                 <h1>
-                  Designing with <br />
+                  Designing with
+                  <br />
                   <span className="brand">complexity</span>
                 </h1>
                 <HeroGraphics>
                   <GraphicBox>
                     <svg
-                      class="triangle"
+                      className="triangle"
                       width="96"
                       height="83"
                       viewBox="0 0 96 83"
@@ -237,7 +238,7 @@ class Index extends React.Component {
                       <path
                         d="M2.96668 81L48 3L93.0333 81H2.96668Z"
                         stroke="#535E7C"
-                        stroke-width="3"
+                        strokeWidth="3"
                       />
                     </svg>
                     <svg
@@ -252,7 +253,7 @@ class Index extends React.Component {
                         cy="53.5"
                         r="52"
                         stroke="#535E7C"
-                        stroke-width="3"
+                        strokeWidth="3"
                       />
                     </svg>
                     <svg
@@ -268,7 +269,7 @@ class Index extends React.Component {
                         width="79"
                         height="79"
                         stroke="#535E7C"
-                        stroke-width="3"
+                        strokeWidth="3"
                       />
                     </svg>
                     <svg
@@ -281,7 +282,7 @@ class Index extends React.Component {
                       <path
                         d="M2.16493 48.5963L66.5 1.8541L130.835 48.5963L106.261 124.227H26.7387L2.16493 48.5963Z"
                         stroke="#535E7C"
-                        stroke-width="3"
+                        strokeWidth="3"
                       />
                     </svg>
                   </GraphicBox>

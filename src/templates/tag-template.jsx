@@ -2,28 +2,14 @@ import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
+import PostList from "../components/BlogListWide";
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
-import PostList from "../components/WidePostList/WidePostList";
-import Boxed from "elements/Boxed";
 import PageTitle from "elements/PageTitle";
+import Boxed from "elements/Boxed";
 
 const Container = styled.section`
   @media only screen and (max-width: 1280px) {
-    display: block;
-  }
-`;
-const Row = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: var(--padding-l);
-`;
-
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-
-  @media only screen and (max-width: 768px) {
     display: block;
   }
 `;
@@ -32,32 +18,21 @@ const Hero = styled.div`
   padding: var(--padding-m) 0 var(--padding-m) 0;
 `;
 
-export default class CategoryTemplate extends React.Component {
+export default class TagTemplate extends React.Component {
   render() {
-    const { category } = this.props.pageContext;
+    const { tag } = this.props.pageContext;
     const postEdges = this.props.data.allMdx.edges;
     return (
       <Layout>
-        <div>
-          <Helmet
-            title={`Discover Posts in "${category}" | ${config.siteTitleAlt}`}
-          />
-          <Boxed>
-            <Grid>
-              <Hero>
-                <PageTitle
-                  subtitle={`Discover Post in`}
-                  title={`${category}`}
-                />
-              </Hero>
-              <Row>
-                <Container>
-                  <PostList category="none" postEdges={postEdges} />
-                </Container>
-              </Row>
-            </Grid>
-          </Boxed>
-        </div>
+        <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitleAlt}`} />
+        <Boxed>
+          <Hero>
+            <PageTitle subtitle={`Discover Post tagged`} title={`${tag}`} />
+          </Hero>
+          <Container>
+            <PostList postEdges={postEdges} />
+          </Container>
+        </Boxed>
       </Layout>
     );
   }
@@ -65,11 +40,11 @@ export default class CategoryTemplate extends React.Component {
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query CategoryPage($category: String) {
+  query TagPage($tag: String) {
     allMdx(
       limit: 1000
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { category: { eq: $category } } }
+      filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
       totalCount
       edges {

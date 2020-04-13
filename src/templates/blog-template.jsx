@@ -1,36 +1,34 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Helmet from "react-helmet";
+import Boxed from "elements/Boxed";
 import Layout from "../layout";
 import config from "../../data/SiteConfig";
-import SEO from "../components/SEO/SEO";
-import Post from "../components/Post/Post";
-import Boxed from "elements/Boxed";
+import SEO from "../components/SEO";
+import PostTemplate from "../components/PostTemplate";
 
-export default class BlogTemplate extends React.Component {
-  render() {
-    const { slug } = this.props.pageContext;
-    const relateNode = this.props.data.related;
-    const postNode = this.props.data.post;
-    const post = postNode.frontmatter;
+const BlogPostTemplate = ({ data, pageContext }) => {
+  const postNode = data.blog;
+  const post = postNode.frontmatter;
 
-    return (
-      <Layout>
-        <Helmet>
-          <title>{`${post.title} | ${config.siteTitle}`}</title>
-        </Helmet>
-        <SEO postPath={slug} postNode={postNode} postSEO />
-        <Boxed>
-          <Post postNode={postNode} />
-        </Boxed>
-      </Layout>
-    );
-  }
-}
+  return (
+    <Layout>
+      <Helmet>
+        <title>{`${post.title} | ${config.siteTitle}`}</title>
+      </Helmet>
+      <SEO postPath={pageContext.slug} postNode={postNode} postSEO />
+      <Boxed>
+        <PostTemplate postNode={postNode} />
+      </Boxed>
+    </Layout>
+  );
+};
+
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
-  query BlogBySlug($id: String, $category: String) {
-    post: mdx(id: { eq: $id }) {
+  query BlogBySlug($id: String) {
+    blog: mdx(id: { eq: $id }) {
       id
       body
       excerpt
@@ -61,25 +59,6 @@ export const pageQuery = graphql`
       fields {
         slug
         date(formatString: "MMM DD, YYYY", locale: "en")
-      }
-    }
-    related: allMdx(
-      sort: { fields: [fields___date], order: DESC }
-      limit: 5
-      filter: { frontmatter: { category: { eq: $category } } }
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            path
-            category
-          }
-          fields {
-            slug
-          }
-        }
       }
     }
   }

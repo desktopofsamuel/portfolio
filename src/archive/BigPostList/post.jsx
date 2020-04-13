@@ -1,17 +1,16 @@
 import React from "react";
-import { graphql } from "gatsby";
-import { MDXProvider, MDXRenderer } from "gatsby-plugin-mdx";
-import Layout from "../layout";
+import { Link, graphql } from "gatsby";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import ZoomImage from "components/ZoomImage/ZoomImage";
+import kebabCase from "lodash/kebabCase";
 import styled from "styled-components";
-
-import Link from "gatsby-link";
+import PropTypes from "prop-types";
 import Helmet from "react-helmet";
+import Layout from "../layout";
 import config from "../../data/SiteConfig";
-import SEO from "../components/SEO/SEO";
+import SEO from "../components/SEO";
 import PostTags from "../components/PostTags/PostTags";
 import SocialLinks from "../components/SocialLinks/SocialLinks";
-import kebabCase from "lodash/kebabCase";
-import ZoomImage from "components/ZoomImage/ZoomImage";
 
 const Row = styled.section`
   padding: var(--var-padding-l) 0;
@@ -127,76 +126,76 @@ const PostShare = styled.div`
   grid-area: share;
 `;
 
-export default class BlogPageTemplate extends React.Component {
-  render() {
-    const { slug } = this.props.pageContext;
-    const postNode = this.props.data.post;
-    const relateNode = this.props.data.related;
-    const post = postNode.frontmatter;
+const BlogPageTemplate = ({ data, pageContext }) => {
+  const { slug } = pageContext;
+  const postNode = data.post;
+  const relateNode = data.related;
+  const post = postNode.frontmatter;
 
-    return (
-      <Layout className="post-template">
-        <Helmet>
-          <title>{`${post.title} | ${config.siteTitleAlt}`}</title>
-        </Helmet>
-        <SEO postPath={slug} postNode={postNode} postSEO />
-        <Row>
-          <BoxContent>
-            <Post>
-              <Header>
-                <PostTitle>{post.title}</PostTitle>
-                <Meta>
-                  <PostDate>
-                    <PostMeta>Published On</PostMeta>
-                    <h5>{postNode.fields.date}</h5>
-                  </PostDate>
-                  <PostTag>
-                    <PostMeta>Tag</PostMeta>
-                    <PostTags tags={post.tags} />
-                  </PostTag>
-                  <PostShare>
-                    <SocialLinks postPath={slug} postNode={postNode} />
-                  </PostShare>
-                </Meta>
-              </Header>
-              <Main>
-                <PostPhoto
-                  src={post.cover.childImageSharp.sizes.src}
-                  alt={post.title}
-                />
-                <MDXRenderer>{postNode.body}</MDXRenderer>
-              </Main>
-              <Sidebar>
-                <small>Also in</small>{" "}
-                <h5>
-                  <Link to={`/categories/${kebabCase(post.category)}`}>
-                    {post.category}
-                  </Link>
-                </h5>
-                {relateNode != null && (
-                  <div>
-                    {relateNode.edges.map((relatepost) => {
-                      return (
-                        <h3 key={relatepost.node.id}>
-                          <Link to={relatepost.node.fields.slug}>
-                            {relatepost.node.frontmatter.title}
-                          </Link>
-                        </h3>
-                      );
-                    })}
-                  </div>
-                )}
-              </Sidebar>
-            </Post>
-          </BoxContent>
-        </Row>
-      </Layout>
-    );
-  }
-}
+  return (
+    <Layout className="post-template">
+      <Helmet>
+        <title>{`${post.title} | ${config.siteTitleAlt}`}</title>
+      </Helmet>
+      <SEO postPath={slug} postNode={postNode} postSEO />
+      <Row>
+        <BoxContent>
+          <Post>
+            <Header>
+              <PostTitle>{post.title}</PostTitle>
+              <Meta>
+                <PostDate>
+                  <PostMeta>Published On</PostMeta>
+                  <h5>{postNode.fields.date}</h5>
+                </PostDate>
+                <PostTag>
+                  <PostMeta>Tag</PostMeta>
+                  <PostTags tags={post.tags} />
+                </PostTag>
+                <PostShare>
+                  <SocialLinks postPath={slug} postNode={postNode} />
+                </PostShare>
+              </Meta>
+            </Header>
+            <Main>
+              <PostPhoto
+                src={post.cover.childImageSharp.sizes.src}
+                alt={post.title}
+              />
+              <MDXRenderer>{postNode.body}</MDXRenderer>
+            </Main>
+            <Sidebar>
+              <small>Also in</small>{" "}
+              <h5>
+                <Link to={`/categories/${kebabCase(post.category)}`}>
+                  {post.category}
+                </Link>
+              </h5>
+              {relateNode != null && (
+                <div>
+                  {relateNode.edges.map(relatepost => {
+                    return (
+                      <h3 key={relatepost.node.id}>
+                        <Link to={relatepost.node.fields.slug}>
+                          {relatepost.node.frontmatter.title}
+                        </Link>
+                      </h3>
+                    );
+                  })}
+                </div>
+              )}
+            </Sidebar>
+          </Post>
+        </BoxContent>
+      </Row>
+    </Layout>
+  );
+};
+
+export default BlogPageTemplate;
 
 export const pageQuery = graphql`
-  query BlogPostQuery($id: String, $category: String) {
+  query($id: String, $category: String) {
     post: mdx(id: { eq: $id }) {
       id
       body

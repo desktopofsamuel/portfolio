@@ -55,13 +55,13 @@ const ListMeta = styled.small`
 `;
 
 const ListCategory = styled.div`
-  display: ${(props) => props.category || "inline"};
+  display: ${props => props.category || "inline"};
 `;
 
-class WidePostList extends React.Component {
+class BlogListWide extends React.Component {
   getPostList() {
     const postList = [];
-    this.props.postEdges.forEach((postEdge) => {
+    this.props.postEdges.forEach(postEdge => {
       postList.push({
         path: postEdge.node.fields.slug,
         tags: postEdge.node.frontmatter.tags,
@@ -78,7 +78,7 @@ class WidePostList extends React.Component {
   render() {
     const postList = this.getPostList();
     const props = this.props;
-    return postList.map((post) => (
+    return postList.map(post => (
       <Container>
         <ListLeft />
         <ListRight>
@@ -103,8 +103,8 @@ class WidePostList extends React.Component {
   }
 }
 
-export default WidePostList;
+export default BlogListWide;
 
-WidePostList.propTypes = {
+BlogListWide.propTypes = {
   invert: PropTypes.bool,
 };

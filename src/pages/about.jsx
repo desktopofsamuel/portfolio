@@ -3,9 +3,9 @@ import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import styled from "styled-components";
-import Resume from "components/Resume/Resume";
+import Resume from "../components/Resume";
 import Boxed from "elements/Boxed";
-import Link from "../components/GatsbyLink/GatsbyLink";
+import Link from "../components/common/GatsbyLink";
 import Layout from "../layout";
 import config from "../../data/SiteConfig";
 import PageTitle from "elements/PageTitle";
@@ -177,7 +177,7 @@ const ProjectYear = styled.small`
 
 const ProjectLink = styled(Link)``;
 
-const ProjectBox = (props) => (
+const ProjectBox = props => (
   <ProjectWrapper>
     <ProjectIcon>
       <img src={props.img} alt={props.title} width="50px" />

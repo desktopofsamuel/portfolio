@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import GatsbyLink from "../components/GatsbyLink/GatsbyLink";
+import GatsbyLink from "../components/common/GatsbyLink";
 
 const Wrapper = styled.div`
   background-color: var(--color-white-500);

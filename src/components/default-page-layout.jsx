@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import SEO from "../components/SEO/SEO";
-import Nav from "../components/Navigation/navigation";
-import Footer from "../components/Footer/Footer";
+import SEO from "../components/SEO";
+import Nav from "../components/common/NavBar";
+import Footer from "../components/common/Footer";
 
 const Layout = styled.div`
   background-color: var(--color-background-500);

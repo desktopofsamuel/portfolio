@@ -2,8 +2,8 @@ import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
-import Link from "../components/GatsbyLink/GatsbyLink";
-import WorkHero from "../components/WorkHero/WorkHero";
+import Link from "../components/common/GatsbyLink";
+import WorkHero from "../components/WorkHero";
 import WaterSVG from "../../static/SVG/Water.svg";
 import BookSVG from "../../static/SVG/Book.svg";
 import HyperAirSVG from "../../static/SVG/HyperAir-2.svg";
@@ -11,7 +11,7 @@ import PinSVG from "../../static/SVG/Pin.svg";
 import PlayaSVG from "../../static/SVG/Playa.svg";
 import PingspaceSVG from "../../static/SVG/Pingspace.svg";
 import PageTitle from "../elements/PageTitle";
-import SEO from "../components/SEO/SEO";
+import SEO from "../components/SEO";
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import Boxed from "elements/Boxed";
@@ -92,7 +92,7 @@ const ProjectYear = styled.small`
 
 const ProjectLink = styled(Link)``;
 
-const ProjectBox = (props) => (
+const ProjectBox = props => (
   <ProjectWrapper>
     <ProjectIcon>
       <img src={props.img} width="50px" />

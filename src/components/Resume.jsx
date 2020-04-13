@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import styled from "styled-components";
 import ResumeItem from "elements/ResumeItem";
 import Column from "elements/Column";
@@ -57,7 +56,7 @@ const ResumeParagraph = styled.p`
   }
 `;
 
-export default (props) => (
+export default props => (
   <Section>
     <Title as="h1">Samuel Wong</Title>
     {/*     <Subtitle>

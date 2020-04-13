@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { FaArrowRight } from "react-icons/fa";
-import PropTypes from "prop-types";
 import Img from "gatsby-image";
 
 const HeroArticleWrapper = styled.div`
@@ -38,7 +37,7 @@ const HeroTitle = styled.h3`
   margin-bottom: 0;
 `;
 
-class BlogFeature extends React.Component {
+class BlogList extends React.Component {
   getPostList() {
     const postList = [];
     this.props.postEdges.forEach(postEdge => {
@@ -49,7 +48,7 @@ class BlogFeature extends React.Component {
         title: postEdge.node.frontmatter.title,
         date: postEdge.node.fields.date,
         excerpt: postEdge.node.excerpt,
-        timeToRead: postEdge.node.timeToRead
+        timeToRead: postEdge.node.timeToRead,
       });
     });
     return postList;
@@ -72,12 +71,4 @@ class BlogFeature extends React.Component {
   }
 }
 
-export default BlogFeature;
-
-BlogFeature.propTypes = {
-  invert: PropTypes.bool
-};
-
-BlogFeature.defaultProps = {
-  invert: false
-};
+export default BlogList;

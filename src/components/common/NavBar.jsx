@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Link from "../GatsbyLink/GatsbyLink";
+import Link from "./GatsbyLink";
 import styled from "styled-components";
 import "../../layout/index.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -19,7 +19,7 @@ const Main = styled.div`
   }
 `;
 
-const NavBar = styled.div`
+const NavSection = styled.div`
   display: flex;
   flex-direction: row;
   align-items: baseline;
@@ -103,7 +103,7 @@ const Description = styled.h2`
   }
 `;
 
-class Navigation3 extends React.Component {
+class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = { open: false };
@@ -121,7 +121,7 @@ class Navigation3 extends React.Component {
     return (
       <div>
         <Main>
-          <NavBar>
+          <NavSection>
             <NavLeft>
               <Title to="/">Samuel W.</Title>
               <Description>User Experience Designer</Description>
@@ -147,7 +147,7 @@ class Navigation3 extends React.Component {
                 <MenuIcon icon={faBars} size="lg" />
               </NavItemIcon>
             </NavRight>
-          </NavBar>
+          </NavSection>
           <Popup
             lockScroll
             contentStyle={{
@@ -158,7 +158,7 @@ class Navigation3 extends React.Component {
               justifyContent: "center",
               border: "none",
               background: "rgba(255,255,255,0.95)",
-              zIndex: "10000"
+              zIndex: "10000",
             }}
             overlayStyle={{}}
             open={this.state.open}
@@ -197,4 +197,4 @@ class Navigation3 extends React.Component {
   }
 }
 
-export default Navigation3;
+export default NavBar;

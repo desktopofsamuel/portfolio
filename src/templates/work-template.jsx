@@ -2,10 +2,10 @@ import React from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import Layout from "../layout";
 import Helmet from "react-helmet";
-import SEO from "../components/SEO/SEO";
 import Boxed from "elements/Boxed";
+import Layout from "../layout";
+import SEO from "../components/SEO";
 import config from "../../data/SiteConfig";
 
 const Title = styled.h1`
@@ -27,27 +27,24 @@ const MDX = styled(MDXRenderer)`
   }
 `;
 
-export default class WorkPageTemplate extends React.Component {
-  render() {
-    const { slug } = this.props.pageContext;
-    const path = "work" + `${slug}`;
-    const postNode = this.props.data.mdx;
-    const work = this.props.data.mdx.frontmatter;
+const WorkPageTemplate = ({ pageContext, data }) => {
+  const path = "work" + pageContext.slug;
 
-    return (
-      <Layout>
-        <Helmet>
-          <title>{`${work.title} | ${config.siteTitleAlt}`}</title>
-        </Helmet>
-        <SEO postPath={path} postNode={postNode} postSEO />
-        <WorkWrapper>
-          <Title>{work.title}</Title>
-          <MDX>{postNode.body}</MDX>
-        </WorkWrapper>
-      </Layout>
-    );
-  }
-}
+  return (
+    <Layout>
+      <Helmet>
+        <title>{`${data.mdx.frontmatter.title} | ${config.siteTitleAlt}`}</title>
+      </Helmet>
+      <SEO postPath={path} postNode={data.mdx} postSEO />
+      <WorkWrapper>
+        <Title>{data.mdx.frontmatter.title}</Title>
+        <MDX>{data.mdx.body}</MDX>
+      </WorkWrapper>
+    </Layout>
+  );
+};
+
+export default WorkPageTemplate;
 
 export const pageQuery = graphql`
   query WorkPostQuery($id: String) {

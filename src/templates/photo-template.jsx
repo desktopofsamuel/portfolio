@@ -5,7 +5,7 @@ import Layout from "../layout";
 import styled from "styled-components";
 import Img from "gatsby-image";
 import Helmet from "react-helmet";
-import SEO from "../components/SEO/SEO";
+import SEO from "../components/SEO";
 import config from "../../data/SiteConfig";
 
 const Cover = styled(Img)`

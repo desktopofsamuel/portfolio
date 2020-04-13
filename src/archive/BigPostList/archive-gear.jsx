@@ -3,10 +3,9 @@ import Helmet from "react-helmet";
 import { StaticQuery, graphql } from "gatsby";
 import Layout from "../layout";
 import styled from "styled-components";
-import SEO from "../components/SEO/SEO";
+import SEO from "../components/SEO";
 import config from "../../data/SiteConfig";
 import IconList from "../components/IconList/IconList";
-import Nav from "../components/Navigation/navigation-3";
 const Content = styled.main`
   width: 50vw;
   margin: 10vh auto;
@@ -19,7 +18,6 @@ class SetupPage extends React.Component {
   render() {
     return (
       <div>
-        <Nav />
         <Layout>
           <Helmet title={`Gear of Samuel`} />
           <SEO />
@@ -45,7 +43,7 @@ class SetupPage extends React.Component {
               subtitle="UI/UX Design"
               content={[
                 "I have recently updated",
-                <a href="www.figma.com">Figma </a>
+                <a href="www.figma.com">Figma </a>,
               ]}
             />
             <IconList
@@ -54,7 +52,7 @@ class SetupPage extends React.Component {
               subtitle="Daily task management"
               content={[
                 "i have been using Todoist",
-                <a href="www.todoist.com">Todoist </a>
+                <a href="www.todoist.com">Todoist </a>,
               ]}
             />
           </Content>

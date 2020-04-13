@@ -1,8 +1,8 @@
-const config = require("./data/SiteConfig");
 const urljoin = require("url-join");
+const config = require("./data/SiteConfig");
 
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env.${process.env.NODE_ENV}`
 });
 
 module.exports = {
@@ -16,8 +16,8 @@ module.exports = {
       description: config.siteDescription,
       image_url: `${urljoin(config.siteUrl, config.pathPrefix)}/favicon.png`,
       author: config.userName,
-      copyright: config.copyright,
-    },
+      copyright: config.copyright
+    }
   },
   plugins: [
     "gatsby-plugin-react-helmet",
@@ -26,49 +26,49 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "assets",
-        path: `${__dirname}/static/`,
-      },
+        path: `${__dirname}/static/`
+      }
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "posts",
-        path: `${__dirname}/content/blog/`,
-      },
+        path: `${__dirname}/content/blog/`
+      }
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "work",
-        path: `${__dirname}/content/work/`,
-      },
+        path: `${__dirname}/content/work/`
+      }
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "page",
-        path: `${__dirname}/src/pages/`,
-      },
+        path: `${__dirname}/src/pages/`
+      }
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "photo",
-        path: `${__dirname}/content/photo/`,
-      },
+        path: `${__dirname}/content/photo/`
+      }
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: `${__dirname}/static/images/`,
-      },
+        path: `${__dirname}/static/images/`
+      }
     },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
-          default: require.resolve("./src/components/default-page-layout.jsx"),
+          default: require.resolve("./src/components/default-page-layout.jsx")
         },
         extensions: [`.mdx`, `md`],
         gatsbyRemarkPlugins: [
@@ -76,8 +76,8 @@ module.exports = {
             resolve: "gatsby-remark-images",
             options: {
               linkImagesToOriginal: false,
-              maxWidth: 1235,
-            },
+              maxWidth: 1235
+            }
           },
           "gatsby-remark-images-zoom",
           "gatsby-remark-responsive-iframe",
@@ -90,23 +90,23 @@ module.exports = {
           {
             resolve: "gatsby-remark-autolink-headers",
             options: {
-              icon: false,
-            },
-          },
-        ],
-      },
+              icon: false
+            }
+          }
+        ]
+      }
     },
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
-        trackingId: config.googleAnalyticsID,
-      },
+        trackingId: config.googleAnalyticsID
+      }
     },
     {
       resolve: "gatsby-plugin-nprogress",
       options: {
-        color: config.themeColor,
-      },
+        color: config.themeColor
+      }
     },
     "gatsby-plugin-styled-components",
     "gatsby-plugin-sharp",
@@ -124,8 +124,8 @@ module.exports = {
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
         display: "minimal-ui",
-        icon: "src/favicon.png",
-      },
+        icon: "src/favicon.png"
+      }
     },
     /* {
       resolve: `gatsby-source-cloudinary`,
@@ -141,7 +141,7 @@ module.exports = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         typekit: {
-          id: "hey8lez",
+          id: "hey8lez"
         },
         google: {
           families: [
@@ -150,10 +150,10 @@ module.exports = {
             "IBM Plex Serif:400,400i,600",
             "Archivo Narrow:700",
             "IBM Plex Sans Condensed:700",
-            "Libre Caslon Text:400,400i,700",
-          ],
-        },
-      },
+            "Libre Caslon Text:400,400i,700"
+          ]
+        }
+      }
     },
     "gatsby-plugin-sitemap",
     "gatsby-plugin-offline",
@@ -187,7 +187,7 @@ module.exports = {
           {
             serialize(ctx) {
               const { rssMetadata } = ctx.query.site.siteMetadata;
-              return ctx.query.allMdx.edges.map((edge) => ({
+              return ctx.query.allMdx.edges.map(edge => ({
                 categories: edge.node.frontmatter.tags,
                 date: edge.node.fields.date,
                 title: edge.node.frontmatter.title,
@@ -195,7 +195,7 @@ module.exports = {
                 author: rssMetadata.author,
                 url: rssMetadata.site_url + edge.node.fields.slug,
                 guid: rssMetadata.site_url + edge.node.fields.slug,
-                custom_elements: [{ "content:encoded": edge.node.html }],
+                custom_elements: [{ "content:encoded": edge.node.html }]
               }));
             },
             query: `
@@ -241,10 +241,10 @@ module.exports = {
               }
             }
           `,
-            output: config.siteRss,
-          },
-        ],
-      },
-    },
-  ],
+            output: config.siteRss
+          }
+        ]
+      }
+    }
+  ]
 };

@@ -79,10 +79,10 @@ const query = `
 }
 `;
 const postPage = path.resolve("src/templates/blog-template.jsx");
-const workPage = path.resolve("src/templates/work.jsx");
-const photoPage = path.resolve("src/templates/photo.jsx");
-const tagPage = path.resolve("src/templates/tag.jsx");
-const categoryPage = path.resolve("src/templates/category.jsx");
+const workPage = path.resolve("src/templates/work-template.jsx");
+const photoPage = path.resolve("src/templates/photo-template.jsx");
+const tagPage = path.resolve("src/templates/tag-template.jsx");
+const categoryPage = path.resolve("src/templates/category-template.jsx");
 
 exports.createPages = async ({ graphql, actions: { createPage } }) => {
   const response = await graphql(query);
@@ -126,9 +126,9 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
 
     const tagSet = new Set();
     const categorySet = new Set();
-    blog.edges.forEach((edge) => {
+    blog.edges.forEach(edge => {
       if (edge.node.frontmatter.tags) {
-        edge.node.frontmatter.tags.forEach((tag) => {
+        edge.node.frontmatter.tags.forEach(tag => {
           tagSet.add(tag);
         });
       }
@@ -138,7 +138,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
       }
 
       const tagList = Array.from(tagSet);
-      tagList.forEach((tag) => {
+      tagList.forEach(tag => {
         createPage({
           path: `/tags/${_.kebabCase(tag)}/`,
           component: tagPage,
@@ -149,7 +149,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
       });
 
       const categoryList = Array.from(categorySet);
-      categoryList.forEach((category) => {
+      categoryList.forEach(category => {
         createPage({
           path: `/categories/${_.kebabCase(category)}/`,
           component: categoryPage,

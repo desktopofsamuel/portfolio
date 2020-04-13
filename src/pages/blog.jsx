@@ -3,10 +3,9 @@ import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
 import config from "../../data/SiteConfig";
-import PostHero from "../components/PostHero/PostHero";
-import Link from "../components/GatsbyLink/GatsbyLink";
-import SEO from "../components/SEO/SEO";
-import BlogFeature from "../components/BlogFeature/BlogFeature";
+import BlogList from "../components/BlogList";
+import Link from "../components/common/GatsbyLink";
+import SEO from "../components/SEO";
 import Boxed from "elements/Boxed";
 import PageTitle from "elements/PageTitle";
 import styled from "styled-components";
@@ -30,7 +29,7 @@ const Main = styled.div`
   }
 `;
 
-const BlogFeatureWrapper = styled.div`
+const BlogListWrapper = styled.div`
   width: 100%;
   position: relative;
 `;
@@ -116,14 +115,9 @@ class Index extends React.Component {
                 </Row>
               </Left>
               <Right>
-                {/* <small>Featured</small>
-               <BlogFeatureWrapper>
-                  <BlogFeature postEdges={Feature1Edges} />
-                  <BlogFeature postEdges={Feature2Edges} />
-                </BlogFeatureWrapper> */}
                 <Row id="latest">
                   <small>Latest</small>
-                  <PostHero postEdges={postEdges} />
+                  <BlogList postEdges={postEdges} />
                 </Row>
               </Right>
             </Main>

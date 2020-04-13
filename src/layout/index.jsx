@@ -1,12 +1,12 @@
 import React from "react";
 import Helmet from "react-helmet";
-import SEO from "../components/SEO/SEO";
+import SEO from "../components/SEO";
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import { MDXProvider } from "@mdx-js/react";
 import "./index.css";
-import Nav from "../components/Navigation/navigation-3";
-import Footer from "../components/Footer/Footer";
+import Nav from "../components/common/NavBar";
+import Footer from "../components/common/Footer";
 
 const Layout = styled.div`
   background-color: var(--color-background-500);
