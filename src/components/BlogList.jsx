@@ -27,12 +27,12 @@ const ListItem = styled.article`
   }
 `;
 
-const Hero = styled.h3`
+const Hero = styled.h2`
   margin: 0;
 `;
 
 const PostImage = styled(Img)`
-  margin-bottom: var(--var-padding-m);
+  margin-bottom: var(--var-padding-s);
 `;
 
 class PostHero extends React.Component {

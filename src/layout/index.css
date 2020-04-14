@@ -15,14 +15,6 @@ html {
 }
 
 /* Mobile */
-@media only screen and (max-width: 768px) {
-  :root {
-    font-size: 16px;
-    --var-padding-l: 3rem;
-    --var-padding-m: 1rem;
-    --var-padding-s: 0.5rem;
-  }
-}
 
 * {
   box-sizing: border-box;
@@ -53,8 +45,8 @@ div > main {
 }
 
 h1 {
-  font-size: calc(var(--font-size-base) * 2.5);
-  line-height: calc(var(--font-base-line-height) * var(--font-size-base) * 2);
+  font-size: calc(var(--font-size-base) * 3.25 * var(--font-scale-ratio));
+  line-height: 1.3em;
   font-family: var(--font-primary);
   font-weight: var(--font-weight-bold);
   margin-top: calc(var(--font-base-line-height) * var(--font-size-base) * 4);
@@ -63,8 +55,8 @@ h1 {
 }
 
 h2 {
-  font-size: calc(var(--font-size-base) * 1.6875);
-  line-height: calc(var(--font-base-line-height) * var(--font-size-base) * 1.5);
+  font-size: calc(var(--font-size-base) * 2.1458 * var(--font-scale-ratio));
+  line-height: 1.3em;
   font-family: var(--font-primary);
   font-weight: var(--font-weight-bold);
   margin-top: calc(var(--font-base-line-height) * var(--font-size-base) * 2);
@@ -74,8 +66,8 @@ h2 {
 }
 
 h3 {
-  font-size: calc(var(--font-size-base) * 1.375);
-  line-height: calc(var(--font-base-line-height) * var(--font-size-base) * 1);
+  font-size: calc(var(--font-size-base) * 1.6875 * var(--font-scale-ratio));
+  line-height: 1.3em;
   font-family: var(--font-primary);
   font-weight: var(--font-weight-bold);
   margin-top: calc(var(--font-base-line-height) * var(--font-size-base) * 2);

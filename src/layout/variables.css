@@ -17,11 +17,23 @@
     --font-size-base: 18px;
     --font-size-small: 16px;
     --font-base-line-height: 1.8;
+    --font-scale-ratio: 1;
     --font-small-letter-spacing: 0.5px;
     --font-leading: cal(
       cal(16 * (var(--font-size-root) / 100)) * var(--font-base-line-height)
     );
   }
+
+  @media only screen and (max-width: 768px) {
+    :root {
+      --font-size-base: 16px;
+      --font-scale-ratio: 0.7;
+      --var-padding-l: 3rem;
+      --var-padding-m: 1rem;
+      --var-padding-s: 0.5rem;
+    }
+  }
+  
 
 /* Color */
 :root {
