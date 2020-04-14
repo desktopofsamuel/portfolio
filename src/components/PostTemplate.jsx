@@ -5,8 +5,11 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Img from "gatsby-image";
 
-const Title = styled.h1`
-  text-align: center;
+const Container = styled.main`
+  h1 {
+    margin-top: 1em;
+    text-align: center;
+  }
 `;
 
 class PostTemplate extends React.Component {
@@ -15,12 +18,11 @@ class PostTemplate extends React.Component {
     const post = postNode.frontmatter;
 
     return (
-      <main>
-        <Title>{post.title}</Title>
-        <small>{postNode.fields.date}</small>
+      <Container>
         <Img sizes={postNode.frontmatter.cover.childImageSharp.sizes} />
+        <h1>{post.title}</h1>
         <MDXRenderer>{postNode.body}</MDXRenderer>
-      </main>
+      </Container>
     );
   }
 }
