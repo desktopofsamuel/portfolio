@@ -37,7 +37,7 @@ const Hero = styled.div`
 `;
 
 const CategoryPageTemplate = ({ data, pageContext }) => {
-  const { category } = pageContext.category;
+  const { category } = pageContext;
   const postEdges = data.allMdx.edges;
 
   return (

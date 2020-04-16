@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "gatsby";
 import styled from "styled-components";
+import GatsbyLink from "../components/common/GatsbyLink";
 
-const Button = styled(Link)`
+const Button = styled(GatsbyLink)`
   margin: 0;
   background: none;
   border: none;
@@ -21,18 +21,21 @@ const Button = styled(Link)`
   }
 `;
 
-class ReadOn extends React.Component {
-  render() {
-    const props = this.props;
-    return (
-      <Button to={props.href}>
-        <h5>{props.text}</h5>
-      </Button>
-    );
-  }
-}
+const ReadOn = ({ href, text }) => {
+  return (
+    <Button to={href}>
+      <h5>{text}</h5>
+    </Button>
+  );
+};
+
 export default ReadOn;
 
+ReadOn.propTypes = {
+  href: PropTypes.string.isRequired,
+  text: PropTypes.string,
+};
+
 ReadOn.defaultProps = {
-  text: "Read On →"
+  text: "Read On →",
 };

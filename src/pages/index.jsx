@@ -204,173 +204,164 @@ const Contact = styled.div`
     color: var(--color-secondary-700);
   }
 `;
+const IndexPage = ({ data }) => {
+  const workEdges = data.Work.edges;
+  const blogEdges = data.Blog.edges;
+  return (
+    <Layout>
+      <Intro>
+        <BoxContent>
+          <Hero>
+            <small>When Design Meets Technology</small>
+            <h1>
+              Designing with
+              <br />
+              <span className="brand">complexity</span>
+            </h1>
+            <HeroGraphics>
+              <GraphicBox>
+                <svg
+                  className="triangle"
+                  width="96"
+                  height="83"
+                  viewBox="0 0 96 83"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2.96668 81L48 3L93.0333 81H2.96668Z"
+                    stroke="#535E7C"
+                    strokeWidth="3"
+                  />
+                </svg>
+                <svg
+                  width="107"
+                  height="107"
+                  viewBox="0 0 107 107"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="53.5"
+                    cy="53.5"
+                    r="52"
+                    stroke="#535E7C"
+                    strokeWidth="3"
+                  />
+                </svg>
+                <svg
+                  width="82"
+                  height="82"
+                  viewBox="0 0 82 82"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="1.5"
+                    y="1.5"
+                    width="79"
+                    height="79"
+                    stroke="#535E7C"
+                    strokeWidth="3"
+                  />
+                </svg>
+                <svg
+                  width="133"
+                  height="126"
+                  viewBox="0 0 133 126"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2.16493 48.5963L66.5 1.8541L130.835 48.5963L106.261 124.227H26.7387L2.16493 48.5963Z"
+                    stroke="#535E7C"
+                    strokeWidth="3"
+                  />
+                </svg>
+              </GraphicBox>
+              <WhiteBox />
+            </HeroGraphics>
+          </Hero>
+          <IntroBox>
+            <small>Hi! My name is Samuel</small>
+            <Subtitle>
+              I believe design is the way to navigate today's complex world.
+              Join me in this journey.
+            </Subtitle>
+          </IntroBox>
+          <CTAButton href="#contact" text="Get In Touch" />
+        </BoxContent>
+      </Intro>
 
-class Index extends React.Component {
-  render() {
-    const workEdges = this.props.data.Work.edges;
-    const blogEdges = this.props.data.Blog.edges;
-    return (
-      <div>
-        <Helmet>
-          <title>{config.siteTitle}</title>
-          <meta name="description" content={config.siteDescription} />
-        </Helmet>
-        <Layout>
-          <Intro>
-            <BoxContent>
-              <Hero>
-                <small>When Design Meets Technology</small>
-                <h1>
-                  Designing with
-                  <br />
-                  <span className="brand">complexity</span>
-                </h1>
-                <HeroGraphics>
-                  <GraphicBox>
-                    <svg
-                      className="triangle"
-                      width="96"
-                      height="83"
-                      viewBox="0 0 96 83"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2.96668 81L48 3L93.0333 81H2.96668Z"
-                        stroke="#535E7C"
-                        strokeWidth="3"
-                      />
-                    </svg>
-                    <svg
-                      width="107"
-                      height="107"
-                      viewBox="0 0 107 107"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <circle
-                        cx="53.5"
-                        cy="53.5"
-                        r="52"
-                        stroke="#535E7C"
-                        strokeWidth="3"
-                      />
-                    </svg>
-                    <svg
-                      width="82"
-                      height="82"
-                      viewBox="0 0 82 82"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        x="1.5"
-                        y="1.5"
-                        width="79"
-                        height="79"
-                        stroke="#535E7C"
-                        strokeWidth="3"
-                      />
-                    </svg>
-                    <svg
-                      width="133"
-                      height="126"
-                      viewBox="0 0 133 126"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2.16493 48.5963L66.5 1.8541L130.835 48.5963L106.261 124.227H26.7387L2.16493 48.5963Z"
-                        stroke="#535E7C"
-                        strokeWidth="3"
-                      />
-                    </svg>
-                  </GraphicBox>
-                  <WhiteBox />
-                </HeroGraphics>
-              </Hero>
-              <IntroBox>
-                <small>Hi! My name is Samuel</small>
-                <Subtitle>
-                  I believe design is the way to navigate today's complex world.
-                  Join me in this journey.
-                </Subtitle>
-              </IntroBox>
-              <CTAButton href="#contact" text="Get In Touch" />
-            </BoxContent>
-          </Intro>
-
-          <Row>
-            <BoxContent>
-              <ColumnSpaced>
-                <HalfBox>
-                  <small>I'm working as a</small>
-                  <h2>Product Designer</h2>
-                  <p>
-                    Currently I'm based in Hong Kong, specialising in
-                    user-interface and user-experience design, crafting
-                    outstanding digital products. <br /> <br /> I lead design at
-                    Hyperair as Principal Designer. Before that, I worked as
-                    Cross-Content Intern at iTunes & App Store, Apple.
-                  </p>
-                  <ReadOn text="About Me" href="/about" />
-                </HalfBox>
-                <HalfBox>
-                  <ProfileImage>
-                    <img src={Profile} />
-                  </ProfileImage>
-                </HalfBox>
-              </ColumnSpaced>
-            </BoxContent>
-          </Row>
-          <FullGreyRow className="full-bleed">
-            <BoxContent>
-              <AboutBox>
-                <AboutIntro>
-                  <small>Let's See</small>
-                  <h2>My Work</h2>
-                  <p>
-                    Years of experience in delivering elegant solutions for web
-                    and app.
-                  </p>
-                </AboutIntro>
-              </AboutBox>
-              <WorkHero postEdges={workEdges} />
-              <Center>
-                <ContactButton>
-                  <Link to="/work" className="noeffect">
-                    View More →
-                  </Link>
-                </ContactButton>
-              </Center>
-            </BoxContent>
-          </FullGreyRow>
-          <Row>
-            <BoxContent>
-              <BlogIntro>
-                <h2>Blog</h2>
-                <Subtitle>
-                  I write about design, technology and productivity.
-                </Subtitle>
-              </BlogIntro>
-              <Blog>
-                <BlogListing postEdges={blogEdges} />
-                <ReadOn text="Read All Blog Posts →" href="/blog" />
-              </Blog>
-            </BoxContent>
-          </Row>
-          {/*           <FullYellowRow className="full-bleed">
+      <Row>
+        <BoxContent>
+          <ColumnSpaced>
+            <HalfBox>
+              <small>I'm working as a</small>
+              <h2>Product Designer</h2>
+              <p>
+                Currently I'm based in Hong Kong, specialising in user-interface
+                and user-experience design, crafting outstanding digital
+                products. <br /> <br /> I lead design at Hyperair as Principal
+                Designer. Before that, I worked as Cross-Content Intern at
+                iTunes & App Store, Apple.
+              </p>
+              <ReadOn text="About Me" href="/about" />
+            </HalfBox>
+            <HalfBox>
+              <ProfileImage>
+                <img src={Profile} />
+              </ProfileImage>
+            </HalfBox>
+          </ColumnSpaced>
+        </BoxContent>
+      </Row>
+      <FullGreyRow className="full-bleed">
+        <BoxContent>
+          <AboutBox>
+            <AboutIntro>
+              <small>Let's See</small>
+              <h2>My Work</h2>
+              <p>
+                Years of experience in delivering elegant solutions for web and
+                app.
+              </p>
+            </AboutIntro>
+          </AboutBox>
+          <WorkHero postEdges={workEdges} />
+          <Center>
+            <ContactButton>
+              <Link to="/work" className="noeffect">
+                View More →
+              </Link>
+            </ContactButton>
+          </Center>
+        </BoxContent>
+      </FullGreyRow>
+      <Row>
+        <BoxContent>
+          <BlogIntro>
+            <h2>Blog</h2>
+            <Subtitle>
+              I write about design, technology and productivity.
+            </Subtitle>
+          </BlogIntro>
+          <Blog>
+            <BlogListing postEdges={blogEdges} />
+            <ReadOn text="Read All Blog Posts →" href="/blog" />
+          </Blog>
+        </BoxContent>
+      </Row>
+      {/*           <FullYellowRow className="full-bleed">
             <BoxContent>
               <Now />
             </BoxContent>
           </FullYellowRow> */}
-        </Layout>
-      </div>
-    );
-  }
-}
+    </Layout>
+  );
+};
 
-export default Index;
+export default IndexPage;
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`

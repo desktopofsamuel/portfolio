@@ -66,3 +66,9 @@
     --var-padding-s: 1rem;
     --grid-gap: 24px;
 }
+
+:root {
+  --page-container-wide: 1080px;
+  --page-container-normal: 600px;
+
+}

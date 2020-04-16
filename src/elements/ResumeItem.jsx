@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import { Link } from "gatsby";
+import React from "react";
 import styled from "styled-components";
 
 const Block = styled.div`
@@ -24,17 +23,14 @@ const Meta = styled.p`
   letter-spacing: 0.025rem;
 `;
 
-class ResumeItem extends React.Component {
-  render() {
-    const props = this.props;
-    return (
-      <Block>
-        <Title>{props.title}</Title>
-        <Content>{props.content}</Content>
-        <Meta>{props.meta}</Meta>
-      </Block>
-    );
-  }
-}
+const ResumeItem = ({ title, content, meta }) => {
+  return (
+    <Block>
+      <Title>{title}</Title>
+      <Content>{content}</Content>
+      <Meta>{meta}</Meta>
+    </Block>
+  );
+};
 
 export default ResumeItem;

@@ -16,9 +16,7 @@ import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import Boxed from "elements/Boxed";
 
-const WorkBoxed = styled(Boxed)`
-  max-width: 1080px;
-`;
+const WorkBoxed = styled(Boxed)``;
 
 const Row = styled.section`
   padding: var(--var-padding-l) 0;
@@ -29,29 +27,11 @@ const Row = styled.section`
   }
 `;
 
-const BoxContent = styled.div`
-  max-width: 85vw;
-  padding-left: 50px;
-  margin: 0 auto;
-
-  @media only screen and (max-width: 1024px) {
-    max-width: 95vw;
-    padding: 0 1.5rem;
-  }
-
-  @media only screen and (max-width: 768px) {
-    padding: 0 1rem;
-  }
-`;
-
 const GridProject = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   grid-gap: 1rem;
 `;
-
-const PassionPart = styled.div``;
-const PassionContent = styled.div``;
 
 const ProjectWrapper = styled.div`
   background: var(--color-white-700);
@@ -91,7 +71,7 @@ const ProjectYear = styled.small`
 `;
 
 const ProjectLink = styled(Link)``;
-
+/* 
 const ProjectBox = props => (
   <ProjectWrapper>
     <ProjectIcon>
@@ -109,40 +89,44 @@ const ProjectBox = props => (
     </ProjectBottom>
   </ProjectWrapper>
 );
+ */
 
-class Index extends React.Component {
-  render() {
-    const postEdges = this.props.data.allMdx.edges;
-    return (
-      <Layout>
-        <WorkBoxed>
-          <Row>
-            <PageTitle title="My Work" subtitle="My Case Studies" />
-          </Row>
-          <Row>
-            <h2>Case Studies</h2>
-            <WorkHero postEdges={postEdges} />
-          </Row>
+const WorkPage = ({ data }) => {
+  const postEdges = data.allMdx.edges;
+  return (
+    <Layout
+      title="Work"
+      description="Photo"
+      keywords="Photography, Travel, Sightseeing, Canon, iPhone, City, Journey"
+    >
+      <WorkBoxed>
+        <Row>
+          <PageTitle title="My Work" subtitle="My Case Studies" />
+        </Row>
+        <Row>
+          <h2>Case Studies</h2>
+          <WorkHero postEdges={postEdges} />
+        </Row>
 
-          <Row>
-            <h2>More Works</h2>
-            <p>Check out some sites and apps that I have built.</p>
-            <GridProject>
-              <ProjectBox
+        <Row>
+          <h2>More Works</h2>
+          <p>Check out some sites and apps that I have built.</p>
+          <GridProject>
+            {/* <ProjectBox
                 img={PinSVG}
                 title="Pins"
                 blurb="Curated design resource site coded by myself using GatsbyJS."
                 year="2018"
                 url="https://pins.desktopofsamuel.com"
-              />
-              {/* <ProjectBox
+              /> */}
+            {/* <ProjectBox
                   img={DocuSVG}
                   title="Road Not Taken"
                   blurb="A documentary I directed with multiple Asian film festival selected."
                   year="2016"
                   url="https://vimeo.com/ondemand/roadnottaken"
                 /> */}
-              <ProjectBox
+            {/* <ProjectBox
                 img={PingspaceSVG}
                 title="Pingspace"
                 blurb="Websites uptime monitor as a personal project"
@@ -176,16 +160,15 @@ class Index extends React.Component {
                 blurb="Online novel platform supported by an independent publisher"
                 year="2017"
                 url="https://playa.hk/projects/creation-cabin-reading-platform.html"
-              />
-            </GridProject>
-          </Row>
-        </WorkBoxed>
-      </Layout>
-    );
-  }
-}
+              /> */}
+          </GridProject>
+        </Row>
+      </WorkBoxed>
+    </Layout>
+  );
+};
 
-export default Index;
+export default WorkPage;
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
