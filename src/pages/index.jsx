@@ -16,6 +16,7 @@ import WorkIcon from "../../static/SVG/Work.svg";
 import BlogIcon from "../../static/SVG/Blog.svg";
 import Now from "../components/Now";
 import Profile from "../../static/images/Profile.webp";
+import IndexHero from "../components/IndexHero";
 
 const Row = styled.section`
   padding: var(--var-padding-l) 0;
@@ -209,6 +210,7 @@ const IndexPage = ({ data }) => {
   const blogEdges = data.Blog.edges;
   return (
     <Layout>
+      <IndexHero />
       <Intro>
         <BoxContent>
           <Hero>

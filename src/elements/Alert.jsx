@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { Link } from "gatsby";
+import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import GatsbyLink from "../components/common/GatsbyLink";
 
 const Wrapper = styled.div`
@@ -19,17 +19,19 @@ const Text = styled.p`
   margin-bottom: 0;
 `;
 
-class Alert extends React.Component {
-  render() {
-    const props = this.props;
-    return (
-      <Wrapper>
-        <GatsbyLink to={props.href}>
-          <Text className="noeffect">{props.text}</Text>
-        </GatsbyLink>
-      </Wrapper>
-    );
-  }
-}
+const Alert = ({ href, text }) => {
+  return (
+    <Wrapper>
+      <GatsbyLink to={href}>
+        <Text className="noeffect">{text}</Text>
+      </GatsbyLink>
+    </Wrapper>
+  );
+};
 
 export default Alert;
+
+Alert.propTypes = {
+  href: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+};

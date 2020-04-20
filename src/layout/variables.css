@@ -4,7 +4,7 @@
 /* Typography */
 :root {
     --font-primary: canada-type-gibson, Helvetica, Arial, sans-serif;
-    --font-secondary: Libre Caslon Text, Georgia, serif;
+    --font-secondary: Libre Caslon Text, Lato, Georgia, serif;
     --font-tertiary: freight-big-pro, Merriweather, Georgia, serif;
     --font-weight-bold: 600;
     --font-weight-regular: 400;
@@ -68,7 +68,8 @@
 }
 
 :root {
-  --page-container-wide: 1080px;
-  --page-container-normal: 600px;
+  --page-container-l: 1080px;
+  --page-container-m: 800px;
+  --page-container-s: 640px;
 
 }

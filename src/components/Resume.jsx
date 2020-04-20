@@ -13,12 +13,12 @@ const Title = styled.h3`
   margin: 0;
 `;
 
-const Subtitle = styled.p`
-  font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1600 - 320)));
-  line-height: 2em;
-  color: var(--color-secondary-100);
-  margin-bottom: 4rem;
-`;
+// const Subtitle = styled.p`
+//   font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1600 - 320)));
+//   line-height: 2em;
+//   color: var(--color-secondary-100);
+//   margin-bottom: 4rem;
+// `;
 
 const ResumeSectionTitle = styled.small`
   color: var(--color-secondary-300);
@@ -56,49 +56,59 @@ const ResumeParagraph = styled.p`
   }
 `;
 
-export default props => (
-  <Section>
-    <Title as="h1">Samuel Wong</Title>
-    {/*     <Subtitle>
+const Resume = () => {
+  return (
+    <Section>
+      <Title as="h1">Samuel Wong</Title>
+      {/*     <Subtitle>
       I’m now pursuing a career in the field of UI/UX Design because I'm deeply
       passionate about technology and how it profoundly changes our way of
       living. The process of turning an idea into a viable product gives me
       great satisfaction.
     </Subtitle> */}
-    <Block>
-      <ResumeSectionTitle>Career</ResumeSectionTitle>
-      <ResumeSection>
-        <ResumeItem title="Principal Designer at HyperAir" meta="2019 - Now" />
-        <ResumeItem title="Co-founder & Director at Playa" meta="2015 - 2019" />
-        <ResumeItem title="Cross Content Intern at Apple" meta="2013 - 2014" />
-      </ResumeSection>
-    </Block>
+      <Block>
+        <ResumeSectionTitle>Career</ResumeSectionTitle>
+        <ResumeSection>
+          {/* <ResumeItem title="Principal Designer at HyperAir" meta="2019 - Now" /> */}
+          <ResumeItem
+            title="Co-founder & Director at Playa"
+            meta="2015 - 2019"
+          />
+          <ResumeItem
+            title="Cross Content Intern at Apple"
+            meta="2013 - 2014"
+          />
+        </ResumeSection>
+      </Block>
 
-    <Block>
-      <ResumeSectionTitle>Education</ResumeSectionTitle>
-      <ResumeItem
-        title="The University of Hong Kong"
-        content="Bachelor of Arts"
-        meta="2011 - 2014"
-      />
-    </Block>
-    <Block>
-      <ResumeSectionTitle>Skills</ResumeSectionTitle>
-      <div>
-        <p>Figma, Sketch, Abstract, Avocode </p>
-        <p>HTML, CSS, Git, Google Analytics</p>
-        <p>Adobe Creative Suite</p>
-      </div>
-    </Block>
-    <Block>
-      <ResumeSectionTitle>Language</ResumeSectionTitle>
-      <div>
-        <ResumeParagraph>
-          Native in Cantonese
-          <br />
-          Professional Proficiency in English
-        </ResumeParagraph>
-      </div>
-    </Block>
-  </Section>
-);
+      <Block>
+        <ResumeSectionTitle>Education</ResumeSectionTitle>
+        <ResumeItem
+          title="The University of Hong Kong"
+          content="Bachelor of Arts"
+          meta="2011 - 2014"
+        />
+      </Block>
+      <Block>
+        <ResumeSectionTitle>Skills</ResumeSectionTitle>
+        <div>
+          <p>Figma, Sketch, Abstract, Avocode </p>
+          <p>HTML, CSS, Git, Google Analytics</p>
+          <p>Adobe Creative Suite</p>
+        </div>
+      </Block>
+      <Block>
+        <ResumeSectionTitle>Language</ResumeSectionTitle>
+        <div>
+          <ResumeParagraph>
+            Native in Cantonese
+            <br />
+            Professional Proficiency in English
+          </ResumeParagraph>
+        </div>
+      </Block>
+    </Section>
+  );
+};
+
+export default Resume;

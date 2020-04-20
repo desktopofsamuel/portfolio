@@ -2,10 +2,15 @@ import React from "react";
 import { graphql } from "gatsby";
 import Helmet from "react-helmet";
 import Boxed from "elements/Boxed";
+import styled from "styled-components";
 import Layout from "../layout";
 import config from "../../data/SiteConfig";
 import SEO from "../components/SEO";
 import PostTemplate from "../components/PostTemplate";
+
+const Container = styled(Boxed)`
+  max-width: var(--page-container-s);
+`;
 
 const BlogPostTemplate = ({ data, pageContext }) => {
   const postNode = data.blog;
@@ -17,9 +22,9 @@ const BlogPostTemplate = ({ data, pageContext }) => {
         <title>{`${post.title} | ${config.siteTitle}`}</title>
       </Helmet>
       <SEO postPath={pageContext.slug} postNode={postNode} postSEO />
-      <Boxed>
+      <Container>
         <PostTemplate postNode={postNode} />
-      </Boxed>
+      </Container>
     </Layout>
   );
 };

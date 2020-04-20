@@ -13,7 +13,7 @@ const Row = styled.section`
 `;
 
 const Main = styled.div`
-  display: grid;
+  /*   display: grid;
   grid-template-columns: [left] 30% [right] 70%;
   grid-gap: var(--grid-gap);
 
@@ -23,7 +23,7 @@ const Main = styled.div`
 
   h1 {
     font-family: var(--font-primary);
-  }
+  } */
 `;
 
 const Left = styled.aside`
@@ -34,11 +34,11 @@ const Right = styled.main`
   grid-area: right;
 `;
 
-const CategoryBlock = styled.div`
+/* const CategoryBlock = styled.div`
   @media only screen and (max-width: 768px) {
     display: none;
   }
-`;
+`; */
 
 const BlogPage = ({ data }) => {
   const postEdges = data.allMdx.edges;
@@ -62,7 +62,7 @@ const BlogPage = ({ data }) => {
           <Main>
             <Left>
               <Row>
-                <CategoryBlock>
+                {/* <CategoryBlock>
                   <small>Top Categories</small>
                   <h3>
                     <Link to="/categories/design-journal">Design</Link>
@@ -76,7 +76,7 @@ const BlogPage = ({ data }) => {
                   <h3>
                     <Link to="/categories/ctrl-alt-setup">Ctrl Alt Setup</Link>
                   </h3>
-                </CategoryBlock>
+                </CategoryBlock> */}
               </Row>
             </Left>
             <Right>

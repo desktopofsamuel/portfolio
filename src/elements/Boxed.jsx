@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Grid = styled.div`
-  max-width: var(--page-container-normal);
+  max-width: var(--page-container-m);
   padding: 0 1rem;
   margin: 5rem auto;
 
