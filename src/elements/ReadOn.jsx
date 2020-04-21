@@ -23,7 +23,7 @@ const Button = styled(GatsbyLink)`
 
 const ReadOn = ({ href, text }) => {
   return (
-    <Button to={href}>
+    <Button to={href} className="noeffect">
       <h5>{text}</h5>
     </Button>
   );

@@ -73,7 +73,7 @@ const Paragraph = styled.p`
   line-height: 200%;
   color: var(--color-secondary-500);
 `;
-class PostListing extends React.Component {
+class BlogListing extends React.Component {
   getPostList() {
     const postList = [];
     this.props.postEdges.forEach(postEdge => {
@@ -84,7 +84,7 @@ class PostListing extends React.Component {
         title: postEdge.node.frontmatter.title,
         date: postEdge.node.fields.date,
         excerpt: postEdge.node.frontmatter.tldr || postEdge.node.excerpt,
-        timeToRead: postEdge.node.timeToRead
+        timeToRead: postEdge.node.timeToRead,
       });
     });
     return postList;
@@ -94,9 +94,9 @@ class PostListing extends React.Component {
     const postList = this.getPostList();
 
     return postList.map(post => (
-      <Block className="block" invert={invert} key={post.title}>
-        <Container to={post.path}>
-          <PostListImage sizes={post.cover.childImageSharp.sizes} />
+      <Block className="noeffect" invert={invert} key={post.title}>
+        <Container to={post.path} className="noeffect">
+          {/* <PostListImage sizes={post.cover.childImageSharp.sizes} /> */}
           <div>
             <h3>
               <a>{post.title}</a>
@@ -109,12 +109,12 @@ class PostListing extends React.Component {
   }
 }
 
-export default PostListing;
+export default BlogListing;
 
-PostListing.propTypes = {
-  invert: PropTypes.bool
+BlogListing.propTypes = {
+  invert: PropTypes.bool,
 };
 
-PostListing.defaultProps = {
-  invert: false
+BlogListing.defaultProps = {
+  invert: false,
 };

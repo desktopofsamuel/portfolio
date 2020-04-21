@@ -7,8 +7,8 @@ import ReadOn from "elements/ReadOn";
 const Grid = styled.section``;
 
 const ListItem = styled.div`
-  display: grid;
-  grid-template-columns: minmax(auto, 40%) minmax(auto, 1200px);
+  /* display: grid;
+  grid-template-columns: minmax(auto, 40%) minmax(auto, 1200px); */
   margin-bottom: var(--padding-m);
   border-left: 3px var(--color-brand-500) solid;
   transition: transform 0.2s ease-in, box-shadow 0.3s ease-in-out;
@@ -17,13 +17,13 @@ const ListItem = styled.div`
     transform: scale(1.01, 1.01);
     box-shadow: 0 25px 40px 0 rgba(0, 0, 0, 0.08);
   }
-
-  @media only screen and (max-width: 767px) {
-    display: flex;
-    flex-direction: column-reverse;
-    text-align: center;
-    border-left: 3px var(--color-transparent-500) solid;
-  }
+  /* 
+  @media only screen and (max-width: 767px) { */
+  display: flex;
+  flex-direction: column-reverse;
+  text-align: left;
+  border-left: 3px var(--color-transparent-500) solid;
+  /* } */
 `;
 
 const WorkImg = styled(Img)``;
@@ -74,7 +74,7 @@ class WorkHero extends React.Component {
                 <ReadOn href={`/work/${post.path}`} />
               </ListLeft>
               <ListRight>
-                <WorkImg sizes={post.cover.childImageSharp.sizes} />
+                <WorkImg fluid={post.cover.childImageSharp.fluid} />
               </ListRight>
             </ListItem>
           </Link>

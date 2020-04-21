@@ -74,7 +74,8 @@ const MenuIcon = styled(FontAwesomeIcon)`
 const MobileItem = styled(Link)`
   display: block;
   border-bottom: none;
-  padding: 1rem 5rem;
+  padding: 0 5rem;
+  margin: 0;
 `;
 
 const MobileNav = styled.div`
@@ -123,24 +124,38 @@ class NavBar extends React.Component {
         <Main>
           <NavSection>
             <NavLeft>
-              <Title to="/">Samuel W.</Title>
+              <Title to="/" className="noeffect">
+                Samuel W.
+              </Title>
               <Description>User Experience Designer</Description>
             </NavLeft>
             <NavRight>
               <NavItem
                 activeClassName="nav-item-active"
-                className="nav-icon-desktop"
+                className="noeffect"
                 to="/about"
               >
                 <small>About</small>
               </NavItem>
-              <NavItem activeClassName="nav-item-active" to="/work">
+              <NavItem
+                activeClassName="nav-item-active"
+                className="noeffect"
+                to="/work"
+              >
                 <small>Work</small>
               </NavItem>
-              <NavItem activeClassName="nav-item-active" to="/blog">
+              <NavItem
+                activeClassName="nav-item-active"
+                className="noeffect"
+                to="/blog"
+              >
                 <small>Blog</small>
               </NavItem>
-              <NavItem activeClassName="nav-item-active" to="/photo">
+              <NavItem
+                activeClassName="nav-item-active"
+                className="noeffect"
+                to="/photo"
+              >
                 <small>Photo</small>
               </NavItem>
               <NavItemIcon onClick={this.openModal}>
@@ -168,17 +183,17 @@ class NavBar extends React.Component {
             <div>
               <div>
                 <MobileNav>
-                  <MobileItem to="/about">
-                    <small>About</small>
+                  <MobileItem to="/about" className="noeffect">
+                    <h1>About</h1>
                   </MobileItem>
-                  <MobileItem to="/work">
-                    <small>Work</small>
+                  <MobileItem to="/work" className="noeffect">
+                    <h1>Work</h1>
                   </MobileItem>
-                  <MobileItem to="/blog">
-                    <small>Blog</small>
+                  <MobileItem to="/blog" className="noeffect">
+                    <h1>Blog</h1>
                   </MobileItem>
-                  <MobileItem to="/photo">
-                    <small>Photo</small>
+                  <MobileItem to="/photo" className="noeffect">
+                    <h1>Photo</h1>
                   </MobileItem>
                   <MobileItem>
                     <MenuIcon

@@ -9,16 +9,12 @@ import Link from "../components/common/GatsbyLink";
 import Layout from "../layout";
 
 const AboutBoxed = styled(Boxed)`
-  max-width: 1080px;
+  max-width: var(--page-container-l);
 `;
 
 const Row = styled.section`
   padding: var(--var-padding-l) 0;
   background: white;
-
-  &:first-child {
-    padding-bottom: 0;
-  }
 `;
 
 const ShortBoxed = styled(Boxed)`
@@ -189,9 +185,9 @@ const AboutPage = ({ data }) => {
   return (
     <div>
       <Layout title="About">
-        <Row>
-          <AboutBoxed>
-            <PageTitle title="About Me" subtitle="Little things about myself" />
+        <AboutBoxed>
+          <PageTitle title="About Me" subtitle="Little things about myself" />
+          <Row>
             <PhotoFrame>
               <Img
                 fluid={data.cover.childImageSharp.fluid}
@@ -225,8 +221,8 @@ const AboutPage = ({ data }) => {
                 </WrapperNav>
               </Intro>
             </WrapperIntro>
-          </AboutBoxed>
-        </Row>
+          </Row>
+        </AboutBoxed>
         <AltRow id="bio" className="full-bleed">
           <Boxed>
             <P1>

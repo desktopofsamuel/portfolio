@@ -38,7 +38,7 @@ const PostImage = styled(Img)`
 class PostHero extends React.Component {
   getPostList() {
     const postList = [];
-    this.props.postEdges.forEach((postEdge) => {
+    this.props.postEdges.forEach(postEdge => {
       postList.push({
         path: postEdge.node.fields.slug,
         tags: postEdge.node.frontmatter.tags,
@@ -55,7 +55,7 @@ class PostHero extends React.Component {
     const postList = this.getPostList();
     return (
       <Grid>
-        {postList.map((post) => (
+        {postList.map(post => (
           <ListItem key={post.path}>
             <Link to={post.path}>
               <PostImage
@@ -64,7 +64,7 @@ class PostHero extends React.Component {
               />
               <Hero>{post.title}</Hero>
             </Link>
-            <p>{post.excerpt}</p>
+            <p className="noeffect">{post.excerpt}</p>
             <small>{post.date}</small>
           </ListItem>
         ))}

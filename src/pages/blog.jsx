@@ -12,6 +12,10 @@ const Row = styled.section`
   background: white;
 `;
 
+const Box = styled(Boxed)`
+  max-width: var(--page-container-s);
+`;
+
 const Main = styled.div`
   /*   display: grid;
   grid-template-columns: [left] 30% [right] 70%;
@@ -50,15 +54,13 @@ const BlogPage = ({ data }) => {
       keywords="Design,Blog,Web,App,UI,UX,Interface,Portfolio,Hong Kong,Writing"
     >
       <Row>
-        <Boxed>
-          <Row>
-            <PageTitle
-              title="Blog"
-              subtitle="Article"
-              description="A collection of posts I wrote about design process, technology and
+        <Box>
+          <PageTitle
+            title="Blog"
+            subtitle="Article"
+            description="A collection of posts I wrote about design process, technology and
                 productivity."
-            />
-          </Row>
+          />
           <Main>
             <Left>
               <Row>
@@ -86,7 +88,7 @@ const BlogPage = ({ data }) => {
               </Row>
             </Right>
           </Main>
-        </Boxed>
+        </Box>
       </Row>
     </Layout>
   );

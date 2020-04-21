@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import Boxed from "elements/Boxed";
 import Column from "elements/Column";
+import FooterContact from "./FooterContact";
 import social from "../../../static/SVG/social_media.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -129,7 +130,7 @@ export default class Footer extends React.Component {
   render() {
     return (
       <footer id="#contact">
-        <BgRow>
+        {/* <BgRow>
           <BoxNow>
             <div>
               <FooterGrid>
@@ -175,7 +176,12 @@ export default class Footer extends React.Component {
               </FooterGrid>
             </div>
           </BoxNow>
-        </BgRow>
+        </BgRow> */}
+        <Row className="full-bleed">
+          <Boxed size="small">
+            <FooterContact />
+          </Boxed>
+        </Row>
         <Row className="full-bleed">
           <Boxed>
             <LinkContainer>

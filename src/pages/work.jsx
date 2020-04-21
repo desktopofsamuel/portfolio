@@ -100,9 +100,7 @@ const WorkPage = ({ data }) => {
       keywords="Photography, Travel, Sightseeing, Canon, iPhone, City, Journey"
     >
       <WorkBoxed>
-        <Row>
-          <PageTitle title="My Work" subtitle="My Case Studies" />
-        </Row>
+        <PageTitle title="My Work" subtitle="My Case Studies" />
         <Row>
           <h2>Case Studies</h2>
           <WorkHero postEdges={postEdges} />
@@ -195,16 +193,8 @@ export const pageQuery = graphql`
               publicURL
               size
               childImageSharp {
-                sizes(maxWidth: 1140) {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  srcWebp
-                  srcSetWebp
-                  sizes
-                  originalImg
-                  originalName
+                fluid(maxHeight: 1200) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }

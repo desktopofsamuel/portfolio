@@ -7,7 +7,7 @@ import Layout from "../layout";
 import PhotoMagazine from "../components/PhotoMagazine";
 
 const PhotoBoxed = styled(Boxed)`
-  max-width: var(--page-container-wide);
+  max-width: var(--page-container-l);
 `;
 
 const Row = styled.section`

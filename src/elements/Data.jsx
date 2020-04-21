@@ -3,10 +3,7 @@ import styled from "styled-components";
 
 const Block = styled.div``;
 
-const Label = styled.p`
-  text-transform: uppercase;
-  letter-spacing: 5%;
-  font-size: 12px;
+const Label = styled.small`
   margin-bottom: 0;
 `;
 
