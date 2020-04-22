@@ -6,7 +6,7 @@ const Grid = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-gap: var(--var-padding-s);
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 600px) {
     display: block;
   }
 `;

@@ -11,6 +11,7 @@ import Boxed from "../elements/Boxed";
 import Profile from "../../static/images/Profile.webp";
 import Link from "./common/GatsbyLink";
 import Column from "../elements/Column";
+import Emoji from "./common/Emoji";
 
 const Container = styled(Boxed)`
   max-width: var(--page-container-l);
@@ -51,10 +52,8 @@ const IndexHero = () => {
         <IntroWrapper>
           <Subtitle>
             I am a{" "}
-            <Link to="/#experience-designer">
-              interface and exerpierence designer
-            </Link>
-            , <Link to="/#blog">blogger</Link> and{" "}
+            <Link to="/#experience-designer">user exerpierence designer</Link>,{" "}
+            <Link to="/#blog">blogger</Link> and{" "}
             <Link to="/#photography">photographer</Link>.
           </Subtitle>
           <Subtitle>
@@ -65,14 +64,30 @@ const IndexHero = () => {
         <LinkWrapper>
           <small>Contact</small>
           <div>
-            📬{" "}
-            <Link to="mailto:desktopofsamuel@gmail.com">
+            <Emoji symbol="📬" />{" "}
+            <Link to="mailto:desktopofsamuel@gmail.com" target="_blank">
               desktopofsamuel@gmail.com
             </Link>
           </div>
           <div>
-            🎤 <Link to="mailto:desktopofsamuel@gmail.com">Linkedin</Link> /{" "}
-            <Link to="mailto:desktopofsamuel@gmail.com">Instagram</Link>
+            <Emoji symbol="🎤" />{" "}
+            <Link
+              to="https://www.linkedin.com/in/wongchunlong/"
+              target="_blank"
+            >
+              Linkedin
+            </Link>{" "}
+            /{" "}
+            <Link to="https://www.twitter.com/desktopofsamuel" target="_blank">
+              Twitter
+            </Link>{" "}
+            /{" "}
+            <Link
+              to="https://www.instagram.com/desktopofsamuel"
+              target="_blank"
+            >
+              Instagram
+            </Link>
           </div>
         </LinkWrapper>
       </Column>

@@ -36,7 +36,7 @@ Boxed.propTypes = {
     PropTypes.node,
   ]).isRequired,
   className: PropTypes.string,
-  size: PropTypes.oneOf(["large", "medium", "small"]),
+  size: PropTypes.oneOf(["large", "medium", "small", ""]),
 };
 
 Boxed.defaultProps = {

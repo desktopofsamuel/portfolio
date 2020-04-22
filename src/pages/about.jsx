@@ -13,7 +13,7 @@ const AboutBoxed = styled(Boxed)`
 `;
 
 const Row = styled.section`
-  padding: var(--var-padding-l) 0;
+  padding: var(--var-padding-m) 0;
   background: white;
 `;
 
@@ -185,9 +185,9 @@ const AboutPage = ({ data }) => {
   return (
     <div>
       <Layout title="About">
-        <AboutBoxed>
-          <PageTitle title="About Me" subtitle="Little things about myself" />
-          <Row>
+        <Row>
+          <AboutBoxed>
+            <PageTitle title="About Me" subtitle="Little things about myself" />
             <PhotoFrame>
               <Img
                 fluid={data.cover.childImageSharp.fluid}
@@ -221,8 +221,8 @@ const AboutPage = ({ data }) => {
                 </WrapperNav>
               </Intro>
             </WrapperIntro>
-          </Row>
-        </AboutBoxed>
+          </AboutBoxed>
+        </Row>
         <AltRow id="bio" className="full-bleed">
           <Boxed>
             <P1>

@@ -15,16 +15,16 @@ const Container = styled.section`
   @media only screen and (min-width: 768px) {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 1rem;
+    grid-gap: 1.5rem;
   }
 `;
 
 const Section = styled.div`
   display: block;
 `;
-
 const Content = styled.div`
   font-size: 14px;
+  margin-bottom: 24px;
 `;
 
 const IconList = styled.div`
@@ -42,16 +42,17 @@ const FooterContact = () => {
   return (
     <Container>
       <Section>
-        <small>Contact</small>
+        <h6>Let's Chat</h6>
         <Content>
-          Let's chat and talk about collaborate togther. -{" "}
+          I am excited for new opportunities, let's talk about working togther.{" "}
+          <br />
           <Link to="mailto:desktopofsamuel@gmail.com">
             desktopofsamuel@gmail.com
           </Link>
         </Content>
       </Section>
       <Section>
-        <small>Social</small>
+        <h6>Keep In Touch</h6>
         <Content>
           Follow my social media and see what I'm up to.
           <IconList>
@@ -76,19 +77,22 @@ const FooterContact = () => {
             >
               <FooterIcon icon={faInstagram} />
             </Link>
-            <Link
-              to="https://medium.com/@desktopofsamuel"
-              className="noeffect linkicon"
-              target="_blank"
-            >
-              <FooterIcon icon={faMedium} />
-            </Link>
           </IconList>
         </Content>
       </Section>
       <Section>
-        <small>Contact</small>
-        <p>Let's keep in touch</p>
+        <h6>Subscribe</h6>
+        <Content>
+          I'm writing regularly on design and technology. Feel free to subscribe
+          via{" "}
+          <Link to="/rss.xml" target="_blank">
+            RSS
+          </Link>{" "}
+          or follow me on{" "}
+          <Link to="https://medium.com/@desktopofsamuel" target="_blank">
+            Medium
+          </Link>
+        </Content>
       </Section>
     </Container>
   );

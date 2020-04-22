@@ -24,9 +24,8 @@ const Box = styled(Boxed)`
 `;
 
 const Row = styled.section`
-  max-width: 2160px;
   margin: 0 auto;
-  padding: var(--var-padding-l) 0;
+  padding: var(--var-padding-m) 0;
   background: white;
 `;
 
@@ -47,13 +46,14 @@ const ColumnSpaced = styled(Column)`
   grid-gap: 3rem;
 `;
 
-const FullGreyRow = styled(Row)`
+const UnevenColumn = styled(ColumnSpaced)`
+  grid-template-columns: 7fr 3fr;
+`;
+
+const GreyRow = styled(Row)`
   background: var(--color-white-300);
 `;
 
-const FullYellowRow = styled(Row)`
-  background: var(--color-brand-300);
-`;
 const ContactButton = styled.button`
   border: none;
   box-sizing: border-box;
@@ -71,10 +71,20 @@ const StickyBox = styled.div`
   height: 100%;
 `;
 
+const RightStickyBox = styled.div`
+  @media only screen and (min-width: 600px) {
+    order: 1;
+  }
+`;
+
 const StickyWrapper = styled.div`
-  position: sticky;
-  top: 0;
-  padding: 3rem 0;
+  position: relative;
+  padding: var(--var-padding-m) 0;
+
+  @media only screen and (min-width: 600px) {
+    position: sticky;
+    top: 3rem;
+  }
 `;
 
 const AboutIcon = styled.div`
@@ -92,7 +102,7 @@ const ProfileImage = styled.div`
 `;
 
 const Subtitle = styled.p`
-  font-size: 1.125rem;
+  font-size: 1.025rem;
   font-family: var(--font-secondary);
   font-weight: 500;
 `;
@@ -118,7 +128,7 @@ const Blog = styled.section`
   }
 
   & > div:nth-child(3) {
-    grid-column: span 3;
+    grid-column: span 4;
   }
 
   @media only screen and (max-width: 767px) {
@@ -156,20 +166,23 @@ const Contact = styled.div`
 
 const PhotoGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  grid-gap: 2px;
+  grid-template-columns: 1fr 1fr;
   height: 100%;
 
-  @media only screen and (max-width: 768px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  @media only screen and (min-width: 1024px) {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-gap: 2px;
   }
 `;
 
 const PhotoIntro = styled.div`
-  padding: 1rem;
+  padding: var(--var-padding-m);
   h2 {
     margin: 0;
+  }
+
+  @media only screen and (max-width: 768px) {
+    grid-column: span 2;
   }
 `;
 const IndexPage = ({ data }) => {
@@ -182,38 +195,29 @@ const IndexPage = ({ data }) => {
       <Row>
         <IndexHero />
       </Row>
-      <FullGreyRow className="full-bleed" id="experience-designer">
+      <GreyRow className="full-bleed" id="experience-designer">
         <Box>
-          <Column>
+          <ColumnSpaced>
             <StickyBox>
               <StickyWrapper>
                 <small>01.</small>
                 <h2>Interaction and Experience Design</h2>
 
                 <p>
-                  I'm a multi-disciplinary designer with 5 years experience in
-                  delivering elegant and solutions.
+                  I'm a multi-disciplinary designer with 5 years of experience
+                  in delivering elegant design and practical solutions.
                 </p>
+                <ReadOn text="View My Work" href="/work" />
               </StickyWrapper>
             </StickyBox>
             <WorkHero postEdges={workEdges} />
-          </Column>
-          <Center>
-            <ContactButton>
-              <Link to="/work" className="noeffect">
-                View More →
-              </Link>
-            </ContactButton>
-          </Center>
+          </ColumnSpaced>
         </Box>
-      </FullGreyRow>
+      </GreyRow>
       <Row id="blog">
         <Box>
-          <Column>
-            <Blog>
-              <BlogListing postEdges={blogEdges} />
-            </Blog>
-            <StickyBox>
+          <UnevenColumn>
+            <RightStickyBox>
               <StickyWrapper>
                 <BlogIntro>
                   <small>02.</small>
@@ -221,19 +225,26 @@ const IndexPage = ({ data }) => {
                   <Subtitle>
                     I write about design, technology and productivity.
                   </Subtitle>
-                  <ReadOn text="Read All Blog Posts →" href="/blog" />
+                  <ReadOn text="Read All Blog Posts" href="/blog" />
                 </BlogIntro>
               </StickyWrapper>
-            </StickyBox>
-          </Column>
+            </RightStickyBox>
+            <Blog>
+              <BlogListing postEdges={blogEdges} />
+            </Blog>
+          </UnevenColumn>
         </Box>
       </Row>
-      <Row className="full-bleed" id="photography">
+      <Row className="full-bleed full-content" id="photography">
         <PhotoGrid>
           <IndexPhoto postEdges={photo1Edges} />
           <PhotoIntro>
             <small>03.</small>
             <h2>Photography</h2>
+            <Subtitle>
+              Sets of photos according to cities that I have visited.
+            </Subtitle>
+            <ReadOn text="More Photos" href="/photo" />
           </PhotoIntro>
           <IndexPhoto postEdges={photo2Edges} />
         </PhotoGrid>
@@ -321,7 +332,7 @@ export const pageQuery = graphql`
     Photo1: allMdx(
       filter: { fileAbsolutePath: { regex: "/photo/" } }
       sort: { fields: [frontmatter___date], order: DESC }
-      limit: 5
+      limit: 4
     ) {
       edges {
         node {
@@ -357,8 +368,8 @@ export const pageQuery = graphql`
     Photo2: allMdx(
       filter: { fileAbsolutePath: { regex: "/photo/" } }
       sort: { fields: [frontmatter___date], order: DESC }
-      limit: 6
-      skip: 5
+      limit: 7
+      skip: 4
     ) {
       edges {
         node {

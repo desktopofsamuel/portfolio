@@ -92,7 +92,7 @@ const Paragraph = styled.p`
 `;
 
 const CreditText = styled.p`
-  font-family: var(--font-primary);
+  font-family: var(--font-secondary);
   font-size: 12px;
   line-height: 150%;
   color: var(--color-secondary-500);
@@ -126,11 +126,10 @@ const CreditContainer = styled.div`
   }
 `;
 
-export default class Footer extends React.Component {
-  render() {
-    return (
-      <footer id="#contact">
-        {/* <BgRow>
+const Footer = () => {
+  return (
+    <footer id="#contact">
+      {/* <BgRow>
           <BoxNow>
             <div>
               <FooterGrid>
@@ -177,31 +176,43 @@ export default class Footer extends React.Component {
             </div>
           </BoxNow>
         </BgRow> */}
-        <Row className="full-bleed">
-          <Boxed size="small">
-            <FooterContact />
-          </Boxed>
-        </Row>
-        <Row className="full-bleed">
-          <Boxed>
-            <LinkContainer>
-              <FooterItem to="/about">About</FooterItem>
-              <FooterItem to="/work">Work</FooterItem>
-              <FooterItem to="/blog">Blog</FooterItem>
-              <FooterItem to="https://pins.desktopofsamuel.com">
-                Pins
-              </FooterItem>
-              <FooterItem to="/photo">Photo</FooterItem>
-            </LinkContainer>
-            <CreditContainer>
-              <CreditText>
-                Design & Code © 2018 - 2020 Samuel W. | Built with{" "}
-                <Link to="https://www.gatsbyjs.org">Gatsby</Link>.
-              </CreditText>
-            </CreditContainer>
-          </Boxed>
-        </Row>
-      </footer>
-    );
-  }
-}
+      <Row className="full-bleed">
+        <Boxed size="large">
+          <FooterContact />
+        </Boxed>
+      </Row>
+      <Row className="full-bleed">
+        <Boxed>
+          <LinkContainer>
+            <FooterItem className="noeffect" to="/about">
+              About
+            </FooterItem>
+            <FooterItem className="noeffect" to="/work">
+              Work
+            </FooterItem>
+            <FooterItem className="noeffect" to="/blog">
+              Blog
+            </FooterItem>
+            <FooterItem
+              className="noeffect"
+              to="https://pins.desktopofsamuel.com"
+            >
+              Pins
+            </FooterItem>
+            <FooterItem className="noeffect" to="/photo">
+              Photo
+            </FooterItem>
+          </LinkContainer>
+          <CreditContainer>
+            <CreditText>
+              Design & Code © 2018 - 2020 Samuel W. | Built with{" "}
+              <Link to="https://www.gatsbyjs.org">Gatsby</Link>.
+            </CreditText>
+          </CreditContainer>
+        </Boxed>
+      </Row>
+    </footer>
+  );
+};
+
+export default Footer;

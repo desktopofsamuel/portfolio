@@ -27,7 +27,7 @@ class IndexPhoto extends React.Component {
     return (
       <>
         {postList.map(post => (
-          <Link to={post.path} className="noeffect">
+          <Link to={post.path} key={post.path} className="noeffect">
             <Photo>
               <Img sizes={post.cover.childImageSharp.sizes} alt={post.title} />
             </Photo>
