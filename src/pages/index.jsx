@@ -24,7 +24,6 @@ const Box = styled(Boxed)`
 `;
 
 const Row = styled.section`
-  margin: 0 auto;
   padding: var(--var-padding-m) 0;
   background: white;
 `;
