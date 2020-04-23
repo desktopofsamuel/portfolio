@@ -9,7 +9,7 @@ import SEO from "../components/SEO";
 import config from "../../data/SiteConfig";
 
 const Title = styled.h1`
-  padding-top: 10vh;
+  padding-top: var(--var-padding-m);
   font-family: var(--font-primary);
 `;
 

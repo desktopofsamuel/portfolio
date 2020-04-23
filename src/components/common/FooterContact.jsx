@@ -83,8 +83,8 @@ const FooterContact = () => {
       <Section>
         <h6>Subscribe</h6>
         <Content>
-          I'm writing regularly on design and technology. Feel free to subscribe
-          via{" "}
+          I write regularly on the subject of design and technology. Feel free
+          to subscribe via{" "}
           <Link to="/rss.xml" target="_blank">
             RSS
           </Link>{" "}
@@ -92,6 +92,7 @@ const FooterContact = () => {
           <Link to="https://medium.com/@desktopofsamuel" target="_blank">
             Medium
           </Link>
+          .
         </Content>
       </Section>
     </Container>
