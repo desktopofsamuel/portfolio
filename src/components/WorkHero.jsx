@@ -6,6 +6,30 @@ import ReadOn from "elements/ReadOn";
 
 const Grid = styled.section``;
 
+const ListLeft = styled.div`
+  background: white;
+  padding: 1rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+
+  h3 {
+    margin-top: 0;
+  }
+
+  h6 {
+    color: var(--color-secondary-500);
+    font-weight: var(--font-weight-regular);
+    margin-bottom: 1rem;
+  }
+
+  span {
+    margin-left: 4px;
+    color: var(--color-secondary-500);
+    transition: var(--transition);
+  }
+`;
+
 const ListItem = styled.div`
   /* display: grid;
   grid-template-columns: minmax(auto, 40%) minmax(auto, 1200px); */
@@ -32,29 +56,6 @@ const ListItem = styled.div`
 `;
 
 const WorkImg = styled(Img)``;
-const ListLeft = styled.div`
-  background: white;
-  padding: 1rem;
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-
-  h3 {
-    margin-top: 0;
-  }
-
-  h6 {
-    color: var(--color-secondary-500);
-    font-weight: var(--font-weight-regular);
-    margin-bottom: 1rem;
-  }
-
-  span {
-    margin-left: 4px;
-    color: var(--color-secondary-500);
-    transition: var(--transition);
-  }
-`;
 
 const ListRight = styled.div``;
 class WorkHero extends React.Component {
