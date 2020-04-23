@@ -1,85 +1,34 @@
 import React from "react";
 import Helmet from "react-helmet";
 import styled from "styled-components";
+import Img from "gatsby-image";
 import { graphql } from "gatsby";
-import Link from "../components/GatsbyLink/GatsbyLink";
+import Boxed from "elements/Boxed";
+import Column from "elements/Column";
+import ReadOn from "elements/ReadOn";
+import Link from "../components/common/GatsbyLink";
 import config from "../../data/SiteConfig";
 import Layout from "../layout";
-import WorkHero from "../components/WorkHero/WorkHero";
-import CTAButton from "../components/MajorButton/MajorButton";
-import BlogListing from "../components/PostListing/PostListing";
-import BoxContent from "elements/Boxed";
+import WorkHero from "../components/WorkHero";
+import CTAButton from "../components/common/MajorButton";
+import BlogListing from "../components/BlogListing";
 import WorkIcon from "../../static/SVG/Work.svg";
 import BlogIcon from "../../static/SVG/Blog.svg";
-import Now from "../components/Now/Now";
-import { ReadOn } from "../components/UI";
+import Now from "../components/Now";
+import Profile from "../../static/images/Profile.webp";
+import IndexHero from "../components/IndexHero";
+import IndexPhoto from "../components/IndexPhoto";
+
+const Box = styled(Boxed)`
+  max-width: var(--page-container-l);
+`;
 
 const Row = styled.section`
-  padding: var(--var-padding-l) 0;
-  background: white;
-
-  &:first-child {
-    padding-bottom: 0;
-  }
-`;
-
-const Intro = styled(Row)`
-  justify-content: center;
-  text-align: center;
-`;
-
-const Hero = styled.div`
-  text-align: left;
-
-  h1 {
-    font-family: var(--font-primary);
-  }
-`;
-
-const HeroGraphics = styled.figure`
-  margin: 0;
-  padding: 0;
-`;
-
-const WhiteBox = styled.div`
-  border-top: 1px var(--color-brand-500) solid;
-  background: white;
-  height: 50px;
-  position: relative;
-  overflow: hidden;
-  bottom: 50px;
-`;
-
-const GraphicBox = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: flex-end;
-  margin-top: -24px;
-
-  & > * {
-    margin-right: 16px;
-    overflow: hidden;
-    position: relative;
-    left: 0;
-    bottom: 20px;
-    transition: all 0.3s ease-in;
-
-    &:hover {
-      bottom: 30px;
-    }
-
-    &:first-child {
-      margin-right: -8px;
-    }
-  }
-`;
-const IntroBox = styled.div`
   margin: 0 auto;
-  text-align: center;
-  padding: 0 0 2rem 0;
-  max-width: 400px;
+  padding: var(--var-padding-m) 0;
+  background: white;
 `;
+
 const More2Button = styled.button`
   box-sizing: border-box;
   background: none;
@@ -93,13 +42,18 @@ const More2Button = styled.button`
   }
 `;
 
-const FullGreyRow = styled(Row)`
+const ColumnSpaced = styled(Column)`
+  grid-gap: 3rem;
+`;
+
+const UnevenColumn = styled(ColumnSpaced)`
+  grid-template-columns: 7fr 3fr;
+`;
+
+const GreyRow = styled(Row)`
   background: var(--color-white-300);
 `;
 
-const FullYellowRow = styled(Row)`
-  background: var(--color-brand-300);
-`;
 const ContactButton = styled.button`
   border: none;
   box-sizing: border-box;
@@ -113,27 +67,42 @@ const ContactButton = styled.button`
     color: var(--color-black-500);
   }
 `;
-const AboutBox = styled.div`
-  width: 100%;
-  display: flex;
+const StickyBox = styled.div`
+  height: 100%;
 `;
 
-const AboutIntro = styled.div``;
+const RightStickyBox = styled.div`
+  @media only screen and (min-width: 600px) {
+    order: 1;
+  }
+`;
+
+const StickyWrapper = styled.div`
+  position: relative;
+  padding: var(--var-padding-m) 0;
+
+  @media only screen and (min-width: 600px) {
+    position: sticky;
+    top: 3rem;
+  }
+`;
 
 const AboutIcon = styled.div`
   justify-self: flex-end;
 `;
 
-const HalfBox = styled.div`
-  width: 55ch;
+const HalfBox = styled.div``;
 
-  @media only screen and (max-width: 767px) {
-    width: 100%;
+const ProfileImage = styled.div`
+  width: 100%;
+
+  img {
+    box-shadow: 10px 10px 0px 1px rgba(237, 237, 237, 1);
   }
 `;
 
 const Subtitle = styled.p`
-  font-size: 1.125rem;
+  font-size: 1.025rem;
   font-family: var(--font-secondary);
   font-weight: 500;
 `;
@@ -155,11 +124,11 @@ const Blog = styled.section`
   align-items: flex-start;
 
   & > div:nth-child(2) {
-    grid-column: span 3;
+    grid-column: span 4;
   }
 
   & > div:nth-child(3) {
-    grid-column: span 3;
+    grid-column: span 4;
   }
 
   @media only screen and (max-width: 767px) {
@@ -195,164 +164,96 @@ const Contact = styled.div`
   }
 `;
 
-class Index extends React.Component {
-  render() {
-    const workEdges = this.props.data.Work.edges;
-    const blogEdges = this.props.data.Blog.edges;
-    return (
-      <div>
-        <Helmet>
-          <title>{config.siteTitle}</title>
-          <meta name="description" content={config.siteDescription} />
-        </Helmet>
-        <Layout>
-          <Intro>
-            <BoxContent>
-              <Hero>
-                <small>When Design Meets Technology</small>
-                <h1>
-                  Designing with <br />
-                  <span className="brand">complexity</span>
-                </h1>
-                <HeroGraphics>
-                  <GraphicBox>
-                    <svg
-                      class="triangle"
-                      width="96"
-                      height="83"
-                      viewBox="0 0 96 83"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2.96668 81L48 3L93.0333 81H2.96668Z"
-                        stroke="#535E7C"
-                        stroke-width="3"
-                      />
-                    </svg>
-                    <svg
-                      width="107"
-                      height="107"
-                      viewBox="0 0 107 107"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <circle
-                        cx="53.5"
-                        cy="53.5"
-                        r="52"
-                        stroke="#535E7C"
-                        stroke-width="3"
-                      />
-                    </svg>
-                    <svg
-                      width="82"
-                      height="82"
-                      viewBox="0 0 82 82"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        x="1.5"
-                        y="1.5"
-                        width="79"
-                        height="79"
-                        stroke="#535E7C"
-                        stroke-width="3"
-                      />
-                    </svg>
-                    <svg
-                      width="133"
-                      height="126"
-                      viewBox="0 0 133 126"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2.16493 48.5963L66.5 1.8541L130.835 48.5963L106.261 124.227H26.7387L2.16493 48.5963Z"
-                        stroke="#535E7C"
-                        stroke-width="3"
-                      />
-                    </svg>
-                  </GraphicBox>
-                  <WhiteBox />
-                </HeroGraphics>
-              </Hero>
-              <IntroBox>
-                <small>Hi! My name is Samuel</small>
-                <Subtitle>
-                  I believe design is the way to navigate today's complex world.
-                  Join me in this journey.
-                </Subtitle>
-              </IntroBox>
-              <CTAButton href="#contact" text="Get In Touch" />
-            </BoxContent>
-          </Intro>
+const PhotoGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
 
-          <Row>
-            <BoxContent>
-              <HalfBox>
-                <small>I'm working as a</small>
-                <h2>Product Designer</h2>
-                <p>
-                  Currently I'm based in Hong Kong, specialising in
-                  user-interface and user-experience design, crafting
-                  outstanding digital products. <br /> <br /> I lead design at
-                  Hyperair as Principal Designer. Before that, I worked as
-                  Cross-Content Intern at iTunes & App Store, Apple.
-                </p>
-                <ReadOn text="About Me" href="/about" />
-              </HalfBox>
-            </BoxContent>
-          </Row>
-          <FullGreyRow className="full-bleed">
-            <BoxContent>
-              <AboutBox>
-                <AboutIntro>
-                  <small>Let's See</small>
-                  <h2>My Work</h2>
-                  <p>
-                    Years of experience in delivering elegant solutions for web
-                    and app.
-                  </p>
-                </AboutIntro>
-              </AboutBox>
-              <WorkHero postEdges={workEdges} />
-              <Center>
-                <ContactButton>
-                  <Link to="/work" className="noeffect">
-                    View More →
-                  </Link>
-                </ContactButton>
-              </Center>
-            </BoxContent>
-          </FullGreyRow>
-          <Row className="full-bleed">
-            <BoxContent>
-              <BlogIntro>
-                <h2>Blog</h2>
-                <Subtitle>
-                  I write about design, technology and productivity.
-                </Subtitle>
-              </BlogIntro>
-              <Blog>
-                <BlogListing postEdges={blogEdges} />
-                <ReadOn text="Read All Blog Posts →" href="/blog" />
-              </Blog>
-            </BoxContent>
-          </Row>
-          <FullYellowRow className="full-bleed">
-            <BoxContent>
-              <Now />
-            </BoxContent>
-          </FullYellowRow>
-        </Layout>
-      </div>
-    );
+  @media only screen and (min-width: 1024px) {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-gap: 2px;
   }
-}
+`;
 
-export default Index;
+const PhotoIntro = styled.div`
+  padding: var(--var-padding-m);
+  h2 {
+    margin: 0;
+  }
+
+  @media only screen and (max-width: 768px) {
+    grid-column: span 2;
+  }
+`;
+const IndexPage = ({ data }) => {
+  const workEdges = data.Work.edges;
+  const blogEdges = data.Blog.edges;
+  const photo1Edges = data.Photo1.edges;
+  const photo2Edges = data.Photo2.edges;
+  return (
+    <Layout>
+      <Row>
+        <IndexHero />
+      </Row>
+      <GreyRow className="full-bleed" id="experience-designer">
+        <Box>
+          <ColumnSpaced>
+            <StickyBox>
+              <StickyWrapper>
+                <small>01.</small>
+                <h2>Interaction and Experience Design</h2>
+
+                <p>
+                  I'm a multi-disciplinary designer with 5 years of experience
+                  in delivering elegant design and practical solutions.
+                </p>
+                <ReadOn text="View My Work" href="/work" />
+              </StickyWrapper>
+            </StickyBox>
+            <WorkHero postEdges={workEdges} />
+          </ColumnSpaced>
+        </Box>
+      </GreyRow>
+      <Row id="blog">
+        <Box>
+          <UnevenColumn>
+            <RightStickyBox>
+              <StickyWrapper>
+                <BlogIntro>
+                  <small>02.</small>
+                  <h2>Notes on Design & Technology</h2>
+                  <Subtitle>
+                    I write about design, technology and productivity.
+                  </Subtitle>
+                  <ReadOn text="Read All Blog Posts" href="/blog" />
+                </BlogIntro>
+              </StickyWrapper>
+            </RightStickyBox>
+            <Blog>
+              <BlogListing postEdges={blogEdges} />
+            </Blog>
+          </UnevenColumn>
+        </Box>
+      </Row>
+      <Row className="full-bleed full-content" id="photography">
+        <PhotoGrid>
+          <IndexPhoto postEdges={photo1Edges} />
+          <PhotoIntro>
+            <small>03.</small>
+            <h2>Photography</h2>
+            <Subtitle>
+              Sets of photos according to cities that I have visited.
+            </Subtitle>
+            <ReadOn text="More Photos" href="/photo" />
+          </PhotoIntro>
+          <IndexPhoto postEdges={photo2Edges} />
+        </PhotoGrid>
+      </Row>
+    </Layout>
+  );
+};
+
+export default IndexPage;
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
@@ -374,26 +275,15 @@ export const pageQuery = graphql`
             title
             subtitle
             path
-            tags
             color
             cover {
               publicURL
-              size
               childImageSharp {
-                sizes(maxWidth: 1200) {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  srcWebp
-                  srcSetWebp
-                  sizes
-                  originalImg
-                  originalName
+                fluid(maxHeight: 1200) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
-            date
           }
         }
       }
@@ -435,6 +325,79 @@ export const pageQuery = graphql`
               }
             }
             date
+          }
+        }
+      }
+    }
+    Photo1: allMdx(
+      filter: { fileAbsolutePath: { regex: "/photo/" } }
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 4
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+            date(formatString: "MMM DD, YYYY", locale: "en")
+          }
+          excerpt(pruneLength: 70)
+          frontmatter {
+            title
+            tldr
+            cover {
+              publicURL
+              size
+              childImageSharp {
+                sizes(maxWidth: 1200) {
+                  base64
+                  aspectRatio
+                  src
+                  srcSet
+                  srcWebp
+                  srcSetWebp
+                  sizes
+                  originalImg
+                  originalName
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    Photo2: allMdx(
+      filter: { fileAbsolutePath: { regex: "/photo/" } }
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 7
+      skip: 4
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+            date(formatString: "MMM DD, YYYY", locale: "en")
+          }
+          excerpt(pruneLength: 70)
+          frontmatter {
+            title
+            tldr
+            cover {
+              publicURL
+              size
+              childImageSharp {
+                sizes(maxWidth: 1200) {
+                  base64
+                  aspectRatio
+                  src
+                  srcSet
+                  srcWebp
+                  srcSetWebp
+                  sizes
+                  originalImg
+                  originalName
+                }
+              }
+            }
           }
         }
       }

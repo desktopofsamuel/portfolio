@@ -2,8 +2,8 @@ import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
-import Link from "../components/GatsbyLink/GatsbyLink";
-import WorkHero from "../components/WorkHero/WorkHero";
+import Link from "../components/common/GatsbyLink";
+import WorkHero from "../components/WorkHero";
 import WaterSVG from "../../static/SVG/Water.svg";
 import BookSVG from "../../static/SVG/Book.svg";
 import HyperAirSVG from "../../static/SVG/HyperAir-2.svg";
@@ -11,10 +11,13 @@ import PinSVG from "../../static/SVG/Pin.svg";
 import PlayaSVG from "../../static/SVG/Playa.svg";
 import PingspaceSVG from "../../static/SVG/Pingspace.svg";
 import PageTitle from "../elements/PageTitle";
-import SEO from "../components/SEO/SEO";
+import SEO from "../components/SEO";
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import Boxed from "elements/Boxed";
+
+const WorkBoxed = styled(Boxed)``;
+
 const Row = styled.section`
   padding: var(--var-padding-l) 0;
   background: white;
@@ -24,29 +27,11 @@ const Row = styled.section`
   }
 `;
 
-const BoxContent = styled.div`
-  max-width: 85vw;
-  padding-left: 50px;
-  margin: 0 auto;
-
-  @media only screen and (max-width: 1024px) {
-    max-width: 95vw;
-    padding: 0 1.5rem;
-  }
-
-  @media only screen and (max-width: 768px) {
-    padding: 0 1rem;
-  }
-`;
-
 const GridProject = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   grid-gap: 1rem;
 `;
-
-const PassionPart = styled.div``;
-const PassionContent = styled.div``;
 
 const ProjectWrapper = styled.div`
   background: var(--color-white-700);
@@ -86,7 +71,7 @@ const ProjectYear = styled.small`
 `;
 
 const ProjectLink = styled(Link)``;
-
+/* 
 const ProjectBox = props => (
   <ProjectWrapper>
     <ProjectIcon>
@@ -104,40 +89,42 @@ const ProjectBox = props => (
     </ProjectBottom>
   </ProjectWrapper>
 );
+ */
 
-class Index extends React.Component {
-  render() {
-    const postEdges = this.props.data.allMdx.edges;
-    return (
-      <Layout>
-        <Boxed>
-          <Row>
-            <PageTitle title="My Work" subtitle="My Case Studies" />
-          </Row>
-          <Row>
-            <h2>Case Studies</h2>
-            <WorkHero postEdges={postEdges} />
-          </Row>
+const WorkPage = ({ data }) => {
+  const postEdges = data.allMdx.edges;
+  return (
+    <Layout
+      title="Work"
+      description="Photo"
+      keywords="Photography, Travel, Sightseeing, Canon, iPhone, City, Journey"
+    >
+      <WorkBoxed>
+        <PageTitle title="My Work" subtitle="My Case Studies" />
+        <Row>
+          <h2>Case Studies</h2>
+          <WorkHero postEdges={postEdges} />
+        </Row>
 
-          <Row>
-            <h2>More Works</h2>
-            <p>Check out some sites and apps that I have built.</p>
-            <GridProject>
-              <ProjectBox
+        <Row>
+          <h2>More Works</h2>
+          <p>Check out some sites and apps that I have built.</p>
+          <GridProject>
+            {/* <ProjectBox
                 img={PinSVG}
                 title="Pins"
                 blurb="Curated design resource site coded by myself using GatsbyJS."
                 year="2018"
                 url="https://pins.desktopofsamuel.com"
-              />
-              {/* <ProjectBox
+              /> */}
+            {/* <ProjectBox
                   img={DocuSVG}
                   title="Road Not Taken"
                   blurb="A documentary I directed with multiple Asian film festival selected."
                   year="2016"
                   url="https://vimeo.com/ondemand/roadnottaken"
                 /> */}
-              <ProjectBox
+            {/* <ProjectBox
                 img={PingspaceSVG}
                 title="Pingspace"
                 blurb="Websites uptime monitor as a personal project"
@@ -171,16 +158,15 @@ class Index extends React.Component {
                 blurb="Online novel platform supported by an independent publisher"
                 year="2017"
                 url="https://playa.hk/projects/creation-cabin-reading-platform.html"
-              />
-            </GridProject>
-          </Row>
-        </Boxed>
-      </Layout>
-    );
-  }
-}
+              /> */}
+          </GridProject>
+        </Row>
+      </WorkBoxed>
+    </Layout>
+  );
+};
 
-export default Index;
+export default WorkPage;
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
@@ -207,16 +193,8 @@ export const pageQuery = graphql`
               publicURL
               size
               childImageSharp {
-                sizes(maxWidth: 1140) {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  srcWebp
-                  srcSetWebp
-                  sizes
-                  originalImg
-                  originalName
+                fluid(maxHeight: 1200) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }

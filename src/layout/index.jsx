@@ -1,12 +1,11 @@
 import React from "react";
 import Helmet from "react-helmet";
-import SEO from "../components/SEO/SEO";
-import config from "../../data/SiteConfig";
 import styled from "styled-components";
-import { MDXProvider } from "@mdx-js/react";
+import SEO from "../components/SEO";
+import config from "../../data/SiteConfig";
 import "./index.css";
-import Nav from "../components/Navigation/navigation-3";
-import Footer from "../components/Footer/Footer";
+import Nav from "../components/common/NavBar";
+import Footer from "../components/common/Footer";
 
 const Layout = styled.div`
   background-color: var(--color-background-500);
@@ -29,31 +28,45 @@ if (typeof window !== "undefined") {
   require("smooth-scroll")('a[href*="#"]');
 }
 
-export default class MainLayout extends React.Component {
-  render() {
-    const { children } = this.props;
-    return (
-      <MDXProvider
+const LayoutTemplate = ({ children, title, description, keywords }) => {
+  return (
+    <Layout>
+      <SEO />
+      <Helmet title={`${title}  | ${config.siteTitle}`}>
+        <meta name="twitter:title" content={`${title} | ${config.siteTitle}`} />
+        <meta property="og:title" content={`${title} | ${config.siteTitle}`} />
+        <meta name="description" content={description} />
+        <meta name="twitter:description" content={description} />
+        <meta property="og:description" content={description} />
+        <meta name="keywords" content={keywords} />
+      </Helmet>
+      <Nav />
+      <Main>{children}</Main>
+      <Footer />
+    </Layout>
+  );
+};
+
+export default LayoutTemplate;
+
+LayoutTemplate.defaultProps = {
+  title: config.siteTitle,
+  description: config.siteDescription,
+  keywords: config.siteKeywords,
+};
+
+/* <MDXProvider
         components={{
-          h2: props => (
+          h2: (props) => (
             <h2
               {...props}
               style={{
-                fontFamily: "var(--secondary-font)",
-                fontWeight: "500",
-                marginTop: "var(--padding-m)"
+                fontFamily: "var(--primary-font)",
+                fontWeight: "var(--font-weight-bold)",
+                marginTop: "var(--padding-m)",
               }}
             />
-          )
+          ),
         }}
-      >
-        <Layout>
-          <SEO />
-          <Nav />
-          <Main>{children}</Main>
-          <Footer />
-        </Layout>
-      </MDXProvider>
-    );
-  }
-}
+      > */
+/*       </MDXProvider> */

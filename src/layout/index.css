@@ -1,61 +1,23 @@
-@import url("https://rsms.me/inter/inter.css");
-@import url("https://use.typekit.net/hey8lez.css");
-
-:root {
-  --font-primary: freight-big-pro, Georgia, serif;
-  --font-secondary: IBM Plex Sans, Helvetica, Arial, sans-serif;
-  --tertiary-font: grad, Georgia, serif;
-  --color-brand-300: #fefdf4;
-  --color-brand-500: #feb101;
-  --color-palette-500: #ffd644;
-  --color-background-500: #ffffff;
-  --color-white-300: #fbfbfb;
-  --color-white-500: #f7f7f7;
-  --color-white-700: #eeeeee;
-  --color-black-500: #0d0d0d;
-  --color-grey-100: #a8a9ab;
-  --color-grey-300: #939393;
-  --color-grey-500: #737373;
-  --color-secondary-700: #2c3242;
-  --color-secondary-500: #485069;
-  --color-secondary-300: #7082b5;
-  --color-secondary-100: #ced8e0;
-  --color-transparent: rgba(0, 0, 0, 0);
-  --padding-s: 1rem;
-  --padding-m: 2rem;
-  --padding-l: 4rem;
-  --padding-xl: 8rem;
-  --var-padding-l: 6rem;
-  --var-padding-m: 2rem;
-  --var-padding-s: 1rem;
-  --grid-gap: 24px;
-  --font-size-xxl: calc(56px + (72 - 56) * ((100vw - 320px) / (1600 - 320)));
-  --font-size-xl: calc(36px + (56 - 36) * ((100vw - 320px) / (1600 - 320)));
-  --font-size-l: calc(24px + (36 - 24) * ((100vw - 320px) / (1600 - 320)));
-  --font-size-m: calc(18px + (20 - 18) * ((100vw - 320px) / (1600 - 320)));
-  --transition: all 0.3s ease-in-out;
-}
-
-@media only screen and (max-width: 768px) {
-  :root {
-    font-size: 18px;
-    --var-padding-l: 3rem;
-    --var-padding-m: 1rem;
-    --var-padding-s: 0.5rem;
-  }
-}
-
-* {
-  box-sizing: border-box;
-}
+@import url("./variables.css");
 
 html {
   height: 100%;
   font-family: var(--font-secondary);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 2em;
+  font-weight: var(--font-weight-regular);
+  line-height: var(--font-base-line-height);
+  font-size: var(--font-size-base);
   color: var(--color-black-500);
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mobile */
+
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -63,10 +25,7 @@ body {
   background: var(--color-background-500);
 }
 
-div > main {
-  max-width: 85vw;
-  margin: 0 auto;
-}
+
 
 @media only screen and (max-width: 1024px) {
   div > main {
@@ -83,40 +42,40 @@ div > main {
 }
 
 h1 {
-  font-family: var(--font-secondary);
-  font-style: normal;
-  font-weight: 700;
-  font-size: calc(36px + (56 - 36) * ((100vw - 320px) / (1600 - 320)));
-  line-height: 120%;
-  margin-top: var(--padding-s);
+  font-size: calc(var(--font-size-base) * 3 * var(--font-scale-ratio));
+  line-height: 1.3em;
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  margin-top: calc(var(--font-base-line-height) * var(--font-size-base) * 4);
+  margin-bottom: calc(var(--font-base-line-height) * var(--font-size-base) * 1);
+  letter-spacing: -0.75px;
 }
 
 h2 {
-  font-size: calc(26px + (40 - 26) * ((100vw - 320px) / (1600 - 320)));
+  font-size: calc(var(--font-size-base) * 2.1458 * var(--font-scale-ratio));
+  line-height: 1.3em;
   font-family: var(--font-primary);
-  font-weight: 600;
-  line-height: calc(32px + (48 - 32) * ((100vw - 320px) / (1600 - 320)));
-}
-
-.blog h2 {
-  margin-top: 4rem;
+  font-weight: var(--font-weight-bold);
+  margin-top: calc(var(--font-base-line-height) * var(--font-size-base) * 2);
+  margin-bottom: calc(
+    var(--font-base-line-height) * var(--font-size-base) * 0.5
+  );
 }
 
 h3 {
+  font-size: calc(var(--font-size-base) * 1.6875 * var(--font-scale-ratio));
+  line-height: 1.3em;
   font-family: var(--font-primary);
-  font-weight: 600;
-  line-height: 150%;
-  font-size: calc(24px + (30 - 24) * ((100vw - 320px) / (1600 - 320)));
-  line-height: calc(32px + (40 - 32) * ((100vw - 320px) / (1600 - 320)));
-  letter-spacing: -0.025rem;
-  margin-top: 0;
-  margin-bottom: 1rem;
+  font-weight: var(--font-weight-bold);
+  margin-top: calc(var(--font-base-line-height) * var(--font-size-base) * 2);
+  margin-bottom: calc(
+    var(--font-base-line-height) * var(--font-size-base) * 0.5
+  );
 }
 
 h4 {
   font-family: var(--font-primary);
-  font-style: normal;
-  font-weight: 600;
+  font-weight: var(--font-weight-bold);
   text-transform: uppercase;
   line-height: 130%;
   letter-spacing: 0.075rem;
@@ -127,7 +86,7 @@ h4 {
 h5 {
   font-family: var(--font-secondary);
   font-style: normal;
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
   line-height: 150%;
   font-size: 16px;
   margin-top: 0;
@@ -135,8 +94,8 @@ h5 {
 }
 
 h6 {
-  font-family: var(--font-secondary);
-  font-weight: 400;
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
   text-transform: uppercase;
   line-height: normal;
   font-size: 14px;
@@ -145,8 +104,8 @@ h6 {
 }
 
 small {
-  font-family: var(--font-secondary);
-  font-weight: 400;
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-regular);
   text-transform: uppercase;
   line-height: normal;
   font-size: 12px;
@@ -155,20 +114,23 @@ small {
   color: var(--color-secondary-500);
 }
 
+b,
 strong {
-  font-family: var(--font-secondary);
-  font-weight: 700;
-}
-
-.Text-S {
-  font-size: 12px;
+  font-weight: var(--font-weight-bold);
 }
 
 a {
-  border-bottom: 2px solid var(--color-palette-500);
+  border-bottom: 2px dotted var(--color-grey-500);
+  background: linear-gradient(to bottom, transparent 62%, #ffd644 0) left center/0% 75% no-repeat;
   color: inherit;
   text-decoration: none;
   cursor: pointer;
+  transition: var(--transition)
+}
+
+a:hover {
+  border-bottom: 2px dotted var(--color-grey-100);
+  background-size: 100% 100%;
 }
 
 a[href$=".jpg"],
@@ -179,15 +141,20 @@ a[href$=".svg"] {
 
 a.noeffect {
   border: none;
+  background-size: 0;
 }
 
 a > button {
   border-bottom: none;
 }
 
+a > small {
+  border-bottom: none;
+}
+
 button {
   font-family: var(--font-primary);
-  font-weight: 500;
+  font-weight: var(--font-weight-regular);
   text-transform: uppercase;
   line-height: normal;
   font-size: 12px;
@@ -211,10 +178,10 @@ blockquote {
   border-color: #eee;
   padding: 1.5em 0 0.5em;
   margin: 3rem 0;
-  font-family: var(--font-primary);
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 1.4;
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-bold);
+  font-size: 1.25rem;
+  line-height: 1.5;
   position: relative;
 }
 blockquote:before {
@@ -297,19 +264,25 @@ p:first-child {
   margin-left: 50%;
   transform: translateX(-50%);
 }
-@media only screen and (max-width: 768px) {
+
+@media only screen and (max-width: 1024px) {
   .full-bleed > div {
+    max-width: 95vw;
     padding: 0 1rem;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .full-bleed.full-content > div {
+    max-width: 100vw;
+    padding: 0;
+    margin: 0 auto;
   }
 }
 
 img {
   max-width: 100%;
-}
-
-hr {
-  margin: var(--var-padding-l) 0;
-  border-top: 1px #f7f7f7 solid;
 }
 
 .gatsby-resp-image-wrapper {

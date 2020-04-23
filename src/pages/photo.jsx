@@ -1,18 +1,14 @@
 import React from "react";
-import Helmet from "react-helmet";
 import { graphql } from "gatsby";
-import Layout from "../layout";
-import config from "../../data/SiteConfig";
-import PhotoMagazine from "../components/PhotoMagazine/PhotoMagazine";
-import Link from "../components/GatsbyLink/GatsbyLink";
-import SEO from "../components/SEO/SEO";
-import BlogFeature from "../components/BlogFeature/BlogFeature";
 import styled from "styled-components";
 import PageTitle from "elements/PageTitle";
 import Boxed from "elements/Boxed";
-import Img from "gatsby-image";
-import ZoomImage from "../components/ZoomImage/ZoomImage";
-import Image from "elements/Image";
+import Layout from "../layout";
+import PhotoMagazine from "../components/PhotoMagazine";
+
+const PhotoBoxed = styled(Boxed)`
+  max-width: var(--page-container-l);
+`;
 
 const Row = styled.section`
   padding: var(--var-padding-s) 0;
@@ -30,78 +26,36 @@ const PageHeader2 = styled.div`
 
 const Grid = styled.section``;
 
-const Main = styled.div``;
+const Title = styled(PageTitle)``;
 
-const Title = styled(PageTitle)`
-  font-family: var(--font-primary);
-  margin-bottom: 0;
-`;
+const PhotoPage = ({ data }) => {
+  const postEdges = data.photo.edges;
 
-const CategoryBlock = styled.div`
-  @media only screen and (max-width: 768px) {
-    display: none;
-  }
-`;
+  return (
+    <Layout
+      title="Photography"
+      description="Photography Portfolio of Samuel W."
+      keywords="Photography, Travel, Sightseeing, Canon, iPhone, City, Journey"
+    >
+      <PhotoBoxed>
+        <Grid>
+          <Row>
+            <Title title="Photography" />
+          </Row>
+          <Row>
+            <PageHeader1 />
+            <PageHeader2 />
+          </Row>
+          <Row>
+            <PhotoMagazine postEdges={postEdges} />
+          </Row>
+        </Grid>
+      </PhotoBoxed>
+    </Layout>
+  );
+};
 
-const FeaturePhoto_Wrapper = styled.div`
-  column-count: 3;
-`;
-
-class Photo extends React.Component {
-  render() {
-    const postEdges = this.props.data.photo.edges;
-    const coverPhoto = this.props.data.cover;
-    const featurePhoto = this.props.data.feature;
-    return (
-      <Layout>
-        <Helmet title={`Photography  | ${config.siteTitle}`}>
-          <meta
-            name="twitter:title"
-            content={`Photo Portfolio | ${config.siteTitle}`}
-          />
-          <meta
-            property="og:title"
-            content={`Photo Portfoliog | ${config.siteTitle}`}
-          />
-          <meta
-            name="description"
-            content="Hi! My name is Samuel. I write blog about web design, user interface and experiecne design."
-          />
-          <meta
-            name="twitter:description"
-            content="Hi! My name is Samuel. I write blog about web design, user interface and experiecne design."
-          />
-          <meta
-            property="og:description"
-            content="Hi! My name is Samuel. I write blog about web design, user interface and experiecne design."
-          />
-          <meta
-            name="keywords"
-            content="Photography, Travel, Sightseeing, Canon, iPhone, City, Journey"
-          />
-        </Helmet>
-        <Row>
-          <Boxed>
-            <Grid>
-              <Row>
-                <Title title="Photography" />
-              </Row>
-              <Row>
-                <PageHeader1 />
-                <PageHeader2 />
-              </Row>
-              <Row>
-                <PhotoMagazine postEdges={postEdges} />
-              </Row>
-            </Grid>
-          </Boxed>
-        </Row>
-      </Layout>
-    );
-  }
-}
-
-export default Photo;
+export default PhotoPage;
 
 /* eslint no-undef: "off" */
 

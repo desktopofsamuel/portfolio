@@ -1,23 +1,20 @@
-import React, { Component } from "react";
-import Helmet from "react-helmet";
-import { StaticQuery, graphql } from "gatsby";
-import Layout from "../layout";
+import React from "react";
+import { graphql } from "gatsby";
 import Img from "gatsby-image";
-import config from "../../data/SiteConfig";
 import styled from "styled-components";
-import Link from "../components/GatsbyLink/GatsbyLink";
-import PageTitle from "elements/PageTitle";
-import ImageZoom from "react-medium-image-zoom";
 import Boxed from "elements/Boxed";
-import Resume from "components/Resume/Resume";
+import PageTitle from "elements/PageTitle";
+import Resume from "../components/Resume";
+import Link from "../components/common/GatsbyLink";
+import Layout from "../layout";
+
+const AboutBoxed = styled(Boxed)`
+  max-width: var(--page-container-l);
+`;
 
 const Row = styled.section`
-  padding: var(--var-padding-l) 0;
+  padding: var(--var-padding-m) 0;
   background: white;
-
-  &:first-child {
-    padding-bottom: 0;
-  }
 `;
 
 const ShortBoxed = styled(Boxed)`
@@ -26,22 +23,6 @@ const ShortBoxed = styled(Boxed)`
 
   @media only screen and (max-width: 1024px) {
     max-width: 80vw;
-  }
-`;
-
-const BoxContent = styled.div`
-  max-width: 60vw;
-  padding: 0 2rem;
-  margin: 0 auto;
-
-  @media only screen and (max-width: 1024px) {
-    max-width: 80vw;
-    padding: 0 1rem;
-  }
-
-  @media only screen and (max-width: 768px) {
-    max-width: 90vw;
-    padding: 0 1rem;
   }
 `;
 
@@ -110,22 +91,23 @@ const P2 = styled.div`
   grid-area: P2;
 `;
 
-const DesignPart = styled.div``;
+const DesignPart = styled.div`
+  h3 {
+    margin: 0;
+  }
+`;
 const DesignContent = styled.div``;
-const DesignContentGrid = styled.div`
-  margin-top: var(--var-padding-m);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 0.5rem;
-  p {
+const SkillList = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  li {
     font-family: var(--font-primary);
-    text-transform: none;
     font-size: 1.2rem;
     color: var(--color-secondary-500);
-    font-weight: 600;
-    display: block;
+    font-weight: var(--font-weight-bold);
     margin-bottom: var(--var-padding-m);
-    margin-block-start: 0;
   }
 `;
 
@@ -135,7 +117,11 @@ const GridProject = styled.div`
   grid-gap: 1rem;
 `;
 
-const PassionPart = styled.div``;
+const PassionPart = styled.div`
+  h3 {
+    margin: 0;
+  }
+`;
 const PassionContent = styled.div``;
 
 const ProjectWrapper = styled.div`
@@ -177,169 +163,159 @@ const ProjectYear = styled.small`
 
 const ProjectLink = styled(Link)``;
 
-const ProjectBox = props => (
+const ProjectBox = ({ img, title, blurb, year, url }) => (
   <ProjectWrapper>
     <ProjectIcon>
-      <img src={props.img} width="50px" />
+      <img src={img} alt={title} width="50px" />
     </ProjectIcon>
     <ProjectContent>
-      <ProjectTitle>{props.title}</ProjectTitle>
-      <ProjectBlurb>{props.blurb}</ProjectBlurb>
+      <ProjectTitle>{title}</ProjectTitle>
+      <ProjectBlurb>{blurb}</ProjectBlurb>
     </ProjectContent>
     <ProjectBottom>
-      <ProjectYear>{props.year}</ProjectYear>
-      <ProjectLink className="noeffect" to={props.url} target="blank">
+      <ProjectYear>{year}</ProjectYear>
+      <ProjectLink className="noeffect" to={url} target="blank">
         ↗
       </ProjectLink>
     </ProjectBottom>
   </ProjectWrapper>
 );
-class AboutPage extends Component {
-  render() {
-    return (
-      <div>
-        <Helmet>
-          <title>{`About | ${config.siteTitle}`}</title>
-        </Helmet>
-        <Layout>
-          <Row>
-            <Boxed>
-              <PageTitle
-                title="About Me"
-                subtitle="Little things about myself"
-              />
-              <PhotoFrame>
-                <Img
-                  fluid={this.props.data.cover.childImageSharp.fluid}
-                  width="100%"
-                  alt="About Cover Photo"
-                />
-              </PhotoFrame>
-              <WrapperIntro>
-                <Intro>
-                  <small>Hi! My name is Samuel.</small>
-                  <p>
-                    I’m pursuing a career in the field of UI/UX Design because
-                    I'm deeply passionate about technology and how it profoundly
-                    changes our way of living. <br />
-                    <br />
-                    The process of turning an idea into a viable product gives
-                    me great satisfaction. Being a self-starter, I’m highly
-                    motivated staying up-to-date with the latest technology,
-                    industry practice and design trends.
-                  </p>
-                  <WrapperNav>
-                    <Link to="#bio">
-                      <small>01. Bio </small>
-                    </Link>
-                    <Link to="#resume">
-                      <small>02. Resume </small>
-                    </Link>
-                    <Link to="#skills">
-                      <small>03. Skills </small>
-                    </Link>
-                  </WrapperNav>
-                </Intro>
-              </WrapperIntro>
-            </Boxed>
-          </Row>
-          <AltRow id="bio" className="full-bleed">
-            <Boxed>
-              <P1>
-                <small>01. Bio</small>
-                <h2>Journey to Design</h2>
-                <p>
-                  I studied cultural and film theories at The University of Hong
-                  Kong. I took a gap year and worked in iTunes & App Store,
-                  Apple as a Cross-Content Intern during college and this
-                  valuable experience sparked my interest in digital products
-                  and web.
-                </p>
-              </P1>
-              <PhotoFrame>
-                <Img
-                  fluid={this.props.data.bio.childImageSharp.fluid}
-                  width="100%"
-                  alt="About Cover Photo"
-                />
-              </PhotoFrame>
-              <GridBio>
-                <P2>
-                  <p>
-                    After my internship, I took on some freelance projects as
-                    well as volunteered for students and community
-                    organisations, acquiring various skill sets to be a hybrid
-                    designer.
-                    <br />
-                    <br />I started an agency Playa with a partner in 2015,
-                    hoping to help small businesses, entrepreneurs and
-                    nonprofits launch their projects and bridge the gap between
-                    project owners and end-users. We have launched dozens of
-                    websites and apps in Hong Kong with multiple recognitions.
-                    <br />
-                    <br />
-                    Currently, I work as the Principal Designer at Hyperair, a
-                    start-up that aims to reinvent travel experiences.
-                  </p>
-                </P2>
-              </GridBio>
-            </Boxed>
-          </AltRow>
-          <InvertRow id="resume" className="full-bleed">
-            <ShortBoxed>
-              <small>02. Resume</small>
-              <Resume />
-            </ShortBoxed>
-          </InvertRow>
 
-          <AltRow id="skills" className="full-bleed">
-            <Boxed>
-              <small>03. Skills</small>
-              <h1>Design, Photography, Writing.</h1>
-              <GridSkill>
-                <DesignPart>
-                  <h3>Design</h3>
-                </DesignPart>
-                <DesignContent>
-                  <p>
-                    Design has been an integral part of my life. It’s been my
-                    passion to learn how to deliver functional and elegant
-                    design.{" "}
-                  </p>
-                  <DesignContentGrid>
-                    <p>Web & App UI Design</p>
-                    <p>User Experience Design</p>
-                    <p>Interaction Design</p>
-                    <p>Prototyping</p>
-                    <p>Wireframing</p>
-                    <p>Frontend Development</p>
-                  </DesignContentGrid>
-                </DesignContent>
-              </GridSkill>
-              <GridSkill>
-                <PassionPart>
-                  <h3>Passion</h3>
-                </PassionPart>
-                <PassionContent>
-                  <p>
-                    Through freelancing, I'm also practicing in the field of
-                    digital products and media, to become a hybrid creative.
-                  </p>
-                  <DesignContentGrid>
-                    <p>Photography</p>
-                    <p>Videography</p>
-                    <p>Social Media</p>
-                    <p>Copywriting</p>
-                  </DesignContentGrid>
-                </PassionContent>
-              </GridSkill>
-            </Boxed>
-          </AltRow>
-        </Layout>
-      </div>
-    );
-  }
-}
+const AboutPage = ({ data }) => {
+  return (
+    <div>
+      <Layout title="About">
+        <Row>
+          <AboutBoxed>
+            <PageTitle title="About Me" subtitle="Little things about myself" />
+            <PhotoFrame>
+              <Img
+                fluid={data.cover.childImageSharp.fluid}
+                width="100%"
+                alt="About Cover Photo"
+              />
+            </PhotoFrame>
+            <WrapperIntro>
+              <Intro>
+                <small>Hi! My name is Samuel.</small>
+                <p>
+                  I&apos;m pursuing a career in the field of UI/UX Design
+                  because I&apos;m deeply passionate about technology and how it
+                  profoundly changes our way of living. <br />
+                  <br />
+                  The process of turning an idea into a viable product gives me
+                  great satisfaction. Being a self-starter, I’m highly motivated
+                  staying up-to-date with the latest technology, industry
+                  practice and design trends.
+                </p>
+                <WrapperNav>
+                  <Link to="#bio">
+                    <small>01. Bio </small>
+                  </Link>
+                  <Link to="#resume">
+                    <small>02. Resume </small>
+                  </Link>
+                  <Link to="#skills">
+                    <small>03. Skills </small>
+                  </Link>
+                </WrapperNav>
+              </Intro>
+            </WrapperIntro>
+          </AboutBoxed>
+        </Row>
+        <AltRow id="bio" className="full-bleed">
+          <Boxed>
+            <P1>
+              <small>01. Bio</small>
+              <h2>Journey to Design</h2>
+              <p>
+                I studied cultural and film theories at The University of Hong
+                Kong. I took a gap year and worked in iTunes & App Store, Apple
+                as a Cross-Content Intern during college and this valuable
+                experience sparked my interest in digital products and web.
+              </p>
+            </P1>
+            <PhotoFrame>
+              <Img
+                fluid={data.bio.childImageSharp.fluid}
+                width="100%"
+                alt="About Cover Photo"
+              />
+            </PhotoFrame>
+            <GridBio>
+              <P2>
+                <p>
+                  After my internship, I took on some freelance projects as well
+                  as volunteered for students and community organisations,
+                  acquiring various skill sets to be a hybrid designer.
+                  <br />
+                  <br />I started an agency Playa with a partner in 2015, hoping
+                  to help small businesses, entrepreneurs and nonprofits launch
+                  their projects and bridge the gap between project owners and
+                  end-users. We have launched dozens of websites and apps in
+                  Hong Kong with multiple recognitions.
+                  <br />
+                  <br />
+                  Currently, I work as the Principal Designer at Hyperair, a
+                  start-up that aims to reinvent travel experiences.
+                </p>
+              </P2>
+            </GridBio>
+          </Boxed>
+        </AltRow>
+        <InvertRow id="resume" className="full-bleed">
+          <ShortBoxed>
+            <small>02. Resume</small>
+            <Resume />
+          </ShortBoxed>
+        </InvertRow>
+
+        <AltRow id="skills" className="full-bleed">
+          <Boxed>
+            <small>03. Skills</small>
+            <h2>Design, Photography, Writing.</h2>
+            <GridSkill>
+              <DesignPart>
+                <h3>Design</h3>
+              </DesignPart>
+              <DesignContent>
+                <p>
+                  Design has been an integral part of my life. It’s been my
+                  passion to learn how to deliver functional and elegant design.{" "}
+                </p>
+                <SkillList>
+                  <li>Web & App UI Design</li>
+                  <li>User Experience Design</li>
+                  <li>Interaction Design</li>
+                  <li>Prototyping</li>
+                  <li>Wireframing</li>
+                  <li>Frontend Development</li>
+                </SkillList>
+              </DesignContent>
+            </GridSkill>
+            <GridSkill>
+              <PassionPart>
+                <h3>Passion</h3>
+              </PassionPart>
+              <PassionContent>
+                <p>
+                  Through freelancing, I&apos;m also practicing in the field of
+                  digital products and media, to become a hybrid creative.
+                </p>
+                <SkillList>
+                  <li>Photography</li>
+                  <li>Videography</li>
+                  <li>Social Media</li>
+                  <li>Copywriting</li>
+                </SkillList>
+              </PassionContent>
+            </GridSkill>
+          </Boxed>
+        </AltRow>
+      </Layout>
+    </div>
+  );
+};
 
 export default AboutPage;
 

@@ -4,3 +4,5 @@
 [build.environment]
   YARN_VERSION = "1.7.0"
   NODE_VERSION = "11.15.0"
+[[plugins]]
+package = "netlify-plugin-gatsby-cache"

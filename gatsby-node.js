@@ -30,7 +30,7 @@ exports.onCreateNode = ({ node, actions }) => {
       createNodeField({
         node,
         name: "date",
-        value: date.toISOString()
+        value: date.toISOString(),
       });
     }
   }
@@ -78,11 +78,11 @@ const query = `
   }
 }
 `;
-const postPage = path.resolve("src/templates/post.jsx");
-const workPage = path.resolve("src/templates/work.jsx");
-const photoPage = path.resolve("src/templates/photo.jsx");
-const tagPage = path.resolve("src/templates/tag.jsx");
-const categoryPage = path.resolve("src/templates/category.jsx");
+const postPage = path.resolve("src/templates/blog-template.jsx");
+const workPage = path.resolve("src/templates/work-template.jsx");
+const photoPage = path.resolve("src/templates/photo-template.jsx");
+const tagPage = path.resolve("src/templates/tag-template.jsx");
+const categoryPage = path.resolve("src/templates/category-template.jsx");
 
 exports.createPages = async ({ graphql, actions: { createPage } }) => {
   const response = await graphql(query);
@@ -101,8 +101,8 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
         slug,
         nextSlug,
         prevSlug,
-        id: node.id
-      }
+        id: node.id,
+      },
     });
   });
 
@@ -120,8 +120,8 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
         prevSlug,
         id: node.id,
         category: node.frontmatter.category,
-        tag: node.frontmatter.tags
-      }
+        tag: node.frontmatter.tags,
+      },
     });
 
     const tagSet = new Set();
@@ -143,8 +143,8 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
           path: `/tags/${_.kebabCase(tag)}/`,
           component: tagPage,
           context: {
-            tag
-          }
+            tag,
+          },
         });
       });
 
@@ -154,8 +154,8 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
           path: `/categories/${_.kebabCase(category)}/`,
           component: categoryPage,
           context: {
-            category
-          }
+            category,
+          },
         });
       });
     });
@@ -173,8 +173,8 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
         slug,
         nextSlug,
         prevSlug,
-        id: node.id
-      }
+        id: node.id,
+      },
     });
   });
 };
@@ -182,7 +182,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
-      modules: [path.resolve(__dirname, "src"), "node_modules"]
-    }
+      modules: [path.resolve(__dirname, "src"), "node_modules"],
+    },
   });
 };

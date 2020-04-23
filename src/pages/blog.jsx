@@ -1,23 +1,23 @@
 import React from "react";
-import Helmet from "react-helmet";
 import { graphql } from "gatsby";
-import Layout from "../layout";
-import config from "../../data/SiteConfig";
-import PostHero from "../components/PostHero/PostHero";
-import Link from "../components/GatsbyLink/GatsbyLink";
-import SEO from "../components/SEO/SEO";
-import BlogFeature from "../components/BlogFeature/BlogFeature";
 import Boxed from "elements/Boxed";
 import PageTitle from "elements/PageTitle";
 import styled from "styled-components";
+import Layout from "../layout";
+import BlogList from "../components/BlogList";
+import Link from "../components/common/GatsbyLink";
 
 const Row = styled.section`
   padding: var(--var-padding-s) 0;
   background: white;
 `;
 
+const Box = styled(Boxed)`
+  max-width: var(--page-container-s);
+`;
+
 const Main = styled.div`
-  display: grid;
+  /*   display: grid;
   grid-template-columns: [left] 30% [right] 70%;
   grid-gap: var(--grid-gap);
 
@@ -27,114 +27,74 @@ const Main = styled.div`
 
   h1 {
     font-family: var(--font-primary);
-  }
-`;
-
-const BlogFeatureWrapper = styled.div`
-  width: 100%;
-  position: relative;
+  } */
 `;
 
 const Left = styled.aside`
   grid-area: left;
 `;
 
-const Right = styled.div`
+const Right = styled.main`
   grid-area: right;
 `;
 
-const CategoryBlock = styled.div`
+/* const CategoryBlock = styled.div`
   @media only screen and (max-width: 768px) {
     display: none;
   }
-`;
+`; */
 
-class Index extends React.Component {
-  render() {
-    const postEdges = this.props.data.post.edges;
-    const listEdges = this.props.data.list.edges;
-    const Feature1Edges = this.props.data.feature1.edges;
-    const Feature2Edges = this.props.data.feature2.edges;
-    return (
-      <Layout>
-        <Helmet title={`Design Blog | ${config.siteTitle}`}>
-          <meta
-            name="twitter:title"
-            content={`Design Blog | ${config.siteTitle}`}
-          />
-          <meta
-            property="og:title"
-            content={`Design Blog | ${config.siteTitle}`}
-          />
-          <meta
-            name="description"
-            content="Hi! My name is Samuel. I write blog about web design, user interface and experiecne design."
-          />
-          <meta
-            name="twitter:description"
-            content="Hi! My name is Samuel. I write blog about web design, user interface and experiecne design."
-          />
-          <meta
-            property="og:description"
-            content="Hi! My name is Samuel. I write blog about web design, user interface and experiecne design."
-          />
-          <meta
-            name="keywords"
-            content="Design,Blog,Web,App,UI,UX,Interface,Portfolio,Hong Kong,Writing"
-          />
-        </Helmet>
-        <Row>
-          <Boxed>
-            <Row>
-              <PageTitle
-                title="Blog"
-                subtitle="Article"
-                description="A collection of posts I wrote about design process, technology and
+const BlogPage = ({ data }) => {
+  const postEdges = data.allMdx.edges;
+
+  return (
+    <Layout
+      title="Design Blog"
+      description="Hi! My name is Samuel. I write blog about web design, user interface and experiecne design."
+      keywords="Design,Blog,Web,App,UI,UX,Interface,Portfolio,Hong Kong,Writing"
+    >
+      <Row>
+        <Box>
+          <PageTitle
+            title="Blog"
+            subtitle="Article"
+            description="A collection of posts I wrote about design process, technology and
                 productivity."
-              />
-            </Row>
-            <Main>
-              <Left>
-                <Row>
-                  <CategoryBlock>
-                    <small>Top Categories</small>
-                    <h3>
-                      <Link to="/categories/design-journal">Design</Link>
-                    </h3>
-                    <h3>
-                      <Link to="/categories/work-in-progress">Development</Link>
-                    </h3>
-                    <h3>
-                      <Link to="/categories/productivity">Productivity</Link>
-                    </h3>
-                    <h3>
-                      <Link to="/categories/ctrl-alt-setup">
-                        Ctrl Alt Setup
-                      </Link>
-                    </h3>
-                  </CategoryBlock>
-                </Row>
-              </Left>
-              <Right>
-                {/* <small>Featured</small>
-               <BlogFeatureWrapper>
-                  <BlogFeature postEdges={Feature1Edges} />
-                  <BlogFeature postEdges={Feature2Edges} />
-                </BlogFeatureWrapper> */}
-                <Row id="latest">
-                  <small>Latest</small>
-                  <PostHero postEdges={postEdges} />
-                </Row>
-              </Right>
-            </Main>
-          </Boxed>
-        </Row>
-      </Layout>
-    );
-  }
-}
+          />
+          <Main>
+            <Left>
+              <Row>
+                {/* <CategoryBlock>
+                  <small>Top Categories</small>
+                  <h3>
+                    <Link to="/categories/design-journal">Design</Link>
+                  </h3>
+                  <h3>
+                    <Link to="/categories/work-in-progress">Development</Link>
+                  </h3>
+                  <h3>
+                    <Link to="/categories/productivity">Productivity</Link>
+                  </h3>
+                  <h3>
+                    <Link to="/categories/ctrl-alt-setup">Ctrl Alt Setup</Link>
+                  </h3>
+                </CategoryBlock> */}
+              </Row>
+            </Left>
+            <Right>
+              <Row id="latest">
+                <small>Latest</small>
+                <BlogList postEdges={postEdges} />
+              </Row>
+            </Right>
+          </Main>
+        </Box>
+      </Row>
+    </Layout>
+  );
+};
 
-export default Index;
+export default BlogPage;
 
 /* eslint no-undef: "off" */
 
@@ -172,29 +132,7 @@ export const bloglisting = graphql`
 `;
 export const pageQuery = graphql`
   query BlogQuery {
-    feature1: allMdx(
-      filter: { fileAbsolutePath: { regex: "/blog/2018-07-06 Color Tools/" } }
-    ) {
-      edges {
-        node {
-          ...bloglisting
-        }
-      }
-    }
-    feature2: allMdx(
-      filter: {
-        fileAbsolutePath: {
-          regex: "/blog/2019-05-01 Building Gatsby v2 With Multiple Post Type/"
-        }
-      }
-    ) {
-      edges {
-        node {
-          ...bloglisting
-        }
-      }
-    }
-    post: allMdx(
+    allMdx(
       limit: 10
       filter: { fileAbsolutePath: { regex: "/blog/" } }
       sort: { fields: [frontmatter___date], order: DESC }
@@ -229,23 +167,6 @@ export const pageQuery = graphql`
                 }
               }
             }
-          }
-        }
-      }
-    }
-    list: allMdx(limit: 2000) {
-      edges {
-        node {
-          fields {
-            slug
-            date(formatString: "MMM DD, YYYY", locale: "en")
-          }
-          excerpt(pruneLength: 150)
-          timeToRead
-          frontmatter {
-            title
-            tags
-            tldr
           }
         }
       }
