@@ -11,7 +11,7 @@ import config from "../../data/SiteConfig";
 const Cover = styled(Img)`
   width: 100%;
   height: 100%;
-  z-index: 998;
+  z-index: 1;
 `;
 
 const PhotoLayout = styled.div`
@@ -28,6 +28,7 @@ const Header = styled.div`
   display: flex;
   width: 100%;
   height: 100%;
+  margin-bottom: var(--var-padding-m);
 `;
 
 const Overlay = styled.div`
@@ -36,7 +37,7 @@ const Overlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 999;
+  z-index: 2;
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0) 0%,
@@ -47,7 +48,7 @@ const Overlay = styled.div`
 const TitleWrapper = styled.div`
   position: absolute;
   bottom: 0;
-  z-index: 1000;
+  z-index: 3;
   padding: var(--var-padding-l) var(--var-padding-m);
   width: 100%;
 

@@ -74,8 +74,11 @@ const MenuIcon = styled(FontAwesomeIcon)`
 const MobileItem = styled(Link)`
   display: block;
   border-bottom: none;
-  padding: 0 5rem;
   margin: 0;
+
+  h1 {
+    margin: 2rem 0;
+  }
 `;
 
 const MobileNav = styled.div`
@@ -160,7 +163,7 @@ class NavBar extends React.Component {
               >
                 <small>Photo</small>
               </NavItem>
-              <NavItemIcon onClick={this.openModal}>
+              <NavItemIcon onClick={this.openModal} className="noeffect">
                 <MenuIcon icon={faBars} size="lg" />
               </NavItemIcon>
             </NavRight>
@@ -197,7 +200,7 @@ class NavBar extends React.Component {
                   <MobileItem to="/photo" className="noeffect">
                     <h1>Photo</h1>
                   </MobileItem>
-                  <MobileItem>
+                  <MobileItem className="noeffect">
                     <MenuIcon
                       icon={faTimes}
                       size="lg"
