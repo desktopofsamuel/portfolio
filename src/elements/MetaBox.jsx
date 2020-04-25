@@ -10,7 +10,7 @@ const Meta = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   background-color: var(--color-white-500);
   border-radius: 16px;
-  z-index: 1001;
+  z-index: 2;
 
   @media screen and (max-width: 1024px) {
     margin: var(--var-padding-s) auto;

@@ -138,20 +138,14 @@ module.exports = {
       }
     }, */
     {
-      resolve: "gatsby-plugin-web-font-loader",
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        typekit: {
-          id: "hey8lez",
-        },
-        google: {
-          families: [
-            "Merriweather",
-            "Lora:400,600",
-            "IBM Plex Sans:400,400i,500,600,700",
-            "IBM Plex Serif:400,400i,600",
-            "Archivo Narrow:700",
-            "IBM Plex Sans Condensed:400,600,700",
-            "Libre Caslon Text:400,400i,700",
+        fonts: {
+          google: [
+            {
+              family: "Libre Caslon Text",
+              variants: ["400", "700"],
+            },
           ],
         },
       },
