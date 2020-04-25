@@ -8,7 +8,7 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import Boxed from "../elements/Boxed";
-import Profile from "../../static/images/Profile.webp";
+import Profile from "../../static/images/Profile.png";
 import Link from "./common/GatsbyLink";
 import Column from "../elements/Column";
 import Emoji from "./common/Emoji";
