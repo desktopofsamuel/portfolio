@@ -190,7 +190,7 @@ const IndexPage = ({ data }) => {
   const photo1Edges = data.Photo1.edges;
   const photo2Edges = data.Photo2.edges;
   return (
-    <Layout>
+    <Layout title="Home">
       <Row>
         <IndexHero />
       </Row>

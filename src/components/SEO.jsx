@@ -71,6 +71,7 @@ class SEO extends Component {
     return (
       <Helmet>
         {/* General tags */}
+        <html lang="en" />
         <meta name="title" content={title} />
         <meta name="description" content={description} />
         <meta name="image" content={image} />
