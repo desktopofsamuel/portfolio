@@ -260,7 +260,10 @@ export const pageQuery = graphql`
     Work: allMdx(
       limit: 5
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fileAbsolutePath: { regex: "/work/" } }
+      filter: {
+        fileAbsolutePath: { regex: "/work/" }
+        frontmatter: { draft: { ne: true } }
+      }
     ) {
       edges {
         node {

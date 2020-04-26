@@ -107,8 +107,8 @@ const WorkPage = ({ data }) => {
         </Row>
 
         <Row>
-          <h2>More Works</h2>
-          <p>Check out some sites and apps that I have built.</p>
+          {/* <h2>More Works</h2>
+          <p>Check out some sites and apps that I have built.</p> */}
           <GridProject>
             {/* <ProjectBox
                 img={PinSVG}
@@ -174,7 +174,10 @@ export const pageQuery = graphql`
     allMdx(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fileAbsolutePath: { regex: "/work/" } }
+      filter: {
+        fileAbsolutePath: { regex: "/work/" }
+        frontmatter: { draft: { ne: true } }
+      }
     ) {
       edges {
         node {

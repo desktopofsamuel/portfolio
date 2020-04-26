@@ -38,7 +38,7 @@ exports.onCreateNode = ({ node, actions }) => {
 
 const query = ` 
 {
-  work: allMdx(filter: { fileAbsolutePath: {regex: "/work/"}})
+  work: allMdx(filter: { fileAbsolutePath: {regex: "/work/"}, frontmatter: {draft: {ne: true}}})
   {
     edges {
       node {
@@ -50,7 +50,7 @@ const query = `
         }
       }
     }
-  blog: allMdx(filter: { fileAbsolutePath: {regex: "/blog/"}})
+  blog: allMdx(filter: { fileAbsolutePath: {regex: "/blog/"}, frontmatter: {draft: {ne: true}}})
   {
     edges {
       node {
@@ -64,7 +64,7 @@ const query = `
       }
     }
   }
-  photo: allMdx(filter: { fileAbsolutePath: {regex: "/photo/"}})
+  photo: allMdx(filter: { fileAbsolutePath: {regex: "/photo/"}, frontmatter: {draft: {ne: true}}})
   {
     edges {
       node {
