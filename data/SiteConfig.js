@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
   siteTitle: "Samuel Wong | Hong Kong UI/UX Designer", // Site title.
   siteTitleShort: "Desktop of Samuel", // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
   siteTitleAlt: "Samuel Wong | Hong Kong UI/UX Designer", // Alternative site title for SEO.
@@ -11,7 +11,10 @@ module.exports = {
   siteKeywords:
     "Samuel Wong, Hong Kong, UI, UX, User Interface Design, User Experience Design, Product Design, Design Thinking, Product Development, Brand Design",
   siteRss: "/rss.xml", // Path to the RSS file.
+  siteRssTitle: "Samuel Wong | Hong Kong UI/UX Designer", // Title of the RSS feed
+  siteFBAppID: "", // FB Application ID for using app insights
   googleAnalyticsID: "UA-114278308-5", // GA tracking ID.
+  disqusShortname: "", // Disqus shortname.
   postDefaultCategoryID: "Technology", // Default category for posts.
   dateFromFormat: "YYYY-MM-DD", // Date format used in the frontmatter.
   dateFormat: "MMM DD, YYYY",
@@ -27,15 +30,33 @@ module.exports = {
     {
       label: "Twitter",
       url: "https://twitter.com/desktopofsamuel",
-      iconClassName: "fa fa-twitter"
+      iconClassName: "fa fa-twitter",
     },
     {
       label: "Email",
       url: "mailto:desktopofsamuel@gmail.com",
-      iconClassName: "fa fa-envelope"
-    }
+      iconClassName: "fa fa-envelope",
+    },
   ],
   copyright: "©2019 Samuel Wong.", // Copyright string for the footer of the website and RSS feed.
   themeColor: "#FFD644", // Used for setting manifest and progress theme colors.
-  backgroundColor: "#e0e0e0" // Used for setting manifest background color.
+  backgroundColor: "#e0e0e0", // Used for setting manifest background color.
 };
+
+// Make sure pathPrefix is empty if not needed
+if (config.pathPrefix === "/") {
+  config.pathPrefix = "";
+} else {
+  // Make sure pathPrefix only contains the first forward slash
+  config.pathPrefix = `/${config.pathPrefix.replace(/^\/|\/$/g, "")}`;
+}
+
+// Make sure siteUrl doesn't have an ending forward slash
+if (config.siteUrl.substr(-1) === "/")
+  config.siteUrl = config.siteUrl.slice(0, -1);
+
+// Make sure siteRss has a starting forward slash
+if (config.siteRss && config.siteRss[0] !== "/")
+  config.siteRss = `/${config.siteRss}`;
+
+module.exports = config;

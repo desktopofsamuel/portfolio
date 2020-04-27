@@ -13,8 +13,13 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import Link from "./GatsbyLink";
 
+const Container = styled.footer`
+  width: 100%;
+  height: 100%;
+`;
+
 const Row = styled.section`
-  padding: var(--var-padding-s) 1rem;
+  padding: var(--var-padding-s) 0;
 `;
 
 const BgRow = styled(Row)`
@@ -128,7 +133,7 @@ const CreditContainer = styled.div`
 
 const Footer = () => {
   return (
-    <footer id="#contact">
+    <Container id="#contact">
       {/* <BgRow>
           <BoxNow>
             <div>
@@ -176,12 +181,12 @@ const Footer = () => {
             </div>
           </BoxNow>
         </BgRow> */}
-      <Row className="full-bleed">
+      <Row>
         <Boxed size="large">
           <FooterContact />
         </Boxed>
       </Row>
-      <Row className="full-bleed">
+      <Row>
         <Boxed>
           <LinkContainer>
             <FooterItem className="noeffect" to="/about">
@@ -211,7 +216,7 @@ const Footer = () => {
           </CreditContainer>
         </Boxed>
       </Row>
-    </footer>
+    </Container>
   );
 };
 
