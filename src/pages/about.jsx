@@ -255,8 +255,8 @@ const AboutPage = ({ data }) => {
                 Kong with multiple recognitions.
                 <br />
                 <br />
-                Currently, I work as the Principal Designer at Hyperair, a
-                start-up that aims to reinvent travel experiences.
+                {/* Currently, I work as the Principal Designer at Hyperair, a
+                start-up that aims to reinvent travel experiences. */}
               </p>
             </P2>
           </GridBio>

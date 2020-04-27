@@ -65,8 +65,8 @@ const IndexHero = () => {
           <small>Contact</small>
           <div>
             <Emoji symbol="📬" />{" "}
-            <Link to="mailto:desktopofsamuel@gmail.com" target="_blank">
-              desktopofsamuel@gmail.com
+            <Link to="mailto:desktopofsamuel&#64;gmail.com" target="_blank">
+              desktopofsamuel&#64;gmail.com
             </Link>
           </div>
           <div>
