@@ -268,7 +268,8 @@ p:first-child {
 @media only screen and (max-width: 1024px) {
   .full-bleed > div {
     max-width: 95vw;
-    padding: 0 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     margin: 0 auto;
   }
 }

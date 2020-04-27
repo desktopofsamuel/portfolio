@@ -7,6 +7,7 @@ import Layout from "../layout";
 import config from "../../data/SiteConfig";
 import SEO from "../components/SEO";
 import PostTemplate from "../components/PostTemplate";
+import Related from "../components/Related";
 
 const Container = styled(Boxed)`
   max-width: var(--page-container-s);
@@ -15,6 +16,13 @@ const Container = styled(Boxed)`
 const BlogPostTemplate = ({ data, pageContext }) => {
   const postNode = data.blog;
   const post = postNode.frontmatter;
+  const prev = pageContext.prev
+    ? {
+        path: `${pageContext.prev.frontmatter.path}`,
+        title: pageContext.prev.frontmatter.title,
+        excerpt: pageContext.prev.frontmatter.tldr || pageContext.prev.excerpt,
+      }
+    : null;
 
   return (
     <Layout>
@@ -25,6 +33,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
       <Container>
         <PostTemplate postNode={postNode} />
       </Container>
+      {prev && <Related node={prev} />}
     </Layout>
   );
 };

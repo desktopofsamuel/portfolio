@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import Img from "gatsby-image";
+import FadeIn from "react-fade-in";
 
 const Grid = styled.section`
   margin-top: 2rem;
@@ -62,7 +63,9 @@ class PostHero extends React.Component {
                 sizes={post.cover.childImageSharp.sizes}
                 alt={post.title}
               />
-              <Hero>{post.title}</Hero>
+              <Hero>
+                <a>{post.title}</a>
+              </Hero>
             </Link>
             <p className="noeffect">{post.excerpt}</p>
             <small>{post.date}</small>

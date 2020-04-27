@@ -133,7 +133,6 @@ export const bloglisting = graphql`
 export const pageQuery = graphql`
   query BlogQuery {
     allMdx(
-      limit: 10
       filter: {
         fileAbsolutePath: { regex: "/blog/" }
         frontmatter: { draft: { ne: true } }

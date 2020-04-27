@@ -38,34 +38,34 @@ exports.onCreateNode = ({ node, actions }) => {
 
 const query = ` 
 {
-  work: allMdx(filter: { fileAbsolutePath: {regex: "/work/"}, frontmatter: {draft: {ne: true}}})
-  {
+  work: allMdx(filter: {fileAbsolutePath: {regex: "/work/"}, frontmatter: {draft: {ne: true}}}, sort: { order: DESC,fields: frontmatter___date}) {
     edges {
       node {
         id
         frontmatter {
           path
           date
-        }
-        }
-      }
-    }
-  blog: allMdx(filter: { fileAbsolutePath: {regex: "/blog/"}, frontmatter: {draft: {ne: true}}})
-  {
-    edges {
-      node {
-        id
-        frontmatter {
-          path
-          date
-          tags
-          category
         }
       }
     }
   }
-  photo: allMdx(filter: { fileAbsolutePath: {regex: "/photo/"}, frontmatter: {draft: {ne: true}}})
-  {
+  blog: allMdx(filter: {fileAbsolutePath: {regex: "/blog/"}, frontmatter: {draft: {ne: true}}}, sort: { order: DESC,fields: frontmatter___date}) {
+    edges {
+      node {
+        id
+        excerpt
+        frontmatter {
+          path
+          title
+          date
+          tags
+          category
+          tldr
+        }
+      }
+    }
+  }
+  photo: allMdx(filter: {fileAbsolutePath: {regex: "/photo/"}, frontmatter: {draft: {ne: true}}}, sort: { order: DESC,fields: frontmatter___date}) {
     edges {
       node {
         id
@@ -107,17 +107,16 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
   });
 
   blog.edges.forEach(({ node }, index, arr) => {
-    const nextSlug = index === 0 ? `` : arr[index - 1].node.frontmatter.path;
-    const prevSlug =
-      index === arr.length - 1 ? `` : arr[index + 1].node.frontmatter.path;
     const slug = node.frontmatter.path;
+    const next = index === 0 ? `` : arr[index - 1].node;
+    const prev = index === arr.length - 1 ? `` : arr[index + 1].node;
     createPage({
       path: `${slug}`,
       component: postPage,
       context: {
         slug,
-        nextSlug,
-        prevSlug,
+        next,
+        prev,
         id: node.id,
         category: node.frontmatter.category,
         tag: node.frontmatter.tags,
