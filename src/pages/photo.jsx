@@ -62,7 +62,10 @@ export default PhotoPage;
 export const pageQuery = graphql`
   query PhotoQuery {
     photo: allMdx(
-      filter: { fileAbsolutePath: { regex: "/photo/" } }
+      filter: {
+        fileAbsolutePath: { regex: "/photo/" }
+        frontmatter: { draft: { ne: true } }
+      }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {

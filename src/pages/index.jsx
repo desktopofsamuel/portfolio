@@ -190,7 +190,7 @@ const IndexPage = ({ data }) => {
   const photo1Edges = data.Photo1.edges;
   const photo2Edges = data.Photo2.edges;
   return (
-    <Layout>
+    <Layout title="Home">
       <Row>
         <IndexHero />
       </Row>
@@ -260,7 +260,10 @@ export const pageQuery = graphql`
     Work: allMdx(
       limit: 5
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fileAbsolutePath: { regex: "/work/" } }
+      filter: {
+        fileAbsolutePath: { regex: "/work/" }
+        frontmatter: { draft: { ne: true } }
+      }
     ) {
       edges {
         node {

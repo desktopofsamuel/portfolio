@@ -55,6 +55,7 @@
     "react": "^16.12.0",
     "react-disqus-comments": "^1.4.0",
     "react-dom": "^16.12.0",
+    "react-fade-in": "^0.1.8",
     "react-fontawesome": "^1.6.1",
     "react-helmet": "^5.2.0",
     "react-icons": "^3.4.0",

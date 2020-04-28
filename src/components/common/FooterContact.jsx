@@ -46,8 +46,8 @@ const FooterContact = () => {
         <Content>
           I am excited for new opportunities, let's talk about working togther.{" "}
           <br />
-          <Link to="mailto:desktopofsamuel@gmail.com">
-            desktopofsamuel@gmail.com
+          <Link to="mailto:desktopofsamuel&#64;gmail.com">
+            desktopofsamuel&#64;gmail.com
           </Link>
         </Content>
       </Section>

@@ -9,7 +9,7 @@ const Section = styled.section`
 
 const Title = styled.h3`
   font-family: var(--font-primary);
-  color: var(--color-secondary-100);
+  color: var(--color-white-500);
   margin: 0;
 `;
 
@@ -21,7 +21,7 @@ const Title = styled.h3`
 // `;
 
 const ResumeSectionTitle = styled.small`
-  color: var(--color-secondary-300);
+  color: var(--color-secondary-100);
 
   @media only screen and (max-width: 768px) {
     font-size: 1rem;

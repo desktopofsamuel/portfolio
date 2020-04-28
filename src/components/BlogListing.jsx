@@ -105,7 +105,10 @@ class BlogListing extends React.Component {
       <Block className="noeffect" invert={invert} key={post.title}>
         {" "}
         <Link to={post.path} className="noeffect">
-          <PostListImage fluid={post.cover.childImageSharp.fluid} />
+          <PostListImage
+            fluid={post.cover.childImageSharp.fluid}
+            alt={post.title}
+          />
           <Content>
             <h3>
               <a>{post.title}</a>

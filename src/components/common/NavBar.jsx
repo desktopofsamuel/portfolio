@@ -5,6 +5,7 @@ import "../../layout/index.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import Popup from "reactjs-popup";
+import FadeIn from "react-fade-in";
 
 const Main = styled.div`
   background: var(--color-white-500);
@@ -188,25 +189,27 @@ class NavBar extends React.Component {
             <div>
               <div>
                 <MobileNav>
-                  <MobileItem to="/about" className="noeffect">
-                    <h1>About</h1>
-                  </MobileItem>
-                  <MobileItem to="/work" className="noeffect">
-                    <h1>Work</h1>
-                  </MobileItem>
-                  <MobileItem to="/blog" className="noeffect">
-                    <h1>Blog</h1>
-                  </MobileItem>
-                  <MobileItem to="/photo" className="noeffect">
-                    <h1>Photo</h1>
-                  </MobileItem>
-                  <MobileItem className="noeffect">
-                    <MenuIcon
-                      icon={faTimes}
-                      size="lg"
-                      onClick={this.closeModal}
-                    />
-                  </MobileItem>
+                  <FadeIn>
+                    <MobileItem to="/about" className="noeffect">
+                      <h1>About</h1>
+                    </MobileItem>
+                    <MobileItem to="/work" className="noeffect">
+                      <h1>Work</h1>
+                    </MobileItem>
+                    <MobileItem to="/blog" className="noeffect">
+                      <h1>Blog</h1>
+                    </MobileItem>
+                    <MobileItem to="/photo" className="noeffect">
+                      <h1>Photo</h1>
+                    </MobileItem>
+                    <MobileItem className="noeffect">
+                      <MenuIcon
+                        icon={faTimes}
+                        size="lg"
+                        onClick={this.closeModal}
+                      />
+                    </MobileItem>
+                  </FadeIn>
                 </MobileNav>
               </div>
             </div>

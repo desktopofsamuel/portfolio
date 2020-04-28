@@ -95,7 +95,10 @@ class WorkHero extends React.Component {
                 </div>
               </ListLeft>
               <ListRight>
-                <WorkImg fluid={post.cover.childImageSharp.fluid} />
+                <WorkImg
+                  fluid={post.cover.childImageSharp.fluid}
+                  alt={post.title}
+                />
               </ListRight>
             </ListItem>
           </Link>
