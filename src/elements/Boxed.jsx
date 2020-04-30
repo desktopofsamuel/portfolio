@@ -8,7 +8,6 @@ const Grid = styled.div`
     (props.size === "medium" && "var(--page-container-m)") ||
     (props.size === "small" && "var(--page-container-s)") ||
     `var(--page-container-m)`};
-
   padding: 0 1rem;
   margin: 3rem auto;
 

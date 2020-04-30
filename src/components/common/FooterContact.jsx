@@ -8,6 +8,7 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import Link from "./GatsbyLink";
+import Boxed from "../../elements/Boxed";
 
 const Container = styled.section`
   display: block;
@@ -40,62 +41,64 @@ const FooterIcon = styled(FontAwesomeIcon)`
 
 const FooterContact = () => {
   return (
-    <Container>
-      <Section>
-        <h6>Let's Chat</h6>
-        <Content>
-          I am excited for new opportunities, let's talk about working togther.{" "}
-          <br />
-          <Link to="mailto:desktopofsamuel&#64;gmail.com">
-            desktopofsamuel&#64;gmail.com
-          </Link>
-        </Content>
-      </Section>
-      <Section>
-        <h6>Keep In Touch</h6>
-        <Content>
-          Follow my social media and see what I'm up to.
-          <IconList>
-            <Link
-              to="https://www.linkedin.com/in/wongchunlong/"
-              className="noeffect linkicon"
-              target="_blank"
-            >
-              <FooterIcon icon={faLinkedin} />
+    <Boxed size="large">
+      <Container>
+        <Section>
+          <h6>Let's Chat</h6>
+          <Content>
+            I am excited for new opportunities, let's talk about working
+            togther. <br />
+            <Link to="mailto:desktopofsamuel&#64;gmail.com">
+              desktopofsamuel&#64;gmail.com
             </Link>
-            <Link
-              to="http://www.twitter.com/desktopofsamuel"
-              className="noeffect linkicon"
-              target="_blank"
-            >
-              <FooterIcon icon={faTwitter} />
+          </Content>
+        </Section>
+        <Section>
+          <h6>Keep In Touch</h6>
+          <Content>
+            Follow my social media and see what I'm up to.
+            <IconList>
+              <Link
+                to="https://www.linkedin.com/in/wongchunlong/"
+                className="noeffect linkicon"
+                target="_blank"
+              >
+                <FooterIcon icon={faLinkedin} />
+              </Link>
+              <Link
+                to="http://www.twitter.com/desktopofsamuel"
+                className="noeffect linkicon"
+                target="_blank"
+              >
+                <FooterIcon icon={faTwitter} />
+              </Link>
+              <Link
+                to="http://www.instagram.com/desktopofsamuel"
+                className="noeffect linkicon"
+                target="_blank"
+              >
+                <FooterIcon icon={faInstagram} />
+              </Link>
+            </IconList>
+          </Content>
+        </Section>
+        <Section>
+          <h6>Subscribe</h6>
+          <Content>
+            I write regularly on the subject of design and technology. Feel free
+            to subscribe via{" "}
+            <Link to="/rss.xml" target="_blank">
+              RSS
+            </Link>{" "}
+            or follow me on{" "}
+            <Link to="https://medium.com/@desktopofsamuel" target="_blank">
+              Medium
             </Link>
-            <Link
-              to="http://www.instagram.com/desktopofsamuel"
-              className="noeffect linkicon"
-              target="_blank"
-            >
-              <FooterIcon icon={faInstagram} />
-            </Link>
-          </IconList>
-        </Content>
-      </Section>
-      <Section>
-        <h6>Subscribe</h6>
-        <Content>
-          I write regularly on the subject of design and technology. Feel free
-          to subscribe via{" "}
-          <Link to="/rss.xml" target="_blank">
-            RSS
-          </Link>{" "}
-          or follow me on{" "}
-          <Link to="https://medium.com/@desktopofsamuel" target="_blank">
-            Medium
-          </Link>
-          .
-        </Content>
-      </Section>
-    </Container>
+            .
+          </Content>
+        </Section>
+      </Container>
+    </Boxed>
   );
 };
 
