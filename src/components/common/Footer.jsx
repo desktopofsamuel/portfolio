@@ -19,7 +19,7 @@ const Container = styled.footer`
 `;
 
 const Row = styled.section`
-  padding: var(--var-padding-s) 0;
+  padding: var(--var-padding-s) 1rem;
 `;
 
 const BgRow = styled(Row)`
@@ -182,9 +182,7 @@ const Footer = () => {
           </BoxNow>
         </BgRow> */}
       <Row>
-        <Boxed size="large">
-          <FooterContact />
-        </Boxed>
+        <FooterContact />
       </Row>
       <Row>
         <Boxed>
