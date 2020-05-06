@@ -219,6 +219,11 @@ button {
   box-shadow: none;
 }
 
+table {
+  width: 100%;
+  border-spacing: 16px;
+}
+
 p:first-child {
   margin-block-start: 0;
 }

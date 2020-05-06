@@ -1020,6 +1020,13 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
+"@babel/runtime@^7.9.2":
+  version "7.9.6"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.9.6.tgz#a9102eb5cadedf3f31d08a9ecf294af7827ea29f"
+  integrity sha512-64AF1xY3OAkFHqOb9s4jpgk1Mm5vDZ4L3acHvAml+53nO1XbXLuDodsVpO4OIUsmemlUHMxNdYMNJmsvOwLrvQ==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/template@^7.8.0":
   version "7.8.3"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.8.3.tgz#e02ad04fe262a657809327f578056ca15fd4d1b8"
@@ -6755,6 +6762,14 @@ gatsby-remark-figure-caption@^2.0.0:
     array.prototype.flatmap "^1.2.1"
     unist-util-visit "^1.4.0"
 
+gatsby-remark-grid-tables@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-grid-tables/-/gatsby-remark-grid-tables-0.1.0.tgz#bb0344e5b64d034b522347219836e5c71a767483"
+  integrity sha512-SSwvXyasAAigrLtgm0O0Vwb2L8f4T3y6oMCAAyLZzZ+Dkrh6mI6unhyHJZOGq/2G2Vh2JbYqSmaliaumvAW4wA==
+  dependencies:
+    "@babel/runtime" "^7.9.2"
+    remark-grid-tables "^2.1.1"
+
 gatsby-remark-images-grid@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/gatsby-remark-images-grid/-/gatsby-remark-images-grid-1.0.2.tgz#10416a6f5a9d11d4ce7779eb4adfbef967627e4d"
@@ -6763,6 +6778,13 @@ gatsby-remark-images-grid@^1.0.2:
     remark-parse "^5.0.0"
     unified "^7.0.0"
     unist-util-visit "^1.4.0"
+
+gatsby-remark-images-medium-zoom@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-images-medium-zoom/-/gatsby-remark-images-medium-zoom-1.5.0.tgz#e77d852817ba7fef6858487e0f3e94c77997cfae"
+  integrity sha512-8pLVwh8kdTSNE1YHKc4bMEW9h7HKBO12/omAvPxg+/L0nQtqG3DVx5xccRnBSICjK6WQf2XXy6XoMtyGOgZnJQ==
+  dependencies:
+    medium-zoom "^1.0.4"
 
 gatsby-remark-images-zoom@^1.1.0:
   version "1.1.0"
@@ -7444,6 +7466,11 @@ graceful-fs@^4.1.10, graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/graceful-readlink/-/graceful-readlink-1.0.1.tgz#4cafad76bc62f02fa039b2f94e9a3dd3a391a725"
   integrity sha1-TK+tdrxi8C+gObL5Tpo906ORpyU=
+
+grapheme-splitter@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/grapheme-splitter/-/grapheme-splitter-1.0.4.tgz#9cf3a665c6247479896834af35cf1dbb4400767e"
+  integrity sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==
 
 graphql-compose@^6.3.7:
   version "6.3.8"
@@ -9600,6 +9627,11 @@ lodash.toarray@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/lodash.toarray/-/lodash.toarray-4.4.0.tgz#24c4bfcd6b2fba38bfd0594db1179d8e9b656561"
   integrity sha1-JMS/zWsvuji/0FlNsRedjptlZWE=
+
+lodash.trimend@^4.5.1:
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/lodash.trimend/-/lodash.trimend-4.5.1.tgz#12804437286b98cad8996b79414e11300114082f"
+  integrity sha1-EoBENyhrmMrYmWt5QU4RMAEUCC8=
 
 lodash.uniq@4.5.0, lodash.uniq@^4.5.0:
   version "4.5.0"
@@ -13010,6 +13042,16 @@ remark-cli@^6.0.0:
     remark "^10.0.0"
     unified-args "^6.0.0"
 
+remark-grid-tables@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/remark-grid-tables/-/remark-grid-tables-2.1.1.tgz#c88683ec89d35498fd86e79af3450776f9d76f6a"
+  integrity sha512-YNI57fKiHdwkOGfDoT8xCqSBYjvuu6ZIUOtbvxr8wrvp59dHwzOcusAuzJYXrbnPtjLzNvvNPNbURW8ytrfLfA==
+  dependencies:
+    grapheme-splitter "^1.0.4"
+    lodash.trimend "^4.5.1"
+    string-width "^4.2.0"
+    unist-util-visit "^2.0.1"
+
 remark-lint-final-newline@^1.0.0:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/remark-lint-final-newline/-/remark-lint-final-newline-1.0.3.tgz#06c3d71ec7b97c16cde31543cd41a16b36c30f79"
@@ -15839,6 +15881,15 @@ unist-util-visit@^1.0.0, unist-util-visit@^1.1.0, unist-util-visit@^1.1.1, unist
   integrity sha512-AvGNk7Bb//EmJZyhtRUnNMEpId/AZ5Ph/KUpTI09WHQuDZHKovQ1oEv3mfmKpWKtoMzyMC4GLBm1Zy5k12fjIw==
   dependencies:
     unist-util-visit-parents "^2.0.0"
+
+unist-util-visit@^2.0.1:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/unist-util-visit/-/unist-util-visit-2.0.2.tgz#3843782a517de3d2357b4c193b24af2d9366afb7"
+  integrity sha512-HoHNhGnKj6y+Sq+7ASo2zpVdfdRifhTgX2KTU3B/sO/TTlZchp7E3S4vjRzDJ7L60KmrCPsQkVK3lEF3cz36XQ==
+  dependencies:
+    "@types/unist" "^2.0.0"
+    unist-util-is "^4.0.0"
+    unist-util-visit-parents "^3.0.0"
 
 universalify@^0.1.0:
   version "0.1.2"
