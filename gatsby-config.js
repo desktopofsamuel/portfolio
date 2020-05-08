@@ -71,6 +71,10 @@ module.exports = {
           default: require.resolve("./src/components/default-page-layout.jsx"),
         },
         extensions: [`.mdx`, `md`],
+        plugins: [
+          `gatsby-remark-images`,
+          `gatsby-remark-images-medium-zoom`, // Important!
+        ],
         gatsbyRemarkPlugins: [
           {
             resolve: "gatsby-remark-images",
@@ -79,13 +83,14 @@ module.exports = {
               maxWidth: 1235,
             },
           },
-          "gatsby-remark-images-zoom",
+          "gatsby-remark-images-medium-zoom",
           "gatsby-remark-responsive-iframe",
-          // {
-          //   resolve: `gatsby-remark-figure-caption`,
-          //   options: { figureClassName: "remark-figure" },
-          // },
+          {
+            resolve: `gatsby-remark-figure-caption`,
+            options: { figureClassName: "remark-figure" },
+          },
           "gatsby-remark-prismjs",
+          "gatsby-remark-grid-tables",
           "gatsby-remark-copy-linked-files",
           {
             resolve: "gatsby-remark-autolink-headers",
