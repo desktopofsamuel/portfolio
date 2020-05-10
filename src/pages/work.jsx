@@ -15,6 +15,7 @@ import SEO from "../components/SEO";
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import Boxed from "elements/Boxed";
+import WorkList from "../components/WorkList";
 
 const WorkBoxed = styled(Boxed)``;
 
@@ -107,8 +108,9 @@ const WorkPage = ({ data }) => {
         </Row>
 
         <Row>
-          {/* <h2>More Works</h2>
-          <p>Check out some sites and apps that I have built.</p> */}
+          <h2>More Works</h2>
+          <p>Check out some sites and apps that I have built.</p> 
+          <WorkList/>
           <GridProject>
             {/* <ProjectBox
                 img={PinSVG}

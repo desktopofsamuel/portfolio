@@ -308,3 +308,7 @@ figure {
 .nav-item-active {
   background: #ffffff;
 }
+
+.no-margin {
+  margin: 0;
+}
