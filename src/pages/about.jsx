@@ -226,7 +226,7 @@ const AboutPage = ({ data }) => {
         <Boxed>
           <P1>
             <small>01. Bio</small>
-            <h2>Journey to Design</h2>
+            <h2 className="no-margin">Journey to Design</h2>
             <p>
               I studied cultural and film theories at The University of Hong
               Kong. I took a gap year and worked in iTunes & App Store, Apple as
@@ -272,7 +272,7 @@ const AboutPage = ({ data }) => {
       <AltRow id="skills" className="full-bleed">
         <Boxed>
           <small>03. Skills</small>
-          <h2>Design, Photography, Writing.</h2>
+          <h2 className="no-margin">Design, Photography, Writing.</h2>
           <GridSkill>
             <DesignPart>
               <h3>Design</h3>

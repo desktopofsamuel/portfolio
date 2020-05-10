@@ -15,10 +15,6 @@ const Grid = styled.div`
     margin: 1rem auto;
     padding: 0;
   }
-
-  h2 {
-    margin-top: 0;
-  }
 `;
 
 const Boxed = ({ children, className, size }) => (

@@ -200,7 +200,7 @@ const IndexPage = ({ data }) => {
             <StickyBox>
               <StickyWrapper>
                 <small>01.</small>
-                <h2>Interaction and Experience Design</h2>
+                <h2 className="no-margin">Interaction and Experience Design</h2>
 
                 <p>
                   I'm a multi-disciplinary designer with 5 years of experience
@@ -220,7 +220,7 @@ const IndexPage = ({ data }) => {
               <StickyWrapper>
                 <BlogIntro>
                   <small>02.</small>
-                  <h2>Notes on Design & Technology</h2>
+                  <h2 className="no-margin">Notes on Design & Technology</h2>
                   <Subtitle>
                     I write about design, technology and productivity.
                   </Subtitle>
