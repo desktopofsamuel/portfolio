@@ -27,7 +27,7 @@
   @media only screen and (max-width: 768px) {
     :root {
       --font-size-base: 16px;
-      --font-scale-ratio: 0.7;
+      --font-scale-ratio: 0.8;
       --var-padding-l: 3rem;
       --var-padding-m: 1rem;
       --var-padding-s: 0.5rem;

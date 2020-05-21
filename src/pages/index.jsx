@@ -9,7 +9,7 @@ import ReadOn from "elements/ReadOn";
 import Link from "../components/common/GatsbyLink";
 import config from "../../data/SiteConfig";
 import Layout from "../layout";
-import WorkHero from "../components/WorkHero";
+import WorkIndex from "../components/WorkIndex";
 import CTAButton from "../components/common/MajorButton";
 import BlogListing from "../components/BlogListing";
 import WorkIcon from "../../static/SVG/Work.svg";
@@ -209,7 +209,7 @@ const IndexPage = ({ data }) => {
                 <ReadOn text="View My Work" href="/work" />
               </StickyWrapper>
             </StickyBox>
-            <WorkHero postEdges={workEdges} />
+            <WorkIndex postEdges={workEdges} />
           </ColumnSpaced>
         </Box>
       </GreyRow>
@@ -282,7 +282,7 @@ export const pageQuery = graphql`
               publicURL
               childImageSharp {
                 fluid(maxHeight: 1200) {
-                  ...GatsbyImageSharpFluid_withWebp
+                  ...GatsbyImageSharpFluid_noBase64
                 }
               }
             }
