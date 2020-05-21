@@ -69,7 +69,10 @@ const Resume = () => {
       <Block>
         <ResumeSectionTitle>Career</ResumeSectionTitle>
         <ResumeSection>
-          {/* <ResumeItem title="Principal Designer at HyperAir" meta="2019 - Now" /> */}
+          <ResumeItem
+            title="Principal Designer at HyperAir"
+            meta="2019 - Now"
+          />
           <ResumeItem
             title="Co-founder & Director at Playa"
             meta="2015 - 2019"

@@ -8,6 +8,7 @@ const Card = styled.div`
   padding: var(--padding-m) var(--padding-m) 0 var(--padding-m);
   margin-bottom: var(--padding-m);
   transition: var(--transition);
+  border-radius: 8px;
 
   &:hover {
     transform: scale(1.01, 1.01);

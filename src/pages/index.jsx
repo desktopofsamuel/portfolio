@@ -258,7 +258,7 @@ export default IndexPage;
 export const pageQuery = graphql`
   query IndexQuery {
     Work: allMdx(
-      limit: 5
+      limit: 2
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
         fileAbsolutePath: { regex: "/work/" }
