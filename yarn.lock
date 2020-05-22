@@ -1108,6 +1108,11 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@brainhubeu/react-carousel@^1.15.3":
+  version "1.15.3"
+  resolved "https://registry.yarnpkg.com/@brainhubeu/react-carousel/-/react-carousel-1.15.3.tgz#5e6d0631ad616fd4b160cf6f3989ba6425a538d9"
+  integrity sha512-wEOwQxzJ8efH9b87ECoNq21xCucmkxhbFymeIrzdBGAqBygvg/HTF3tylCL+c5ravxIwP8TTWRNOnfWHpi1Epg==
+
 "@emotion/is-prop-valid@^0.8.1":
   version "0.8.7"
   resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-0.8.7.tgz#803449993f436f9a6c67752251ea3fc492a1044c"

@@ -16,6 +16,7 @@ import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import Boxed from "elements/Boxed";
 import WorkList from "../components/WorkList";
+import ReadOn from "../elements/ReadOn";
 
 const WorkBoxed = styled(Boxed)``;
 
@@ -27,6 +28,9 @@ const Row = styled.section`
   }
 `;
 
+const ClearRow = styled(Row)`
+  padding: 0;
+`;
 const GridProject = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -91,6 +95,29 @@ const ProjectBox = props => (
 );
  */
 
+const Item = styled.div`
+  padding: var(--padding-m);
+  display: grid;
+  grid-gap: 8px;
+  margin-bottom: 16px;
+`;
+
+const ItemTitle = styled.h3`
+  margin: 0;
+`;
+
+const ItemText = styled.p`
+  max-width: 36ch;
+`;
+
+const ListedItem = ({ title, description, url, role, year }) => (
+  <Item>
+    <ItemTitle>{title}</ItemTitle>
+    <ItemText>{description}</ItemText>
+    <ReadOn href={url} text="View Project" />
+  </Item>
+);
+
 const WorkPage = ({ data }) => {
   const postEdges = data.allMdx.edges;
   return (
@@ -105,9 +132,11 @@ const WorkPage = ({ data }) => {
           <h2>Case Studies</h2>
           <WorkIndex postEdges={postEdges} />
         </Row>
-        <Row>
+        <ClearRow>
           <h2>More Works</h2>
           <p>Check out some sites and apps that I have built.</p>
+        </ClearRow>
+        <Row className="full-bleed">
           <WorkList />
         </Row>
       </WorkBoxed>

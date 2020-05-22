@@ -89,14 +89,15 @@ h4 {
 }
 
 h5 {
-  font-family: var(--font-secondary);
-  font-style: normal;
-  font-weight: var(--font-weight-regular);
-  line-height: 150%;
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  line-height: normal;
   font-size: 16px;
+  letter-spacing: 0.075rem;
   margin-top: 0;
-  margin-bottom: 0.5rem;
 }
+
 
 h6 {
   font-family: var(--font-primary);

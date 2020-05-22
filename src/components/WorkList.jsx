@@ -1,22 +1,25 @@
 import React from "react";
 import styled from "styled-components";
 import ReadOn from "../elements/ReadOn";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import Carousel, { Dots } from "@brainhubeu/react-carousel";
+import "@brainhubeu/react-carousel/lib/style.css";
+import Playa from "../../static/images/workshot/Playa.png";
+import CDC from "../../static/images/workshot/CDC.png";
+import TgtAtHomeClub from "../../static/images/workshot/TgtAtHomeClub.png";
+import WaterForFree from "../../static/images/workshot/WaterForFree.png";
+import Pingspace from "../../static/images/workshot/Pingspace.png";
 
-const Container = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 16px;
-
-  @media only screen and (max-width: 768px) {
-    display: block;
-  }
+const IconWrapper = styled.div`
+  padding: 1rem;
 `;
 
 const Item = styled.div`
-  border: 1px var(--color-black-500) solid;
+  /* display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  align-content: start; */
   padding: var(--padding-m);
-  display: grid;
-  grid-gap: 8px;
   margin-bottom: 16px;
 `;
 
@@ -28,9 +31,13 @@ const ItemText = styled.p`
   max-width: 36ch;
 `;
 
-const ListedItem = ({ title, description, url, role, year }) => (
+const Image = styled.img``;
+
+const ListedItem = ({ title, description, url, role, year, image }) => (
   <Item>
+    <Image src={image} alt={title} />
     <ItemTitle>{title}</ItemTitle>
+    <small>{role}</small>
     <ItemText>{description}</ItemText>
     <ReadOn href={url} text="View Project" />
   </Item>
@@ -38,19 +45,67 @@ const ListedItem = ({ title, description, url, role, year }) => (
 
 const WorkList = data => {
   return (
-    <Container>
+    <Carousel
+      autoPlay={10000}
+      animationSpeed={1000}
+      infinite
+      arrowLeft={
+        <IconWrapper>
+          <FaAngleLeft size="1.5em" />
+        </IconWrapper>
+      }
+      arrowRight={
+        <IconWrapper>
+          <FaAngleRight size="1.5em" />
+        </IconWrapper>
+      }
+      addArrowClickHandler
+      breakpoints={{
+        768: {
+          slidesPerPage: 1,
+          arrows: true,
+        },
+        1024: {
+          slidesPerPage: 2,
+          arrows: true,
+        },
+        2440: {
+          slidesPerPage: 3,
+          arrows: false,
+        },
+      }}
+      slidesPerPage={3}
+    >
       <ListedItem
         title="Together At Home"
-        description="A collection of free and discounted resources to keep you staying at home during COVID-19 outbreak."
+        description="A collection of free and discounted resources during COVID-19 outbreak."
         url="https://tgtathome.club/"
+        role="Creator"
+        image={TgtAtHomeClub}
       />
       <ListedItem
-        title="Creation Cabin"
-        description="Creation Cabin is a independent publisher in Hong Kong. I have designed their online novel publishing platform."
-        url="https://playa.hk/projects/creation-cabin-reading-platform.html"
-        role="UI Designer, Project Manager"
+        title="CDC Connects"
+        description="App for Parents, School and Children to track goals for Children With Special Educational Needs"
+        url="https://www.cdchk.org/news/cdc-app-launch/"
+        year="2019"
+        role="UI/UX Designer, Project Manager"
+        image={CDC}
       />
-    </Container>
+      <ListedItem
+        title="Pingspace"
+        description="Landing page for SaaS side-project, an intelligent website uptime monitor"
+        url="https://playa.hk/projects/pingspace.html"
+        role="UI/UX Designer"
+        image={Pingspace}
+      />
+      <ListedItem
+        title="Playa"
+        description="Homepage and Portfolio for the digital agency that I have co-founded"
+        url="https://playa.hk/"
+        role="Director, Design Lead"
+        image={Playa}
+      />
+    </Carousel>
   );
 };
 
