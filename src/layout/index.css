@@ -89,18 +89,19 @@ h4 {
 }
 
 h5 {
-  font-family: var(--font-secondary);
-  font-style: normal;
-  font-weight: var(--font-weight-regular);
-  line-height: 150%;
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  line-height: normal;
   font-size: 16px;
+  letter-spacing: 0.075rem;
   margin-top: 0;
-  margin-bottom: 0.5rem;
 }
+
 
 h6 {
   font-family: var(--font-primary);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-regular);
   text-transform: uppercase;
   line-height: normal;
   font-size: 14px;
@@ -270,14 +271,14 @@ p:first-child {
 }
 
 .full-bleed {
-  width: calc(100vw - 16px);
+  width: 100vw;
   margin-left: 50%;
   transform: translateX(-50%);
 }
 
 @media only screen and (max-width: 1024px) {
   .full-bleed > div {
-    width: calc(100vw - 16px);
+    width: 95vw;
     padding-left: 1rem;
     padding-right: 1rem;
     margin: 0 auto;
@@ -286,7 +287,7 @@ p:first-child {
 
 @media only screen and (max-width: 600px) {
   .full-bleed.full-content > div {
-    width: calc(100vw - 16px);
+    width: 100vw;
     padding: 0;
     margin: 0 auto;
   }

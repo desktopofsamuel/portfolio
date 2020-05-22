@@ -12,7 +12,7 @@ const Grid = styled.div`
   margin: 3rem auto;
 
   @media only screen and (max-width: 1024px) {
-    margin: 1rem auto;
+    margin: 1rem auto 0 auto;
     padding: 0;
   }
 `;

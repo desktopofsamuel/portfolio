@@ -3,7 +3,7 @@ import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
 import Link from "../components/common/GatsbyLink";
-import WorkHero from "../components/WorkHero";
+import WorkIndex from "../components/WorkIndex";
 import WaterSVG from "../../static/SVG/Water.svg";
 import BookSVG from "../../static/SVG/Book.svg";
 import HyperAirSVG from "../../static/SVG/HyperAir-2.svg";
@@ -16,18 +16,21 @@ import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import Boxed from "elements/Boxed";
 import WorkList from "../components/WorkList";
+import ReadOn from "../elements/ReadOn";
 
 const WorkBoxed = styled(Boxed)``;
 
 const Row = styled.section`
-  padding: var(--var-padding-l) 0;
-  background: white;
+  padding: var(--var-padding-m) 0;
 
   &:first-child {
     padding-bottom: 0;
   }
 `;
 
+const ClearRow = styled(Row)`
+  padding: 0;
+`;
 const GridProject = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -92,6 +95,29 @@ const ProjectBox = props => (
 );
  */
 
+const Item = styled.div`
+  padding: var(--padding-m);
+  display: grid;
+  grid-gap: 8px;
+  margin-bottom: 16px;
+`;
+
+const ItemTitle = styled.h3`
+  margin: 0;
+`;
+
+const ItemText = styled.p`
+  max-width: 36ch;
+`;
+
+const ListedItem = ({ title, description, url, role, year }) => (
+  <Item>
+    <ItemTitle>{title}</ItemTitle>
+    <ItemText>{description}</ItemText>
+    <ReadOn href={url} text="View Project" />
+  </Item>
+);
+
 const WorkPage = ({ data }) => {
   const postEdges = data.allMdx.edges;
   return (
@@ -104,64 +130,14 @@ const WorkPage = ({ data }) => {
         <PageTitle title="My Work" subtitle="My Case Studies" />
         <Row>
           <h2>Case Studies</h2>
-          <WorkHero postEdges={postEdges} />
+          <WorkIndex postEdges={postEdges} />
         </Row>
-
-        <Row>
+        <ClearRow>
           <h2>More Works</h2>
-          <p>Check out some sites and apps that I have built.</p> 
-          <WorkList/>
-          <GridProject>
-            {/* <ProjectBox
-                img={PinSVG}
-                title="Pins"
-                blurb="Curated design resource site coded by myself using GatsbyJS."
-                year="2018"
-                url="https://pins.desktopofsamuel.com"
-              /> */}
-            {/* <ProjectBox
-                  img={DocuSVG}
-                  title="Road Not Taken"
-                  blurb="A documentary I directed with multiple Asian film festival selected."
-                  year="2016"
-                  url="https://vimeo.com/ondemand/roadnottaken"
-                /> */}
-            {/* <ProjectBox
-                img={PingspaceSVG}
-                title="Pingspace"
-                blurb="Websites uptime monitor as a personal project"
-                year="2018"
-                url="https://pingspace.webflow.io/"
-              />
-              <ProjectBox
-                img={WaterSVG}
-                title="CDC Connects"
-                blurb="Goals Tracking for Children With Special Educational Needs"
-                year="2019"
-                url="https://www.cdchk.org/news/cdc-app-launch/"
-              />
-              <ProjectBox
-                img={PlayaSVG}
-                title="Playa"
-                blurb="Revamped portfolio and landing page of my agency"
-                year="2018"
-                url="https://playa.hk/portfolio.html"
-              />
-              <ProjectBox
-                img={WaterSVG}
-                title="New Asia Institue"
-                blurb="Chinese Cultural Courses & Events"
-                year="2017"
-                url="https://newasia.org.hk/"
-              />
-              <ProjectBox
-                img={BookSVG}
-                title="Creation Cabin"
-                blurb="Online novel platform supported by an independent publisher"
-                year="2017"
-                url="https://playa.hk/projects/creation-cabin-reading-platform.html"
-              /> */}
-          </GridProject>
+          <p>Check out some sites and apps that I have built.</p>
+        </ClearRow>
+        <Row className="full-bleed">
+          <WorkList />
         </Row>
       </WorkBoxed>
     </Layout>

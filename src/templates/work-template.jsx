@@ -6,6 +6,7 @@ import Helmet from "react-helmet";
 import Boxed from "elements/Boxed";
 import Layout from "../layout";
 import SEO from "../components/SEO";
+import WorkPageHero from "../components/WorkPageHero";
 import config from "../../data/SiteConfig";
 
 const Title = styled.h1`
@@ -29,6 +30,7 @@ const MDX = styled(MDXRenderer)`
 
 const WorkPageTemplate = ({ pageContext, data }) => {
   const path = "work" + pageContext.slug;
+  const postEdges = data.mdx.frontmatter;
 
   return (
     <Layout>
@@ -36,8 +38,8 @@ const WorkPageTemplate = ({ pageContext, data }) => {
         <title>{`${data.mdx.frontmatter.title} | ${config.siteTitleAlt}`}</title>
       </Helmet>
       <SEO postPath={path} postNode={data.mdx} postSEO />
+      <WorkPageHero data={postEdges} />
       <WorkWrapper>
-        <Title>{data.mdx.frontmatter.title}</Title>
         <MDX>{data.mdx.body}</MDX>
       </WorkWrapper>
     </Layout>
@@ -57,8 +59,14 @@ export const pageQuery = graphql`
         subtitle
         path
         tags
+        color
         cover {
           publicURL
+          childImageSharp {
+            fluid(maxHeight: 1200) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+          }
         }
       }
     }

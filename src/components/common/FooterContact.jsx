@@ -44,7 +44,7 @@ const FooterContact = () => {
     <Boxed size="large">
       <Container>
         <Section>
-          <h6>Let's Chat</h6>
+          <h5>Let's Chat</h5>
           <Content>
             I am excited for new opportunities, let's talk about working
             togther. <br />
@@ -54,7 +54,7 @@ const FooterContact = () => {
           </Content>
         </Section>
         <Section>
-          <h6>Keep In Touch</h6>
+          <h5>Keep In Touch</h5>
           <Content>
             Follow my social media and see what I'm up to.
             <IconList>
@@ -83,7 +83,7 @@ const FooterContact = () => {
           </Content>
         </Section>
         <Section>
-          <h6>Subscribe</h6>
+          <h5>Subscribe</h5>
           <Content>
             I write regularly on the subject of design and technology. Feel free
             to subscribe via{" "}
