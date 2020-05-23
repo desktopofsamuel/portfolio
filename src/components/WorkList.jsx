@@ -12,6 +12,7 @@ import Pingspace from "../../static/images/workshot/Pingspace.png";
 
 const IconWrapper = styled.div`
   padding: 1rem;
+  cursor: pointer;
 `;
 
 const Item = styled.div`
