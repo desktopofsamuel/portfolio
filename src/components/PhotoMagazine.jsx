@@ -58,6 +58,7 @@ const GridPhoto = styled(Img)`
 const GridTitle = styled.h2`
   font-size: var(--font-size-m);
   font-weight: var(--font-weight-bold);
+  margin-top: 0;
   margin-bottom: 0;
 `;
 
@@ -104,7 +105,7 @@ const GridButton = styled.small`
 class PhotoMagazine extends React.Component {
   getPostList() {
     const postList = [];
-    this.props.postEdges.forEach((postEdge) => {
+    this.props.postEdges.forEach(postEdge => {
       postList.push({
         path: "/photo" + postEdge.node.fields.slug,
         tags: postEdge.node.frontmatter.tags,
@@ -132,7 +133,7 @@ class PhotoMagazine extends React.Component {
           </p>
         </GridItem>
         {/* Your post list here. */
-        postList.map((post) => (
+        postList.map(post => (
           <GridItem className="photo-item noeffect" key={post.title}>
             <Link to={post.path} className="noeffect">
               <GridPhoto sizes={post.cover.childImageSharp.sizes} />
