@@ -71,16 +71,20 @@ const StickyBox = styled.div`
 `;
 
 const RightStickyBox = styled.div`
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 425px) {
     order: 1;
   }
 `;
 
 const StickyWrapper = styled.div`
   position: relative;
-  padding: var(--var-padding-m) 0;
+  padding: 0 0 var(--var-padding-m) 0;
 
-  @media only screen and (min-width: 600px) {
+  small {
+    margin-bottom: 1rem;
+  }
+
+  @media only screen and (min-width: 425px) {
     position: sticky;
     top: 3rem;
   }
