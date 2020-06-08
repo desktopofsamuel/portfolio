@@ -3,7 +3,7 @@
 
 /* Typography */
 :root {
-    --font-primary: canada-type-gibson, Helvetica, Arial, sans-serif;
+    --font-primary: din-2014, Helvetica, Arial, sans-serif;
     --font-secondary: Libre Caslon Text, Lato, Georgia, serif;
     --font-tertiary: freight-big-pro, Lato, Georgia, serif;
     --font-weight-bold: 600;

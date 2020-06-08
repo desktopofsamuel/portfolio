@@ -39,12 +39,12 @@ const ItemText = styled.p`
 const Image = styled.img``;
 
 const ListedItem = ({ title, description, url, role, year, image }) => (
-  <Item>
+  <Item key={title}>
     <Image src={image} alt={title} />
     <ItemTitle>{title}</ItemTitle>
     <small>{role}</small>
     <ItemText>{description}</ItemText>
-    <ReadOn href={url} text="View Project" />
+    <ReadOn target="_blank" href={url} text="View Project" />
   </Item>
 );
 
