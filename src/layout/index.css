@@ -32,20 +32,6 @@ body::-webkit-scrollbar {
   scrollbar-width: thin;
 }
 
-@media only screen and (max-width: 1024px) {
-  div > main {
-    max-width: 90vw;
-    padding: 0 1.5rem;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  div > main {
-    max-width: 95vw;
-    padding: 0 1rem;
-  }
-}
-
 h1 {
   font-size: calc(var(--font-size-base) * 3 * var(--font-scale-ratio));
   line-height: 1.3em;

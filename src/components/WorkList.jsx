@@ -11,8 +11,12 @@ import WaterForFree from "../../static/images/workshot/WaterForFree.png";
 import Pingspace from "../../static/images/workshot/Pingspace.png";
 
 const IconWrapper = styled.div`
-  padding: 1rem;
+  padding: var(--var-padding-m);
   cursor: pointer;
+
+  @media only screen and (max-width: 768px) {
+    padding: 0;
+  }
 `;
 
 const Item = styled.div`
@@ -20,7 +24,7 @@ const Item = styled.div`
   flex-direction: column;
   align-items: stretch;
   align-content: start; */
-  padding: var(--padding-m);
+  padding: var(--padding-s);
   margin-bottom: 16px;
 `;
 
@@ -35,12 +39,12 @@ const ItemText = styled.p`
 const Image = styled.img``;
 
 const ListedItem = ({ title, description, url, role, year, image }) => (
-  <Item>
+  <Item key={title}>
     <Image src={image} alt={title} />
     <ItemTitle>{title}</ItemTitle>
     <small>{role}</small>
     <ItemText>{description}</ItemText>
-    <ReadOn href={url} text="View Project" />
+    <ReadOn target="_blank" href={url} text="View Project" />
   </Item>
 );
 

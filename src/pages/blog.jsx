@@ -85,6 +85,7 @@ const BlogPage = ({ data }) => {
               <Row id="latest">
                 <small>Latest</small>
                 <BlogList postEdges={postEdges} />
+                {/* <ShowMoreButton /> */}
               </Row>
             </Right>
           </Main>
@@ -114,16 +115,8 @@ export const bloglisting = graphql`
         publicURL
         size
         childImageSharp {
-          sizes(maxWidth: 1140) {
-            base64
-            aspectRatio
-            src
-            srcSet
-            srcWebp
-            srcSetWebp
-            sizes
-            originalImg
-            originalName
+          fluid(maxWidth: 1140) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -156,16 +149,8 @@ export const pageQuery = graphql`
               publicURL
               size
               childImageSharp {
-                sizes(maxWidth: 1200) {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  srcWebp
-                  srcSetWebp
-                  sizes
-                  originalImg
-                  originalName
+                fluid(maxWidth: 600) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }

@@ -36,7 +36,43 @@ const PostImage = styled(Img)`
   margin-bottom: var(--var-padding-s);
 `;
 
+const ShowMoreButton = styled.button`
+  border: 1px solid var(--color-brand-500);
+  box-sizing: border-box;
+  background: none;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background: var(--color-brand-500);
+    color: var(--color-black-500);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+`;
+
 class PostHero extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      items: [],
+      visible: 5,
+      error: false,
+    };
+
+    this.loadMore = this.loadMore.bind(this);
+  }
+
+  loadMore() {
+    this.setState(prev => {
+      return { visible: prev.visible + 4 };
+    });
+  }
+
   getPostList() {
     const postList = [];
     this.props.postEdges.forEach(postEdge => {
@@ -55,23 +91,28 @@ class PostHero extends React.Component {
   render() {
     const postList = this.getPostList();
     return (
-      <Grid>
-        {postList.map(post => (
-          <ListItem key={post.path}>
-            <Link to={post.path}>
-              <PostImage
-                sizes={post.cover.childImageSharp.sizes}
-                alt={post.title}
-              />
-              <Hero>
-                <a>{post.title}</a>
-              </Hero>
-            </Link>
-            <p className="noeffect">{post.excerpt}</p>
-            <small>{post.date}</small>
-          </ListItem>
-        ))}
-      </Grid>
+      <>
+        <Grid>
+          {postList.slice(0, this.state.visible).map(post => (
+            <ListItem key={post.path}>
+              <Link to={post.path}>
+                <PostImage
+                  fluid={post.cover.childImageSharp.fluid}
+                  alt={post.title}
+                />
+                <Hero>
+                  <a>{post.title}</a>
+                </Hero>
+              </Link>
+              <p className="noeffect">{post.excerpt}</p>
+              <small>{post.date}</small>
+            </ListItem>
+          ))}
+        </Grid>
+        {this.state.visible < postList.length && (
+          <ShowMoreButton onClick={this.loadMore}>Load More </ShowMoreButton>
+        )}
+      </>
     );
   }
 }

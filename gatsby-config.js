@@ -81,6 +81,8 @@ module.exports = {
             options: {
               linkImagesToOriginal: false,
               maxWidth: 1235,
+              showCaptions: true,
+              loading: "lazy",
             },
           },
           "gatsby-remark-images-medium-zoom",
@@ -99,6 +101,15 @@ module.exports = {
             },
           },
         ],
+      },
+    },
+    {
+      resolve: "gatsby-remark-images",
+      options: {
+        linkImagesToOriginal: false,
+        maxWidth: 1235,
+        showCaptions: true,
+        loading: "lazy",
       },
     },
     {
