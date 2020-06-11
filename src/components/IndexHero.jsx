@@ -1,4 +1,5 @@
 import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -12,6 +13,8 @@ import Profile from "../../static/images/Profile.png";
 import Link from "./common/GatsbyLink";
 import Column from "../elements/Column";
 import Emoji from "./common/Emoji";
+import Img from "gatsby-image";
+import Data from "elements/Data";
 
 const Container = styled(Boxed)`
   max-width: var(--page-container-l);
@@ -42,10 +45,18 @@ const Title = styled.h1`
 const Subtitle = styled.p``;
 
 const IndexHero = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      profile: file(relativePath: { eq: "images/Profile.png" }) {
+        ...fluidImage
+      }
+    }
+  `);
+
   return (
     <Container>
       <Image>
-        <img src={Profile} alt="Samuel W." />
+        <Img fluid={data.profile.childImageSharp.fluid} alt="Samuel W." />
       </Image>
       <Title>Samuel W.</Title>
       <Column>
