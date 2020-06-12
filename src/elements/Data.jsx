@@ -11,6 +11,7 @@ const Label = styled.small`
 const Number = styled.h5`
   font-size: 24px;
   line-height: 28px;
+  margin: 8px 0;
 `;
 
 const Data = ({ caption, nodata, data2, data3 }) => {
