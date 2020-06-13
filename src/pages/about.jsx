@@ -8,22 +8,9 @@ import Resume from "../components/Resume";
 import Link from "../components/common/GatsbyLink";
 import Layout from "../layout";
 
-const AboutBoxed = styled(Boxed)`
-  max-width: var(--page-container-l);
-`;
-
 const Row = styled.section`
   padding: var(--var-padding-m) 0;
   background: white;
-`;
-
-const ShortBoxed = styled(Boxed)`
-  max-width: 50vw;
-  margin: 0 auto;
-
-  @media only screen and (max-width: 1024px) {
-    max-width: 80vw;
-  }
 `;
 
 const AltRow = styled(Row)`
@@ -185,7 +172,7 @@ const AboutPage = ({ data }) => {
   return (
     <Layout title="About">
       <Row>
-        <AboutBoxed>
+        <Boxed>
           <PageTitle title="About Me" subtitle="Little things about myself" />
           <PhotoFrame>
             <Img
@@ -220,7 +207,7 @@ const AboutPage = ({ data }) => {
               </WrapperNav>
             </Intro>
           </WrapperIntro>
-        </AboutBoxed>
+        </Boxed>
       </Row>
       <AltRow id="bio" className="full-bleed">
         <Boxed>
@@ -263,10 +250,10 @@ const AboutPage = ({ data }) => {
         </Boxed>
       </AltRow>
       <InvertRow id="resume" className="full-bleed">
-        <ShortBoxed>
+        <Boxed>
           <small>02. Resume</small>
           <Resume />
-        </ShortBoxed>
+        </Boxed>
       </InvertRow>
 
       <AltRow id="skills" className="full-bleed">
