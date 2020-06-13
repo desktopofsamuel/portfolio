@@ -249,14 +249,14 @@ const AboutPage = ({ data }) => {
                 acquiring various skill sets to be a hybrid designer.
                 <br />
                 <br />I started an agency Playa with a partner in 2015, hoping
-                to help small businesses, entrepreneurs and nonprofits launch
+                to help small businesses, entrepreneurs and non-profits launch
                 their projects and bridge the gap between project owners and
                 end-users. We have launched dozens of websites and apps in Hong
                 Kong with multiple recognitions.
                 <br />
                 <br />
-                {/* Currently, I work as the Principal Designer at Hyperair, a
-                start-up that aims to reinvent travel experiences. */}
+                Currently, I work as Principal Designer at Hyperair, a start-up
+                that aims to reinvent travel experiences.
               </p>
             </P2>
           </GridBio>
