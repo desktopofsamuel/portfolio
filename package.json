@@ -20,7 +20,7 @@
     "css-loader": "^3.2.0",
     "dotenv": "^8.2.0",
     "gatsby": "^2.19.5",
-    "gatsby-cli": "^2.8.27",
+    "gatsby-cli": "^2.12.45",
     "gatsby-image": "^2.0.19",
     "gatsby-plugin-catch-links": "2.0.6",
     "gatsby-plugin-feed": "2.0.9",

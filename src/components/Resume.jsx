@@ -81,7 +81,7 @@ const Resume = () => {
         <ResumeItem
           title="The University of Hong Kong"
           content="Bachelor of Arts"
-          meta="2011 - 2014"
+          meta="2011 - 2015"
         />
       </Block>
       <Block>
