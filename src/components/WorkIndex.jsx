@@ -62,6 +62,7 @@ class WorkIndex extends React.Component {
               <Image
                 fluid={post.cover.childImageSharp.fluid}
                 alt={post.title}
+                fadeIn
               />
             </Card>
           </Link>
