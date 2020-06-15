@@ -20,6 +20,7 @@ module.exports = {
     },
   },
   plugins: [
+    "gatsby-plugin-preact",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-lodash",
     {
@@ -159,11 +160,11 @@ module.exports = {
         fonts: {
           google: [
             {
-              family: "Libre Caslon Text", 
+              family: "Libre Caslon Text",
               variants: ["400", "700"],
             },
             {
-              family: "IBM Plex Sans", 
+              family: "IBM Plex Sans",
               variants: ["400", "700"],
             },
           ],
