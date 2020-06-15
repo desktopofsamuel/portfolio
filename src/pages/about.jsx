@@ -8,22 +8,9 @@ import Resume from "../components/Resume";
 import Link from "../components/common/GatsbyLink";
 import Layout from "../layout";
 
-const AboutBoxed = styled(Boxed)`
-  max-width: var(--page-container-l);
-`;
-
 const Row = styled.section`
   padding: var(--var-padding-m) 0;
   background: white;
-`;
-
-const ShortBoxed = styled(Boxed)`
-  max-width: 50vw;
-  margin: 0 auto;
-
-  @media only screen and (max-width: 1024px) {
-    max-width: 80vw;
-  }
 `;
 
 const AltRow = styled(Row)`
@@ -185,7 +172,7 @@ const AboutPage = ({ data }) => {
   return (
     <Layout title="About">
       <Row>
-        <AboutBoxed>
+        <Boxed>
           <PageTitle title="About Me" subtitle="Little things about myself" />
           <PhotoFrame>
             <Img
@@ -220,7 +207,7 @@ const AboutPage = ({ data }) => {
               </WrapperNav>
             </Intro>
           </WrapperIntro>
-        </AboutBoxed>
+        </Boxed>
       </Row>
       <AltRow id="bio" className="full-bleed">
         <Boxed>
@@ -249,24 +236,24 @@ const AboutPage = ({ data }) => {
                 acquiring various skill sets to be a hybrid designer.
                 <br />
                 <br />I started an agency Playa with a partner in 2015, hoping
-                to help small businesses, entrepreneurs and nonprofits launch
+                to help small businesses, entrepreneurs and non-profits launch
                 their projects and bridge the gap between project owners and
                 end-users. We have launched dozens of websites and apps in Hong
                 Kong with multiple recognitions.
                 <br />
                 <br />
-                {/* Currently, I work as the Principal Designer at Hyperair, a
-                start-up that aims to reinvent travel experiences. */}
+                Currently, I work as Principal Designer at Hyperair, a start-up
+                that aims to reinvent travel experiences.
               </p>
             </P2>
           </GridBio>
         </Boxed>
       </AltRow>
       <InvertRow id="resume" className="full-bleed">
-        <ShortBoxed>
+        <Boxed>
           <small>02. Resume</small>
           <Resume />
-        </ShortBoxed>
+        </Boxed>
       </InvertRow>
 
       <AltRow id="skills" className="full-bleed">

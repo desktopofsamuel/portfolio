@@ -48,14 +48,6 @@ const ResumeSection = styled(Column)`
   grid-gap: var(--var-padding-s) var(--var-padding-m);
 `;
 
-const ResumeParagraph = styled.p`
-  small {
-    color: var(--color-primary-100);
-    opacity: 0.7;
-    margin-left: 2rem;
-  }
-`;
-
 const Resume = () => {
   return (
     <Section>
@@ -89,25 +81,22 @@ const Resume = () => {
         <ResumeItem
           title="The University of Hong Kong"
           content="Bachelor of Arts"
-          meta="2011 - 2014"
+          meta="2011 - 2015"
         />
       </Block>
       <Block>
         <ResumeSectionTitle>Skills</ResumeSectionTitle>
         <div>
-          <p>Figma, Sketch, Abstract, Avocode </p>
-          <p>HTML, CSS, Git, Google Analytics</p>
-          <p>Adobe Creative Suite</p>
+          <ResumeItem noBorder content="Figma, Sketch, Abstract, Avocode" />
+          <ResumeItem noBorder content="HTML, CSS, Git, Google Analytics" />
+          <ResumeItem noBorder content="Adobe Creative Suite" />
         </div>
       </Block>
       <Block>
         <ResumeSectionTitle>Language</ResumeSectionTitle>
         <div>
-          <ResumeParagraph>
-            Native in Cantonese
-            <br />
-            Professional Proficiency in English
-          </ResumeParagraph>
+          <ResumeItem noBorder content="Native in Cantonese" />
+          <ResumeItem noBorder content="Professional Proficiency in English" />
         </div>
       </Block>
     </Section>

@@ -13,6 +13,10 @@ const Wrapper = styled(Boxed)`
   align-items: center;
   justify-content: center;
   text-align: center;
+
+  h3 {
+    margin-top: var(--var-padding-s);
+  }
 `;
 
 const Related = ({ node }) => {
