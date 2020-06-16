@@ -18,8 +18,6 @@ import Boxed from "elements/Boxed";
 import WorkList from "../components/WorkList";
 import ReadOn from "../elements/ReadOn";
 
-const WorkBoxed = styled(Boxed)``;
-
 const Row = styled.section`
   padding: var(--var-padding-m) 0;
 
@@ -126,20 +124,22 @@ const WorkPage = ({ data }) => {
       description="Photo"
       keywords="Photography, Travel, Sightseeing, Canon, iPhone, City, Journey"
     >
-      <WorkBoxed>
-        <PageTitle title="My Work" subtitle="My Case Studies" />
-        <Row>
-          <h2>Case Studies</h2>
-          <WorkIndex postEdges={postEdges} />
-        </Row>
-        <ClearRow>
-          <h2>More Works</h2>
-          <p>Check out some sites and apps that I have built.</p>
-        </ClearRow>
-        <Row className="full-bleed">
-          <WorkList />
-        </Row>
-      </WorkBoxed>
+      <Row>
+        <Boxed>
+          <PageTitle title="My Work" subtitle="My Case Studies" />
+          <Row>
+            <h2>Case Studies</h2>
+            <WorkIndex postEdges={postEdges} />
+          </Row>
+          <ClearRow>
+            <h2>More Works</h2>
+            <p>Check out some sites and apps that I have built.</p>
+          </ClearRow>
+          <Row className="full-bleed">
+            <WorkList />
+          </Row>
+        </Boxed>
+      </Row>
     </Layout>
   );
 };

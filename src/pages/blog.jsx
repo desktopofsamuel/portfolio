@@ -8,12 +8,8 @@ import BlogList from "../components/BlogList";
 import Link from "../components/common/GatsbyLink";
 
 const Row = styled.section`
-  padding: var(--var-padding-s) 0;
+  padding: var(--var-padding-m) 0;
   background: white;
-`;
-
-const Box = styled(Boxed)`
-  max-width: var(--page-container-s);
 `;
 
 const Main = styled.div`
@@ -54,7 +50,7 @@ const BlogPage = ({ data }) => {
       keywords="Design,Blog,Web,App,UI,UX,Interface,Portfolio,Hong Kong,Writing"
     >
       <Row>
-        <Box>
+        <Boxed size="small">
           <PageTitle
             title="Blog"
             subtitle="Article"
@@ -89,7 +85,7 @@ const BlogPage = ({ data }) => {
               </Row>
             </Right>
           </Main>
-        </Box>
+        </Boxed>
       </Row>
     </Layout>
   );

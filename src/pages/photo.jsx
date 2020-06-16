@@ -6,12 +6,8 @@ import Boxed from "elements/Boxed";
 import Layout from "../layout";
 import PhotoMagazine from "../components/PhotoMagazine";
 
-const PhotoBoxed = styled(Boxed)`
-  max-width: var(--page-container-l);
-`;
-
 const Row = styled.section`
-  padding: var(--var-padding-s) 0;
+  padding: var(--var-padding-m) 0;
   background: white;
 `;
 
@@ -37,20 +33,20 @@ const PhotoPage = ({ data }) => {
       description="Photography Portfolio of Samuel W."
       keywords="Photography, Travel, Sightseeing, Canon, iPhone, City, Journey"
     >
-      <PhotoBoxed>
-        <Grid>
-          <Row>
-            <Title title="Photography" />
-          </Row>
-          <Row>
-            <PageHeader1 />
-            <PageHeader2 />
-          </Row>
-          <Row>
-            <PhotoMagazine postEdges={postEdges} />
-          </Row>
-        </Grid>
-      </PhotoBoxed>
+      <Row>
+        <Boxed size="large">
+          <Title title="Photography" />
+          <Grid>
+            <Row>
+              <PageHeader1 />
+              <PageHeader2 />
+            </Row>
+            <Row>
+              <PhotoMagazine postEdges={postEdges} />
+            </Row>
+          </Grid>
+        </Boxed>
+      </Row>
     </Layout>
   );
 };
