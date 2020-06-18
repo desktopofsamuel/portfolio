@@ -126,7 +126,7 @@ const WorkPage = ({ data }) => {
     >
       <Row>
         <Boxed>
-          <PageTitle title="My Work" subtitle="My Case Studies" />
+          <PageTitle title="My Work" subtitle="Case Studies" />
           <Row>
             <h2>Case Studies</h2>
             <WorkIndex postEdges={postEdges} />
