@@ -112,7 +112,7 @@ strong {
 }
 
 a {
-  border-bottom: 2px dotted var(--color-grey-500);
+  border-bottom: 2px dotted var(--color-primary);
   background: linear-gradient(to bottom, transparent 62%, #ffd644 0) left center/0% 75% no-repeat;
   color: inherit;
   text-decoration: none;
@@ -161,6 +161,37 @@ a.linkicon {
 
 a.linkicon:hover {
   color: var(--color-brand-500);
+}
+
+ul li {
+  list-style-type: none;
+  margin-bottom: 12px;
+}
+
+ul li:before { 
+  content: '\1f806';
+  list-style-position: outside;
+  margin-right: 16px;
+  margin-left: -8px;
+}
+
+ol li {
+  counter-increment: list;
+  margin-bottom: 12px;
+}
+ol li:before {
+  content: counter(list) ". ";
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  font-style: italic;
+  margin-left: -24px;
+  margin-right: 6px;
+  
+}
+ol {
+  list-style: none;
+  counter-reset: list;
 }
 
 blockquote {

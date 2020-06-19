@@ -163,7 +163,15 @@ module.exports = {
               variants: ["400", "700"],
             },
             {
+              family: "IBM Plex Mono",
+              variants: ["400", "700"],
+            },
+            {
               family: "IBM Plex Sans",
+              variants: ["400", "700"],
+            },
+            {
+              family: "Chivo",
               variants: ["400", "700"],
             },
           ],

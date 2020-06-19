@@ -9,6 +9,7 @@ const Container = styled.main`
   h1 {
     margin-top: 1em;
     text-align: center;
+    font-size: calc(var(--font-size-base) * 1.6875 * var(--font-scale-ratio));
   }
 `;
 

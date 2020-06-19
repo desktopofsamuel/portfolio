@@ -11,6 +11,7 @@ tags:
 cover: "./Workflow.png"
 tldr: "How should we approach to organise our screens, when there are 10+, 100+, or even 1000+? Here's my struggles & takeaways in organizing Figma. "
 ---
+import Tip from 'elements/Tip'
 
 Most people kickstart their project with a blank artboard or template. It is the obvious way to get started. However, user-interface designs tend to be more complicated than just a few pages.
 
@@ -45,11 +46,7 @@ In the case of tracking old design for archival purpose, here’s a pro tip:
 
 ![Name Version History In Figma](./Name-version-history.png)
 
-#### Pro Tip:
-
-For Team Plan, there is unlimited version history, You can name a specific version according to your sprint name, so you can easily track your old design.
-
-For Free Plan, Version history is limited to 30 days. You can also duplicate your project and name it accordingly. Or you just keep a detailed changelog separately like [Keep A Changelog](https://keepachangelog.com/en/1.0.0/).
+<Tip>For Team Plan, there is unlimited version history, You can name a specific version according to your sprint name, so you can easily track your old design. For Free Plan, Version history is limited to 30 days. You can also duplicate your project and name it accordingly. Or you just keep a detailed changelog separately like <a href="https://keepachangelog.com/en/1.0.0/" target="_blank">Keep A Changelog</a>.</Tip>
 
 **3. Organise Your Frames**
 
@@ -60,11 +57,9 @@ Figma is too flexible that my pages were so messy with designs lying all around.
 But when we started to collaborate, more people are at stake. Becoming the best organised version of ourselves is required to make it work. Therefore, I started to nest screens within a bigger frame, with proper title and user story.
 But then I realised Figma actually does not recommend to do so. **For us to consider a Frame as a Top-level Frame, you must not nest it within another Frame or object.”** ([Using Figma](https://help.figma.com/hc/en-us/articles/360041539473-Frames-in-Figma)). So I have created a component to things easier.
 
-#### Pro Tip:
-
 ![Organise Your Frames with a Indication Component](./Figma-Frame-Component.png)
 
-Create a resizable component to indicate each user story / feature, with all essential information. Title, JIRA story code, description. Then you can create different state using “Component Name / State”, so users can easily switch states, like “Developer Handoff / In Review / Deployed”`
+<Tip>Create a resizable component to indicate each user story / feature, with all essential information. Title, JIRA story code, description. Then you can create different state using “Component Name / State”, so users can easily switch states, like “Developer Handoff / In Review / Deployed”</Tip>
 
 **4. Type out your thought with annotations**
 
