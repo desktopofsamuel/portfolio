@@ -5,7 +5,7 @@ const Wrapper = styled.div`
   background-color: var(--color-primary-background);
   border-left: 4px solid var(--color-primary);
   padding: 1rem;
-  border-radius: 4px;
+  border-radius: var(--border-radius);
 `;
 
 const Title = styled.p`

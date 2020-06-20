@@ -37,15 +37,15 @@ const PostImage = styled(Img)`
 `;
 
 const ShowMoreButton = styled.button`
-  border: 1px solid var(--color-brand-500);
+  border: 1px solid var(--color-primary);
   box-sizing: border-box;
   background: none;
   padding: 1rem 2rem;
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    background: var(--color-brand-500);
-    color: var(--color-black-500);
+    background: var(--color-primary);
+    color: var(--color-white);
   }
 
   &:focus {

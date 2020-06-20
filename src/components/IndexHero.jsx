@@ -22,11 +22,36 @@ const Container = styled(Boxed)`
 
 const IntroWrapper = styled.div``;
 
+// Disabled Contact Section
 const LinkWrapper = styled.div`
   padding: 2rem;
   background: white;
   border: 1px var(--color-black-500) solid;
   box-shadow: 10px 10px 0px 1px rgba(237, 237, 237, 1);
+`;
+
+const ContactWrapper = styled.div`
+  position: relative;
+  border-radius: 4px;
+  border: 1px solid var(--color-primary);
+  padding: var(--var-padding-s);
+
+  &::before {
+    content: "contact";
+    position: absolute;
+    top: -11px;
+    left: 12px;
+    line-height: 20px;
+    padding: 0 5px;
+    color: var(--color-primary);
+    background-color: var(--color-background);
+    font-family: var(--font-primary);
+    letter-spacing: var(--font-small-letterspacing);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    font-size: 12px;
+}
+  }
 `;
 
 const Image = styled.div`
@@ -72,7 +97,7 @@ const IndexHero = () => {
             Cross-Content Intern at iTunes & App Store, Apple.
           </Subtitle>
         </IntroWrapper>
-        <LinkWrapper>
+        {/* <LinkWrapper>
           <small>Contact</small>
           <div>
             <Emoji symbol="📬" />{" "}
@@ -100,7 +125,35 @@ const IndexHero = () => {
               Instagram
             </Link>
           </div>
-        </LinkWrapper>
+        </LinkWrapper> */}
+        <ContactWrapper>
+          <div>
+            <Emoji symbol="📬" />{" "}
+            <Link to="mailto:desktopofsamuel&#64;gmail.com" target="_blank">
+              desktopofsamuel&#64;gmail.com
+            </Link>
+          </div>
+          <div>
+            <Emoji symbol="🎤" />{" "}
+            <Link
+              to="https://www.linkedin.com/in/wongchunlong/"
+              target="_blank"
+            >
+              Linkedin
+            </Link>{" "}
+            /{" "}
+            <Link to="https://www.twitter.com/desktopofsamuel" target="_blank">
+              Twitter
+            </Link>{" "}
+            /{" "}
+            <Link
+              to="https://www.instagram.com/desktopofsamuel"
+              target="_blank"
+            >
+              Instagram
+            </Link>
+          </div>
+        </ContactWrapper>
       </Column>
     </Container>
   );

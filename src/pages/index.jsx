@@ -25,7 +25,7 @@ const Box = styled(Boxed)`
 
 const Row = styled.section`
   padding: var(--var-padding-m) 0;
-  background: white;
+  background: var(--color-background);
 `;
 
 const More2Button = styled.button`

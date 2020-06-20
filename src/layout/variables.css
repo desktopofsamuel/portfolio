@@ -56,12 +56,18 @@
     --color-secondary-100: #ced8e0;
     --color-transparent: rgba(0, 0, 0, 0);
 }
-
+/* New CSS Variable (Dark Mode Ready) */
 :root {
   --color-text: #334455;
+  --color-title: #2c3242;
   --color-background: #f7f7f7;
   --color-primary: #0099CC;
+  --color-primary-highlight: #97ecff;
   --color-primary-background: #EEFFFF;
+  --color-white: #ffffff;
+  --font-small-letterspacing: 0.075rem;
+  --border-radius: 4px;
+
 }
 
 /* Spacing */

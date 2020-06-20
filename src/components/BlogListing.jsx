@@ -13,10 +13,10 @@ const Block = styled.div`
   grid-column: span 4;
   display: flex;
   flex-flow: column;
-  background: ${props => (props.invert ? `var(--color-white-700)` : ``)};
+  background: ${props => (props.invert ? `var(--color-white)` : ``)};
   text-align: left;
   align-content: flex-start;
-
+  border-radius: var(--border-radius);
   color: ${props =>
     props.invert ? `var(--color-black-500)` : `var(--color-black-500)`};
   justify-content: space-between;
@@ -56,7 +56,7 @@ const Block = styled.div`
 
 const Content = styled.div`
   padding: var(--var-padding-s);
-  background-color: var(--color-white-700);
+  background-color: var(--color-white);
 `;
 
 const PostListImage = styled(Img)`
