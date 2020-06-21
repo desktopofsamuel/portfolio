@@ -4,25 +4,56 @@ import PropTypes from "prop-types";
 
 const Container = styled.div`
   background: #fff;
+  display: grid;
+  grid-template-columns: auto 70%;
+  margin: 36px 0;
 `;
 
-const Title = styled.h3``;
+const Wrapper = styled.div`
+  padding: 16px 0;
+`;
 
-const Poster = styled.img``;
+const Title = styled.h3`
+  margin: 0;
+  display: inline;
+`;
 
-const Rating = styled.p``;
+const Poster = styled.img`
+  max-width: 120px;
+  box-shadow: 0px 2px 36px rgba(0, 0, 0, 0.25);
+  transform: scale(1.185);
+`;
 
-const Director = styled.p``;
+const Rating = styled.p`
+  font-size: 24px;
+  color: var(--color-primary);
+  margin: 0;
+`;
 
-const Year = styled.p``;
+const Director = styled.p`
+  color: #9ac2cd;
+  margin: 0;
+`;
+
+const Year = styled.p`
+  margin: 0;
+  display: inline;
+  margin-left: 8px;
+`;
+
+const TitleWrapper = styled.div``;
 
 const Film = ({ poster, title, year, rating, director, link }) => (
   <Container>
-    <Title>{title}</Title>
-    <Year>{year}</Year>
-    <Director>{director}</Director>
     <Poster src={poster} />
-    <Rating>{rating}</Rating>
+    <Wrapper>
+      <TitleWrapper>
+        <Title>{title}</Title>
+        <Year>({year})</Year>
+      </TitleWrapper>
+      <Director>{director}</Director>
+      <Rating>{rating}</Rating>
+    </Wrapper>
   </Container>
 );
 
