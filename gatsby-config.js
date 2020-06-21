@@ -131,6 +131,13 @@ module.exports = {
     "gatsby-plugin-twitter",
     "gatsby-plugin-sitemap",
     {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        printRejected: true,
+        develop: true,
+      },
+    },
+    {
       resolve: "gatsby-plugin-manifest",
       options: {
         name: config.siteTitle,
