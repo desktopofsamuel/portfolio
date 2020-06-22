@@ -17,8 +17,7 @@ const Block = styled.div`
   text-align: left;
   align-content: flex-start;
   border-radius: var(--border-radius);
-  color: ${props =>
-    props.invert ? `var(--color-black-500)` : `var(--color-black-500)`};
+  color: var(--color-text);
   justify-content: space-between;
   transition: var(--transition);
 
@@ -35,8 +34,7 @@ const Block = styled.div`
   }
 
   button {
-    color: ${props =>
-      props.invert ? `var(--color-white-500)` : `var(--color-black-500)`};
+    color: var(--color-text);
   }
 
   @media only screen and (max-width: 767px) {

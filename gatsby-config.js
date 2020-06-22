@@ -85,6 +85,12 @@ module.exports = {
               loading: "lazy",
             },
           },
+          {
+            resolve: "gatsby-remark-external-links",
+            options: {
+              target: "_blank",
+            },
+          },
           "gatsby-remark-images-medium-zoom",
           "gatsby-remark-responsive-iframe",
           {

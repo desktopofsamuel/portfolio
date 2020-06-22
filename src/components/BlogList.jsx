@@ -16,7 +16,7 @@ const ListItem = styled.article`
 
   p {
     margin-bottom: 0.5rem;
-    color: var(--color-secondary-700);
+    color: var(--color-primary-700);
   }
 
   small {

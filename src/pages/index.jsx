@@ -10,7 +10,6 @@ import Link from "../components/common/GatsbyLink";
 import config from "../../data/SiteConfig";
 import Layout from "../layout";
 import WorkIndex from "../components/WorkIndex";
-import CTAButton from "../components/common/MajorButton";
 import BlogListing from "../components/BlogListing";
 import WorkIcon from "../../static/SVG/Work.svg";
 import BlogIcon from "../../static/SVG/Blog.svg";
@@ -28,19 +27,6 @@ const Row = styled.section`
   background: var(--color-background);
 `;
 
-const More2Button = styled.button`
-  box-sizing: border-box;
-  background: none;
-  padding: 1rem 2rem;
-  border: 0;
-  margin: 0 auto;
-  transition: all 0.3s ease-in-out;
-  &:hover {
-    background: var(--color-brand-500);
-    color: var(--color-black-500);
-  }
-`;
-
 const ColumnSpaced = styled(Column)`
   grid-gap: 3rem;
 `;
@@ -53,19 +39,6 @@ const GreyRow = styled(Row)`
   background: var(--color-white-300);
 `;
 
-const ContactButton = styled.button`
-  border: none;
-  box-sizing: border-box;
-  background: none;
-  padding: 1rem 2rem;
-  transition: all 0.3s ease-in-out;
-  margin: 0 auto;
-
-  &:hover {
-    background: var(--color-brand-500);
-    color: var(--color-black-500);
-  }
-`;
 const StickyBox = styled.div`
   height: 100%;
 `;
@@ -151,7 +124,7 @@ const Overlay = styled.div`
 const BlogIntro = styled.div`
   margin-bottom: var(--var-padding-m);
   p {
-    color: var(--color-secondary-700);
+    color: var(--color-primary-700);
   }
 `;
 
@@ -163,7 +136,7 @@ const Contact = styled.div`
   }
 
   h2 {
-    color: var(--color-secondary-700);
+    color: var(--color-primary-700);
   }
 `;
 
@@ -195,10 +168,10 @@ const IndexPage = ({ data }) => {
   const photo2Edges = data.Photo2.edges;
   return (
     <Layout title="Home">
-      <Row>
+      <GreyRow>
         <IndexHero />
-      </Row>
-      <GreyRow className="full-bleed" id="experience-designer">
+      </GreyRow>
+      <Row className="full-bleed" id="experience-designer">
         <Box>
           <ColumnSpaced>
             <StickyBox>
@@ -216,8 +189,8 @@ const IndexPage = ({ data }) => {
             <WorkIndex postEdges={workEdges} />
           </ColumnSpaced>
         </Box>
-      </GreyRow>
-      <Row id="blog">
+      </Row>
+      <GreyRow id="blog">
         <Box>
           <UnevenColumn>
             <RightStickyBox>
@@ -237,7 +210,7 @@ const IndexPage = ({ data }) => {
             </Blog>
           </UnevenColumn>
         </Box>
-      </Row>
+      </GreyRow>
       <Row className="full-bleed full-content" id="photography">
         <PhotoGrid>
           <IndexPhoto postEdges={photo1Edges} />

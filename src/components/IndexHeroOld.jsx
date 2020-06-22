@@ -35,7 +35,7 @@ const HeroGraphics = styled.figure`
 `;
 
 const WhiteBox = styled.div`
-  border-top: 1px var(--color-brand-500) solid;
+  border-top: 1px var(--color-primary) solid;
   background: white;
   height: 50px;
   position: relative;

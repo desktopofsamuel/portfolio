@@ -13,7 +13,7 @@ html {
   font-weight: var(--font-weight-regular);
   line-height: var(--font-base-line-height);
   font-size: var(--font-size-base);
-  color: var(--color-black-500);
+  color: var(--color-text);
   text-rendering: optimizeLegibility;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -23,7 +23,7 @@ html {
 
 body {
   margin: 0;
-  background: var(--color-background-500);
+  background: var(--color-background);
   -moz-osx-font-smoothing: grayscale; 
   -webkit-font-smoothing: antialiased; 
 }
@@ -40,6 +40,7 @@ h1 {
   margin-top: calc(var(--font-base-line-height) * var(--font-size-base) * 4);
   margin-bottom: calc(var(--font-base-line-height) * var(--font-size-base) * 1);
   letter-spacing: -0.75px;
+  color: var(--color-title);
 }
 
 h2 {
@@ -51,6 +52,7 @@ h2 {
   margin-bottom: calc(
     var(--font-base-line-height) * var(--font-size-base) * 0.5
   );
+  color: var(--color-title);
 }
 
 h3 {
@@ -62,6 +64,7 @@ h3 {
   margin-bottom: calc(
     var(--font-base-line-height) * var(--font-size-base) * 0.5
   );
+  color: var(--color-title);
 }
 
 h4 {
@@ -109,6 +112,22 @@ small {
 b,
 strong {
   font-weight: var(--font-weight-bold);
+  background: linear-gradient(transparent 70%, var(--color-primary-highlight) 70%, var(--color-primary-highlight) 90%, transparent 90%, transparent 100%);
+	background-repeat: no-repeat;
+	background-size: 0% 100%;
+	animation: animatedBackground 1s cubic-bezier(0.645, 0.045, 0.355, 1) .5s forwards;
+	animation-delay: .75s;
+}
+
+@keyframes animatedBackground {
+  to {
+    background-size: 100% 100%;
+  }
+}
+@keyframes appear {
+  0% {opacity: 0; transform: translateY(80px); line-height: 2;}
+	50% {opacity: 0;}
+	100% {opacity: 1; transform: translateY(0px); line-height: 1.5;}
 }
 
 a {
@@ -179,15 +198,6 @@ button {
   cursor: pointer;
 }
 
-a.linkicon {
-  color: var(--color-secondary-500);
-  transition: color 0.3s ease-in-out;
-}
-
-a.linkicon:hover {
-  color: var(--color-brand-500);
-}
-
 /* Unorder List Style */
 
 ul li {
@@ -230,12 +240,11 @@ blockquote {
   display: block;
   position: relative;
   padding: 0;
-  margin: 3rem 0 1rem 0;
+  margin: 3rem 0 2rem 0;
   font-family: var(--font-secondary);
   font-weight: var(--font-weight-bold);
   font-size: 1.25rem;
   line-height: 1.5;
-  border-bottom: 2px solid #eee;
 }
 
 blockquote p {
@@ -263,11 +272,6 @@ cite {
   font-weight: var(--font-weight-regular);
   margin: 0;
   text-align: right;
-}
-
-button {
-  background: var(--color-palette-500);
-  box-shadow: none;
 }
 
 table {
@@ -316,9 +320,6 @@ p:first-child {
   line-height: calc(32px + (40 - 32) * ((100vw - 320px) / (1600 - 320)));
 }
 
-.brand {
-  color: var(--color-brand-500);
-}
 
 .full-bleed {
   width: calc(100vw - 20px);

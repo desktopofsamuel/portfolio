@@ -12,10 +12,10 @@ const Main = styled.div`
   width: 100%;
   height: 100%;
   padding: 0 var(--var-padding-s);
-  border-top: 3px var(--color-palette-500) solid;
+  border-top: var(--page-border-top);
 
   @media only screen and (max-width: 768px) {
-    background: var(--color-background-500);
+    background: var(--color-background);
     padding: 0 1rem;
   }
 `;
@@ -48,7 +48,7 @@ const NavItem = styled(Link)`
     background: var(--color-white-700);
   }
   &:active {
-    background: var(--color-background-500);
+    background: var(--color-background);
   }
 
   @media only screen and (max-width: 768px) {

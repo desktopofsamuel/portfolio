@@ -18,7 +18,7 @@ const AltRow = styled(Row)`
 `;
 
 const InvertRow = styled(Row)`
-  background: var(--color-secondary-700);
+  background: var(--color-primary-700);
 `;
 const PhotoFrame = styled.figure`
   grid-area: Photo;
@@ -61,7 +61,7 @@ const GridSkill = styled.div`
 
 const Intro = styled.div`
   grid-column: span 5 / 8;
-  background: var(--color-background-500);
+  background: var(--color-background);
   padding: 2rem;
   z-index: 1000;
   @media only screen and (max-width: 768px) {

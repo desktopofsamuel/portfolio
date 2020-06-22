@@ -3,7 +3,7 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 const Container = styled.div`
-  background: var(--color-white);
+  background: var(--color-white-500);
   display: grid;
   grid-template-columns: auto 70%;
   margin: 4rem 0 2rem 0;

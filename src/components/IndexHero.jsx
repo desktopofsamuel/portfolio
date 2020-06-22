@@ -23,12 +23,6 @@ const Container = styled(Boxed)`
 const IntroWrapper = styled.div``;
 
 // Disabled Contact Section
-const LinkWrapper = styled.div`
-  padding: 2rem;
-  background: white;
-  border: 1px var(--color-black-500) solid;
-  box-shadow: 10px 10px 0px 1px rgba(237, 237, 237, 1);
-`;
 
 const ContactWrapper = styled.div`
   position: relative;
@@ -44,7 +38,7 @@ const ContactWrapper = styled.div`
     line-height: 20px;
     padding: 0 5px;
     color: var(--color-primary);
-    background-color: var(--color-background);
+    background-color: var(--color-white-300);
     font-family: var(--font-primary);
     letter-spacing: var(--font-small-letterspacing);
     font-weight: var(--font-weight-bold);

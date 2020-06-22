@@ -6,8 +6,8 @@ import Footer from "../components/Footer/Footer";
 import Boxed from "elements/Boxed";
 
 const Layout = styled.div`
-  background-color: var(--color-background-500);
-  border-top: 3px var(--color-palette-500) solid;
+  background-color: var(--color-background);
+  border-top: var(--page-border-top);
 `;
 
 const Main = styled(Boxed)``;

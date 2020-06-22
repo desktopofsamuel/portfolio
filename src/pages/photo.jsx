@@ -8,16 +8,7 @@ import PhotoMagazine from "../components/PhotoMagazine";
 
 const Row = styled.section`
   padding: var(--var-padding-m) 0;
-  background: white;
-`;
-
-const PageHeader1 = styled.div`
-  border-top: 3px solid var(--color-black-500);
-  margin-bottom: 8px;
-`;
-
-const PageHeader2 = styled.div`
-  border-top: 1px solid var(--color-black-500);
+  background: var(--color-background);
 `;
 
 const Grid = styled.section``;
@@ -37,10 +28,6 @@ const PhotoPage = ({ data }) => {
         <Boxed size="large">
           <Title title="Photography" />
           <Grid>
-            <Row>
-              <PageHeader1 />
-              <PageHeader2 />
-            </Row>
             <Row>
               <PhotoMagazine postEdges={postEdges} />
             </Row>

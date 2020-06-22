@@ -44,7 +44,7 @@ const FooterItem = styled(Link)`
   justify-content: center;
   margin-right: 2rem;
   font-family: var(--font-primary);
-  color: var(--color-secondary-500);
+  color: var(--color-text-secondary);
   border-bottom: 0;
   text-align: center;
   &:last-child {
@@ -97,10 +97,9 @@ const Paragraph = styled.p`
 `;
 
 const CreditText = styled.p`
-  font-family: var(--font-secondary);
-  font-size: 12px;
+  font-size: var(--font-size-xs);
   line-height: 150%;
-  color: var(--color-secondary-500);
+  color: var(--color-text-secondary);
 `;
 
 const SubContainer = styled.div`
