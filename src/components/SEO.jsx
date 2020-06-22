@@ -120,6 +120,7 @@ class SEO extends Component {
         <meta name="image" content={image} />
         <meta name="keywords" content={keywords} />
         <meta name="publisher" content={config.siteTitleShort} />
+        <meta name="author" content={config.siteTitleShort} />
         <meta name="copyright" content={config.copyright} />
         {/* Schema.org tags */}
         <script type="application/ld+json">

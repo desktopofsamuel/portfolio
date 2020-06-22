@@ -6,11 +6,11 @@ const Container = styled.div`
   background: #fff;
   display: grid;
   grid-template-columns: auto 70%;
-  margin: 36px 0;
+  margin: 4rem 0 2rem 0;
 `;
 
 const Wrapper = styled.div`
-  padding: 16px 0;
+  padding: 2rem 0;
 `;
 
 const Title = styled.h3`

@@ -4,6 +4,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Img from "gatsby-image";
+import Tag from "elements/Tag";
 
 const Container = styled.main`
   h1 {
@@ -23,6 +24,14 @@ class PostTemplate extends React.Component {
         <Img sizes={postNode.frontmatter.cover.childImageSharp.sizes} />
         <h1>{post.title}</h1>
         <MDXRenderer>{postNode.body}</MDXRenderer>
+        <small>
+          <time>{postNode.fields.date}</time>
+        </small>
+        <div>
+          {post.tags.map((tag, index) => {
+            return <Tag tag={tag}>{tag}</Tag>;
+          })}
+        </div>
       </Container>
     );
   }
