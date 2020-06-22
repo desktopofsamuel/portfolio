@@ -3,24 +3,14 @@ import styled from "styled-components";
 import SEO from "../components/SEO";
 import Nav from "../components/common/NavBar";
 import Footer from "../components/common/Footer";
+import Boxed from "elements/Boxed";
 
 const Layout = styled.div`
   background-color: var(--color-background-500);
   border-top: 3px var(--color-palette-500) solid;
 `;
 
-const Main = styled.main`
-  padding: 0 2rem;
-  margin: 0 auto;
-
-  @media only screen and (max-width: 1024px) {
-    padding: 0 1.5rem;
-  }
-
-  @media only screen and (max-width: 768px) {
-    padding: 0 1rem;
-  }
-`;
+const Main = styled(Boxed)``;
 
 export default class DefaultPageLayout extends Component {
   render() {

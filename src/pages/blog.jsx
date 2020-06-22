@@ -9,7 +9,7 @@ import Link from "../components/common/GatsbyLink";
 
 const Row = styled.section`
   padding: var(--var-padding-m) 0;
-  background: white;
+  background: var(--color-white);
 `;
 
 const Main = styled.div`

@@ -10,7 +10,7 @@ import Layout from "../layout";
 
 const Row = styled.section`
   padding: var(--var-padding-m) 0;
-  background: white;
+  background: var(--color-white);
 `;
 
 const AltRow = styled(Row)`

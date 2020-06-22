@@ -3,7 +3,7 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 const Container = styled.div`
-  background: #fff;
+  background: var(--color-white);
   display: grid;
   grid-template-columns: auto 70%;
   margin: 4rem 0 2rem 0;
@@ -31,7 +31,7 @@ const Rating = styled.p`
 `;
 
 const Director = styled.p`
-  color: #9ac2cd;
+  color: #5f777d;
   margin: 0;
 `;
 

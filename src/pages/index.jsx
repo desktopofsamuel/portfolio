@@ -228,7 +228,7 @@ const IndexPage = ({ data }) => {
                   <Subtitle>
                     I write about design, technology and productivity.
                   </Subtitle>
-                  <ReadOn text="Read All Blog Posts" href="/blog" />
+                  <ReadOn text="Read My Blog" href="/blog" />
                 </BlogIntro>
               </StickyWrapper>
             </RightStickyBox>

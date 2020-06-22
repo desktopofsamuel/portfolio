@@ -10,12 +10,12 @@
     --font-tertiary: Georgia, IBM Plex Mono, Courier, Menlo, Consolas, Monaco, "Lucida Console", monospace;
     --font-weight-bold: 600;
     --font-weight-regular: 400;
-    --font-size-xxl: calc(56px + (72 - 56) * ((100vw - 320px) / (1600 - 320)));
-    --font-size-xl: calc(36px + (56 - 36) * ((100vw - 320px) / (1600 - 320)));
-    --font-size-l: calc(24px + (36 - 24) * ((100vw - 320px) / (1600 - 320)));
-    --font-size-m: 1.75rem;
-    --font-size-s: 1rem;
-    --font-size-xs: 0.85rem;
+    --font-size-xxl: calc(var(--font-size-base) * 3 * var(--font-scale-ratio));
+    --font-size-xl: calc(var(--font-size-base) * 2 * var(--font-scale-ratio));
+    --font-size-l: calc(var(--font-size-base) * 1.5 * var(--font-scale-ratio));
+    --font-size-m: calc(var(--font-size-base) * 1.3 * var(--font-scale-ratio));
+    --font-size-s: calc(var(--font-size-base) * 1 * var(--font-scale-ratio));
+    --font-size-xs: calc(var(--font-size-base) * 0.8 * var(--font-scale-ratio));
     --transition: all 0.3s ease-in-out;
     --font-size-root: 100;
     --font-size-base: 18px;
@@ -31,7 +31,7 @@
   @media only screen and (max-width: 768px) {
     :root {
       --font-size-base: 16px;
-      --font-scale-ratio: 0.8;
+      --font-scale-ratio: .9;
       --var-padding-l: 3rem;
       --var-padding-m: 1rem;
       --var-padding-s: 0.5rem;

@@ -110,9 +110,7 @@ class BlogListing extends React.Component {
             alt={post.title}
           />
           <Content>
-            <h3>
-              <a>{post.title}</a>
-            </h3>
+            <h3 className="link">{post.title}</h3>
             <Paragraph className="noeffect"> {post.excerpt}</Paragraph>
           </Content>
         </Link>{" "}

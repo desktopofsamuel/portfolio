@@ -55,7 +55,7 @@ class WorkIndex extends React.Component {
     return (
       <div>
         {postList.map(post => (
-          <Link to={`/work/${post.path}`} className="noeffect">
+          <Link to={`/work/${post.path}`} className="noeffect" key={post.title}>
             <Card key={post.path} color={post.color}>
               <Subtitle>{post.title}</Subtitle>
               <Title>{post.subtitle}</Title>

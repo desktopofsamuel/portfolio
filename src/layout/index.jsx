@@ -8,7 +8,7 @@ import Nav from "../components/common/NavBar";
 import Footer from "../components/common/Footer";
 
 const Layout = styled.div`
-  background-color: var(--color-background-500);
+  background-color: var(--color-white);
 `;
 
 const Main = styled.main`

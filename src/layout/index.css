@@ -33,7 +33,7 @@ body::-webkit-scrollbar {
 }
 
 h1 {
-  font-size: calc(var(--font-size-base) * 3 * var(--font-scale-ratio));
+  font-size: var(--font-size-xxl);
   line-height: 1.3em;
   font-family: var(--font-primary);
   font-weight: var(--font-weight-bold);
@@ -43,7 +43,7 @@ h1 {
 }
 
 h2 {
-  font-size: calc(var(--font-size-base) * 2.1458 * var(--font-scale-ratio));
+  font-size: var(--font-size-xl);
   line-height: 1.3em;
   font-family: var(--font-primary);
   font-weight: var(--font-weight-bold);
@@ -54,7 +54,7 @@ h2 {
 }
 
 h3 {
-  font-size: calc(var(--font-size-base) * 1.6875 * var(--font-scale-ratio));
+  font-size: var(--font-size-l);
   line-height: 1.3em;
   font-family: var(--font-primary);
   font-weight: var(--font-weight-bold);
@@ -122,6 +122,20 @@ a {
 a:hover {
   border-bottom: 2px dotted var(--color-primary);
 }
+
+.link {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+  border-bottom: 2px dotted var(--color-primary);
+  transition: var(--transition);
+  display:inline;
+}
+
+.link:hover {
+  border-bottom: 2px dotted var(--color-primary);
+}
+
 /* a {
   border-bottom: 2px dotted var(--color-primary);
   background: linear-gradient(to bottom, transparent 62%, #44DDFF 0) left center/0% 75% no-repeat;
@@ -214,29 +228,29 @@ ol {
 
 blockquote {
   display: block;
-  border-width: 2px 0;
-  border-style: solid;
-  border-color: #eee;
-  padding: 1.5em 0 0.5em;
-  margin: 3rem 0;
+  position: relative;
+  padding: 0;
+  margin: 3rem 0 1rem 0;
   font-family: var(--font-secondary);
   font-weight: var(--font-weight-bold);
   font-size: 1.25rem;
   line-height: 1.5;
-  position: relative;
+  border-bottom: 2px solid #eee;
 }
+
+blockquote p {
+  margin-left: 4rem;
+}
+
 blockquote:before {
   content: "\201C";
   position: absolute;
-  top: 0em;
-  left: 50%;
-  transform: translate(-50%, -55%);
-  background: #fff;
+  top: -20px;
+  left: 0;
   width: 3rem;
-  height: 4rem;
+  height: 3rem;
   font: 8rem "PT Sans", sans-serif;
-  color: #666;
-  text-align: center;
+  color: var(--color-primary);
 }
 
 cite {
@@ -246,7 +260,8 @@ cite {
   font-style: normal;
   font-size: 0.9rem;
   font-family: var(--font-secondary);
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
+  margin: 0;
   text-align: right;
 }
 
