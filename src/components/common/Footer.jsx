@@ -86,11 +86,6 @@ const ImageWrapper = styled.div`
   }
 `;
 
-const Heading = styled.small`
-  color: var(--color-secondary-500);
-  font-weight: var(--font-weight-bold);
-`;
-
 const Paragraph = styled.p`
   font-size: 1.25rem;
   max-width: 40ch;

@@ -46,7 +46,7 @@ const GridHeading = styled.h3`
 
 const GridSeparator = styled.div`
   display: block;
-  border-right: 1px solid var(--color-grey-300);
+  border-right: 1px var(--color-text) solid;
   width: 0rem;
   height: 2rem;
 `;
@@ -65,12 +65,12 @@ const GridTitle = styled.h2`
 const GridContentWrapper = styled.div``;
 
 const GridExcerpt = styled.p`
-  color: var(--color-grey-300);
+  color: var(--color-text-secondary);
 
   &::before {
     display: inline-block;
     content: "";
-    border-top: 1px solid var(--color-grey-300);
+    border-top: 1px solid var(--color-text-secondary);
     width: 3rem;
     margin: 0 0.5rem 0 0;
     transform: translateY(-0.2rem);

@@ -106,7 +106,7 @@ small {
   font-size: 12px;
   letter-spacing: 0.075rem;
   margin-top: 0;
-  color: var(--color-secondary-500);
+  color: var(--color-text-secondary);
 }
 
 b,
@@ -265,7 +265,7 @@ blockquote:before {
 cite {
   display: block;
   position: relative;
-  color: var(--color-secondary-300);
+  color: var(--color-primary-shades-300);
   font-style: normal;
   font-size: 0.9rem;
   font-family: var(--font-secondary);
@@ -290,14 +290,14 @@ p:first-child {
 }
 
 .textlink {
-  color: var(--color-secondary-500);
+  color: var(--color-primary-shades-300);
   border-bottom: 1px var(--color-transparent) solid;
   transition: all 0.3s ease-in-out;
 }
 
 .textlink:hover {
-  border-bottom: 1px var(--color-secondary-500) solid;
-  color: var(--color-secondary-300);
+  border-bottom: 1px var(--color-primary-shades-300) solid;
+  color: var(--color-primary-shades-300);
 }
 
 .navblock {

@@ -46,12 +46,12 @@ const ListLeft = styled.div`
 
 const ListMetaWrapper = styled.div`
   small {
-    color: var(--color-grey-300);
+    color: var(--color-text-secondary);
   }
 `;
 
 const ListMeta = styled.small`
-  color: var(--color-secondary-500);
+  color: var(--color-text-secondary);
 `;
 
 const ListCategory = styled.div`

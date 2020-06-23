@@ -41,25 +41,11 @@
 
 /* Color */
 :root {
-    /* --color-brand-300: #fefdf4; */
-    /* --color-brand-500: #feb101; */
-    /* --color-palette-500: #ffd644; */
-    /* --color-background: #f7f7f7; */
-    --color-black-500: #334455;
-    --color-grey-100: #a8a9ab;
-    --color-grey-300: #939393;
-    --color-grey-500: #737373;
-    /* --color-primary-700: #2c3242; */
-    --color-secondary-500: #485069;
-    --color-secondary-300: #7082b5;
-    --color-secondary-100: #ced8e0;
- 
-}
-/* New CSS Variable (Dark Mode Ready) */
-:root {
+  /* Color Token */
   --color-primary: #0099CC;
   --color-primary-highlight: #97ecff;
   --color-primary-background: #EEFFFF;
+  --color-primary-shades-100: #ced8e0;
   --color-primary-shades-300: #5f777d;
   --color-primary-shades-500: #334455;
   --color-primary-shades-700: #2c3242;
@@ -68,22 +54,28 @@
   --color-white-300: #fbfbfb;
   --color-white-500: #f7f7f7;
   --color-white-700: #eeeeee;
-  --color-transparent: rgba(0, 0, 0, 0);
 
-  /* Context */
+  /* Context Color */
   --color-background: var(--color-white);
+  --color-background-alt: var(--color-white-300);
+  --color-background-reverse: var(--color-primary-shades-700);
   --color-text: var(--color-primary-shades-500);
   --color-text-secondary: var(--color-primary-shades-300);
-  --color-title: var(--color-primary-shades-700);
+  --color-title: var(--color-primary-shades-700); 
+
+
+
+  --color-transparent: rgba(0, 0, 0, 0);
   --page-border-top: 3px var(--color-secondary) solid;
   --font-small-letterspacing: 0.075rem;
   --border-radius: 4px;
 
   /* Dark Mode Preview */
   /* --color-background: var(--color-primary-shades-700);
+  --color-background-alt: var(--color-primary-shades-500);
   --color-text: var(--color-white-300);
   --color-text-secondary: var(--color-primary-shades-300);
-  --color-title: var(--color-white-300); */
+  --color-title: var(--color-white-300);  */
 
 }
 

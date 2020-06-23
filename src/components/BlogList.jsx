@@ -10,17 +10,17 @@ const Grid = styled.section`
 
 const ListItem = styled.article`
   display: block;
-  border-bottom: 1px var(--color-secondary-100) solid;
+  border-bottom: 1px var(--color-primary-shades-100) solid;
   margin-bottom: var(--padding-m);
   padding-bottom: 2rem;
 
   p {
     margin-bottom: 0.5rem;
-    color: var(--color-primary-700);
+    color: var(--color-text);
   }
 
   small {
-    color: var(--color-secondary-500);
+    color: var(--color-text-secondary);
   }
 
   :last-child {

@@ -18,7 +18,7 @@ const AltRow = styled(Row)`
 `;
 
 const InvertRow = styled(Row)`
-  background: var(--color-primary-700);
+  background: var(--color-background-reverse);
 `;
 const PhotoFrame = styled.figure`
   grid-area: Photo;
@@ -92,7 +92,7 @@ const SkillList = styled.ul`
   li {
     font-family: var(--font-primary);
     font-size: 1.2rem;
-    color: var(--color-secondary-500);
+    color: var(--color-text);
     font-weight: var(--font-weight-bold);
     margin-bottom: var(--var-padding-m);
   }

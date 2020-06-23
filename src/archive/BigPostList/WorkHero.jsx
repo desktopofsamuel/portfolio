@@ -18,14 +18,14 @@ const ListLeft = styled.div`
   }
 
   h6 {
-    color: var(--color-secondary-500);
+    color: var(--color-text-secondary;
     font-weight: var(--font-weight-regular);
     margin-bottom: 1rem;
   }
 
   span {
     margin-left: 4px;
-    color: var(--color-secondary-500);
+    color: var(--color-text-secondary);
     transition: var(--transition);
   }
 `;

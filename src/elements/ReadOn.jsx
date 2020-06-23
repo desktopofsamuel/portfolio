@@ -13,7 +13,7 @@ const Button = styled.div`
   transition: var(--transition);
 
   h6 {
-    color: var(--color-secondary-500);
+    color: var(--color-text);
     font-weight: var(--font-weight-bold);
     margin-bottom: 0;
     margin-right: 8px;

@@ -36,7 +36,7 @@ const UnevenColumn = styled(ColumnSpaced)`
 `;
 
 const GreyRow = styled(Row)`
-  background: var(--color-white-300);
+  background: var(--color-background-alt);
 `;
 
 const StickyBox = styled.div`

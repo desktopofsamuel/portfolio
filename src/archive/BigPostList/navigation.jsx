@@ -55,12 +55,13 @@ const Title = styled.h2`
   margin: 0 auto 1.5rem;
   font-size: 1rem;
   font-family: var(--font-secondary);
+  color: var(--color-title);
 `;
 
 const Description = styled.h2`
   margin-top: 0;
   font-family: var(--font-secondary);
-  color: var(--color-secondary-500);
+  color: var(--color-title);
   font-size: 0.95rem;
   line-height: 1.5rem;
   max-width: 35ch;

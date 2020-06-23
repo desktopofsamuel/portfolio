@@ -87,6 +87,7 @@ const MobileNav = styled.div`
 `;
 
 const Title = styled(Link)`
+  color: var(--color-title);
   margin: 0 auto;
   font-size: 1rem;
   font-weight: var(--font-weight-bold);
@@ -95,6 +96,7 @@ const Title = styled(Link)`
 `;
 
 const Description = styled.h2`
+  color: var(--color-text);
   margin: 0 auto;
   font-weight: var(--font-weight-regular);
   font-family: var(--font-primary);

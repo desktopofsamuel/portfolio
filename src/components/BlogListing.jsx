@@ -55,6 +55,10 @@ const Block = styled.div`
 const Content = styled.div`
   padding: var(--var-padding-s);
   background-color: var(--color-white);
+
+  h3 {
+    color: var(--color-primary-shades-700);
+  }
 `;
 
 const PostListImage = styled(Img)`
@@ -77,7 +81,7 @@ const Button = styled(Link)`
 const Paragraph = styled.p`
   font-size: 0.95rem;
   line-height: 200%;
-  color: var(--color-secondary-500);
+  color: var(--color-primary-shades-500);
 `;
 class BlogListing extends React.Component {
   getPostList() {
