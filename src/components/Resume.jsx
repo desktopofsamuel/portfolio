@@ -85,11 +85,14 @@ const Resume = () => {
         />
       </Block>
       <Block>
-        <ResumeSectionTitle>Skills</ResumeSectionTitle>
+        <ResumeSectionTitle>Tools</ResumeSectionTitle>
         <div>
           <ResumeItem noBorder content="Figma, Sketch, Abstract, Avocode" />
+          <ResumeItem
+            noBorder
+            content="Adobe Creative Suite (Photoshop, Illustrator, Premiere)"
+          />
           <ResumeItem noBorder content="HTML, CSS, Git, Google Analytics" />
-          <ResumeItem noBorder content="Adobe Creative Suite" />
         </div>
       </Block>
       <Block>

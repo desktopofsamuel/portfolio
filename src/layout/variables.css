@@ -61,9 +61,10 @@
   --color-background-reverse: var(--color-primary-shades-700);
   --color-text: var(--color-primary-shades-500);
   --color-text-secondary: var(--color-primary-shades-300);
+  --color-text-reverse: var(--color-white-300);
   --color-title: var(--color-primary-shades-700); 
-
-
+  --color-decoration: var(--color-primary-shades-700);
+  --color-gradient: linear-gradient(135deg, rgba(56,204,133,1) 0%, rgba(0,153,204,1) 100%);;
 
   --color-transparent: rgba(0, 0, 0, 0);
   --page-border-top: 3px var(--color-secondary) solid;

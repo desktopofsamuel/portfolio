@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Img from "gatsby-image";
 import Link from "./common/GatsbyLink";
+import Zoom from "react-reveal/Zoom";
 
 const Card = styled.div`
   background-color: ${props => (props.color ? `${props.color}` : "black")};
@@ -55,17 +56,19 @@ class WorkIndex extends React.Component {
     return (
       <div>
         {postList.map(post => (
-          <Link to={`/work/${post.path}`} className="noeffect" key={post.title}>
-            <Card key={post.path} color={post.color}>
-              <Subtitle>{post.title}</Subtitle>
-              <Title>{post.subtitle}</Title>
-              <Image
-                fluid={post.cover.childImageSharp.fluid}
-                alt={post.title}
-                fadeIn
-              />
-            </Card>
-          </Link>
+          <Zoom duration={500} key={post.title}>
+            <Link to={`/work/${post.path}`} className="noeffect">
+              <Card key={post.path} color={post.color}>
+                <Subtitle>{post.title}</Subtitle>
+                <Title>{post.subtitle}</Title>
+                <Image
+                  fluid={post.cover.childImageSharp.fluid}
+                  alt={post.title}
+                  fadeIn
+                />
+              </Card>
+            </Link>
+          </Zoom>
         ))}
       </div>
     );

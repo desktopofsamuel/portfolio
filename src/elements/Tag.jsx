@@ -23,6 +23,7 @@ const Wrapper = styled(Link)`
   &:hover {
     background: var(--color-primary);
     color: var(--color-white);
+    border: 1px solid var(--color-transparent);
   }
 `;
 

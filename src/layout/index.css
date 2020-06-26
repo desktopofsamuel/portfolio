@@ -134,12 +134,14 @@ a {
   text-decoration: none;
   cursor: pointer;
   color: inherit;
-  border-bottom: 2px dotted var(--color-primary);
+  background: linear-gradient(to bottom, transparent 62%, var(--color-secondary) 0) left center/0% 75% no-repeat;
+  border-bottom: 2px dotted var(--color-decoration);
   transition: var(--transition);
 }
 
 a:hover {
-  border-bottom: 2px dotted var(--color-primary);
+  border-bottom: 2px dotted var(--color-decoration);
+  background-size: 100% 100%;
 }
 
 .link {

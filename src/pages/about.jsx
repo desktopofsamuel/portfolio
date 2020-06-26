@@ -7,6 +7,7 @@ import PageTitle from "elements/PageTitle";
 import Resume from "../components/Resume";
 import Link from "../components/common/GatsbyLink";
 import Layout from "../layout";
+import Zoom from "react-reveal/Zoom";
 
 const Row = styled.section`
   padding: var(--var-padding-m) 0;
@@ -53,7 +54,7 @@ const GridBio = styled.div`
 
 const GridSkill = styled.div`
   display: grid;
-  grid-template-columns: minmax(auto, 3fr) minmax(auto, 7fr);
+  grid-template-columns: minmax(auto, 4fr) minmax(auto, 6fr);
   grid-gap: var(--var-padding-m);
   width: 100%;
   margin: var(--var-padding-m) 0;
@@ -181,32 +182,34 @@ const AboutPage = ({ data }) => {
               alt="About Cover Photo"
             />
           </PhotoFrame>
-          <WrapperIntro>
-            <Intro>
-              <small>Hi! My name is Samuel.</small>
-              <p>
-                I&apos;m pursuing a career in the field of UI/UX Design because
-                I&apos;m deeply passionate about technology and how it
-                profoundly changes our way of living. <br />
-                <br />
-                The process of turning an idea into a viable product gives me
-                great satisfaction. Being a self-starter, I’m highly motivated
-                staying up-to-date with the latest technology, industry practice
-                and design trends.
-              </p>
-              <WrapperNav>
-                <Link to="#bio">
-                  <small>01. Bio </small>
-                </Link>
-                <Link to="#resume">
-                  <small>02. Resume </small>
-                </Link>
-                <Link to="#skills">
-                  <small>03. Skills </small>
-                </Link>
-              </WrapperNav>
-            </Intro>
-          </WrapperIntro>
+          <Zoom duration={500}>
+            <WrapperIntro>
+              <Intro>
+                <small>Hi! My name is Samuel.</small>
+                <p>
+                  I&apos;m pursuing a career in the field of UI/UX Design
+                  because I&apos;m deeply passionate about technology and how it
+                  profoundly changes our way of living. <br />
+                  <br />
+                  The process of turning an idea into a viable product gives me
+                  great satisfaction. Being a self-starter, I’m highly motivated
+                  staying up-to-date with the latest technology, industry
+                  practice and design trends.
+                </p>
+                <WrapperNav>
+                  <Link to="#bio">
+                    <small>01. Bio </small>
+                  </Link>
+                  <Link to="#resume">
+                    <small>02. Resume </small>
+                  </Link>
+                  <Link to="#skills">
+                    <small>03. Skills </small>
+                  </Link>
+                </WrapperNav>
+              </Intro>
+            </WrapperIntro>
+          </Zoom>
         </Boxed>
       </Row>
       <AltRow id="bio" className="full-bleed">
@@ -262,7 +265,7 @@ const AboutPage = ({ data }) => {
           <h2 className="no-margin">Design, Photography, Writing.</h2>
           <GridSkill>
             <DesignPart>
-              <h3>Design</h3>
+              <h3>Interface Design</h3>
             </DesignPart>
             <DesignContent>
               <p>
@@ -270,18 +273,16 @@ const AboutPage = ({ data }) => {
                 passion to learn how to deliver functional and elegant design.{" "}
               </p>
               <SkillList>
-                <li>Web & App UI Design</li>
-                <li>User Experience Design</li>
-                <li>Interaction Design</li>
-                <li>Prototyping</li>
-                <li>Wireframing</li>
+                <li>Response Web Design</li>
+                <li>User Interface Design</li>
+                <li>Component Design</li>
                 <li>Frontend Development</li>
               </SkillList>
             </DesignContent>
           </GridSkill>
           <GridSkill>
             <PassionPart>
-              <h3>Passion</h3>
+              <h3>Experience Design</h3>
             </PassionPart>
             <PassionContent>
               <p>
@@ -289,15 +290,38 @@ const AboutPage = ({ data }) => {
                 digital products and media, to become a hybrid creative.
               </p>
               <SkillList>
-                <li>Photography</li>
-                <li>Videography</li>
-                <li>Social Media</li>
-                <li>Copywriting</li>
+                <li>User Research</li>
+                <li>User Experience Audit</li>
+                <li>Wireframing</li>
+                <li>Prototyping</li>
+              </SkillList>
+            </PassionContent>
+          </GridSkill>
+          <GridSkill>
+            <PassionPart>
+              <h3>Marketing</h3>
+            </PassionPart>
+            <PassionContent>
+              <p>
+                Through freelancing, I&apos;m also practicing in the field of
+                digital products and media, to become a hybrid creative.
+              </p>
+              <SkillList>
+                <li>Social Media Management</li>
+                <li>Search Engine Optimization</li>
+                <li>Videography & Editing</li>
+                <li>Event Photography</li>
               </SkillList>
             </PassionContent>
           </GridSkill>
         </Boxed>
       </AltRow>
+      <Row>
+        <Boxed>
+          <small>04. Now</small>
+          <h2 className="no-margin">Available for Hire</h2>
+        </Boxed>
+      </Row>
     </Layout>
   );
 };

@@ -10,7 +10,7 @@ import Link from "../components/common/GatsbyLink";
 import config from "../../data/SiteConfig";
 import Layout from "../layout";
 import WorkIndex from "../components/WorkIndex";
-import BlogListing from "../components/BlogListing";
+import BlogIndex from "../components/BlogIndex";
 import WorkIcon from "../../static/SVG/Work.svg";
 import BlogIcon from "../../static/SVG/Blog.svg";
 import Now from "../components/Now";
@@ -93,19 +93,11 @@ const Center = styled.div`
 const Blog = styled.section`
   display: grid;
   grid-auto-flow: row;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
   grid-row-gap: 4rem;
   grid-column-gap: 2rem;
   align-items: flex-start;
-
-  & > div:nth-child(2) {
-    grid-column: span 4;
-  }
-
-  & > div:nth-child(3) {
-    grid-column: span 4;
-  }
 
   @media only screen and (max-width: 767px) {
     display: block;
@@ -206,7 +198,7 @@ const IndexPage = ({ data }) => {
               </StickyWrapper>
             </RightStickyBox>
             <Blog>
-              <BlogListing postEdges={blogEdges} />
+              <BlogIndex postEdges={blogEdges} />
             </Blog>
           </UnevenColumn>
         </Box>

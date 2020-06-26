@@ -5,12 +5,12 @@ import { FaArrowRight } from "react-icons/fa";
 import PropTypes from "prop-types";
 import Img from "gatsby-image";
 import ReadOn from "elements/ReadOn";
+import Zoom from "react-reveal/Zoom";
 
 const Block = styled.div`
   border-radius: 4px;
   margin-bottom: 1rem;
   position: relative;
-  grid-column: span 4;
   display: flex;
   flex-flow: column;
   background: ${props => (props.invert ? `var(--color-white)` : ``)};
@@ -104,19 +104,20 @@ class BlogListing extends React.Component {
     const postList = this.getPostList();
 
     return postList.map(post => (
-      <Block className="noeffect" invert={invert} key={post.title}>
-        {" "}
-        <Link to={post.path} className="noeffect">
-          <PostListImage
-            fluid={post.cover.childImageSharp.fluid}
-            alt={post.title}
-          />
-          <Content>
-            <h3 className="link">{post.title}</h3>
-            <Paragraph className="noeffect"> {post.excerpt}</Paragraph>
-          </Content>
-        </Link>{" "}
-      </Block>
+      <Zoom duration={500} key={post.title}>
+        <Block className="noeffect" invert={invert}>
+          <Link to={post.path} className="noeffect">
+            <PostListImage
+              fluid={post.cover.childImageSharp.fluid}
+              alt={post.title}
+            />
+            <Content>
+              <h3 className="link">{post.title}</h3>
+              <Paragraph className="noeffect"> {post.excerpt}</Paragraph>
+            </Content>
+          </Link>
+        </Block>
+      </Zoom>
     ));
   }
 }
