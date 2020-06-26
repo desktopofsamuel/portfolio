@@ -14,13 +14,13 @@ const Title = styled.h3`
 `;
 
 const Content = styled.p`
-  color: var(--color-secondary-100);
+  color: var(--color-primary-shades-100);
   line-height: 16px;
   margin-top: ${props => (props.noBorder ? "0" : "1rem")};
 `;
 
 const Meta = styled.p`
-  color: var(--color-secondary-100);
+  color: var(--color-primary-shades-100);
   opacity: 0.5;
   font-family: var(--font-primary);
   letter-spacing: 0.025rem;

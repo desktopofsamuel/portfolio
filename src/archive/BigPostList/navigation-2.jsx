@@ -6,7 +6,7 @@ import Layout from "../../layout/";
 
 const Main = styled.div`
   display: grid;
-  grid-template-columns: minmax(0.5vw,10vw) [content] auto minmax(0.5vw,10vw);
+  grid-template-columns: minmax(0.5vw, 10vw) [content] auto minmax(0.5vw, 10vw);
   margin: 5vh auto 0 auto;
 `;
 
@@ -31,20 +31,20 @@ const Contact = styled.button`
   padding: var(--padding-m);
   transition: all 0.2s ease-in-out;
   margin-right: -2rem;
-  
+
   a > * {
     margin-bottom: 0;
     border-bottom: none;
   }
 
   .nav {
-    color: var(--color-black-500);
+    color: var(--color-text);
   }
-  
+
   &:hover {
-    background: var(--color-black-500);
+    background: var(--color-text);
     a > * {
-    color: var(--color-white-500);
+      color: var(--color-white-500);
     }
   }
 
@@ -63,7 +63,7 @@ const Bar = styled.div`
   display: grid;
   grid-auto-flow: column;
   grid-gap: var(--padding-l);
-  background-color: var(--color-black-500);
+  background-color: var(--color-primary-shades-500);
   float: right;
   align-items: center;
   justify-content: center;
@@ -77,7 +77,7 @@ const Bar = styled.div`
     opacity: 0;
     display: none;
   }
-`
+`;
 
 const Separator = styled.div`
   width: 200px;
@@ -86,7 +86,7 @@ const Separator = styled.div`
   align-self: center;
   padding-right: 0;
   margin-right: 0;
-`
+`;
 
 export default class Navigation extends React.Component {
   render() {
@@ -94,7 +94,9 @@ export default class Navigation extends React.Component {
       <Main>
         <Content>
           <Title>
-            <h5><Link to="/">Samuel W.</Link></h5>
+            <h5>
+              <Link to="/">Samuel W.</Link>
+            </h5>
           </Title>
           {/*<Bar>
             <Link to="/blog"><h5 className="nav">Blog</h5></Link>
@@ -104,7 +106,12 @@ export default class Navigation extends React.Component {
             <Separator/>
           </Bar>*/}
           <Contact>
-          <a href="mailto:desktopofsamuel@gmail.com" ><h5 className="nav"><FaEnvelope className="with-icon"/>Contact</h5></a>
+            <a href="mailto:desktopofsamuel@gmail.com">
+              <h5 className="nav">
+                <FaEnvelope className="with-icon" />
+                Contact
+              </h5>
+            </a>
           </Contact>
         </Content>
       </Main>

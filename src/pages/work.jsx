@@ -20,6 +20,7 @@ import ReadOn from "../elements/ReadOn";
 
 const Row = styled.section`
   padding: var(--var-padding-m) 0;
+  background: var(--color-white);
 
   &:first-child {
     padding-bottom: 0;

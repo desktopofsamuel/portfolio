@@ -36,7 +36,7 @@ const Box = styled.div`
 `;
 
 const Name = styled.h4`
-  color: var(--color-black-500);
+  color: var(--color-text);
   text-transform: none;
   letter-spacing: 0;
   font-weight: 700;

@@ -13,7 +13,7 @@ html {
   font-weight: var(--font-weight-regular);
   line-height: var(--font-base-line-height);
   font-size: var(--font-size-base);
-  color: var(--color-black-500);
+  color: var(--color-text);
   text-rendering: optimizeLegibility;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -23,7 +23,7 @@ html {
 
 body {
   margin: 0;
-  background: var(--color-background-500);
+  background: var(--color-background);
   -moz-osx-font-smoothing: grayscale; 
   -webkit-font-smoothing: antialiased; 
 }
@@ -33,17 +33,18 @@ body::-webkit-scrollbar {
 }
 
 h1 {
-  font-size: calc(var(--font-size-base) * 3 * var(--font-scale-ratio));
+  font-size: var(--font-size-xxl);
   line-height: 1.3em;
   font-family: var(--font-primary);
   font-weight: var(--font-weight-bold);
   margin-top: calc(var(--font-base-line-height) * var(--font-size-base) * 4);
   margin-bottom: calc(var(--font-base-line-height) * var(--font-size-base) * 1);
   letter-spacing: -0.75px;
+  color: var(--color-title);
 }
 
 h2 {
-  font-size: calc(var(--font-size-base) * 2.1458 * var(--font-scale-ratio));
+  font-size: var(--font-size-xl);
   line-height: 1.3em;
   font-family: var(--font-primary);
   font-weight: var(--font-weight-bold);
@@ -51,10 +52,11 @@ h2 {
   margin-bottom: calc(
     var(--font-base-line-height) * var(--font-size-base) * 0.5
   );
+  color: var(--color-title);
 }
 
 h3 {
-  font-size: calc(var(--font-size-base) * 1.6875 * var(--font-scale-ratio));
+  font-size: var(--font-size-l);
   line-height: 1.3em;
   font-family: var(--font-primary);
   font-weight: var(--font-weight-bold);
@@ -62,6 +64,7 @@ h3 {
   margin-bottom: calc(
     var(--font-base-line-height) * var(--font-size-base) * 0.5
   );
+  color: var(--color-title);
 }
 
 h4 {
@@ -103,17 +106,60 @@ small {
   font-size: 12px;
   letter-spacing: 0.075rem;
   margin-top: 0;
-  color: var(--color-secondary-500);
+  color: var(--color-text-secondary);
 }
 
 b,
 strong {
   font-weight: var(--font-weight-bold);
+  background: linear-gradient(transparent 70%, var(--color-primary-highlight) 70%, var(--color-primary-highlight) 90%, transparent 90%, transparent 100%);
+	background-repeat: no-repeat;
+	background-size: 0% 100%;
+	animation: animatedBackground 1s cubic-bezier(0.645, 0.045, 0.355, 1) .5s forwards;
+	animation-delay: .75s;
+}
+
+@keyframes animatedBackground {
+  to {
+    background-size: 100% 100%;
+  }
+}
+@keyframes appear {
+  0% {opacity: 0; transform: translateY(80px); line-height: 2;}
+	50% {opacity: 0;}
+	100% {opacity: 1; transform: translateY(0px); line-height: 1.5;}
 }
 
 a {
-  border-bottom: 2px dotted var(--color-grey-500);
-  background: linear-gradient(to bottom, transparent 62%, #ffd644 0) left center/0% 75% no-repeat;
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+  background: linear-gradient(to bottom, transparent 62%, var(--color-secondary) 0) left center/0% 75% no-repeat;
+  border-bottom: 2px dotted var(--color-decoration);
+  transition: var(--transition);
+}
+
+a:hover {
+  border-bottom: 2px dotted var(--color-decoration);
+  background-size: 100% 100%;
+}
+
+.link {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+  border-bottom: 2px dotted var(--color-primary);
+  transition: var(--transition);
+  display:inline;
+}
+
+.link:hover {
+  border-bottom: 2px dotted var(--color-primary);
+}
+
+/* a {
+  border-bottom: 2px dotted var(--color-primary);
+  background: linear-gradient(to bottom, transparent 62%, #44DDFF 0) left center/0% 75% no-repeat;
   color: inherit;
   text-decoration: none;
   cursor: pointer;
@@ -121,9 +167,9 @@ a {
 }
 
 a:hover {
-  border-bottom: 2px dotted var(--color-grey-100);
+  border-bottom: 2px dotted var(--color-primary);
   background-size: 100% 100%;
-}
+} */
 
 a[href$=".jpg"],
 a[href$=".png"],
@@ -154,56 +200,80 @@ button {
   cursor: pointer;
 }
 
-a.linkicon {
-  color: var(--color-secondary-500);
-  transition: color 0.3s ease-in-out;
+/* Unorder List Style */
+
+ul li {
+  list-style-type: none;
+  margin-bottom: 12px;
 }
 
-a.linkicon:hover {
-  color: var(--color-brand-500);
+ul li:before { 
+  content: '\1f806';
+  list-style-position: outside;
+  margin-right: 16px;
+  margin-left: -8px;
+}
+
+/* Hide Arrow in Carousel */
+ul li.BrainhubCarouselItem:before {
+  content: none;
+}
+
+ol li {
+  counter-increment: list;
+  margin-bottom: 12px;
+}
+ol li:before {
+  content: counter(list) ". ";
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  font-style: italic;
+  margin-left: -24px;
+  margin-right: 6px;
+  
+}
+ol {
+  list-style: none;
+  counter-reset: list;
 }
 
 blockquote {
   display: block;
-  border-width: 2px 0;
-  border-style: solid;
-  border-color: #eee;
-  padding: 1.5em 0 0.5em;
-  margin: 3rem 0;
+  position: relative;
+  padding: 0;
+  margin: 3rem 0 2rem 0;
   font-family: var(--font-secondary);
   font-weight: var(--font-weight-bold);
   font-size: 1.25rem;
   line-height: 1.5;
-  position: relative;
 }
+
+blockquote p {
+  margin-left: 4rem;
+}
+
 blockquote:before {
   content: "\201C";
   position: absolute;
-  top: 0em;
-  left: 50%;
-  transform: translate(-50%, -55%);
-  background: #fff;
+  top: -20px;
+  left: 0;
   width: 3rem;
-  height: 4rem;
+  height: 3rem;
   font: 8rem "PT Sans", sans-serif;
-  color: #666;
-  text-align: center;
+  color: var(--color-primary);
 }
 
 cite {
   display: block;
   position: relative;
-  color: var(--color-secondary-300);
+  color: var(--color-primary-shades-300);
   font-style: normal;
   font-size: 0.9rem;
   font-family: var(--font-secondary);
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
+  margin: 0;
   text-align: right;
-}
-
-button {
-  background: var(--color-palette-500);
-  box-shadow: none;
 }
 
 table {
@@ -222,14 +292,14 @@ p:first-child {
 }
 
 .textlink {
-  color: var(--color-secondary-500);
+  color: var(--color-primary-shades-300);
   border-bottom: 1px var(--color-transparent) solid;
   transition: all 0.3s ease-in-out;
 }
 
 .textlink:hover {
-  border-bottom: 1px var(--color-secondary-500) solid;
-  color: var(--color-secondary-300);
+  border-bottom: 1px var(--color-primary-shades-300) solid;
+  color: var(--color-primary-shades-300);
 }
 
 .navblock {
@@ -252,9 +322,6 @@ p:first-child {
   line-height: calc(32px + (40 - 32) * ((100vw - 320px) / (1600 - 320)));
 }
 
-.brand {
-  color: var(--color-brand-500);
-}
 
 .full-bleed {
   width: calc(100vw - 20px);

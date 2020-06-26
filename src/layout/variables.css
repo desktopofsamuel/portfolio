@@ -6,14 +6,16 @@
 /* Typography */
 :root {
     --font-primary:  canada-type-gibson, Helvetica, Arial, sans-serif;
-    --font-secondary: Libre Caslon Text, Lato, Georgia, serif;
-    --font-tertiary: din-2014, Lato, Georgia, serif;
+    --font-secondary: Chivo, Libre Caslon Text, Lato, Georgia, serif;
+    --font-tertiary: Georgia, IBM Plex Mono, Courier, Menlo, Consolas, Monaco, "Lucida Console", monospace;
     --font-weight-bold: 600;
     --font-weight-regular: 400;
-    --font-size-xxl: calc(56px + (72 - 56) * ((100vw - 320px) / (1600 - 320)));
-    --font-size-xl: calc(36px + (56 - 36) * ((100vw - 320px) / (1600 - 320)));
-    --font-size-l: calc(24px + (36 - 24) * ((100vw - 320px) / (1600 - 320)));
-    --font-size-m: 1.75rem;
+    --font-size-xxl: calc(var(--font-size-base) * 3 * var(--font-scale-ratio));
+    --font-size-xl: calc(var(--font-size-base) * 2 * var(--font-scale-ratio));
+    --font-size-l: calc(var(--font-size-base) * 1.5 * var(--font-scale-ratio));
+    --font-size-m: calc(var(--font-size-base) * 1.3 * var(--font-scale-ratio));
+    --font-size-s: calc(var(--font-size-base) * 1 * var(--font-scale-ratio));
+    --font-size-xs: calc(var(--font-size-base) * 0.8 * var(--font-scale-ratio));
     --transition: all 0.3s ease-in-out;
     --font-size-root: 100;
     --font-size-base: 18px;
@@ -29,7 +31,7 @@
   @media only screen and (max-width: 768px) {
     :root {
       --font-size-base: 16px;
-      --font-scale-ratio: 0.8;
+      --font-scale-ratio: .9;
       --var-padding-l: 3rem;
       --var-padding-m: 1rem;
       --var-padding-s: 0.5rem;
@@ -39,22 +41,43 @@
 
 /* Color */
 :root {
-    --color-brand-300: #fefdf4;
-    --color-brand-500: #feb101;
-    --color-palette-500: #ffd644;
-    --color-background-500: #ffffff;
-    --color-white-300: #fbfbfb;
-    --color-white-500: #f7f7f7;
-    --color-white-700: #eeeeee;
-    --color-black-500: #0d0d0d;
-    --color-grey-100: #a8a9ab;
-    --color-grey-300: #939393;
-    --color-grey-500: #737373;
-    --color-secondary-700: #2c3242;
-    --color-secondary-500: #485069;
-    --color-secondary-300: #7082b5;
-    --color-secondary-100: #ced8e0;
-    --color-transparent: rgba(0, 0, 0, 0);
+  /* Color Token */
+  --color-primary: #0099CC;
+  --color-primary-highlight: #97ecff;
+  --color-primary-background: #EEFFFF;
+  --color-primary-shades-100: #ced8e0;
+  --color-primary-shades-300: #5f777d;
+  --color-primary-shades-500: #334455;
+  --color-primary-shades-700: #2c3242;
+  --color-secondary: #ffd644;
+  --color-white: #ffffff;
+  --color-white-300: #fbfbfb;
+  --color-white-500: #f7f7f7;
+  --color-white-700: #eeeeee;
+
+  /* Context Color */
+  --color-background: var(--color-white);
+  --color-background-alt: var(--color-white-300);
+  --color-background-reverse: var(--color-primary-shades-700);
+  --color-text: var(--color-primary-shades-500);
+  --color-text-secondary: var(--color-primary-shades-300);
+  --color-text-reverse: var(--color-white-300);
+  --color-title: var(--color-primary-shades-700); 
+  --color-decoration: var(--color-primary-shades-700);
+  --color-gradient: linear-gradient(135deg, rgba(56,204,133,1) 0%, rgba(0,153,204,1) 100%);;
+
+  --color-transparent: rgba(0, 0, 0, 0);
+  --page-border-top: 3px var(--color-secondary) solid;
+  --font-small-letterspacing: 0.075rem;
+  --border-radius: 4px;
+
+  /* Dark Mode Preview */
+  /* --color-background: var(--color-primary-shades-700);
+  --color-background-alt: var(--color-primary-shades-500);
+  --color-text: var(--color-white-300);
+  --color-text-secondary: var(--color-primary-shades-300);
+  --color-title: var(--color-white-300);  */
+
 }
 
 /* Spacing */

@@ -15,6 +15,7 @@ const Cover = styled(Img)`
 `;
 
 const PhotoLayout = styled.div`
+  background: var(--color-background);
   max-width: 90vh;
   margin: 0 auto;
 

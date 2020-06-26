@@ -5,20 +5,19 @@ import { FaArrowRight } from "react-icons/fa";
 import PropTypes from "prop-types";
 import Img from "gatsby-image";
 import ReadOn from "elements/ReadOn";
+import Zoom from "react-reveal/Zoom";
 
 const Block = styled.div`
   border-radius: 4px;
   margin-bottom: 1rem;
   position: relative;
-  grid-column: span 4;
   display: flex;
   flex-flow: column;
-  background: ${props => (props.invert ? `var(--color-white-700)` : ``)};
+  background: ${props => (props.invert ? `var(--color-white)` : ``)};
   text-align: left;
   align-content: flex-start;
-
-  color: ${props =>
-    props.invert ? `var(--color-black-500)` : `var(--color-black-500)`};
+  border-radius: var(--border-radius);
+  color: var(--color-text);
   justify-content: space-between;
   transition: var(--transition);
 
@@ -35,8 +34,7 @@ const Block = styled.div`
   }
 
   button {
-    color: ${props =>
-      props.invert ? `var(--color-white-500)` : `var(--color-black-500)`};
+    color: var(--color-text);
   }
 
   @media only screen and (max-width: 767px) {
@@ -56,7 +54,11 @@ const Block = styled.div`
 
 const Content = styled.div`
   padding: var(--var-padding-s);
-  background-color: var(--color-white-700);
+  background-color: var(--color-white);
+
+  h3 {
+    color: var(--color-primary-shades-700);
+  }
 `;
 
 const PostListImage = styled(Img)`
@@ -79,7 +81,7 @@ const Button = styled(Link)`
 const Paragraph = styled.p`
   font-size: 0.95rem;
   line-height: 200%;
-  color: var(--color-secondary-500);
+  color: var(--color-primary-shades-500);
 `;
 class BlogListing extends React.Component {
   getPostList() {
@@ -102,21 +104,20 @@ class BlogListing extends React.Component {
     const postList = this.getPostList();
 
     return postList.map(post => (
-      <Block className="noeffect" invert={invert} key={post.title}>
-        {" "}
-        <Link to={post.path} className="noeffect">
-          <PostListImage
-            fluid={post.cover.childImageSharp.fluid}
-            alt={post.title}
-          />
-          <Content>
-            <h3>
-              <a>{post.title}</a>
-            </h3>
-            <Paragraph className="noeffect"> {post.excerpt}</Paragraph>
-          </Content>
-        </Link>{" "}
-      </Block>
+      <Zoom duration={500} key={post.title}>
+        <Block className="noeffect" invert={invert}>
+          <Link to={post.path} className="noeffect">
+            <PostListImage
+              fluid={post.cover.childImageSharp.fluid}
+              alt={post.title}
+            />
+            <Content>
+              <h3 className="link">{post.title}</h3>
+              <Paragraph className="noeffect"> {post.excerpt}</Paragraph>
+            </Content>
+          </Link>
+        </Block>
+      </Zoom>
     ));
   }
 }
