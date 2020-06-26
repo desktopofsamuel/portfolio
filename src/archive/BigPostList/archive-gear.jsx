@@ -67,8 +67,8 @@ export default SetupPage;
 export const fluidImage = graphql`
   fragment fluidImage on File {
     childImageSharp {
-      fluid(maxWidth: 1000) {
-        ...GatsbyImageSharpFluid
+      fluid(maxWidth: 500) {
+        ...GatsbyImageSharpFluid_withWebp
       }
     }
   }

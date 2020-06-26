@@ -257,7 +257,7 @@ p:first-child {
 }
 
 .full-bleed {
-  width: 100vw;
+  width: calc(100vw - 20px);
   margin-left: 50%;
   transform: translateX(-50%);
 }

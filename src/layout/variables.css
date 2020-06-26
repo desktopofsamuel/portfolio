@@ -1,10 +1,12 @@
+/** Inter **/
 @import url("https://rsms.me/inter/inter.css");
+/** Adobe Fonts **/
 @import url("https://use.typekit.net/hey8lez.css");
 
 /* Typography */
 :root {
     --font-primary:  canada-type-gibson, Helvetica, Arial, sans-serif;
-    --font-secondary: IBM Plex Sans, Libre Caslon Text, Lato, Georgia, serif;
+    --font-secondary: Libre Caslon Text, Lato, Georgia, serif;
     --font-tertiary: din-2014, Lato, Georgia, serif;
     --font-weight-bold: 600;
     --font-weight-regular: 400;

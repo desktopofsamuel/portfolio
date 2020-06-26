@@ -306,8 +306,12 @@ export default AboutPage;
 
 export const pageQuery = graphql`
   query {
-    cover: file(relativePath: { eq: "images/About-Cover.jpg" }) {
-      ...fluidImage
+    cover: file(relativePath: { eq: "images/Profile.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        }
+      }
     }
     bio: file(relativePath: { eq: "images/Bio.jpg" }) {
       ...fluidImage

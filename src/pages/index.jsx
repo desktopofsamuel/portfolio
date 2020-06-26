@@ -314,13 +314,7 @@ export const pageQuery = graphql`
             category
             tldr
             cover {
-              publicURL
-              size
-              childImageSharp {
-                fluid(maxHeight: 1200) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
+              ...fluidImage
             }
             date
           }
@@ -343,13 +337,7 @@ export const pageQuery = graphql`
             title
             tldr
             cover {
-              publicURL
-              size
-              childImageSharp {
-                fluid(maxWidth: 500) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
+              ...fluidImage
             }
           }
         }
@@ -372,13 +360,7 @@ export const pageQuery = graphql`
             title
             tldr
             cover {
-              publicURL
-              size
-              childImageSharp {
-                fluid(maxWidth: 500) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
+              ...fluidImage
             }
           }
         }
