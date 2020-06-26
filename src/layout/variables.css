@@ -1,12 +1,12 @@
 /** Inter **/
-@import url("https://rsms.me/inter/inter.css");
+/* @import url("https://rsms.me/inter/inter.css"); */
 /** Adobe Fonts **/
 @import url("https://use.typekit.net/hey8lez.css");
 
 /* Typography */
 :root {
     --font-primary:  canada-type-gibson, Helvetica, Arial, sans-serif;
-    --font-secondary: Chivo, Libre Caslon Text, Lato, Georgia, serif;
+    --font-secondary: Chivo, Calibre, Georgia, serif;
     --font-tertiary: Georgia, IBM Plex Mono, Courier, Menlo, Consolas, Monaco, "Lucida Console", monospace;
     --font-weight-bold: 600;
     --font-weight-regular: 400;
