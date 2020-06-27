@@ -8,12 +8,12 @@ const Grid = styled.div`
     (props.size === "medium" && "var(--page-container-m)") ||
     (props.size === "small" && "var(--page-container-s)") ||
     `var(--page-container-m)`};
-  padding: 0 1rem;
   margin: 3rem auto;
 
   @media only screen and (max-width: 1024px) {
-    margin: 1rem auto 0 auto;
-    padding: 0;
+    width: 90vw;
+    margin: 0 auto;
+  }
   }
 `;
 

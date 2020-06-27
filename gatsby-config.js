@@ -85,6 +85,12 @@ module.exports = {
               loading: "lazy",
             },
           },
+          {
+            resolve: "gatsby-remark-external-links",
+            options: {
+              target: "_blank",
+            },
+          },
           "gatsby-remark-images-medium-zoom",
           "gatsby-remark-responsive-iframe",
           {
@@ -130,13 +136,17 @@ module.exports = {
     "gatsby-plugin-catch-links",
     "gatsby-plugin-twitter",
     "gatsby-plugin-sitemap",
-    {
-      resolve: `gatsby-plugin-purgecss`,
-      options: {
-        printRejected: true,
-        develop: true,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-purgecss`,
+    //   options: {
+    //     printRejected: true,
+    //     develop: true,
+    //     ignore: [
+    //       "@brainhubeu\react-carousellibstyle.css",
+    //       "react-medium-image-zoomdiststyles.css",
+    //     ],
+    //   },
+    // },
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -166,11 +176,11 @@ module.exports = {
         fonts: {
           google: [
             {
-              family: "Libre Caslon Text",
+              family: "IBM Plex Mono",
               variants: ["400", "700"],
             },
             {
-              family: "IBM Plex Sans",
+              family: "Chivo",
               variants: ["400", "700"],
             },
           ],

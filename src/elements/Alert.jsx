@@ -6,32 +6,31 @@ import GatsbyLink from "../components/common/GatsbyLink";
 const Wrapper = styled.div`
   background-color: var(--color-white-500);
   padding: 10px 25px;
-  border-left: 3px var(--color-brand-500) solid;
+  border-left: 4px solid var(--color-primary);
   box-shadow: none;
+  border-radius: var(--border-radius);
   margin-bottom: 5vh;
   cursor: pointer;
   transition: background-color ease-in-out 0.2s;
 `;
 
 const Text = styled.p`
-  color: white
+  color: var(--color-text);
   text-decoration: none;
   margin-bottom: 0;
 `;
 
-const Alert = ({ href, text }) => {
+const Alert = ({ to, children }) => {
   return (
-    <Wrapper>
-      <GatsbyLink to={href}>
-        <Text className="noeffect">{text}</Text>
-      </GatsbyLink>
-    </Wrapper>
+    <GatsbyLink to={to}>
+      <Wrapper>{children}</Wrapper>
+    </GatsbyLink>
   );
 };
 
 export default Alert;
 
 Alert.propTypes = {
-  href: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired,
+  children: PropTypes.array.isRequired,
 };

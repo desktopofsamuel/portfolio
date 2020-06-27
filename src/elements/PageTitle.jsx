@@ -8,11 +8,12 @@ const PageTitleWrapper = styled.div`
 
 const Subtitle = styled.small`
   margin: 0;
-  color: var(--color-secondary-500);
+  color: var(--color-text-secondary);
 `;
 
 const Title = styled.h1`
   font-family: var(--font-primary);
+  color: var(--color-title);
   margin: 0;
 `;
 

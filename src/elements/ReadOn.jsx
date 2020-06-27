@@ -4,7 +4,6 @@ import styled from "styled-components";
 import GatsbyLink from "../components/common/GatsbyLink";
 
 const Button = styled.div`
-  border: 1px var(--color-secondary-500) solid;
   padding: 0.5rem var(--var-padding-s);
   text-transform: uppercase;
   cursor: pointer;
@@ -14,8 +13,8 @@ const Button = styled.div`
   transition: var(--transition);
 
   h6 {
-    color: var(--color-secondary-500);
-    font-weight: var(--font-weight-regular);
+    color: var(--color-text);
+    font-weight: var(--font-weight-bold);
     margin-bottom: 0;
     margin-right: 8px;
   }
@@ -24,12 +23,39 @@ const Button = styled.div`
     font-size: 14px;
   }
 
-  &:hover {
-    background: var(--color-secondary-500);
+  & {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    transition: var(--transition);
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+  }
 
-    & > * {
-      color: var(--color-white-500);
-    }
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+      to top,
+      var(--color-primary-highlight) 25%,
+      rgba(0, 0, 0, 0) 40%
+    );
+    transition: width 0.1s ease-out;
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    z-index: -1;
+
+    will-change: width;
+    transform: rotate(-2deg);
+    transform-origin: left bottom;
+  }
+
+  &:hover::before {
+    width: 0;
+    transition-duration: 0.15s;
   }
 `;
 

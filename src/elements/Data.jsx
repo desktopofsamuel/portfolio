@@ -5,7 +5,7 @@ const Block = styled.div``;
 
 const Label = styled.small`
   margin-bottom: 0;
-  color: var(--color-secondary-300);
+  color: var(--color-primary-shades-300);
 `;
 
 const Number = styled.h5`

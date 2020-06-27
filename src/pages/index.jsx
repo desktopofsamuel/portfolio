@@ -10,8 +10,7 @@ import Link from "../components/common/GatsbyLink";
 import config from "../../data/SiteConfig";
 import Layout from "../layout";
 import WorkIndex from "../components/WorkIndex";
-import CTAButton from "../components/common/MajorButton";
-import BlogListing from "../components/BlogListing";
+import BlogIndex from "../components/BlogIndex";
 import WorkIcon from "../../static/SVG/Work.svg";
 import BlogIcon from "../../static/SVG/Blog.svg";
 import Now from "../components/Now";
@@ -25,20 +24,7 @@ const Box = styled(Boxed)`
 
 const Row = styled.section`
   padding: var(--var-padding-m) 0;
-  background: white;
-`;
-
-const More2Button = styled.button`
-  box-sizing: border-box;
-  background: none;
-  padding: 1rem 2rem;
-  border: 0;
-  margin: 0 auto;
-  transition: all 0.3s ease-in-out;
-  &:hover {
-    background: var(--color-brand-500);
-    color: var(--color-black-500);
-  }
+  background: var(--color-background);
 `;
 
 const ColumnSpaced = styled(Column)`
@@ -50,22 +36,9 @@ const UnevenColumn = styled(ColumnSpaced)`
 `;
 
 const GreyRow = styled(Row)`
-  background: var(--color-white-300);
+  background: var(--color-background-alt);
 `;
 
-const ContactButton = styled.button`
-  border: none;
-  box-sizing: border-box;
-  background: none;
-  padding: 1rem 2rem;
-  transition: all 0.3s ease-in-out;
-  margin: 0 auto;
-
-  &:hover {
-    background: var(--color-brand-500);
-    color: var(--color-black-500);
-  }
-`;
 const StickyBox = styled.div`
   height: 100%;
 `;
@@ -120,19 +93,11 @@ const Center = styled.div`
 const Blog = styled.section`
   display: grid;
   grid-auto-flow: row;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
   grid-row-gap: 4rem;
   grid-column-gap: 2rem;
   align-items: flex-start;
-
-  & > div:nth-child(2) {
-    grid-column: span 4;
-  }
-
-  & > div:nth-child(3) {
-    grid-column: span 4;
-  }
 
   @media only screen and (max-width: 767px) {
     display: block;
@@ -151,7 +116,7 @@ const Overlay = styled.div`
 const BlogIntro = styled.div`
   margin-bottom: var(--var-padding-m);
   p {
-    color: var(--color-secondary-700);
+    color: var(--color-primary-700);
   }
 `;
 
@@ -163,7 +128,7 @@ const Contact = styled.div`
   }
 
   h2 {
-    color: var(--color-secondary-700);
+    color: var(--color-primary-700);
   }
 `;
 
@@ -195,10 +160,12 @@ const IndexPage = ({ data }) => {
   const photo2Edges = data.Photo2.edges;
   return (
     <Layout title="Home">
-      <Row>
-        <IndexHero />
-      </Row>
-      <GreyRow className="full-bleed" id="experience-designer">
+      <GreyRow>
+        <Box>
+          <IndexHero />
+        </Box>
+      </GreyRow>
+      <Row className="full-bleed" id="experience-designer">
         <Box>
           <ColumnSpaced>
             <StickyBox>
@@ -216,8 +183,8 @@ const IndexPage = ({ data }) => {
             <WorkIndex postEdges={workEdges} />
           </ColumnSpaced>
         </Box>
-      </GreyRow>
-      <Row id="blog">
+      </Row>
+      <GreyRow id="blog">
         <Box>
           <UnevenColumn>
             <RightStickyBox>
@@ -228,22 +195,22 @@ const IndexPage = ({ data }) => {
                   <Subtitle>
                     I write about design, technology and productivity.
                   </Subtitle>
-                  <ReadOn text="Read All Blog Posts" href="/blog" />
+                  <ReadOn text="Read My Blog" href="/blog" />
                 </BlogIntro>
               </StickyWrapper>
             </RightStickyBox>
             <Blog>
-              <BlogListing postEdges={blogEdges} />
+              <BlogIndex postEdges={blogEdges} />
             </Blog>
           </UnevenColumn>
         </Box>
-      </Row>
+      </GreyRow>
       <Row className="full-bleed full-content" id="photography">
         <PhotoGrid>
           <IndexPhoto postEdges={photo1Edges} />
           <PhotoIntro>
-            <h6>03.</h6>
-            <h2>Photography</h2>
+            <small>03.</small>
+            <h2 className="no-margin">Photography</h2>
             <Subtitle>
               Sets of photos according to cities that I have visited.
             </Subtitle>

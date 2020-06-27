@@ -5,8 +5,8 @@ import Nav from "../components/Navigation/navigation";
 import Footer from "../components/Footer/Footer";
 
 const Layout = styled.div`
-  background-color: var(--color-background-500);
-  border-top: 3px var(--color-palette-500) solid;
+  background-color: var(--color-background);
+  border-top: var(--page-border-top);
 `;
 
 const Main = styled.main`

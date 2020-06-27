@@ -16,12 +16,12 @@ const Title = styled.h3`
 // const Subtitle = styled.p`
 //   font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1600 - 320)));
 //   line-height: 2em;
-//   color: var(--color-secondary-100);
+//   color: var(--color-primary-shades-100);
 //   margin-bottom: 4rem;
 // `;
 
 const ResumeSectionTitle = styled.small`
-  color: var(--color-secondary-100);
+  color: var(--color-primary-shades-100);
 
   @media only screen and (max-width: 768px) {
     font-size: 1rem;
@@ -85,11 +85,14 @@ const Resume = () => {
         />
       </Block>
       <Block>
-        <ResumeSectionTitle>Skills</ResumeSectionTitle>
+        <ResumeSectionTitle>Tools</ResumeSectionTitle>
         <div>
           <ResumeItem noBorder content="Figma, Sketch, Abstract, Avocode" />
+          <ResumeItem
+            noBorder
+            content="Adobe Creative Suite (Photoshop, Illustrator, Premiere)"
+          />
           <ResumeItem noBorder content="HTML, CSS, Git, Google Analytics" />
-          <ResumeItem noBorder content="Adobe Creative Suite" />
         </div>
       </Block>
       <Block>

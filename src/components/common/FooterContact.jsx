@@ -9,6 +9,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import Link from "./GatsbyLink";
 import Boxed from "../../elements/Boxed";
+import Icon from "components/common/Icon";
 
 const Container = styled.section`
   display: block;
@@ -58,27 +59,21 @@ const FooterContact = () => {
           <Content>
             Follow my social media and see what I'm up to.
             <IconList>
-              <Link
+              <Icon
                 to="https://www.linkedin.com/in/wongchunlong/"
-                className="noeffect linkicon"
                 target="_blank"
-              >
-                <FooterIcon icon={faLinkedin} />
-              </Link>
-              <Link
-                to="http://www.twitter.com/desktopofsamuel"
-                className="noeffect linkicon"
+                icon={faLinkedin}
+              />
+              <Icon
+                to="http://www.twitter.com/desktopofsamuel/"
                 target="_blank"
-              >
-                <FooterIcon icon={faTwitter} />
-              </Link>
-              <Link
+                icon={faTwitter}
+              />
+              <Icon
                 to="http://www.instagram.com/desktopofsamuel"
-                className="noeffect linkicon"
                 target="_blank"
-              >
-                <FooterIcon icon={faInstagram} />
-              </Link>
+                icon={faInstagram}
+              />
             </IconList>
           </Content>
         </Section>

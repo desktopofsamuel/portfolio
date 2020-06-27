@@ -9,7 +9,7 @@ const Grid = styled.section`
 
 const ListItem = styled.article`
   display: block;
-  border-bottom: 1px var(--color-secondary-100) solid;
+  border-bottom: 1px var(--color-primary-shades-100) solid;
   margin-bottom: var(--padding-m);
   padding-bottom: 2rem;
 
@@ -41,7 +41,7 @@ class PhotoHero extends React.Component {
         title: postEdge.node.frontmatter.title,
         date: postEdge.node.fields.date,
         excerpt: postEdge.node.frontmatter.tldr || postEdge.node.excerpt,
-        timeToRead: postEdge.node.timeToRead
+        timeToRead: postEdge.node.timeToRead,
       });
     });
     return postList;

@@ -7,22 +7,12 @@ import "./index.css";
 import Nav from "../components/common/NavBar";
 import Footer from "../components/common/Footer";
 
-const Layout = styled.div`
-  background-color: var(--color-background-500);
-`;
+const Layout = styled.div``;
 
 const Main = styled.main`
   margin: 0 auto var(--var-padding-m) auto;
-
-  @media only screen and (max-width: 1024px) {
-    max-width: 95vw;
-    padding: 0 1.5rem;
-  }
-
-  @media only screen and (max-width: 768px) {
-    padding: 0 1rem;
-  }
 `;
+
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
   require("smooth-scroll")('a[href*="#"]');

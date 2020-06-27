@@ -55,12 +55,13 @@ const Title = styled.h2`
   margin: 0 auto 1.5rem;
   font-size: 1rem;
   font-family: var(--font-secondary);
+  color: var(--color-title);
 `;
 
 const Description = styled.h2`
   margin-top: 0;
   font-family: var(--font-secondary);
-  color: var(--color-secondary-500);
+  color: var(--color-title);
   font-size: 0.95rem;
   line-height: 1.5rem;
   max-width: 35ch;
@@ -73,6 +74,10 @@ const NavItem = styled.div`
   @media only screen and (max-width: 767px) {
     display: none;
   }
+`;
+
+const MenuItem = styled(Link)`
+  display: block;
 `;
 
 export default class Navigation extends React.Component {
@@ -110,7 +115,7 @@ export default class Navigation extends React.Component {
             </SiteID>
             <NavItem>
               <Link to="/about" class="navblock noeffect">
-                <small>About</small>
+                <small>Test</small>
               </Link>
               <Link to="/work" class="navblock noeffect">
                 <small>Work</small>

@@ -12,10 +12,10 @@ const Main = styled.div`
   width: 100%;
   height: 100%;
   padding: 0 var(--var-padding-s);
-  border-top: 3px var(--color-palette-500) solid;
+  border-top: var(--page-border-top);
 
   @media only screen and (max-width: 768px) {
-    background: var(--color-background-500);
+    background: var(--color-background);
     padding: 0 1rem;
   }
 `;
@@ -48,7 +48,7 @@ const NavItem = styled(Link)`
     background: var(--color-white-700);
   }
   &:active {
-    background: var(--color-background-500);
+    background: var(--color-background);
   }
 
   @media only screen and (max-width: 768px) {
@@ -87,6 +87,7 @@ const MobileNav = styled.div`
 `;
 
 const Title = styled(Link)`
+  color: var(--color-title);
   margin: 0 auto;
   font-size: 1rem;
   font-weight: var(--font-weight-bold);
@@ -95,6 +96,7 @@ const Title = styled(Link)`
 `;
 
 const Description = styled.h2`
+  color: var(--color-text);
   margin: 0 auto;
   font-weight: var(--font-weight-regular);
   font-family: var(--font-primary);
