@@ -58,6 +58,10 @@ const GridSkill = styled.div`
   grid-gap: var(--var-padding-m);
   width: 100%;
   margin: var(--var-padding-m) 0;
+
+  @media only screen and (max-width: 768px) {
+    display: block;
+  }
 `;
 
 const Intro = styled.div`
