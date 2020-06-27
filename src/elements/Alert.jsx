@@ -20,19 +20,17 @@ const Text = styled.p`
   margin-bottom: 0;
 `;
 
-const Alert = ({ href, text }) => {
+const Alert = ({ to, children }) => {
   return (
-    <Wrapper>
-      <GatsbyLink to={href}>
-        <Text className="noeffect">{text}</Text>
-      </GatsbyLink>
-    </Wrapper>
+    <GatsbyLink to={to}>
+      <Wrapper>{children}</Wrapper>
+    </GatsbyLink>
   );
 };
 
 export default Alert;
 
 Alert.propTypes = {
-  href: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired,
+  children: PropTypes.array.isRequired,
 };

@@ -219,23 +219,25 @@ ul li.BrainhubCarouselItem:before {
   content: none;
 }
 
+ol li::marker {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  font-style: italic;
+}
+
 ol li {
   counter-increment: list;
   margin-bottom: 12px;
 }
 ol li:before {
-  content: counter(list) ". ";
+  /* content: counter(list) ". "; */
   font-family: var(--font-primary);
   font-weight: var(--font-weight-bold);
   color: var(--color-primary);
   font-style: italic;
   margin-left: -24px;
   margin-right: 6px;
-  
-}
-ol {
-  list-style: none;
-  counter-reset: list;
 }
 
 blockquote {

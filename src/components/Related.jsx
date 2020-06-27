@@ -24,12 +24,10 @@ const Related = ({ node }) => {
     <Container className="full-bleed">
       <Wrapper size="small">
         <small>Read Next</small>
-        <Link to={node.path}>
-          <h3>
-            <a>{node.title}</a>
-          </h3>
-          <p>{node.excerpt}</p>
-        </Link>
+        <h3>
+          <Link to={node.path}>{node.title}</Link>
+        </h3>
+        <p>{node.excerpt}</p>
       </Wrapper>
     </Container>
   );

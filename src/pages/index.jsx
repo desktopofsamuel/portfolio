@@ -209,8 +209,8 @@ const IndexPage = ({ data }) => {
         <PhotoGrid>
           <IndexPhoto postEdges={photo1Edges} />
           <PhotoIntro>
-            <h6>03.</h6>
-            <h2>Photography</h2>
+            <small>03.</small>
+            <h2 className="no-margin">Photography</h2>
             <Subtitle>
               Sets of photos according to cities that I have visited.
             </Subtitle>
