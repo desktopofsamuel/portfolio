@@ -208,6 +208,7 @@ ul li {
 }
 
 ul li:before { 
+  content: '→';
   content: '\1f806';
   list-style-position: outside;
   margin-right: 16px;
@@ -312,6 +313,12 @@ p:first-child {
   width: calc(100vw - 20px);
   margin-left: 50%;
   transform: translateX(-50%);
+}
+
+@media only screen and (max-width: 768px) {
+  .full-bleed {
+    width: 100vw
+  }
 }
 
 img {

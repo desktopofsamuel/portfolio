@@ -5,12 +5,14 @@ import PropTypes from "prop-types";
 const Container = styled.div`
   background: var(--color-white-500);
   display: grid;
-  grid-template-columns: auto 70%;
+  grid-template-columns: minmax(100px, 150px) minmax(1rem, 2rem) auto;
   margin: 4rem 0 2rem 0;
 `;
 
+const Spacer = styled.div``;
+
 const Wrapper = styled.div`
-  padding: 2rem 0;
+  padding: 2rem 1rem 0 0;
 `;
 
 const Title = styled.h3`
@@ -19,9 +21,8 @@ const Title = styled.h3`
 `;
 
 const Poster = styled.img`
-  max-width: 120px;
   box-shadow: 0px 2px 36px rgba(0, 0, 0, 0.25);
-  transform: scale(1.185);
+  transform: scale(1.085);
 `;
 
 const Rating = styled.p`
@@ -46,6 +47,7 @@ const TitleWrapper = styled.div``;
 const Film = ({ poster, title, year, rating, director, link }) => (
   <Container>
     <Poster src={poster} />
+    <Spacer />
     <Wrapper>
       <TitleWrapper>
         <Title>{title}</Title>
