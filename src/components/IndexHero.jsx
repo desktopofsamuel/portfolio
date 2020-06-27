@@ -44,7 +44,10 @@ const ContactWrapper = styled.div`
     font-weight: var(--font-weight-bold);
     text-transform: uppercase;
     font-size: 12px;
-}
+  }
+
+  @media only screen and (max-width: 425px) {
+    margin-top: 2rem;
   }
 `;
 

@@ -136,13 +136,17 @@ module.exports = {
     "gatsby-plugin-catch-links",
     "gatsby-plugin-twitter",
     "gatsby-plugin-sitemap",
-    {
-      resolve: `gatsby-plugin-purgecss`,
-      options: {
-        printRejected: true,
-        develop: true,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-purgecss`,
+    //   options: {
+    //     printRejected: true,
+    //     develop: true,
+    //     ignore: [
+    //       "@brainhubeu\react-carousellibstyle.css",
+    //       "react-medium-image-zoomdiststyles.css",
+    //     ],
+    //   },
+    // },
     {
       resolve: "gatsby-plugin-manifest",
       options: {

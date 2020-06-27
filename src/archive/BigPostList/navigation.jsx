@@ -76,6 +76,10 @@ const NavItem = styled.div`
   }
 `;
 
+const MenuItem = styled(Link)`
+  display: block;
+`;
+
 export default class Navigation extends React.Component {
   render() {
     return (
@@ -111,7 +115,7 @@ export default class Navigation extends React.Component {
             </SiteID>
             <NavItem>
               <Link to="/about" class="navblock noeffect">
-                <small>About</small>
+                <small>Test</small>
               </Link>
               <Link to="/work" class="navblock noeffect">
                 <small>Work</small>

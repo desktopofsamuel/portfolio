@@ -161,7 +161,9 @@ const IndexPage = ({ data }) => {
   return (
     <Layout title="Home">
       <GreyRow>
-        <IndexHero />
+        <Box>
+          <IndexHero />
+        </Box>
       </GreyRow>
       <Row className="full-bleed" id="experience-designer">
         <Box>

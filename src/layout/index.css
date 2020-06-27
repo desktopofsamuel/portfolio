@@ -13,7 +13,7 @@ html {
   font-weight: var(--font-weight-regular);
   line-height: var(--font-base-line-height);
   font-size: var(--font-size-base);
-
+  color: var(--color-text);
   text-rendering: optimizeLegibility;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -302,48 +302,14 @@ p:first-child {
   color: var(--color-primary-shades-300);
 }
 
-.navblock {
-  display: block;
-}
-
 .rightspace:not(:last-child) {
   margin-right: 20px;
 }
-
-.subheading {
-  font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1600 - 320)));
-  line-height: calc(32px + (40 - 32) * ((100vw - 320px) / (1600 - 320)));
-  font-family: var(--font-secondary);
-  font-weight: 400;
-}
-
-.textbig {
-  font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1600 - 320)));
-  line-height: calc(32px + (40 - 32) * ((100vw - 320px) / (1600 - 320)));
-}
-
 
 .full-bleed {
   width: calc(100vw - 20px);
   margin-left: 50%;
   transform: translateX(-50%);
-}
-
-@media only screen and (max-width: 1024px) {
-  .full-bleed > div {
-    width: 95vw;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin: 0 auto;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .full-bleed.full-content > div {
-    width: 100vw;
-    padding: 0;
-    margin: 0 auto;
-  }
 }
 
 img {
