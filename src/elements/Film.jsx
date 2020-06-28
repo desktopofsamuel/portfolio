@@ -46,7 +46,7 @@ const TitleWrapper = styled.div``;
 
 const Film = ({ poster, title, year, rating, director, link }) => (
   <Container>
-    <Poster src={poster} />
+    <Poster src={poster} alt={title} title={title} />
     <Spacer />
     <Wrapper>
       <TitleWrapper>

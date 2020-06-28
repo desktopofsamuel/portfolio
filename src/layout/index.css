@@ -208,7 +208,7 @@ ul li {
 }
 
 ul li:before { 
-  content: '→';
+  content: '-';
   content: '\1f806';
   list-style-position: outside;
   margin-right: 16px;
