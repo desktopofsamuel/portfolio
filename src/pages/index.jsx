@@ -138,9 +138,13 @@ const PhotoGrid = styled.div`
   height: 100%;
 
   @media only screen and (min-width: 1024px) {
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2px;
   }
+
+  @media only screen and (min-width: 1920px) {
+    max-width: 1980px;
+    margin: 0 auto;
 `;
 
 const PhotoIntro = styled.div`
@@ -313,7 +317,7 @@ export const pageQuery = graphql`
     Photo2: allMdx(
       filter: { fileAbsolutePath: { regex: "/photo/" } }
       sort: { fields: [frontmatter___date], order: DESC }
-      limit: 7
+      limit: 4
       skip: 4
     ) {
       edges {
