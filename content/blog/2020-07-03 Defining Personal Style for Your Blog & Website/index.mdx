@@ -1,32 +1,33 @@
 ---
 id: "/defining-your-personal-style-for-your-blog-and-website"
 path: "/defining-your-personal-style-for-your-blog-and-website"
-date: "2020-06-28"
+date: "2020-07-03"
 title: "Defining Personal Style for Your Blog & Website"
 category: "Design Journal"
 tags:
   - "Development"
   - "Side Project"
   - "CSS"
+  - "MDX"
 cover: "./css-style.png"
 tldr: "Reflecting on how to define your personal design style for your website"
 draft: false
 
 ---
 
-After settling down for the basic functionality of a website, its time dig deeper and offer some personality, so the website can speak who you are. Enjoy the freedom of building anything possible, is one of the advantage building your own website.
+After settling down for the basic functionality of a website, its time to dig deeper and let some personality shines! We want your website to speak who you are, so enjoy the freedom of building anything possible, as it is one of the advantages building your own website.
 
-However, personal style does not just drop in one day. In fact many designers have been developing styles for clients or company, they may be too busy to find the answer. 
+However, personal style does not just drop in one day. In fact many designers have been developing styles for clients or company, they may not have a clear answer.
 
-I have put together a list of small changes that you can work on in order to discover your style. In my case, I'm using Gatsby and Markdown, however, some of the suggestion also applies for other blogging platform, by customizing your CSS in Wordpress. 
+I also had a long thought on this and **I have put together a list of small changes that you can work on in order to discover your style**. Most of my suggestions apply for blogging platform like Wordpress and Tumblr, as long as CSS can be customised. In my case, I'm using Gatsby and MDX, therefore I own more control on the visual style and integration between design and content.
 
-I believe building a website is a continuous process and for myself, none of these were designed at the first place when I first launched my website.
+I believe building a website is a continuous process and for myself, so none of these were designed at the first place when I first launched my website.
 
-Using Markdown or even MDX, allows you further customized your blog style. Since all styles are shared in my setup, I would not implement my style specifically in `MDXProvider` did. I just change the style at a global css file. Here are things that you can further build your style.
+For Gatsby users, I have simply apply my styles on a global css either you inject globally or referenced in a layout component file. Additional customised component would rest in your components folder. I am looking to share all the styles across my whole website, so I did not implement my style specifically in `MDXProvider` as some tutorials did.
 
 ## 1.  Ordered and Unordered List
 
-If you use list in your blog all the time, you should definitely style your lists, all you need is CSS. Reset your style first by clearing all the margins and padding. I learned about styling order list from [Josh Comeau](https://joshwcomeau.com/css/styling-ordered-lists-with-css-counters/). 
+If you use lists in your blog all the time, you should definitely style your lists, all you need is CSS. Reset your style first by clearing all the margins and padding. I learned about styling order list from [Josh Comeau](https://joshwcomeau.com/css/styling-ordered-lists-with-css-counters/). 
 
 ```css
 ul li {
@@ -47,7 +48,7 @@ ul li:before {
 
 The content property refers to unicode of the special character. Feel free to check all options [here](http://xahlee.info/comp/unicode_arrows.html). 
 
-For ordered list style, I have realized Josh's way of using `counter-rest: variable` is not compatible when the list span through other elements. But there's a new standard coming, a new pseudo-class `::marker` is in experiment (which is not support by default by Chrome). 
+For ordered list style, I have realized Josh's way of using `counter-rest: variable` is not compatible when the list span through other elements (seaprated by a code block or image). But there's a new standard coming, a new pseudo-class `::marker` is in experiment (which is not support by default by Chrome right now). You just need to make sure it fallback on non-compatible devices.
 
 ```css
 ol li::marker {
@@ -60,11 +61,12 @@ ol li::marker {
 
 ## 2. Blockquote
 
-Quoting from other people is a terrific way of getting backlinks and bringing more authenticity to your writing. I also use blockquote to emphasis on  key message in my writing.
+Quoting from other people is a terrific way of getting backlinks and bringing more authenticity to your writing. I also use blockquote to emphasis on  key message in my writing. For example,
 
-![](blockquote.png)
+> We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil. Yet we should not pass up our opportunities in that critical 3%.
+<cite>Donald Knuth</cite>
 
-You can also style your blockquote. A typical approach would be using a different font and larger text size. Quotation mark is also used to indicate. Once again, you can use pseudo elements `:before` for adding the quotation mark before the quote begins.
+ A typical approach to style your blockquote would be using a different font and much larger text size. I also used Quotation mark to indicate. Once again, you can use pseudo elements `:before` for adding the quotation mark before the quote begins.
 
 ```css
 blockquote:before {
@@ -92,7 +94,9 @@ Highlighting important sentence or your conclusion help guide your readers. In C
 
 In markdown, `**Bold Style**` would translate into `<strong>` in HTML. Then we could style the selector in CSS. Like this animated underline on [Codepen](https://codepen.io/Varo/pen/jOOaLLG), you can easily turn it into a highlight. 
 
-Most default style have already include a link style for external hyperlinks. You can also consider to style  `<a>`on CSS too. However, try to separate both styles clearly, so readers would able to distinguish which one is clickable and which one isn't. 
+For example: **premature optimization is the root of all evil.**
+
+In most case, external hyperlink would be styled already. Please keep in mind links and highlight should be separated, so readers would be  able to distinguish which one is clickable and which one isn't. 
 
 ## 4. Custom Components
 
@@ -135,14 +139,20 @@ Then in your markdown, remember to import Tip component. Then wrap Tip around th
 
 import Tip from "components/Tip"
 
-<Tip>My Tip</Tip>
+<Tip>Tip Content</Tip>
 
 ```
 
-![Tip component used on desktopofsamuel.com](tip.png)
+import Tip from "elements/Tip"
+<Tip>This is a tip to demonstrate custom component. It's extremely useful to put additional knowledge to the writing or to remind readers about new update </Tip>
 
 I have also created a Film component for my quarterly documentary review blogs. These two are just the most simple component you can tailor for your own need. Imagine adding support for affiliate links, GPS, maps and more! 
 
 ![Film component used on desktopofsamuel.com](film.png)
 
-Last but the list, I have an alert component to warn readers about updated version of the article has been published. 
+That's it. Here's an example of custom component that I would love to try some day. 
+This is a map module from [Paul Stamatiou](https://paulstamatiou.com/photos/africa/rwanda/)'s photo journal'.
+
+![](https://media.giphy.com/media/d9BtFFG1nmm2T62usW/giphy.gif)
+
+If you have more ideas or good inspirations in mind please feel free to share with me. 
