@@ -178,7 +178,7 @@ const AboutPage = ({ data }) => {
     <Layout title="About">
       <Row>
         <Boxed>
-          <PageTitle title="About Me" subtitle="Little things about myself" />
+          <PageTitle title="Hello There" subtitle="About Me" />
           <PhotoFrame>
             <Img
               fluid={data.cover.childImageSharp.fluid}
