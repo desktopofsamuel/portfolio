@@ -23,6 +23,10 @@ const Container = styled.section`
 
 const Section = styled.div`
   display: block;
+
+  h5 {
+    color: var(--color-title);
+  }
 `;
 const Content = styled.div`
   font-size: 14px;
@@ -42,7 +46,7 @@ const FooterIcon = styled(FontAwesomeIcon)`
 
 const FooterContact = () => {
   return (
-    <Boxed size="large">
+    <Boxed>
       <Container>
         <Section>
           <h5>Let's Chat</h5>

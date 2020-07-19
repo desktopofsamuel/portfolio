@@ -12,7 +12,6 @@ const Main = styled.div`
   width: 100%;
   height: 100%;
   padding: 0 var(--var-padding-s);
-  border-top: var(--page-border-top);
 
   @media only screen and (max-width: 768px) {
     background: var(--color-background);

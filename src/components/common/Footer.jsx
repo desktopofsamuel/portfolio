@@ -16,19 +16,12 @@ import Link from "./GatsbyLink";
 const Container = styled.footer`
   width: 100%;
   height: 100%;
+  border-bottom: var(--page-border-top);
 `;
 
 const Row = styled.section`
+  background-color: #e5e9d8;
   padding: var(--var-padding-s) 1rem;
-`;
-
-const BgRow = styled(Row)`
-  @media only screen and (max-width: 767px) {
-    padding: var(--var-padding-m);
-    background-color: var(--color-white-500);
-    box-shadow: 0 10px 0 -5px var(--color-white-700);
-    margin: 24px;
-  }
 `;
 
 const BoxNow = styled(Boxed)``;

@@ -1,0 +1,15 @@
+@import url("./variables.css");
+
+.work > h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-tertiary);
+    text-align: center;
+}
+
+.work > h2 {
+    font-size: var(--font-size-l);
+}
+
+.work > p {
+    max-width: 56ch;
+    margin: 0 auto;
+}
