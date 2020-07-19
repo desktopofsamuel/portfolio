@@ -145,10 +145,12 @@ const PhotoGrid = styled.div`
   @media only screen and (min-width: 1920px) {
     max-width: 1980px;
     margin: 0 auto;
+  }
 `;
 
 const PhotoIntro = styled.div`
   padding: var(--var-padding-m);
+
   h2 {
     margin: 0;
   }
@@ -157,13 +159,19 @@ const PhotoIntro = styled.div`
     grid-column: span 2;
   }
 `;
+
 const IndexPage = ({ data }) => {
   const workEdges = data.Work.edges;
   const blogEdges = data.Blog.edges;
   const photo1Edges = data.Photo1.edges;
   const photo2Edges = data.Photo2.edges;
+
   return (
-    <Layout title="Home">
+    <Layout>
+      <Helmet title={config.siteTitle}>
+        <meta name="twitter:title" content={config.siteTitle} />
+        <meta property="og:title" content={config.siteTitle} />
+      </Helmet>
       <GreyRow>
         <Box>
           <IndexHero />

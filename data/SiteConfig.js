@@ -1,7 +1,7 @@
 const config = {
-  siteTitle: "Samuel Wong | Hong Kong UI/UX Designer", // Site title.
+  siteTitle: "Samuel Wong — Hong Kong UI/UX Designer", // Site title.
   siteTitleShort: "Desktop of Samuel", // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
-  siteTitleAlt: "Samuel Wong | Hong Kong UI/UX Designer", // Alternative site title for SEO.
+  siteTitleAlt: "Samuel Wong — Hong Kong UI/UX Designer", // Alternative site title for SEO.
   siteLogo:
     "icons-2e5ea9ae11520cba6cedd44d8a342667/apple-touch-icon-180x180.png", // Logo used for SEO and manifest.
   siteUrl: "https://desktopofsamuel.com", // Domain of your website without pathPrefix.
@@ -11,7 +11,7 @@ const config = {
   siteKeywords:
     "Samuel Wong, Hong Kong, UI, UX, User Interface Design, User Experience Design, Product Design, Design Thinking, Product Development, Brand Design",
   siteRss: "/rss.xml", // Path to the RSS file.
-  siteRssTitle: "Samuel Wong | Hong Kong UI/UX Designer", // Title of the RSS feed
+  siteRssTitle: "Samuel Wong — Hong Kong UI/UX Designer", // Title of the RSS feed
   siteFBAppID: "", // FB Application ID for using app insights
   googleAnalyticsID: "UA-114278308-5", // GA tracking ID.
   disqusShortname: "", // Disqus shortname.
@@ -38,7 +38,7 @@ const config = {
       iconClassName: "fa fa-envelope",
     },
   ],
-  copyright: "©2019 Samuel Wong.", // Copyright string for the footer of the website and RSS feed.
+  copyright: "©2018-2020 Samuel Wong.", // Copyright string for the footer of the website and RSS feed.
   themeColor: "#FFD644", // Used for setting manifest and progress theme colors.
   backgroundColor: "#e0e0e0", // Used for setting manifest background color.
 };
