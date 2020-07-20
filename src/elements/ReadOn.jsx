@@ -11,6 +11,8 @@ const Button = styled.div`
   justify-content: center;
   align-items: center;
   transition: var(--transition);
+  border: 1px var(--color-primary) solid;
+  border-radius: 36px;
 
   h6 {
     color: var(--color-text);
@@ -28,16 +30,14 @@ const Button = styled.div`
     z-index: 1;
     display: inline-flex;
     transition: var(--transition);
-    padding-left: 10px;
-    padding-bottom: 5px;
-    padding-right: 10px;
+    padding: 16px 24px;
   }
 
   &::before {
-    content: "";
+    /* content: "";
     width: 100%;
-    height: 100%;
-    background-image: linear-gradient(
+    height: 100%; */
+    /* background-image: linear-gradient(
       to top,
       var(--color-primary-highlight) 25%,
       rgba(0, 0, 0, 0) 40%
@@ -50,7 +50,7 @@ const Button = styled.div`
 
     will-change: width;
     transform: rotate(-2deg);
-    transform-origin: left bottom;
+    transform-origin: left bottom; */
   }
 
   &:hover::before {
