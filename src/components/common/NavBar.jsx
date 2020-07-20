@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Link from "./GatsbyLink";
 import styled from "styled-components";
 import "../../layout/index.css";
+import Boxed from "../../elements/Boxed";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import Popup from "reactjs-popup";
@@ -19,23 +20,24 @@ const Main = styled.div`
   }
 `;
 
-const NavSection = styled.div`
+const NavSection = styled.div``;
+
+const Container = styled(Boxed)`
+  margin: 0 auto;
+  width: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: baseline;
 `;
 
 const NavLeft = styled.div`
-  display: inline-flex;
-  align-items: baseline;
-
   a {
     margin-right: 1rem;
   }
 `;
 
 const NavRight = styled.div`
-  margin-left: auto;
   display: inline-flex;
 `;
 
@@ -43,11 +45,17 @@ const NavItem = styled(Link)`
   padding: 0.5rem 1rem;
   border-bottom: none;
 
-  &:hover {
-    background: var(--color-white-700);
+  small {
+    color: var(--color-primary-shades-300);
+    transition: var(--transition);
   }
-  &:active {
-    background: var(--color-background);
+
+  &:hover small {
+    color: var(--color-primary-shades-700);
+  }
+
+  &:active small {
+    color: var(--color-primary-shades-700);
   }
 
   @media only screen and (max-width: 768px) {
@@ -99,7 +107,9 @@ const Description = styled.h2`
   margin: 0 auto;
   font-weight: var(--font-weight-regular);
   font-family: var(--font-primary);
-  font-size: 0.85rem;
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   line-height: 1.5rem;
   max-width: 35ch;
   font-weight: 400;
@@ -130,45 +140,47 @@ class NavBar extends React.Component {
       <div>
         <Main>
           <NavSection>
-            <NavLeft>
-              <Title to="/" className="noeffect">
-                Samuel W.
-              </Title>
-              <Description>User Experience Designer</Description>
-            </NavLeft>
-            <NavRight>
-              <NavItem
-                activeClassName="nav-item-active"
-                className="noeffect"
-                to="/about"
-              >
-                <small>About</small>
-              </NavItem>
-              <NavItem
-                activeClassName="nav-item-active"
-                className="noeffect"
-                to="/work"
-              >
-                <small>Work</small>
-              </NavItem>
-              <NavItem
-                activeClassName="nav-item-active"
-                className="noeffect"
-                to="/blog"
-              >
-                <small>Blog</small>
-              </NavItem>
-              <NavItem
-                activeClassName="nav-item-active"
-                className="noeffect"
-                to="/photo"
-              >
-                <small>Photo</small>
-              </NavItem>
-              <NavItemIcon onClick={this.openModal} className="noeffect">
-                <MenuIcon icon={faBars} size="lg" />
-              </NavItemIcon>
-            </NavRight>
+            <Container>
+              <NavLeft>
+                <Title to="/" className="noeffect">
+                  Samuel Wong
+                </Title>
+                {/* <Description>User Experience Designer</Description> */}
+              </NavLeft>
+              <NavRight>
+                <NavItem
+                  activeClassName="nav-item-active"
+                  className="noeffect"
+                  to="/about"
+                >
+                  <small>About</small>
+                </NavItem>
+                <NavItem
+                  activeClassName="nav-item-active"
+                  className="noeffect"
+                  to="/work"
+                >
+                  <small>Work</small>
+                </NavItem>
+                <NavItem
+                  activeClassName="nav-item-active"
+                  className="noeffect"
+                  to="/blog"
+                >
+                  <small>Blog</small>
+                </NavItem>
+                <NavItem
+                  activeClassName="nav-item-active"
+                  className="noeffect"
+                  to="/photo"
+                >
+                  <small>Photo</small>
+                </NavItem>
+                <NavItemIcon onClick={this.openModal} className="noeffect">
+                  <MenuIcon icon={faBars} size="lg" />
+                </NavItemIcon>
+              </NavRight>
+            </Container>
           </NavSection>
           <Popup
             lockScroll

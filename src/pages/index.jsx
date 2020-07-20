@@ -18,9 +18,7 @@ import Profile from "../../static/images/Profile.webp";
 import IndexHero from "../components/IndexHero";
 import IndexPhoto from "../components/IndexPhoto";
 
-const Box = styled(Boxed)`
-  max-width: var(--page-container-l);
-`;
+const Box = styled(Boxed)``;
 
 const Row = styled.section`
   padding: var(--var-padding-m) 0;

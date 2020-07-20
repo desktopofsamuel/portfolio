@@ -334,8 +334,8 @@ figure {
 }
 
 /* Nav Item Active Indication */
-.nav-item-active {
-  background: #ffffff;
+.nav-item-active > small {
+  color: var(--color-primary-shades-700);
 }
 
 .no-margin {
