@@ -9,13 +9,18 @@ const Container = styled.section`
 `;
 
 const Wrapper = styled(Boxed)`
-  padding: var(--padding-m) 0;
+  padding: var(--padding-l) 0;
   align-items: center;
   justify-content: center;
   text-align: center;
+  margin: 0 auto;
 
   h3 {
     margin-top: var(--var-padding-s);
+  }
+
+  p {
+    margin: 0;
   }
 `;
 

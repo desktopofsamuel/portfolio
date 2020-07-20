@@ -20,6 +20,7 @@ module.exports = {
     },
   },
   plugins: [
+    "gatsby-remark-images",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-lodash",
     {
@@ -106,9 +107,6 @@ module.exports = {
           },
         ],
       },
-    },
-    {
-      resolve: "gatsby-remark-images",
     },
     {
       resolve: "gatsby-plugin-google-analytics",

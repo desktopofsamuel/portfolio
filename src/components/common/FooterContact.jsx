@@ -13,6 +13,7 @@ import Icon from "components/common/Icon";
 
 const Container = styled.section`
   display: block;
+  padding: var(--padding-m) 0;
 
   @media only screen and (min-width: 768px) {
     display: grid;

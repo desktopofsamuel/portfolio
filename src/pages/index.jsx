@@ -259,6 +259,8 @@ export const pageQuery = graphql`
           frontmatter {
             title
             subtitle
+            shortTitle
+            projectTitle
             path
             color
             cover {

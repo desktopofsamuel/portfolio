@@ -120,11 +120,7 @@ const ListedItem = ({ title, description, url, role, year }) => (
 const WorkPage = ({ data }) => {
   const postEdges = data.allMdx.edges;
   return (
-    <Layout
-      title="Work"
-      description="Photo"
-      keywords="Photography, Travel, Sightseeing, Canon, iPhone, City, Journey"
-    >
+    <Layout title="Work">
       <Row>
         <Boxed>
           <PageTitle title="My Work" subtitle="Case Studies" />
@@ -169,6 +165,8 @@ export const pageQuery = graphql`
           frontmatter {
             title
             subtitle
+            shortTitle
+            projectTitle
             tags
             color
             cover {
