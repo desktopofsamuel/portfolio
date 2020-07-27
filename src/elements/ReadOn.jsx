@@ -33,26 +33,6 @@ const Button = styled.div`
     padding: 16px 24px;
   }
 
-  &::before {
-    /* content: "";
-    width: 100%;
-    height: 100%; */
-    /* background-image: linear-gradient(
-      to top,
-      var(--color-primary-highlight) 25%,
-      rgba(0, 0, 0, 0) 40%
-    );
-    transition: width 0.1s ease-out;
-    position: absolute;
-    left: 0;
-    bottom: 2px;
-    z-index: -1;
-
-    will-change: width;
-    transform: rotate(-2deg);
-    transform-origin: left bottom; */
-  }
-
   &:hover::before {
     width: 0;
     transition-duration: 0.15s;
