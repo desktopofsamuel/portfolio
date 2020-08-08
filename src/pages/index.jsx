@@ -18,9 +18,7 @@ import Profile from "../../static/images/Profile.webp";
 import IndexHero from "../components/IndexHero";
 import IndexPhoto from "../components/IndexPhoto";
 
-const Box = styled(Boxed)`
-  max-width: var(--page-container-l);
-`;
+const Box = styled(Boxed)``;
 
 const Row = styled.section`
   padding: var(--var-padding-m) 0;
@@ -138,13 +136,19 @@ const PhotoGrid = styled.div`
   height: 100%;
 
   @media only screen and (min-width: 1024px) {
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2px;
+  }
+
+  @media only screen and (min-width: 1920px) {
+    max-width: 1980px;
+    margin: 0 auto;
   }
 `;
 
 const PhotoIntro = styled.div`
   padding: var(--var-padding-m);
+
   h2 {
     margin: 0;
   }
@@ -153,13 +157,19 @@ const PhotoIntro = styled.div`
     grid-column: span 2;
   }
 `;
+
 const IndexPage = ({ data }) => {
   const workEdges = data.Work.edges;
   const blogEdges = data.Blog.edges;
   const photo1Edges = data.Photo1.edges;
   const photo2Edges = data.Photo2.edges;
+
   return (
-    <Layout title="Home">
+    <Layout>
+      <Helmet title={config.siteTitle}>
+        <meta name="twitter:title" content={config.siteTitle} />
+        <meta property="og:title" content={config.siteTitle} />
+      </Helmet>
       <GreyRow>
         <Box>
           <IndexHero />
@@ -247,6 +257,8 @@ export const pageQuery = graphql`
           frontmatter {
             title
             subtitle
+            shortTitle
+            projectTitle
             path
             color
             cover {
@@ -313,7 +325,7 @@ export const pageQuery = graphql`
     Photo2: allMdx(
       filter: { fileAbsolutePath: { regex: "/photo/" } }
       sort: { fields: [frontmatter___date], order: DESC }
-      limit: 7
+      limit: 4
       skip: 4
     ) {
       edges {

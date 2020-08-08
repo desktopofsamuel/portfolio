@@ -25,7 +25,7 @@ const PhotoPage = ({ data }) => {
       keywords="Photography, Travel, Sightseeing, Canon, iPhone, City, Journey"
     >
       <Row>
-        <Boxed size="large">
+        <Boxed>
           <Title title="Photography" />
           <Grid>
             <Row>

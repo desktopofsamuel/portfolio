@@ -134,7 +134,7 @@ a {
   text-decoration: none;
   cursor: pointer;
   color: inherit;
-  background: linear-gradient(to bottom, transparent 62%, var(--color-secondary) 0) left center/0% 75% no-repeat;
+  background: linear-gradient(to bottom, transparent 62%, var(--color-primary-highlight) 0) left center/0% 75% no-repeat;
   border-bottom: 2px dotted var(--color-decoration);
   transition: var(--transition);
 }
@@ -208,7 +208,7 @@ ul li {
 }
 
 ul li:before { 
-  content: '→';
+  content: '-';
   content: '\1f806';
   list-style-position: outside;
   margin-right: 16px;
@@ -334,8 +334,8 @@ figure {
 }
 
 /* Nav Item Active Indication */
-.nav-item-active {
-  background: #ffffff;
+.nav-item-active > small {
+  color: var(--color-primary-shades-700);
 }
 
 .no-margin {

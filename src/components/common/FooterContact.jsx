@@ -13,6 +13,7 @@ import Icon from "components/common/Icon";
 
 const Container = styled.section`
   display: block;
+  padding: var(--padding-m) 0;
 
   @media only screen and (min-width: 768px) {
     display: grid;
@@ -23,6 +24,10 @@ const Container = styled.section`
 
 const Section = styled.div`
   display: block;
+
+  h5 {
+    color: var(--color-title);
+  }
 `;
 const Content = styled.div`
   font-size: 14px;
@@ -42,7 +47,7 @@ const FooterIcon = styled(FontAwesomeIcon)`
 
 const FooterContact = () => {
   return (
-    <Boxed size="large">
+    <Boxed>
       <Container>
         <Section>
           <h5>Let's Chat</h5>
@@ -63,16 +68,19 @@ const FooterContact = () => {
                 to="https://www.linkedin.com/in/wongchunlong/"
                 target="_blank"
                 icon={faLinkedin}
+                title="Linkedin"
               />
               <Icon
                 to="http://www.twitter.com/desktopofsamuel/"
                 target="_blank"
                 icon={faTwitter}
+                title="Twitter"
               />
               <Icon
                 to="http://www.instagram.com/desktopofsamuel"
                 target="_blank"
                 icon={faInstagram}
+                title="Instagram"
               />
             </IconList>
           </Content>

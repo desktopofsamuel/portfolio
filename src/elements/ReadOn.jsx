@@ -11,10 +11,15 @@ const Button = styled.div`
   justify-content: center;
   align-items: center;
   transition: var(--transition);
+  border: 1px var(--color-primary) solid;
+  border-radius: 36px;
 
-  h6 {
+  p {
     color: var(--color-text);
+    font-family: var(--font-primary);
     font-weight: var(--font-weight-bold);
+    font-size: 14px;
+    letter-spacing: 0.075rem;
     margin-bottom: 0;
     margin-right: 8px;
   }
@@ -28,29 +33,7 @@ const Button = styled.div`
     z-index: 1;
     display: inline-flex;
     transition: var(--transition);
-    padding-left: 10px;
-    padding-bottom: 5px;
-    padding-right: 10px;
-  }
-
-  &::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(
-      to top,
-      var(--color-primary-highlight) 25%,
-      rgba(0, 0, 0, 0) 40%
-    );
-    transition: width 0.1s ease-out;
-    position: absolute;
-    left: 0;
-    bottom: 2px;
-    z-index: -1;
-
-    will-change: width;
-    transform: rotate(-2deg);
-    transform-origin: left bottom;
+    padding: 16px 24px;
   }
 
   &:hover::before {
@@ -63,7 +46,7 @@ const ReadOn = ({ href, text, target }) => {
   return (
     <GatsbyLink to={href} target={target} className="noeffect">
       <Button>
-        <h6>{text}</h6>
+        <p>{text}</p>
         <span>→</span>
       </Button>
     </GatsbyLink>

@@ -20,6 +20,7 @@ module.exports = {
     },
   },
   plugins: [
+    "gatsby-remark-images",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-lodash",
     {
@@ -71,6 +72,7 @@ module.exports = {
           default: require.resolve("./src/components/default-page-layout.jsx"),
         },
         extensions: [`.mdx`, `md`],
+        remarkPlugins: [require("remark-unwrap-images")],
         plugins: [
           `gatsby-remark-images`,
           `gatsby-remark-images-medium-zoom`, // Important!
@@ -80,9 +82,6 @@ module.exports = {
             resolve: "gatsby-remark-images",
             options: {
               linkImagesToOriginal: false,
-              maxWidth: 1235,
-              showCaptions: true,
-              loading: "lazy",
             },
           },
           {
@@ -110,24 +109,9 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-remark-images",
-      options: {
-        linkImagesToOriginal: false,
-        maxWidth: 1235,
-        showCaptions: true,
-        loading: "lazy",
-      },
-    },
-    {
       resolve: "gatsby-plugin-google-analytics",
       options: {
         trackingId: config.googleAnalyticsID,
-      },
-    },
-    {
-      resolve: "gatsby-plugin-nprogress",
-      options: {
-        color: config.themeColor,
       },
     },
     "gatsby-plugin-styled-components",
@@ -193,7 +177,7 @@ module.exports = {
       resolve: `gatsby-plugin-nprogress`,
       options: {
         // Setting a color is optional.
-        color: `tomato`,
+        color: config.themeColor,
         // Disable the loading spinner.
         showSpinner: false,
       },

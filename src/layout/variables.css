@@ -7,7 +7,7 @@
 :root {
     --font-primary:  canada-type-gibson, Helvetica, Arial, sans-serif;
     --font-secondary: Chivo, Calibre, Georgia, serif;
-    --font-tertiary: Georgia, IBM Plex Mono, Courier, Menlo, Consolas, Monaco, "Lucida Console", monospace;
+    --font-tertiary: clarendon-urw, Georgia, IBM Plex Mono, Courier, Menlo, Consolas, Monaco, "Lucida Console", monospace;
     --font-weight-bold: 600;
     --font-weight-regular: 400;
     --font-size-xxl: calc(var(--font-size-base) * 3 * var(--font-scale-ratio));
@@ -37,19 +37,20 @@
       --var-padding-s: 0.5rem;
     }
   }
+
   
 
 /* Color */
 :root {
   /* Color Token */
-  --color-primary: #0099CC;
-  --color-primary-highlight: #97ecff;
+  --color-primary: #003049;
+  --color-primary-highlight: #beefff;
   --color-primary-background: #EEFFFF;
   --color-primary-shades-100: #ced8e0;
   --color-primary-shades-300: #5f777d;
   --color-primary-shades-500: #334455;
-  --color-primary-shades-700: #2c3242;
-  --color-secondary: #ffd644;
+  --color-primary-shades-700: #003049;
+  --color-secondary: #09c;
   --color-white: #ffffff;
   --color-white-300: #fbfbfb;
   --color-white-500: #f7f7f7;
@@ -67,7 +68,7 @@
   --color-gradient: linear-gradient(135deg, rgba(56,204,133,1) 0%, rgba(0,153,204,1) 100%);;
 
   --color-transparent: rgba(0, 0, 0, 0);
-  --page-border-top: 3px var(--color-secondary) solid;
+  --page-border-top: 10px var(--color-secondary) solid;
   --font-small-letterspacing: 0.075rem;
   --border-radius: 4px;
 
@@ -95,6 +96,13 @@
 :root {
   --page-container-l: 1080px;
   --page-container-m: 800px;
-  --page-container-s: 640px;
+  --page-container-s: 560px;
+}
 
+@media only screen and (min-width: 1920px) {
+  :root {
+    --page-container-l: 1440px;
+    --page-container-m: 1280px;
+    --page-container-s: 760px;
+  }
 }

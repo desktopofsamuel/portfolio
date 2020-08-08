@@ -6,7 +6,7 @@ import PageTitle from "elements/PageTitle";
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 332px));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 400px));
   grid-gap: 36px 24px;
 
   .intro {

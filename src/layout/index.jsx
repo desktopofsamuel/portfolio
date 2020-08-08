@@ -10,7 +10,7 @@ import Footer from "../components/common/Footer";
 const Layout = styled.div``;
 
 const Main = styled.main`
-  margin: 0 auto var(--var-padding-m) auto;
+  margin: 0 auto;
 `;
 
 if (typeof window !== "undefined") {
