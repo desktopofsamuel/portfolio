@@ -20,7 +20,7 @@ const Container = styled.footer`
 `;
 
 const Row = styled.section`
-  background-color: #e5e9d8;
+  /* background-color: #e5e9d8; */
   padding: var(--var-padding-s) 1rem;
 `;
 

@@ -68,16 +68,19 @@ const FooterContact = () => {
                 to="https://www.linkedin.com/in/wongchunlong/"
                 target="_blank"
                 icon={faLinkedin}
+                title="Linkedin"
               />
               <Icon
                 to="http://www.twitter.com/desktopofsamuel/"
                 target="_blank"
                 icon={faTwitter}
+                title="Twitter"
               />
               <Icon
                 to="http://www.instagram.com/desktopofsamuel"
                 target="_blank"
                 icon={faInstagram}
+                title="Instagram"
               />
             </IconList>
           </Content>

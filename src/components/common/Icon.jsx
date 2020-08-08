@@ -13,10 +13,10 @@ const IconWrapper = styled(FontAwesomeIcon)`
   }
 `;
 
-const Icon = ({ to, icon, target }) => {
+const Icon = ({ to, icon, target, title }) => {
   return (
     <Link to={to} target={target} className="noeffect">
-      <IconWrapper icon={icon}></IconWrapper>
+      <IconWrapper icon={icon} title={title}></IconWrapper>
     </Link>
   );
 };

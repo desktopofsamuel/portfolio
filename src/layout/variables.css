@@ -44,13 +44,13 @@
 :root {
   /* Color Token */
   --color-primary: #003049;
-  --color-primary-highlight: #a1c2f7;
+  --color-primary-highlight: #beefff;
   --color-primary-background: #EEFFFF;
   --color-primary-shades-100: #ced8e0;
   --color-primary-shades-300: #5f777d;
   --color-primary-shades-500: #334455;
   --color-primary-shades-700: #003049;
-  --color-secondary: #ff9b85;
+  --color-secondary: #09c;
   --color-white: #ffffff;
   --color-white-300: #fbfbfb;
   --color-white-500: #f7f7f7;
@@ -68,7 +68,7 @@
   --color-gradient: linear-gradient(135deg, rgba(56,204,133,1) 0%, rgba(0,153,204,1) 100%);;
 
   --color-transparent: rgba(0, 0, 0, 0);
-  --page-border-top: 10px #a9b38d solid;
+  --page-border-top: 10px var(--color-secondary) solid;
   --font-small-letterspacing: 0.075rem;
   --border-radius: 4px;
 

@@ -14,9 +14,12 @@ const Button = styled.div`
   border: 1px var(--color-primary) solid;
   border-radius: 36px;
 
-  h6 {
+  p {
     color: var(--color-text);
+    font-family: var(--font-primary);
     font-weight: var(--font-weight-bold);
+    font-size: 14px;
+    letter-spacing: 0.075rem;
     margin-bottom: 0;
     margin-right: 8px;
   }
@@ -43,7 +46,7 @@ const ReadOn = ({ href, text, target }) => {
   return (
     <GatsbyLink to={href} target={target} className="noeffect">
       <Button>
-        <h6>{text}</h6>
+        <p>{text}</p>
         <span>→</span>
       </Button>
     </GatsbyLink>
