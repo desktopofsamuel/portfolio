@@ -11,21 +11,24 @@ const Button = styled.div`
   justify-content: center;
   align-items: center;
   transition: var(--transition);
-  border: 1px var(--color-primary) solid;
+  border: 1px var(--color-primary-shades-100) solid;
   border-radius: 36px;
 
   p {
-    color: var(--color-text);
+    color: var(--color-primary-shades-300);
     font-family: var(--font-primary);
     font-weight: var(--font-weight-bold);
-    font-size: 14px;
+    font-size: var(--font-size-xs);
     letter-spacing: 0.075rem;
     margin-bottom: 0;
     margin-right: 8px;
+    transition: var(--transition);
   }
 
   span {
-    font-size: 14px;
+    font-size: var(--font-size-m);
+    line-height: 0;
+    margin-top: -4px;
   }
 
   & {
@@ -36,9 +39,14 @@ const Button = styled.div`
     padding: 16px 24px;
   }
 
-  &:hover::before {
-    width: 0;
-    transition-duration: 0.15s;
+  &:hover {
+    & {
+      border-color: var(--color-primary-shades-300);
+    }
+
+    p {
+      margin-right: 16px;
+    }
   }
 `;
 
