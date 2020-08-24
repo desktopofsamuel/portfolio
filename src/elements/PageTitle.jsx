@@ -17,12 +17,16 @@ const Title = styled.h1`
   margin: 0;
 `;
 
+const Text = styled.p`
+  color: var(--color-text-secondary);
+`;
+
 const PageTitle = ({ subtitle, title, description }) => {
   return (
     <PageTitleWrapper>
       <Subtitle>{subtitle}</Subtitle>
       <Title>{title}</Title>
-      <p>{description}</p>
+      <Text>{description}</Text>
     </PageTitleWrapper>
   );
 };

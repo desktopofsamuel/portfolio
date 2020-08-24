@@ -27,7 +27,7 @@ const IntroWrapper = styled.div``;
 const ContactWrapper = styled.div`
   position: relative;
   border-radius: 4px;
-  border: 1px solid var(--color-primary);
+  border: 1px solid var(--color-primary-shades-300);
   padding: var(--var-padding-s);
 
   &::before {
