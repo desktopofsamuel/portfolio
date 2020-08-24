@@ -50,7 +50,7 @@ const WorkPageTemplate = ({ pageContext, data }) => {
       {/* <WorkPageHero data={postEdges} /> */}
 
       <Boxed size="small">
-        <GatsbyLink to="/work">Back</GatsbyLink>
+        {/* <GatsbyLink to="/work">Back</GatsbyLink> */}
         <Header>
           <Title>{postEdges.title}</Title>
           <Subtitle>
