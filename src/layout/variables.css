@@ -94,9 +94,9 @@
 }
 
 :root {
-  --page-container-l: 1080px;
-  --page-container-m: 800px;
-  --page-container-s: 560px;
+  --page-container-l: 1440px;
+  --page-container-m: 1080px;
+  --page-container-s: 720px;
 }
 
 @media only screen and (min-width: 1920px) {

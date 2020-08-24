@@ -4,6 +4,7 @@ import { graphql } from "gatsby";
 import styled from "styled-components";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from "gatsby-plugin-mdx";
+import GatsbyLink from "../components/common/GatsbyLink";
 import Helmet from "react-helmet";
 import Boxed from "elements/Boxed";
 import Layout from "../layout";
@@ -43,12 +44,13 @@ const WorkPageTemplate = ({ pageContext, data }) => {
   return (
     <Layout>
       <Helmet>
-        <title>{`${postEdges.projectTitle} | ${postEdges.title} | ${config.siteTitleAlt}`}</title>
+        <title>{`${postEdges.projectTitle} — ${postEdges.shortTitle} | Case Studies of ${config.siteTitleAlt}`}</title>
       </Helmet>
       <SEO postPath={path} postNode={data.mdx} postSEO />
       {/* <WorkPageHero data={postEdges} /> */}
 
       <Boxed size="small">
+        {/* <GatsbyLink to="/work">Back</GatsbyLink> */}
         <Header>
           <Title>{postEdges.title}</Title>
           <Subtitle>
@@ -74,6 +76,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         subtitle
+        shortTitle
         projectTitle
         path
         tags
@@ -81,7 +84,7 @@ export const pageQuery = graphql`
         cover {
           publicURL
           childImageSharp {
-            fluid(maxHeight: 1200) {
+            fluid(maxWidth: 1200) {
               ...GatsbyImageSharpFluid_noBase64
             }
           }
