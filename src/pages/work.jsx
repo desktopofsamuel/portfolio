@@ -17,6 +17,8 @@ import styled from "styled-components";
 import Boxed from "elements/Boxed";
 import WorkList from "../components/WorkList";
 import ReadOn from "../elements/ReadOn";
+import InlineCarousel from "../components/InlineCarousel";
+import WorkDetail from "../components/WorkDetail";
 
 const Row = styled.section`
   padding: var(--var-padding-m) 0;
@@ -117,24 +119,62 @@ const ListedItem = ({ title, description, url, role, year }) => (
   </Item>
 );
 
+const CenterRow = styled(Row)`
+  text-align: center;
+  padding-top: 0;
+
+  h1 {
+    font-family: var(--font-tertiary);
+    font-size: var(--font-size-xxl);
+    margin: 0;
+  }
+
+  p {
+    color: var(--color-primary-shades-300);
+  }
+`;
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, minmax(350px, 1fr));
+  grid-template-rows: repeat(1, minmax(400px, 1fr));
+  gap: 1rem;
+
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+`;
+
 const WorkPage = ({ data }) => {
-  const postEdges = data.allMdx.edges;
+  const postEdges = data.feature.edges;
+  const workEdges = data.work.edges;
   return (
-    <Layout title="Work">
+    <Layout title="Case Studies">
       <Row>
         <Boxed>
-          <PageTitle title="My Work" subtitle="Case Studies" />
+          <CenterRow>
+            <h1>Case Studies</h1>
+            <p>Selected websites and app work since 2015.</p>
+          </CenterRow>
+          {/* <PageTitle title="My Work" subtitle="Case Studies" /> */}
           <Row>
-            <h2>Case Studies</h2>
-            <WorkIndex postEdges={postEdges} />
+            {/* <WorkIndex postEdges={postEdges} /> */}
+            <WorkDetail postEdges={postEdges} />
           </Row>
           <ClearRow>
             <h2>More Works</h2>
-            <p>Check out some sites and apps that I have built.</p>
+            <p>Check out some of my personal work & design projects.</p>
           </ClearRow>
-          <Row className="full-bleed">
-            <WorkList />
+          <Row>
+            <Grid>
+              <WorkIndex postEdges={workEdges} detail></WorkIndex>
+            </Grid>
           </Row>
+          {/* <Row className="full-bleed">
+            <WorkList />
+          </Row> */}
         </Boxed>
       </Row>
     </Layout>
@@ -146,12 +186,11 @@ export default WorkPage;
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query WorkQuery {
-    allMdx(
-      limit: 2000
+    feature: allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
         fileAbsolutePath: { regex: "/work/" }
-        frontmatter: { draft: { ne: true } }
+        frontmatter: { draft: { ne: true }, feature: { eq: true } }
       }
     ) {
       edges {
@@ -167,6 +206,8 @@ export const pageQuery = graphql`
             subtitle
             shortTitle
             projectTitle
+            smallTitle
+            feature
             tags
             color
             cover {
@@ -174,7 +215,63 @@ export const pageQuery = graphql`
               size
               childImageSharp {
                 fluid(maxHeight: 1200) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_noBase64
+                }
+              }
+            }
+            photo {
+              publicURL
+              size
+              childImageSharp {
+                fluid(maxHeight: 1400) {
+                  ...GatsbyImageSharpFluid_noBase64
+                }
+              }
+            }
+            date
+          }
+        }
+      }
+    }
+    work: allMdx(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: {
+        fileAbsolutePath: { regex: "/work/" }
+        frontmatter: { draft: { ne: true }, feature: { ne: true } }
+      }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+            date
+          }
+          excerpt
+          timeToRead
+          frontmatter {
+            title
+            subtitle
+            shortTitle
+            projectTitle
+            smallTitle
+            feature
+            tags
+            color
+            cover {
+              publicURL
+              size
+              childImageSharp {
+                fluid(maxHeight: 1200) {
+                  ...GatsbyImageSharpFluid_noBase64
+                }
+              }
+            }
+            photo {
+              publicURL
+              size
+              childImageSharp {
+                fluid(maxHeight: 1400) {
+                  ...GatsbyImageSharpFluid_noBase64
                 }
               }
             }

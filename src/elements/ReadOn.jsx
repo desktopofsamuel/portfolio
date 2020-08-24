@@ -50,9 +50,9 @@ const Button = styled.div`
   }
 `;
 
-const ReadOn = ({ href, text, target }) => {
+const ReadOn = ({ href, text, target, center }) => {
   return (
-    <GatsbyLink to={href} target={target} className="noeffect">
+    <GatsbyLink to={href} target={target} class="noeffect">
       <Button>
         <p>{text}</p>
         <span>→</span>
@@ -67,6 +67,7 @@ ReadOn.propTypes = {
   href: PropTypes.string.isRequired,
   text: PropTypes.string,
   target: PropTypes.oneOf(["_blank", "_self"]).isRequired,
+  center: PropTypes.boolean,
 };
 
 ReadOn.defaultProps = {

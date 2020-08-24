@@ -1,12 +1,15 @@
 ---
 posttype: "work"
 draft: false
+feature: true
 path: "/hyperair"
 shortTitle: "Crafting All-round Travel Experience"
 title: "Design Team of One: Crafting All-round Travel Experience at HyperAir"
 subtitle: "A walkthrough on single-handedly delivering web & app interface together with marketing & branding design"
 projectTitle: "HyperAir"
+smalltitle: "Product Design / 2019 - Now"
 cover: "./HyperAir-Cover-v2.png"
+photo: "./HyperAir-Detail.png"
 date: "2018-08-24"
 category: "UI/UX Design"
 tags: 
@@ -15,13 +18,21 @@ tags:
     - "唱錢神器"
     - "Foreign Currency Exchange"
 intro: "HyperAir Incorporation is a start-up in Hong Kong specialising in all-rounded travel service. I have worked on their debut app focusing on currency exchange."
-color: "#125E8A"
+color: "#0176EE"
 url: "htttp://hyperair.com/"
 ---
 
 import Column from "elements/Column"
 import Data from "elements/Data"
 import GridBlock from "elements/GridBlock"
+import InlineCarousel from "components/InlineCarousel"
+import HyperAir1 from "./Hyperair-Feature3.png"
+import HyperAir2 from "./Hyperair-Feature-v4.png"
+import Brand1 from "./Brand-Slide-01.png"
+import Brand2 from "./Brand-Slide-02.png"
+import Brand3 from "./Brand-Slide-03.png"
+import Brand4 from "./Brand-Slide-04.png"
+import Img from "gatsby-image"
 
 ![Mock-ups of HyperAir App](./Hyperair-Feature3.png)
 
@@ -30,6 +41,14 @@ import GridBlock from "elements/GridBlock"
 In 2018, Playa has worked with HyperAir to start a prototype that improves the experience of foreign currency exchange in Hong Kong. I started working  as a full-time product designer at HyperAir starting 2019. As a product designer, aside from crafting wireframes, user interfaces and prototypes, I also weigh in business goals and daily operation throughout my design process.
 
 ## Brand Style and Language
+
+<InlineCarousel>
+  <img src={Brand1} alt="Logo of HyperAir"/>
+  <img src={Brand2} alt="Colors of HyperAir"/>
+  <img src={Brand3} alt="Typography of HyperAir"/>
+  <img src={Brand4} alt="Splashscreen of Landing Page of HyperAir"/>
+</InlineCarousel>
+
 
 Targeting at frequent travellers and young people, we have concluded the brand style to be bold and casual. [Neon color palettes](https://zeroheight.com/055c0944d/p/68b40e) are adopted for primary buttons and header background. We bring in Cantonese (Mother tongue in Hong Kong) instead of Chinese in our UI copy to be more friendly and approachable. 
 
@@ -108,9 +127,10 @@ You can visit the [website](http://www.hyperair.com) or download app on [iOS](ht
   <Data caption="Type" nodata="Full-time Employment" />
   <Data
     caption="Roles"
-    nodata="UI/UX Designer, "
-    data2="Product Designer, "
+    nodata="UI Designer, "
+    data2="UX Designer, "
+    data2="Product Designer"
   />
   <Data caption="Year" nodata="2019 - Now" />
-  <Data caption="Platform" nodata="iOS & Android App, " data2="Website"/>
+  <Data caption="Platform" nodata="iOS & Android App, " data2="Web"/>
 </GridBlock>

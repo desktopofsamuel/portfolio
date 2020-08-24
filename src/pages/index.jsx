@@ -158,6 +158,12 @@ const PhotoIntro = styled.div`
   }
 `;
 
+const WorkIndexGrid = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+`;
+
 const IndexPage = ({ data }) => {
   const workEdges = data.Work.edges;
   const blogEdges = data.Blog.edges;
@@ -187,10 +193,12 @@ const IndexPage = ({ data }) => {
                   I'm a multi-disciplinary designer with 5 years of experience
                   in delivering elegant design and practical solutions.
                 </p>
-                <ReadOn text="View My Work" href="/work" />
+                <ReadOn text="View My Process" href="/work" />
               </StickyWrapper>
             </StickyBox>
-            <WorkIndex postEdges={workEdges} />
+            <WorkIndexGrid>
+              <WorkIndex postEdges={workEdges} />
+            </WorkIndexGrid>
           </ColumnSpaced>
         </Box>
       </Row>
@@ -243,7 +251,7 @@ export const pageQuery = graphql`
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
         fileAbsolutePath: { regex: "/work/" }
-        frontmatter: { draft: { ne: true } }
+        frontmatter: { draft: { ne: true }, feature: { eq: true } }
       }
     ) {
       edges {

@@ -3,11 +3,13 @@ import styled from "styled-components";
 import Img from "gatsby-image";
 import Link from "./common/GatsbyLink";
 import Zoom from "react-reveal/Zoom";
+import PropTypes from "prop-types";
 
 const Card = styled.div`
+  height: 100%;
   background-color: ${props => (props.color ? `${props.color}` : "black")};
   padding: var(--padding-m) var(--padding-m) 0 var(--padding-m);
-  margin-bottom: var(--padding-m);
+  /* margin-bottom: var(--padding-m); */
   transition: var(--transition);
   border-radius: 8px;
 
@@ -49,20 +51,28 @@ class WorkIndex extends React.Component {
         subtitle: postEdge.node.frontmatter.subtitle,
         projectTitle: postEdge.node.frontmatter.projectTitle,
         shortTitle: postEdge.node.frontmatter.shortTitle,
+        smallTitle: postEdge.node.frontmatter.smallTitle,
       });
     });
     return postList;
   }
   render() {
     const postList = this.getPostList();
+    const { detail } = this.props;
     return (
-      <div>
+      <>
         {postList.map(post => (
-          <Zoom duration={500} key={post.title}>
+          <Zoom key={post.title}>
             <Link to={`/work/${post.path}`} className="noeffect">
               <Card key={post.path} color={post.color}>
-                <Subtitle>{post.projectTitle}</Subtitle>
-                <Title>{post.shortTitle ? post.shortTitle : post.title}</Title>
+                <Subtitle>
+                  {detail ? post.smallTitle : post.projectTitle}
+                </Subtitle>
+                <Title>
+                  {detail
+                    ? `${post.projectTitle} — ${post.shortTitle}`
+                    : post.shortTitle}
+                </Title>
                 <Image
                   fluid={post.cover.childImageSharp.fluid}
                   alt={post.title}
@@ -72,8 +82,16 @@ class WorkIndex extends React.Component {
             </Link>
           </Zoom>
         ))}
-      </div>
+      </>
     );
   }
 }
 export default WorkIndex;
+
+WorkIndex.propTypes = {
+  detail: PropTypes.boolean,
+};
+
+WorkIndex.defaultProps = {
+  detail: false,
+};
