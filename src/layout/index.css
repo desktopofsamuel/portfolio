@@ -209,7 +209,7 @@ ul li {
 
 ul li:before { 
   content: '-';
-  content: '\1f806';
+  content: '\0027A1';
   list-style-position: outside;
   margin-right: 16px;
   margin-left: -8px;
@@ -259,11 +259,11 @@ blockquote p {
 blockquote:before {
   content: "\201C";
   position: absolute;
-  top: -20px;
+  top: -24px;
   left: 0;
   width: 3rem;
   height: 3rem;
-  font: 8rem "PT Sans", sans-serif;
+  font: 8rem var(--font-secondary), sans-serif;
   color: var(--color-primary);
 }
 

@@ -138,12 +138,12 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(350px, 1fr));
   grid-template-rows: repeat(1, minmax(400px, 1fr));
-  gap: 1rem;
+  grid-gap: 1rem;
 
   @media only screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    grid-gap: var(--var-padding-s);
   }
 `;
 

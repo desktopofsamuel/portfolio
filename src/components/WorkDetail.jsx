@@ -6,7 +6,7 @@ import Fade from "react-reveal/Fade";
 
 const Container = styled.div`
   display: grid;
-  gap: 4rem;
+  grid-gap: 4rem;
 `;
 
 const Wrapper = styled.div`
@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   padding: var(--var-padding-m);
   border-radius: 24px;
   display: grid;
-  gap: 2rem;
+  grid-gap: 2rem;
   grid-template-columns: 4fr 8fr;
 
   @media only screen and (max-width: 1280px) {
