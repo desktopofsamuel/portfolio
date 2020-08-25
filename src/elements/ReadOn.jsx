@@ -56,7 +56,7 @@ const Button = styled.div`
 
 const ReadOn = ({ href, text, target, center }) => {
   return (
-    <GatsbyLink to={href} target={target} class="noeffect">
+    <GatsbyLink to={href} target={target} className="noeffect">
       <Button>
         <p>{text}</p>
         <span>→</span>

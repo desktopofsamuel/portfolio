@@ -141,8 +141,9 @@ const Grid = styled.div`
   grid-gap: 1rem;
 
   @media only screen and (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     grid-gap: var(--var-padding-s);
   }
 `;
