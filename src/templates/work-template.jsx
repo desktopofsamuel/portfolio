@@ -38,7 +38,7 @@ const Subtitle = styled.h2`
 `;
 
 const WorkPageTemplate = ({ pageContext, data }) => {
-  const path = "work" + pageContext.slug;
+  const path = "/work" + pageContext.slug;
   const postEdges = data.mdx.frontmatter;
 
   return (

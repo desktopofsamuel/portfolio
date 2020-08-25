@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Boxed from "elements/Boxed";
 import PageTitle from "elements/PageTitle";
 import Resume from "../components/Resume";
+import SEO from "../components/SEO";
 import Link from "../components/common/GatsbyLink";
 import Layout from "../layout";
 import Zoom from "react-reveal/Zoom";
@@ -178,12 +179,12 @@ const AboutPage = ({ data }) => {
     <Layout title="About">
       <Row>
         <Boxed>
-          <PageTitle title="Hello There" subtitle="About Me" />
+          <PageTitle title="About Me" subtitle="Hello There" />
           <PhotoFrame>
             <Img
               fluid={data.cover.childImageSharp.fluid}
               width="100%"
-              alt="About Cover Photo"
+              alt="Photo portrait of Samuel Wong"
             />
           </PhotoFrame>
           <Zoom duration={500}>

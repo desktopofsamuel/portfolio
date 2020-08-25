@@ -23,10 +23,10 @@
 
 .work > span.gatsby-resp-image-wrapper {
     max-width: var(--page-container-s)!important;
-    margin: var(--padding-l) 0;
+    margin: var(--padding-s) 0;
 }
 
 .work > .BrainhubCarousel__container {
     max-width: var(--page-container-s)!important;
-    margin: var(--padding-l) 0;
+    margin: var(--padding-s) 0;
 }

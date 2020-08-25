@@ -81,7 +81,7 @@ const MDX = styled(MDXRenderer)`
 export default class PhotoPageTemplate extends React.Component {
   render() {
     const { slug } = this.props.pageContext;
-    const path = "photo" + `${slug}`;
+    const path = "/photo" + `${slug}`;
     const photoNode = this.props.data.mdx;
     const photo = this.props.data.mdx.frontmatter;
 
