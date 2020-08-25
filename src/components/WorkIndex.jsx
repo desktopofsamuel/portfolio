@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 const Card = styled.div`
   height: 100%;
   background-color: ${props => (props.color ? `${props.color}` : "black")};
-  padding: var(--padding-m) var(--padding-m) 0 var(--padding-m);
+  padding: var(--padding-m);
   /* margin-bottom: var(--padding-m); */
   transition: var(--transition);
   border-radius: 8px;
@@ -89,7 +89,7 @@ class WorkIndex extends React.Component {
 export default WorkIndex;
 
 WorkIndex.propTypes = {
-  detail: PropTypes.boolean,
+  detail: PropTypes.bool,
 };
 
 WorkIndex.defaultProps = {

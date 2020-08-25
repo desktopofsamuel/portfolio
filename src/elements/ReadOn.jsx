@@ -23,6 +23,10 @@ const Button = styled.div`
     margin-bottom: 0;
     margin-right: 8px;
     transition: var(--transition);
+
+    &:active {
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
   }
 
   span {
@@ -67,7 +71,7 @@ ReadOn.propTypes = {
   href: PropTypes.string.isRequired,
   text: PropTypes.string,
   target: PropTypes.oneOf(["_blank", "_self"]).isRequired,
-  center: PropTypes.boolean,
+  center: PropTypes.bool,
 };
 
 ReadOn.defaultProps = {
