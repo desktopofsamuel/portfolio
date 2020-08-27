@@ -23,6 +23,7 @@ import WorkDetail from "../components/WorkDetail";
 const Row = styled.section`
   padding: var(--var-padding-m) 0;
   background: var(--color-white);
+  content-visibility: auto;
 
   &:first-child {
     padding-bottom: 0;
