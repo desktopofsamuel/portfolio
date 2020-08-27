@@ -23,6 +23,7 @@ const Box = styled(Boxed)``;
 const Row = styled.section`
   padding: var(--var-padding-m) 0;
   background: var(--color-background);
+  content-visibility: auto;
 `;
 
 const ColumnSpaced = styled(Column)`

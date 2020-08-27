@@ -23,6 +23,7 @@ import WorkDetail from "../components/WorkDetail";
 const Row = styled.section`
   padding: var(--var-padding-m) 0;
   background: var(--color-white);
+  content-visibility: auto;
 
   &:first-child {
     padding-bottom: 0;
@@ -157,7 +158,7 @@ const WorkPage = ({ data }) => {
         <Boxed>
           <CenterRow>
             <h1>Case Studies</h1>
-            <p>Selected websites and app work since 2015.</p>
+            <p>Selected websites and apps work since 2015.</p>
           </CenterRow>
           {/* <PageTitle title="My Work" subtitle="Case Studies" /> */}
           <Row>
