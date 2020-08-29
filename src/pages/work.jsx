@@ -157,8 +157,10 @@ const WorkPage = ({ data }) => {
       <Row>
         <Boxed>
           <CenterRow>
-            <h1>Case Studies</h1>
-            <p>Selected websites and apps work since 2015.</p>
+            <PageTitle
+              title="Case Studies"
+              description="Selected website and app showcase since 2015."
+            />
           </CenterRow>
           {/* <PageTitle title="My Work" subtitle="Case Studies" /> */}
           <Row>
