@@ -42,23 +42,26 @@ const BioContainer = styled.div`
   grid-template-columns: repeat(3, 1fr);
   grid-gap: var(--var-padding-s);
   padding: var(--var-padding-m);
+  border-radius: 36px;
 `;
 
 const BioWrapper = styled.div``;
 
 const BioTitleContainer = styled.div`
   border-radius: 16px;
+  background-image: ${props => props.color};
   background-color: ${props => props.color};
   display: inline-block;
-  padding: 0.2rem 0.5rem;
+  padding: 4px 16px;
+  align-items: center;
 `;
 
 const BioTitle = styled.h3`
   margin: 0;
   font-size: var(--font-size-s);
-  font-weight: normal;
+  font-weight: var(--font-weight-bold);
   text-transform: uppercase;
-  letter-spacing: var(--font-small-letter-spacing);
+  letter-spacing: 1.35px;
   color: white;
 `;
 
@@ -112,7 +115,10 @@ const AboutPage = ({ data }) => {
           <h2>About Me</h2>
           <BioContainer>
             <BioWrapper>
-              <BioSectionTitle title="Interned At Apple" color="red" />
+              <BioSectionTitle
+                title="Interned At Apple"
+                color="linear-gradient(90deg, #53B137 0%, #FBAA20 22.4%, #F16D1A 45.31%, #D5232F 65.1%, #812685 83.33%, #108AD3 100%);"
+              />
               <p>
                 Majoring in Arts in collage, I took a gap year working in iTunes
                 & App Store, Apple. This valuable experience cultivated my
@@ -120,6 +126,7 @@ const AboutPage = ({ data }) => {
               </p>
             </BioWrapper>
             <BioWrapper>
+              <BioSectionTitle title="Starting my agency" color="#47BA00" />
               <p>
                 With more freelance design projects, I have started an agency
                 Playa in 2015, hoping to help small businesses, entrepreneurs
@@ -128,6 +135,7 @@ const AboutPage = ({ data }) => {
               </p>
             </BioWrapper>
             <BioWrapper>
+              <BioSectionTitle title="switching to product" color="#0176ee" />
               <p>
                 Currently, I work as Principal Designer at Hyperair, a start-up
                 that aims to reinvent travel experiences.
