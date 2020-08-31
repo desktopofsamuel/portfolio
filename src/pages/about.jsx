@@ -19,6 +19,10 @@ const Row = styled.section`
   &:first-child {
     padding-bottom: 0;
   }
+
+  h2 {
+    margin-top: 0;
+  }
 `;
 
 const InvertRow = styled(Row)`
@@ -40,10 +44,6 @@ const IntroGrid = styled.div`
 const IntroContent = styled.div`
   grid-area: intro-content;
   grid-column: 1 / span 7;
-
-  h2 {
-    margin: 0;
-  }
 `;
 const IntroPhoto = styled.div`
   grid-area: intro-photo;
@@ -58,7 +58,7 @@ const BioContainer = styled.div`
   grid-template-columns: repeat(3, 1fr);
   grid-gap: var(--var-padding-s);
   padding: var(--var-padding-m);
-  border-radius: 36px;
+  border-radius: 24px;
 
   @media only screen and (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -105,9 +105,16 @@ const SkillTitle = styled.h3`
   margin: 0;
 `;
 
-const SkillDescription = styled.p``;
+const SkillDescription = styled.p`
+  color: var(--color-primary-shades-300);
+  max-width: 55ch;
+`;
 
-const SkillListItem = styled.li``;
+const SkillListItem = styled.li`
+  font-family: var(--font-primary);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-bold);
+`;
 
 const BioSectionTitle = ({ title, color }) => (
   <BioTitleContainer color={color}>
@@ -119,9 +126,11 @@ const SkillItem = ({ title, description, items }) => (
   <SkillItemContainer>
     <SkillTitle>{title}</SkillTitle>
     <SkillDescription>{description}</SkillDescription>
-    {items.map(function(item) {
-      return <li>{item}</li>;
-    })}
+    <ul>
+      {items.map(function(item) {
+        return <SkillListItem>{item}</SkillListItem>;
+      })}
+    </ul>
   </SkillItemContainer>
 );
 
@@ -139,7 +148,9 @@ const AboutPage = ({ data }) => {
           <PageTitle title="About Me" description="Hello there"></PageTitle>
           <IntroGrid>
             <IntroContent>
-              <h2>Hi, I’m Samuel. I’m a product designer.</h2>
+              <h2>
+                Hello, I’m Samuel. <br /> I’m a product designer.
+              </h2>
               <p>
                 I’m pursuing a career in the field of UI/UX Design because I'm
                 deeply passionate about technology and how it profoundly changes
@@ -196,7 +207,7 @@ const AboutPage = ({ data }) => {
           </BioContainer>
         </Boxed>
       </Row>
-      {/* <Row>
+      <Row>
         <Boxed>
           <h2>My skills</h2>
           <SkillItemGrid>
@@ -207,34 +218,24 @@ const AboutPage = ({ data }) => {
                 "Response Web Design",
                 "User Interface Design",
                 "Component Design",
-                "Prototyping",
                 "Design System",
                 "Frontend Development",
               ]}
             />
             <SkillItem
               title="Experience Strategy"
-              description="Design has been an integral part of my life. It’s been my passion to learn how to deliver functional and elegant design."
+              description="Attempting to be an user advocate, I value user experience as well as aligning with business goals."
               items={[
                 "User Research",
                 "User Testing",
                 "Wireframing",
+                "Prototyping",
                 "Design Validation",
-              ]}
-            />
-            <SkillItem
-              title="Product Management"
-              description="Design has been an integral part of my life. It’s been my passion to learn how to deliver functional and elegant design."
-              items={[
-                "Response Web Design",
-                "User Interface Design",
-                "Component Design",
-                "Frontend Development",
               ]}
             />
           </SkillItemGrid>
         </Boxed>
-      </Row> */}
+      </Row>
       <InvertRow id="resume" className="full-bleed">
         <Boxed>
           <small>Resume</small>
