@@ -12,8 +12,12 @@ import Zoom from "react-reveal/Zoom";
 import ReadOn from "elements/ReadOn";
 
 const Row = styled.section`
-  padding: var(--var-padding-m) 0;
+  padding: var(--var-padding-s) 0;
   background: var(--color-white);
+
+  &:first-child {
+    padding-bottom: 0;
+  }
 `;
 
 const InvertRow = styled(Row)`
@@ -30,6 +34,10 @@ const IntroGrid = styled.div`
 const IntroContent = styled.div`
   grid-area: intro-content;
   grid-column: 1 / span 7;
+
+  h2 {
+    margin: 0;
+  }
 `;
 const IntroPhoto = styled.div`
   grid-area: intro-photo;
@@ -77,10 +85,6 @@ const AboutPage = ({ data }) => {
       <Row>
         <Boxed>
           <PageTitle title="About Me" description="Hello there"></PageTitle>
-        </Boxed>
-      </Row>
-      <Row>
-        <Boxed>
           <IntroGrid>
             <IntroContent>
               <h2>
@@ -90,7 +94,7 @@ const AboutPage = ({ data }) => {
               <p>
                 I’m pursuing a career in the field of UI/UX Design because I'm
                 deeply passionate about technology and how it profoundly changes
-                our way of living. The process of turning an idea into a viable
+                our way of living. </p><p>The process of turning an idea into a viable
                 product gives me great satisfaction. Being a self-starter, I’m
                 highly motivated staying up-to-date with the latest technology,
                 industry practice and design trends.
