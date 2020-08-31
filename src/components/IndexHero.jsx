@@ -85,7 +85,7 @@ const IndexHero = () => {
         <IntroWrapper>
           <Subtitle>
             I am a{" "}
-            <Link to="/#experience-designer">user exerpierence designer</Link>,{" "}
+            <Link to="/#experience-designer">digital product designer</Link>,{" "}
             <Link to="/#blog">blogger</Link> and{" "}
             <Link to="/#photography">photographer</Link>.
           </Subtitle>

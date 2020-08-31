@@ -8,7 +8,7 @@ const Block = styled.div`
   padding-top: ${props => (props.noBorder ? "0" : "1rem")};
   display: ${props => props.haveGrid ? "grid" : "block"};
   grid-template-columns: 7fr 2fr;
-
+  grid-gap: var(--padding-s);
 `;
 
 const Title = styled.h3`
@@ -52,7 +52,7 @@ const ResumeItem = ({ title, content, meta, image, noBorder, haveGrid }) => {
 export default ResumeItem;
 
 ResumeItem.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   content: PropTypes.string,
   meta: PropTypes.string,
   image: PropTypes.string,
@@ -61,6 +61,7 @@ ResumeItem.propTypes = {
 }
 
 ResumeItem.defaultProps = {
+  title: "",
   content: "",
   meta: "",
   image: "",

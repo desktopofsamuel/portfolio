@@ -10,6 +10,7 @@ import Link from "../components/common/GatsbyLink";
 import Layout from "../layout";
 import Zoom from "react-reveal/Zoom";
 import ReadOn from "elements/ReadOn";
+import PropTypes from "prop-types";
 
 const Row = styled.section`
   padding: var(--var-padding-s) 0;
@@ -29,6 +30,11 @@ const IntroGrid = styled.div`
   grid-template-columns: repeat(12, 1fr);
   grid-gap: var(--var-padding-m);
   align-items: center;
+
+  @media only screen and (max-width: 480px) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 `;
 
 const IntroContent = styled.div`
@@ -42,6 +48,8 @@ const IntroContent = styled.div`
 const IntroPhoto = styled.div`
   grid-area: intro-photo;
   grid-column: 8 / span 5;
+  height: 100%;
+  width: 100%;
 `;
 
 const BioContainer = styled.div`
@@ -51,6 +59,10 @@ const BioContainer = styled.div`
   grid-gap: var(--var-padding-s);
   padding: var(--var-padding-m);
   border-radius: 36px;
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const BioWrapper = styled.div``;
@@ -67,17 +79,57 @@ const BioTitleContainer = styled.div`
 const BioTitle = styled.h3`
   margin: 0;
   font-size: var(--font-size-s);
-  font-weight: var(--font-weight-bold);
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1.35px;
   color: white;
 `;
+
+const Content = styled.p`
+  max-width: 50ch;
+  color: var(--color-primary-shades-300);
+`;
+
+const SkillItemGrid = styled.div`
+  display: grid;
+  grid-gap: var(--var-padding-m);
+`;
+
+const SkillItemContainer = styled.div`
+  border: 0.5px solid var(--color-primary-shades-100);
+  padding: var(--var-padding-m);
+  border-radius: 24px;
+`;
+
+const SkillTitle = styled.h3`
+  margin: 0;
+`;
+
+const SkillDescription = styled.p``;
+
+const SkillListItem = styled.li``;
 
 const BioSectionTitle = ({ title, color }) => (
   <BioTitleContainer color={color}>
     <BioTitle>{title}</BioTitle>
   </BioTitleContainer>
 );
+
+const SkillItem = ({ title, description, items }) => (
+  <SkillItemContainer>
+    <SkillTitle>{title}</SkillTitle>
+    <SkillDescription>{description}</SkillDescription>
+    {items.map(function(item) {
+      return <li>{item}</li>;
+    })}
+  </SkillItemContainer>
+);
+
+SkillItem.PropTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  items: PropTypes.array.isRequired,
+};
 
 const AboutPage = ({ data }) => {
   return (
@@ -87,22 +139,19 @@ const AboutPage = ({ data }) => {
           <PageTitle title="About Me" description="Hello there"></PageTitle>
           <IntroGrid>
             <IntroContent>
-              <h2>
-                Hi, I’m Samuel. I’m a product designer that likes working with
-                code.
-              </h2>
+              <h2>Hi, I’m Samuel. I’m a product designer.</h2>
               <p>
                 I’m pursuing a career in the field of UI/UX Design because I'm
                 deeply passionate about technology and how it profoundly changes
-                our way of living. </p><p>The process of turning an idea into a viable
-                product gives me great satisfaction. Being a self-starter, I’m
-                highly motivated staying up-to-date with the latest technology,
-                industry practice and design trends.
+                our way of living.{" "}
               </p>
-              <ReadOn
-                text="Let's Chat"
-                href="mailto:desktopofsamuel@gmail.com"
-              />
+              <p>
+                The process of turning an idea into a viable product gives me
+                great satisfaction. Being a self-starter, I’m highly motivated
+                staying up-to-date with the latest technology, industry practice
+                and design trends.
+              </p>
+              <ReadOn text="Let's Chat" href="#contact" />
             </IntroContent>
             <IntroPhoto>
               <Img
@@ -116,7 +165,7 @@ const AboutPage = ({ data }) => {
       </Row>
       <Row>
         <Boxed>
-          <h2>About Me</h2>
+          <h2>My Journey</h2>
           <BioContainer>
             <BioWrapper>
               <BioSectionTitle
@@ -134,8 +183,7 @@ const AboutPage = ({ data }) => {
               <p>
                 With more freelance design projects, I have started an agency
                 Playa in 2015, hoping to help small businesses, entrepreneurs
-                and non-profits launch their projects and bridging the gap
-                between project owners and end-users.
+                and non-profits launch their projects.
               </p>
             </BioWrapper>
             <BioWrapper>
@@ -148,12 +196,64 @@ const AboutPage = ({ data }) => {
           </BioContainer>
         </Boxed>
       </Row>
+      {/* <Row>
+        <Boxed>
+          <h2>My skills</h2>
+          <SkillItemGrid>
+            <SkillItem
+              title="Interface Design"
+              description="Design has been an integral part of my life. It’s been my passion to learn how to deliver functional and elegant design."
+              items={[
+                "Response Web Design",
+                "User Interface Design",
+                "Component Design",
+                "Prototyping",
+                "Design System",
+                "Frontend Development",
+              ]}
+            />
+            <SkillItem
+              title="Experience Strategy"
+              description="Design has been an integral part of my life. It’s been my passion to learn how to deliver functional and elegant design."
+              items={[
+                "User Research",
+                "User Testing",
+                "Wireframing",
+                "Design Validation",
+              ]}
+            />
+            <SkillItem
+              title="Product Management"
+              description="Design has been an integral part of my life. It’s been my passion to learn how to deliver functional and elegant design."
+              items={[
+                "Response Web Design",
+                "User Interface Design",
+                "Component Design",
+                "Frontend Development",
+              ]}
+            />
+          </SkillItemGrid>
+        </Boxed>
+      </Row> */}
       <InvertRow id="resume" className="full-bleed">
         <Boxed>
-          <small>02. Resume</small>
+          <small>Resume</small>
           <Resume />
         </Boxed>
       </InvertRow>
+      <Row id="contact">
+        <Boxed isCenter>
+          <h2>Let's Connect</h2>
+          <Content>
+            Drop me a line if you want to say hi, or share your comments about
+            my blog. I will get back to you shortly.
+          </Content>
+          <ReadOn
+            href="mailto:desktopofsamuel@gmail.com"
+            text="Start Conversation"
+          />
+        </Boxed>
+      </Row>
     </Layout>
   );
 };
