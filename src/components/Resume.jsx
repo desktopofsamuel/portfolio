@@ -2,6 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import ResumeItem from "elements/ResumeItem";
 import Column from "elements/Column";
+import HyperAir from "../../static/about/hyperair.svg"
+import Playa from "../../static/about/playa.svg"
+import Apple from "../../static/about/apple.svg"
 
 const Section = styled.section`
   color: var(--color-white-500);
@@ -44,7 +47,13 @@ const Block = styled.section`
   }
 `;
 
-const ResumeSection = styled(Column)`
+const ResumeSection = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+  @media only screen and (max-width: 1024px) {
+    grid-template-columns: 1fr;
+  }
   grid-gap: var(--var-padding-s) var(--var-padding-m);
 `;
 
@@ -62,16 +71,25 @@ const Resume = () => {
         <ResumeSectionTitle>Career</ResumeSectionTitle>
         <ResumeSection>
           <ResumeItem
-            title="Principal Designer at HyperAir"
+            title="Principal Designer"
+            content="Lead design direction, initiate and execute design workflow as the first designer onboard."
             meta="2019 - Now"
+            image={HyperAir}
+            haveGrid
           />
           <ResumeItem
-            title="Co-founder & Director at Playa"
+            title="Co-founder & Director"
+            content="Manage and design app and website development projects for start-ups and businesses."
             meta="2015 - 2019"
+            image={Playa}
+            haveGrid
           />
           <ResumeItem
-            title="Cross Content Intern at Apple"
+            title="Cross Content Intern"
+            content="Curate editorial content for iTunes & App Store in  a year-long internship"
             meta="2013 - 2014"
+            image={Apple}
+            haveGrid
           />
         </ResumeSection>
       </Block>

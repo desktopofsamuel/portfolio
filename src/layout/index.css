@@ -208,8 +208,8 @@ ul li {
 }
 
 ul li:before { 
-  content: '-';
-  content: '\0027A1';
+  content: '▸';
+  /* content: '\0027A1'; */
   list-style-position: outside;
   margin-right: 16px;
   margin-left: -8px;

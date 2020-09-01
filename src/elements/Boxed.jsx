@@ -9,16 +9,20 @@ const Grid = styled.div`
     (props.size === "small" && "var(--page-container-s)") ||
     `var(--page-container-m)`};
   margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: ${props => (props.isCenter ? "center" : "initial")};
+  text-align: ${props => (props.isCenter ? "center" : "initial")};
 
   @media only screen and (max-width: 1024px) {
     width: 90vw;
     margin: 0 auto;
   }
-  }
+  
 `;
 
-const Boxed = ({ children, className, size }) => (
-  <Grid size={size} className={className}>
+const Boxed = ({ children, className, size, isCenter }) => (
+  <Grid size={size} className={className} isCenter={isCenter}>
     {children}
   </Grid>
 );
@@ -32,9 +36,11 @@ Boxed.propTypes = {
   ]).isRequired,
   className: PropTypes.string,
   size: PropTypes.oneOf(["large", "medium", "small", ""]),
+  isCenter: PropTypes.bool,
 };
 
 Boxed.defaultProps = {
   className: "",
   size: "",
+  isCenter: false,
 };
