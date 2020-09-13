@@ -155,7 +155,7 @@ const WorkPage = ({ data }) => {
   return (
     <Layout title="Case Studies">
       <Row>
-        <Boxed>
+        <Boxed size="medium">
           <CenterRow>
             <PageTitle
               title="Case Studies"
