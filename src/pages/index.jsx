@@ -162,7 +162,7 @@ const PhotoIntro = styled.div`
 const WorkIndexGrid = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  grid-gap: 2rem;
 `;
 
 const IndexPage = ({ data }) => {
