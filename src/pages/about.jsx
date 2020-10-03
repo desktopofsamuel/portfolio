@@ -13,7 +13,7 @@ import ReadOn from "elements/ReadOn";
 import PropTypes from "prop-types";
 
 const Row = styled.section`
-  padding: var(--var-padding-s) 0;
+  padding: var(--var-padding-m) 0;
   background: var(--color-white);
 
   &:first-child {

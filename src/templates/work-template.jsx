@@ -15,14 +15,17 @@ import "../layout/work.css";
 
 const Header = styled.div`
   max-width: 48ch;
-  margin: 0 auto;
+  margin: 2rem auto;
   margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 `;
 
 const Title = styled.h1`
   font-family: var(--font-tertiary);
   padding-top: var(--var-padding-m);
-  text-align: center;
   font-size: var(--font-size-xl);
   margin: 0;
 `;
@@ -32,9 +35,12 @@ const Subtitle = styled.h2`
   font-weight: 400;
   font-size: var(--font-size-s);
   color: var(--color-primary-shades-300);
-  text-align: center;
   margin-top: 2rem;
   line-height: 1.8;
+`;
+
+const Meta = styled.small`
+  margin: 0;
 `;
 
 const WorkPageTemplate = ({ pageContext, data }) => {
@@ -49,16 +55,19 @@ const WorkPageTemplate = ({ pageContext, data }) => {
       <SEO postPath={path} postNode={data.mdx} postSEO />
       {/* <WorkPageHero data={postEdges} /> */}
 
-      <Boxed size="small">
+      <Boxed size="large">
         {/* <GatsbyLink to="/work">Back</GatsbyLink> */}
         <Header>
-          <Title>{postEdges.title}</Title>
+          <small>Case Studies — {postEdges.year}</small>
+          <Title>
+            {postEdges.shortTitle} at {postEdges.projectTitle}
+          </Title>
           <Subtitle>
             {postEdges.subtitle ? postEdges.subtitle : postEdges.projectTitle}
           </Subtitle>
         </Header>
         <div className="work">
-          <MDXRenderer>{data.mdx.body}</MDXRenderer>
+          <MDXRenderer pageContext={data.mdx}>{data.mdx.body}</MDXRenderer>
         </div>
       </Boxed>
     </Layout>
@@ -78,6 +87,9 @@ export const pageQuery = graphql`
         subtitle
         shortTitle
         projectTitle
+        year
+        role
+        team
         path
         tags
         color
