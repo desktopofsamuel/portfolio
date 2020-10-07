@@ -17,9 +17,10 @@ const Head = styled.div`
 `;
 
 const Icon = styled(FontAwesomeIcon)`
-  font-size: 18px;
+  font-size: 14px;
   color: var(--color-primary-shades-300);
   margin-right: 8px;
+  margin-top: 4px;
 `;
 
 const Label = styled.p`

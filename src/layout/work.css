@@ -7,13 +7,13 @@
 }
 
 .work h2 {
-    font-family: var(--font-tertiary);
-    text-align: center;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-s);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
 }
 
-.work h2 {
-    font-size: var(--font-size-l);
-}
 
 .work > p {
     max-width: 65ch;
@@ -41,7 +41,7 @@ blockquote {
 
 blockquote:before {
     content: "";
-    position: relative;
+    display: none;
 }
 
 blockquote p {
