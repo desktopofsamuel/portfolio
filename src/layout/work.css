@@ -3,7 +3,7 @@
 .work {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .work h2 {
@@ -15,11 +15,8 @@
     font-size: var(--font-size-l);
 }
 
-.work > * {
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-
+.work > p {
+    max-width: 65ch;
 }
 
 .work > span.gatsby-resp-image-wrapper {
@@ -30,4 +27,23 @@
 .work > .BrainhubCarousel__container {
     max-width: var(--page-container-s)!important;
     margin: var(--padding-s) 0;
+}
+
+blockquote {
+    font-family: var(--font-tertiary);
+    padding-top: var(--var-padding-m);
+    font-size: var(--font-size-l);
+    font-weight: 500;
+    letter-spacing: -1px;
+    margin: 0;
+    padding: 0;
+}
+
+blockquote:before {
+    content: "";
+    position: relative;
+}
+
+blockquote p {
+    margin: 0;
 }

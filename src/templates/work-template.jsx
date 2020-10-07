@@ -82,9 +82,6 @@ const WorkPageTemplate = ({ pageContext, data }) => {
             {postEdges.subtitle ? postEdges.subtitle : postEdges.projectTitle}
           </Subtitle>
         </Header>
-        <Opening>
-          <Quote>{postEdges.intro}</Quote>
-        </Opening>
         <div className="work">
           <MDXRenderer pageContext={data.mdx}>{data.mdx.body}</MDXRenderer>
         </div>
