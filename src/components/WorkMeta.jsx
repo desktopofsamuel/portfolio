@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-gap: 36px;
+  grid-gap: 3rem;
 
   @media only screen and (max-width: 425px) {
     display: flex;
