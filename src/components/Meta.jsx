@@ -41,13 +41,13 @@ const Value = styled.p`
 
 const Meta = ({ icon, label, value }) => {
   return (
-    <>
+    <div>
       <Head>
         <Icon icon={["far", icon]} title={label} />
         <Label>{label}</Label>
       </Head>
       <Value>{value}</Value>
-    </>
+    </div>
   );
 };
 

@@ -8,24 +8,50 @@
 
 .work h2 {
     font-family: var(--font-primary);
+    font-size: var(--font-size-l);
+    margin: 2rem 0;
+}
+
+.work h3 {
+    font-family: var(--font-primary);
     font-size: var(--font-size-s);
     letter-spacing: 1px;
     text-transform: uppercase;
+    margin: 2rem inherit;
+    text-align: left;
+}
+
+.work h3:first-child {
     margin: 0;
 }
 
 
-.work > p {
-    max-width: 65ch;
+
+
+.work {
+    display: grid;
+    grid-template-columns: 1fr min(65ch, 100%) 1fr;
+
+}
+
+.work > * {
+    grid-column: 2;
+}
+
+.fullbleed {
+    grid-column: 1 / -1;
+    width: 100%;
 }
 
 .work > span.gatsby-resp-image-wrapper {
-    max-width: var(--page-container-s)!important;
+    grid-column: 1 / -1;
+    width: 100%;
     margin: var(--padding-s) 0;
 }
 
 .work > .BrainhubCarousel__container {
-    max-width: var(--page-container-s)!important;
+    grid-column: 1 / -1;
+    width: 100%;
     margin: var(--padding-s) 0;
 }
 
@@ -35,8 +61,13 @@ blockquote {
     font-size: var(--font-size-l);
     font-weight: 500;
     letter-spacing: -1px;
-    margin: 0 0 2rem 0;
+    margin: 2rem 0 2rem 0;
     padding: 0;
+    max-width: 45ch;
+}
+
+blockquote:first-child {
+    margin-top: 0;
 }
 
 blockquote:before {
@@ -46,4 +77,9 @@ blockquote:before {
 
 blockquote p {
     margin: 0;
+}
+
+small {
+    line-height: 1.5;
+    display: block;
 }

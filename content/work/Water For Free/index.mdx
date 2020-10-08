@@ -33,20 +33,87 @@ import W4FCaption1 from "./Caption-1.png";
 import W4FCaption2 from "./Caption-2.png";
 import W4FWeb1 from "./W4F-Web.png";
 import WorkMeta from "components/WorkMeta";
+import ColumnItem from "elements/ColumnItem";
+import Wrapper from "elements/Wrapper"
 
 ![Mockup of Water For Free App](./W4F3.png)
 
 
 <WorkMeta>
-<div style="grid-column: span 8"><blockquote>Water for Free is a mobile app that shows the locations of public water dispensers in Hong Kong & Macau. </blockquote><blockquote>I lead the redesign allowing users to report and discover dispensers.</blockquote>
-</div>
-<div style="grid-column: span 4">
+<ColumnItem span="span 8">
+
+> Water for Free is a mobile app that shows the locations of public water dispensers in Hong Kong & Macau. 
+
+> I lead the redesign allowing users to report and discover dispensers.
+
+</ColumnItem>
+<ColumnItem span="span 4">
+<GridBlock>
 <Meta icon="phone-laptop" label="platform" value="Website, Mobile App, CMS"/>
 <Meta icon="bullhorn" label="Development workflow" value="Waterfall Model"/>
 <Meta icon="calendar-alt" label="timeframe" value="2016 Dec - 2017 June"/>
 <Meta icon="coffee" label="type" value="Client Project"/>
-</div>
+</GridBlock>
+</ColumnItem>
 </WorkMeta>
+
+<GridBlock margin="var(--padding-m) 0" gap="2rem">
+<Wrapper>
+
+### Role
+
+The role I have taken in the project include Project Manager as well as an UI/UX designer, I followed through the lead from beginning, outlining and discussing possible features in clients meetings as well as regular design work. 
+
+</Wrapper>
+<Wrapper>
+
+![](./w4f-role.svg)
+<GridBlock style="text-align: center" min="repeat(auto-fit, minmax(100px, 1fr))">
+<Wrapper>
+<small>Project Management</small>
+</Wrapper>
+<Wrapper><small>Wireframing</small></Wrapper>
+<Wrapper><small>Interface Design</small></Wrapper>
+<Wrapper><small>Wordpress Development</small></Wrapper>
+</GridBlock>
+</Wrapper>
+</GridBlock>
+
+### The problem
+
+> Users are not able to provide any feedback on water dispeners and its data is static with limited details.
+
+In v1, users cannot suggest new dispensers or changes within the app. They are required to report via email or external channels, which hindered the completeness of the database. 
+
+The data source itself is also not maintainable as it was previously maintained on a shared Excel spreadsheet imported manually time to time. 
+
+### Goals for Revamp
+
+**1. Facilitate users hunting water dispensers** —  Making the process as easy and intuitive as possible
+
+**2. Encourage user engagement** — Data was not maintainable as the database is a shared excel spreadsheet imported time to time. 
+
+**3. Reduce workload of the volunteers** — Streamline the workflow and improve the approval process
+
+### User Flows
+
+![](./w4f-userflow.png)
+
+<GridBlock>
+<Wrapper>
+
+![Provide The Right Details To Create Awareness](./Caption-1.png)
+
+</Wrapper>
+<Wrapper>
+
+## Provide The Right Details To Create Awareness
+
+Working with Water For Free team, we have identified few factors that encourage users to use water dispensers. By providing the right details at the right page, users can create awareness so that can make a better choice not to buy bottle water.
+
+</Wrapper>
+</GridBlock>
+
 
 In 2017, I worked with Water For Free, a non-profit which dedicated efforts to reduce the vast amounts of single-use plastic water bottles, revamping their water dispensers map app in Hong Kong.
 

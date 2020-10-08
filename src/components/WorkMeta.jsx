@@ -6,14 +6,17 @@ const Grid = styled.div`
   grid-template-columns: repeat(12, 1fr);
   grid-gap: 3rem;
 
-  @media only screen and (max-width: 425px) {
-    display: flex;
-    flex-direction: column;
+  @media only screen and (max-width: 640px) {
+    display: block;
   }
 `;
 
 const WorkMeta = ({ children, className }) => {
-  return <Grid className={className}>{children}</Grid>;
+  return (
+    <>
+      <Grid className="fullbleed">{children}</Grid>
+    </>
+  );
 };
 
 export default WorkMeta;
