@@ -51,13 +51,12 @@ import Wrapper from "elements/Wrapper"
 <GridBlock>
 <Meta icon="phone-laptop" label="platform" value="Website, Mobile App, CMS"/>
 <Meta icon="bullhorn" label="Development workflow" value="Waterfall Model"/>
-<Meta icon="calendar-alt" label="timeframe" value="2016 Dec - 2017 June"/>
+<Meta icon="calendar-alt" label="timeline" value="2016 Dec - 2017 June"/>
 <Meta icon="coffee" label="type" value="Client Project"/>
 </GridBlock>
 </ColumnItem>
 </WorkMeta>
 
-<GridBlock margin="var(--padding-m) 0" gap="2rem">
 <Wrapper>
 
 ### Role
@@ -65,56 +64,88 @@ import Wrapper from "elements/Wrapper"
 The role I have taken in the project include Project Manager as well as an UI/UX designer, I followed through the lead from beginning, outlining and discussing possible features in clients meetings as well as regular design work. 
 
 </Wrapper>
-<Wrapper>
+
 
 ![](./w4f-role.svg)
-<GridBlock style="text-align: center" min="repeat(auto-fit, minmax(100px, 1fr))">
-<Wrapper>
-<small>Project Management</small>
-</Wrapper>
-<Wrapper><small>Wireframing</small></Wrapper>
-<Wrapper><small>Interface Design</small></Wrapper>
-<Wrapper><small>Wordpress Development</small></Wrapper>
-</GridBlock>
-</Wrapper>
+
+<GridBlock margin="0 auto" style="text-align: center; margin-top: 20px;">
+  <Wrapper><small>Project Management</small></Wrapper>
+  <Wrapper><small>Wireframing</small></Wrapper>
+  <Wrapper><small>Interface Design</small></Wrapper>
+  <Wrapper><small>Wordpress Development</small></Wrapper>
 </GridBlock>
 
-### The problem
+### Design Process & Deliverables
+
+![Design Process & Deliverables](./Process.svg)
+
+### Pain Points
 
 > Users are not able to provide any feedback on water dispeners and its data is static with limited details.
 
-In v1, users cannot suggest new dispensers or changes within the app. They are required to report via email or external channels, which hindered the completeness of the database. 
+In v1, there was zero feedback mechanism, users cannot suggest new dispensers or suggest change within the app. They were required to report via email.
 
-The data source itself is also not maintainable as it was previously maintained on a shared Excel spreadsheet imported manually time to time. 
+Users saw the same set of information whenever and wherever they went. The app was not aware of any context of the user, and the existing data was infsufficent to do so. The data source was maintained by shared excel spreadsheets imported from time to time.
 
 ### Goals for Revamp
 
-**1. Facilitate users hunting water dispensers** —  Making the process as easy and intuitive as possible
+**1. Facilitate users looking for water dispensers** —  Making the process as easy and intuitive as possible, and provide more helpful information of the dispensers.
 
-**2. Encourage user engagement** — Data was not maintainable as the database is a shared excel spreadsheet imported time to time. 
+**2. Encourage user engagement** — Encouraging users to submit their edits and photos, can keep them engaged and maintain a updated database.
 
-**3. Reduce workload of the volunteers** — Streamline the workflow and improve the approval process
+**3. Reduce workload of the volunteers** — Streamlining the workflow will fasten the approval process with more accurate data.
 
-### User Flows
+### User Flow
+With the revamp goals in mind, I have drafted the new user flow diagram, that outlined major pages for design as well as the initial draft of feedback process.
 
 ![](./w4f-userflow.png)
 
-<GridBlock>
-<Wrapper>
-
-![Provide The Right Details To Create Awareness](./Caption-1.png)
-
-</Wrapper>
-<Wrapper>
+### Key design changes & rationales
 
 ## Provide The Right Details To Create Awareness
 
-Working with Water For Free team, we have identified few factors that encourage users to use water dispensers. By providing the right details at the right page, users can create awareness so that can make a better choice not to buy bottle water.
+![Provide The Right Details To Create Awareness](./Awareness.png)
 
-</Wrapper>
-</GridBlock>
+Working with Water For Free team, we have identified 3 factors that encourage users to use water dispensers. By providing the right details at the right page, users can create awareness so that can make a better choice not to buy bottle water.
+
+## Rearrange screen layout to encourage user input
+
+![Rearrange screen layout to encourage user input](./Layout.png)
+
+We have identified two types of users who are willing to contribute to the dispensers database. First type are power users who are volunteers of the project, the app serves as a convenient tool updating dispenser map regularly. Second type are active users who love the app and use the app to find water dispensers regularly. They usually contribute to the map when there’s incorrect data.
+
+By placing suggest button prominently near the data, users are encouraged to suggest edit when the data is incorrect. UI also highlight the incompleteness of the dispener map so users can help verify when they pass by.
+
+## Approval-based Management System for Admin
+
+In v1, volunteer team relied on manual process to import dispenser data through a shared excel file. Dispenser information was submitted by users through multiple channels like e-mail and social media. 
+
+Users can now also suggest edits, updates, upload photos of any water dispensers easily by themselves. By delivering a Wordpress-based content management sSystem in sync for website and app, reported dispensers can be easily approved by volunteer in one click.
+
+![Approval-based Management System for Admin](./W4F-Web.png)
+
+Also, we have also integrated the dispensers map in the website, so each individual dispensers could be shared easily.
 
 
+## Achievements
+
+![Screenshot of App Store featuring Water For Free](./W4F-AppStore.png)
+
+Initial app revamp launched in 2017 June was very successful, we have accumulated around **25,000 downloads within 6 months, nearly doubled the past accumulated download**, across iOS and Android with zero budget in marketing.
+
+Reviews have been overwhelmingly positive, with **4.9 / 5 on App Store** and **4.1 / 5 on Google Play Store**. 
+
+The momentum of the app is suprisingly great in the given operation scale. **Monthly active users have gone up 229% in 6 months, our reported dispensers were also increased by 66%, fulfilling our goals to encourage user engagement**. Due to the success, Water For Free has received sponsorships from government and commercial sector in its environmental effort.
+
+![Highlight by App Store Editorital Team](./AppStore.png)
+
+Apple’s App Store also highlighted the app in multiple recognitions, including “New Apps We Like” during launch, later in “World Water Day”, “Pedal-powered fun” and “Make Your Life Greener” collections.
+
+I am also honored to be interviewed by ["The Pearl Report"](https://youtu.be/YuXQS_Aqvqc) together with Rachel Pang, the co-founder of Water For Free in 2018.
+
+![Interview by The Pearl Report with co-founder Rachel Pang in 2018](./PearlReport.png)
+
+<!-- 
 In 2017, I worked with Water For Free, a non-profit which dedicated efforts to reduce the vast amounts of single-use plastic water bottles, revamping their water dispensers map app in Hong Kong.
 
 ## Introduction
@@ -194,4 +225,4 @@ I am also honored to be interviewed by "The Pearl Report" together with Rachel P
 
   <Data caption="App Installs" nodata="70,000+" />
   <Data caption="Launched In" nodata="2017 June" />
-</GridBlock>
+</GridBlock> -->

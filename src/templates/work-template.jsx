@@ -15,8 +15,7 @@ import "../layout/work.css";
 
 const Header = styled.div`
   max-width: 48ch;
-  margin: 2rem auto;
-  margin-bottom: 3rem;
+  margin: 1rem auto;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -149,7 +149,7 @@ const AboutPage = ({ data }) => {
           <IntroGrid>
             <IntroContent>
               <h2>
-                Hello, I’m Samuel. <br /> I’m a product designer.
+                Hello, my name is Samuel. <br /> I’m a user experience designer.
               </h2>
               <p>
                 I’m pursuing a career in the field of UI/UX Design because I'm
