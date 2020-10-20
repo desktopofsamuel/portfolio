@@ -3,13 +3,14 @@ import styled from "styled-components";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faPhoneLaptop,
-  faCoffee,
+  faMobileAlt,
+  faMobile,
   faBullhorn,
   faCalendarAlt,
-} from "@fortawesome/pro-regular-svg-icons";
+  faMugHot,
+} from "@fortawesome/free-solid-svg-icons";
 
-library.add(faPhoneLaptop, faCoffee, faBullhorn, faCalendarAlt);
+library.add(faMobileAlt, faMobile, faMugHot, faBullhorn, faCalendarAlt);
 
 const Head = styled.div`
   display: flex;

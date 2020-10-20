@@ -1250,20 +1250,6 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.2.26"
 
-"@fortawesome/pro-regular-svg-icons@^5.15.1":
-  version "5.15.1"
-  resolved "https://npm.fontawesome.com/@fortawesome/pro-regular-svg-icons/-/5.15.1/pro-regular-svg-icons-5.15.1.tgz#628d37cff0e0af6575603cf639887a39c3085546"
-  integrity sha512-DsY0Dn9jjt0jJIHHm5AKR3PUDzd5z9KXzwllaxqxk8cAvNZv1+JsBXdsMVe5HQf60Fj8M+G7oRnTg1dpGL2v2A==
-  dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.32"
-
-"@fortawesome/pro-solid-svg-icons@^5.15.1":
-  version "5.15.1"
-  resolved "https://npm.fontawesome.com/@fortawesome/pro-solid-svg-icons/-/5.15.1/pro-solid-svg-icons-5.15.1.tgz#65f60a76b45655ff0bb774169ff1dedde4d1703b"
-  integrity sha512-PUlwSvPLgsd1m3n6LQkKwJ9JnewagtcX9L/NpFK1IZ6IgVETXR8rpRlOXp0mbztQ28zUm5AawFgavjiYyLjCTg==
-  dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.32"
-
 "@fortawesome/react-fontawesome@^0.1.4":
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/@fortawesome/react-fontawesome/-/react-fontawesome-0.1.8.tgz#cb6d4dd3aeec45b6ff2d48c812317a6627618511"
