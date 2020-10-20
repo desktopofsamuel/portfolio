@@ -77,9 +77,7 @@ const WorkPageTemplate = ({ pageContext, data }) => {
         <Header>
           <small>Case Studies — {postEdges.year}</small>
           <Title>{postEdges.shortTitle}</Title>
-          <Subtitle>
-            {postEdges.subtitle ? postEdges.subtitle : postEdges.projectTitle}
-          </Subtitle>
+          <Subtitle>{postEdges.projectTitle}</Subtitle>
         </Header>
         <div className="work">
           <MDXRenderer pageContext={data.mdx}>{data.mdx.body}</MDXRenderer>
