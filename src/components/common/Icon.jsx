@@ -9,7 +9,7 @@ const IconWrapper = styled(FontAwesomeIcon)`
   font-size: 18px;
   transition: var(--transition);
   &:hover {
-    color: var(--color-primary);
+    color: var(--color-secondary);
   }
 `;
 

@@ -15,6 +15,7 @@ import Column from "../elements/Column";
 import Emoji from "./common/Emoji";
 import Img from "gatsby-image";
 import Data from "elements/Data";
+import ReadOn from "elements/ReadOn";
 
 const Container = styled(Boxed)`
   max-width: var(--page-container-l);
@@ -93,6 +94,7 @@ const IndexHero = () => {
             I co-founded Playa, a web & app agency. Before that, I worked as
             Cross-Content Intern at iTunes & App Store, Apple.
           </Subtitle>
+          <ReadOn text="View My Work" href="/work" />
         </IntroWrapper>
         {/* <LinkWrapper>
           <small>Contact</small>
