@@ -76,11 +76,13 @@ const WorkPageTemplate = ({ pageContext, data }) => {
         {/* <GatsbyLink to="/work">Back</GatsbyLink> */}
         <Header>
           <small>Case Studies — {postEdges.year}</small>
-          <Title>{postEdges.shortTitle}</Title>
+          <Title>
+            {postEdges.shortTitle ? postEdges.shortTitle : postEdges.title}
+          </Title>
           <Subtitle>{postEdges.projectTitle}</Subtitle>
         </Header>
         <div className="work">
-          <MDXRenderer pageContext={data.mdx}>{data.mdx.body}</MDXRenderer>
+          <MDXRenderer>{data.mdx.body}</MDXRenderer>
         </div>
       </Boxed>
     </Layout>
