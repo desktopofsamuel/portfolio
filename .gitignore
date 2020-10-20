@@ -49,6 +49,7 @@ jspm_packages
 
 # Environmental Variable
 .env
+.env.development
 
 
 # Build Files

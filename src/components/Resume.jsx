@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import ResumeItem from "elements/ResumeItem";
 import Column from "elements/Column";
-import HyperAir from "../../static/about/hyperair.svg"
-import Playa from "../../static/about/playa.svg"
-import Apple from "../../static/about/apple.svg"
+import HyperAir from "../../static/about/hyperair.svg";
+import Playa from "../../static/about/playa.svg";
+import Apple from "../../static/about/apple.svg";
 
 const Section = styled.section`
   color: var(--color-white-500);
@@ -50,7 +50,7 @@ const Block = styled.section`
 const ResumeSection = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  
+
   @media only screen and (max-width: 1024px) {
     grid-template-columns: 1fr;
   }
@@ -103,18 +103,44 @@ const Resume = () => {
         />
       </Block>
       <Block>
-        <ResumeSectionTitle>Tools</ResumeSectionTitle>
+        <ResumeSectionTitle>Achievements</ResumeSectionTitle>
         <div>
-          <ResumeItem noBorder content="Figma, Sketch, Abstract, Avocode" />
           <ResumeItem
             noBorder
-            content="Adobe Creative Suite (Photoshop, Illustrator, Premiere)"
+            content="Triple Gold Award in Web Accessibility Recognition Scheme"
+            meta="Office of the Government Chief Information Officer, 2016 & 2018"
           />
-          <ResumeItem noBorder content="HTML, CSS, Git, Google Analytics" />
+          <ResumeItem
+            noBorder
+            content="Best .HK LegCo Members Website Award (Gold)"
+            meta="Hong Kong Internet Registration Corporation, 2017 & 2019"
+          />
+          <ResumeItem
+            noBorder
+            content="Cyberport Creative Micro Fund 2015"
+            meta="Cyberport, 2015"
+          />
         </div>
       </Block>
       <Block>
-        <ResumeSectionTitle>Language</ResumeSectionTitle>
+        <ResumeSectionTitle>Tools</ResumeSectionTitle>
+        <div>
+          <ResumeItem
+            noBorder
+            content="Dsign: Figma, Sketch, Zeplin, Abstract, Marvel, Adobe Creative Suite"
+          />
+          <ResumeItem
+            noBorder
+            content="Development: Wordpress, Webflow, HTML, CSS, Javascript, React, Git"
+          />
+          <ResumeItem
+            noBorder
+            content="Others: Google Analytics, Google Tag Manager, Hotja, Jira"
+          />
+        </div>
+      </Block>
+      <Block>
+        <ResumeSectionTitle>Languages</ResumeSectionTitle>
         <div>
           <ResumeItem noBorder content="Native in Cantonese" />
           <ResumeItem noBorder content="Professional Proficiency in English" />

@@ -40,8 +40,13 @@ const FooterItem = styled(Link)`
   color: var(--color-text-secondary);
   border-bottom: 0;
   text-align: center;
+  transition: var(--transition);
   &:last-child {
     margin-right: 0;
+  }
+
+  &:hover {
+    color: var(--color-secondary);
   }
 
   p {
@@ -195,7 +200,7 @@ const Footer = () => {
           </LinkContainer>
           <CreditContainer>
             <CreditText>
-              Design & Code © 2018 - 2020 Samuel W. | Built with{" "}
+              Designed & Coded by Samuel W. © 2018 - 2020 | Built with{" "}
               <Link to="https://www.gatsbyjs.org">Gatsby</Link>.
             </CreditText>
           </CreditContainer>

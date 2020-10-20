@@ -13,7 +13,7 @@ import ReadOn from "elements/ReadOn";
 import PropTypes from "prop-types";
 
 const Row = styled.section`
-  padding: var(--var-padding-s) 0;
+  padding: var(--var-padding-m) 0;
   background: var(--color-white);
 
   &:first-child {
@@ -149,7 +149,7 @@ const AboutPage = ({ data }) => {
           <IntroGrid>
             <IntroContent>
               <h2>
-                Hello, I’m Samuel. <br /> I’m a product designer.
+                Hello, my name is Samuel. <br /> I’m a user experience designer.
               </h2>
               <p>
                 I’m pursuing a career in the field of UI/UX Design because I'm

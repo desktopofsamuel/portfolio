@@ -15,26 +15,49 @@ import "../layout/work.css";
 
 const Header = styled.div`
   max-width: 48ch;
-  margin: 0 auto;
-  margin-bottom: 3rem;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 `;
 
 const Title = styled.h1`
   font-family: var(--font-tertiary);
   padding-top: var(--var-padding-m);
-  text-align: center;
   font-size: var(--font-size-xl);
+  font-weight: 500;
+  letter-spacing: -2px;
   margin: 0;
 `;
 
 const Subtitle = styled.h2`
   font-family: var(--font-primary);
-  font-weight: 400;
-  font-size: var(--font-size-s);
-  color: var(--color-primary-shades-300);
-  text-align: center;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-m);
+  color: var(--color-primary-shades-500);
   margin-top: 2rem;
   line-height: 1.8;
+`;
+
+const Quote = styled.h3`
+  font-family: var(--font-tertiary);
+  padding-top: var(--var-padding-m);
+  font-size: var(--font-size-l);
+  font-weight: 500;
+  letter-spacing: -1px;
+  margin: 0;
+  grid-column: span 8;
+`;
+
+const Meta = styled.small`
+  margin: 0;
+`;
+
+const Opening = styled.div`
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 36px;
 `;
 
 const WorkPageTemplate = ({ pageContext, data }) => {
@@ -49,13 +72,14 @@ const WorkPageTemplate = ({ pageContext, data }) => {
       <SEO postPath={path} postNode={data.mdx} postSEO />
       {/* <WorkPageHero data={postEdges} /> */}
 
-      <Boxed size="small">
+      <Boxed size="medium">
         {/* <GatsbyLink to="/work">Back</GatsbyLink> */}
         <Header>
-          <Title>{postEdges.title}</Title>
-          <Subtitle>
-            {postEdges.subtitle ? postEdges.subtitle : postEdges.projectTitle}
-          </Subtitle>
+          <small>Case Studies — {postEdges.year}</small>
+          <Title>
+            {postEdges.shortTitle ? postEdges.shortTitle : postEdges.title}
+          </Title>
+          <Subtitle>{postEdges.projectTitle}</Subtitle>
         </Header>
         <div className="work">
           <MDXRenderer>{data.mdx.body}</MDXRenderer>
@@ -78,6 +102,10 @@ export const pageQuery = graphql`
         subtitle
         shortTitle
         projectTitle
+        intro
+        year
+        role
+        team
         path
         tags
         color

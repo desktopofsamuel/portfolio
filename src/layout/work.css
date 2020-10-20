@@ -3,31 +3,83 @@
 .work {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .work h2 {
-    font-family: var(--font-tertiary);
-    text-align: center;
-}
-
-.work h2 {
+    font-family: var(--font-primary);
     font-size: var(--font-size-l);
+    margin: 2rem 0;
+}
+
+.work h3 {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-s);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 2rem inherit;
+    text-align: left;
+}
+
+.work h3:first-child {
+    margin: 0;
+}
+
+
+
+
+.work {
+    display: grid;
+    grid-template-columns: 1fr min(65ch, 100%) 1fr;
+
 }
 
 .work > * {
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    grid-column: 2;
+}
 
+.fullbleed {
+    grid-column: 1 / -1;
+    width: 100%;
 }
 
 .work > span.gatsby-resp-image-wrapper {
-    max-width: var(--page-container-s)!important;
+    grid-column: 1 / -1;
+    width: 100%;
     margin: var(--padding-s) 0;
 }
 
 .work > .BrainhubCarousel__container {
-    max-width: var(--page-container-s)!important;
+    grid-column: 1 / -1;
+    width: 100%;
     margin: var(--padding-s) 0;
+}
+
+blockquote {
+    font-family: var(--font-tertiary);
+    padding-top: var(--var-padding-m);
+    font-size: var(--font-size-l);
+    font-weight: 500;
+    letter-spacing: -1px;
+    margin: 2rem 0 2rem 0;
+    padding: 0;
+    max-width: 45ch;
+}
+
+blockquote:first-child {
+    margin-top: 0;
+}
+
+blockquote:before {
+    content: "";
+    display: none;
+}
+
+blockquote p {
+    margin: 0;
+}
+
+small {
+    line-height: 1.5;
+    display: block;
 }

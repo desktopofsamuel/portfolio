@@ -165,6 +165,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
     const prevSlug =
       index === arr.length - 1 ? `` : arr[index + 1].node.frontmatter.path;
     const slug = node.frontmatter.path;
+    const frontmatter = node.frontmatter;
     createPage({
       path: `/work${slug}`,
       component: workPage,
@@ -173,6 +174,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
         nextSlug,
         prevSlug,
         id: node.id,
+        frontmatter,
       },
     });
   });
