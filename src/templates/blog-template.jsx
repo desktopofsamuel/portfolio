@@ -20,7 +20,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
     ? {
         path: `${pageContext.prev.frontmatter.path}`,
         title: pageContext.prev.frontmatter.title,
-        excerpt: pageContext.prev.frontmatter.tldr || pageContext.prev.excerpt,
+        excerpt: pageContext.prev.frontmatter.tldr,
       }
     : null;
 
@@ -49,6 +49,7 @@ export const pageQuery = graphql`
       frontmatter {
         path
         title
+        tldr
         cover {
           publicURL
           size

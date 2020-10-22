@@ -2,40 +2,34 @@ import React, { Component } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import Img from "gatsby-image";
-import Slide from "react-reveal/Slide";
-import FadeIn from "react-fade-in";
 
 const Grid = styled.div`
-  display: flex;
-  flex-direction: column;
-  max-width: 72ch;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(350px, 1fr));
+  grid-template-rows: repeat(1, minmax(400px, 1fr));
+  grid-gap: 2rem;
+
+  @media only screen and (max-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 `;
 
 const ListItem = styled.article`
   display: block;
   border-bottom: 1px var(--color-primary-shades-100) solid;
-  margin-bottom: var(--padding-l);
+  padding-bottom: var(--var-padding-m);
+  margin-bottom: var(--padding-m);
 
   p {
     margin-bottom: 0.5rem;
     color: var(--color-text);
   }
-
-  small {
-    color: var(--color-text-secondary);
-  }
-
-  :last-child {
-    border-bottom: none;
-  }
 `;
 
 const Title = styled.h2`
-  display: inline;
   margin: 0;
-  font-size: var(--font-size-l);
-  color: var(--color-secondary);
-  transition: 1s all ease-in-out;
+  font-size: var(--font-size-xl);
 `;
 
 const Excerpt = styled.p`
@@ -64,7 +58,7 @@ const ShowMoreButton = styled.button`
   }
 `;
 
-class BlogList extends React.Component {
+class PostHero extends React.Component {
   constructor(props) {
     super(props);
 
@@ -103,25 +97,27 @@ class BlogList extends React.Component {
     return (
       <>
         <Grid>
-          {postList.slice(0, this.state.visible).map(post => (
-            // {postList.map(post => (
-            <Slide key={post.path} cascade bottom>
-              <ListItem key={post.path}>
-                <Link to={post.path}>
-                  <Title>{post.title}</Title>
-                </Link>
-                <Excerpt>{post.excerpt}</Excerpt>
-                <small>{post.date}</small>
-              </ListItem>
-            </Slide>
+          {/* {postList.slice(0, this.state.visible).map(post => ( */}
+          {postList.map(post => (
+            <ListItem key={post.path}>
+              <Link to={post.path}>
+                <PostImage
+                  fluid={post.cover.childImageSharp.fluid}
+                  alt={post.title}
+                />
+                <Title>{post.title}</Title>
+              </Link>
+              <Excerpt>{post.excerpt}</Excerpt>
+              {/* <small>{post.date}</small> */}
+            </ListItem>
           ))}
         </Grid>
-        {this.state.visible < postList.length && (
+        {/* {this.state.visible < postList.length && (
           <ShowMoreButton onClick={this.loadMore}>Load More </ShowMoreButton>
-        )}
+        )} */}
       </>
     );
   }
 }
 
-export default BlogList;
+export default PostHero;
