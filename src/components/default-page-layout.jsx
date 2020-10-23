@@ -7,7 +7,6 @@ import Boxed from "elements/Boxed";
 
 const Layout = styled.div`
   background-color: var(--color-background);
-  border-top: var(--page-border-top);
 `;
 
 const Main = styled(Boxed)``;
