@@ -153,13 +153,13 @@ const WorkPage = ({ data }) => {
   const postEdges = data.feature.edges;
   const workEdges = data.work.edges;
   return (
-    <Layout title="Case Studies">
+    <Layout title="Portfolio">
       <Row>
-        <Boxed size="medium">
+        <Boxed>
           <CenterRow>
             <PageTitle
-              title="Case Studies"
-              description="Selected website and app showcase since 2015."
+              title="Portfolio"
+              description="Selected websites and apps showcase since 2015."
             />
           </CenterRow>
           {/* <PageTitle title="My Work" subtitle="Case Studies" /> */}

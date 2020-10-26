@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 const Grid = styled.div``;
 
-const Wrapper = ({ children, className, margin }) => (
-  <Grid className={className} margin={margin}>
+const Wrapper = ({ children, className, margin, style }) => (
+  <Grid className={className} margin={margin} style={style}>
     {children}
   </Grid>
 );

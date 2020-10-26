@@ -189,10 +189,10 @@ const IndexPage = ({ data }) => {
               <StickyWrapper>
                 <small>01.</small>
                 <h2 className="no-margin">Interaction and Experience Design</h2>
-
                 <p>
-                  I'm a multi-disciplinary designer with 5 years of experience
-                  in delivering elegant design and practical solutions.
+                  I'm a full-stack UI/UX designer with 5+ years of experience,
+                  designing and delivering websites and mobile applications with
+                  bespoke user experience.
                 </p>
                 <ReadOn text="View My Process" href="/work" />
               </StickyWrapper>
@@ -249,7 +249,7 @@ export const pageQuery = graphql`
   query IndexQuery {
     Work: allMdx(
       limit: 2
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [frontmatter___date], order: ASC }
       filter: {
         fileAbsolutePath: { regex: "/work/" }
         frontmatter: { draft: { ne: true }, feature: { eq: true } }

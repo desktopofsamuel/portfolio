@@ -135,12 +135,11 @@ a {
   cursor: pointer;
   color: inherit;
   background: linear-gradient(to bottom, transparent 62%, var(--color-primary-highlight) 0) left center/0% 75% no-repeat;
-  border-bottom: 2px dotted var(--color-decoration);
+  border-bottom: 2px dotted var(--color-primary-shades-300);
   transition: var(--transition);
 }
 
 a:hover {
-  border-bottom: 2px dotted var(--color-decoration);
   background-size: 100% 100%;
 }
 

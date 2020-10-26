@@ -7,10 +7,38 @@ import Img from "gatsby-image";
 import Tag from "elements/Tag";
 
 const Container = styled.main`
+  small {
+    margin: 0;
+  }
+
   h1 {
     margin-top: 1em;
-    text-align: center;
     font-size: var(--font-size-xl);
+    font-weight: 500;
+    letter-spacing: -2px;
+    font-family: var(--font-tertiary);
+  }
+
+  h2 {
+    font-size: var(--font-size-l);
+    font-family: var(--font-tertiary);
+    font-weight: 500;
+    letter-spacing: -1px;
+  }
+
+  h3 {
+    font-size: var(--font-size-m);
+    font-size: var(--font-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  p.subtitle {
+    margin-top: 1em;
+    font-size: var(--font-size-);
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-regular);
+    color: var(--color-primary-shades-300);
   }
 `;
 
@@ -21,8 +49,13 @@ class PostTemplate extends React.Component {
 
     return (
       <Container>
-        <Img sizes={postNode.frontmatter.cover.childImageSharp.sizes} />
+        <small>
+          <time>{postNode.fields.date}</time>
+        </small>
         <h1>{post.title}</h1>
+        <p className="subtitle">{post.tldr}</p>
+        <Img sizes={postNode.frontmatter.cover.childImageSharp.sizes} />
+        <hr />
         <MDXRenderer>{postNode.body}</MDXRenderer>
         <div>
           {post.tags.map((tag, index) => {
@@ -33,9 +66,6 @@ class PostTemplate extends React.Component {
             );
           })}
         </div>
-        <small>
-          <time>{postNode.fields.date}</time>
-        </small>
       </Container>
     );
   }

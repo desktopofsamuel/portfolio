@@ -246,8 +246,8 @@ const AboutPage = ({ data }) => {
         <Boxed isCenter>
           <h2>Let's Connect</h2>
           <Content>
-            Drop me a line if you want to say hi, or share your comments about
-            my blog. I will get back to you shortly.
+            Drop me a line if you want to say hi, or share your thoughts on my
+            writings.
           </Content>
           <ReadOn
             href="mailto:desktopofsamuel@gmail.com"
