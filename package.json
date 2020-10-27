@@ -88,7 +88,7 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.6.1",
+    "eslint-plugin-react": "^7.21.5",
     "gatsby-transformer-sharp": "^2.3.13",
     "gh-pages": "^2.0.1",
     "prettier": "^1.14.3",
@@ -115,7 +115,7 @@
     "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
     "lint:jyarn s": "eslint --ext .js,.jsx .",
     "lint:md": "remark content/posts/",
-    "write-good": "write-good $(glob 'content/posts/**/*.md')",
+    "write-good": "write-good $(glob 'content/work/**/*.mdx')",
     "format:js": "prettier '**/*.{js,jsx}' --write"
   },
   "remarkConfig": {
