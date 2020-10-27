@@ -176,9 +176,6 @@ const WorkPage = ({ data }) => {
               <WorkIndex postEdges={workEdges} detail></WorkIndex>
             </Grid>
           </Row>
-          {/* <Row className="full-bleed">
-            <WorkList />
-          </Row> */}
         </Boxed>
       </Row>
     </Layout>
