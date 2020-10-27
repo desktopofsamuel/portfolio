@@ -5,10 +5,9 @@ import Boxed from "elements/Boxed";
 import Layout from "../layout";
 import { Helmet } from "react-helmet";
 import config from "../../data/SiteConfig";
+import Sidebar from "./sidebar";
 
 const Main = styled.main``;
-
-const Sidebar = styled.aside``;
 
 const Container = styled(Boxed)`
   display: grid;
@@ -30,9 +29,7 @@ export default class DefaultPageLayout extends Component {
         <SEO postPath={this.props.path} postNode={this.props.pageContext} />
         <Container>
           <Main>{this.props.children}</Main>
-          <Sidebar>
-            <p>Hello</p>
-          </Sidebar>
+          <Sidebar />
         </Container>
       </Layout>
     );

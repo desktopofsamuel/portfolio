@@ -4,7 +4,8 @@
      "es6":true
   },
   "extends":[
-     "plugin:react/recommended"
+   "eslint:recommended",
+   "plugin:react/recommended"
   ],
   "globals":{
      "Atomics":"readonly",
