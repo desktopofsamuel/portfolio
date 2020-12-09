@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import ResumeItem from "elements/ResumeItem";
 import Column from "elements/Column";
-import HyperAir from "../../static/icons/resume-hyperair.svg";
-import Playa from "../../static/icons/resume-playa.svg";
-import Apple from "../../static/icons/resume-apple.svg";
+import HyperAir from "../../static/about/hyperair.svg";
+import Playa from "../../static/about/playa.svg";
+import Apple from "../../static/about/apple.svg";
 
 const Section = styled.section`
   color: var(--color-white-500);
