@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types"
 import styled from "styled-components";
 import Boxed from "../elements/Boxed";
 import Link from "./common/GatsbyLink";
@@ -39,3 +40,10 @@ const Related = ({ node }) => {
 };
 
 export default Related;
+
+Related.propTypes = {
+  node: PropTypes.node.isRequired,
+  path: PropTypes.string,
+  title: PropTypes.string,
+  excerpt: PropTypes.string,
+}

@@ -4,11 +4,11 @@ import ReadOn from "../elements/ReadOn";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import Carousel, { Dots } from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
-import Playa from "../../static/images/workshot/Playa.png";
-import CDC from "../../static/images/workshot/CDC.png";
-import TgtAtHomeClub from "../../static/images/workshot/TgtAtHomeClub.png";
-import WaterForFree from "../../static/images/workshot/WaterForFree.png";
-import Pingspace from "../../static/images/workshot/Pingspace.png";
+// import Playa from "../../static/images/workshot/Playa.png";
+// import CDC from "../../static/images/workshot/CDC.png";
+// import TgtAtHomeClub from "../../static/images/workshot/TgtAtHomeClub.png";
+// import WaterForFree from "../../static/images/workshot/WaterForFree.png";
+// import Pingspace from "../../static/images/workshot/Pingspace.png";
 
 const IconWrapper = styled.div`
   padding: var(--var-padding-m);
@@ -81,7 +81,7 @@ const WorkList = data => {
       }}
       slidesPerPage={3}
     >
-      <ListedItem
+      {/* <ListedItem
         title="Together At Home"
         description="A collection of free and discounted resources during COVID-19 outbreak."
         url="https://tgtathome.club/"
@@ -109,7 +109,7 @@ const WorkList = data => {
         url="https://playa.hk/"
         role="Director, Design Lead"
         image={Playa}
-      />
+      /> */}
     </Carousel>
   );
 };

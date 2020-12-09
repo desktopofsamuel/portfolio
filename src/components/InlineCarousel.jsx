@@ -1,11 +1,9 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
-import Img from "gatsby-image";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-import Carousel, { Dots } from "@brainhubeu/react-carousel";
+import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
-import Playa from "../../static/images/workshot/Playa.png";
-import CDC from "../../static/images/workshot/CDC.png";
 
 const IconWrapper = styled.div`
   padding: 1rem;
@@ -16,7 +14,7 @@ const IconWrapper = styled.div`
   }
 `;
 
-const InlineCarousel = ({ data, children }) => {
+const InlineCarousel = ({ children }) => {
   return (
     <Carousel
       autoPlay={10000}
