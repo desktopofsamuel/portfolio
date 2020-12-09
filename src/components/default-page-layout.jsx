@@ -29,7 +29,7 @@ export default class DefaultPageLayout extends Component {
         <SEO postPath={this.props.path} postNode={this.props.pageContext} />
         <Container>
           <Main>{this.props.children}</Main>
-          <Sidebar />
+          {/* <Sidebar /> */}
         </Container>
       </Layout>
     );
