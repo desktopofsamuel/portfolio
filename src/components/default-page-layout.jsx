@@ -5,7 +5,7 @@ import Boxed from "elements/Boxed";
 import Layout from "../layout";
 import { Helmet } from "react-helmet";
 import config from "../../data/SiteConfig";
-import Sidebar from "./sidebar";
+import Sidebar from "components/Sidebar";
 
 const Main = styled.main``;
 
