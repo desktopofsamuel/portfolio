@@ -201,6 +201,14 @@ button {
 
 /* Unorder List Style */
 
+.is-active {
+  color: red;
+}
+
+.is-current {
+  color: red;
+}
+
 blockquote {
   display: block;
   position: relative;

@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Img from "gatsby-image";
 import Tag from "elements/Tag";
+import TableOfContent from "../components/TableOfContent";
 
 const Container = styled.main`
   small {
@@ -46,27 +47,33 @@ class PostTemplate extends React.Component {
   render() {
     const { postNode } = this.props;
     const post = postNode.frontmatter;
+    const postToc = postNode.tableOfContents;
 
     return (
-      <Container>
-        <small>
-          <time>{postNode.fields.date}</time>
-        </small>
-        <h1>{post.title}</h1>
-        <p className="subtitle">{post.tldr}</p>
-        <Img sizes={postNode.frontmatter.cover.childImageSharp.sizes} />
-        <hr />
-        <MDXRenderer>{postNode.body}</MDXRenderer>
-        <div>
-          {post.tags.map((tag, index) => {
-            return (
-              <Tag tag={tag} key={index}>
-                {tag}
-              </Tag>
-            );
-          })}
-        </div>
-      </Container>
+      <>
+        <Container className="blog-post-main">
+          <TableOfContent post={postToc} />
+          <section id="use-case">
+            <small>
+              <time>{postNode.fields.date}</time>
+            </small>
+            <h1>{post.title}</h1>
+            <p className="subtitle">{post.tldr}</p>
+            <Img sizes={postNode.frontmatter.cover.childImageSharp.sizes} />
+            <hr />
+            <MDXRenderer>{postNode.body}</MDXRenderer>
+            <div>
+              {post.tags.map((tag, index) => {
+                return (
+                  <Tag tag={tag} key={index}>
+                    {tag}
+                  </Tag>
+                );
+              })}
+            </div>
+          </section>
+        </Container>
+      </>
     );
   }
 }

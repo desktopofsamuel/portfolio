@@ -16,7 +16,7 @@ const Container = styled(Boxed)`
 
 const BlogPostTemplate = ({ data, pageContext }) => {
   const postNode = data.blog;
-  const postToc = data.blog.tableOfContents;
+  // const postToc = data.blog.tableOfContents;
   const post = postNode.frontmatter;
   const prev = pageContext.prev
     ? {
@@ -34,7 +34,6 @@ const BlogPostTemplate = ({ data, pageContext }) => {
       <SEO postPath={pageContext.slug} postNode={postNode} postSEO />
       <Container>
         <PostTemplate postNode={postNode} />
-        <TableOfContent post={postToc} />
       </Container>
       {prev && <Related node={prev} />}
     </Layout>
