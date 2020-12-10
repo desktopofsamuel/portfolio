@@ -69,6 +69,8 @@
     "react-mt-svg-lines": "^0.9.1",
     "react-reveal": "^1.2.2",
     "react-safe": "^1.3.0",
+    "react-scrollspy": "^3.4.3",
+    "react-scrollspy-nav": "^1.2.4",
     "react-share": "^2.0.0",
     "react-twitter-widgets": "^1.7.1",
     "react-web-tabs": "^1.0.1",

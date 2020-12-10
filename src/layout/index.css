@@ -201,45 +201,6 @@ button {
 
 /* Unorder List Style */
 
-ul li {
-  list-style-type: none;
-  margin-bottom: 12px;
-}
-
-ul li:before { 
-  content: '▸';
-  /* content: '\0027A1'; */
-  list-style-position: outside;
-  margin-right: 16px;
-  margin-left: -8px;
-}
-
-/* Hide Arrow in Carousel */
-ul li.BrainhubCarouselItem:before {
-  content: none;
-}
-
-ol li::marker {
-  font-family: var(--font-primary);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
-  font-style: italic;
-}
-
-ol li {
-  counter-increment: list;
-  margin-bottom: 12px;
-}
-ol li:before {
-  /* content: counter(list) ". "; */
-  font-family: var(--font-primary);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
-  font-style: italic;
-  margin-left: -24px;
-  margin-right: 6px;
-}
-
 blockquote {
   display: block;
   position: relative;
