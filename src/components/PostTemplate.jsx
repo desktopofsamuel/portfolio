@@ -52,7 +52,7 @@ class PostTemplate extends React.Component {
     return (
       <>
         <Container className="blog-post-main">
-          <TableOfContent post={postToc} />
+          {!!postToc.items && <TableOfContent post={postToc} />}
           <section id="use-case">
             <small>
               <time>{postNode.fields.date}</time>
