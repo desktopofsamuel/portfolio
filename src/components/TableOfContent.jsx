@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Scrollspy from "react-scrollspy";
-import ScrollspyNav from "react-scrollspy-nav";
+import loadable from "@loadable/component";
+
+const LoadableScroll = loadable(() => import("react-scrollspy"));
 
 const Table = styled.aside`
   position: fixed;
@@ -30,13 +31,13 @@ export default function TableOfContent(props) {
   return (
     <Table>
       <h6>Table of Content</h6>
-      <Scrollspy items={title} currentClassName="is-current">
+      <LoadableScroll items={title} currentClassName="is-current">
         {post.items.map(p => (
           <li key={p.url}>
             <a href={p.url}>{p.title}</a>
           </li>
         ))}
-      </Scrollspy>
+      </LoadableScroll>
     </Table>
   );
 }
