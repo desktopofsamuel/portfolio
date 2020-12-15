@@ -7,7 +7,9 @@ const Grid = styled.div`
   grid-gap: var(--var-padding-s);
 
   @media only screen and (max-width: 600px) {
-    display: block;
+    display: flex;
+    row-gap: var(--var-padding-m);
+    flex-direction: column;
   }
 `;
 
