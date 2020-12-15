@@ -23,7 +23,7 @@ import WorkDetail from "../components/WorkDetail";
 const Row = styled.section`
   padding: var(--var-padding-m) 0;
   background: var(--color-white);
-  content-visibility: auto;
+  /* content-visibility: auto; */
 
   &:first-child {
     padding-bottom: 0;
@@ -136,6 +136,7 @@ const CenterRow = styled(Row)`
 `;
 
 const Grid = styled.div`
+  transition: none;
   display: grid;
   grid-template-columns: repeat(2, minmax(350px, 1fr));
   grid-template-rows: repeat(1, minmax(400px, 1fr));
