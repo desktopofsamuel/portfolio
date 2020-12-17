@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import Img from "gatsby-image";
-import Link from "./common/GatsbyLink";
 import Zoom from "react-reveal/Zoom";
 import PropTypes from "prop-types";
+import Link from "../common/GatsbyLink";
 
 const Card = styled.div`
   height: 100%;
@@ -36,7 +36,7 @@ const Image = styled(Img)`
   background-color: rgba(0, 0, 0, 0);
 `;
 
-class WorkIndex extends React.Component {
+class IndexWork extends React.Component {
   getPostList() {
     const postList = [];
     this.props.postEdges.forEach(postEdge => {
@@ -87,12 +87,12 @@ class WorkIndex extends React.Component {
     );
   }
 }
-export default WorkIndex;
+export default IndexWork;
 
-WorkIndex.propTypes = {
+IndexWork.propTypes = {
   detail: PropTypes.bool,
 };
 
-WorkIndex.defaultProps = {
+IndexWork.defaultProps = {
   detail: false,
 };

@@ -9,14 +9,14 @@ import ReadOn from "elements/ReadOn";
 import Link from "../components/common/GatsbyLink";
 import config from "../../data/SiteConfig";
 import Layout from "../layout";
-import WorkIndex from "../components/WorkIndex";
-import BlogIndex from "../components/BlogIndex";
+import WorkIndex from "../components/page/IndexWork";
+import BlogIndex from "../components/page/IndexBlog";
 import WorkIcon from "../../static/SVG/Work.svg";
 import BlogIcon from "../../static/SVG/Blog.svg";
 import Now from "../components/Now";
 import Profile from "../../static/images/Profile.webp";
-import IndexHero from "../components/IndexHero";
-import IndexPhoto from "../components/IndexPhoto";
+import IndexHero from "../components/page/IndexHero";
+import IndexPhoto from "../components/page/IndexPhoto";
 
 const Box = styled(Boxed)``;
 

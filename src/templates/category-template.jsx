@@ -6,7 +6,7 @@ import Boxed from "elements/Boxed";
 import PageTitle from "elements/PageTitle";
 import Layout from "../layout";
 import config from "../../data/SiteConfig";
-import PostList from "../components/BlogListWide";
+import PostList from "../components/page/BlogListWide";
 
 const Container = styled.section`
   @media only screen and (max-width: 1280px) {

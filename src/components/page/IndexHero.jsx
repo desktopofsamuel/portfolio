@@ -8,11 +8,11 @@ import {
   faMedium,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import Boxed from "../elements/Boxed";
-import Profile from "../../static/images/Profile.png";
-import Link from "./common/GatsbyLink";
-import Column from "../elements/Column";
-import Emoji from "./common/Emoji";
+import Boxed from "../../elements/Boxed";
+import Profile from "../../../static/images/Profile.png";
+import Link from "../common/GatsbyLink";
+import Column from "../../elements/Column";
+import Emoji from "../common/Emoji";
 import Img from "gatsby-image";
 import Data from "elements/Data";
 import ReadOn from "elements/ReadOn";

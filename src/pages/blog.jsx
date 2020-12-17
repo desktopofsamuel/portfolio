@@ -4,8 +4,8 @@ import Boxed from "elements/Boxed";
 import PageTitle from "elements/PageTitle";
 import styled from "styled-components";
 import Layout from "../layout";
-import BlogDetail from "../components/BlogDetail";
-import BlogList from "../components/BlogList";
+import BlogDetail from "../components/page/BlogDetail";
+import BlogList from "../components/page/BlogList";
 import Link from "../components/common/GatsbyLink";
 
 const Row = styled.section`

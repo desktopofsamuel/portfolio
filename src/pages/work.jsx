@@ -3,7 +3,7 @@ import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
 import Link from "../components/common/GatsbyLink";
-import WorkIndex from "../components/WorkIndex";
+import WorkIndex from "../components/page/IndexWork";
 import WaterSVG from "../../static/SVG/Water.svg";
 import BookSVG from "../../static/SVG/Book.svg";
 import HyperAirSVG from "../../static/SVG/HyperAir-2.svg";
@@ -173,7 +173,7 @@ const WorkPage = ({ data }) => {
           </ClearRow>
           <Row>
             <Grid>
-              <WorkIndex postEdges={workEdges} detail></WorkIndex>
+              <WorkIndex postEdges={workEdges} detail />
             </Grid>
           </Row>
           {/* <Row className="full-bleed">

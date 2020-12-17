@@ -83,7 +83,7 @@ const Paragraph = styled.p`
   line-height: 200%;
   color: var(--color-primary-shades-500);
 `;
-class BlogListing extends React.Component {
+class IndexBlog extends React.Component {
   getPostList() {
     const postList = [];
     this.props.postEdges.forEach(postEdge => {
@@ -122,12 +122,12 @@ class BlogListing extends React.Component {
   }
 }
 
-export default BlogListing;
+export default IndexBlog;
 
-BlogListing.propTypes = {
+IndexBlog.propTypes = {
   invert: PropTypes.bool,
 };
 
-BlogListing.defaultProps = {
+IndexBlog.defaultProps = {
   invert: false,
 };

@@ -2,7 +2,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
-import PostList from "../components/BlogListWide";
+import PostList from "../components/page/BlogListWide";
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import PageTitle from "elements/PageTitle";
