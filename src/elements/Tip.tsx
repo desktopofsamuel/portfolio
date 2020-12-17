@@ -15,7 +15,12 @@ const Title = styled.p`
   margin-right: 8px;
 `;
 
-const Tip = ({ children, className }) => (
+type TipProps = {
+  children: object,
+  className: string,
+};
+
+const Tip = ({ children, className }: TipProps) => (
   <Wrapper className={className}>
     <Title>Tip:</Title>
     {children}

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Link from "components/common/GatsbyLink";
 import kebabCase from "lodash/kebabCase";
 
-const Wrapper = styled(Link)`
+const StyledLink = styled(Link)`
   display: inline-block;
   flex-direction: column;
   padding: 0.3rem 0.75rem;
@@ -27,11 +27,17 @@ const Wrapper = styled(Link)`
   }
 `;
 
-const Tag = ({ children, className, tag }) => (
-  <Wrapper className={className} to={`/tags/${kebabCase(tag)}`}>
+type TagProps = {
+  children: object,
+  className: string,
+  tag: string,
+};
+
+const Tag = ({ children, className, tag }: TagProps) => (
+  <StyledLink className={className} to={`/tags/${kebabCase(tag)}`}>
     <span>#</span>
     {children}
-  </Wrapper>
+  </StyledLink>
 );
 
 export default Tag;
