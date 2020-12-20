@@ -29,7 +29,7 @@ const StyledLink = styled(Link)`
 
 type TagProps = {
   children: object,
-  className: string,
+  className?: string,
   tag: string,
 };
 

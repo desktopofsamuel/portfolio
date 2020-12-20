@@ -4,12 +4,10 @@ import { graphql } from "gatsby";
 import styled from "styled-components";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from "gatsby-plugin-mdx";
-import GatsbyLink from "../components/common/GatsbyLink";
 import Helmet from "react-helmet";
 import Boxed from "elements/Boxed";
 import Layout from "../layout";
-import SEO from "../components/SEO";
-import WorkPageHero from "../components/WorkPageHero";
+import SEO from "components/SEO";
 import config from "../../data/SiteConfig";
 import "../layout/work.css";
 

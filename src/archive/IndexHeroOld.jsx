@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Boxed from "../elements/Boxed";
+import CTAButton from "../elements/ReadOn";
 
 const Box = styled(Boxed)`
   max-width: var(--page-container-l);

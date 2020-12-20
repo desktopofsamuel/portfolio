@@ -4,7 +4,7 @@ import styled from "styled-components";
 import PageTitle from "elements/PageTitle";
 import Boxed from "elements/Boxed";
 import Layout from "../layout";
-import PhotoMagazine from "../components/PhotoMagazine";
+import PhotoMagazine from "../components/page/PhotoMagazine";
 
 const Row = styled.section`
   padding: var(--var-padding-m) 0;

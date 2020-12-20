@@ -24,7 +24,15 @@ const Wrapper = styled(Boxed)`
   }
 `;
 
-const Related = ({ node }) => {
+type RelatedProps = {
+  node: {
+    path: string,
+    title: string,
+    excerpt: string,
+  },
+};
+
+const Related = ({ node }: RelatedProps) => {
   return (
     <Container className="full-bleed">
       <Wrapper size="small">
