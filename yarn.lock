@@ -1226,6 +1226,11 @@
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
   integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
 
+"@fastly/performance-observer-polyfill@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@fastly/performance-observer-polyfill/-/performance-observer-polyfill-1.1.1.tgz#2e64762fa2e43f32c01dcb2ac68421aded55bbb8"
+  integrity sha512-hmXJBYhIs77KPyg/IcPM5sDeQSPLrTzD6DqGfSUUtvEUoQxbW6nxHYCYJE8CP+Ay+OUqLZlTpW+w1OEOZWckzQ==
+
 "@fortawesome/fontawesome-common-types@^0.2.26":
   version "0.2.26"
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.26.tgz#6e0b13a752676036f8196f8a1500d53a27b4adc1"
@@ -7405,18 +7410,12 @@ gatsby-remark-images-grid@^1.0.2:
     unified "^7.0.0"
     unist-util-visit "^1.4.0"
 
-gatsby-remark-images-medium-zoom@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-images-medium-zoom/-/gatsby-remark-images-medium-zoom-1.5.0.tgz#e77d852817ba7fef6858487e0f3e94c77997cfae"
-  integrity sha512-8pLVwh8kdTSNE1YHKc4bMEW9h7HKBO12/omAvPxg+/L0nQtqG3DVx5xccRnBSICjK6WQf2XXy6XoMtyGOgZnJQ==
+gatsby-remark-images-medium-zoom@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-images-medium-zoom/-/gatsby-remark-images-medium-zoom-1.7.0.tgz#b9a55ebf29a4a15f9e7da7a8f4d0dfbe47aa5717"
+  integrity sha512-TLaq+ua+nO2CX/B/FnWB0OvJiLdplzbRCXrgCxYoZs3RkN5IfUu9BJYKEFjzx6J3uhwLvBA7XqE5cFOZ2cu4AQ==
   dependencies:
-    medium-zoom "^1.0.4"
-
-gatsby-remark-images-zoom@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-images-zoom/-/gatsby-remark-images-zoom-1.1.0.tgz#8e42d463891cd0c84a4f70ec8df4b41965b22996"
-  integrity sha512-VYuSEH0tg3WJh8DpMKeMm5G/K6DDInA+tPySzdsakDLPDU1dh8VjCDg4q45Rdu1xcnICISn9tXCjOdQ3cryKCQ==
-  dependencies:
+    "@fastly/performance-observer-polyfill" "^1.1.1"
     medium-zoom "^1.0.4"
 
 gatsby-remark-images@3.3.19:
