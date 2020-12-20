@@ -14,10 +14,10 @@ tags:
 cover: "./20201217-tableofcontent.png"
 draft: false
 feature: true
-tldr: "Tutorial on making a article outline responsive to your scrolling using react-scrollspy"
+tldr: "Tutorial on making an article outline responsive to your scrolling using react-scrollspy"
 ---
 
-Have you see some documentation and tutorial sites, allow you see which section are you reading on the side? If you want to improve the readability of your Gatsby website. In this article, I will share my process in creating an interactive table of content component that can respond to your scrolling. 
+Have you visited some documentation and tutorial sites, that allow you to see which section are you reading on the side? If you want to improve the readability of your Gatsby website. In this article, I will share my process in creating an interactive table of content component that can respond to your scrolling. 
 
 Let's take a look at the requirement:
 1. Reader will be able to navigate section of content easily 
@@ -28,7 +28,7 @@ We will be using a package called `react-scrollspy` to detect if the headings ar
 By including a Table of Content component, users will be able to navigate within your article easily, finding the content they are interested. Let's get started and skip to step 2 if you have a Gatsby site already.
 
 
-# 1. Create Site 
+# 1. Create a Gatsby Site
 We will install a simple MDX starter at the beginning
 
 ```
@@ -37,7 +37,7 @@ gatsby new gatsby-tutorial-table-of-content https://github.com/hagnerd/gatsby-st
 
 Use `yarn` or `npm install` to initialise the repository. 
 
-# 2. Install react-rcrollspy & gatsby-remark-autolink-headers
+# 2. Install react-scrollspy & gatsby-remark-autolink-headers
 Taking a look at `react-scrollspy`, we will need to provide the headings for each page to the component, which luckily generated automatically by default in each post node. We will also need to state the class name to activate when in view. 
 
 ```
@@ -80,12 +80,12 @@ Then I will add Toc just before the MDXRenderer.
 <Toc post={post.tableOfContents} />
 <MDXRenderer>{post.body}</MDXRenderer>
 ```
-For now, only the Table of Content h3 title will be displayed. But in Console, as we logged the post props. We can also check if the objects of `tableOfContents` are returning.
+For now, only the Table of Content h3 title will be displayed. But in console, as we logged the post props. We can also check if the objects of `tableOfContents` are returning.
 ![Console Log](./20201211-toc-consolelog.png)
 
 # 5. Mapping Table of Content Props
 
-For simpler demo we will be only listing all first level heading in the Table of Content. Let's update the `toc.js` by mapping the props value. By doing so, we would be able to access all the headings information and link from `tableofContents`from GraphQL.
+For a simpler demo, we will be only listing all first-level heading in the Table of Content. Let's update `toc.js` by mapping the props value. By doing so, we would be able to access all the headings information and link from `tableofContents`from GraphQL.
 
 ```js
 return (
@@ -111,7 +111,7 @@ Let's create a `Toc.css`in the same folder and import it in the component.
 import './Toc.css'
 ```
 
-We will make the Table of Content fixed on the right side of the window, so users can navigate easily no matter which part of the page they are. Also, since we do not want to alter normal list style. We will be specifying class name `.toc-list`, which will be added in the next step.
+We will make the Table of Content fixed on the right side of the window, so users can navigate easily no matter which part of the page they are. Also, since we do not want to alter normal list style. We will be specifying a class name `.toc-list`, which will be added in the next step.
 
 ![Styled Table of Content Fixed on the right window](./20201211-toc-styled.png)
 
@@ -160,7 +160,7 @@ ul.toc-list > li.is-current > a {
  1. List of anchor URL link as an array
  2. Class name when the heading is in view
 
-It took some time for investigation, but since Gatsby `tableofContents`conveniently added anchor already, we actually need to remove the `#` from the provided object. Here's simple function to call `url`value in the object and remove the first character.
+It took some time for investigation, but since Gatsby `tableofContents`conveniently added anchor already, we actually need to remove the `#` from the provided object. Here's a simple function to call `url`value in the object and remove the first character.
 
 ```js
   let url = post.items.map(function(post) {
@@ -225,10 +225,10 @@ export default function Toc(props) {
  
  
  # How to debug all the error using Gatsby Build?
- If you have a lot of blog post, you will not be able to test everyone by yourself. If you have been using `gatsby develop` to test the Table of Content component. I highly recommend you to use `gatsby build`to test all blog posts before commit. Making sure there are no error to the blog post. I managed to find some blog post without any headings and one blog post that had a wrong heading hierarchy (h3 before h2) which resulted in build error.
+ If you have a lot of blog post, you will not be able to test everyone by yourself. If you have been using `gatsby develop` to test the Table of Content component. I highly recommend you to use `gatsby build`to test all blog posts before commit. Making sure there is no error in the blog post. I managed to find some blog post without any headings and one blog post that had a wrong heading hierarchy (h3 before h2) which resulted in build error.
  
 #  How to remove icon next to the headings?
-The plugin in `gatsby-remark-autolink-headers`add an icon before each headings that it process. According to the documentation, make `icon: false` under plugin options will remove the icons before anchor headings
+The plugin in `gatsby-remark-autolink-headers`add an icon before each headings that it process. According to the documentation, make `icon: false` under plugin options will remove the icons before anchor headings.
 
 ```js
 /*gatsby-config.js*/
@@ -242,7 +242,7 @@ The plugin in `gatsby-remark-autolink-headers`add an icon before each headings t
 ```
  
  # How to make scroll smooth?
-Install `smooth-scroll` add the following code to `Layout.js` or any where that will be loaded on everypage.
+Install `smooth-scroll` add the following code to `Layout.js` or anywhere that will be loaded on every page.
 
 ```js
     if (typeof window !== 'undefined') {
@@ -252,8 +252,8 @@ Install `smooth-scroll` add the following code to `Layout.js` or any where that 
 ```
  
 # What next? 
-There are still some problems in existing solutions. Like `react-scrollspy` only recognizes the heading instead of the heading + following paragraphs. So long article may experience  (Heading 1 In View -> Out of View -> Heading 2 In View) such problem.
+There are still some problems with existing solutions. Like `react-scrollspy` only recognizes the heading instead of the heading + following paragraphs. So long article may experience  (Heading 1 In View -> Out of View -> Heading 2 In View) such problem.
 
-Also, only first level heading is rendered currently. Putting a loop would also be the next step in making the table of content better. 
+Also, only first-level heading is rendered currently. Putting a loop would also be the next step in making the table of content better. 
 
-Last but not least, mobile display is also worth working on, currently the table of content would not be rendered in mobile as a majority of my reader come from desktop. But implementing a floating button with pop up menu would also be a feasible solution. 
+Last but not least, mobile display is also worth working on, currently, the table of content would not be rendered in mobile as a majority of my reader come from desktop. But implementing a floating button with pop-up menu would also be a feasible solution. 
