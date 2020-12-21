@@ -82,7 +82,7 @@ const postPage = path.resolve("src/templates/blog-template.jsx");
 const workPage = path.resolve("src/templates/work-template.jsx");
 const photoPage = path.resolve("src/templates/photo-template.jsx");
 const tagPage = path.resolve("src/templates/tag-template.jsx");
-const categoryPage = path.resolve("src/templates/category-template.jsx");
+const categoryPage = path.resolve("src/templates/category-template.tsx");
 
 exports.createPages = async ({ graphql, actions: { createPage } }) => {
   const response = await graphql(query);

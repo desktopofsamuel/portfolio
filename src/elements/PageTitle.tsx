@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 
 const PageTitleWrapper = styled.div`
   margin: 0;
@@ -21,7 +20,12 @@ const Text = styled.p`
   max-width: 40ch;
 `;
 
-const PageTitle = ({ title, description }) => {
+type PageTitleProps = {
+  title: string,
+  description?: string,
+};
+
+const PageTitle = ({ title, description }: PageTitleProps) => {
   return (
     <PageTitleWrapper>
       <Title>{title}</Title>
@@ -31,12 +35,3 @@ const PageTitle = ({ title, description }) => {
 };
 
 export default PageTitle;
-
-PageTitle.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string,
-};
-
-PageTitle.defaultProps = {
-  description: "",
-};

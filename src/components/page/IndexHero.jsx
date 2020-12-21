@@ -9,7 +9,6 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import Boxed from "../../elements/Boxed";
-import Profile from "../../../static/images/Profile.png";
 import Link from "../common/GatsbyLink";
 import Column from "../../elements/Column";
 import Emoji from "../common/Emoji";
@@ -70,7 +69,7 @@ const Subtitle = styled.p``;
 const IndexHero = () => {
   const data = useStaticQuery(graphql`
     query {
-      profile: file(relativePath: { eq: "images/Profile.png" }) {
+      profile: file(relativePath: { eq: "images/Profile.webp" }) {
         ...fluidImage
       }
     }

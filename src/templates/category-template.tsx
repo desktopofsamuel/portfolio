@@ -36,7 +36,20 @@ const Hero = styled.div`
   padding: var(--padding-m) 0 var(--padding-m) 0;
 `;
 
-const CategoryPageTemplate = ({ data, pageContext }) => {
+type CategoryPageProps = {
+  data: {
+    allMdx: {
+      edges: {
+        node: object,
+      },
+    },
+  },
+  pageContext: {
+    category: string,
+  },
+};
+
+const CategoryPageTemplate = ({ data, pageContext }: CategoryPageProps) => {
   const { category } = pageContext;
   const postEdges = data.allMdx.edges;
 
@@ -48,7 +61,7 @@ const CategoryPageTemplate = ({ data, pageContext }) => {
       <WideBoxed>
         <Grid>
           <Hero>
-            <PageTitle subtitle={`Discover Post in`} title={`${category}`} />
+            <PageTitle title={`${category}`} />
           </Hero>
           <Row>
             <Container>
@@ -73,38 +86,7 @@ export const pageQuery = graphql`
     ) {
       totalCount
       edges {
-        node {
-          fields {
-            slug
-            date(formatString: "MMM DD, YYYY", locale: "en")
-          }
-          excerpt(pruneLength: 200)
-          timeToRead
-          frontmatter {
-            title
-            tags
-            path
-            category
-            cover {
-              publicURL
-              size
-              childImageSharp {
-                sizes(maxWidth: 1140) {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  srcWebp
-                  srcSetWebp
-                  sizes
-                  originalImg
-                  originalName
-                }
-              }
-            }
-            date
-          }
-        }
+        ...blogpost
       }
     }
   }

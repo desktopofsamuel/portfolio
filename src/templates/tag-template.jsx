@@ -48,38 +48,7 @@ export const pageQuery = graphql`
     ) {
       totalCount
       edges {
-        node {
-          fields {
-            slug
-            date(formatString: "MMM DD, YYYY", locale: "en")
-          }
-          excerpt(pruneLength: 200)
-          timeToRead
-          frontmatter {
-            title
-            tags
-            path
-            category
-            cover {
-              publicURL
-              size
-              childImageSharp {
-                sizes(maxWidth: 1140) {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  srcWebp
-                  srcSetWebp
-                  sizes
-                  originalImg
-                  originalName
-                }
-              }
-            }
-            date
-          }
-        }
+        ...blogpost
       }
     }
   }
