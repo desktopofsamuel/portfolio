@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import styled from "styled-components";
-import Boxed from "elements/Boxed";
+import Boxed from "components/utils/Boxed";
 import PageTitle from "elements/PageTitle";
 import Resume from "../components/Resume";
 import SEO from "../components/SEO";

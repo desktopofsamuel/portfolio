@@ -1,24 +1,13 @@
 import React from "react";
-import Helmet from "react-helmet";
 import { graphql } from "gatsby";
-import Layout from "../layout";
-import Link from "../components/common/GatsbyLink";
-import WorkIndex from "../components/page/IndexWork";
-import WaterSVG from "../../static/SVG/Water.svg";
-import BookSVG from "../../static/SVG/Book.svg";
-import HyperAirSVG from "../../static/SVG/HyperAir-2.svg";
-import PinSVG from "../../static/SVG/Pin.svg";
-import PlayaSVG from "../../static/SVG/Playa.svg";
-import PingspaceSVG from "../../static/SVG/Pingspace.svg";
-import PageTitle from "../elements/PageTitle";
-import SEO from "../components/SEO";
-import config from "../../data/SiteConfig";
+import Link from "components/common/GatsbyLink";
+import WorkIndex from "components/page/IndexWork";
+import PageTitle from "elements/PageTitle";
 import styled from "styled-components";
-import Boxed from "elements/Boxed";
-import WorkList from "../components/WorkList";
-import ReadOn from "../elements/ReadOn";
-import InlineCarousel from "../components/InlineCarousel";
-import WorkDetail from "../components/WorkDetail";
+import Boxed from "components/utils/Boxed";
+import ReadOn from "elements/ReadOn";
+import WorkDetail from "components/WorkDetail";
+import Layout from "../layout";
 
 const Row = styled.section`
   padding: var(--var-padding-m) 0;
@@ -51,50 +40,6 @@ const ProjectWrapper = styled.div`
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
   }
 `;
-
-const ProjectContent = styled.div``;
-
-const ProjectBottom = styled.div`
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  justify-self: flex-end;
-`;
-
-const ProjectIcon = styled.div`
-  margin-bottom: 2rem;
-`;
-
-const ProjectTitle = styled.h3``;
-
-const ProjectBlurb = styled.p`
-  font-size: 0.975rem;
-`;
-
-const ProjectYear = styled.small`
-  margin-bottom: 0;
-`;
-
-const ProjectLink = styled(Link)``;
-/* 
-const ProjectBox = props => (
-  <ProjectWrapper>
-    <ProjectIcon>
-      <img src={props.img} width="50px" />
-    </ProjectIcon>
-    <ProjectContent>
-      <ProjectTitle>{props.title}</ProjectTitle>
-      <ProjectBlurb>{props.blurb}</ProjectBlurb>
-    </ProjectContent>
-    <ProjectBottom>
-      <ProjectYear>{props.year}</ProjectYear>
-      <ProjectLink className="noeffect" to={props.url} target="blank">
-        ↗
-      </ProjectLink>
-    </ProjectBottom>
-  </ProjectWrapper>
-);
- */
 
 const Item = styled.div`
   padding: var(--padding-m);

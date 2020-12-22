@@ -1,13 +1,26 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import SEO from "../components/SEO";
-import Boxed from "elements/Boxed";
-import Layout from "../layout";
+import Boxed from "components/utils/Boxed";
 import { Helmet } from "react-helmet";
+import SEO from "components/SEO";
+import Layout from "../layout";
 import config from "../../data/SiteConfig";
 // import Sidebar from "components/Sidebar";
 
-const Main = styled.main``;
+const Main = styled.main`
+  h2 {
+    font-size: var(--font-size-m);
+    margin: 2rem 0 1rem 0;
+  }
+
+  h5 {
+    margin: 0;
+  }
+
+  p {
+    font-size: var(--font-size-s);
+  }
+`;
 
 const Container = styled(Boxed)`
   display: grid;

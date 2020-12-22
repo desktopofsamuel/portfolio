@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Column from "elements/Column";
+import Column from "components/utils/Column";
 
 const Text = styled.p`
   font-size: var(--font-size-xs);

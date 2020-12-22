@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from "gatsby-plugin-mdx";
 import Helmet from "react-helmet";
-import Boxed from "elements/Boxed";
+import Boxed from "components/utils/Boxed";
 import Layout from "../layout";
 import SEO from "components/SEO";
 import config from "../../data/SiteConfig";

@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Boxed from "elements/Boxed";
+import Boxed from "components/utils/Boxed";
 import PageTitle from "elements/PageTitle";
 import styled from "styled-components";
 import Layout from "../layout";

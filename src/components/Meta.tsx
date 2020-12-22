@@ -8,9 +8,10 @@ import {
   faBullhorn,
   faCalendarAlt,
   faMugHot,
+  faUser,
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faMobileAlt, faMobile, faMugHot, faBullhorn, faCalendarAlt);
+library.add(faMobileAlt, faMobile, faMugHot, faBullhorn, faCalendarAlt, faUser);
 
 const Head = styled.div`
   display: flex;
@@ -34,22 +35,52 @@ const Label = styled.p`
   margin: 0;
 `;
 
-const Value = styled.p`
+type ValueProps = {
+  isLarge: boolean,
+};
+
+const Value =
+  styled.p <
+  ValueProps >
+  `
   color: var(--color-text);
+  font-size: ${props =>
+    props.isLarge ? "var(--font-size-l)" : "var(--font-size-s)"};
   margin: 0;
   margin-bottom: var(--padding-s);
 `;
 
-const Meta = ({ icon, label, value }) => {
+type MetaProps = {
+  icon: string,
+  label: string,
+  value: string,
+  isLarge: boolean,
+};
+
+const defaultProps: MetaProps = {
+  icon: "",
+  label: "",
+  value: "",
+  isLarge: false,
+};
+
+const Meta: React.FC<MetaProps> = ({
+  icon,
+  label,
+  value,
+  isLarge,
+}: MetaProps) => {
   return (
     <div>
       <Head>
         <Icon icon={["fas", icon]} title={label} />
         <Label>{label}</Label>
       </Head>
-      <Value>{value}</Value>
+      <Value isLarge={isLarge}>{value}</Value>
     </div>
   );
 };
+
+Meta.defaultProps = defaultProps;
 
 export default Meta;

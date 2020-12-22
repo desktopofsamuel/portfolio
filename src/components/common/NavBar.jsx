@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import Popup from "reactjs-popup";
 import FadeIn from "react-fade-in";
-import Link from "./GatsbyLink";
-import Boxed from "../../elements/Boxed";
+import Link from "components/common/GatsbyLink";
+import Boxed from "components/utils/Boxed";
 
 const Main = styled.div`
   /* background: var(--color-white-300); */

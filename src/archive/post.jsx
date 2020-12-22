@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import ZoomImage from "components/ZoomImage/ZoomImage";
+import ZoomImage from "components/ZoomImage";
 import kebabCase from "lodash/kebabCase";
 import styled from "styled-components";
 import PropTypes from "prop-types";

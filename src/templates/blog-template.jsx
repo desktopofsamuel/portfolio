@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Helmet from "react-helmet";
-import Boxed from "elements/Boxed";
+import Boxed from "components/utils/Boxed";
 import styled from "styled-components";
 import Layout from "../layout";
 import config from "../../data/SiteConfig";

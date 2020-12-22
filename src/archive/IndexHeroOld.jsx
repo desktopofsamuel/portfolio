@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Boxed from "../elements/Boxed";
+import Boxed from "../components/utils/Boxed";
 import CTAButton from "../elements/ReadOn";
 
 const Box = styled(Boxed)`

@@ -2,7 +2,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import styled from "styled-components";
-import Boxed from "elements/Boxed";
+import Boxed from "components/utils/Boxed";
 import PageTitle from "elements/PageTitle";
 import Layout from "../layout";
 import config from "../../data/SiteConfig";

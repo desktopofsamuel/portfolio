@@ -8,12 +8,11 @@ import {
   faMedium,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import Boxed from "../../elements/Boxed";
+import Boxed from "../utils/Boxed";
 import Link from "../common/GatsbyLink";
-import Column from "../../elements/Column";
+import Column from "../utils/Column";
 import Emoji from "../common/Emoji";
 import Img from "gatsby-image";
-import Data from "elements/Data";
 import ReadOn from "elements/ReadOn";
 
 const Container = styled(Boxed)``;

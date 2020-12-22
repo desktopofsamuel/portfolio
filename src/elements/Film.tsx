@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 
 const Container = styled.div`
   background: var(--color-white-500);
@@ -44,7 +43,15 @@ const Year = styled.p`
 
 const TitleWrapper = styled.div``;
 
-const Film = ({ poster, title, year, rating, director, link }) => (
+type FilmProps = {
+  poster: string,
+  title: string,
+  year: string,
+  rating: string,
+  director: string,
+};
+
+const Film = ({ poster, title, year, rating, director }: FilmProps) => (
   <Container>
     <Poster src={poster} alt={title} title={title} />
     <Spacer />
@@ -60,16 +67,3 @@ const Film = ({ poster, title, year, rating, director, link }) => (
 );
 
 export default Film;
-
-Film.propTypes = {
-  title: PropTypes.string.required,
-  year: PropTypes.string,
-  director: PropTypes.string,
-  rating: PropTypes.string,
-};
-
-Film.defaultProps = {
-  year: "",
-  director: "",
-  rating: "",
-};

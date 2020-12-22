@@ -4,9 +4,9 @@ import styled from "styled-components";
 const Grid = styled.div`
   display: grid;
   grid-template-columns: ${props =>
-    props.min || "repeat(auto-fit, minmax(200px, 1fr))"};
+    props.min || "repeat(auto-fit, minmax(300px, 1fr))"};
   grid-gap: ${props => props.gap || "var(--var-padding-s)"};
-  margin: ${props => props.margin || "var(--var-padding-m), 0"};
+  margin: ${props => props.margin || "var(--var-padding-m) 0"};
   align-items: center;
 `;
 

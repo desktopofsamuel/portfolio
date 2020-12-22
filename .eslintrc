@@ -34,7 +34,7 @@
     ],
     "react/prop-types": 1,
     "react/jsx-curly-brace-presence": 1,
-    "import/no-unresolved": 1,
+    "import/no-unresolved": 0,
     "no-unused-vars": 1,
     "lines-between-class-members":1
   }

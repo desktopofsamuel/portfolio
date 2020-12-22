@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import Boxed from "elements/Boxed";
+import Boxed from "components/utils/Boxed";
 
 const NowGrid = styled.section`
   height: auto;

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Boxed from "../elements/Boxed";
+import Boxed from "./utils/Boxed";
 import Link from "./common/GatsbyLink";
 
 const Container = styled.section`
