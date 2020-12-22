@@ -1,10 +1,11 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import Layout from "../layout";
 import styled from "styled-components";
+import Boxed from "elements/Boxed";
 import Img from "gatsby-image";
 import Helmet from "react-helmet";
+import Layout from "../layout";
 import SEO from "../components/SEO";
 import config from "../../data/SiteConfig";
 
@@ -16,12 +17,7 @@ const Cover = styled(Img)`
 
 const PhotoLayout = styled.div`
   background: var(--color-background);
-  max-width: 90vh;
-  margin: 0 auto;
-
-  @media screen and (max-width: 1024px) {
-    max-width: 100%;
-  }
+  margin-top: var(--var-padding-m);
 `;
 
 const Header = styled.div`
@@ -78,19 +74,39 @@ const MDX = styled(MDXRenderer)`
   }
 `;
 
-export default class PhotoPageTemplate extends React.Component {
-  render() {
-    const { slug } = this.props.pageContext;
-    const path = "/photo" + `${slug}`;
-    const photoNode = this.props.data.mdx;
-    const photo = this.props.data.mdx.frontmatter;
+type PhotoTemplateProps = {
+  pageContext: {
+    slug: string,
+  }
+  data:  {
+    mdx: {
+      frontmatter: {
+        title: string,
+        cover: {
+          childImageSharp: {
+            fluid: object
+          }
+        }
+      }
+      body: object,
+    
+    }
+  }
+}
 
-    return (
-      <Layout>
-        <Helmet>
-          <title>{`${photo.title} | ${config.siteTitleAlt}`}</title>
-        </Helmet>
-        <SEO postPath={path} postNode={photoNode} postSEO />
+const PhotoTemplate = ({ data, pageContext }: PhotoTemplateProps) => {
+  const { slug } = pageContext;
+  const path = "/photo" + `${slug}`;
+  const photoNode = data.mdx;
+  const photo = data.mdx.frontmatter;
+
+  return (
+    <Layout>
+      <Helmet>
+        <title>{`${photo.title} | ${config.siteTitleAlt}`}</title>
+      </Helmet>
+      <SEO postPath={path} postNode={photoNode} postSEO />
+      <Boxed>
         <PhotoLayout>
           <Header>
             <Overlay />
@@ -105,10 +121,12 @@ export default class PhotoPageTemplate extends React.Component {
 
           <MDX>{photoNode.body}</MDX>
         </PhotoLayout>
-      </Layout>
-    );
-  }
-}
+      </Boxed>
+    </Layout>
+  );
+};
+
+export default PhotoTemplate;
 
 export const pageQuery = graphql`
   query PhotoPostQuery($id: String) {

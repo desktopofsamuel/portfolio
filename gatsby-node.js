@@ -80,7 +80,7 @@ const query = `
 `;
 const postPage = path.resolve("src/templates/blog-template.jsx");
 const workPage = path.resolve("src/templates/work-template.jsx");
-const photoPage = path.resolve("src/templates/photo-template.jsx");
+const photoPage = path.resolve("src/templates/photo-template.tsx");
 const tagPage = path.resolve("src/templates/tag-template.jsx");
 const categoryPage = path.resolve("src/templates/category-template.tsx");
 

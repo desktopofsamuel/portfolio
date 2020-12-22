@@ -1,11 +1,90 @@
 import React from "react";
-import styled from "styled-components";
-import ResumeItem from "elements/ResumeItem";
-import Column from "elements/Column";
+import styled, { StyledFunction } from "styled-components";
 import HyperAir from "../../static/about/hyperair.svg";
 import Playa from "../../static/about/playa.svg";
 import Apple from "../../static/about/apple.svg";
 
+/*Resume Item Component*/
+type ItemWrapperProps = {
+  noBorder: boolean,
+  haveGrid: boolean,
+};
+
+const ItemWrapper =
+  styled.div <
+  ItemWrapperProps >
+  `
+  border-top: ${props =>
+    props.noBorder ? "none" : "1px var(--color-white-500) solid"};
+  padding-top: ${props => (props.noBorder ? "0" : "1rem")};
+  display: ${props => (props.haveGrid ? "grid" : "block")};
+  grid-template-columns: 7fr 2fr;
+  grid-gap: var(--padding-s);
+`;
+
+const ItemTitle = styled.h3`
+  font-size: 1.5rem;
+  color: var(--color-white-500);
+  margin: 0;
+`;
+
+type ContentProps = {
+  noBorder: boolean,
+};
+
+const Content =
+  styled.p <
+  ContentProps >
+  `
+  color: var(--color-primary-shades-100);
+  font-size: var(--font-size-s);
+  line-height: auto;
+  margin-top: ${props => (props.noBorder ? "0" : "1rem")};
+`;
+
+const Meta = styled.p`
+  color: var(--color-primary-shades-100);
+  opacity: 0.5;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--font-small-letter-spacing);
+`;
+
+const Image = styled.img`
+  justify-self: flex-end;
+`;
+
+type ResumeItemProps = {
+  title?: string,
+  content: string,
+  meta?: string,
+  image?: string,
+  noBorder?: boolean,
+  haveGrid?: boolean,
+};
+
+const ResumeItem = ({
+  title,
+  content,
+  meta,
+  image,
+  noBorder,
+  haveGrid,
+}: ResumeItemProps) => {
+  return (
+    <ItemWrapper noBorder={noBorder} haveGrid={haveGrid}>
+      <div>
+        <ItemTitle>{title}</ItemTitle>
+        <Content noBorder={noBorder}>{content}</Content>
+        <Meta>{meta}</Meta>
+      </div>
+      {image && <Image src={image} alt={`${title} Logo`} />}
+    </ItemWrapper>
+  );
+};
+
+/*Resume Section*/
 const Section = styled.section`
   color: var(--color-white-500);
 `;
@@ -15,13 +94,6 @@ const Title = styled.h3`
   color: var(--color-white-500);
   margin: 0;
 `;
-
-// const Subtitle = styled.p`
-//   font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1600 - 320)));
-//   line-height: 2em;
-//   color: var(--color-primary-shades-100);
-//   margin-bottom: 4rem;
-// `;
 
 const ResumeSectionTitle = styled.small`
   color: var(--color-primary-shades-100);

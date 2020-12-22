@@ -14,11 +14,10 @@ const Grid = styled.div`
   align-items: ${props => (props.isCenter ? "center" : "initial")};
   text-align: ${props => (props.isCenter ? "center" : "initial")};
 
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 1440px) {
     width: 90vw;
     margin: 0 auto;
   }
-  
 `;
 
 const Boxed = ({ children, className, size, isCenter }) => (

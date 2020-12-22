@@ -11,6 +11,7 @@ type LinkProps = {
   to: string,
   activeClassName?: string,
   partiallyActive?: boolean,
+  target: "_blank" | "_self",
   className?: string,
 };
 
@@ -23,6 +24,7 @@ const Link = ({
   className,
   activeClassName,
   partiallyActive,
+  target,
   ...other
 }: LinkProps) => {
   // Tailor the following test to your environment.
@@ -39,6 +41,7 @@ const Link = ({
         activeClassName={activeClassName}
         partiallyActive={partiallyActive}
         activeStyle={ActiveLink}
+        target={target}
         {...other}
       >
         {children}
@@ -46,7 +49,13 @@ const Link = ({
     );
   }
   return (
-    <a href={to} className={className} rel="noreferrer noopener" {...other}>
+    <a
+      href={to}
+      className={className}
+      target={target}
+      rel="noreferrer noopener"
+      {...other}
+    >
       {children}
     </a>
   );

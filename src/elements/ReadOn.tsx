@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styled from "styled-components";
 import GatsbyLink from "../components/common/GatsbyLink";
 
@@ -54,27 +53,31 @@ const Button = styled.div`
   }
 `;
 
-const ReadOn = ({ href, text, target, center }) => {
-  return (
-    <GatsbyLink to={href} target={target} className="noeffect">
-      <Button>
-        <p>{text}</p>
-        <span>→</span>
-      </Button>
-    </GatsbyLink>
-  );
+type ButtonReadOnProps = {
+  href: string,
+  text: string,
+  target: "_blank" | "_self",
 };
 
-export default ReadOn;
-
-ReadOn.propTypes = {
-  href: PropTypes.string.isRequired,
-  text: PropTypes.string,
-  target: PropTypes.oneOf(["_blank", "_self"]).isRequired,
-  center: PropTypes.bool,
-};
-
-ReadOn.defaultProps = {
+const defaultProps: ButtonReadOnProps = {
   text: "Read On",
   target: "_self",
+  href: "",
 };
+
+const ReadOn: React.FC<ButtonReadOnProps> = ({
+  href,
+  text,
+  target,
+}: ButtonReadOnProps) => (
+  <GatsbyLink to={href} target={target} className="noeffect">
+    <Button>
+      <p>{text}</p>
+      <span>→</span>
+    </Button>
+  </GatsbyLink>
+);
+
+ReadOn.defaultProps = defaultProps;
+
+export default ReadOn;
