@@ -5,8 +5,16 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Img from "gatsby-image";
 import Tag from "elements/Tag";
+import PostSidebar from "./PostSidebar";
 
-const Container = styled.main`
+const Container = styled.div`
+  display: grid;
+  grid-template-columns: var(--page-container-s) auto;
+`;
+
+const Sidebar = styled.aside``;
+
+const Main = styled.main`
   small {
     margin: 0;
   }
@@ -49,23 +57,28 @@ class PostTemplate extends React.Component {
 
     return (
       <Container>
-        <small>
-          <time>{postNode.fields.date}</time>
-        </small>
-        <h1>{post.title}</h1>
-        <p className="subtitle">{post.tldr}</p>
-        <Img sizes={postNode.frontmatter.cover.childImageSharp.sizes} />
-        <hr />
-        <MDXRenderer>{postNode.body}</MDXRenderer>
-        <div>
-          {post.tags.map((tag, index) => {
-            return (
-              <Tag tag={tag} key={index}>
-                {tag}
-              </Tag>
-            );
-          })}
-        </div>
+        <Main>
+          <small>
+            <time>{postNode.fields.date}</time>
+          </small>
+          <h1>{post.title}</h1>
+          <p className="subtitle">{post.tldr}</p>
+          <Img sizes={postNode.frontmatter.cover.childImageSharp.sizes} />
+          <hr />
+          <MDXRenderer>{postNode.body}</MDXRenderer>
+          <div>
+            {post.tags.map((tag, index) => {
+              return (
+                <Tag tag={tag} key={index}>
+                  {tag}
+                </Tag>
+              );
+            })}
+          </div>
+        </Main>
+        <Sidebar>
+          <PostSidebar />
+        </Sidebar>
       </Container>
     );
   }
