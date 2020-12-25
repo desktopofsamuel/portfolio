@@ -7,9 +7,11 @@ import config from "../../data/SiteConfig";
 import SEO from "../components/SEO";
 import PostTemplate from "../components/PostTemplate";
 import Related from "../components/Related";
+import TableOfContent from "../components/TableOfContent";
 
 const BlogPostTemplate = ({ data, pageContext }) => {
   const postNode = data.blog;
+  // const postToc = data.blog.tableOfContents;
   const post = postNode.frontmatter;
   const prev = pageContext.prev
     ? {
@@ -41,6 +43,7 @@ export const pageQuery = graphql`
       id
       body
       excerpt
+      tableOfContents
       frontmatter {
         path
         title

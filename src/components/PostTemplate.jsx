@@ -54,6 +54,7 @@ class PostTemplate extends React.Component {
   render() {
     const { postNode } = this.props;
     const post = postNode.frontmatter;
+    const postToc = postNode.tableOfContents;
 
     return (
       <Container>
@@ -77,7 +78,7 @@ class PostTemplate extends React.Component {
           </div>
         </Main>
         <Sidebar>
-          <PostSidebar />
+          <PostSidebar postToc={postToc} />
         </Sidebar>
       </Container>
     );
