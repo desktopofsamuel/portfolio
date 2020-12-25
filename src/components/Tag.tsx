@@ -13,7 +13,7 @@ const StyledLink = styled(Link)`
   transition: var(--transition);
 
   color: var(--color-primary);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-2xs);
 
   span {
     opacity: 0.5;

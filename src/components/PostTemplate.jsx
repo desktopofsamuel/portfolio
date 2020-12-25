@@ -1,20 +1,25 @@
-import React, { Component } from "react";
-import { Link } from "gatsby";
+import React from "react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import PropTypes from "prop-types";
 import styled from "styled-components";
+import Boxed from "components/utils/Boxed";
 import Img from "gatsby-image";
-import Tag from "elements/Tag";
+import Tag from "components/Tag";
 import PostSidebar from "./PostSidebar";
 
-const Container = styled.div`
+const Container = styled(Boxed)`
   display: grid;
+  grid-gap: 3rem;
   grid-template-columns: var(--page-container-s) auto;
+
+  @media only screen and (max-width: 1024px) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 `;
 
 const Sidebar = styled.aside``;
 
-const Main = styled.main`
+const Main = styled.article`
   small {
     margin: 0;
   }
@@ -22,16 +27,14 @@ const Main = styled.main`
   h1 {
     margin-top: 1em;
     font-size: var(--font-size-xl);
-    font-weight: 500;
-    letter-spacing: -2px;
-    font-family: var(--font-tertiary);
+    font-weight: var(--font-weight-bold);
+    font-family: var(--font-primary);
   }
 
   h2 {
     font-size: var(--font-size-l);
-    font-family: var(--font-tertiary);
-    font-weight: 500;
-    letter-spacing: -1px;
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-bold);
   }
 
   h3 {

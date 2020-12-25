@@ -12,7 +12,7 @@ const Main = styled.div`
   /* background: var(--color-white-300); */
   width: 100%;
   height: 100%;
-  padding: var(--var-padding-l) var(--var-padding-s) 0 var(--var-padding-s);
+  padding: var(--var-padding-m) var(--var-padding-s) 0 var(--var-padding-s);
 
   @media only screen and (max-width: 768px) {
     background: var(--color-background);
@@ -108,7 +108,7 @@ const Description = styled.h2`
   margin: 0 auto;
   font-weight: var(--font-weight-regular);
   font-family: var(--font-primary);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-2xs);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   line-height: 1.5rem;

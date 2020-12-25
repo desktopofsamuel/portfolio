@@ -46,7 +46,7 @@ const Meta = styled.p`
   color: var(--color-primary-shades-100);
   opacity: 0.5;
   font-family: var(--font-primary);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-2xs);
   text-transform: uppercase;
   letter-spacing: var(--font-small-letter-spacing);
 `;

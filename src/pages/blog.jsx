@@ -23,23 +23,21 @@ const BlogPage = ({ data }) => {
       description="Hi! My name is Samuel. I write blog about web design, user interface and experiecne design."
       keywords="Design,Blog,Web,App,UI,UX,Interface,Portfolio,Hong Kong,Writing"
     >
-      <Row>
-        <Boxed>
-          <PageTitle
-            title="Blog"
-            subtitle="Article"
-            description="A collection of posts I wrote about design process, technology and
+      <Boxed>
+        <PageTitle
+          title="Blog"
+          subtitle="Article"
+          description="A collection of posts I wrote about design process, technology and
                 productivity."
-          />
-          <Row id="featured">
-            <BlogDetail postEdges={postEdges} />
-          </Row>
-          <small>All blog posts</small>
-          <Row id="latest">
-            <BlogList postEdges={blogEdges} />
-          </Row>
-        </Boxed>
-      </Row>
+        />
+        <Row id="featured">
+          <BlogDetail postEdges={postEdges} />
+        </Row>
+        <small>All blog posts</small>
+        <Row id="latest">
+          <BlogList postEdges={blogEdges} />
+        </Row>
+      </Boxed>
     </Layout>
   );
 };

@@ -4,20 +4,33 @@ import loadable from "@loadable/component";
 
 const LoadableScroll = loadable(() => import("react-scrollspy"));
 
-const Table = styled.aside`
-  position: fixed;
-  left: calc(50% + 400px);
-  top: 110px;
-  max-height: 70vh;
-  width: 310px;
+const Table = styled.nav`
   display: flex;
   flex-direction: column;
+  background-color: var(--color-white-500);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: 0.5s all ease-in-out;
 
   .is-current {
-    color: red;
+    font-weight: var(--font-weight-bold);
   }
 
   h6 {
+    margin: 0;
+    font-size: var(--font-size-2xs);
+  }
+
+  li {
+    font-size: var(--font-size-xs);
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  ul li::before {
+    content: none;
     margin: 0;
   }
 `;

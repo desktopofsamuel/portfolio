@@ -17,7 +17,7 @@ const Button = styled.div`
     color: var(--color-primary-shades-300);
     font-family: var(--font-primary);
     font-weight: var(--font-weight-bold);
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-2xs);
     letter-spacing: 0.075rem;
     margin-bottom: 0;
     margin-right: 8px;

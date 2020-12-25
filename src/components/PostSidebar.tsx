@@ -1,16 +1,16 @@
 import React from "react";
 import styled from "styled-components";
+import TableOfContent from "./TableOfContent";
 
 const Container = styled.div`
-  padding: 2rem;
   position: sticky;
   top: 3rem;
 `;
 
-const PostSidebar = ({}) => {
+const PostSidebar = ({ postToc }) => {
   return (
     <Container>
-      <p>hi</p>
+      {!!postToc.items && <TableOfContent post={postToc} />}
     </Container>
   );
 };

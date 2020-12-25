@@ -99,33 +99,31 @@ const WorkPage = ({ data }) => {
   const workEdges = data.work.edges;
   return (
     <Layout title="Portfolio">
-      <Row>
-        <Boxed>
-          <CenterRow>
-            <PageTitle
-              title="Portfolio"
-              description="Selected websites and apps showcase since 2015."
-            />
-          </CenterRow>
-          {/* <PageTitle title="My Work" subtitle="Case Studies" /> */}
-          <Row>
-            {/* <WorkIndex postEdges={postEdges} /> */}
-            <WorkDetail postEdges={postEdges} />
-          </Row>
-          <ClearRow>
-            <h2>More Works</h2>
-            <p>Check out some of my personal work & design projects.</p>
-          </ClearRow>
-          <Row>
-            <Grid>
-              <WorkIndex postEdges={workEdges} detail />
-            </Grid>
-          </Row>
-          {/* <Row className="full-bleed">
+      <Boxed>
+        <CenterRow>
+          <PageTitle
+            title="Portfolio"
+            description="Selected websites and apps showcase since 2015."
+          />
+        </CenterRow>
+        {/* <PageTitle title="My Work" subtitle="Case Studies" /> */}
+        <Row>
+          {/* <WorkIndex postEdges={postEdges} /> */}
+          <WorkDetail postEdges={postEdges} />
+        </Row>
+        <ClearRow>
+          <h2>More Works</h2>
+          <p>Check out some of my personal work & design projects.</p>
+        </ClearRow>
+        <Row>
+          <Grid>
+            <WorkIndex postEdges={workEdges} detail />
+          </Grid>
+        </Row>
+        {/* <Row className="full-bleed">
             <WorkList />
           </Row> */}
-        </Boxed>
-      </Row>
+      </Boxed>
     </Layout>
   );
 };

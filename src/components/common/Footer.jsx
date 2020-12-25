@@ -167,7 +167,7 @@ const Paragraph = styled.p`
 `;
 
 const CreditText = styled.p`
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-2xs);
   line-height: 150%;
   color: var(--color-text-secondary);
 `;

@@ -27,9 +27,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
         <title>{`${post.title} | ${config.siteTitle}`}</title>
       </Helmet>
       <SEO postPath={pageContext.slug} postNode={postNode} postSEO />
-      <Boxed>
-        <PostTemplate postNode={postNode} />
-      </Boxed>
+      <PostTemplate postNode={postNode} />
       {prev && <Related node={prev} />}
     </Layout>
   );

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Column from "components/utils/Column";
 
 const Text = styled.p`
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-2xs);
 `;
 
 const CaseStudyHeader = data => {

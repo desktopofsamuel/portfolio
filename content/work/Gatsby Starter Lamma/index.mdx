@@ -27,15 +27,17 @@ After learning Gatsby, React for nearly 2 years, I have created my very own Gats
 
 This is my first attempt in contributing to open source design and please feel free to share your comments and suggestions to me on [Twitter](https://twitter.com/desktopofsamuel).
 
-import Data from "elements/Data"
+import Meta from "components/Meta"
 import GridBlock from "elements/GridBlock"
 import ReadOn from "elements/ReadOn"
+import Centered from "components/utils/Centered"
 
+<Centered>
 <ReadOn href="https://gatsby-starter-lamma.netlify.app/about/?ref=samuelwork" text="View Project" target="_blank" />
+</Centered>
 
 <GridBlock>
-<Data caption="Type" nodata="Personal Project"/>
-<Data caption="Role" nodata="Creator"/>
-<Data caption="Year" nodata="2020"/>
-<Data caption="Language" nodata="React, CSS, Javascript"/>
+<Meta icon="calendar-alt" label="timeline" value="2020"/>
+<Meta icon="mug-hot" label="type" value="Personal Project"/>
+<Meta icon="user" label="role" value="Creator"/>
 </GridBlock>    

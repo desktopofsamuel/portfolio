@@ -57,20 +57,6 @@ const StickyWrapper = styled.div`
   }
 `;
 
-const AboutIcon = styled.div`
-  justify-self: flex-end;
-`;
-
-const HalfBox = styled.div``;
-
-const ProfileImage = styled.div`
-  width: 100%;
-
-  img {
-    box-shadow: 10px 10px 0px 1px rgba(237, 237, 237, 1);
-  }
-`;
-
 const Subtitle = styled.p`
   font-size: 1.025rem;
   font-family: var(--font-secondary);
