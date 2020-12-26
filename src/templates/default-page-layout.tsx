@@ -34,21 +34,34 @@ const Container = styled(Boxed)`
 
 const Sidebar = styled.aside``;
 
-export default class DefaultPageLayout extends Component {
-  render() {
-    return (
-      <Layout>
-        <Helmet>
-          <title>{`${this.props.pageContext.frontmatter.title} | ${config.siteTitle} `}</title>
-        </Helmet>
-        <SEO postPath={this.props.path} postNode={this.props.pageContext} />
-        <Container>
-          <Main>{this.props.children}</Main>
-          <Sidebar>
-            <p>hello</p>
-          </Sidebar>
-        </Container>
-      </Layout>
-    );
-  }
-}
+type DefaultPageLayoutProps = {
+  pageContext: {
+    frontmatter: {
+      title: string,
+    },
+  },
+  children: object,
+  path: string,
+};
+
+const DefaultPageLayout = ({
+  pageContext,
+  children,
+  path,
+}: DefaultPageLayoutProps) => {
+  return (
+    <Layout>
+      <Helmet>
+        <title>{`${pageContext.frontmatter.title} | ${config.siteTitle} `}</title>
+      </Helmet>
+      <SEO postPath={path} postNode={pageContext} postSEO />
+
+      <Container>
+        <Main>{children}</Main>
+        <Sidebar></Sidebar>
+      </Container>
+    </Layout>
+  );
+};
+
+export default DefaultPageLayout;

@@ -69,7 +69,7 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
-          default: require.resolve("./src/templates/default-page-layout.jsx"),
+          default: require.resolve("./src/templates/default-page-layout.tsx"),
         },
         extensions: [`.mdx`, `md`],
         remarkPlugins: [require("remark-unwrap-images")],

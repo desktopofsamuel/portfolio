@@ -1,15 +1,33 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Helmet from "react-helmet";
-import Boxed from "components/utils/Boxed";
 import Layout from "../layout";
 import config from "../../data/SiteConfig";
 import SEO from "../components/SEO";
 import PostTemplate from "../components/PostTemplate";
 import Related from "../components/Related";
-import TableOfContent from "../components/TableOfContent";
 
-const BlogPostTemplate = ({ data, pageContext }) => {
+type BlogPostTemplateProps = {
+  data: {
+    blog: {
+      frontmatter: {
+        title: string,
+      }
+    }
+  },
+  pageContext: {
+    prev: {
+      frontmatter: {
+        path: string,
+        title: string,
+        tldr: string;
+      }
+    }
+    slug: string,
+  },
+};
+
+const BlogPostTemplate = ({ data, pageContext }: BlogPostTemplateProps) => {
   const postNode = data.blog;
   // const postToc = data.blog.tableOfContents;
   const post = postNode.frontmatter;
