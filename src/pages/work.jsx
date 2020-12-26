@@ -2,10 +2,10 @@ import React from "react";
 import { graphql } from "gatsby";
 import Link from "components/common/GatsbyLink";
 import WorkIndex from "components/page/IndexWork";
-import PageTitle from "elements/PageTitle";
+import PageTitle from "components/PageTitle";
 import styled from "styled-components";
 import Boxed from "components/utils/Boxed";
-import ReadOn from "elements/ReadOn";
+import ReadOn from "components/ReadOn";
 import WorkDetail from "components/WorkDetail";
 import Layout from "../layout";
 

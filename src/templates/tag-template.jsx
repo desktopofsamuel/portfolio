@@ -5,7 +5,7 @@ import Layout from "../layout";
 import PostList from "../components/page/BlogListWide";
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
-import PageTitle from "elements/PageTitle";
+import PageTitle from "components/PageTitle";
 import Boxed from "components/utils/Boxed";
 
 const Container = styled.section`

@@ -5,7 +5,7 @@ import Img from "gatsby-image";
 import { graphql } from "gatsby";
 import Boxed from "components/utils/Boxed";
 import Column from "components/utils/Column";
-import ReadOn from "elements/ReadOn";
+import ReadOn from "components/ReadOn";
 import config from "../../data/SiteConfig";
 import Layout from "../layout";
 import WorkIndex from "../components/page/IndexWork";

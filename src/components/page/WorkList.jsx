@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import ReadOn from "../../elements/ReadOn";
+import ReadOn from "../ReadOn";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import Carousel, { Dots } from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";

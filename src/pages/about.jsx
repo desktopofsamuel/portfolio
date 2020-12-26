@@ -3,13 +3,13 @@ import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import styled from "styled-components";
 import Boxed from "components/utils/Boxed";
-import PageTitle from "elements/PageTitle";
+import PageTitle from "components/PageTitle";
 import Resume from "../components/Resume";
 import SEO from "../components/SEO";
 import Link from "../components/common/GatsbyLink";
 import Layout from "../layout";
 import Zoom from "react-reveal/Zoom";
-import ReadOn from "elements/ReadOn";
+import ReadOn from "components/ReadOn";
 import PropTypes from "prop-types";
 
 const Row = styled.section`

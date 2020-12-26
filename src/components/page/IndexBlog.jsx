@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { FaArrowRight } from "react-icons/fa";
 import PropTypes from "prop-types";
 import Img from "gatsby-image";
-import ReadOn from "elements/ReadOn";
+import ReadOn from "components/ReadOn";
 import Zoom from "react-reveal/Zoom";
 
 const Block = styled.div`

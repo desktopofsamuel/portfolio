@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "gatsby-image";
-import ReadOn from "../elements/ReadOn";
+import ReadOn from "./ReadOn";
 import Fade from "react-reveal/Fade";
 
 const Container = styled.div`

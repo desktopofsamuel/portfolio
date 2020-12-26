@@ -13,7 +13,7 @@ import Link from "../common/GatsbyLink";
 import Column from "../utils/Column";
 import Emoji from "../common/Emoji";
 import Img from "gatsby-image";
-import ReadOn from "elements/ReadOn";
+import ReadOn from "components/ReadOn";
 
 const Container = styled(Boxed)``;
 

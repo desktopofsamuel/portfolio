@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import GatsbyLink from "../components/common/GatsbyLink";
+import GatsbyLink from "./common/GatsbyLink";
 
 const Button = styled.div`
   padding: 0.5rem var(--var-padding-s);

@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
-import PageTitle from "elements/PageTitle";
+import PageTitle from "components/PageTitle";
 import Boxed from "components/utils/Boxed";
 import Layout from "../layout";
 import PhotoMagazine from "../components/page/PhotoMagazine";
