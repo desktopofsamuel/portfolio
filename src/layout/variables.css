@@ -12,8 +12,8 @@
     --font-weight-regular: 400;
     --font-size-xxl: calc(var(--font-size-base) * 3 * var(--font-scale-ratio));
     --font-size-xl: calc(var(--font-size-base) * 2 * var(--font-scale-ratio));
-    --font-size-l: calc(var(--font-size-base) * 1.5 * var(--font-scale-ratio));
-    --font-size-m: calc(var(--font-size-base) * 1.3 * var(--font-scale-ratio));
+    --font-size-l: calc(var(--font-size-base) * 1.75 * var(--font-scale-ratio));
+    --font-size-m: calc(var(--font-size-base) * 1.25 * var(--font-scale-ratio));
     --font-size-s: calc(var(--font-size-base) * 1 * var(--font-scale-ratio));
     --font-size-xs: calc(var(--font-size-base) * 0.9 * var(--font-scale-ratio));
     --font-size-2xs: calc(var(--font-size-base) * 0.8 * var(--font-scale-ratio));
@@ -36,6 +36,7 @@
       --var-padding-l: 3rem;
       --var-padding-m: 1rem;
       --var-padding-s: 0.5rem;
+      --font-size-xxl: calc(var(--font-size-base) * 2.5 * var(--font-scale-ratio));
     }
   }
 

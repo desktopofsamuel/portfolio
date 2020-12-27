@@ -23,8 +23,7 @@ const Main = styled.div`
 const NavSection = styled.div``;
 
 const Container = styled(Boxed)`
-  margin: 0 auto;
-  width: 100%;
+  padding: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -43,6 +42,7 @@ const NavRight = styled.div`
 `;
 
 const NavItem = styled(Link)`
+  display: none;
   padding: 0.5rem 1rem;
   border-bottom: none;
 
@@ -59,17 +59,15 @@ const NavItem = styled(Link)`
     color: var(--color-primary-shades-700);
   }
 
-  @media only screen and (max-width: 768px) {
-    display: none;
+  @media only screen and (min-width: 768px) {
+    display: block;
   }
 `;
 
 const NavItemIcon = styled(NavItem)`
-  @media only screen and (max-width: 768px) {
-    display: block;
-  }
+  display: block;
 
-  @media only screen and (min-width: 769px) {
+  @media only screen and (min-width: 768px) {
     display: none;
   }
 `;

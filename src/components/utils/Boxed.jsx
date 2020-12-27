@@ -8,14 +8,15 @@ const Grid = styled.div`
     (props.size === "medium" && "var(--page-container-m)") ||
     (props.size === "small" && "var(--page-container-s)") ||
     `var(--page-container-m)`};
-  margin: 3rem auto;
+  padding: 1rem;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: ${props => (props.isCenter ? "center" : "initial")};
   text-align: ${props => (props.isCenter ? "center" : "initial")};
 
-  @media only screen and (max-width: 1440px) {
-    width: 90vw;
+  @media only screen and (max-width: 768px) {
+    padding: 1rem;
     margin: 0 auto;
   }
 `;

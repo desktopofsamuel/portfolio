@@ -158,12 +158,10 @@ const IndexPage = ({ data }) => {
         <meta name="twitter:title" content={config.siteTitle} />
         <meta property="og:title" content={config.siteTitle} />
       </Helmet>
-      <GreyRow>
-        <Box>
-          <IndexHero />
-        </Box>
-      </GreyRow>
-      <Row className="full-bleed" id="experience-designer">
+      <Row>
+        <IndexHero />
+      </Row>
+      <Row id="experience-designer">
         <Box>
           <ColumnSpaced>
             <StickyBox>

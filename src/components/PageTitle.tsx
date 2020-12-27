@@ -1,21 +1,42 @@
 import React from "react";
 import styled from "styled-components";
 
-const PageTitleWrapper = styled.div`
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+type Props = {
+  type: "primary" | "secondary",
+};
+
+const Wrapper =
+  styled.div <
+  Props >
+  `
+  margin: 2rem 0 4rem 0;
+  display: grid;
+  place-content: ${props =>
+    (props.type === "primary" && "center") ||
+    (props.type === "secondary" && "baseline") ||
+    "center"} ;
+  text-align: ${props =>
+    (props.type === "primary" && "center") ||
+    (props.type === "secondary" && "left")};
+  border-bottom: ${props =>
+    (props.type === "primary" && "none") ||
+    (props.type === "secondary" &&
+      "1px var(--color-primary-shades-100) solid")};
 `;
 
-const Title = styled.h1`
-  font-family: var(--font-tertiary);
+const Title =
+  styled.h1 <
+  Props >
+  `
+  font-family: ${props =>
+    (props.type === "primary" && "var(--font-tertiary)") ||
+    (props.type === "secondary" && "var(--font-primary)")};
   color: var(--color-title);
   margin: 0;
+  transition: var(--transition);
 `;
 
-const Text = styled.p`
+const Description = styled.p`
   color: var(--color-primary-shades-300);
   max-width: 40ch;
 `;
@@ -23,15 +44,23 @@ const Text = styled.p`
 type PageTitleProps = {
   title: string,
   description?: string,
+  type: "primary" | "secondary",
 };
 
-const PageTitle = ({ title, description }: PageTitleProps) => {
+const defaultProps: PageTitleProps = {
+  title: "",
+  type: "primary",
+};
+
+const PageTitle = ({ title, description, type }: PageTitleProps) => {
   return (
-    <PageTitleWrapper>
-      <Title>{title}</Title>
-      <Text>{description}</Text>
-    </PageTitleWrapper>
+    <Wrapper type={type}>
+      <Title type={type}>{title}</Title>
+      <Description>{description}</Description>
+    </Wrapper>
   );
 };
+
+PageTitle.defaultProps = defaultProps;
 
 export default PageTitle;
