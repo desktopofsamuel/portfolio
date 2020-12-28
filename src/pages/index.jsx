@@ -144,6 +144,7 @@ const WorkIndexGrid = styled.div`
   display: flex;
   flex-direction: column;
   grid-gap: 2rem;
+  grid-row-gap: 2rem;
 `;
 
 const IndexPage = ({ data }) => {

@@ -13,7 +13,7 @@ const Grid = styled.div`
 
 const ListItem = styled.article`
   display: block;
-  border-bottom: 1px var(--color-primary-shades-100) solid;
+  border-bottom: 1px var(--color-primary-shades-200) solid;
   margin-bottom: var(--padding-l);
 
   p {
@@ -70,7 +70,7 @@ class BlogList extends React.Component {
 
     this.state = {
       items: [],
-      visible: 5,
+      visible: 10,
       error: false,
     };
 
@@ -79,7 +79,7 @@ class BlogList extends React.Component {
 
   loadMore() {
     this.setState(prev => {
-      return { visible: prev.visible + 4 };
+      return { visible: prev.visible + 9 };
     });
   }
 

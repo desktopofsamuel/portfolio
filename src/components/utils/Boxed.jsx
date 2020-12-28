@@ -8,7 +8,7 @@ const Grid = styled.div`
     (props.size === "medium" && "var(--page-container-m)") ||
     (props.size === "small" && "var(--page-container-s)") ||
     `var(--page-container-m)`};
-  padding: 1rem;
+  padding: ${props => (props.padding ? props.padding : "0rem")};
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -16,13 +16,13 @@ const Grid = styled.div`
   text-align: ${props => (props.isCenter ? "center" : "initial")};
 
   @media only screen and (max-width: 768px) {
-    padding: 1rem;
+    padding: ${props => (props.padding ? props.padding : "1rem")};
     margin: 0 auto;
   }
 `;
 
-const Boxed = ({ children, className, size, isCenter }) => (
-  <Grid size={size} className={className} isCenter={isCenter}>
+const Boxed = ({ children, className, size, isCenter, padding }) => (
+  <Grid size={size} className={className} isCenter={isCenter} padding={padding}>
     {children}
   </Grid>
 );
@@ -37,10 +37,12 @@ Boxed.propTypes = {
   className: PropTypes.string,
   size: PropTypes.oneOf(["large", "medium", "small", ""]),
   isCenter: PropTypes.bool,
+  padding: PropTypes.string,
 };
 
 Boxed.defaultProps = {
   className: "",
   size: "",
   isCenter: false,
+  padding: "",
 };

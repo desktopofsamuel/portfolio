@@ -9,7 +9,7 @@ const Grid = styled.section`
 
 const ListItem = styled.article`
   display: block;
-  border-bottom: 1px var(--color-primary-shades-100) solid;
+  border-bottom: 1px var(--color-primary-shades-200) solid;
   margin-bottom: var(--padding-m);
   padding-bottom: 2rem;
 

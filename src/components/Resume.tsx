@@ -36,14 +36,14 @@ const Content =
   styled.p <
   ContentProps >
   `
-  color: var(--color-primary-shades-100);
+  color: var(--color-primary-shades-200);
   font-size: var(--font-size-s);
   line-height: auto;
   margin-top: ${props => (props.noBorder ? "0" : "1rem")};
 `;
 
 const Meta = styled.p`
-  color: var(--color-primary-shades-100);
+  color: var(--color-primary-shades-200);
   opacity: 0.5;
   font-family: var(--font-primary);
   font-size: var(--font-size-2xs);
@@ -96,7 +96,7 @@ const Title = styled.h3`
 `;
 
 const ResumeSectionTitle = styled.small`
-  color: var(--color-primary-shades-100);
+  color: var(--color-primary-shades-200);
 
   @media only screen and (max-width: 768px) {
     font-size: 1rem;

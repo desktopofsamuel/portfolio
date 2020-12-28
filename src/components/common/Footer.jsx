@@ -10,6 +10,35 @@ import {
 import Icon from "components/common/Icon";
 import Link from "components/common/GatsbyLink";
 
+/* Back To Top Button */
+const ScrollToTopContainer = styled.div`
+  background-color: var(--color-secondary);
+  height: 62px;
+  width: 62px;
+  display: none;
+  font-size: var(--font-size-m);
+  color: var(--color-white);
+  cursor: pointer;
+  transition: var(--transition);
+
+  &:hover {
+    background-color: var(--color-primary-shades-700);
+  }
+
+  @media only screen and (min-width: 768px) {
+    display: grid;
+    place-content: center;
+  }
+`;
+
+const scrollTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
+
+const ScrollToTop = () => {
+  return <ScrollToTopContainer onClick={scrollTop}>▲</ScrollToTopContainer>;
+};
+
 /* Footer Contact  Section */
 
 const SectionContainer = styled.section`
@@ -99,12 +128,16 @@ const FooterContact = () => {
 const Container = styled.footer`
   width: 100%;
   height: 100%;
-  border-bottom: var(--page-border-top);
+  position: relative;
 `;
 
 const Row = styled.section`
   /* background-color: #e5e9d8; */
-  padding: var(--var-padding-s) 1rem;
+  padding: var(--var-padding-s) 0;
+`;
+
+const EndRow = styled.section`
+  padding-bottom: 0;
 `;
 
 const FooterItem = styled(Link)`
@@ -149,32 +182,10 @@ const IconList = styled.div`
   flex-direction: row;
 `;
 
-const FooterIcon = styled(FontAwesomeIcon)`
-  margin-right: 1rem;
-  font-size: 24px;
-  border-bottom: none;
-`;
-
-const ImageWrapper = styled.div`
-  @media only screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-
-const Paragraph = styled.p`
-  font-size: 1.25rem;
-  max-width: 40ch;
-`;
-
 const CreditText = styled.p`
   font-size: var(--font-size-2xs);
-  line-height: 150%;
   color: var(--color-text-secondary);
-`;
-
-const SubContainer = styled.div`
-  padding: var(--var-padding-l) 0rem;
-  background: var(--color-white-300);
+  margin: 0;
 `;
 
 const LinkContainer = styled.div`
@@ -192,12 +203,20 @@ const LinkContainer = styled.div`
 
 const CreditContainer = styled.div`
   margin-top: 2rem;
-  padding: var(--var-padding-xs);
+  min-height: 62px;
+  padding: var(--var-padding-s);
+  background-color: var(--color-primary-shades-100);
   text-align: center;
 
   @media only screen and (max-width: 767px) {
     text-align: left;
   }
+`;
+
+const ScrollToWrapper = styled.div`
+  position: absolute;
+  bottom: 0;
+  right: 0;
 `;
 
 const Footer = () => {
@@ -253,8 +272,8 @@ const Footer = () => {
       <Row>
         <FooterContact />
       </Row>
-      <Row>
-        <Boxed>
+      <EndRow>
+        <Boxed padding="1rem 1rem 0 1rem">
           <LinkContainer>
             <FooterItem className="noeffect" to="/about">
               About
@@ -275,14 +294,17 @@ const Footer = () => {
               Photo
             </FooterItem>
           </LinkContainer>
-          <CreditContainer>
+          <CreditContainer className="full-bleed">
             <CreditText>
               Designed & Coded by Samuel W. © 2018 - 2020 | Built with{" "}
               <Link to="https://www.gatsbyjs.org">Gatsby</Link>.
             </CreditText>
           </CreditContainer>
         </Boxed>
-      </Row>
+      </EndRow>
+      <ScrollToWrapper>
+        <ScrollToTop />
+      </ScrollToWrapper>
     </Container>
   );
 };

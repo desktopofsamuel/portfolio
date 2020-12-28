@@ -9,7 +9,7 @@ const Container = styled.section`
 `;
 
 const Wrapper = styled(Boxed)`
-  padding: var(--padding-l) 0;
+  padding: var(--padding-l) var(--var-padding-m);
   align-items: center;
   justify-content: center;
   text-align: center;

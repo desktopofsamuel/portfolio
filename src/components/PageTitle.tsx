@@ -21,7 +21,7 @@ const Wrapper =
   border-bottom: ${props =>
     (props.type === "primary" && "none") ||
     (props.type === "secondary" &&
-      "1px var(--color-primary-shades-100) solid")};
+      "1px var(--color-primary-shades-200) solid")};
 `;
 
 const Title =
@@ -29,7 +29,7 @@ const Title =
   Props >
   `
   font-family: ${props =>
-    (props.type === "primary" && "var(--font-tertiary)") ||
+    (props.type === "primary" && "var(--font-primary)") ||
     (props.type === "secondary" && "var(--font-primary)")};
   color: var(--color-title);
   margin: 0;

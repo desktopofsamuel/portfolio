@@ -17,23 +17,20 @@ const Grid = styled.div`
 
 const ListItem = styled.article`
   display: block;
-  border-bottom: 1px var(--color-primary-shades-100) solid;
+  border-bottom: 1px var(--color-primary-shades-200) solid;
   padding-bottom: var(--var-padding-m);
   margin-bottom: var(--padding-m);
-
-  p {
-    margin-bottom: 0.5rem;
-    color: var(--color-text);
-  }
 `;
 
 const Title = styled.h2`
   margin: 0;
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-l);
 `;
 
 const Excerpt = styled.p`
   font-size: var(--font-size-s);
+  color: var(--color-text-secondary);
+  margin-bottom: 0;
 `;
 
 const PostImage = styled(Img)`

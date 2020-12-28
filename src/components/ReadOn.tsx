@@ -10,7 +10,7 @@ const Button = styled.div`
   justify-content: center;
   align-items: center;
   transition: var(--transition);
-  border: 1px var(--color-primary-shades-100) solid;
+  border: 1px var(--color-primary-shades-200) solid;
   border-radius: 36px;
 
   p {
