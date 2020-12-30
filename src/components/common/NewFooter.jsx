@@ -16,7 +16,7 @@ import { PageData, AboutData } from "../../../data/FooterMenu";
 /* Newsletter Form */
 const FormContainer = styled.div`
   overflow: hidden;
-  padding: 2.5rem;
+  padding: var(--var-padding-m);
   position: relative;
   color: white;
   border-radius: 24px;
@@ -63,9 +63,14 @@ const FormInput = styled.input`
 
 const FormWrapper = styled.form`
   width: 100%;
-  display: grid;
-  grid-template-columns: 7fr 3fr;
-  grid-gap: 2rem;
+  display: flex;
+  flex-direction: column;
+
+  @media only screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    grid-gap: 2rem;
+  }
 `;
 
 const Form = () => {
@@ -100,6 +105,12 @@ const MenuHeader = styled.small`
   opacity: 0.5;
   color: white;
   font-weight: var(--font-weight-normal);
+
+  &.social {
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
+  }
 `;
 
 const MenuItem = styled.li.attrs({
@@ -152,13 +163,18 @@ const Menu2 = () => {
 };
 
 const IconList = styled.div`
-  display: grid;
+  display: flex;
+  flex-direction: row;
+
+  @media only screen and (min-width: 768px) {
+    display: grid;
+  }
 `;
 
 const Menu3 = () => {
   return (
     <MenuWrapper>
-      <MenuHeader>Social</MenuHeader>
+      <MenuHeader className="social">Social</MenuHeader>
       <IconList>
         <Icon
           to="https://www.linkedin.com/in/wongchunlong/"
@@ -234,10 +250,6 @@ const CreditContainer = styled.div`
   padding: var(--var-padding-s);
   background-color: var(--color-primary-shades-100);
   text-align: center;
-
-  @media only screen and (max-width: 767px) {
-    text-align: left;
-  }
 `;
 
 const ScrollToWrapper = styled.div`
@@ -262,10 +274,16 @@ const FooterRow = styled(Row)`
 `;
 
 const GridRow = styled(Row)`
-  display: grid;
-  grid-template-columns: 4fr 1fr 1fr 1fr;
-  grid-gap: 2rem;
-  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+
+  @media only screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr 1fr;
+    grid-gap: 2rem;
+    padding: 4rem 0;
+  }
 `;
 
 const CreditRow = styled(Row)``;

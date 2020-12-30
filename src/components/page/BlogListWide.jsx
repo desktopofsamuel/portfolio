@@ -45,6 +45,9 @@ const ListLeft = styled.div`
 `;
 
 const ListMetaWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+
   small {
     color: var(--color-text-secondary);
   }
@@ -55,7 +58,8 @@ const ListMeta = styled.small`
 `;
 
 const ListCategory = styled.div`
-  display: ${props => props.category || "inline"};
+  display: flex;
+  flex-direction: row;
 `;
 
 class BlogListWide extends React.Component {
@@ -77,7 +81,6 @@ class BlogListWide extends React.Component {
   }
   render() {
     const postList = this.getPostList();
-    const props = this.props;
     return postList.map(post => (
       <Container>
         <ListLeft />
@@ -87,15 +90,12 @@ class BlogListWide extends React.Component {
           </ListTitle>
           <ListExcerpt>{post.excerpt}</ListExcerpt>
           <ListMetaWrapper>
-            <ListMeta>{post.date}</ListMeta>
-            <ListCategory style={{ display: `${props.category}` }}>
-              <ListMeta> in </ListMeta>
-              <ListMeta>
-                <Link to={`/categories/${kebabCase(post.category)}`}>
-                  {post.category}
-                </Link>
-              </ListMeta>
-            </ListCategory>
+            <ListMeta>
+              {post.date} in{" "}
+              <Link to={`/categories/${kebabCase(post.category)}`}>
+                {post.category}
+              </Link>
+            </ListMeta>
           </ListMetaWrapper>
         </ListRight>
       </Container>
