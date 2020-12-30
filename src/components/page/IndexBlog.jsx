@@ -65,22 +65,8 @@ const PostListImage = styled(Img)`
   transition: transform 0.2s ease-in, box-shadow 0.3s ease-in-out;
 `;
 
-const Button = styled(Link)`
-  margin: 0;
-  background: none;
-  border: none;
-  text-transform: uppercase;
-  font-weight: 400;
-  letter-spacing: 0.075em;
-  cursor: pointer;
-  display: inline;
-  border-bottom: none;
-  justify-self: flex-end;
-`;
-
 const Paragraph = styled.p`
-  font-size: 0.95rem;
-  line-height: 200%;
+  font-size: var(--font-size-xs);
   color: var(--color-primary-shades-500);
 `;
 class IndexBlog extends React.Component {
