@@ -6,7 +6,6 @@ import config from "../../data/SiteConfig";
 import "./index.css";
 import Nav from "../components/common/NavBar";
 import NewFooter from "../components/common/NewFooter";
-import Footer from "../components/common/Footer";
 
 const Layout = styled.div``;
 
