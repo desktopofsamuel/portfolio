@@ -201,6 +201,10 @@ button {
 
 /* Unorder List Style */
 
+ul {
+  padding: 0 0 0 12px;
+}
+
 ul li {
   list-style-type: none;
   margin-bottom: 12px;
@@ -217,6 +221,14 @@ ul li:before {
 /* Hide Arrow in Carousel */
 ul li.BrainhubCarouselItem:before {
   content: none;
+}
+
+li.MenuItem:before {
+  content: none;
+}
+
+li.MenuItem {
+  margin-left: -12px;
 }
 
 ol li::marker {

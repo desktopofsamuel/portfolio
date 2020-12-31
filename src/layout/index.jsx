@@ -5,7 +5,7 @@ import SEO from "../components/SEO";
 import config from "../../data/SiteConfig";
 import "./index.css";
 import Nav from "../components/common/NavBar";
-import Footer from "../components/common/Footer";
+import NewFooter from "../components/common/NewFooter";
 
 const Layout = styled.div``;
 
@@ -16,6 +16,7 @@ const Main = styled.main`
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
   require("smooth-scroll")('a[href*="#"]');
+  require("react-scrollspy");
 }
 
 const LayoutTemplate = ({ children, title, description, keywords }) => {
@@ -32,7 +33,7 @@ const LayoutTemplate = ({ children, title, description, keywords }) => {
       </Helmet>
       <Nav />
       <Main>{children}</Main>
-      <Footer />
+      <NewFooter />
     </Layout>
   );
 };
