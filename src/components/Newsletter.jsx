@@ -1,80 +1,109 @@
-// //In src/components/sub-form.component.js
-// import React, { useState } from "react";
+//In src/components/sub-form.component.js
+import React, { useState } from "react";
+import styled from "styled-components";
 
-// const SubscriptionForm = () => {
-//   const [status, setStatus] = useState(null);
-//   const [email, setEmail] = useState("");
+const FormTitle = styled.h2`
+  color: var(--color-white);
+  margin: 0;
+`;
 
-//   //FORM_URL should be the same as the form action url pointed out above
-//   const FORM_URL = `https://app.convertkit.com/forms/1917969/subscriptions`;
+const FormEmailInput = styled.input`
+  min-height: 48px;
+  min-width: 200px;
+  border-radius: 16px;
+`;
 
-//   const handleSubmit = async e => {
-//     e.preventDefault();
-//     const data = new FormData(e.target);
-//     try {
-//       const response = await fetch(FORM_URL, {
-//         method: "post",
-//         body: data,
-//         headers: {
-//           accept: "application/json",
-//         },
-//       });
-//       setEmail("");
-//       const json = await response.json();
-//       if (json.status === "success") {
-//         setStatus("SUCCESS");
-//         return;
-//       }
-//     } catch (err) {
-//       setStatus("ERROR");
-//       console.log(err);
-//     }
-//   };
+const Newsletter = () => {
+  const [status, setStatus] = useState(null);
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
 
-//   const handleInputChange = event => {
-//     const { value } = event.target;
-//     setEmail(value);
-//   };
+  //FORM_URL should be the same as the form action url pointed out above
+  const FORM_URL = `https://app.convertkit.com/forms/1917969/subscriptions`;
 
-//   return (
-//     <div className="sub">
-//       <h2>Join My Newsletter</h2>
-//       <p>
-//         If you've found any of my articles useful, subscribe to receive more
-//         quality articles straight to your inbox.
-//       </p>
+  const handleSubmit = async e => {
+    e.preventDefault();
+    const data = new FormData(e.target);
+    try {
+      const response = await fetch(FORM_URL, {
+        method: "post",
+        body: data,
+        headers: {
+          accept: "application/json",
+        },
+      });
+      setEmail("");
+      setName("");
+      const json = await response.json();
+      if (json.status === "success") {
+        setStatus("SUCCESS");
+        return;
+      }
+    } catch (err) {
+      setStatus("ERROR");
+      console.log(err);
+    }
+  };
 
-//       {status === "SUCCESS" && <p>Please go confirm your subscription!</p>}
-//       {status === "ERROR" && <p>Oops, Something went wrong! try again.</p>}
+  const handleInputChange = event => {
+    const { value } = event.target;
+    setEmail(value);
+  };
 
-//       <form
-//         className="sub__form"
-//         action={FORM_URL}
-//         method="post"
-//         onSubmit={handleSubmit}
-//       >
-//         <input
-//           type="email"
-//           aria-label="Your email"
-//           //The name attribute should be the same as on you selected form.
-//           name="email_address"
-//           placeholder="Your email address"
-//           onChange={handleInputChange}
-//           value={email}
-//           required
-//         />
+  const handleNameInputChange = event => {
+    const { value2 } = event.target;
+    setName(value2);
+  };
 
-//         <input type="submit" value="Subscribe"></input>
-//       </form>
+  return (
+    <div className="sub">
+      <FormTitle>Join My Newsletter</FormTitle>
+      <p>
+        If you've found any of my articles useful, subscribe to receive more
+        quality articles straight to your inbox.
+      </p>
 
-//       <p className="sub__tag">
-//         I won't send you spam and you can unsubscribe at any time
-//       </p>
-//     </div>
-//   );
-// };
+      {status === "SUCCESS" && <p>Please go confirm your subscription!</p>}
+      {status === "ERROR" && <p>Oops, Something went wrong! try again.</p>}
 
-// export default SubscriptionForm;
+      <form
+        className="sub__form"
+        action={FORM_URL}
+        method="post"
+        onSubmit={handleSubmit}
+      >
+        <FormEmailInput
+          type="email"
+          aria-label="Your email"
+          //The name attribute should be the same as on you selected form.
+          name="email_address"
+          placeholder="Your email address"
+          onChange={handleInputChange}
+          value={email}
+          required
+        />
+        <FormEmailInput
+          type="name"
+          aria-label="First Name"
+          //The name attribute should be the same as on you selected form.
+          name="fields[first_name]"
+          placeholder="First Name"
+          onChange={handleNameInputChange}
+          value={name}
+          required
+        />
+
+        <input type="submit" value="Subscribe"></input>
+      </form>
+
+      <p className="sub__tag">
+        I won't send you spam and you can unsubscribe at any time
+      </p>
+    </div>
+  );
+};
+
+export default Newsletter;
 
 // import React from "react";
 // import { Helmet } from "react-helmet";
