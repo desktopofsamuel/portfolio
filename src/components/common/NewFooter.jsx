@@ -19,27 +19,18 @@ const FormContainer = styled.div`
   overflow: hidden;
   padding: var(--var-padding-m);
   position: relative;
-  color: white;
+  color: var(--color-white);
   border-radius: 24px;
-  h3 {
-    margin: 0;
-    color: white;
-  }
 
   p {
     opacity: 0.7;
   }
-`;
 
-const FormButton = styled.input`
-  padding: 1rem 2rem;
-  background-color: var(--color-secondary);
-  font-family: var(--font-primary);
-  font-weight: var(--font-weight-regular);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: white;
-  border-radius: 24px;
+  small {
+    margin-top: 16px;
+    color: var(--color-white);
+    opacity: 0.7;
+  }
 `;
 
 const FormBackground = styled.div`
@@ -57,26 +48,9 @@ const FormBackground = styled.div`
   z-index: -100;
 `;
 
-const FormInput = styled.input`
-  min-width: 200px;
-  border-radius: 8px;
-`;
-
-const FormWrapper = styled.form`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-
-  @media only screen and (min-width: 768px) {
-    display: grid;
-    grid-template-columns: 7fr 3fr;
-    grid-gap: 2rem;
-  }
-`;
-
 const Form = () => {
   return (
-    <FormContainer>
+    <FormContainer style={{ gridArea: "fm" }}>
       <FormBackground />
       <Newsletter />
       {/* <h3>Stay tuned for my latest update</h3>
@@ -132,7 +106,7 @@ const MenuItem = styled.li.attrs({
 
 const Menu1 = () => {
   return (
-    <MenuWrapper>
+    <MenuWrapper style={{ gridArea: "ab" }}>
       <MenuHeader>About</MenuHeader>
       <ul>
         {PageData.map((item, index) => (
@@ -149,7 +123,7 @@ const Menu1 = () => {
 
 const Menu2 = () => {
   return (
-    <MenuWrapper>
+    <MenuWrapper style={{ gridArea: "pa" }}>
       <MenuHeader>Pages</MenuHeader>
       <ul>
         {AboutData.map((item, index) => (
@@ -175,7 +149,7 @@ const IconList = styled.div`
 
 const Menu3 = () => {
   return (
-    <MenuWrapper>
+    <MenuWrapper style={{ gridArea: "so" }}>
       <MenuHeader className="social">Social</MenuHeader>
       <IconList>
         <Icon
@@ -282,7 +256,9 @@ const GridRow = styled(Row)`
 
   @media only screen and (min-width: 768px) {
     display: grid;
-    grid-template-columns: 4fr 1fr 1fr 1fr;
+    /* grid-template-columns: 4fr 1fr 1fr 1fr; */
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas: "fm fm fm fm . so ab pa ";
     grid-gap: 2rem;
     padding: 4rem 0;
   }

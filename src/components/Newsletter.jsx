@@ -1,16 +1,49 @@
-//In src/components/sub-form.component.js
 import React, { useState } from "react";
 import styled from "styled-components";
 
-const FormTitle = styled.h2`
+const FormTitle = styled.h3`
   color: var(--color-white);
   margin: 0;
 `;
 
+const FormWrapper = styled.form`
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+
+  @media only screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: minmax(100px, 1fr) 25% 25%;
+    grid-gap: 8px;
+  }
+`;
+
 const FormEmailInput = styled.input`
+  border: 0;
   min-height: 48px;
-  min-width: 200px;
-  border-radius: 16px;
+  width: 100%;
+  border-radius: 8px;
+  padding: 16px;
+  font-family: var(--font-secondary);
+`;
+
+const FormSubmissionButton = styled.input`
+  border: 0;
+  min-height: 48px;
+  cursor: pointer;
+  border-radius: 24px;
+  background-color: var(--color-secondary);
+  font-family: var(--font-primary);
+  color: var(--color-white);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: var(--transition);
+  display: grid;
+  place-content: center;
+
+  &:hover {
+    background-color: var(--color-primary-shades-700);
+  }
 `;
 
 const Newsletter = () => {
@@ -56,7 +89,7 @@ const Newsletter = () => {
   };
 
   return (
-    <div className="sub">
+    <>
       <FormTitle>Join My Newsletter</FormTitle>
       <p>
         If you've found any of my articles useful, subscribe to receive more
@@ -66,7 +99,7 @@ const Newsletter = () => {
       {status === "SUCCESS" && <p>Please go confirm your subscription!</p>}
       {status === "ERROR" && <p>Oops, Something went wrong! try again.</p>}
 
-      <form
+      <FormWrapper
         className="sub__form"
         action={FORM_URL}
         method="post"
@@ -93,13 +126,11 @@ const Newsletter = () => {
           required
         />
 
-        <input type="submit" value="Subscribe"></input>
-      </form>
+        <FormSubmissionButton type="submit" value="Subscribe" />
+      </FormWrapper>
 
-      <p className="sub__tag">
-        I won't send you spam and you can unsubscribe at any time
-      </p>
-    </div>
+      <small>I won't send you spam and you can unsubscribe at any time</small>
+    </>
   );
 };
 
