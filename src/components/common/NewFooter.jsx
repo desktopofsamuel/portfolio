@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Boxed from "components/utils/Boxed";
 import Icon from "components/common/Icon";
 import Link from "components/common/GatsbyLink";
-import Newsletter from "components/Newsletter";
+// import Newsletter from "components/Newsletter";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTwitter,
@@ -78,7 +78,7 @@ const Form = () => {
   return (
     <FormContainer>
       <FormBackground />
-      <Newsletter />
+      {/* <Newsletter /> */}
       {/* <h3>Stay tuned for my latest update</h3>
       <p>
         Be the first to hear about my new content and updates! No spam, promise
