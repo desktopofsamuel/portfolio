@@ -100,15 +100,11 @@ const WorkPage = ({ data }) => {
   return (
     <Layout title="Portfolio">
       <Boxed>
-        <CenterRow>
-          <PageTitle
-            title="Portfolio"
-            description="Selected websites and apps showcase since 2015."
-          />
-        </CenterRow>
-        {/* <PageTitle title="My Work" subtitle="Case Studies" /> */}
+        <PageTitle
+          title="Portfolio"
+          description="Selected websites and apps showcase since 2015."
+        />
         <Row>
-          {/* <WorkIndex postEdges={postEdges} /> */}
           <WorkDetail postEdges={postEdges} />
         </Row>
         <ClearRow>
@@ -120,9 +116,6 @@ const WorkPage = ({ data }) => {
             <WorkIndex postEdges={workEdges} detail />
           </Grid>
         </Row>
-        {/* <Row className="full-bleed">
-            <WorkList />
-          </Row> */}
       </Boxed>
     </Layout>
   );
