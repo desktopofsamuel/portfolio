@@ -1,33 +1,148 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
-import Boxed from "elements/Boxed";
-import Column from "elements/Column";
-import FooterContact from "./FooterContact";
-import social from "../../../static/SVG/social_media.svg";
+import Boxed from "components/utils/Boxed";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import {
   faTwitter,
   faInstagram,
-  faMedium,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import Link from "./GatsbyLink";
+import Icon from "components/common/Icon";
+import Link from "components/common/GatsbyLink";
 
+/* Back To Top Button */
+const ScrollToTopContainer = styled.div`
+  background-color: var(--color-secondary);
+  height: 62px;
+  width: 62px;
+  display: none;
+  font-size: var(--font-size-m);
+  color: var(--color-white);
+  cursor: pointer;
+  transition: var(--transition);
+
+  &:hover {
+    background-color: var(--color-primary-shades-700);
+  }
+
+  @media only screen and (min-width: 768px) {
+    display: grid;
+    place-content: center;
+  }
+`;
+
+const scrollTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
+
+const ScrollToTop = () => {
+  return (
+    <ScrollToTopContainer onClick={scrollTop}>
+      <FontAwesomeIcon icon={faChevronUp} title="Back To Top" />
+    </ScrollToTopContainer>
+  );
+};
+
+/* Footer Contact  Section */
+
+const SectionContainer = styled.section`
+  display: block;
+  padding: var(--padding-m) 0;
+
+  @media only screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1.5rem;
+  }
+`;
+
+const Section = styled.div`
+  display: block;
+
+  h5 {
+    color: var(--color-title);
+  }
+`;
+const Content = styled.div`
+  font-size: 14px;
+  margin-bottom: 24px;
+`;
+
+const FooterContact = () => {
+  return (
+    <Boxed>
+      <SectionContainer>
+        <Section>
+          <h5>Let's Chat</h5>
+          <Content>
+            I am excited for new opportunities, let's talk about working
+            togther. <br />
+            <Link to="mailto:desktopofsamuel&#64;gmail.com">
+              desktopofsamuel&#64;gmail.com
+            </Link>
+          </Content>
+        </Section>
+        <Section>
+          <h5>Keep In Touch</h5>
+          <Content>
+            Follow my social media and see what I'm up to.
+            <IconList>
+              <Icon
+                to="https://www.linkedin.com/in/wongchunlong/"
+                target="_blank"
+                icon={faLinkedin}
+                title="Linkedin"
+              />
+              <Icon
+                to="http://www.twitter.com/desktopofsamuel/"
+                target="_blank"
+                icon={faTwitter}
+                title="Twitter"
+              />
+              <Icon
+                to="http://www.instagram.com/desktopofsamuel"
+                target="_blank"
+                icon={faInstagram}
+                title="Instagram"
+              />
+            </IconList>
+          </Content>
+        </Section>
+        <Section>
+          <h5>Subscribe</h5>
+          <Content>
+            I write regularly on the subject of design and technology. Feel free
+            to subscribe via{" "}
+            <Link to="/rss.xml" target="_blank">
+              RSS
+            </Link>{" "}
+            or follow me on{" "}
+            <Link to="https://medium.com/@desktopofsamuel" target="_blank">
+              Medium
+            </Link>
+            .
+          </Content>
+        </Section>
+      </SectionContainer>
+    </Boxed>
+  );
+};
+
+/* Footer Section */
 const Container = styled.footer`
   width: 100%;
   height: 100%;
-  border-bottom: var(--page-border-top);
+  position: relative;
 `;
 
 const Row = styled.section`
   /* background-color: #e5e9d8; */
-  padding: var(--var-padding-s) 1rem;
+  padding: var(--var-padding-s) 0;
 `;
 
-const BoxNow = styled(Boxed)``;
-
-const FooterGrid = styled.div`
-  display: block;
+const EndRow = styled.section`
+  padding-bottom: 0;
 `;
 
 const FooterItem = styled(Link)`
@@ -72,32 +187,10 @@ const IconList = styled.div`
   flex-direction: row;
 `;
 
-const FooterIcon = styled(FontAwesomeIcon)`
-  margin-right: 1rem;
-  font-size: 24px;
-  border-bottom: none;
-`;
-
-const ImageWrapper = styled.div`
-  @media only screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-
-const Paragraph = styled.p`
-  font-size: 1.25rem;
-  max-width: 40ch;
-`;
-
 const CreditText = styled.p`
-  font-size: var(--font-size-xs);
-  line-height: 150%;
+  font-size: var(--font-size-2xs);
   color: var(--color-text-secondary);
-`;
-
-const SubContainer = styled.div`
-  padding: var(--var-padding-l) 0rem;
-  background: var(--color-white-300);
+  margin: 0;
 `;
 
 const LinkContainer = styled.div`
@@ -115,12 +208,20 @@ const LinkContainer = styled.div`
 
 const CreditContainer = styled.div`
   margin-top: 2rem;
-  padding: var(--var-padding-xs);
+  min-height: 62px;
+  padding: var(--var-padding-s);
+  background-color: var(--color-primary-shades-100);
   text-align: center;
 
   @media only screen and (max-width: 767px) {
     text-align: left;
   }
+`;
+
+const ScrollToWrapper = styled.div`
+  position: absolute;
+  bottom: 0;
+  right: 0;
 `;
 
 const Footer = () => {
@@ -176,8 +277,8 @@ const Footer = () => {
       <Row>
         <FooterContact />
       </Row>
-      <Row>
-        <Boxed>
+      <EndRow>
+        <Boxed padding="1rem 1rem 0 1rem">
           <LinkContainer>
             <FooterItem className="noeffect" to="/about">
               About
@@ -198,14 +299,17 @@ const Footer = () => {
               Photo
             </FooterItem>
           </LinkContainer>
-          <CreditContainer>
+          <CreditContainer className="full-bleed">
             <CreditText>
               Designed & Coded by Samuel W. © 2018 - 2020 | Built with{" "}
               <Link to="https://www.gatsbyjs.org">Gatsby</Link>.
             </CreditText>
           </CreditContainer>
         </Boxed>
-      </Row>
+      </EndRow>
+      <ScrollToWrapper>
+        <ScrollToTop />
+      </ScrollToWrapper>
     </Container>
   );
 };

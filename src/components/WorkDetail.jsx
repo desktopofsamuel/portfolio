@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "gatsby-image";
-import ReadOn from "../elements/ReadOn";
+import ReadOn from "./ReadOn";
 import Fade from "react-reveal/Fade";
 
 const Container = styled.div`
@@ -10,7 +10,7 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-  border: 1px solid var(--color-primary-shades-100);
+  border: 1px solid var(--color-primary-shades-200);
   padding: var(--var-padding-m);
   border-radius: 24px;
   display: grid;

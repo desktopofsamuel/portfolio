@@ -31,12 +31,11 @@ team:
 ---
 
 import Meta from "components/Meta";
-import ZoomImage from "components/ZoomImage/ZoomImage";
-import Data from "elements/Data";
-import GridBlock from "elements/GridBlock";
+import ZoomImage from "components/ZoomImage";
+import GridBlock from "components/GridBlock";
 import WorkMeta from "components/WorkMeta";
-import ColumnItem from "elements/ColumnItem";
-import Wrapper from "elements/Wrapper"
+import ColumnItem from "components/utils/ColumnItem";
+import Wrapper from "components/utils/Wrapper"
 import InlineCarousel from "components/InlineCarousel"
 import HyperAir1 from "./Hyperair-Feature3.png"
 import HyperAir2 from "./Hyperair-Feature-v4.png"
@@ -57,7 +56,7 @@ import Img from "gatsby-image"
 
 </ColumnItem>
 <ColumnItem span="span 4">
-<GridBlock>
+<GridBlock margin="0">
 <Meta icon="mobile-alt" label="platform" value="Website, Mobile App"/>
 <Meta icon="calendar-alt" label="timeline" value="2019 Jan - Present"/>
 <Meta icon="mug-hot" label="type" value="Full-time Employment"/>
@@ -117,7 +116,11 @@ We also validated our designs and optimized conversion by observing user behavio
 <GridBlock margin="2rem 0;">
 <Data caption="App Installs" nodata="85,000"/>
 <Data caption="Ratings" nodata="4.0/5"/>
-</GridBlock>
+<Meta label="App Installs" value="85,000" isLarge/>
+<Meta icon="mobile-alt" label="platform" value="Web"/>
+<Meta icon="mug-hot" label="type" value="Side Project"/>
+<Meta icon="user" label="role" value="UI Designer"/>
+</GridBlock>    
 
 We have received positive feedback and reviews, endorsing our platform for making travel preparation process more convenient.
 

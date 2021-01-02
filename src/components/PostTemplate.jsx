@@ -1,12 +1,27 @@
-import React, { Component } from "react";
-import { Link } from "gatsby";
+import React from "react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import PropTypes from "prop-types";
 import styled from "styled-components";
+import Boxed from "components/utils/Boxed";
 import Img from "gatsby-image";
-import Tag from "elements/Tag";
+import Tag from "components/Tag";
+import PostSidebar from "./PostSidebar";
 
-const Container = styled.main`
+const Container = styled(Boxed)`
+  display: grid;
+  grid-gap: 3rem;
+  grid-template-columns: var(--page-container-s) auto;
+  padding: var(--var-padding-m) 0;
+
+  @media only screen and (max-width: 1024px) {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: var(--var-padding-m) var(--var-padding-s);
+  }
+`;
+
+const Sidebar = styled.aside``;
+
+const Main = styled.article`
   small {
     margin: 0;
   }
@@ -14,16 +29,14 @@ const Container = styled.main`
   h1 {
     margin-top: 1em;
     font-size: var(--font-size-xl);
-    font-weight: 500;
-    letter-spacing: -2px;
-    font-family: var(--font-tertiary);
+    font-weight: var(--font-weight-bold);
+    font-family: var(--font-primary);
   }
 
   h2 {
     font-size: var(--font-size-l);
-    font-family: var(--font-tertiary);
-    font-weight: 500;
-    letter-spacing: -1px;
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-bold);
   }
 
   h3 {
@@ -46,26 +59,32 @@ class PostTemplate extends React.Component {
   render() {
     const { postNode } = this.props;
     const post = postNode.frontmatter;
+    const postToc = postNode.tableOfContents;
 
     return (
       <Container>
-        <small>
-          <time>{postNode.fields.date}</time>
-        </small>
-        <h1>{post.title}</h1>
-        <p className="subtitle">{post.tldr}</p>
-        <Img sizes={postNode.frontmatter.cover.childImageSharp.sizes} />
-        <hr />
-        <MDXRenderer>{postNode.body}</MDXRenderer>
-        <div>
-          {post.tags.map((tag, index) => {
-            return (
-              <Tag tag={tag} key={index}>
-                {tag}
-              </Tag>
-            );
-          })}
-        </div>
+        <Main>
+          <small>
+            <time>{postNode.fields.date}</time>
+          </small>
+          <h1>{post.title}</h1>
+          <p className="subtitle">{post.tldr}</p>
+          <Img sizes={postNode.frontmatter.cover.childImageSharp.sizes} />
+          <hr />
+          <MDXRenderer>{postNode.body}</MDXRenderer>
+          <div>
+            {post.tags.map((tag, index) => {
+              return (
+                <Tag tag={tag} key={index}>
+                  {tag}
+                </Tag>
+              );
+            })}
+          </div>
+        </Main>
+        <Sidebar>
+          <PostSidebar postToc={postToc} />
+        </Sidebar>
       </Container>
     );
   }
