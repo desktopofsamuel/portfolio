@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Boxed from "components/utils/Boxed";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import {
   faTwitter,
   faInstagram,
@@ -36,7 +37,11 @@ const scrollTop = () => {
 };
 
 const ScrollToTop = () => {
-  return <ScrollToTopContainer onClick={scrollTop}>▲</ScrollToTopContainer>;
+  return (
+    <ScrollToTopContainer onClick={scrollTop}>
+      <FontAwesomeIcon icon={faChevronUp} title="Back To Top" />
+    </ScrollToTopContainer>
+  );
 };
 
 /* Footer Contact  Section */

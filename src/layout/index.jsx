@@ -5,7 +5,8 @@ import SEO from "../components/SEO";
 import config from "../../data/SiteConfig";
 import "./index.css";
 import Nav from "../components/common/NavBar";
-import NewFooter from "../components/common/NewFooter";
+import Footer from "../components/common/Footer";
+// import NewFooter from "../components/common/NewFooter";
 
 const Layout = styled.div``;
 
@@ -33,7 +34,7 @@ const LayoutTemplate = ({ children, title, description, keywords }) => {
       </Helmet>
       <Nav />
       <Main>{children}</Main>
-      <NewFooter />
+      <Footer />
     </Layout>
   );
 };
