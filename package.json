@@ -52,6 +52,7 @@
     "gatsby-remark-images-medium-zoom": "^1.7.0",
     "gatsby-remark-prismjs": "3.0.3",
     "gatsby-remark-responsive-iframe": "2.0.6",
+    "gatsby-source-airtable": "^2.1.1",
     "gatsby-source-cloudinary": "^0.1.11",
     "gatsby-source-filesystem": "2.0.7",
     "gatsby-transformer-remark": "2.1.11",
