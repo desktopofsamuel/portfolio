@@ -10,6 +10,11 @@ const Wrapper =
   Props >
   `
   margin: 2rem 0 4rem 0;
+
+  @media only screen and (max-width: 768px) {
+    margin: 1rem 0;
+  }
+
   display: grid;
   place-content: ${props =>
     (props.type === "primary" && "center") ||
