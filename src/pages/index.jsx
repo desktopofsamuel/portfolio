@@ -3,20 +3,15 @@ import Helmet from "react-helmet";
 import styled from "styled-components";
 import Img from "gatsby-image";
 import { graphql } from "gatsby";
-import Boxed from "elements/Boxed";
-import Column from "elements/Column";
-import ReadOn from "elements/ReadOn";
-import Link from "../components/common/GatsbyLink";
+import Boxed from "components/utils/Boxed";
+import Column from "components/utils/Column";
+import ReadOn from "components/ReadOn";
 import config from "../../data/SiteConfig";
 import Layout from "../layout";
-import WorkIndex from "../components/WorkIndex";
-import BlogIndex from "../components/BlogIndex";
-import WorkIcon from "../../static/SVG/Work.svg";
-import BlogIcon from "../../static/SVG/Blog.svg";
-import Now from "../components/Now";
-import Profile from "../../static/images/Profile.webp";
-import IndexHero from "../components/IndexHero";
-import IndexPhoto from "../components/IndexPhoto";
+import WorkIndex from "../components/page/IndexWork";
+import BlogIndex from "../components/page/IndexBlog";
+import IndexHero from "../components/page/IndexHero";
+import IndexPhoto from "../components/page/IndexPhoto";
 
 const Box = styled(Boxed)``;
 
@@ -59,20 +54,6 @@ const StickyWrapper = styled.div`
   @media only screen and (min-width: 425px) {
     position: sticky;
     top: 3rem;
-  }
-`;
-
-const AboutIcon = styled.div`
-  justify-self: flex-end;
-`;
-
-const HalfBox = styled.div``;
-
-const ProfileImage = styled.div`
-  width: 100%;
-
-  img {
-    box-shadow: 10px 10px 0px 1px rgba(237, 237, 237, 1);
   }
 `;
 
@@ -163,6 +144,7 @@ const WorkIndexGrid = styled.div`
   display: flex;
   flex-direction: column;
   grid-gap: 2rem;
+  grid-row-gap: 2rem;
 `;
 
 const IndexPage = ({ data }) => {
@@ -177,12 +159,10 @@ const IndexPage = ({ data }) => {
         <meta name="twitter:title" content={config.siteTitle} />
         <meta property="og:title" content={config.siteTitle} />
       </Helmet>
-      <GreyRow>
-        <Box>
-          <IndexHero />
-        </Box>
-      </GreyRow>
-      <Row className="full-bleed" id="experience-designer">
+      <Row>
+        <IndexHero />
+      </Row>
+      <Row id="experience-designer">
         <Box>
           <ColumnSpaced>
             <StickyBox>

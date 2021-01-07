@@ -69,7 +69,7 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
-          default: require.resolve("./src/components/default-page-layout.jsx"),
+          default: require.resolve("./src/templates/default-page-layout.tsx"),
         },
         extensions: [`.mdx`, `md`],
         remarkPlugins: [require("remark-unwrap-images")],
@@ -84,13 +84,13 @@ module.exports = {
               linkImagesToOriginal: false,
             },
           },
+          "gatsby-remark-images-medium-zoom",
           {
             resolve: "gatsby-remark-external-links",
             options: {
               target: "_blank",
             },
           },
-          "gatsby-remark-images-medium-zoom",
           "gatsby-remark-responsive-iframe",
           {
             resolve: `gatsby-remark-figure-caption`,
@@ -172,6 +172,7 @@ module.exports = {
       },
     },
     "gatsby-plugin-sitemap",
+    "gatsby-plugin-typescript",
     "gatsby-plugin-offline",
     {
       resolve: `gatsby-plugin-nprogress`,

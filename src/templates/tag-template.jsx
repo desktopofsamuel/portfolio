@@ -2,11 +2,11 @@ import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
-import PostList from "../components/BlogListWide";
+import PostList from "../components/page/BlogListWide";
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
-import PageTitle from "elements/PageTitle";
-import Boxed from "elements/Boxed";
+import PageTitle from "components/PageTitle";
+import Boxed from "components/utils/Boxed";
 
 const Container = styled.section`
   @media only screen and (max-width: 1280px) {
@@ -48,38 +48,7 @@ export const pageQuery = graphql`
     ) {
       totalCount
       edges {
-        node {
-          fields {
-            slug
-            date(formatString: "MMM DD, YYYY", locale: "en")
-          }
-          excerpt(pruneLength: 200)
-          timeToRead
-          frontmatter {
-            title
-            tags
-            path
-            category
-            cover {
-              publicURL
-              size
-              childImageSharp {
-                sizes(maxWidth: 1140) {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  srcWebp
-                  srcSetWebp
-                  sizes
-                  originalImg
-                  originalName
-                }
-              }
-            }
-            date
-          }
-        }
+        ...blogpost
       }
     }
   }

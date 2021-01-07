@@ -16,11 +16,9 @@ class SEO extends Component {
       const postMeta = postNode.frontmatter;
       title = postMeta.title + " | " + config.siteTitleAlt;
       description = postMeta.tldr ? postMeta.tldr : postNode.excerpt;
-      image = postMeta.cover.publicURL
-        ? postMeta.cover.publicURL
-        : config.siteLogo;
+      image = postMeta.cover ? postMeta.cover.publicURL : config.siteLogo;
       postURL = config.siteUrl + config.pathPrefix + postPath;
-      keywords = postMeta.tags;
+      keywords = postMeta.tags ? postMeta.tags : config.siteKeywords;
     } else {
       title = config.siteTitle;
       description = config.siteDescription;

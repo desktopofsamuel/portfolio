@@ -2,14 +2,14 @@ import React from "react";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import styled from "styled-components";
-import Boxed from "elements/Boxed";
-import PageTitle from "elements/PageTitle";
+import Boxed from "components/utils/Boxed";
+import PageTitle from "components/PageTitle";
 import Resume from "../components/Resume";
 import SEO from "../components/SEO";
 import Link from "../components/common/GatsbyLink";
 import Layout from "../layout";
 import Zoom from "react-reveal/Zoom";
-import ReadOn from "elements/ReadOn";
+import ReadOn from "components/ReadOn";
 import PropTypes from "prop-types";
 
 const Row = styled.section`
@@ -96,7 +96,7 @@ const SkillItemGrid = styled.div`
 `;
 
 const SkillItemContainer = styled.div`
-  border: 0.5px solid var(--color-primary-shades-100);
+  border: 0.5px solid var(--color-primary-shades-200);
   padding: var(--var-padding-m);
   border-radius: 24px;
 `;
@@ -143,24 +143,20 @@ SkillItem.PropTypes = {
 const AboutPage = ({ data }) => {
   return (
     <Layout title="About">
+      <PageTitle title="About Me" description="Hello there" />
       <Row>
         <Boxed>
-          <PageTitle title="About Me" description="Hello there"></PageTitle>
           <IntroGrid>
             <IntroContent>
               <h2>
-                Hello, my name is Samuel. <br /> I’m a user experience designer.
+                Hello,
+                <br /> My name is Samuel Wong.
               </h2>
               <p>
-                I’m pursuing a career in the field of UI/UX Design because I'm
+                I’m a <strong>UI/UX designer</strong> with over 5 years of
+                experience. I'm pursuing a career in the field because I'm
                 deeply passionate about technology and how it profoundly changes
-                our way of living.{" "}
-              </p>
-              <p>
-                The process of turning an idea into a viable product gives me
-                great satisfaction. Being a self-starter, I’m highly motivated
-                staying up-to-date with the latest technology, industry practice
-                and design trends.
+                our way of living.
               </p>
               <ReadOn text="Let's Chat" href="#contact" />
             </IntroContent>
@@ -581,7 +577,7 @@ export default AboutPage;
 
 export const pageQuery = graphql`
   query {
-    cover: file(relativePath: { eq: "images/Profile.png" }) {
+    cover: file(relativePath: { eq: "images/Profile.webp" }) {
       childImageSharp {
         fluid(maxWidth: 800) {
           ...GatsbyImageSharpFluid
