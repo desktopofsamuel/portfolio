@@ -6,11 +6,19 @@ import PageTitle from "components/PageTitle";
 import Boxed from "components/utils/Boxed";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Layout from "../layout";
-import "react-tabs/style/react-tabs.css";
+// import "react-tabs/style/react-tabs.css";
+import ReadOn from "components/ReadOn";
+
+// type ToolPageProps = {
+//   data: {
+//     tech: {
+//       edges: object,
+//     },
+//   },
+// };
 
 const ToolPage = ({ data }) => {
   const techEdges = data.tech.edges;
-  console.log(techEdges);
   return (
     <Layout>
       <Boxed>
@@ -21,11 +29,16 @@ const ToolPage = ({ data }) => {
         />
         <Tabs>
           <TabList>
-            <Tab>Mac</Tab>
-            <Tab>Windows</Tab>
-            <Tab>Web</Tab>
+            <Tab>
+              <ReadOn text="Mac" href="" />
+            </Tab>
+            <Tab>
+              <ReadOn text="Windows" href="" />
+            </Tab>
+            <Tab>
+              <ReadOn text="Web" href="" />
+            </Tab>
           </TabList>
-          {}
           <TabPanel>
             {techEdges
               .filter(t => t.node.data.Platform === "Mac")
