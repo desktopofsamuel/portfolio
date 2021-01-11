@@ -7,6 +7,10 @@ const Stack = styled.div`
   flex-direction: row;
   align-items: center;
   grid-gap: 20px;
+  background-color: var(--color-primary-shades-100);
+  border-radius: 8px;
+  border: 1px var(--color-primary-shades-500) solid;
+  padding: 1rem 1rem;
 `;
 
 const LogoWrapper = styled.div`
@@ -24,6 +28,15 @@ const ThumbnailWrapper = styled.div`
   place-items: center;
   text-transform: uppercase;
   font-weight: var(--font-weight-bold);
+`;
+
+const Title = styled.h3`
+  font-size: var(--font-size-m);
+  margin: 0;
+`;
+
+const Description = styled.p`
+  font-size: var(--font-size-s);
 `;
 
 const ContentWrapper = styled.div``;
@@ -58,8 +71,8 @@ const ToolCard = ({ postEdges }: ToolCardProps) => {
           )}
         </LogoWrapper>
         <ContentWrapper>
-          <h3>{item.data.Name}</h3>
-          <p>{item.data.Description}</p>
+          <Title>{item.data.Name}</Title>
+          <Description>{item.data.Description}</Description>
         </ContentWrapper>
       </Stack>
     </Link>

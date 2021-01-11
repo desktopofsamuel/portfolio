@@ -5,9 +5,15 @@ import ToolCard from "components/ToolCard";
 import PageTitle from "components/PageTitle";
 import Boxed from "components/utils/Boxed";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import ReadOn from "components/ReadOn";
 import Layout from "../layout";
 // import "react-tabs/style/react-tabs.css";
-import ReadOn from "components/ReadOn";
+
+const TabGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-gap: 2rem;
+`;
 
 // type ToolPageProps = {
 //   data: {
@@ -40,25 +46,32 @@ const ToolPage = ({ data }) => {
             </Tab>
           </TabList>
           <TabPanel>
-            {techEdges
-              .filter(t => t.node.data.Platform === "Mac")
-              .map(item => (
-                <ToolCard postEdges={item} />
-              ))}
+            <TabGrid>
+              {techEdges
+                .filter(t => t.node.data.Platform === "Mac")
+                .map(item => (
+                  <ToolCard postEdges={item} className="noeffect" />
+                ))}
+            </TabGrid>
           </TabPanel>
           <TabPanel>
-            {techEdges
-              .filter(t => t.node.data.Platform === "Windows")
-              .map(item => (
-                <ToolCard postEdges={item} />
-              ))}
+            {" "}
+            <TabGrid>
+              {techEdges
+                .filter(t => t.node.data.Platform === "Windows")
+                .map(item => (
+                  <ToolCard postEdges={item} className="noeffect" />
+                ))}
+            </TabGrid>
           </TabPanel>
           <TabPanel>
-            {techEdges
-              .filter(t => t.node.data.Platform === "Web")
-              .map(item => (
-                <ToolCard postEdges={item} />
-              ))}
+            <TabGrid>
+              {techEdges
+                .filter(t => t.node.data.Platform === "Web")
+                .map(item => (
+                  <ToolCard postEdges={item} className="noeffect" />
+                ))}
+            </TabGrid>
           </TabPanel>
         </Tabs>
       </Boxed>
