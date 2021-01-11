@@ -15,6 +15,11 @@ const TabGrid = styled.div`
   grid-gap: 2rem;
 `;
 
+const TabListStyled = styled(TabList)`
+  display: flex;
+  list-style-type: none;
+`;
+
 // type ToolPageProps = {
 //   data: {
 //     tech: {
@@ -31,10 +36,9 @@ const ToolPage = ({ data }) => {
         <PageTitle
           title="Tools & Tech"
           description="A list of my favorite tools"
-          type="secondary"
         />
         <Tabs>
-          <TabList>
+          <TabListStyled>
             <Tab>
               <ReadOn text="Mac" href="" />
             </Tab>
@@ -44,23 +48,25 @@ const ToolPage = ({ data }) => {
             <Tab>
               <ReadOn text="Web" href="" />
             </Tab>
-          </TabList>
+            <Tab>
+              <ReadOn text="iOS" href="" />
+            </Tab>
+          </TabListStyled>
           <TabPanel>
             <TabGrid>
               {techEdges
                 .filter(t => t.node.data.Platform === "Mac")
                 .map(item => (
-                  <ToolCard postEdges={item} className="noeffect" />
+                  <ToolCard postEdges={item} />
                 ))}
             </TabGrid>
           </TabPanel>
           <TabPanel>
-            {" "}
             <TabGrid>
               {techEdges
                 .filter(t => t.node.data.Platform === "Windows")
                 .map(item => (
-                  <ToolCard postEdges={item} className="noeffect" />
+                  <ToolCard postEdges={item} />
                 ))}
             </TabGrid>
           </TabPanel>
@@ -69,7 +75,16 @@ const ToolPage = ({ data }) => {
               {techEdges
                 .filter(t => t.node.data.Platform === "Web")
                 .map(item => (
-                  <ToolCard postEdges={item} className="noeffect" />
+                  <ToolCard postEdges={item} />
+                ))}
+            </TabGrid>
+          </TabPanel>
+          <TabPanel>
+            <TabGrid>
+              {techEdges
+                .filter(t => t.node.data.Platform === "iOS")
+                .map(item => (
+                  <ToolCard postEdges={item} />
                 ))}
             </TabGrid>
           </TabPanel>
@@ -83,7 +98,7 @@ export default ToolPage;
 
 export const pageQuery = graphql`
   query ToolQuery {
-    tech: allAirtable(filter: { table: { eq: "Tech" } }, sort: { fields: id }) {
+    tech: allAirtable(filter: { table: { eq: "Tech" } }) {
       edges {
         node {
           id

@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "./common/GatsbyLink";
 import styled from "styled-components";
+import { usePalette } from "react-palette";
 
 const Stack = styled.div`
   display: flex;
@@ -14,15 +15,21 @@ const Stack = styled.div`
 `;
 
 const LogoWrapper = styled.div`
-  width: 64px;
-  height: 64px;
+  display: grid;
+  place-content: center;
+  background-color: ${props => props.color};
+
+  & > * {
+    width: 48px;
+    height: 48px;
+  }
 `;
 
 const ThumbnailWrapper = styled.div`
   width: 64px;
   height: 64px;
   border: 1px var(--color-primary-shades-700) solid;
-  background: var(--color-primary-shades-100);
+  background-color: var(--color-primary-shades-100);
   font-size: var(--font-size-m);
   display: grid;
   place-items: center;
@@ -60,16 +67,26 @@ type ToolCardProps = {
 const ToolCard = ({ postEdges }: ToolCardProps) => {
   const item = postEdges.node;
   const thumbnail = item.data.Name.slice(0, 1);
+  const { data, loading, error } = !!item.data.Image
+    ? usePalette(item.data.Image[0].url)
+    : "";
+
   return (
-    <Link to={item.data.Link} target="_blank" key={item.id}>
+    <Link
+      to={item.data.Link}
+      target="_blank"
+      key={item.id}
+      className="noeffect"
+    >
       <Stack>
-        <LogoWrapper>
-          {!!item.data.Image ? (
+        {!!item.data.Image ? (
+          <LogoWrapper color={data.lightMuted}>
             <img src={item.data.Image[0].url} alt={`${item.data.Name} Logo`} />
-          ) : (
-            <ThumbnailWrapper>{thumbnail}</ThumbnailWrapper>
-          )}
-        </LogoWrapper>
+          </LogoWrapper>
+        ) : (
+          <ThumbnailWrapper>{thumbnail}</ThumbnailWrapper>
+        )}
+
         <ContentWrapper>
           <Title>{item.data.Name}</Title>
           <Description>{item.data.Description}</Description>
