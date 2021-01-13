@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   padding: 10px 25px;
   border-left: 4px solid var(--color-primary);
   box-shadow: none;
-  border-radius: var(--border-radius);
+  border-radius: 8px;
   margin-bottom: 5vh;
   cursor: pointer;
   transition: background-color ease-in-out 0.2s;

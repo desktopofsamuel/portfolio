@@ -5,19 +5,51 @@ import ToolCard from "components/ToolCard";
 import PageTitle from "components/PageTitle";
 import Boxed from "components/utils/Boxed";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import ReadOn from "components/ReadOn";
+import ButtonPill from "components/button-pill";
+import { faApple, faMicrosoft } from "@fortawesome/free-brands-svg-icons";
+import {
+  faPencilRuler,
+  faDollarSign,
+  faDesktop,
+  faMobileAlt,
+  faLaptop,
+} from "@fortawesome/free-solid-svg-icons";
 import Layout from "../layout";
 // import "react-tabs/style/react-tabs.css";
 
-const TabGrid = styled.div`
+const TabsStyled = styled(Tabs)`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  place-content: center;
   grid-gap: 2rem;
 `;
 
+const TabGrid = styled.div`
+  max-width: 1024px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 2rem;
+
+  @media screen and (min-width: 800px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+`;
+
 const TabListStyled = styled(TabList)`
-  display: flex;
-  list-style-type: none;
+  display: inline-flex;
+  grid-gap: 1rem;
+  margin: 0 auto;
+  place-content: center;
+
+  & li::before {
+    content: "";
+    margin: 0;
+  }
+
+  .active > * {
+    background-color: var(--color-primary-300);
+    color: var(--color-white-300);
+  }
 `;
 
 // type ToolPageProps = {
@@ -37,25 +69,25 @@ const ToolPage = ({ data }) => {
           title="Tools & Tech"
           description="A list of my favorite tools"
         />
-        <Tabs>
+        <TabsStyled selectedTabClassName="active">
           <TabListStyled>
-            <Tab>
-              <ReadOn text="Mac" href="" />
+            <Tab as="button">
+              <ButtonPill text="Desktop" lefticon={faDesktop} />
             </Tab>
             <Tab>
-              <ReadOn text="Windows" href="" />
+              <ButtonPill text="Mobile" lefticon={faMobileAlt} />
             </Tab>
             <Tab>
-              <ReadOn text="Web" href="" />
+              <ButtonPill text="Subscriptions" lefticon={faDollarSign} />
             </Tab>
             <Tab>
-              <ReadOn text="iOS" href="" />
+              <ButtonPill text="Design" lefticon={faPencilRuler} />
             </Tab>
           </TabListStyled>
           <TabPanel>
             <TabGrid>
               {techEdges
-                .filter(t => t.node.data.Platform === "Mac")
+                .filter(t => t.node.data.Category === "Desktop")
                 .map(item => (
                   <ToolCard postEdges={item} />
                 ))}
@@ -64,7 +96,7 @@ const ToolPage = ({ data }) => {
           <TabPanel>
             <TabGrid>
               {techEdges
-                .filter(t => t.node.data.Platform === "Windows")
+                .filter(t => t.node.data.Category === "Mobile")
                 .map(item => (
                   <ToolCard postEdges={item} />
                 ))}
@@ -73,7 +105,7 @@ const ToolPage = ({ data }) => {
           <TabPanel>
             <TabGrid>
               {techEdges
-                .filter(t => t.node.data.Platform === "Web")
+                .filter(t => t.node.data.Category === "Subscriptions")
                 .map(item => (
                   <ToolCard postEdges={item} />
                 ))}
@@ -82,13 +114,13 @@ const ToolPage = ({ data }) => {
           <TabPanel>
             <TabGrid>
               {techEdges
-                .filter(t => t.node.data.Platform === "iOS")
+                .filter(t => t.node.data.Category === "Design")
                 .map(item => (
                   <ToolCard postEdges={item} />
                 ))}
             </TabGrid>
           </TabPanel>
-        </Tabs>
+        </TabsStyled>
       </Boxed>
     </Layout>
   );
@@ -98,7 +130,10 @@ export default ToolPage;
 
 export const pageQuery = graphql`
   query ToolQuery {
-    tech: allAirtable(filter: { table: { eq: "Tech" } }) {
+    tech: allAirtable(
+      filter: { table: { eq: "Tech" } }
+      sort: { fields: data___Name }
+    ) {
       edges {
         node {
           id
@@ -109,7 +144,7 @@ export const pageQuery = graphql`
               url
             }
             Name
-            Platform
+            Category
           }
         }
       }

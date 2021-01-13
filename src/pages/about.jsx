@@ -79,7 +79,7 @@ const BioTitleContainer = styled.div`
 const BioTitle = styled.h3`
   margin: 0;
   font-size: var(--font-size-s);
-  font-weight: 500;
+  font-weight: var(--font-weight-bold-alt);
   text-transform: uppercase;
   letter-spacing: 1.35px;
   color: white;

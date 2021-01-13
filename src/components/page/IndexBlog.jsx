@@ -16,7 +16,6 @@ const Block = styled.div`
   background: ${props => (props.invert ? `var(--color-white)` : ``)};
   text-align: left;
   align-content: flex-start;
-  border-radius: var(--border-radius);
   color: var(--color-text);
   justify-content: space-between;
   transition: var(--transition);

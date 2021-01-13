@@ -60,7 +60,7 @@ const StickyWrapper = styled.div`
 const Subtitle = styled.p`
   font-size: 1.025rem;
   font-family: var(--font-secondary);
-  font-weight: 500;
+  font-weight: var(--font-weight-bold-alt);
 `;
 
 const Center = styled.div`
