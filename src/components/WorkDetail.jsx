@@ -10,7 +10,7 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-  border: 1px solid var(--color-primary-shades-200);
+  border: 1px solid var(--color-secondary-light-100);
   padding: var(--var-padding-m);
   border-radius: 24px;
   display: grid;
@@ -31,7 +31,7 @@ const Header = styled.div`
   }
 
   p {
-    color: var(--color-primary-shades-300);
+    color: var(--color-text-secondary);
   }
 
   small {

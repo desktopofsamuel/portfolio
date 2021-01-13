@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 import GatsbyLink from "./common/GatsbyLink";
 
 const Wrapper = styled.div`
-  background-color: var(--color-white-500);
+  background-color: var(--color-white-light-300);
   padding: 10px 25px;
-  border-left: 4px solid var(--color-primary);
+  border-left: 4px solid var(--color-primary-light-700);
   box-shadow: none;
   border-radius: 8px;
   margin-bottom: 5vh;

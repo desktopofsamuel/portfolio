@@ -7,11 +7,11 @@ const StyledLink = styled(Link)`
   display: inline-block;
   flex-direction: column;
   padding: 0.3rem 0.75rem;
-  border: 1px solid var(--color-primary-shades-200);
+  border: 1px solid var(--color-secondary-light-100);
   border-radius: var(--border-radius);
   margin: 0 1rem 0.5rem 0;
   transition: var(--transition);
-  color: var(--color-primary);
+  color: var(--color-primary-light-700);
   line-height: 1.5;
   font-family: var(--font-primary);
   font-weight: var(--font-weight-bold-alt);
@@ -23,8 +23,8 @@ const StyledLink = styled(Link)`
   }
 
   &:hover {
-    background: var(--color-primary-300);
-    color: var(--color-white-300);
+    background: var(--color-primary-light-500);
+    color: var(--color-white-light-100);
     border: 1px solid var(--color-transparent);
   }
 `;

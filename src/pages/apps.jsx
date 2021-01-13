@@ -28,7 +28,12 @@ const TabGrid = styled.div`
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: max-content;
   grid-gap: 2rem;
+
+  & > * {
+    height: 100%;
+  }
 
   @media screen and (min-width: 800px) {
     grid-template-columns: repeat(2, 1fr);
@@ -47,10 +52,12 @@ const TabListStyled = styled(TabList)`
   }
 
   .active > * {
-    background-color: var(--color-primary-300);
-    color: var(--color-white-300);
+    background-color: var(--color-primary-light-500);
+    color: var(--color-white-light-300);
   }
 `;
+
+const TabPanelStyled = styled(TabPanel)``;
 
 // type ToolPageProps = {
 //   data: {
@@ -66,7 +73,7 @@ const ToolPage = ({ data }) => {
     <Layout>
       <Boxed>
         <PageTitle
-          title="Tools & Tech"
+          title="Apps & Services"
           description="A list of my favorite tools"
         />
         <TabsStyled selectedTabClassName="active">
@@ -84,7 +91,7 @@ const ToolPage = ({ data }) => {
               <ButtonPill text="Design" lefticon={faPencilRuler} />
             </Tab>
           </TabListStyled>
-          <TabPanel>
+          <TabPanelStyled>
             <TabGrid>
               {techEdges
                 .filter(t => t.node.data.Category === "Desktop")
@@ -92,8 +99,8 @@ const ToolPage = ({ data }) => {
                   <ToolCard postEdges={item} />
                 ))}
             </TabGrid>
-          </TabPanel>
-          <TabPanel>
+          </TabPanelStyled>
+          <TabPanelStyled>
             <TabGrid>
               {techEdges
                 .filter(t => t.node.data.Category === "Mobile")
@@ -101,8 +108,8 @@ const ToolPage = ({ data }) => {
                   <ToolCard postEdges={item} />
                 ))}
             </TabGrid>
-          </TabPanel>
-          <TabPanel>
+          </TabPanelStyled>
+          <TabPanelStyled>
             <TabGrid>
               {techEdges
                 .filter(t => t.node.data.Category === "Subscriptions")
@@ -110,8 +117,8 @@ const ToolPage = ({ data }) => {
                   <ToolCard postEdges={item} />
                 ))}
             </TabGrid>
-          </TabPanel>
-          <TabPanel>
+          </TabPanelStyled>
+          <TabPanelStyled>
             <TabGrid>
               {techEdges
                 .filter(t => t.node.data.Category === "Design")
@@ -119,7 +126,7 @@ const ToolPage = ({ data }) => {
                   <ToolCard postEdges={item} />
                 ))}
             </TabGrid>
-          </TabPanel>
+          </TabPanelStyled>
         </TabsStyled>
       </Boxed>
     </Layout>

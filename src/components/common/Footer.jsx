@@ -13,17 +13,17 @@ import Link from "components/common/GatsbyLink";
 
 /* Back To Top Button */
 const ScrollToTopContainer = styled.div`
-  background-color: var(--color-secondary);
+  background-color: var(--color-secondary-light-500);
   height: 62px;
   width: 62px;
   display: none;
   font-size: var(--font-size-m);
-  color: var(--color-white);
+  color: var(--color-white-light-100);
   cursor: pointer;
   transition: var(--transition);
 
   &:hover {
-    background-color: var(--color-primary-shades-700);
+    background-color: var(--color-primary-light-700);
   }
 
   @media only screen and (min-width: 768px) {
@@ -161,7 +161,7 @@ const FooterItem = styled(Link)`
   }
 
   &:hover {
-    color: var(--color-secondary);
+    color: var(--color-secondary-light-500);
   }
 
   p {
@@ -210,7 +210,7 @@ const CreditContainer = styled.div`
   margin-top: 2rem;
   min-height: 62px;
   padding: var(--var-padding-s);
-  background-color: var(--color-primary-shades-100);
+  background-color: var(--color-primary-light-100);
   text-align: center;
 
   @media only screen and (max-width: 767px) {

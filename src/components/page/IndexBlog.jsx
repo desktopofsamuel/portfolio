@@ -13,7 +13,7 @@ const Block = styled.div`
   position: relative;
   display: flex;
   flex-flow: column;
-  background: ${props => (props.invert ? `var(--color-white)` : ``)};
+  background: ${props => (props.invert ? `var(--color-white-light-100)` : ``)};
   text-align: left;
   align-content: flex-start;
   color: var(--color-text);
@@ -53,10 +53,10 @@ const Block = styled.div`
 
 const Content = styled.div`
   padding: var(--var-padding-s);
-  background-color: var(--color-white);
+  background-color: var(--color-white-light-100);
 
   h3 {
-    color: var(--color-primary-shades-700);
+    color: var(--color-primary-light-700);
   }
 `;
 
@@ -66,7 +66,7 @@ const PostListImage = styled(Img)`
 
 const Paragraph = styled.p`
   font-size: var(--font-size-xs);
-  color: var(--color-primary-shades-500);
+  color: var(--color-text-secondary);
 `;
 class IndexBlog extends React.Component {
   getPostList() {

@@ -5,7 +5,7 @@ import Link from "./common/GatsbyLink";
 
 const Container = styled.section`
   margin-top: var(--var-padding-l);
-  background-color: var(--color-white-300);
+  background-color: var(--color-white-light-300);
 `;
 
 const Wrapper = styled(Boxed)`

@@ -8,7 +8,7 @@
 //   padding: var(--var-padding-s) var(--var-padding-m);
 //   display: grid;
 //   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-//   background-color: var(--color-white-500);
+//   background-color: var(--color-white-light-300);
 //   border-radius: 16px;
 //   z-index: 2;
 

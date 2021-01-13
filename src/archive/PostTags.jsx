@@ -16,7 +16,7 @@ const Tag = styled.div`
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    background: var(--color-primary);
+    background: var(--color-primary-light-700);
     color: #ffffff;
   }
 

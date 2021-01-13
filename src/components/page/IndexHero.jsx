@@ -24,7 +24,7 @@ const IntroWrapper = styled.div``;
 const ContactWrapper = styled.div`
   position: relative;
   border-radius: 4px;
-  border: 1px solid var(--color-primary-shades-300);
+  border: 1px solid var(--color-secondary-light-300);
   padding: var(--var-padding-s);
 
   &::before {
@@ -34,8 +34,8 @@ const ContactWrapper = styled.div`
     left: 12px;
     line-height: 20px;
     padding: 0 5px;
-    color: var(--color-primary);
-    background-color: var(--color-white-300);
+    color: var(--color-primary-light-700);
+    background-color: var(--color-white-light-100);
     font-family: var(--font-primary);
     letter-spacing: var(--font-small-letterspacing);
     font-weight: var(--font-weight-bold);
@@ -90,11 +90,7 @@ const IndexHero = () => {
             I co-founded Playa, a web & app agency. Before that, I worked as
             Cross-Content Intern at iTunes & App Store, Apple.
           </Subtitle>
-          <ReadOn
-            text="View My Work"
-            href="https://apple.com"
-            target="_blank"
-          />
+          <ReadOn text="View My Work" href="/work" />
         </IntroWrapper>
         {/* <LinkWrapper>
           <small>Contact</small>

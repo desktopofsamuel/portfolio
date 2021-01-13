@@ -9,16 +9,17 @@ const Stack = styled.div`
   flex-direction: row;
   align-items: center;
   grid-gap: 2rem;
-  background-color: var(--color-white-300);
+  background-color: var(--color-white-light-300);
   border-radius: 8px;
-  border: 1px solid var(--color-primary-100-shade);
+  border: 1px solid var(--color-primary-light-100);
   padding: 1.5rem 2rem;
   font-family: var(--font-primary);
   transition: var(--transition);
+  height: inherit;
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0px 10px 40px -20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 25px 40px 0 rgba(0, 0, 0, 0.08);
   }
 `;
 
@@ -33,7 +34,7 @@ const LogoWrapper = styled.div`
 const ThumbnailWrapper = styled.div`
   width: 64px;
   height: 64px;
-  border: 1px var(--color-primary-shades-700) solid;
+  border: 1px var(--color-primary-light-700) solid;
   font-size: var(--font-size-m);
   display: grid;
   place-items: center;
@@ -49,7 +50,7 @@ const Title = styled.h3`
 
 const Description = styled.p`
   font-size: var(--font-size-xs);
-  color: var(--color-primary-shades-300);
+  color: var(--color-text-secondary);
   margin: 0;
 `;
 

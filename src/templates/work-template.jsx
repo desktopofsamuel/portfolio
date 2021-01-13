@@ -33,7 +33,7 @@ const Subtitle = styled.h2`
   font-family: var(--font-primary);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-m);
-  color: var(--color-primary-shades-500);
+  color: var(--color-text-secondary);
   margin-top: 2rem;
   line-height: 1.8;
 `;

@@ -39,7 +39,7 @@ const Main = styled.article`
     font-size: var(--font-size-s);
     font-family: var(--font-secondary);
     font-weight: var(--font-weight-regular);
-    color: var(--color-primary-shades-300);
+    color: var(--color-text-secondary);
   }
 
   h2 {

@@ -26,7 +26,7 @@ const Wrapper =
   border-bottom: ${props =>
     (props.type === "primary" && "none") ||
     (props.type === "secondary" &&
-      "1px var(--color-primary-shades-200) solid")};
+      "1px  var(--color-secondary-light-100) solid")};
 `;
 
 const Title =
@@ -42,7 +42,7 @@ const Title =
 `;
 
 const Description = styled.p`
-  color: var(--color-primary-shades-300);
+  color: var(--color-text-secondary);
   max-width: 40ch;
 `;
 

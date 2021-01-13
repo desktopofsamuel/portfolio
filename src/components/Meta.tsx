@@ -20,7 +20,7 @@ const Head = styled.div`
 
 const Icon = styled(FontAwesomeIcon)`
   font-size: 14px;
-  color: var(--color-primary-shades-300);
+  color: var(--color-text-secondary);
   margin-right: 8px;
   margin-top: 4px;
 `;
@@ -28,7 +28,7 @@ const Icon = styled(FontAwesomeIcon)`
 const Label = styled.p`
   font-family: var(--font-primary);
   font-weight: var(--font-weight-bold);
-  color: var(--color-primary-shades-300);
+  color: var(--color-text-secondary);
   letter-spacing: 0.12em;
   font-size: 14px;
   text-transform: uppercase;

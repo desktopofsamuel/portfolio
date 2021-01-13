@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  background: var(--color-white-500);
+  background: var(--color-white-light-300);
   display: grid;
   grid-template-columns: minmax(100px, 150px) minmax(1rem, 2rem) auto;
   margin: 4rem 0 2rem 0;
@@ -26,12 +26,12 @@ const Poster = styled.img`
 
 const Rating = styled.p`
   font-size: 24px;
-  color: var(--color-primary);
+  color: var(--color-primary-light-700);
   margin: 0;
 `;
 
 const Director = styled.p`
-  color: #5f777d;
+  color: var(--color-text-secondary);
   margin: 0;
 `;
 

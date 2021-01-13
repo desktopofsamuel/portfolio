@@ -183,7 +183,7 @@ const IndexPage = ({ data }) => {
           </ColumnSpaced>
         </Box>
       </Row>
-      <GreyRow id="blog">
+      <Row id="blog">
         <Box>
           <UnevenColumn>
             <RightStickyBox>
@@ -203,7 +203,7 @@ const IndexPage = ({ data }) => {
             </Blog>
           </UnevenColumn>
         </Box>
-      </GreyRow>
+      </Row>
       <Row className="full-bleed full-content" id="photography">
         <PhotoGrid>
           <IndexPhoto postEdges={photo1Edges} />

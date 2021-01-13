@@ -12,13 +12,13 @@ const Section = styled.div`
 const Container = styled(Boxed)``;
 
 const Subtitle = styled.h6`
-  color: var(--color-white-500);
+  color: var(--color-white-light-300);
   z-index: 100;
 `;
 
 const Title = styled.h1`
   margin: 0;
-  color: var(--color-white-500);
+  color: var(--color-white-light-300);
   z-index: 100;
 `;
 
