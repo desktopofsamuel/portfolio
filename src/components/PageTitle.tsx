@@ -10,6 +10,11 @@ const Wrapper =
   Props >
   `
   margin: 2rem 0 4rem 0;
+
+  @media only screen and (max-width: 768px) {
+    margin: 1rem 0;
+  }
+
   display: grid;
   place-content: ${props =>
     (props.type === "primary" && "center") ||
@@ -21,7 +26,7 @@ const Wrapper =
   border-bottom: ${props =>
     (props.type === "primary" && "none") ||
     (props.type === "secondary" &&
-      "1px var(--color-primary-shades-200) solid")};
+      "1px  var(--color-secondary-light-100) solid")};
 `;
 
 const Title =
@@ -37,7 +42,7 @@ const Title =
 `;
 
 const Description = styled.p`
-  color: var(--color-primary-shades-300);
+  color: var(--color-text-secondary);
   max-width: 40ch;
 `;
 

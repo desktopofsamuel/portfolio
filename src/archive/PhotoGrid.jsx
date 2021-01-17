@@ -10,7 +10,7 @@ const Grid_Photo = styled.div`
 
 const Grid_Label = styled.div`
   text-align: center;
-  color: var(--color-primary-shades-300);
+  color: var(--color-text-secondary);
 `;
 
 class PhotoGrid extends Component {

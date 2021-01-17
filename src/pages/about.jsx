@@ -14,7 +14,7 @@ import PropTypes from "prop-types";
 
 const Row = styled.section`
   padding: var(--var-padding-m) 0;
-  background: var(--color-white);
+  background: var(--color-white-light-100);
 
   &:first-child {
     padding-bottom: 0;
@@ -79,7 +79,7 @@ const BioTitleContainer = styled.div`
 const BioTitle = styled.h3`
   margin: 0;
   font-size: var(--font-size-s);
-  font-weight: 500;
+  font-weight: var(--font-weight-bold-alt);
   text-transform: uppercase;
   letter-spacing: 1.35px;
   color: white;
@@ -87,7 +87,7 @@ const BioTitle = styled.h3`
 
 const Content = styled.p`
   max-width: 50ch;
-  color: var(--color-primary-shades-300);
+  color: var(--color-text-secondary);
 `;
 
 const SkillItemGrid = styled.div`
@@ -96,7 +96,7 @@ const SkillItemGrid = styled.div`
 `;
 
 const SkillItemContainer = styled.div`
-  border: 0.5px solid var(--color-primary-shades-200);
+  border: 0.5px solid var(--color-secondary-light-100);
   padding: var(--var-padding-m);
   border-radius: 24px;
 `;
@@ -106,7 +106,7 @@ const SkillTitle = styled.h3`
 `;
 
 const SkillDescription = styled.p`
-  color: var(--color-primary-shades-300);
+  color: var(--color-text-secondary);
   max-width: 55ch;
 `;
 
@@ -258,7 +258,7 @@ const AboutPage = ({ data }) => {
 export default AboutPage;
 
 // const AltRow = styled(Row)`
-//   background: var(--color-white-700);
+//   background: var(--color-white-light-500);
 // `;
 
 // const InvertRow = styled(Row)`
@@ -360,7 +360,7 @@ export default AboutPage;
 // const PassionContent = styled.div``;
 
 // const ProjectWrapper = styled.div`
-//   background: var(--color-white-700);
+//   background: var(--color-white-light-500);
 //   align-content: space-between;
 //   padding: 2rem;
 //   display: flex;

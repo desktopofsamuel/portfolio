@@ -24,7 +24,7 @@ const Title = styled.h1`
   font-family: var(--font-tertiary);
   padding-top: var(--var-padding-m);
   font-size: var(--font-size-xl);
-  font-weight: 500;
+  font-weight: var(--font-weight-bold-alt);
   letter-spacing: -2px;
   margin: 0;
 `;
@@ -33,7 +33,7 @@ const Subtitle = styled.h2`
   font-family: var(--font-primary);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-m);
-  color: var(--color-primary-shades-500);
+  color: var(--color-text-secondary);
   margin-top: 2rem;
   line-height: 1.8;
 `;
@@ -42,7 +42,7 @@ const Quote = styled.h3`
   font-family: var(--font-tertiary);
   padding-top: var(--var-padding-m);
   font-size: var(--font-size-l);
-  font-weight: 500;
+  font-weight: var(--font-weight-bold-alt);
   letter-spacing: -1px;
   margin: 0;
   grid-column: span 8;

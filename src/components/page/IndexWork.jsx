@@ -21,7 +21,7 @@ const Card = styled.div`
 `;
 
 const Subtitle = styled.h6`
-  color: var(--color-white-500);
+  color: var(--color-white-light-300);
   font-weight: 400;
   letter-spacing: 1.5px;
   margin: 0;
@@ -29,7 +29,7 @@ const Subtitle = styled.h6`
 
 const Title = styled.h3`
   margin-top: 16px;
-  color: var(--color-white-500);
+  color: var(--color-white-light-300);
 `;
 
 const Image = styled(Img)`

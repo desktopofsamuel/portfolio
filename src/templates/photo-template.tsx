@@ -59,7 +59,7 @@ const TitleWrapper = styled.div`
 
 const Title = styled.h1`
   text-align: center;
-  color: var(--color-white-300);
+  color: var(--color-white-light-100);
   font-family: var(--font-primary);
   font-weight: 600;
   font-size: calc(48px + (64 - 16) * ((100vw - 320px) / (1920 - 320)));

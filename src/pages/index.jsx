@@ -60,7 +60,7 @@ const StickyWrapper = styled.div`
 const Subtitle = styled.p`
   font-size: 1.025rem;
   font-family: var(--font-secondary);
-  font-weight: 500;
+  font-weight: var(--font-weight-bold-alt);
 `;
 
 const Center = styled.div`
@@ -183,7 +183,7 @@ const IndexPage = ({ data }) => {
           </ColumnSpaced>
         </Box>
       </Row>
-      <GreyRow id="blog">
+      <Row id="blog">
         <Box>
           <UnevenColumn>
             <RightStickyBox>
@@ -203,7 +203,7 @@ const IndexPage = ({ data }) => {
             </Blog>
           </UnevenColumn>
         </Box>
-      </GreyRow>
+      </Row>
       <Row className="full-bleed full-content" id="photography">
         <PhotoGrid>
           <IndexPhoto postEdges={photo1Edges} />

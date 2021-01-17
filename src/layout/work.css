@@ -59,7 +59,7 @@ blockquote {
     font-family: var(--font-tertiary);
     padding-top: var(--var-padding-m);
     font-size: var(--font-size-l);
-    font-weight: 500;
+    font-weight: var(--font-weight-bold-alt);
     letter-spacing: -1px;
     margin: 2rem 0 2rem 0;
     padding: 0;

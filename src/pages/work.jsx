@@ -11,7 +11,7 @@ import Layout from "../layout";
 
 const Row = styled.section`
   padding: var(--var-padding-m) 0;
-  background: var(--color-white);
+  background: var(--color-background);
 
   &:first-child {
     padding-bottom: 0;
@@ -20,6 +20,9 @@ const Row = styled.section`
 
 const ClearRow = styled(Row)`
   padding: 0;
+  p {
+    color: var(--color-text-secondary);
+  }
 `;
 const GridProject = styled.div`
   display: grid;
@@ -28,7 +31,7 @@ const GridProject = styled.div`
 `;
 
 const ProjectWrapper = styled.div`
-  background: var(--color-white-700);
+  background: var(--color-white-light-500);
   align-content: space-between;
   padding: 2rem;
   display: flex;
@@ -75,7 +78,7 @@ const CenterRow = styled(Row)`
   }
 
   p {
-    color: var(--color-primary-shades-300);
+    color: var(--color-text-secondary);
   }
 `;
 

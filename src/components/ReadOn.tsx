@@ -10,11 +10,11 @@ const Button = styled.div`
   justify-content: center;
   align-items: center;
   transition: var(--transition);
-  border: 1px var(--color-primary-shades-200) solid;
+  border: 1px var(--color-secondary-light-100) solid;
   border-radius: 36px;
 
   p {
-    color: var(--color-primary-shades-300);
+    color: var(--color-text-secondary);
     font-family: var(--font-primary);
     font-weight: var(--font-weight-bold);
     font-size: var(--font-size-2xs);
@@ -44,7 +44,7 @@ const Button = styled.div`
 
   &:hover {
     & {
-      border-color: var(--color-primary-shades-300);
+      border-color: var(--color-secondary-light-300);
     }
 
     p {

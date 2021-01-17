@@ -35,7 +35,7 @@ const ListItem = styled.div`
   grid-template-columns: minmax(auto, 40%) minmax(auto, 1200px); */
   border-radius: 25px;
   margin-bottom: var(--padding-m);
-  border-left: 3px var(--color-primary) solid;
+  border-left: 3px var(--color-primary-light-700) solid;
   transition: transform 0.2s ease-in, box-shadow 0.3s ease-in-out;
 
   &:hover {

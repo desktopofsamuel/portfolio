@@ -89,7 +89,7 @@ const GridButton = styled.small`
   margin-top: 1rem;
   padding: 1rem 2rem;
   background-color: #b6aa8e;
-  color: var(--color-white-300);
+  color: var(--color-white-light-100);
   transition: var(--transition);
 
   @media only screen and (max-width: 767px) {

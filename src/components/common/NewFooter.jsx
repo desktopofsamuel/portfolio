@@ -19,7 +19,7 @@ const FormContainer = styled.div`
   overflow: hidden;
   padding: var(--var-padding-m);
   position: relative;
-  color: var(--color-white);
+  color: var(--color-white-light-100);
   border-radius: 24px;
 
   p {
@@ -28,7 +28,7 @@ const FormContainer = styled.div`
 
   small {
     margin-top: 16px;
-    color: var(--color-white);
+    color: var(--color-white-light-100);
     opacity: 0.7;
   }
 `;
@@ -184,17 +184,17 @@ const Menu3 = () => {
 /* Bottom Bar */
 
 const ScrollToTopContainer = styled.div`
-  background-color: var(--color-secondary);
+  background-color: var(--color-secondary-light-500);
   height: 62px;
   width: 62px;
   display: none;
   font-size: var(--font-size-m);
-  color: var(--color-white);
+  color: var(--color-white-light-100);
   cursor: pointer;
   transition: var(--transition);
 
   &:hover {
-    background-color: var(--color-primary-shades-700);
+    background-color: var(--color-primary-light-700);
   }
 
   @media only screen and (min-width: 768px) {
@@ -224,7 +224,7 @@ const CreditText = styled.p`
 const CreditContainer = styled.div`
   min-height: 62px;
   padding: var(--var-padding-s);
-  background-color: var(--color-primary-shades-100);
+  background-color: var(--color-primary-light-100);
   text-align: center;
 `;
 
@@ -246,7 +246,7 @@ const Row = styled.section`
 `;
 
 const FooterRow = styled(Row)`
-  background-color: #2f2f2f;
+  background-color: var(--color-secondary-light-700);
 `;
 
 const GridRow = styled(Row)`
