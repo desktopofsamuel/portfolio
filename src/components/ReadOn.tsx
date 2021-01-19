@@ -2,15 +2,23 @@ import React from "react";
 import styled from "styled-components";
 import GatsbyLink from "./common/GatsbyLink";
 
-const Button = styled.div`
-  padding: 0.5rem var(--var-padding-s);
+type Props = {
+  isSecondary: boolean,
+};
+
+const Button =
+  styled.div <
+  Props >
+  `
   text-transform: uppercase;
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   transition: var(--transition);
-  border: 1px var(--color-secondary-light-100) solid;
+  border: ${({ isSecondary }) =>
+    (isSecondary === true && "none") ||
+    "1px var(--color-secondary-light-100) solid"};
   border-radius: 36px;
 
   p {
@@ -26,6 +34,10 @@ const Button = styled.div`
     &:active {
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     }
+
+    &:hover {
+      color: var(--color-text);
+    }
   }
 
   span {
@@ -39,7 +51,7 @@ const Button = styled.div`
     z-index: 1;
     display: inline-flex;
     transition: var(--transition);
-    padding: 16px 24px;
+    padding: ${props => (props.isSecondary === true && "none") || "16px 24px"};
   }
 
   &:hover {
@@ -57,21 +69,24 @@ type ButtonReadOnProps = {
   href: string,
   text: string,
   target: "_blank" | "_self",
+  isSecondary: boolean,
 };
 
 const defaultProps: ButtonReadOnProps = {
   text: "Read On",
   target: "_self",
   href: "",
+  isSecondary: false,
 };
 
 const ReadOn: React.FC<ButtonReadOnProps> = ({
   href,
   text,
   target,
+  isSecondary,
 }: ButtonReadOnProps) => (
   <GatsbyLink to={href} target={target} className="noeffect">
-    <Button>
+    <Button isSecondary={isSecondary}>
       <p>{text}</p>
       <span>→</span>
     </Button>
