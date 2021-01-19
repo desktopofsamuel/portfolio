@@ -5,13 +5,17 @@ import Img from "gatsby-image";
 import { graphql } from "gatsby";
 import Boxed from "components/utils/Boxed";
 import Column from "components/utils/Column";
+import ColumnItem from "components/utils/ColumnItem";
 import ReadOn from "components/ReadOn";
 import config from "../../data/SiteConfig";
 import Layout from "../layout";
 import WorkIndex from "../components/page/IndexWork";
-import BlogIndex from "../components/page/IndexBlog";
+import BlogIndex from "../components/page/IndexBlogOld";
 import IndexHero from "../components/page/IndexHero";
 import IndexPhoto from "../components/page/IndexPhoto";
+import IndexIntro from "components/page/IndexIntro";
+import IndexBlog from "components/page/IndexBlog";
+import Centered from "components/utils/Centered";
 
 const Box = styled(Boxed)``;
 
@@ -128,12 +132,10 @@ const PhotoGrid = styled.div`
   }
 `;
 
-const PhotoIntro = styled.div`
-  padding: var(--var-padding-m);
-
-  h2 {
-    margin: 0;
-  }
+const PhotoIntroWrapper = styled.div`
+  padding: 1rem;
+  display: grid;
+  place-content: center;
 
   @media only screen and (max-width: 768px) {
     grid-column: span 2;
@@ -162,7 +164,7 @@ const IndexPage = ({ data }) => {
       <Row>
         <IndexHero />
       </Row>
-      <Row id="experience-designer">
+      {/* <Row id="experience-designer">
         <Box>
           <ColumnSpaced>
             <StickyBox>
@@ -182,8 +184,22 @@ const IndexPage = ({ data }) => {
             </WorkIndexGrid>
           </ColumnSpaced>
         </Box>
-      </Row>
+      </Row> */}
       <Row id="blog">
+        <Box>
+          <IndexBlog postEdges={blogEdges} />
+        </Box>
+      </Row>
+      <Box>
+        <IndexIntro
+          index="#03"
+          title="Tools & Resources"
+          description="Best resources and tools I have been using and recommend for getting start in design, code."
+          href="/setup"
+          label="My Awesome Setup"
+        />
+      </Box>
+      {/* <Row id="blog">
         <Box>
           <UnevenColumn>
             <RightStickyBox>
@@ -203,20 +219,32 @@ const IndexPage = ({ data }) => {
             </Blog>
           </UnevenColumn>
         </Box>
-      </Row>
+      </Row> */}
       <Row className="full-bleed full-content" id="photography">
-        <PhotoGrid>
-          <IndexPhoto postEdges={photo1Edges} />
-          <PhotoIntro>
-            <small>03.</small>
-            <h2 className="no-margin">Photography</h2>
-            <Subtitle>
-              Sets of photos according to cities that I have visited.
-            </Subtitle>
-            <ReadOn text="More Photos" href="/photo" />
-          </PhotoIntro>
-          <IndexPhoto postEdges={photo2Edges} />
-        </PhotoGrid>
+        <IndexPhoto photo1Edges={photo1Edges} photo2Edges={photo2Edges} />
+      </Row>
+      <Row id="newsletter">
+        <Box>
+          <Column>
+            <div>
+              <h2>Join me in the journey of design and build proudct</h2>
+              <p>
+                Each month, I break down a product idea and build a prototype
+                around it. I share my product process you can't find on Google.
+              </p>
+            </div>
+            <div>
+              <iframe
+                src="https://desktopofsamuel.substack.com/embed"
+                width="100%"
+                height="320"
+                style={{ border: "1px solid #EEE", background: "white" }}
+                frameborder="0"
+                scrolling="no"
+              ></iframe>
+            </div>
+          </Column>
+        </Box>
       </Row>
     </Layout>
   );

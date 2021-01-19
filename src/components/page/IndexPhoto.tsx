@@ -1,45 +1,58 @@
 import React from "react";
 import styled from "styled-components";
-import Img from "gatsby-image";
-import Link from "../common/GatsbyLink";
+import IndexPhotoItem from "./IndexPhotoItem";
+import IndexIntro from "components/page/IndexIntro";
 
-const Photo = styled.div``;
+const PhotoGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
 
-type IndexPhotoProps = {
-  postEdges: {
-    path: string
-    tags: Array<string>
-    cover: object
-    title: string
-    date: string
-    excerpt: string
-    timeToRead: number
-  }[]
-}
+  @media only screen and (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2px;
+  }
 
-const IndexPhoto = ({ postEdges }:IndexPhotoProps) => {
-  const postList = [];
-  postEdges.forEach(postEdge => {
-    postList.push({
-      path: `/photo${postEdge.node.fields.slug}`,
-      tags: postEdge.node.frontmatter.tags,
-      cover: postEdge.node.frontmatter.cover,
-      title: postEdge.node.frontmatter.title,
-      date: postEdge.node.fields.date,
-      excerpt: postEdge.node.frontmatter.tldr || postEdge.node.excerpt,
-      timeToRead: postEdge.node.timeToRead,
-    });
-  });
+  @media only screen and (min-width: 1920px) {
+    max-width: 1980px;
+    margin: 0 auto;
+  }
+`;
+
+const PhotoIntroWrapper = styled.div`
+  padding: 1rem;
+  display: grid;
+  place-content: center;
+
+  @media only screen and (max-width: 768px) {
+    grid-column: span 2;
+  }
+`;
+
+const IndexPhoto = ({ photo1Edges, photo2Edges }) => {
   return (
-    <>
-      {postList.map(post => (
-        <Link to={post.path} key={post.path} className="noeffect">
-          <Photo>
-            <Img fluid={post.cover.childImageSharp.fluid} alt={post.title} />
-          </Photo>
-        </Link>
-      ))}
-    </>
+    <PhotoGrid>
+      <IndexPhotoItem postEdges={photo1Edges} />
+      <PhotoIntroWrapper>
+        <IndexIntro
+          index="#04"
+          title="Through the lens"
+          description="Sets of photos according to cities that I have visited."
+          label="More Photo"
+          href="/photo"
+          noMargin
+        />
+      </PhotoIntroWrapper>
+      {/* <PhotoIntro>
+            <small>03.</small>
+            <h2 className="no-margin">Photography</h2>
+            <Subtitle>
+              Sets of photos according to cities that I have visited.
+            </Subtitle>
+            <ReadOn text="More Photos" href="/photo" />
+          </PhotoIntro> */}
+      <IndexPhotoItem postEdges={photo2Edges} />
+    </PhotoGrid>
   );
 };
 
