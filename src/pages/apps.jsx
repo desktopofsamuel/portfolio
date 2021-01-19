@@ -136,7 +136,7 @@ const ToolPage = ({ data }) => {
 export default ToolPage;
 
 export const pageQuery = graphql`
-  query ToolQuery {
+  query AppsQuery {
     tech: allAirtable(
       filter: { table: { eq: "Tech" } }
       sort: { fields: data___Name }
