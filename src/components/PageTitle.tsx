@@ -44,6 +44,8 @@ const Title =
 const Description = styled.p`
   color: var(--color-text-secondary);
   max-width: 40ch;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 type PageTitleProps = {
