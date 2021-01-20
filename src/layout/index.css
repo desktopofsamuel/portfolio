@@ -345,7 +345,7 @@ figure {
 }
 
 /* Nav Item Active Indication */
-.nav-item-active > small {
+.nav-item-active {
   color: var(--color-primary-light-700);
 }
 

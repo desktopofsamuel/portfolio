@@ -16,7 +16,7 @@ const Button = styled(GatsbyLink)`
   align-items: center;
   justify-content: center;
   transition: var(--transition);
-  border: 1px solid var(--color-secondary-light-100);
+  border: 1px solid var(--color-border);
 
   p {
     margin: 0;

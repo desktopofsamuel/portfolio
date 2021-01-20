@@ -17,8 +17,7 @@ const Button =
   align-items: center;
   transition: var(--transition);
   border: ${({ isSecondary }) =>
-    (isSecondary === true && "none") ||
-    "1px var(--color-secondary-light-100) solid"};
+    (isSecondary === true && "none") || "1px var(--color-border) solid"};
   border-radius: 36px;
 
   p {
