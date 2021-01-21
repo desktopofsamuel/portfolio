@@ -7892,18 +7892,18 @@ gatsby-transformer-remark@2.1.11:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.3.0"
 
-gatsby-transformer-sharp@^2.11.0:
-  version "2.11.0"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-2.11.0.tgz#cb03f9cc4001101ae370f4dbe82cc2e99ea0e7e6"
-  integrity sha512-esL884HBUGhZdoa6M7sP1aFC4JqCDh6PVReEEA2O0k26a4IC6cWTbIPeNa106vjrvYOEpSd359wUSFET9hpBMA==
+gatsby-transformer-sharp@2.3.13:
+  version "2.3.13"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-2.3.13.tgz#b2bd2967fee1c2511ad896645acab34954d52bc6"
+  integrity sha512-jof7b1btkABcsN6lP5qd7cBMffPFv09qTKs6ZTgRIRB9jQBiBizJydmyT97eCqqIl0dKIr8/5Bt/eC6jyxMj8A==
   dependencies:
-    "@babel/runtime" "^7.12.5"
+    "@babel/runtime" "^7.7.6"
     bluebird "^3.7.2"
-    fs-extra "^9.0.1"
-    potrace "^2.1.8"
-    probe-image-size "^6.0.0"
-    semver "^7.3.4"
-    sharp "^0.27.0"
+    fs-extra "^8.1.0"
+    potrace "^2.1.2"
+    probe-image-size "^4.1.1"
+    semver "^5.7.1"
+    sharp "^0.23.4"
 
 gatsby@^2.19.5:
   version "2.19.7"
@@ -13359,19 +13359,19 @@ postcss@^7.0.17, postcss@^7.0.18:
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
+potrace@^2.1.2, potrace@^2.1.8:
+  version "2.1.8"
+  resolved "https://registry.yarnpkg.com/potrace/-/potrace-2.1.8.tgz#50f6fba92e1e39ddef6f979b0a0f841809e0acf2"
+  integrity sha512-V9hI7UMJyEhNZjM8CbZaP/804ZRLgzWkCS9OOYnEZkszzj3zKR/erRdj0uFMcN3pp6x4B+AIZebmkQgGRinG/g==
+  dependencies:
+    jimp "^0.14.0"
+
 potrace@^2.1.6:
   version "2.1.6"
   resolved "https://registry.yarnpkg.com/potrace/-/potrace-2.1.6.tgz#687d48d4441eebca9539f4c39f6815b6e2480e67"
   integrity sha512-sXdIDGZAb3x1GSnyps7VxksRoy57/ch+kq7J79L5UPUHU5KRIJF9oLJQeRVyYlOPjois+gMxVfNJkQjSkK9xMA==
   dependencies:
     jimp "^0.10.2"
-
-potrace@^2.1.8:
-  version "2.1.8"
-  resolved "https://registry.yarnpkg.com/potrace/-/potrace-2.1.8.tgz#50f6fba92e1e39ddef6f979b0a0f841809e0acf2"
-  integrity sha512-V9hI7UMJyEhNZjM8CbZaP/804ZRLgzWkCS9OOYnEZkszzj3zKR/erRdj0uFMcN3pp6x4B+AIZebmkQgGRinG/g==
-  dependencies:
-    jimp "^0.14.0"
 
 prebuild-install@^5.3.3:
   version "5.3.3"
@@ -13477,7 +13477,7 @@ private@^0.1.8:
   resolved "https://registry.yarnpkg.com/private/-/private-0.1.8.tgz#2381edb3689f7a53d653190060fcf822d2f368ff"
   integrity sha512-VvivMrbvd2nKkiG38qjULzlc+4Vx4wm/whI9pQD35YrARNnhxeiRktSOhSukRLFNlzg6Br/cJPet5J/u19r/mg==
 
-probe-image-size@^4.0.0:
+probe-image-size@^4.0.0, probe-image-size@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/probe-image-size/-/probe-image-size-4.1.1.tgz#c836c53154b6dd04dbcf66af2bbd50087b15e1dc"
   integrity sha512-42LqKZqTLxH/UvAZ2/cKhAsR4G/Y6B7i7fI2qtQu9hRBK4YjS6gqO+QRtwTjvojUx4+/+JuOMzLoFyRecT9qRw==
