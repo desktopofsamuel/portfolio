@@ -15,6 +15,13 @@ type LinkProps = {
   className?: string,
 };
 
+const defaultProps: LinkProps = {
+  target: "_self",
+  className: "",
+  to: "",
+  children: {},
+};
+
 // Since DOM elements <a> cannot receive activeClassName
 // and partiallyActive, destructure the prop here and
 // pass it only to GatsbyLink
@@ -60,5 +67,7 @@ const Link = ({
     </a>
   );
 };
+
+Link.defaultProps = defaultProps;
 
 export default Link;

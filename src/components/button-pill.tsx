@@ -43,13 +43,11 @@ type ButtonReadOnProps = {
   text: string,
   lefticon?: string,
   righticon?: string,
-  target: "_blank" | "_self",
+  target?: "_blank" | "_self",
 };
 
 const defaultProps: ButtonReadOnProps = {
   text: "Read On",
-  lefticon: "",
-  righticon: "",
   to: "",
 };
 

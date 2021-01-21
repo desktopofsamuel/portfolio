@@ -99,7 +99,7 @@ const MobileNav = styled.div`
   text-align: center;
 `;
 
-const NewNavBar = ({}) => {
+const NewNavBar = () => {
   const [open, setOpen] = useState(false);
   return (
     <Container>

@@ -1,13 +1,12 @@
 import React from "react";
-
 import { graphql } from "gatsby";
 import styled from "styled-components";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import { MDXProvider } from "gatsby-plugin-mdx";
 import Helmet from "react-helmet";
 import Boxed from "components/utils/Boxed";
-import Layout from "../layout";
+import { SmallText, H1, Subtitle } from "components/common/TextStyles";
 import SEO from "components/SEO";
+import Layout from "../layout";
 import config from "../../data/SiteConfig";
 import "../layout/work.css";
 
@@ -20,7 +19,7 @@ const Header = styled.div`
   text-align: center;
 `;
 
-const Title = styled.h1`
+const Title = styled(H1)`
   font-family: var(--font-tertiary);
   padding-top: var(--var-padding-m);
   font-size: var(--font-size-xl);
@@ -29,7 +28,7 @@ const Title = styled.h1`
   margin: 0;
 `;
 
-const Subtitle = styled.h2`
+const SecondaryTitle = styled(Subtitle)`
   font-family: var(--font-primary);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-m);
@@ -73,11 +72,11 @@ const WorkPageTemplate = ({ pageContext, data }) => {
       <Boxed size="medium">
         {/* <GatsbyLink to="/work">Back</GatsbyLink> */}
         <Header>
-          <small>Case Studies — {postEdges.year}</small>
+          <SmallText>Case Studies — {postEdges.year}</SmallText>
           <Title>
             {postEdges.shortTitle ? postEdges.shortTitle : postEdges.title}
           </Title>
-          <Subtitle>{postEdges.projectTitle}</Subtitle>
+          <SecondaryTitle>{postEdges.projectTitle}</SecondaryTitle>
         </Header>
         <div className="work">
           <MDXRenderer>{data.mdx.body}</MDXRenderer>

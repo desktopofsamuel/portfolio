@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import Img from "gatsby-image";
+import { H2 } from "components/common/TextStyles";
 
 const Grid = styled.div`
   display: grid;
@@ -22,9 +23,8 @@ const ListItem = styled.article`
   margin-bottom: var(--padding-m);
 `;
 
-const Title = styled.h2`
+const Title = styled(H2)`
   margin: 0;
-  font-size: var(--font-size-l);
 `;
 
 const Excerpt = styled.p`

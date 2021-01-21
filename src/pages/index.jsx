@@ -12,6 +12,7 @@ import WorkIndex from "../components/page/IndexWork";
 import BlogIndex from "../components/page/IndexBlog";
 import IndexHero from "../components/page/IndexHero";
 import IndexPhoto from "../components/page/IndexPhoto";
+import { SmallText } from "components/common/TextStyles";
 
 const Box = styled(Boxed)``;
 
@@ -189,7 +190,7 @@ const IndexPage = ({ data }) => {
             <RightStickyBox>
               <StickyWrapper>
                 <BlogIntro>
-                  <small>02.</small>
+                  <SmallText>02.</SmallText>
                   <h2 className="no-margin">Notes on Design & Technology</h2>
                   <Subtitle>
                     I write about design, technology and productivity.
