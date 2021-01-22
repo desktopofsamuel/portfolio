@@ -89,7 +89,7 @@ const Grid = styled.div`
   grid-template-rows: repeat(1, minmax(400px, 1fr));
   grid-gap: 1rem;
 
-  @media only screen and (max-width: 768px) {
+  @media (max-width: 425px) {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;

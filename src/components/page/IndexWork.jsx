@@ -8,7 +8,7 @@ import Link from "../common/GatsbyLink";
 const Card = styled.div`
   height: 100%;
   background-color: ${props => (props.color ? `${props.color}` : "black")};
-  padding: var(--padding-m);
+  padding: var(--var-padding-m);
   /* margin-bottom: var(--padding-m); */
   transition: var(--transition);
   border-radius: 8px;
