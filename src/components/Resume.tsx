@@ -15,7 +15,7 @@ const ItemWrapper =
   ItemWrapperProps >
   `
   border-top: ${props =>
-    props.noBorder ? "none" : "1px var(--color-white-500) solid"};
+    props.noBorder ? "none" : "1px var(--color-white-light-300) solid"};
   padding-top: ${props => (props.noBorder ? "0" : "1rem")};
   display: ${props => (props.haveGrid ? "grid" : "block")};
   grid-template-columns: 7fr 2fr;
@@ -24,7 +24,7 @@ const ItemWrapper =
 
 const ItemTitle = styled.h3`
   font-size: 1.5rem;
-  color: var(--color-white-500);
+  color: var(--color-white-light-300);
   margin: 0;
 `;
 
@@ -36,14 +36,14 @@ const Content =
   styled.p <
   ContentProps >
   `
-  color: var(--color-primary-shades-200);
+  color: var(--color-secondary-light-100);
   font-size: var(--font-size-s);
   line-height: auto;
   margin-top: ${props => (props.noBorder ? "0" : "1rem")};
 `;
 
 const Meta = styled.p`
-  color: var(--color-primary-shades-200);
+  color: var(--color-secondary-light-100);
   opacity: 0.5;
   font-family: var(--font-primary);
   font-size: var(--font-size-2xs);
@@ -86,17 +86,17 @@ const ResumeItem = ({
 
 /*Resume Section*/
 const Section = styled.section`
-  color: var(--color-white-500);
+  color: var(--color-white-light-300);
 `;
 
 const Title = styled.h3`
   font-family: var(--font-primary);
-  color: var(--color-white-500);
+  color: var(--color-white-light-300);
   margin: 0;
 `;
 
 const ResumeSectionTitle = styled.small`
-  color: var(--color-primary-shades-200);
+  color: var(--color-secondary-light-100);
 
   @media only screen and (max-width: 768px) {
     font-size: 1rem;

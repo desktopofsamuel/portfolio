@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Image from "gatsby-image";
 import ReadOn from "./ReadOn";
 import Fade from "react-reveal/Fade";
+import { SmallText, H2 } from "components/common/TextStyles";
 
 const Container = styled.div`
   display: grid;
@@ -10,7 +11,7 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-  border: 1px solid var(--color-primary-shades-200);
+  border: 1px solid var(--color-secondary-light-100);
   padding: var(--var-padding-m);
   border-radius: 24px;
   display: grid;
@@ -31,7 +32,7 @@ const Header = styled.div`
   }
 
   p {
-    color: var(--color-primary-shades-300);
+    color: var(--color-text-secondary);
   }
 
   small {
@@ -48,11 +49,11 @@ const ImageContainer = styled.div`
   margin: 1rem 0;
 `;
 
-class WorkDetail extends React.Component {
-  getPostList() {
+const WorkDetail = ({ postEdges }) => {
+  function getPostList() {
     const postList = [];
 
-    this.props.postEdges.forEach(postEdge => {
+    postEdges.forEach(postEdge => {
       postList.push({
         path: postEdge.node.fields.slug,
         tags: postEdge.node.frontmatter.tags,
@@ -71,35 +72,34 @@ class WorkDetail extends React.Component {
     });
     return postList;
   }
-  render() {
-    const postList = this.getPostList();
-    return (
-      <Container>
-        {postList.map(post => (
-          <Fade bottom cascade key={post.path}>
-            <Wrapper>
-              <Header color={post.color}>
-                <small> {post.projectTitle}</small>
-                <h2>{post.shortTitle}</h2>
-                <p>{post.subtitle}</p>
-                <More>
-                  <ReadOn text="View Process" href={`/work/${post.path}`} />
-                </More>
-              </Header>
 
-              <ImageContainer>
-                <Image
-                  fluid={post.photo.childImageSharp.fluid}
-                  alt={post.title}
-                  fadeIn
-                />
-              </ImageContainer>
-            </Wrapper>
-          </Fade>
-        ))}
-      </Container>
-    );
-  }
-}
+  const postList = getPostList();
+
+  return (
+    <Container>
+      {postList.map(post => (
+        <Fade bottom cascade key={post.path}>
+          <Wrapper>
+            <Header color={post.color}>
+              <SmallText> {post.projectTitle}</SmallText>
+              <H2>{post.shortTitle}</H2>
+              <p>{post.subtitle}</p>
+              <More>
+                <ReadOn text="View Process" href={`/work/${post.path}`} />
+              </More>
+            </Header>
+            <ImageContainer>
+              <Image
+                fluid={post.photo.childImageSharp.fluid}
+                alt={post.title}
+                fadeIn
+              />
+            </ImageContainer>
+          </Wrapper>
+        </Fade>
+      ))}
+    </Container>
+  );
+};
 
 export default WorkDetail;

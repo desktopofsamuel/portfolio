@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { H1, Subtitle } from "components/common/TextStyles";
 
 type Props = {
   type: "primary" | "secondary",
@@ -10,6 +11,11 @@ const Wrapper =
   Props >
   `
   margin: 2rem 0 4rem 0;
+
+  @media only screen and (max-width: 768px) {
+    margin: 1rem 0;
+  }
+
   display: grid;
   place-content: ${props =>
     (props.type === "primary" && "center") ||
@@ -21,11 +27,11 @@ const Wrapper =
   border-bottom: ${props =>
     (props.type === "primary" && "none") ||
     (props.type === "secondary" &&
-      "1px var(--color-primary-shades-200) solid")};
+      "1px  var(--color-secondary-light-100) solid")};
 `;
 
 const Title =
-  styled.h1 <
+  styled(H1) <
   Props >
   `
   font-family: ${props =>
@@ -36,8 +42,7 @@ const Title =
   transition: var(--transition);
 `;
 
-const Description = styled.p`
-  color: var(--color-primary-shades-300);
+const Description = styled(Subtitle)`
   max-width: 40ch;
 `;
 

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import Img from "gatsby-image";
+import { H2 } from "components/common/TextStyles";
 
 const Grid = styled.div`
   display: grid;
@@ -17,14 +18,13 @@ const Grid = styled.div`
 
 const ListItem = styled.article`
   display: block;
-  border-bottom: 1px var(--color-primary-shades-200) solid;
+  border-bottom: 1pxvar (--color-secondary-light-100) solid;
   padding-bottom: var(--var-padding-m);
   margin-bottom: var(--padding-m);
 `;
 
-const Title = styled.h2`
+const Title = styled(H2)`
   margin: 0;
-  font-size: var(--font-size-l);
 `;
 
 const Excerpt = styled.p`
@@ -38,15 +38,15 @@ const PostImage = styled(Img)`
 `;
 
 const ShowMoreButton = styled.button`
-  border: 1px solid var(--color-primary);
+  border: 1px solid var(--color-primary-light-700);
   box-sizing: border-box;
   background: none;
   padding: 1rem 2rem;
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    background: var(--color-primary);
-    color: var(--color-white);
+    background: var(--color-primary-light-700);
+    color: var(--color-white-light-100);
   }
 
   &:focus {

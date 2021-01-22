@@ -9,7 +9,7 @@ import Link from "components/common/GatsbyLink";
 import Boxed from "components/utils/Boxed";
 
 const Main = styled.div`
-  /* background: var(--color-white-300); */
+  /* background: var(--color-white-light-100); */
   width: 100%;
   height: 100%;
   padding: var(--var-padding-m) var(--var-padding-s) 0 var(--var-padding-s);
@@ -47,16 +47,16 @@ const NavItem = styled(Link)`
   border-bottom: none;
 
   small {
-    color: var(--color-primary-shades-300);
+    color: var(--color-text-secondary);
     transition: var(--transition);
   }
 
   &:hover small {
-    color: var(--color-primary-shades-700);
+    color: var(--color-primary-light-700);
   }
 
   &:active small {
-    color: var(--color-primary-shades-700);
+    color: var(--color-primary-light-700);
   }
 
   @media only screen and (min-width: 768px) {

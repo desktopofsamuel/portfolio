@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  background-color: var(--color-white-500);
-  border-left: 4px solid var(--color-primary);
+  background-color: var(--color-white-light-300);
+  border-left: 4px solid var(--color-primary-light-700);
   padding: 1rem;
   border-radius: var(--border-radius);
 `;

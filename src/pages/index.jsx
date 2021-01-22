@@ -12,6 +12,7 @@ import WorkIndex from "../components/page/IndexWork";
 import BlogIndex from "../components/page/IndexBlog";
 import IndexHero from "../components/page/IndexHero";
 import IndexPhoto from "../components/page/IndexPhoto";
+import { SmallText } from "components/common/TextStyles";
 
 const Box = styled(Boxed)``;
 
@@ -60,7 +61,7 @@ const StickyWrapper = styled.div`
 const Subtitle = styled.p`
   font-size: 1.025rem;
   font-family: var(--font-secondary);
-  font-weight: 500;
+  font-weight: var(--font-weight-bold-alt);
 `;
 
 const Center = styled.div`
@@ -183,13 +184,13 @@ const IndexPage = ({ data }) => {
           </ColumnSpaced>
         </Box>
       </Row>
-      <GreyRow id="blog">
+      <Row id="blog">
         <Box>
           <UnevenColumn>
             <RightStickyBox>
               <StickyWrapper>
                 <BlogIntro>
-                  <small>02.</small>
+                  <SmallText>02.</SmallText>
                   <h2 className="no-margin">Notes on Design & Technology</h2>
                   <Subtitle>
                     I write about design, technology and productivity.
@@ -203,7 +204,7 @@ const IndexPage = ({ data }) => {
             </Blog>
           </UnevenColumn>
         </Box>
-      </GreyRow>
+      </Row>
       <Row className="full-bleed full-content" id="photography">
         <PhotoGrid>
           <IndexPhoto postEdges={photo1Edges} />

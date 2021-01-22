@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 const FormTitle = styled.h3`
-  color: var(--color-white);
+  color: var(--color-white-light-100);
   margin: 0;
 `;
 
@@ -32,9 +32,9 @@ const FormSubmissionButton = styled.input`
   min-height: 48px;
   cursor: pointer;
   border-radius: 24px;
-  background-color: var(--color-secondary);
+  background-color: var(--color-secondary-light-500);
   font-family: var(--font-primary);
-  color: var(--color-white);
+  color: var(--color-white-light-100);
   letter-spacing: 1px;
   text-transform: uppercase;
   transition: var(--transition);
@@ -42,7 +42,7 @@ const FormSubmissionButton = styled.input`
   place-content: center;
 
   &:hover {
-    background-color: var(--color-primary-shades-700);
+    background-color: var(--color-primary-light-700);
   }
 `;
 

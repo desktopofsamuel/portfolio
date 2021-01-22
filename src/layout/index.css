@@ -98,16 +98,6 @@ h6 {
   margin-top: 0;
 }
 
-small {
-  font-family: var(--font-primary);
-  font-weight: var(--font-weight-regular);
-  text-transform: uppercase;
-  line-height: normal;
-  font-size: 12px;
-  letter-spacing: 0.075rem;
-  margin-top: 0;
-  color: var(--color-text-secondary);
-}
 
 b,
 strong {
@@ -135,7 +125,7 @@ a {
   cursor: pointer;
   color: inherit;
   background: linear-gradient(to bottom, transparent 62%, var(--color-primary-highlight) 0) left center/0% 75% no-repeat;
-  border-bottom: 2px dotted var(--color-primary-shades-300);
+  border-bottom: 2px dotted var(--color-secondary-light-300);
   transition: var(--transition);
 }
 
@@ -147,17 +137,17 @@ a:hover {
   text-decoration: none;
   cursor: pointer;
   color: inherit;
-  border-bottom: 2px dotted var(--color-primary);
+  border-bottom: 2px dotted var(--color-primary-light-700);
   transition: var(--transition);
   display:inline;
 }
 
 .link:hover {
-  border-bottom: 2px dotted var(--color-primary);
+  border-bottom: 2px dotted var(--color-primary-light-700);
 }
 
 /* a {
-  border-bottom: 2px dotted var(--color-primary);
+  border-bottom: 2px dotted var(--color-primary-light-700);
   background: linear-gradient(to bottom, transparent 62%, #44DDFF 0) left center/0% 75% no-repeat;
   color: inherit;
   text-decoration: none;
@@ -166,7 +156,7 @@ a:hover {
 }
 
 a:hover {
-  border-bottom: 2px dotted var(--color-primary);
+  border-bottom: 2px dotted var(--color-primary-light-700);
   background-size: 100% 100%;
 } */
 
@@ -234,7 +224,7 @@ li.MenuItem {
 ol li::marker {
   font-family: var(--font-primary);
   font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
+  color: var(--color-primary-light-700);
   font-style: italic;
 }
 
@@ -246,7 +236,7 @@ ol li:before {
   /* content: counter(list) ". "; */
   font-family: var(--font-primary);
   font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
+  color: var(--color-primary-light-700);
   font-style: italic;
   margin-left: -24px;
   margin-right: 6px;
@@ -275,13 +265,13 @@ blockquote:before {
   width: 3rem;
   height: 3rem;
   font: 8rem var(--font-secondary), sans-serif;
-  color: var(--color-primary);
+  color: var(--color-primary-light-700);
 }
 
 cite {
   display: block;
   position: relative;
-  color: var(--color-primary-shades-300);
+  color: var(--color-text-secondary);
   font-style: normal;
   font-size: 0.9rem;
   font-family: var(--font-secondary);
@@ -306,14 +296,14 @@ p:first-child {
 }
 
 .textlink {
-  color: var(--color-primary-shades-300);
+  color: var(--color-text-secondary);
   border-bottom: 1px var(--color-transparent) solid;
   transition: all 0.3s ease-in-out;
 }
 
 .textlink:hover {
-  border-bottom: 1px var(--color-primary-shades-300) solid;
-  color: var(--color-primary-shades-300);
+  border-bottom: 1px var(--color-secondary-light-300) solid;
+  color: var(--color-text-secondary);
 }
 
 .rightspace:not(:last-child) {
@@ -345,8 +335,8 @@ figure {
 }
 
 /* Nav Item Active Indication */
-.nav-item-active > small {
-  color: var(--color-primary-shades-700);
+.nav-item-active {
+  color: var(--color-primary-light-700);
 }
 
 .no-margin {

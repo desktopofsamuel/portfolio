@@ -7,7 +7,7 @@ const LoadableScroll = loadable(() => import("react-scrollspy"));
 const Table = styled.nav`
   display: flex;
   flex-direction: column;
-  background-color: var(--color-white-500);
+  background-color: var(--color-white-light-300);
   border-radius: 8px;
   padding: 1rem;
   transition: 0.5s all ease-in-out;
