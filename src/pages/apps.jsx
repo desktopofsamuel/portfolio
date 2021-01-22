@@ -21,13 +21,17 @@ const TabsStyled = styled(Tabs)`
   display: grid;
   place-content: center;
   grid-gap: 2rem;
+
+  @media (max-width: 768px) {
+    grid-gap: 0;
+  }
 `;
 
 const TabGrid = styled.div`
-  max-width: 1024px;
+  width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: max-content;
   grid-gap: 2rem;
 
@@ -35,13 +39,14 @@ const TabGrid = styled.div`
     height: 100%;
   }
 
-  @media screen and (min-width: 800px) {
-    grid-template-columns: repeat(2, 1fr);
+  @media (max-width: 768px) {
+    display: grid;
+    grid-template-columns: auto;
   }
 `;
 
 const TabListStyled = styled(TabList)`
-  display: inline-flex;
+  display: flex;
   grid-gap: 1rem;
   margin: 0 auto;
   place-content: center;
@@ -54,6 +59,10 @@ const TabListStyled = styled(TabList)`
   .active > * {
     background-color: var(--color-primary-light-500);
     color: var(--color-white-light-300);
+  }
+
+  @media (max-width: 768px) {
+    display: contents;
   }
 `;
 

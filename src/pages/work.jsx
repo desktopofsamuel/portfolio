@@ -93,7 +93,7 @@ const Grid = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    grid-gap: var(--var-padding-s);
+    grid-gap: var(--var-padding-m);
   }
 `;
 
