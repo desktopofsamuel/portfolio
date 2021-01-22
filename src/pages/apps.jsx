@@ -70,7 +70,7 @@ const TabPanelStyled = styled(TabPanel)``;
 const ToolPage = ({ data }) => {
   const techEdges = data.tech.edges;
   return (
-    <Layout>
+    <Layout title="Apps & Services">
       <Boxed>
         <PageTitle
           title="Apps & Services"

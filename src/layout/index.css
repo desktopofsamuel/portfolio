@@ -98,16 +98,6 @@ h6 {
   margin-top: 0;
 }
 
-small {
-  font-family: var(--font-primary);
-  font-weight: var(--font-weight-regular);
-  text-transform: uppercase;
-  line-height: normal;
-  font-size: 12px;
-  letter-spacing: 0.075rem;
-  margin-top: 0;
-  color: var(--color-text-secondary);
-}
 
 b,
 strong {
@@ -345,7 +335,7 @@ figure {
 }
 
 /* Nav Item Active Indication */
-.nav-item-active > small {
+.nav-item-active {
   color: var(--color-primary-light-700);
 }
 

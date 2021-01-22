@@ -5,7 +5,7 @@ const config = {
   siteLogo:
     "icons-2e5ea9ae11520cba6cedd44d8a342667/apple-touch-icon-180x180.png", // Logo used for SEO and manifest.
   siteUrl: "https://desktopofsamuel.com", // Domain of your website without pathPrefix.
-  pathPrefix: "/", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
+  pathPrefix: "", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription:
     "I'm Samuel, I'm a Hong Kong based UI/UX Designer. User Interface Design, User Experience Design, Product Design, Design Thinking, Product Development, Brand Design - A personal design portfolio, also journal for designers' side-projects.", // Website description used for RSS feeds/meta description tag.
   siteKeywords:

@@ -88,7 +88,7 @@
   --color-text-reverse: var(--color-white-light-100);
   --color-title: var(--color-primary-light-700); 
   --color-gradient: linear-gradient(135deg, rgba(56,204,133,1) 0%, rgba(0,153,204,1) 100%);;
-
+  --color-border: var(--color-secondary-light-100);
   --color-transparent: rgba(0, 0, 0, 0);
   --page-border-top: 10px var(--color-secondary-light-500) solid;
   --font-small-letterspacing: 0.075rem;

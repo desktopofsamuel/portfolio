@@ -1,17 +1,17 @@
 import React from "react";
 import Helmet from "react-helmet";
 import styled from "styled-components";
+import NavBar from "components/common/NavBar";
 import SEO from "../components/SEO";
 import config from "../../data/SiteConfig";
 import "./index.css";
-import Nav from "../components/common/NavBar";
 import Footer from "../components/common/Footer";
 // import NewFooter from "../components/common/NewFooter";
 
 const Layout = styled.div``;
 
 const Main = styled.main`
-  margin: 0 auto;
+  margin: 64px auto 0 auto;
 `;
 
 if (typeof window !== "undefined") {
@@ -32,7 +32,7 @@ const LayoutTemplate = ({ children, title, description, keywords }) => {
         <meta property="og:description" content={description} />
         <meta name="keywords" content={keywords} />
       </Helmet>
-      <Nav />
+      <NavBar />
       <Main>{children}</Main>
       <Footer />
     </Layout>

@@ -233,13 +233,13 @@ const AboutPage = ({ data }) => {
         </Boxed>
       </Row>
       <InvertRow id="resume" className="full-bleed">
-        <Boxed>
+        <Boxed padding="2rem 0">
           <small>Resume</small>
           <Resume />
         </Boxed>
       </InvertRow>
       <Row id="contact">
-        <Boxed isCenter>
+        <Boxed isCenter padding="2rem 0">
           <h2>Let's Connect</h2>
           <Content>
             Drop me a line if you want to say hi, or share your thoughts on my

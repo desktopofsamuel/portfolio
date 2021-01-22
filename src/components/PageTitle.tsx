@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { H1, Subtitle } from "components/common/TextStyles";
 
 type Props = {
   type: "primary" | "secondary",
@@ -30,7 +31,7 @@ const Wrapper =
 `;
 
 const Title =
-  styled.h1 <
+  styled(H1) <
   Props >
   `
   font-family: ${props =>
@@ -41,8 +42,7 @@ const Title =
   transition: var(--transition);
 `;
 
-const Description = styled.p`
-  color: var(--color-text-secondary);
+const Description = styled(Subtitle)`
   max-width: 40ch;
 `;
 
