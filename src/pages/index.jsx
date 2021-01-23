@@ -144,10 +144,10 @@ const PhotoIntroWrapper = styled.div`
 `;
 
 const WorkIndexGrid = styled.div`
-  display: flex;
-  flex-direction: column;
-  grid-gap: 2rem;
-  grid-row-gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: var(--padding-s);
 `;
 
 const IndexPage = ({ data }) => {

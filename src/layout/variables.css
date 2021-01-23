@@ -31,19 +31,6 @@
     );
   }
 
-  @media only screen and (max-width: 768px) {
-    :root {
-      --font-size-base: 16px;
-      --font-scale-ratio: .9;
-      --var-padding-l: 3rem;
-      --var-padding-m: 1rem;
-      --var-padding-s: 0.5rem;
-      --font-size-xxl: calc(var(--font-size-base) * 2.5 * var(--font-scale-ratio));
-      --font-size-xs: calc(var(--font-size-base) * 1 * var(--font-scale-ratio));
-    }
-  }
-
-  
 
 /* Color */
 :root {
@@ -126,5 +113,17 @@
     --page-container-l: 1440px;
     --page-container-m: 1280px;
     --page-container-s: 760px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  :root {
+    --font-size-base: 16px;
+    --font-scale-ratio: .9;
+    --var-padding-l: 3rem;
+    --var-padding-m: 1.5rem;
+    --var-padding-s: 0.5rem;
+    --font-size-xxl: calc(var(--font-size-base) * 2.5 * var(--font-scale-ratio));
+    --font-size-xs: calc(var(--font-size-base) * 1 * var(--font-scale-ratio));
   }
 }
