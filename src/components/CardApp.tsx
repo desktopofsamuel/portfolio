@@ -10,7 +10,7 @@ const Stack = styled.div`
   align-items: center;
   grid-gap: 2rem;
   background-color: var(--color-white-light-300);
-  border-radius: 8px;
+  border-radius: 16px;
   border: 1px solid var(--color-primary-light-100);
   padding: 1.5rem 2rem;
   font-family: var(--font-primary);

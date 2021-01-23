@@ -87,6 +87,12 @@ module.exports = {
             //queryName: `Bookmark`,
             //separateNodeType: true,
           },
+          {
+            baseId: `appW4gVPhW2puIptz`,
+            tableName: `Career`,
+            //queryName: `Bookmark`,
+            //separateNodeType: true,
+          },
         ],
       },
     },

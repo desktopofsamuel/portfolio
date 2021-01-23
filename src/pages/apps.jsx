@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
-import ToolCard from "components/ToolCard";
+import CardApp from "components/CardApp";
 import PageTitle from "components/PageTitle";
 import Boxed from "components/utils/Boxed";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
@@ -14,7 +14,10 @@ import {
   faMobileAlt,
   faLaptop,
 } from "@fortawesome/free-solid-svg-icons";
+import Centered from "components/utils/Centered";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import Layout from "../layout";
+
 // import "react-tabs/style/react-tabs.css";
 
 const TabsStyled = styled(Tabs)`
@@ -81,10 +84,20 @@ const ToolPage = ({ data }) => {
   return (
     <Layout title="Apps & Services">
       <Boxed>
+        <Centered>
+          <ButtonPill
+            lefticon={faChevronLeft}
+            text="Back To Tools & Resources"
+            to="/setup"
+            isSecondary
+          />
+        </Centered>
         <PageTitle
           title="Apps & Services"
           description="A list of my favorite tools"
         />
+      </Boxed>
+      <Boxed>
         <TabsStyled selectedTabClassName="active">
           <TabListStyled>
             <Tab as="button">
@@ -105,7 +118,7 @@ const ToolPage = ({ data }) => {
               {techEdges
                 .filter(t => t.node.data.Category === "Desktop")
                 .map(item => (
-                  <ToolCard postEdges={item} />
+                  <CardApp postEdges={item} />
                 ))}
             </TabGrid>
           </TabPanelStyled>
@@ -114,7 +127,7 @@ const ToolPage = ({ data }) => {
               {techEdges
                 .filter(t => t.node.data.Category === "Mobile")
                 .map(item => (
-                  <ToolCard postEdges={item} />
+                  <CardApp postEdges={item} />
                 ))}
             </TabGrid>
           </TabPanelStyled>
@@ -123,7 +136,7 @@ const ToolPage = ({ data }) => {
               {techEdges
                 .filter(t => t.node.data.Category === "Subscriptions")
                 .map(item => (
-                  <ToolCard postEdges={item} />
+                  <CardApp postEdges={item} />
                 ))}
             </TabGrid>
           </TabPanelStyled>
@@ -132,7 +145,7 @@ const ToolPage = ({ data }) => {
               {techEdges
                 .filter(t => t.node.data.Category === "Design")
                 .map(item => (
-                  <ToolCard postEdges={item} />
+                  <CardApp postEdges={item} />
                 ))}
             </TabGrid>
           </TabPanelStyled>
@@ -145,7 +158,7 @@ const ToolPage = ({ data }) => {
 export default ToolPage;
 
 export const pageQuery = graphql`
-  query ToolQuery {
+  query AppsQuery {
     tech: allAirtable(
       filter: { table: { eq: "Tech" } }
       sort: { fields: data___Name }
