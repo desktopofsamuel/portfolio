@@ -33,7 +33,7 @@ export const Subtitle = styled.p`
 export const BodyMain = styled.p`
   font-family: var(--font-secondary);
   font-weight: var(--font-weight-regular);
-  font-size: var(--font-size-m);
+  font-size: var(--font-size-s);
   color: var(--color-text);
 `;
 

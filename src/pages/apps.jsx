@@ -88,7 +88,7 @@ const ToolPage = ({ data }) => {
           <ButtonPill
             lefticon={faChevronLeft}
             text="Back To Tools & Resources"
-            to="/setup"
+            to="/resources"
             isSecondary
           />
         </Centered>

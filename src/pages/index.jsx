@@ -7,16 +7,16 @@ import Boxed from "components/utils/Boxed";
 import Column from "components/utils/Column";
 import ColumnItem from "components/utils/ColumnItem";
 import ReadOn from "components/ReadOn";
+import { SmallText } from "components/common/TextStyles";
+import Centered from "components/utils/Centered";
+import IndexBlog from "components/page/IndexBlog";
+import IndexIntro from "components/page/IndexIntro";
 import config from "../../data/SiteConfig";
 import Layout from "../layout";
 import WorkIndex from "../components/page/IndexWork";
 import BlogIndex from "../components/page/IndexBlogOld";
 import IndexHero from "../components/page/IndexHero";
 import IndexPhoto from "../components/page/IndexPhoto";
-import IndexIntro from "components/page/IndexIntro";
-import IndexBlog from "components/page/IndexBlog";
-import Centered from "components/utils/Centered";
-import { SmallText } from "components/common/TextStyles";
 
 const Box = styled(Boxed)``;
 
@@ -186,6 +186,17 @@ const IndexPage = ({ data }) => {
           </ColumnSpaced>
         </Box>
       </Row> */}
+      <Row id="work">
+        <Box>
+          <IndexIntro
+            index="#02"
+            title="Interaction and Experience Design"
+            description="I'm a multi-disciplinary designer with 5 years of experience in delivering elegant design and practical solutions."
+            href="/work"
+            label="View my process"
+          />
+        </Box>
+      </Row>
       <Row id="blog">
         <Box>
           <IndexBlog postEdges={blogEdges} />

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import ReadOn from "components/ReadOn";
+import { SmallText, H2, BodyMain } from "components/common/TextStyles";
 
 type Props = {
   noMargin: boolean,
@@ -22,15 +23,15 @@ const Wrapper =
   text-align: center;
 `;
 
-const Index = styled.small``;
+const Index = styled(SmallText)``;
 
-const Title = styled.h2`
+const Title = styled(H2)`
   font-size: var(--font-size-xl);
   font-family: var(--font-primary);
   margin: 0;
 `;
 
-const Description = styled.p`
+const Description = styled(BodyMain)`
   color: var(--color-text-secondary);
   font-size: var(--font-size-xs);
   margin: 0;

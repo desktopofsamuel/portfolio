@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Boxed from "./utils/Boxed";
 import Link from "./common/GatsbyLink";
+import { H2, SmallText, BodyMain } from "./common/TextStyles";
 
 const Container = styled.section`
   margin-top: var(--var-padding-l);
@@ -14,16 +15,11 @@ const Wrapper = styled(Boxed)`
   justify-content: center;
   text-align: center;
   margin: 0 auto;
-
-  h3 {
-    margin-top: var(--var-padding-s);
-  }
-
-  p {
-    margin: 0;
-  }
 `;
 
+const Title = styled(H2)`
+  margin-top: var(--var-padding-s);
+`;
 type RelatedProps = {
   node: {
     path: string,
@@ -36,11 +32,11 @@ const Related = ({ node }: RelatedProps) => {
   return (
     <Container className="full-bleed">
       <Wrapper size="small">
-        <small>Read Next</small>
-        <h3>
-          <Link to={node.path}>{node.title}</Link>
-        </h3>
-        <p>{node.excerpt}</p>
+        <SmallText>Read Next</SmallText>
+        <Title>
+          <Link to={node.path}>{node.title} </Link>
+        </Title>
+        <BodyMain>{node.excerpt}</BodyMain>
       </Wrapper>
     </Container>
   );

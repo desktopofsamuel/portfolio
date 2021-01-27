@@ -4,11 +4,13 @@ import styled from "styled-components";
 import PageTitle from "components/PageTitle";
 import Boxed from "components/utils/Boxed";
 import CardResource from "components/CardResource";
-import Layout from "../layout";
+import CardThread from "components/CardThread";
 import ReadOn from "components/ReadOn";
 import Centered from "components/utils/Centered";
 import ButtonPill from "components/button-pill";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { H2, H3, BodyMain } from "components/common/TextStyles";
+import Layout from "../layout";
 
 const Grid = styled.section`
   display: grid;
@@ -32,6 +34,7 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: var(--transition);
 
   h2 {
     margin: 0;
@@ -42,6 +45,17 @@ const Card = styled.div`
     transform: translateY(-2px);
     box-shadow: 0 25px 40px 0 rgba(0, 0, 0, 0.08);
   }
+`;
+
+const ThreadWrapper = styled.div`
+  grid-column: span 3;
+`;
+
+const ThreadsGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 1rem;
 `;
 
 const CardSubmit = () => {
@@ -66,21 +80,34 @@ const DesignCareerKit = ({ data }) => {
           <ButtonPill
             lefticon={faChevronLeft}
             text="Back To Tools & Resources"
-            to="/setup"
+            to="/resources"
             isSecondary
           />
         </Centered>
         <PageTitle
           title="UX Design Career Kit"
           description="A list of my favorite tools"
-        />{" "}
+        />
       </Boxed>
       <Boxed>
         <Grid>
-          {careerEdges.map(item => (
-            <CardResource postEdges={item} />
-          ))}
+          {careerEdges
+            .filter(item => item.node.data.Category === "Resources")
+            .map(item => (
+              <CardResource postEdges={item} />
+            ))}
           <CardSubmit />
+          <ThreadWrapper>
+            <H2>Portfolio Tips Thread</H2>
+            <BodyMain>Helpful tips for design hiring </BodyMain>
+            <ThreadsGrid>
+              {careerEdges
+                .filter(item => item.node.data.Category === "Thread")
+                .map(item => (
+                  <CardThread postEdges={item} />
+                ))}
+            </ThreadsGrid>
+          </ThreadWrapper>
         </Grid>
       </Boxed>
     </Layout>
@@ -100,6 +127,7 @@ export const pageQuery = graphql`
           id
           data {
             Link
+            Category
             Image {
               url
             }

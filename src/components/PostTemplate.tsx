@@ -29,7 +29,6 @@ const Title = styled(H1)`
 
 const Description = styled(BodyMain)`
   margin: 1rem 0 2rem 0;
-  font-size: var(--font-size-s);
   color: var(--color-text-secondary);
 `;
 

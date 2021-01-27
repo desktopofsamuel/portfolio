@@ -4,6 +4,13 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import Icon from "components/common/Icon";
+import { SmallText } from "components/common/TextStyles";
+
+const Card = styled.div`
+  border: 1px solid var(--color-secondary-light-100);
+  border-radius: 16px;
+  overflow: hidden;
+`;
 
 const IconWrapper = styled.div`
   display: inline;
@@ -12,16 +19,13 @@ const IconWrapper = styled.div`
   margin-left: 0px;
 `;
 
-const Stack = styled.div`
+const Wrapper = styled.div`
   display: grid;
   grid-auto-flow: auto;
-  grid-gap: 2rem;
-  border-radius: 16px;
-  border: 1px solid var(--color-secondary-light-100);
+  grid-gap: 1rem;
   padding: 1.5rem 2rem;
   font-family: var(--font-primary);
   transition: var(--transition);
-  height: inherit;
 
   &:hover {
     transform: translateY(-2px);
@@ -41,9 +45,17 @@ const Flex = styled.div`
 const Title = styled.h3`
   font-size: var(--font-size-l);
   font-weight: var(--font-weight-bold);
-  display: inline;
   margin: 0;
-  margin-right: 16px;
+`;
+
+const CategoryTag = styled.span`
+  width: fit-content;
+  padding: 6px 12px;
+  background-color: lightblue;
+`;
+
+const CategoryText = styled(SmallText)`
+  margin: 0;
 `;
 
 const Description = styled.p`
@@ -52,14 +64,13 @@ const Description = styled.p`
   margin: 0;
 `;
 
-const ContentWrapper = styled.div``;
-
 type ToolCardProps = {
   postEdges: {
     node: {
       id: string,
       data: {
         Name: string,
+        Category: string,
         Description: string,
         platform: string,
         image: string,
@@ -76,24 +87,30 @@ type ToolCardProps = {
 const CardResource = ({ postEdges }: ToolCardProps) => {
   const item = postEdges.node;
   return (
-    <Stack key={item.id}>
-      <Link to={item.data.Link} target="_blank" className="noeffect">
-        <Flex>
-          <Title>{item.data.Name}</Title>
-          <IconWrapper>
-            <FontAwesomeIcon
-              icon={faExternalLinkAlt}
-              title="View More"
-              size="xs"
-            />
-          </IconWrapper>
-        </Flex>
-      </Link>
-      <Description>{item.data.Description}</Description>
-      <Link to={item.data.AuthorLink} target="_blank" className="noeffect">
-        <small>{item.data.Handle || item.data.Author}</small>
-      </Link>
-    </Stack>
+    <Card key={item.id}>
+      {!!item.data.Image ? <img src={item.data.Image[0].url} /> : null}
+      <Wrapper>
+        <CategoryTag>
+          <CategoryText>{item.data.Category}</CategoryText>
+        </CategoryTag>
+        <Link to={item.data.Link} target="_blank" className="noeffect">
+          <Flex>
+            <Title>{item.data.Name}</Title>
+            <IconWrapper>
+              <FontAwesomeIcon
+                icon={faExternalLinkAlt}
+                title="View More"
+                size="xs"
+              />
+            </IconWrapper>
+          </Flex>
+        </Link>
+        <Description>{item.data.Description}</Description>
+        <Link to={item.data.AuthorLink} target="_blank" className="noeffect">
+          <SmallText>{item.data.Handle || item.data.Author}</SmallText>
+        </Link>
+      </Wrapper>
+    </Card>
   );
 };
 
