@@ -83,6 +83,8 @@ const MenuIcon = styled(FontAwesomeIcon)`
   font-size: 12px;
   border-bottom: none;
   color: var(--secondary-700);
+  max-width: 16px;
+  max-height: 16px;
 `;
 
 const MobileItem = styled(Link)`
