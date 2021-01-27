@@ -9,14 +9,14 @@ import PostSidebar from "./PostSidebar";
 
 const Container = styled(Boxed)`
   display: grid;
-  grid-gap: 3rem;
+  gap: 3rem;
   grid-template-columns: var(--page-container-s) auto;
   padding: var(--var-padding-m) 0;
 
   @media only screen and (max-width: 1024px) {
     display: flex;
     flex-direction: column-reverse;
-    padding: var(--var-padding-m) var(--var-padding-s);
+    padding: var(--var-padding-m);
   }
 `;
 

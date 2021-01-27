@@ -14,9 +14,6 @@ const Container = styled.section`
   }
 `;
 
-const WideBoxed = styled(Boxed)`
-  max-width: 1024px;
-`;
 const Row = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -58,18 +55,12 @@ const CategoryPageTemplate = ({ data, pageContext }: CategoryPageProps) => {
       <Helmet
         title={`Discover Posts in "${category}" | ${config.siteTitleAlt}`}
       />
-      <WideBoxed>
-        <Grid>
-          <Hero>
-            <PageTitle title={`${category}`} />
-          </Hero>
-          <Row>
-            <Container>
-              <PostList category="none" postEdges={postEdges} />
-            </Container>
-          </Row>
-        </Grid>
-      </WideBoxed>
+      <PageTitle title={`${category}`} />
+      <Boxed>
+        <Container>
+          <PostList category="none" postEdges={postEdges} />
+        </Container>
+      </Boxed>
     </Layout>
   );
 };

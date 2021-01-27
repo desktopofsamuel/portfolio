@@ -79,6 +79,7 @@ type ToolCardProps = {
         AuthorLink: string,
         Handle: string,
         Author: string,
+        Tag: string,
       },
     },
   },
@@ -91,7 +92,7 @@ const CardResource = ({ postEdges }: ToolCardProps) => {
       {!!item.data.Image ? <img src={item.data.Image[0].url} /> : null}
       <Wrapper>
         <CategoryTag>
-          <CategoryText>{item.data.Category}</CategoryText>
+          <CategoryText>{item.data.Tag}</CategoryText>
         </CategoryTag>
         <Link to={item.data.Link} target="_blank" className="noeffect">
           <Flex>

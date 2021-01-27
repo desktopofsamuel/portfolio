@@ -4,13 +4,19 @@ import styled from "styled-components";
 import { H3, BodyMain, SmallText } from "./common/TextStyles";
 
 const Card = styled(Link)`
-  border: 1px solid var(--color-secondary-light-100);
+  border: 1px solid var(--color-secondary-light-100) !important;
   border-radius: 16px;
   overflow: hidden;
   display: grid;
   grid-template-columns: auto;
   text-align: center;
   position: relative;
+  transition: var(--transition);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 25px 40px 0 rgba(0, 0, 0, 0.08);
+  }
 `;
 
 const Background = styled.div`
@@ -51,7 +57,7 @@ const Description = styled(BodyMain)`
 const CardThread = ({ postEdges }) => {
   const item = postEdges.node;
   return (
-    <Card to={item.data.AuthorLink} target="_blank">
+    <Card to={item.data.Link} target="_blank" className="noeffect">
       <Background />
       <ContentWrapper>
         <ImageWrapper>

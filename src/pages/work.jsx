@@ -102,11 +102,11 @@ const WorkPage = ({ data }) => {
   const workEdges = data.work.edges;
   return (
     <Layout title="Portfolio">
+      <PageTitle
+        title="Portfolio"
+        description="Selected websites and apps showcase since 2015."
+      />
       <Boxed>
-        <PageTitle
-          title="Portfolio"
-          description="Selected websites and apps showcase since 2015."
-        />
         <Row>
           <WorkDetail postEdges={postEdges} />
         </Row>

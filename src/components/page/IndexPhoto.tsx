@@ -35,7 +35,7 @@ const IndexPhoto = ({ photo1Edges, photo2Edges }) => {
       <IndexPhotoItem postEdges={photo1Edges} />
       <PhotoIntroWrapper>
         <IndexIntro
-          index="#04"
+          index="#03"
           title="Through the lens"
           description="Sets of photos according to cities that I have visited."
           label="More Photo"

@@ -22,8 +22,9 @@ const Grid = styled.section`
     height: 100%;
   }
 
-  @media screen and (max-width: 800px) {
-    grid-template-columns: 1fr;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
   }
 `;
 
@@ -35,6 +36,7 @@ const Card = styled.div`
   flex-direction: column;
   justify-content: space-between;
   transition: var(--transition);
+  min-height: 200px;
 
   h2 {
     margin: 0;
@@ -55,7 +57,12 @@ const ThreadsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
-  grid-gap: 1rem;
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const CardSubmit = () => {

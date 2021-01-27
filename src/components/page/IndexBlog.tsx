@@ -6,8 +6,17 @@ import { Link } from "gatsby";
 import Img from "gatsby-image";
 import Zoom from "react-reveal/Zoom";
 import ReadOn from "components/ReadOn";
+import { H3 } from "components/common/TextStyles";
 
-const Block = styled.div``;
+const Block = styled.div`
+  padding: var(--var-padding-s);
+  transition: var(--transition);
+
+  :hover {
+    transform: scale(1.01, 1.01);
+    box-shadow: 0 25px 40px 0 rgba(0, 0, 0, 0.08);
+  }
+`;
 
 const PostListImage = styled(Img)`
   transition: transform 0.2s ease-in, box-shadow 0.3s ease-in-out;
@@ -19,9 +28,10 @@ const Content = styled.div`
   background-color: var(--color-white-light-100);
 `;
 
-const Title = styled.h3`
+const Title = styled(H3)`
   font-size: var(--font-size-m);
   color: var(--color-text);
+  margin-top: 1rem;
 `;
 
 const Paragraph = styled.p`
@@ -82,18 +92,18 @@ const IndexBlogGrid = styled.div`
 
 const IndexBlog = ({ postEdges }) => {
   return (
-    <Wrapper>
-      <IndexIntro
-        index="#02"
-        title="Articles I write on design & technology"
-        description="I write about design, technology and productitivity."
-        href="/blog"
-        label="Read my blog"
-      />
-      <IndexBlogGrid>
-        <IndexBlogItem postEdges={postEdges} />
-      </IndexBlogGrid>
-    </Wrapper>
+    // <Wrapper>
+    //   <IndexIntro
+    //     index="#02"
+    //     title="Articles I write on design & technology"
+    //     description="I write about design, technology and productitivity."
+    //     href="/blog"
+    //     label="Read my blog"
+    //   />
+    //   <IndexBlogGrid>
+    <IndexBlogItem postEdges={postEdges} />
+    //   </IndexBlogGrid>
+    // </Wrapper>
   );
 };
 

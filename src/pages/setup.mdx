@@ -8,15 +8,18 @@ tags:
 ---
 import ButtonPill from "components/button-pill"
 import PageTitle from "components/PageTitle"
-import Stack from "components/utils/Stack"
+import Centered from "components/utils/Centered"
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
+<Centered>
+    <ButtonPill
+    lefticon={faChevronLeft}
+    text="Back To Tools & Resources"
+    to="/resources"
+    isSecondary
+    />
+</Centered>
 <PageTitle title="My Setup" description="everything" type="primary" />
-
-<Stack>
-<ButtonPill text="What I Use" to="/setup" target="_self" isOutline/>
-<ButtonPill text="Apps & Services" to="/apps" target="_self" isOutline/>
-<ButtonPill text="UX Design Career Kit" to="/ux-design-career-kit" target="_self" isOutline/>
-</Stack>
 
 ### Walkthrough of What I Use
 
