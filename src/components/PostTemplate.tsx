@@ -6,6 +6,7 @@ import Img from "gatsby-image";
 import Tag from "components/Tag";
 import { H1, BodyMain, SmallText } from "components/common/TextStyles";
 import PostSidebar from "./PostSidebar";
+import TwitterShare from "components/TwitterShare";
 
 const Container = styled(Boxed)`
   display: grid;
@@ -93,6 +94,7 @@ const PostTemplate = ({ postNode }: PostTemplateProps) => {
         </div>
       </Main>
       <Sidebar>
+        <TwitterShare />
         <PostSidebar postToc={postToc} />
       </Sidebar>
     </Container>
