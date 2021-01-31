@@ -94,9 +94,9 @@ const PostTemplate = ({ postNode }: PostTemplateProps) => {
         </div>
       </Main>
       <Sidebar>
-        <TwitterShare />
         <PostSidebar postToc={postToc} />
-      </Sidebar>
+        
+      </Sidebar><TwitterShare postEdges={postNode} />
     </Container>
   );
 };

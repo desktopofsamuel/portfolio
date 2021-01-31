@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { H3, BodyMain } from "components/common/TextStyles";
 import ButtonPill from "components/button-pill";
+import config from "../../data/SiteConfig";
 
 const Wrapper = styled.div`
   background-color: var(--color-white-light-500);
@@ -36,6 +37,8 @@ const Singing = keyframes`
 
 const Animation = styled.div`
   position: relative;
+  top: -20px;
+  left: 10px;
 
   > * {
     opacity: 0;
@@ -102,7 +105,13 @@ const SoundEffect3 = styled.div`
   transform: rotate(12deg);
 `;
 
-const ContentWrapper = styled.div``;
+const ContentWrapper = styled.div`
+  margin-left: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  grid-gap: 1rem;
+`;
 
 const Title = styled(H3)`
   margin: 0;
@@ -122,11 +131,12 @@ const TwitterShare = ({ postEdges }) => {
       </Animation>
       <ContentWrapper>
         <Title>Enjoy reading the article?</Title>
-        <Description></Description>
+        {console.log(postEdges)}
         <ButtonPill
-          to="https://twitter.com"
+          to={`https://twitter.com/intent/tweet?text=${postEdges.frontmatter.title}&url=${config.siteUrl}${postEdges.fields.slug}`}
           text="Share on Twitter"
           lefticon={faTwitter}
+          isSolid
         />
       </ContentWrapper>
     </Wrapper>

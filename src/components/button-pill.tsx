@@ -14,7 +14,10 @@ const Button =
   `
   font-size: var(--font-size-s);
   font-weight: var(--font-weight-bold);
-  color: var(--color-primary-700);
+  color: ${props =>
+    props.isSolid
+      ? "var(--color-white-light-100)"
+      : "var(--color-primary-700);"};
   text-transform: unset;
   letter-spacing: 0;
   display: flex;
@@ -24,6 +27,8 @@ const Button =
   align-items: center;
   justify-content: center;
   transition: var(--transition);
+  background-color: ${props =>
+    props.isSolid ? "var(--color-primary-light-500)" : "none"};
   border: ${props =>
     props.isSecondary
       ? "1px solid var(--color-transparent)"
@@ -56,6 +61,7 @@ type ButtonReadOnProps = {
   righticon?: string,
   target?: "_blank" | "_self",
   isSecondary?: boolean,
+  isSolid?: boolean,
 };
 
 const defaultProps: ButtonReadOnProps = {
@@ -63,6 +69,7 @@ const defaultProps: ButtonReadOnProps = {
   to: "",
   target: "_self",
   isSecondary: false,
+  isSolid: false,
 };
 
 const ButtonPill: React.FC<ButtonReadOnProps> = ({
@@ -74,7 +81,7 @@ const ButtonPill: React.FC<ButtonReadOnProps> = ({
   isSolid,
   isSecondary,
 }: ButtonReadOnProps) => (
-  <Button to={to} target={target} isSecondary={isSecondary}>
+  <Button to={to} target={target} isSecondary={isSecondary} isSolid={isSolid}>
     <FontAwesomeIcon
       size="1x"
       icon={lefticon}
