@@ -5,15 +5,18 @@ import Img from "gatsby-image";
 import { graphql } from "gatsby";
 import Boxed from "components/utils/Boxed";
 import Column from "components/utils/Column";
+import ColumnItem from "components/utils/ColumnItem";
 import ReadOn from "components/ReadOn";
+import { SmallText } from "components/common/TextStyles";
+import Centered from "components/utils/Centered";
+import IndexBlog from "components/page/IndexBlog";
 import IndexIntro from "components/page/IndexIntro";
-import WorkIndex from "components/page/IndexWork";
-import BlogIndex from "components/page/IndexBlog";
-import IndexHero from "components/page/IndexHero";
-import IndexPhoto from "components/page/IndexPhoto";
-import { SmallText, BodyMain } from "components/common/TextStyles";
-import Layout from "../layout";
 import config from "../../data/SiteConfig";
+import Layout from "../layout";
+import WorkIndex from "../components/page/IndexWork";
+import BlogIndex from "../components/page/IndexBlogOld";
+import IndexHero from "../components/page/IndexHero";
+import IndexPhoto from "../components/page/IndexPhoto";
 
 const Box = styled(Boxed)``;
 
@@ -40,8 +43,6 @@ const StickyBox = styled.div`
 `;
 
 const RightStickyBox = styled.div`
-  order: 0;
-
   @media only screen and (min-width: 425px) {
     order: 1;
   }
@@ -50,20 +51,21 @@ const RightStickyBox = styled.div`
 const StickyWrapper = styled.div`
   position: relative;
   padding: 0 0 var(--var-padding-m) 0;
+
   small {
     margin-bottom: 1rem;
   }
+
   @media only screen and (min-width: 425px) {
     position: sticky;
     top: 3rem;
   }
 `;
 
-const Subtitle = styled(BodyMain)`
+const Subtitle = styled.p`
   font-size: 1.025rem;
   font-family: var(--font-secondary);
   font-weight: var(--font-weight-bold-alt);
-  color: var(--color-text-secondary);
 `;
 
 const Center = styled.div`
@@ -83,9 +85,7 @@ const Blog = styled.section`
   align-items: flex-start;
 
   @media only screen and (max-width: 767px) {
-    display: grid;
-    grid-template-columns: auto;
-    grid-gap: var(--var-padding-m);
+    display: block;
   }
 `;
 
@@ -100,13 +100,18 @@ const Overlay = styled.div`
 
 const BlogIntro = styled.div`
   margin-bottom: var(--var-padding-m);
+  p {
+    color: var(--color-primary-700);
+  }
 `;
 
 const Contact = styled.div`
   display: inline-block;
+
   small {
     font-family: var(--font-secondary);
   }
+
   h2 {
     color: var(--color-primary-700);
   }
@@ -116,21 +121,23 @@ const PhotoGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 100%;
+
   @media only screen and (min-width: 1024px) {
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2px;
   }
+
   @media only screen and (min-width: 1920px) {
     max-width: 1980px;
     margin: 0 auto;
   }
 `;
 
-const PhotoIntro = styled.div`
-  padding: var(--var-padding-m);
-  h2 {
-    margin: 0;
-  }
+const PhotoIntroWrapper = styled.div`
+  padding: 1rem;
+  display: grid;
+  place-content: center;
+
   @media only screen and (max-width: 768px) {
     grid-column: span 2;
   }
@@ -143,7 +150,7 @@ const WorkIndexGrid = styled.div`
   grid-gap: var(--padding-s);
 `;
 
-const IndexPageOld = ({ data }) => {
+const IndexPage = ({ data }) => {
   const workEdges = data.Work.edges;
   const blogEdges = data.Blog.edges;
   const photo1Edges = data.Photo1.edges;
@@ -158,18 +165,18 @@ const IndexPageOld = ({ data }) => {
       <Row>
         <IndexHero />
       </Row>
-      <Row id="experience-designer">
+      {/* <Row id="experience-designer">
         <Box>
           <ColumnSpaced>
             <StickyBox>
               <StickyWrapper>
-                <SmallText>#01</SmallText>
+                <small>01.</small>
                 <h2 className="no-margin">Interaction and Experience Design</h2>
-                <Subtitle>
+                <p>
                   I'm a full-stack UI/UX designer with 5+ years of experience,
                   designing and delivering websites and mobile applications with
                   bespoke user experience.
-                </Subtitle>
+                </p>
                 <ReadOn text="View My Process" href="/work" />
               </StickyWrapper>
             </StickyBox>
@@ -178,14 +185,39 @@ const IndexPageOld = ({ data }) => {
             </WorkIndexGrid>
           </ColumnSpaced>
         </Box>
+      </Row> */}
+      <Row id="work">
+        <Box>
+          <IndexIntro
+            index="#02"
+            title="Interaction and Experience Design"
+            description="I'm a multi-disciplinary designer with 5 years of experience in delivering elegant design and practical solutions."
+            href="/work"
+            label="View my process"
+          />
+        </Box>
       </Row>
       <Row id="blog">
+        <Box>
+          <IndexBlog postEdges={blogEdges} />
+        </Box>
+      </Row>
+      <Box>
+        <IndexIntro
+          index="#03"
+          title="Tools & Resources"
+          description="Best resources and tools I have been using and recommend for getting start in design, code."
+          href="/setup"
+          label="My Awesome Setup"
+        />
+      </Box>
+      {/* <Row id="blog">
         <Box>
           <UnevenColumn>
             <RightStickyBox>
               <StickyWrapper>
                 <BlogIntro>
-                  <SmallText>#02</SmallText>
+                  <SmallText>02.</SmallText>
                   <h2 className="no-margin">Notes on Design & Technology</h2>
                   <Subtitle>
                     I write about design, technology and productivity.
@@ -199,33 +231,42 @@ const IndexPageOld = ({ data }) => {
             </Blog>
           </UnevenColumn>
         </Box>
-      </Row>
+      </Row> */}
       <Row className="full-bleed full-content" id="photography">
         <IndexPhoto photo1Edges={photo1Edges} photo2Edges={photo2Edges} />
       </Row>
-      {/* <Row className="full-bleed full-content" id="photography">
-        <PhotoGrid>
-          <IndexPhoto postEdges={photo1Edges} />
-          <PhotoIntro>
-            <small>03.</small>
-            <h2 className="no-margin">Photography</h2>
-            <Subtitle>
-              Sets of photos according to cities that I have visited.
-            </Subtitle>
-            <ReadOn text="More Photos" href="/photo" />
-          </PhotoIntro>
-          <IndexPhoto postEdges={photo2Edges} />
-        </PhotoGrid>
-      </Row> */}
+      <Row id="newsletter">
+        <Box>
+          <Column>
+            <div>
+              <h2>Join me in the journey of design and build proudct</h2>
+              <p>
+                Each month, I break down a product idea and build a prototype
+                around it. I share my product process you can't find on Google.
+              </p>
+            </div>
+            <div>
+              <iframe
+                src="https://desktopofsamuel.substack.com/embed"
+                width="100%"
+                height="320"
+                style={{ border: "1px solid #EEE", background: "white" }}
+                frameborder="0"
+                scrolling="no"
+              ></iframe>
+            </div>
+          </Column>
+        </Box>
+      </Row>
     </Layout>
   );
 };
 
-export default IndexPageOld;
+export default IndexPage;
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query IndexOldQuery {
+  query IndexQuery {
     Work: allMdx(
       limit: 2
       sort: { fields: [frontmatter___date], order: ASC }

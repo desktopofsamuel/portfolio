@@ -301,8 +301,8 @@ const Footer = () => {
           </LinkContainer>
           <CreditContainer className="full-bleed">
             <CreditText>
-              Designed & Coded by Samuel W. © 2018 - 2020 | Built with{" "}
-              <Link to="https://www.gatsbyjs.org">Gatsby</Link>.
+              Design & Code by Samuel Wong © 2018 - {new Date().getFullYear()} |
+              Built with <Link to="https://www.gatsbyjs.org">Gatsby</Link>.
             </CreditText>
           </CreditContainer>
         </Boxed>

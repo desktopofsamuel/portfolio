@@ -44,6 +44,8 @@ const Title =
 
 const Description = styled(Subtitle)`
   max-width: 40ch;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 type PageTitleProps = {

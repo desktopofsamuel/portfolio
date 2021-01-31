@@ -6,17 +6,18 @@ import Img from "gatsby-image";
 import Tag from "components/Tag";
 import { H1, BodyMain, SmallText } from "components/common/TextStyles";
 import PostSidebar from "./PostSidebar";
+import TwitterShare from "components/TwitterShare";
 
 const Container = styled(Boxed)`
   display: grid;
-  grid-gap: 3rem;
+  gap: 3rem;
   grid-template-columns: var(--page-container-s) auto;
   padding: var(--var-padding-m) 0;
 
   @media only screen and (max-width: 1024px) {
     display: flex;
     flex-direction: column-reverse;
-    padding: var(--var-padding-m) var(--var-padding-s);
+    padding: var(--var-padding-m);
   }
 `;
 
@@ -29,7 +30,6 @@ const Title = styled(H1)`
 
 const Description = styled(BodyMain)`
   margin: 1rem 0 2rem 0;
-  font-size: var(--font-size-s);
   color: var(--color-text-secondary);
 `;
 
@@ -95,7 +95,8 @@ const PostTemplate = ({ postNode }: PostTemplateProps) => {
       </Main>
       <Sidebar>
         <PostSidebar postToc={postToc} />
-      </Sidebar>
+        
+      </Sidebar><TwitterShare postEdges={postNode} />
     </Container>
   );
 };

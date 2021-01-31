@@ -7,17 +7,24 @@ import PageTitle from "components/PageTitle"
 
 <PageTitle title="Changelog" description="Website update and changes" type="secondary"/>
 
-## Jan 31, 2021
-Added brand new series of pages about UX design career, my setup and apps I use!
-- ADDED [Tools & Resources](/tools-and-resources) page as main hub of my curated resources and design tools
-- ADDED Check out my list of apps and service that I love on [Apps & Services](/apps) page, using [`gatsby-source-airtable`](https://github.com/jbolda/gatsby-source-airtable)
-- ADDED Brand new [UX Design Career Kit](/ux-design-career-kit) is here to help you to land your UX job!
-- CHANGED New [Landing page](/) with refactored components and layout
+<!-- - CHANGED New [Landing page](/) with refactored components and layout
 - CHANGED New newsletter signup, [sign up now](http://desktopofsamuel.substack.com/) and receive my monthly update!
+- Added brand new series of pages about [UX design career](/ux-design-career-kit), my setup and apps I use!
+- ADDED Brand new [UX Design Career Kit](/ux-design-career-kit) is here to help you to land your UX job!
+- ADDED [Tools & Resources](/resources) page as main hub of my curated resources and design tools -->
 
+## Jan 31, 2021
+- ADDED new sticky blurred navigation bar on mobile using css `backdrop-filter` and `blur`
+![](../../static/images/changelog/20210131-blur-nav-bar.jpg)
+- ADDED Check out my list of apps and services that I love on [Apps & Services](/apps) page, created using [`gatsby-source-airtable`](https://github.com/jbolda/gatsby-source-airtable)
+- ADDED share text styles using `styled-components` instead of css
+- ADDED a twitter share banner in each blog post
+- FIXED gap issues for portfolio showcase on iOS Safari
+- FIXED padding for Work page
+- Refactor button components    
 
 ## Jan 2,2021
-Massive refactoring and re-organising existing repository. Switching components to Typescript.
+Massive refactoring and re-organising existing repository. Slowly switching components to Typescript.
 - CHANGED Nav Bar's padding to the top of the page
 - CHANGED Font style consistency in the website
 - ADDED a Scroll-tracking Table of Content for blog post ([Learn how to make one for your Gatsby website](https://desktopofsamuel.com/how-to-create-a-scroll-tracking-table-of-content-in-gatsby))
@@ -44,7 +51,6 @@ Revamped work page. I have been thinking about redesigning my work page, hoping 
 - CHANGED Work template page will use a third font, [Clearendon URW](https://fonts.adobe.com/fonts/clarendon-urw)
 
 ## June 25, 2020
-
 I am cleaning up my css and synchronize it back to my design files on Figma. I'm establishing a system on CSS variables especially on typography and color, which will hopefully laid up the foundation for upcoming new features to the website.
 
 - ADDED Film component for blog to feature films that I reviewed
@@ -58,12 +64,10 @@ I am cleaning up my css and synchronize it back to my design files on Figma. I'm
 - CHANGED body font from [Libre Caslon Text](https://fonts.google.com/specimen/Libre+Caslon+Text) to [Chivo](https://fonts.google.com/specimen/Chivo?query=chivo).
 
 ## June 7, 2020
-
 - ADDED Load More button on Blog page to enhance load speed (Tutorial on [Codepen](https://codepen.io/grantdotlocal/pen/zReNgE))
 
 
 ## May 22, 2020
-
 Work page is kind of dull right now with repeat content same as the Home page. I'm adding a screenshot carousel in replacing the "More Work" section. I have also updated the hero section for each case study, adding brand color and a transparent mock-up to let it be more attractive. In the end, I'm hoping to add some hover animation that could make the experience more interactive. 
 
 - CHANGED Work Preview on Home Page, Limit to 2 Case Studies Only
@@ -72,7 +76,6 @@ Work page is kind of dull right now with repeat content same as the Home page. I
 - UPDATED More detailed case study on the design process
 
 ## Apr 20, 2020
-
 This is one of the biggest change since I have updated my website to Gatsby 2.0. The site has undergone massive refactor, after learning more on react, I have decided to retire some old components, switching Class Components to functional component and set up type checking using Proptype. I have also introduce a new typography system for better reading and vertical rhythm. Spacing between images and paragraph should be more loose than before. 
 
 - ADDED New typography system

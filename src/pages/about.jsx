@@ -35,7 +35,7 @@ const IntroGrid = styled.div`
   grid-gap: var(--var-padding-m);
   align-items: center;
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 425px) {
     display: flex;
     flex-direction: column-reverse;
   }

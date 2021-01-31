@@ -55,14 +55,14 @@ const NavItem = styled(Link)`
   font-size: var(--font-size-s);
   font-weight: var(--font-weight-regular);
   height: 48px;
-  color: var(--color-text);
+  color: var(--color-text-secondary);
   transition: var(--transition);
   display: grid;
   place-content: center;
   transition: var(--transition);
 
   & :hover {
-    color: var(--color-text-secondary);
+    color: var(--color-text);
   }
 `;
 

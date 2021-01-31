@@ -5,12 +5,12 @@ import { usePalette } from "react-palette";
 import { LightenDarkenColor } from "lighten-darken-color";
 
 const Stack = styled.div`
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 48px auto;
   align-items: center;
-  grid-gap: 2rem;
+  grid-gap: var(--var-padding-m);
   background-color: var(--color-white-light-300);
-  border-radius: 8px;
+  border-radius: 16px;
   border: 1px solid var(--color-primary-light-100);
   padding: 1.5rem 2rem;
   font-family: var(--font-primary);
@@ -20,6 +20,10 @@ const Stack = styled.div`
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 25px 40px 0 rgba(0, 0, 0, 0.08);
+  }
+
+  @media (max-width: 450px) {
+    grid-template-columns: auto;
   }
 `;
 
@@ -46,6 +50,7 @@ const Title = styled.h3`
   font-size: var(--font-size-m);
   font-weight: var(--font-weight-bold);
   margin: 0;
+  margin-bottom: 1rem;
 `;
 
 const Description = styled.p`

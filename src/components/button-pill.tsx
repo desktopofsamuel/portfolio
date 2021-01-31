@@ -3,20 +3,36 @@ import styled from "styled-components";
 import GatsbyLink from "./common/GatsbyLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Button = styled(GatsbyLink)`
+type ButtonProps = {
+  isSolid: boolean,
+  isSecondary: boolean,
+};
+
+const Button =
+  styled(GatsbyLink) <
+  ButtonProps >
+  `
   font-size: var(--font-size-s);
   font-weight: var(--font-weight-bold);
-  color: var(--color-primary-700);
+  color: ${props =>
+    props.isSolid
+      ? "var(--color-white-light-100)"
+      : "var(--color-primary-700);"};
   text-transform: unset;
   letter-spacing: 0;
   display: flex;
   grid-gap: 0.5rem;
-  padding: 1.25rem 1.25rem;
+  padding: ${props => (props.isSecondary ? "0.5rem" : "1.25rem 1.25rem")};
   border-radius: 100px;
   align-items: center;
   justify-content: center;
   transition: var(--transition);
-  border: 1px solid var(--color-border);
+  background-color: ${props =>
+    props.isSolid ? "var(--color-primary-light-500)" : "none"};
+  border: ${props =>
+    props.isSecondary
+      ? "1px solid var(--color-transparent)"
+      : "1px solid var(--color-border)"};
 
   p {
     margin: 0;
@@ -44,11 +60,16 @@ type ButtonReadOnProps = {
   lefticon?: string,
   righticon?: string,
   target?: "_blank" | "_self",
+  isSecondary?: boolean,
+  isSolid?: boolean,
 };
 
 const defaultProps: ButtonReadOnProps = {
   text: "Read On",
   to: "",
+  target: "_self",
+  isSecondary: false,
+  isSolid: false,
 };
 
 const ButtonPill: React.FC<ButtonReadOnProps> = ({
@@ -57,8 +78,10 @@ const ButtonPill: React.FC<ButtonReadOnProps> = ({
   lefticon,
   righticon,
   target,
+  isSolid,
+  isSecondary,
 }: ButtonReadOnProps) => (
-  <Button to={to} target={target}>
+  <Button to={to} target={target} isSecondary={isSecondary} isSolid={isSolid}>
     <FontAwesomeIcon
       size="1x"
       icon={lefticon}
