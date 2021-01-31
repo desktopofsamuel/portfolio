@@ -101,7 +101,7 @@ const ToolPage = ({ data }) => {
       </Boxed>
       <Boxed>
         <TabsStyled selectedTabClassName="active">
-          <TabListStyled>
+          {/* <TabListStyled>
             <Tab as="button">
               <ButtonPill text="Desktop" lefticon={faDesktop} />
             </Tab>
@@ -111,20 +111,20 @@ const ToolPage = ({ data }) => {
             <Tab>
               <ButtonPill text="Subscriptions" lefticon={faDollarSign} />
             </Tab>
-            {/* <Tab>
+            <Tab>
               <ButtonPill text="Design" lefticon={faPencilRuler} />
-            </Tab> */}
-          </TabListStyled>
-          <TabPanelStyled>
-            <TabGrid>
-              {techEdges
-                .filter(t => t.node.data.Category === "Desktop")
-                .map(item => (
-                  <CardApp postEdges={item} />
-                ))}
-            </TabGrid>
-          </TabPanelStyled>
-          <TabPanelStyled>
+            </Tab>
+          </TabListStyled> */}
+          {/* <TabPanelStyled>*/}
+          <TabGrid>
+            {techEdges
+              // .filter(t => t.node.data.Category === "Desktop")
+              .map(item => (
+                <CardApp postEdges={item} />
+              ))}
+          </TabGrid>
+          {/* </TabPanelStyled> */}
+          {/* <TabPanelStyled>
             <TabGrid>
               {techEdges
                 .filter(t => t.node.data.Category === "Mobile")
@@ -141,7 +141,7 @@ const ToolPage = ({ data }) => {
                   <CardApp postEdges={item} />
                 ))}
             </TabGrid>
-          </TabPanelStyled>
+          </TabPanelStyled> */}
           {/* <TabPanelStyled>
             <TabGrid>
               {techEdges
@@ -176,6 +176,9 @@ export const pageQuery = graphql`
             }
             Name
             Category
+            Platform
+            CTA
+            ExtraLink
           }
         }
       }
