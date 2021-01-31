@@ -1,5 +1,4 @@
 import React from "react";
-import Helmet from "react-helmet";
 import styled from "styled-components";
 import Boxed from "components/utils/Boxed";
 import PageTitle from "components/PageTitle";
@@ -49,7 +48,10 @@ const ResourcePage = () => {
           </Wrapper>
           <Wrapper>
             <H2>Apps & Services</H2>
-            <BodyMain>A list of my favorite tools</BodyMain>
+            <BodyMain>
+              A shout out to all my favorite apps, tools, services, games and
+              more.
+            </BodyMain>
             <ReadOn text="Apps & Services" href="/apps" />
           </Wrapper>
           <Wrapper>

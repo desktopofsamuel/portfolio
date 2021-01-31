@@ -6,7 +6,6 @@ import PageTitle from "components/PageTitle";
 import Boxed from "components/utils/Boxed";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import ButtonPill from "components/button-pill";
-import { faApple, faMicrosoft } from "@fortawesome/free-brands-svg-icons";
 import {
   faPencilRuler,
   faDollarSign,
@@ -31,10 +30,10 @@ const TabsStyled = styled(Tabs)`
 `;
 
 const TabGrid = styled.div`
-  width: 100%;
+  max-width: 800px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-template-rows: max-content;
   grid-gap: 2rem;
 
@@ -82,19 +81,22 @@ const TabPanelStyled = styled(TabPanel)``;
 const ToolPage = ({ data }) => {
   const techEdges = data.tech.edges;
   return (
-    <Layout title="Apps & Services">
+    <Layout
+      title="Apps & Services"
+      description="A shout out to all my favorite apps, tools, services, games and more."
+    >
       <Boxed>
-        <Centered>
+        {/* <Centered>
           <ButtonPill
             lefticon={faChevronLeft}
             text="Back To Tools & Resources"
             to="/resources"
             isSecondary
           />
-        </Centered>
+        </Centered> */}
         <PageTitle
           title="Apps & Services"
-          description="A list of my favorite tools"
+          description="A shout out to all my favorite apps, tools, services, games and more."
         />
       </Boxed>
       <Boxed>
@@ -109,9 +111,9 @@ const ToolPage = ({ data }) => {
             <Tab>
               <ButtonPill text="Subscriptions" lefticon={faDollarSign} />
             </Tab>
-            <Tab>
+            {/* <Tab>
               <ButtonPill text="Design" lefticon={faPencilRuler} />
-            </Tab>
+            </Tab> */}
           </TabListStyled>
           <TabPanelStyled>
             <TabGrid>
@@ -140,7 +142,7 @@ const ToolPage = ({ data }) => {
                 ))}
             </TabGrid>
           </TabPanelStyled>
-          <TabPanelStyled>
+          {/* <TabPanelStyled>
             <TabGrid>
               {techEdges
                 .filter(t => t.node.data.Category === "Design")
@@ -148,7 +150,7 @@ const ToolPage = ({ data }) => {
                   <CardApp postEdges={item} />
                 ))}
             </TabGrid>
-          </TabPanelStyled>
+          </TabPanelStyled> */}
         </TabsStyled>
       </Boxed>
     </Layout>
@@ -160,7 +162,7 @@ export default ToolPage;
 export const pageQuery = graphql`
   query AppsQuery {
     tech: allAirtable(
-      filter: { table: { eq: "Tech" } }
+      filter: { table: { eq: "Tech" }, data: { Status: { eq: "Published" } } }
       sort: { fields: data___Name }
     ) {
       edges {
