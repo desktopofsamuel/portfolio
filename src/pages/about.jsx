@@ -30,8 +30,8 @@ const InvertRow = styled(Row)`
 `;
 
 const IntroGrid = styled.div`
-  display: flex;
-  flex-direction: column-reverse;
+  display: grid;
+  grid-template-columns: auto;
   grid-gap: var(--var-padding-m);
   align-items: center;
 `;
@@ -139,6 +139,11 @@ const AboutPage = ({ data }) => {
       <Row>
         <Boxed size="small">
           <IntroGrid>
+            <IntroPhoto
+              fluid={data.cover.childImageSharp.fluid}
+              width="100%"
+              alt="Photo portrait of Samuel Wong"
+            />
             <IntroContent>
               <h2>Hello, My name is Samuel Wong.</h2>
               <p>
@@ -149,11 +154,6 @@ const AboutPage = ({ data }) => {
               </p>
               <ReadOn text="Let's Chat" href="#contact" />
             </IntroContent>
-            <IntroPhoto
-              fluid={data.cover.childImageSharp.fluid}
-              width="100%"
-              alt="Photo portrait of Samuel Wong"
-            />
           </IntroGrid>
         </Boxed>
       </Row>
