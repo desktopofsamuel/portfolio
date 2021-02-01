@@ -17,7 +17,7 @@ const CTA = styled(Link)`
   right: 12px;
   background-color: var(--color-primary-light-500);
   color: var(--color-white-light-100);
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   padding: 4px 16px;
   opacity: 0;
 

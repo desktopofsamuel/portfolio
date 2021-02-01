@@ -12,9 +12,9 @@ import {
   faDesktop,
   faMobileAlt,
   faLaptop,
+  faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import Centered from "components/utils/Centered";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import Layout from "../layout";
 
 // import "react-tabs/style/react-tabs.css";
@@ -115,7 +115,7 @@ const ToolPage = ({ data }) => {
               <ButtonPill text="Design" lefticon={faPencilRuler} />
             </Tab>
           </TabListStyled> */}
-          {/* <TabPanelStyled>*/}
+          {/* <TabPanelStyled> */}
           <TabGrid>
             {techEdges
               // .filter(t => t.node.data.Category === "Desktop")

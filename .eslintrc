@@ -28,14 +28,22 @@
         "ignoreUrls": true,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
-        "ignoreRegExpLiterals": true,
+        "ignoreRegExpLiterals": true
 
       }
     ],
     "react/prop-types": 1,
     "react/jsx-curly-brace-presence": 1,
+    "react/no-unescaped-entities": 1,
     "import/no-unresolved": 0,
     "no-unused-vars": 1,
     "lines-between-class-members":1
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": [
+        ["gatsby", "../layout"]
+      ]
+    }
   }
 }

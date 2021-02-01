@@ -4,13 +4,13 @@ import Img from "gatsby-image";
 import styled from "styled-components";
 import Boxed from "components/utils/Boxed";
 import PageTitle from "components/PageTitle";
-import Resume from "../components/Resume";
-import SEO from "../components/SEO";
-import Link from "../components/common/GatsbyLink";
-import Layout from "../layout";
-import Zoom from "react-reveal/Zoom";
-import ReadOn from "components/ReadOn";
 import PropTypes from "prop-types";
+import ReadOn from "components/ReadOn";
+import Zoom from "react-reveal/Zoom";
+import Resume from "components/Resume";
+import SEO from "components/SEO";
+import Link from "components/common/GatsbyLink";
+import Layout from "../layout";
 
 const Row = styled.section`
   padding: var(--var-padding-m) 0;
@@ -30,45 +30,38 @@ const InvertRow = styled(Row)`
 `;
 
 const IntroGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  display: flex;
+  flex-direction: column-reverse;
   grid-gap: var(--var-padding-m);
   align-items: center;
-
-  @media only screen and (max-width: 425px) {
-    display: flex;
-    flex-direction: column-reverse;
-  }
 `;
 
-const IntroContent = styled.div`
-  grid-area: intro-content;
-  grid-column: 1 / span 7;
-`;
-const IntroPhoto = styled.div`
-  grid-area: intro-photo;
-  grid-column: 8 / span 5;
+const IntroContent = styled.div``;
+
+const IntroPhoto = styled(Img)`
   height: 100%;
   width: 100%;
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 `;
 
 const BioContainer = styled.div`
   background: #eaf1f6;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: auto;
   grid-gap: var(--var-padding-s);
   padding: var(--var-padding-m);
-  border-radius: 24px;
-
-  @media only screen and (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
+  border-radius: var(--border-radius);
 `;
 
 const BioWrapper = styled.div``;
 
 const BioTitleContainer = styled.div`
-  border-radius: 16px;
+  border-radius: var(--border-radius);
   background-image: ${props => props.color};
   background-color: ${props => props.color};
   display: inline-block;
@@ -143,35 +136,29 @@ SkillItem.PropTypes = {
 const AboutPage = ({ data }) => {
   return (
     <Layout title="About">
-      <PageTitle title="About Me" description="Hello there" />
       <Row>
-        <Boxed>
+        <Boxed size="small">
           <IntroGrid>
             <IntroContent>
-              <h2>
-                Hello,
-                <br /> My name is Samuel Wong.
-              </h2>
+              <h2>Hello, My name is Samuel Wong.</h2>
               <p>
                 I’m a <strong>UI/UX designer</strong> with over 5 years of
-                experience. I'm pursuing a career in the field because I'm
+                experience. I&apos;m pursuing a career in the field because I'm
                 deeply passionate about technology and how it profoundly changes
                 our way of living.
               </p>
               <ReadOn text="Let's Chat" href="#contact" />
             </IntroContent>
-            <IntroPhoto>
-              <Img
-                fluid={data.cover.childImageSharp.fluid}
-                width="100%"
-                alt="Photo portrait of Samuel Wong"
-              />
-            </IntroPhoto>
+            <IntroPhoto
+              fluid={data.cover.childImageSharp.fluid}
+              width="100%"
+              alt="Photo portrait of Samuel Wong"
+            />
           </IntroGrid>
         </Boxed>
       </Row>
       <Row>
-        <Boxed>
+        <Boxed size="small">
           <h2>My Journey</h2>
           <BioContainer>
             <BioWrapper>
@@ -204,7 +191,7 @@ const AboutPage = ({ data }) => {
         </Boxed>
       </Row>
       <Row>
-        <Boxed>
+        <Boxed size="small">
           <h2>My skills</h2>
           <SkillItemGrid>
             <SkillItem
