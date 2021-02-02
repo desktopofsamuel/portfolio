@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "baseUrl": ".", 
+    "paths": {
+      "*": ["*", "src/*"],
+      "components": ["src/components"],
+      "layout": ["src/layout"],
+    }
+  },
+}
+
+  

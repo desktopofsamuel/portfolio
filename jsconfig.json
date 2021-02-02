@@ -1,5 +1,5 @@
 {
-    "compilerOptions": {
+    "compilerOptions" {
         "target": "ES6",
         "allowSyntheticDefaultImports": true,
         "experimentalDecorators": true,
@@ -19,5 +19,11 @@
     "allowJS": true,
     "include": [
         "src/**/*"
-    ]
+    ],
+    "baseUrl": ".", 
+    "paths": {
+      "*": ["*", "src/*"],
+      "components": ["src/components"],
+      "layout": ["src/layout"],
+    }
 }

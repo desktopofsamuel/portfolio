@@ -147,7 +147,6 @@ export const pageQuery = graphql`
             ID
             Status
             Tag
-            Tags
           }
         }
       }
