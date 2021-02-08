@@ -25,6 +25,15 @@ const CTA = styled(Link)`
     background-color: var(--color-secondary-light-500);
     color: var(--color-white-light-500);
   }
+
+  @media (max-width: 425px) {
+    position: relative;
+    bottom: 0;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    border-radius: 8px;
+  }
 `;
 
 const Stack = styled.div`
@@ -51,8 +60,14 @@ const Stack = styled.div`
     }
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: 425px) {
     grid-template-columns: auto;
+    background-color: var(--color-white-light-300);
+    border: 1px solid var(--color-primary-light-100);
+
+    ${CTA} {
+      opacity: 1;
+    }
   }
 `;
 
@@ -90,7 +105,7 @@ const Description = styled.p`
 `;
 
 const Platform = styled.span`
-  font-size: var(--font-size-2xs);
+  font-size: var(--font-size-xs);
   font-weight: var(--font-weight-bold);
   border: 1px solid var(--color-secondary-light-100);
   padding: 4px 8px;

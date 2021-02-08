@@ -93,7 +93,7 @@ const DesignCareerKit = ({ data }) => {
         </Centered>
         <PageTitle
           title="UX Design Career Kit"
-          description="A list of my favorite tools"
+          description="A list of helpful resources to kickstart your UX design career"
         />
       </Boxed>
       <Boxed>

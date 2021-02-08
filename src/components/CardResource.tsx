@@ -5,11 +5,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import Icon from "components/common/Icon";
 import { SmallText } from "components/common/TextStyles";
+import randomColor from "randomcolor";
 
 const Card = styled.div`
   border: 1px solid var(--color-secondary-light-100);
   border-radius: 16px;
   overflow: hidden;
+  transition: var(--transition);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 25px 40px 0 rgba(0, 0, 0, 0.08);
+  }
 `;
 
 const IconWrapper = styled.div`
@@ -28,9 +35,6 @@ const Wrapper = styled.div`
   transition: var(--transition);
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 25px 40px 0 rgba(0, 0, 0, 0.08);
-
     ${IconWrapper} {
       opacity: 1;
       margin-left: 4px;
@@ -87,11 +91,17 @@ type ToolCardProps = {
 
 const CardResource = ({ postEdges }: ToolCardProps) => {
   const item = postEdges.node;
+  const id = postEdges.node.data.Tag;
+
+  const random = randomColor({
+    luminosity: "light",
+    hue: "random",
+  });
   return (
     <Card key={item.id}>
-      {!!item.data.Image ? <img src={item.data.Image[0].url} /> : null}
+      {/* {!!item.data.Image ? <img src={item.data.Image[0].url} /> : null} */}
       <Wrapper>
-        <CategoryTag>
+        <CategoryTag style={{ backgroundColor: random }}>
           <CategoryText>{item.data.Tag}</CategoryText>
         </CategoryTag>
         <Link to={item.data.Link} target="_blank" className="noeffect">

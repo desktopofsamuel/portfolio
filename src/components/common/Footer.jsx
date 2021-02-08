@@ -96,6 +96,7 @@ const FooterContact = () => {
               />
               <Icon
                 to="http://www.twitter.com/desktopofsamuel/"
+                rel="me"
                 target="_blank"
                 icon={faTwitter}
                 title="Twitter"
