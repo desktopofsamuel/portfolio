@@ -7,6 +7,7 @@ import Layout from "../layout";
 import BlogDetail from "../components/page/BlogDetail";
 import BlogList from "../components/page/BlogList";
 import Link from "../components/common/GatsbyLink";
+import { SmallText } from "components/common/TextStyles";
 
 const Row = styled.section`
   padding: var(--var-padding-m) 0;
@@ -33,7 +34,7 @@ const BlogPage = ({ data }) => {
         <Row id="featured">
           <BlogDetail postEdges={postEdges} />
         </Row>
-        <small>All blog posts</small>
+        <SmallText>All blog posts</SmallText>
         <Row id="latest">
           <BlogList postEdges={blogEdges} />
         </Row>
