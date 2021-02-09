@@ -101,11 +101,11 @@ const FooterContact = () => {
                 title="Twitter"
               />
               <link
-                href="http://www.twitter.com/desktopofsamuel/"
+                href="https://www.twitter.com/desktopofsamuel/"
                 rel="me"
               ></link>
               <Icon
-                to="http://www.instagram.com/desktopofsamuel"
+                to="https://www.instagram.com/desktopofsamuel"
                 target="_blank"
                 icon={faInstagram}
                 title="Instagram"
