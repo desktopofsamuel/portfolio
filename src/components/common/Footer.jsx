@@ -100,10 +100,7 @@ const FooterContact = () => {
                 icon={faTwitter}
                 title="Twitter"
               />
-              <link
-                href="https://www.twitter.com/desktopofsamuel/"
-                rel="me"
-              ></link>
+              <link href="https://twitter.com/desktopofsamuel/" rel="me" />
               <Icon
                 to="https://www.instagram.com/desktopofsamuel"
                 target="_blank"
