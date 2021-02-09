@@ -110,6 +110,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
     const slug = node.frontmatter.path;
     const next = index === 0 ? `` : arr[index - 1].node;
     const prev = index === arr.length - 1 ? `` : arr[index + 1].node;
+    const longpath = `${siteConfig.siteUrl + slug}/`;
     createPage({
       path: `${slug}`,
       component: postPage,
@@ -120,6 +121,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
         id: node.id,
         category: node.frontmatter.category,
         tag: node.frontmatter.tags,
+        permalink: longpath,
       },
     });
 

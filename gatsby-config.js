@@ -108,7 +108,7 @@ module.exports = {
           email: "desktopofsamuel@gmail.com",
         },
         mentions: true,
-        pingbacks: false,
+        pingbacks: true,
         forwardPingbacksAsWebmentions: "https://example.com/endpoint",
         domain: "desktopofsamuel.com",
         fetchLimit: 10000, // number of webmentions to fetch
