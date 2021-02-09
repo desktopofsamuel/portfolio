@@ -97,6 +97,25 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-webmention`,
+      options: {
+        username: "desktopofsamuel.com", // webmention.io username
+        identity: {
+          // you need to specify at least one of the identities
+          // to be able to log in webmention.io
+          github: "desktopofsamuel",
+          twitter: "desktopofsamuel", // no @
+          email: "desktopofsamuel@gmail.com"
+        },
+        mentions: true,
+        pingbacks: false,
+        forwardPingbacksAsWebmentions: "https://example.com/endpoint",
+        domain: "desktopofsamuel.com",
+        fetchLimit: 10000, // number of webmentions to fetch
+        token: process.env.WEBMENTIONS_TOKEN
+      }
+    }
+    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
