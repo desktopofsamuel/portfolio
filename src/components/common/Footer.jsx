@@ -95,12 +95,15 @@ const FooterContact = () => {
                 title="Linkedin"
               />
               <Icon
-                to="http://www.twitter.com/desktopofsamuel/"
-                rel="me"
+                to="https://www.twitter.com/desktopofsamuel/"
                 target="_blank"
                 icon={faTwitter}
                 title="Twitter"
               />
+              <link
+                href="http://www.twitter.com/desktopofsamuel/"
+                rel="me"
+              ></link>
               <Icon
                 to="http://www.instagram.com/desktopofsamuel"
                 target="_blank"

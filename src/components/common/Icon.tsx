@@ -18,12 +18,11 @@ type IconProps = {
   target: "_blank" | "_self",
   title: string,
   size: string,
-  rel: string,
 };
 
-const Icon = ({ to, icon, target, title, size, rel }: IconProps) => {
+const Icon = ({ to, icon, target, title, size }: IconProps) => {
   return (
-    <Link to={to} target={target} className="noeffect" rel={rel}>
+    <Link to={to} target={target} className="noeffect">
       <IconWrapper icon={icon} title={title} size={size} />
     </Link>
   );
