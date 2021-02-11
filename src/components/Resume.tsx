@@ -143,9 +143,15 @@ const Resume = () => {
         <ResumeSectionTitle>Career</ResumeSectionTitle>
         <ResumeSection>
           <ResumeItem
+            title="UX/UI Consultant"
+            content="Design cross-platform experience and interfaces in the finance sector"
+            meta="2021 - Now"
+            haveGrid
+          />
+          <ResumeItem
             title="Principal Designer"
             content="Lead design direction, initiate and execute design workflow as the first designer onboard."
-            meta="2019 - Now"
+            meta="2019 - 2021"
             image={HyperAir}
             haveGrid
           />
@@ -199,15 +205,18 @@ const Resume = () => {
         <div>
           <ResumeItem
             noBorder
-            content="Dsign: Figma, Sketch, Zeplin, Abstract, Marvel, Adobe Creative Suite"
+            content="Figma, Sketch, Zeplin, Abstract, Marvel, Adobe Creative Suite"
+            meta="Design"
           />
           <ResumeItem
             noBorder
-            content="Development: Wordpress, Webflow, HTML, CSS, Javascript, React, Git"
+            content="Wordpress, Webflow, HTML, CSS, Javascript, React"
+            meta="Development"
           />
           <ResumeItem
             noBorder
-            content="Others: Google Analytics, Google Tag Manager, Hotja, Jira"
+            content="Google Analytics, Google Tag Manager, Hotja, Jira"
+            meta="Analytics"
           />
         </div>
       </Block>
