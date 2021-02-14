@@ -38,7 +38,7 @@ const IndexPhoto = ({ photo1Edges, photo2Edges }) => {
           index="#03"
           title="Through the lens"
           description="Sets of photos according to cities that I have visited."
-          label="More Photo"
+          label="More Photos"
           href="/photo"
           noMargin
         />

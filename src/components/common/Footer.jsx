@@ -13,7 +13,7 @@ import Link from "components/common/GatsbyLink";
 
 /* Back To Top Button */
 const ScrollToTopContainer = styled.div`
-  background-color: var(--color-secondary-light-500);
+  background-color: var(--color-primary-light-500);
   height: 62px;
   width: 62px;
   display: none;
@@ -23,7 +23,7 @@ const ScrollToTopContainer = styled.div`
   transition: var(--transition);
 
   &:hover {
-    background-color: var(--color-primary-light-700);
+    background-color: var(--color-secondary-light-500);
   }
 
   @media only screen and (min-width: 768px) {

@@ -34,7 +34,7 @@ const Title = styled.h2`
   display: inline;
   margin: 0;
   font-size: var(--font-size-l);
-  color: var(--color-secondary-light-500);
+  color: var(--color-primary-light-500);
   transition: 1s all ease-in-out;
 `;
 
