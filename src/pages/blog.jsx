@@ -31,10 +31,11 @@ const BlogPage = ({ data }) => {
           description="A collection of posts I wrote about design process, technology and
                 productivity."
         />
+        <SmallText>Featured posts</SmallText>
         <Row id="featured">
           <BlogDetail postEdges={postEdges} />
         </Row>
-        <SmallText>All blog posts</SmallText>
+        <SmallText>All posts</SmallText>
         <Row id="latest">
           <BlogList postEdges={blogEdges} />
         </Row>
@@ -84,6 +85,7 @@ export const pageQuery = graphql`
         frontmatter: { draft: { ne: true }, feature: { eq: true } }
       }
       sort: { fields: [frontmatter___date], order: DESC }
+      limit: 8
     ) {
       ...bloglisting
     }

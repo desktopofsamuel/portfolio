@@ -167,24 +167,25 @@ const AboutPage = ({ data }) => {
                 color="linear-gradient(90deg, #53B137 0%, #FBAA20 22.4%, #F16D1A 45.31%, #D5232F 65.1%, #812685 83.33%, #108AD3 100%);"
               />
               <p>
-                Majoring in Arts in collage, I took a gap year working in iTunes
+                Majoring in Arts in college, I took a gap year working in iTunes
                 & App Store, Apple. This valuable experience cultivated my
-                interest and standard in digital products.
+                interest and knowledge in digital products.
               </p>
             </BioWrapper>
             <BioWrapper>
               <BioSectionTitle title="Starting my agency" color="#47BA00" />
               <p>
-                With more freelance design projects, I have started an agency
-                Playa in 2015, hoping to help small businesses, entrepreneurs
-                and non-profits launch their projects.
+                With growing freelance web & design projects, I have started an
+                agency, Playa, in 2015 to help small businesses, entrepreneurs
+                and non-profits launching their projects.
               </p>
             </BioWrapper>
             <BioWrapper>
               <BioSectionTitle title="switching to product" color="#0176ee" />
               <p>
-                Currently, I work as Principal Designer at Hyperair, a start-up
-                that aims to reinvent travel experiences.
+                Currently, I work as a UX/UI consultant in finance sector.
+                Before that, I worked as a Principal Designer at Hyperair, a
+                travel start-up based in Hong Kong.
               </p>
             </BioWrapper>
           </BioContainer>
@@ -229,8 +230,8 @@ const AboutPage = ({ data }) => {
         <Boxed isCenter padding="2rem 0">
           <h2>Let's Connect</h2>
           <Content>
-            Drop me a line if you want to say hi, or share your thoughts on my
-            writings.
+            Drop me a line if you want to say hi, <br /> or share your thoughts
+            on my writings.
           </Content>
           <ReadOn
             href="mailto:desktopofsamuel@gmail.com"
