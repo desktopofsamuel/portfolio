@@ -23,6 +23,7 @@ module.exports = {
     "gatsby-remark-images",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-lodash",
+    "gatsby-plugin-netlify-cache",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -63,6 +64,13 @@ module.exports = {
       options: {
         name: "images",
         path: `${__dirname}/static/images/`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-splitbee`,
+      options: {
+        includeInDevelopment: false,
+        delayTimeout: 0,
       },
     },
     {

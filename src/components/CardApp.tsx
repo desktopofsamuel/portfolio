@@ -151,7 +151,7 @@ const ToolCard = ({ postEdges }: ToolCardProps) => {
       <Stack>
         {!!item.data.Image ? (
           <LogoWrapper color={data.lightMuted}>
-            {console.log(data.lightMuted)}
+            {/* {console.log(data.lightMuted)} */}
             <img src={item.data.Image[0].url} alt={`${item.data.Name} Logo`} />
           </LogoWrapper>
         ) : (
