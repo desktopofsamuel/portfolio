@@ -162,7 +162,7 @@ const FooterItem = styled(Link)`
   }
 
   &:hover {
-    color: var(--color-secondary-light-500);
+    color: var(--color-primary-light-500);
   }
 
   p {
@@ -290,14 +290,11 @@ const Footer = () => {
             <FooterItem className="noeffect" to="/blog">
               Blog
             </FooterItem>
-            <FooterItem
-              className="noeffect"
-              to="https://pins.desktopofsamuel.com"
-            >
-              Pins
-            </FooterItem>
             <FooterItem className="noeffect" to="/photo">
               Photo
+            </FooterItem>
+            <FooterItem className="noeffect" to="/changelog">
+              Changelog
             </FooterItem>
           </LinkContainer>
           <CreditContainer className="full-bleed">
