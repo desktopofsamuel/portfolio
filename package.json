@@ -31,6 +31,7 @@
     "gatsby-plugin-lodash": "3.0.2",
     "gatsby-plugin-manifest": "^2.2.39",
     "gatsby-plugin-mdx": "^1.0.52",
+    "gatsby-plugin-netlify-cache": "^1.2.0",
     "gatsby-plugin-nprogress": "^2.2.3",
     "gatsby-plugin-offline": "^2.0.12",
     "gatsby-plugin-purgecss": "^5.0.0",
