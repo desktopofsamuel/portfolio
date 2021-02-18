@@ -4,7 +4,6 @@
   "version": "2.4.0",
   "author": "Samuel Wong <desktopofsamuel@gmail.com>",
   "dependencies": {
-    "@babel/core": "^7.8.7",
     "@brainhubeu/react-carousel": "^1.15.3",
     "@fortawesome/fontawesome-svg-core": "^1.2.15",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
@@ -15,13 +14,11 @@
     "@mdx-js/react": "^1.5.0",
     "@mdx-js/tag": "^0.20.3",
     "browserslist": "^4.16.3",
-    "caniuse-lite": "^1.0.30001170",
     "change-case": "^3.1.0",
     "classnames": "^2.2.6",
     "css-loader": "^3.2.0",
     "dotenv": "^8.2.0",
     "gatsby": "^2.32.3",
-    "gatsby-cli": "^2.19.1",
     "gatsby-image": "2.2.39",
     "gatsby-plugin-catch-links": "2.0.6",
     "gatsby-plugin-feed": "2.0.9",
@@ -87,6 +84,7 @@
     "url-join": "^4.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.16",
     "@babel/helper-call-delegate": "^7.12.13",
     "@types/styled-components": "^5.1.7",
     "babel-plugin-styled-components": "^1.12.0",
