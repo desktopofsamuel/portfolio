@@ -3,9 +3,9 @@ import { graphql } from "gatsby";
 import Helmet from "react-helmet";
 import Layout from "../layout";
 import config from "../../data/SiteConfig";
-import SEO from "../components/SEO";
-import PostTemplate from "../components/PostTemplate";
-import Related from "../components/Related";
+import SEO from "components/SEO";
+import PostTemplate from "components/PostTemplate";
+import Related from "components/Related";
 
 type BlogPostTemplateProps = {
   data: {
@@ -21,6 +21,7 @@ type BlogPostTemplateProps = {
         path: string,
         title: string,
         tldr: string;
+        tag: [ string ],
       }
     }
     slug: string,
@@ -29,7 +30,6 @@ type BlogPostTemplateProps = {
 
 const BlogPostTemplate = ({ data, pageContext }: BlogPostTemplateProps) => {
   const postNode = data.blog;
-  // const postToc = data.blog.tableOfContents;
   const post = postNode.frontmatter;
   const prev = pageContext.prev
     ? {
