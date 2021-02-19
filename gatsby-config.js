@@ -183,6 +183,7 @@ module.exports = {
     //     ],
     //   },
     // },
+    "gatsby-plugin-offline",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -212,10 +213,6 @@ module.exports = {
         fonts: {
           google: [
             {
-              family: "IBM Plex Mono",
-              variants: ["400", "700"],
-            },
-            {
               family: "Chivo",
               variants: ["400", "700"],
             },
@@ -225,7 +222,6 @@ module.exports = {
     },
     "gatsby-plugin-sitemap",
     "gatsby-plugin-typescript",
-    "gatsby-plugin-offline",
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {
