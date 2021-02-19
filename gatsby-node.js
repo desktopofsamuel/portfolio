@@ -90,9 +90,9 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
   const { work, blog, photo } = response.data;
 
   photo.edges.forEach(({ node }, index, arr) => {
-    const nextSlug = index === 0 ? `` : arr[index - 1].node.frontmatter.path;
+    const nextSlug = index === 0 ? null : arr[index - 1].node.frontmatter.path;
     const prevSlug =
-      index === arr.length - 1 ? `` : arr[index + 1].node.frontmatter.path;
+      index === arr.length - 1 ? null : arr[index + 1].node.frontmatter.path;
     const slug = node.frontmatter.path;
     createPage({
       path: `/photo${slug}`,
@@ -108,8 +108,8 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
 
   blog.edges.forEach(({ node }, index, arr) => {
     const slug = node.frontmatter.path;
-    const next = index === 0 ? `` : arr[index - 1].node;
-    const prev = index === arr.length - 1 ? `` : arr[index + 1].node;
+    const next = index === 0 ? null : arr[index - 1].node;
+    const prev = index === arr.length - 1 ? null : arr[index + 1].node;
     createPage({
       path: `${slug}`,
       component: postPage,
@@ -161,11 +161,11 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
   });
 
   work.edges.forEach(({ node }, index, arr) => {
-    const nextSlug = index === 0 ? `` : arr[index - 1].node.frontmatter.path;
+    const nextSlug = index === 0 ? null : arr[index - 1].node.frontmatter.path;
     const prevSlug =
-      index === arr.length - 1 ? `` : arr[index + 1].node.frontmatter.path;
+      index === arr.length - 1 ? null : arr[index + 1].node.frontmatter.path;
     const slug = node.frontmatter.path;
-    const frontmatter = node.frontmatter;
+    const { frontmatter } = node;
     createPage({
       path: `/work${slug}`,
       component: workPage,

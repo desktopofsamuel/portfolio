@@ -70,7 +70,7 @@ module.exports = {
       resolve: `gatsby-plugin-splitbee`,
       options: {
         includeInDevelopment: false,
-        delayTimeout: 0,
+        delayTimeout: 2000,
       },
     },
     {
@@ -82,47 +82,41 @@ module.exports = {
           {
             baseId: `appW4gVPhW2puIptz`,
             tableName: `Tech`,
-            // tableView: `YOUR_TABLE_VIEW_NAME`,  optional
-            //queryName: `Tech`, // optionally default is false - makes all records in this table a separate node type, based on your tableView, or if not present, tableName, e.g. a table called "Fruit" would become "allAirtableFruit". Useful when pulling many airtables with similar structures or fields that have different types. See https://github.com/jbolda/gatsby-source-airtable/pull/52.
-            // mapping: { `CASE_SENSITIVE_COLUMN_NAME`: `VALUE_FORMAT` },  optional, e.g. "text/markdown", "fileNode"
-            // tableLinks: [`CASE`, `SENSITIVE`, `COLUMN`, `NAMES`], // optional, for deep linking to records across tables.
-            //separateNodeType: true, // boolean, default is false, see the documentation on naming conflicts for more information
-            // separateMapType: false, // boolean, default is false, see the documentation on using markdown and attachments for more information
           },
           {
             baseId: `appW4gVPhW2puIptz`,
             tableName: `Bookmark`,
-            //queryName: `Bookmark`,
-            //separateNodeType: true,
+            // queryName: `Bookmark`,
+            // separateNodeType: true,
           },
           {
             baseId: `appW4gVPhW2puIptz`,
             tableName: `Career`,
-            //queryName: `Bookmark`,
-            //separateNodeType: true,
+            // queryName: `Bookmark`,
+            // separateNodeType: true,
           },
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-webmention`,
-      options: {
-        username: "desktopofsamuel.com", // webmention.io username
-        identity: {
-          // you need to specify at least one of the identities
-          // to be able to log in webmention.io
-          github: "desktopofsamuel",
-          twitter: "desktopofsamuel", // no @
-          email: "desktopofsamuel@gmail.com",
-        },
-        mentions: true,
-        pingbacks: false,
-        forwardPingbacksAsWebmentions: "https://example.com/endpoint",
-        domain: "desktopofsamuel.com",
-        fetchLimit: 10000, // number of webmentions to fetch
-        token: process.env.WEBMENTIONS_TOKEN,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-webmention`,
+    //   options: {
+    //     username: "desktopofsamuel.com", // webmention.io username
+    //     identity: {
+    //       // you need to specify at least one of the identities
+    //       // to be able to log in webmention.io
+    //       github: "desktopofsamuel",
+    //       twitter: "desktopofsamuel", // no @
+    //       email: "desktopofsamuel@gmail.com",
+    //     },
+    //     mentions: true,
+    //     pingbacks: false,
+    //     forwardPingbacksAsWebmentions: "https://example.com/endpoint",
+    //     domain: "desktopofsamuel.com",
+    //     fetchLimit: 10000, // number of webmentions to fetch
+    //     token: process.env.WEBMENTIONS_TOKEN,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -189,6 +183,7 @@ module.exports = {
     //     ],
     //   },
     // },
+    "gatsby-plugin-offline",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -218,10 +213,6 @@ module.exports = {
         fonts: {
           google: [
             {
-              family: "IBM Plex Mono",
-              variants: ["400", "700"],
-            },
-            {
               family: "Chivo",
               variants: ["400", "700"],
             },
@@ -231,7 +222,6 @@ module.exports = {
     },
     "gatsby-plugin-sitemap",
     "gatsby-plugin-typescript",
-    "gatsby-plugin-offline",
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {
