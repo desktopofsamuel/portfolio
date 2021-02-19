@@ -114,28 +114,28 @@ const NewNavBar = () => {
         <NavItem
           activeClassName="nav-item-active"
           className="noeffect"
-          to="/about/"
+          to="/about"
         >
           About
         </NavItem>
         <NavItem
           activeClassName="nav-item-active"
           className="noeffect"
-          to="/work/"
+          to="/work"
         >
           Work
         </NavItem>
         <NavItem
           activeClassName="nav-item-active"
           className="noeffect"
-          to="/blog/"
+          to="/blog"
         >
           Blog
         </NavItem>
         <NavItem
           activeClassName="nav-item-active"
           className="noeffect"
-          to="/photo/"
+          to="/photo"
         >
           Photo
         </NavItem>
