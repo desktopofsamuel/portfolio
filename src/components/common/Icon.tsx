@@ -20,9 +20,9 @@ type IconProps = {
   size: string,
 };
 
-const Icon = ({ to, icon, target, title, size }: IconProps) => {
+const Icon = ({ to, icon, target, title, size, ...props }: IconProps) => {
   return (
-    <Link to={to} target={target} className="noeffect">
+    <Link to={to} target={target} className="noeffect" {...props}>
       <IconWrapper icon={icon} title={title} size={size} />
     </Link>
   );

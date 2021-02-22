@@ -34,7 +34,9 @@ const Related = ({ node }: RelatedProps) => {
       <Wrapper size="small">
         <SmallText>Read Next</SmallText>
         <Title>
-          <Link to={node.path}>{node.title} </Link>
+          <Link data-splitbee-event="Blog Related Link" to={node.path}>
+            {node.title}{" "}
+          </Link>
         </Title>
         <BodyMain>{node.excerpt}</BodyMain>
       </Wrapper>

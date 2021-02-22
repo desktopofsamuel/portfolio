@@ -124,7 +124,12 @@ const IndexHero = () => {
         <ContactWrapper>
           <div>
             <Emoji symbol="📬" />{" "}
-            <Link to="mailto:desktopofsamuel&#64;gmail.com" target="_blank">
+            <Link
+              to="mailto:desktopofsamuel&#64;gmail.com"
+              target="_blank"
+              data-splitbee-event="External Link"
+              data-splitbee-event-type="Email"
+            >
               desktopofsamuel&#64;gmail.com
             </Link>
           </div>
@@ -133,17 +138,26 @@ const IndexHero = () => {
             <Link
               to="https://www.linkedin.com/in/wongchunlong/"
               target="_blank"
+              data-splitbee-event="External Link"
+              data-splitbee-event-type="Linkedin"
             >
               Linkedin
             </Link>{" "}
             /{" "}
-            <Link to="https://www.twitter.com/desktopofsamuel" target="_blank">
+            <Link
+              to="https://www.twitter.com/desktopofsamuel"
+              target="_blank"
+              data-splitbee-event="External Link"
+              data-splitbee-event-type="Twitter"
+            >
               Twitter
             </Link>{" "}
             /{" "}
             <Link
               to="https://www.instagram.com/desktopofsamuel"
               target="_blank"
+              data-splitbee-event="External Link"
+              data-splitbee-event-type="Instagram"
             >
               Instagram
             </Link>
