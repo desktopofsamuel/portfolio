@@ -4,6 +4,9 @@ import styled from "styled-components";
 import Img from "gatsby-image";
 import Slide from "react-reveal/Slide";
 import FadeIn from "react-fade-in";
+import { faClock } from "@fortawesome/free-solid-svg-icons";
+import { SmallText } from "components/common/TextStyles";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Grid = styled.div`
   display: flex;
@@ -28,6 +31,10 @@ const ListItem = styled.article`
   :last-child {
     border-bottom: none;
   }
+`;
+
+const StyledSmallText = styled(SmallText)`
+  color: var(--secondary-text);
 `;
 
 const Title = styled.h2`
@@ -111,7 +118,7 @@ class BlogList extends React.Component {
                   <Title>{post.title}</Title>
                 </Link>
                 <Excerpt>{post.excerpt}</Excerpt>
-                <small>{post.date}</small>
+                <StyledSmallText>{post.date}</StyledSmallText>
               </ListItem>
             </Slide>
           ))}
