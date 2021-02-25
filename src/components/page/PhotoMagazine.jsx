@@ -107,7 +107,7 @@ class PhotoMagazine extends React.Component {
     const postList = [];
     this.props.postEdges.forEach(postEdge => {
       postList.push({
-        path: "/photo" + postEdge.node.fields.slug,
+        path: `/photo${postEdge.node.fields.slug}`,
         tags: postEdge.node.frontmatter.tags,
         cover: postEdge.node.frontmatter.cover,
         title: postEdge.node.frontmatter.title,
