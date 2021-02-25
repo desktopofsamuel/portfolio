@@ -55,7 +55,7 @@ const WorkDetail = ({ postEdges }) => {
 
     postEdges.forEach(postEdge => {
       postList.push({
-        path: postEdge.node.fields.slug,
+        path: `/work${postEdge.node.fields.slug}`,
         tags: postEdge.node.frontmatter.tags,
         cover: postEdge.node.frontmatter.cover,
         photo: postEdge.node.frontmatter.photo,
@@ -85,7 +85,7 @@ const WorkDetail = ({ postEdges }) => {
               <H2>{post.shortTitle}</H2>
               <p>{post.subtitle}</p>
               <More>
-                <ReadOn text="View Process" href={`/work/${post.path}`} />
+                <ReadOn text="View Process" href={post.path} />
               </More>
             </Header>
             <ImageContainer>

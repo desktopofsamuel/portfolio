@@ -78,7 +78,11 @@ const FooterContact = () => {
           <Content>
             I am excited for new opportunities, let's talk about working
             togther. <br />
-            <Link to="mailto:desktopofsamuel&#64;gmail.com">
+            <Link
+              to="mailto:desktopofsamuel&#64;gmail.com"
+              data-splitbee-event="External Link"
+              data-splitbee-event-type="Email"
+            >
               desktopofsamuel&#64;gmail.com
             </Link>
           </Content>
@@ -93,16 +97,22 @@ const FooterContact = () => {
                 target="_blank"
                 icon={faLinkedin}
                 title="Linkedin"
+                data-splitbee-event="External Link"
+                data-splitbee-event-type="Linkedin"
               />
               <Icon
                 to="https://www.twitter.com/desktopofsamuel/"
                 target="_blank"
                 icon={faTwitter}
                 title="Twitter"
+                data-splitbee-event="External Link"
+                data-splitbee-event-type="twitter"
               />
               <link href="https://twitter.com/desktopofsamuel/" rel="me" />
               <Icon
                 to="https://www.instagram.com/desktopofsamuel"
+                data-splitbee-event="External Link"
+                data-splitbee-event-type="instagram"
                 target="_blank"
                 icon={faInstagram}
                 title="Instagram"
@@ -115,11 +125,21 @@ const FooterContact = () => {
           <Content>
             I write regularly on the subject of design and technology. Feel free
             to subscribe via{" "}
-            <Link to="/rss.xml" target="_blank">
+            <Link
+              to="/rss.xml"
+              target="_blank"
+              data-splitbee-event="External Link"
+              data-splitbee-event-type="RSS"
+            >
               RSS
             </Link>{" "}
             or follow me on{" "}
-            <Link to="https://medium.com/@desktopofsamuel" target="_blank">
+            <Link
+              to="https://medium.com/@desktopofsamuel"
+              target="_blank"
+              data-splitbee-event="External Link"
+              data-splitbee-event-type="Medium"
+            >
               Medium
             </Link>
             .
