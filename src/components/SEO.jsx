@@ -12,12 +12,13 @@ class SEO extends Component {
     let image;
     let keywords;
     let postURL;
+
     if (postSEO) {
       const postMeta = postNode.frontmatter;
-      title = postMeta.title + " | " + config.siteTitleAlt;
+      title = postMeta.title + " | " + config.siteTitleShort;
       description = postMeta.tldr ? postMeta.tldr : postNode.excerpt;
       image = postMeta.cover ? postMeta.cover.publicURL : config.siteLogo;
-      postURL = config.siteUrl + config.pathPrefix + postPath;
+      postURL = `${config.siteUrl + config.pathPrefix + postPath}/`;
       keywords = postMeta.tags ? postMeta.tags : config.siteKeywords;
     } else {
       title = config.siteTitle;

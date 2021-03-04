@@ -2,8 +2,7 @@ const config = {
   siteTitle: "Samuel Wong — Hong Kong UI/UX Designer", // Site title.
   siteTitleShort: "Desktop of Samuel", // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
   siteTitleAlt: "Samuel Wong — Hong Kong UI/UX Designer", // Alternative site title for SEO.
-  siteLogo:
-    "icons-2e5ea9ae11520cba6cedd44d8a342667/apple-touch-icon-180x180.png", // Logo used for SEO and manifest.
+  siteLogo: "", // Logo used for SEO and manifest.
   siteUrl: "https://desktopofsamuel.com", // Domain of your website without pathPrefix.
   pathPrefix: "", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription:
@@ -43,13 +42,13 @@ const config = {
   backgroundColor: "#e0e0e0", // Used for setting manifest background color.
 };
 
-// Make sure pathPrefix is empty if not needed
-if (config.pathPrefix === "/") {
-  config.pathPrefix = "";
-} else {
-  // Make sure pathPrefix only contains the first forward slash
-  config.pathPrefix = `/${config.pathPrefix.replace(/^\/|\/$/g, "")}`;
-}
+// // Make sure pathPrefix is empty if not needed
+// if (config.pathPrefix === "/") {
+//   config.pathPrefix = "";
+// } else {
+//   // Make sure pathPrefix only contains the first forward slash
+//   config.pathPrefix = `/${config.pathPrefix.replace(/^\/|\/$/g, "")}`;
+// }
 
 // Make sure siteUrl doesn't have an ending forward slash
 if (config.siteUrl.substr(-1) === "/")
