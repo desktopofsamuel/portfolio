@@ -269,7 +269,11 @@ module.exports = {
                 author: rssMetadata.author,
                 url: rssMetadata.site_url + edge.node.fields.slug,
                 guid: rssMetadata.site_url + edge.node.fields.slug,
-                custom_elements: [{ "content:encoded": edge.node.html }],
+                custom_elements: [
+                  {
+                    "content:encoded": `${edge.node.frontmatter.cover.publicURL} ${edge.node.html}`,
+                  },
+                ],
               }));
             },
             query: `
@@ -291,20 +295,6 @@ module.exports = {
                       title
                       cover {
                         publicURL
-                        size
-                        childImageSharp {
-                          sizes(maxWidth: 1140) {
-                            base64
-                            aspectRatio
-                            src
-                            srcSet
-                            srcWebp
-                            srcSetWebp
-                            sizes
-                            originalImg
-                            originalName
-                          }
-                        }
                       }
                       date
                       category

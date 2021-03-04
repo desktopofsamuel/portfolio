@@ -136,7 +136,7 @@ class PhotoMagazine extends React.Component {
         postList.map(post => (
           <GridItem className="photo-item noeffect" key={post.title}>
             <Link to={post.path} className="noeffect">
-              <GridPhoto sizes={post.cover.childImageSharp.sizes} />
+              <GridPhoto fluid={post.cover.childImageSharp.fluid} />
             </Link>
             <Link to={post.path} className="noeffect">
               <GridTitle>{post.title}</GridTitle>

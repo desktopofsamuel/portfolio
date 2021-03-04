@@ -17,18 +17,9 @@ export const blogpost = graphql`
         date
         cover {
           publicURL
-          size
           childImageSharp {
-            sizes(maxWidth: 1140) {
-              base64
-              aspectRatio
-              src
-              srcSet
-              srcWebp
-              srcSetWebp
-              sizes
-              originalImg
-              originalName
+            fluid {
+              ...GatsbyImageSharpFluid
             }
           }
         }

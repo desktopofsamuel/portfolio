@@ -65,16 +65,8 @@ export const pageQuery = graphql`
               publicURL
               size
               childImageSharp {
-                sizes(maxWidth: 1200) {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  srcWebp
-                  srcSetWebp
-                  sizes
-                  originalImg
-                  originalName
+                fluid {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
