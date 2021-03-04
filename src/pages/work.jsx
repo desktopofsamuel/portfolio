@@ -101,7 +101,11 @@ const WorkPage = ({ data }) => {
   const postEdges = data.feature.edges;
   const workEdges = data.work.edges;
   return (
-    <Layout title="Portfolio">
+    <Layout
+      title="Portfolio"
+      description="Websites & apps portfolio with UI/UX design showcase"
+      keywords="UI, UX, Design, Product Design, Portfolio, Showcase, Samuel Wong Portfolio, Experience Design"
+    >
       <Boxed>
         <PageTitle
           title="Portfolio"

@@ -247,7 +247,7 @@ const ScrollToWrapper = styled.div`
 
 const Footer = () => {
   return (
-    <Container id="#contact">
+    <Container id="contact">
       {/* <BgRow>
           <BoxNow>
             <div>

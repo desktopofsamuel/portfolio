@@ -40,7 +40,7 @@ const ResourcePage = () => {
           <Wrapper>
             <Title>Design Career Kit</Title>
             <BodyMain>My list of favorite and helpful resources</BodyMain>
-            <ReadOn text="Get The Kit" href="/ux-design-career-kit" />
+            <ReadOn text="Get The Kit" href="/ux-design-career-kit/" />
           </Wrapper>
           <Wrapper>
             {" "}
@@ -52,7 +52,7 @@ const ResourcePage = () => {
               A shout out to all my favorite apps, tools, services, games and
               more.
             </BodyMain>
-            <ReadOn text="Apps & Services" href="/apps" />
+            <ReadOn text="Apps & Services" href="/apps/" />
           </Wrapper>
           <Wrapper>
             {" "}
@@ -61,7 +61,7 @@ const ResourcePage = () => {
           <Wrapper>
             <H2>What I Use</H2>
             <BodyMain>Walkthrough of my desk setup & gears</BodyMain>
-            <ReadOn text="What I Use" href="/setup" />
+            <ReadOn text="What I Use" href="/setup/" />
           </Wrapper>
         </Grid>
       </Boxed>

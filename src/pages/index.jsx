@@ -170,7 +170,7 @@ const IndexPageOld = ({ data }) => {
                   designing and delivering websites and mobile applications with
                   bespoke user experience.
                 </Subtitle>
-                <ReadOn text="View My Process" href="/work" />
+                <ReadOn text="View My Process" href="/work/" />
               </StickyWrapper>
             </StickyBox>
             <WorkIndexGrid>
@@ -190,7 +190,7 @@ const IndexPageOld = ({ data }) => {
                   <Subtitle>
                     I write about design, technology and productivity.
                   </Subtitle>
-                  <ReadOn text="Read My Blog" href="/blog" />
+                  <ReadOn text="Read My Blog" href="/blog/" />
                 </BlogIntro>
               </StickyWrapper>
             </RightStickyBox>
