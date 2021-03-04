@@ -23,8 +23,10 @@ export default class TagTemplate extends React.Component {
     const { tag } = this.props.pageContext;
     const postEdges = this.props.data.allMdx.edges;
     return (
-      <Layout>
-        <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitleAlt}`} />
+      <Layout
+        title={`Posts tagged as ${tag}`}
+        description={`Blog articles on ${tag}. UI/UX and web development tutorials, resources, journals and more`}
+      >
         <Boxed>
           <Hero>
             <PageTitle subtitle={`Discover Post tagged`} title={`${tag}`} />

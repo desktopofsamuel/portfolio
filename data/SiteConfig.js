@@ -2,7 +2,7 @@ const config = {
   siteTitle: "Samuel Wong — Hong Kong UI/UX Designer", // Site title.
   siteTitleShort: "Desktop of Samuel", // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
   siteTitleAlt: "Samuel Wong — Hong Kong UI/UX Designer", // Alternative site title for SEO.
-  siteLogo: "", // Logo used for SEO and manifest.
+  siteLogo: "static/favicon.png", // Logo used for SEO and manifest.
   siteUrl: "https://desktopofsamuel.com", // Domain of your website without pathPrefix.
   pathPrefix: "", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription:

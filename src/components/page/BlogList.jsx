@@ -18,14 +18,10 @@ const ListItem = styled.article`
   display: block;
   border-bottom: 1pxvar (--color-secondary-light-100) solid;
   margin-bottom: var(--padding-l);
+  color: var(--color-text);
 
   p {
     margin-bottom: 0.5rem;
-    color: var(--color-text);
-  }
-
-  small {
-    color: var(--color-text-secondary);
   }
 
   :last-child {
