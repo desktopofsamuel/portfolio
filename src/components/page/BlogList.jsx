@@ -34,7 +34,7 @@ const ListItem = styled.article`
 `;
 
 const StyledSmallText = styled(SmallText)`
-  color: var(--secondary-text);
+  color: var(--color-text-secondary);
 `;
 
 const Title = styled.h2`
