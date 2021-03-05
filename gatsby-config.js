@@ -167,6 +167,7 @@ module.exports = {
       },
     },
     "gatsby-plugin-styled-components",
+    "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-catch-links",
@@ -207,6 +208,7 @@ module.exports = {
         tags: true
       }
     }, */
+    "gatsby-plugin-webpack-bundle-analyzer",
     {
       resolve: `gatsby-plugin-webfonts`,
       options: {
@@ -218,6 +220,8 @@ module.exports = {
             },
           ],
         },
+        useMinify: true,
+        usePreload: true,
       },
     },
     "gatsby-plugin-sitemap",
