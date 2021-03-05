@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
 import urljoin from "url-join";
+import dayjs from "dayjs";
 import config from "../../data/SiteConfig";
-import moment from "moment";
 
 class SEO extends Component {
   render() {
@@ -15,7 +15,7 @@ class SEO extends Component {
 
     if (postSEO) {
       const postMeta = postNode.frontmatter;
-      title = postMeta.title + " | " + config.siteTitleShort;
+      title = `${postMeta.title} | ${config.siteTitleShort}`;
       description = postMeta.tldr ? postMeta.tldr : postNode.excerpt;
       image = postMeta.cover ? postMeta.cover.publicURL : config.siteLogo;
       postURL = `${config.siteUrl + config.pathPrefix + postPath}/`;
@@ -45,7 +45,7 @@ class SEO extends Component {
 
       if (!postNode.frontmatter.date) return null;
 
-      return moment(postNode.frontmatter.date, config.dateFromFormat).toDate();
+      return dayjs(postNode.frontmatter.date, config.dateFromFormat).toDate();
     };
 
     image = getImagePath(image);
