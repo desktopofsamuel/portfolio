@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { usePalette } from "react-palette";
 import { LightenDarkenColor } from "lighten-darken-color";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome/";
 import Tag from "components/Tag";
 
 const Icon = styled(FontAwesomeIcon)`
