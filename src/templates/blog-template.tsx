@@ -40,7 +40,7 @@ const BlogPostTemplate = ({ data, pageContext }: BlogPostTemplateProps) => {
     : null;
 
   return (
-    <Layout>
+    <Layout title={post.title}>
       <SEO postPath={pageContext.slug} postNode={postNode} postSEO />
       <PostTemplate postNode={postNode} />
       {prev && <Related node={prev} />}

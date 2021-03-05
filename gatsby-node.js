@@ -1,7 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 const _ = require("lodash");
-const moment = require("moment");
+const dayjs = require("dayjs");
 const siteConfig = require("./data/SiteConfig");
 
 exports.onCreateNode = ({ node, actions }) => {
@@ -23,7 +23,7 @@ exports.onCreateNode = ({ node, actions }) => {
     }
     createNodeField({ node, name: "slug", value: slug });
     if (Object.prototype.hasOwnProperty.call(node.frontmatter, "date")) {
-      const date = moment(node.frontmatter.date, siteConfig.dateFromFormat);
+      const date = dayjs(node.frontmatter.date, siteConfig.dateFromFormat);
       if (!date.isValid)
         console.warn(`WARNING: Invalid date.`, node.frontmatter);
 
