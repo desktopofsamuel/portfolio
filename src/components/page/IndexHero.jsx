@@ -90,7 +90,7 @@ const IndexHero = () => {
             I co-founded Playa, a web & app agency. Before that, I worked as
             Cross-Content Intern at iTunes & App Store, Apple.
           </Subtitle>
-          <ReadOn text="View My Work" href="/work" />
+          <ReadOn text="View My Work" href="/work/" />
         </IntroWrapper>
         {/* <LinkWrapper>
           <small>Contact</small>

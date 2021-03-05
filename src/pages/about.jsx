@@ -135,7 +135,10 @@ SkillItem.PropTypes = {
 
 const AboutPage = ({ data }) => {
   return (
-    <Layout title="About">
+    <Layout
+      title="About"
+      description="Samuel Wong is a Hong Kong based UI/UX designer specialising in creating delightful user interface & experience."
+    >
       <Row>
         <Boxed size="small">
           <IntroGrid>

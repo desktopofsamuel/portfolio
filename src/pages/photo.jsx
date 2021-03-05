@@ -21,7 +21,7 @@ const PhotoPage = ({ data }) => {
   return (
     <Layout
       title="Photography"
-      description="Photography Portfolio of Samuel W."
+      description="Capturing the vibe of cities, sets of photos taken around the world."
       keywords="Photography, Travel, Sightseeing, Canon, iPhone, City, Journey"
     >
       <Row>

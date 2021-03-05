@@ -14,12 +14,12 @@ exports.onCreateNode = ({ node, actions }) => {
       Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
       Object.prototype.hasOwnProperty.call(node.frontmatter, "path")
     ) {
-      slug = `/${_.kebabCase(node.frontmatter.path)}`;
+      slug = `/${_.kebabCase(node.frontmatter.path)}/`;
     } else if (
       Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
       Object.prototype.hasOwnProperty.call(node.frontmatter, "title")
     ) {
-      slug = `/${_.kebabCase(node.frontmatter.title)}`;
+      slug = `/${_.kebabCase(node.frontmatter.title)}/`;
     }
     createNodeField({ node, name: "slug", value: slug });
     if (Object.prototype.hasOwnProperty.call(node.frontmatter, "date")) {
@@ -95,7 +95,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
       index === arr.length - 1 ? null : arr[index + 1].node.frontmatter.path;
     const slug = node.frontmatter.path;
     createPage({
-      path: `/photo${slug}`,
+      path: `/photo${slug}/`,
       component: photoPage,
       context: {
         slug,
@@ -111,7 +111,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
     const next = index === 0 ? null : arr[index - 1].node;
     const prev = index === arr.length - 1 ? null : arr[index + 1].node;
     createPage({
-      path: `${slug}`,
+      path: `${slug}/`,
       component: postPage,
       context: {
         slug,
@@ -167,7 +167,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
     const slug = node.frontmatter.path;
     const { frontmatter } = node;
     createPage({
-      path: `/work${slug}`,
+      path: `/work${slug}/`,
       component: workPage,
       context: {
         slug,

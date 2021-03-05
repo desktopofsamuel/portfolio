@@ -41,9 +41,6 @@ const BlogPostTemplate = ({ data, pageContext }: BlogPostTemplateProps) => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>{`${post.title} | ${config.siteTitle}`}</title>
-      </Helmet>
       <SEO postPath={pageContext.slug} postNode={postNode} postSEO />
       <PostTemplate postNode={postNode} />
       {prev && <Related node={prev} />}

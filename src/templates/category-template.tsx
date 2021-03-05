@@ -51,10 +51,10 @@ const CategoryPageTemplate = ({ data, pageContext }: CategoryPageProps) => {
   const postEdges = data.allMdx.edges;
 
   return (
-    <Layout>
-      <Helmet
-        title={`Discover Posts in "${category}" | ${config.siteTitleAlt}`}
-      />
+    <Layout
+      title={`Discover blog articles in ${category}`}
+      description={`Blog articles on ${category}. UI/UX and web development tutorials, resources, journals and more`}
+    >
       <PageTitle title={`${category}`} />
       <Boxed>
         <Container>

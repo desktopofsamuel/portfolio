@@ -64,7 +64,7 @@ class IndexWork extends React.Component {
       <>
         {postList.map(post => (
           <Zoom key={post.title}>
-            <Link to={`/work/${post.path}`} className="noeffect">
+            <Link to={`/work${post.path}`} className="noeffect">
               <Card key={post.path} color={post.color}>
                 <Subtitle>
                   {detail ? post.smallTitle : post.projectTitle}
