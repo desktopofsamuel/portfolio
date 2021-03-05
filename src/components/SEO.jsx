@@ -124,7 +124,7 @@ class SEO extends Component {
         <meta name="author" content={config.siteTitleShort} />
         <meta name="copyright" content={config.copyright} />
         {/* Schema.org tags */}
-        <script type="application/ld+json">
+        <script async type="application/ld+json">
           {JSON.stringify(schemaOrgJSONLD)}
         </script>
 
