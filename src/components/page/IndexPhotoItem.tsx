@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import Link from "../common/GatsbyLink";
 
 const Photo = styled.div``;
@@ -30,17 +30,15 @@ const IndexPhotoItem = ({ postEdges }:IndexPhotoItemProps) => {
       timeToRead: postEdge.node.timeToRead,
     });
   });
-  return (
-    <>
-      {postList.map(post => (
-        <Link to={post.path} key={post.path} className="noeffect">
-          <Photo>
-            <Img fluid={post.cover.childImageSharp.fluid} alt={post.title} />
-          </Photo>
-        </Link>
-      ))}
-    </>
-  );
+  return <>
+    {postList.map(post => (
+      <Link to={post.path} key={post.path} className="noeffect">
+        <Photo>
+          <GatsbyImage image={post.cover.childImageSharp.gatsbyImageData} alt={post.title} />
+        </Photo>
+      </Link>
+    ))}
+  </>;
 };
 
 export default IndexPhotoItem;

@@ -49,34 +49,6 @@ export default BlogPage;
 
 /* eslint no-undef: "off" */
 
-export const bloglisting = graphql`
-  fragment bloglisting on MdxConnection {
-    edges {
-      node {
-        fields {
-          slug
-          date(formatString: "MMM DD, YYYY", locale: "en")
-        }
-        excerpt(pruneLength: 300)
-        timeToRead
-        frontmatter {
-          title
-          tags
-          category
-          tldr
-          cover {
-            publicURL
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`;
 export const pageQuery = graphql`
   query BlogQuery {
     feature: allMdx(

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import Img from "gatsby-image";
-import { H2 } from "components/common/TextStyles";
+import { GatsbyImage } from "gatsby-plugin-image";
+import { H3 } from "components/common/TextStyles";
 
 const Grid = styled.div`
   display: grid;
@@ -23,7 +23,7 @@ const ListItem = styled.article`
   margin-bottom: var(--padding-m);
 `;
 
-const Title = styled(H2)`
+const Title = styled(H3)`
   margin: 0;
 `;
 
@@ -33,7 +33,7 @@ const Excerpt = styled.p`
   margin-bottom: 0;
 `;
 
-const PostImage = styled(Img)`
+const PostImage = styled(GatsbyImage)`
   margin-bottom: var(--var-padding-s);
 `;
 
@@ -99,7 +99,7 @@ class PostHero extends React.Component {
             <ListItem key={post.path}>
               <Link to={post.path}>
                 <PostImage
-                  fluid={post.cover.childImageSharp.fluid}
+                  image={post.cover.childImageSharp.gatsbyImageData}
                   alt={post.title}
                 />
                 <Title>{post.title}</Title>
@@ -110,8 +110,8 @@ class PostHero extends React.Component {
           ))}
         </Grid>
         {/* {this.state.visible < postList.length && (
-          <ShowMoreButton onClick={this.loadMore}>Load More </ShowMoreButton>
-        )} */}
+        <ShowMoreButton onClick={this.loadMore}>Load More </ShowMoreButton>
+      )} */}
       </>
     );
   }

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Image from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import ReadOn from "./ReadOn";
 import Fade from "react-reveal/Fade";
 import { SmallText, H2 } from "components/common/TextStyles";
@@ -89,11 +89,10 @@ const WorkDetail = ({ postEdges }) => {
               </More>
             </Header>
             <ImageContainer>
-              <Image
-                fluid={post.photo.childImageSharp.fluid}
+              <GatsbyImage
+                image={post.photo.childImageSharp.gatsbyImageData}
                 alt={post.title}
-                fadeIn
-              />
+                fadeIn />
             </ImageContainer>
           </Wrapper>
         </Fade>

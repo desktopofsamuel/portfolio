@@ -3,13 +3,13 @@ import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import styled from "styled-components";
 import Boxed from "components/utils/Boxed";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import Helmet from "react-helmet";
 import Layout from "../layout";
 import SEO from "../components/SEO";
 import config from "../../data/SiteConfig";
 
-const Cover = styled(Img)`
+const Cover = styled(GatsbyImage)`
   width: 100%;
   height: 100%;
   z-index: 1;
@@ -111,7 +111,7 @@ const PhotoTemplate = ({ data, pageContext }: PhotoTemplateProps) => {
           <Header>
             <Overlay />
             <Cover
-              fluid={photo.cover.childImageSharp.fluid}
+              fluid={photo.cover.childImageSharp.gatsbyImageData}
               durationFadeIn={1000}
             />
             <TitleWrapper>
@@ -128,32 +128,29 @@ const PhotoTemplate = ({ data, pageContext }: PhotoTemplateProps) => {
 
 export default PhotoTemplate;
 
-export const pageQuery = graphql`
-  query PhotoPostQuery($id: String) {
-    mdx(id: { eq: $id }) {
-      id
-      body
-      excerpt
-      frontmatter {
-        path
-        title
-        cover {
-          publicURL
-          size
-          childImageSharp {
-            fluid(maxWidth: 2440) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
+export const pageQuery = graphql`query PhotoPostQuery($id: String) {
+  mdx(id: {eq: $id}) {
+    id
+    body
+    excerpt
+    frontmatter {
+      path
+      title
+      cover {
+        publicURL
+        size
+        childImageSharp {
+          gatsbyImageData(layout: FULL_WIDTH)
         }
-        date
-        category
-        tags
       }
-      fields {
-        slug
-        date(formatString: "MMM DD, YYYY", locale: "en")
-      }
+      date
+      category
+      tags
+    }
+    fields {
+      slug
+      date(formatString: "MMM DD, YYYY", locale: "en")
     }
   }
+}
 `;

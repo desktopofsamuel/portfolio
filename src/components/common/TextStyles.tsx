@@ -14,7 +14,13 @@ export const H1 = styled.h1`
 export const H2 = styled.h2`
   font-family: var(--font-primary);
   font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-l);
+  font-size: var(--font-size-xl);
+  margin-top: calc(var(--font-base-line-height) * var(--font-size-base) * 2);
+  margin-bottom: calc(
+    var(--font-base-line-height) * var(--font-size-base) * 0.5
+  );
+  letter-spacing: 0;
+  color: var(--color-title);
 `;
 
 export const H3 = styled.h3`

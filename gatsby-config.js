@@ -208,7 +208,7 @@ module.exports = {
         tags: true
       }
     }, */
-    "gatsby-plugin-webpack-bundle-analyzer",
+    // "gatsby-plugin-webpack-bundle-analyzer",
     {
       resolve: `gatsby-plugin-webfonts`,
       options: {

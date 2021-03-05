@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import Slide from "react-reveal/Slide";
 import FadeIn from "react-fade-in";
 import { faClock } from "@fortawesome/free-solid-svg-icons";
@@ -45,7 +45,7 @@ const Excerpt = styled.p`
   font-size: var(--font-size-s);
 `;
 
-const PostImage = styled(Img)`
+const PostImage = styled(GatsbyImage)`
   margin-bottom: var(--var-padding-s);
 `;
 

@@ -88,33 +88,30 @@ const WorkPageTemplate = ({ pageContext, data }) => {
 
 export default WorkPageTemplate;
 
-export const pageQuery = graphql`
-  query WorkPostQuery($id: String) {
-    mdx(id: { eq: $id }) {
-      id
-      body
-      excerpt
-      frontmatter {
-        title
-        subtitle
-        shortTitle
-        projectTitle
-        intro
-        year
-        role
-        team
-        path
-        tags
-        color
-        cover {
-          publicURL
-          childImageSharp {
-            fluid(maxWidth: 1200) {
-              ...GatsbyImageSharpFluid_noBase64
-            }
-          }
+export const pageQuery = graphql`query WorkPostQuery($id: String) {
+  mdx(id: {eq: $id}) {
+    id
+    body
+    excerpt
+    frontmatter {
+      title
+      subtitle
+      shortTitle
+      projectTitle
+      intro
+      year
+      role
+      team
+      path
+      tags
+      color
+      cover {
+        publicURL
+        childImageSharp {
+          gatsbyImageData(placeholder: NONE, layout: FULL_WIDTH)
         }
       }
     }
   }
+}
 `;

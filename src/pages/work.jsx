@@ -131,101 +131,86 @@ const WorkPage = ({ data }) => {
 export default WorkPage;
 
 /* eslint no-undef: "off" */
-export const pageQuery = graphql`
-  query WorkQuery {
-    feature: allMdx(
-      sort: { fields: [frontmatter___date], order: ASC }
-      filter: {
-        fileAbsolutePath: { regex: "/work/" }
-        frontmatter: { draft: { ne: true }, feature: { eq: true } }
-      }
-    ) {
-      edges {
-        node {
-          fields {
-            slug
-            date
-          }
-          excerpt
-          timeToRead
-          frontmatter {
-            title
-            subtitle
-            shortTitle
-            projectTitle
-            smallTitle
-            feature
-            tags
-            color
-            cover {
-              publicURL
-              size
-              childImageSharp {
-                fluid(maxHeight: 1200) {
-                  ...GatsbyImageSharpFluid_noBase64
-                }
-              }
-            }
-            photo {
-              publicURL
-              size
-              childImageSharp {
-                fluid(maxHeight: 1400) {
-                  ...GatsbyImageSharpFluid_noBase64
-                }
-              }
-            }
-            date
-          }
+export const pageQuery = graphql`query WorkQuery {
+  feature: allMdx(
+    sort: {fields: [frontmatter___date], order: ASC}
+    filter: {fileAbsolutePath: {regex: "/work/"}, frontmatter: {draft: {ne: true}, feature: {eq: true}}}
+  ) {
+    edges {
+      node {
+        fields {
+          slug
+          date
         }
-      }
-    }
-    work: allMdx(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: {
-        fileAbsolutePath: { regex: "/work/" }
-        frontmatter: { draft: { ne: true }, feature: { ne: true } }
-      }
-    ) {
-      edges {
-        node {
-          fields {
-            slug
-            date
-          }
-          excerpt
-          timeToRead
-          frontmatter {
-            title
-            subtitle
-            shortTitle
-            projectTitle
-            smallTitle
-            feature
-            tags
-            color
-            cover {
-              publicURL
-              size
-              childImageSharp {
-                fluid(maxHeight: 1200) {
-                  ...GatsbyImageSharpFluid_noBase64
-                }
-              }
+        excerpt
+        timeToRead
+        frontmatter {
+          title
+          subtitle
+          shortTitle
+          projectTitle
+          smallTitle
+          feature
+          tags
+          color
+          cover {
+            publicURL
+            size
+            childImageSharp {
+              gatsbyImageData(height: 1200, placeholder: NONE, layout: FULL_WIDTH)
             }
-            photo {
-              publicURL
-              size
-              childImageSharp {
-                fluid(maxHeight: 1400) {
-                  ...GatsbyImageSharpFluid_noBase64
-                }
-              }
-            }
-            date
           }
+          photo {
+            publicURL
+            size
+            childImageSharp {
+              gatsbyImageData(height: 1400, placeholder: NONE, layout: FULL_WIDTH)
+            }
+          }
+          date
         }
       }
     }
   }
+  work: allMdx(
+    sort: {fields: [frontmatter___date], order: DESC}
+    filter: {fileAbsolutePath: {regex: "/work/"}, frontmatter: {draft: {ne: true}, feature: {ne: true}}}
+  ) {
+    edges {
+      node {
+        fields {
+          slug
+          date
+        }
+        excerpt
+        timeToRead
+        frontmatter {
+          title
+          subtitle
+          shortTitle
+          projectTitle
+          smallTitle
+          feature
+          tags
+          color
+          cover {
+            publicURL
+            size
+            childImageSharp {
+              gatsbyImageData(height: 1200, placeholder: NONE, layout: FULL_WIDTH)
+            }
+          }
+          photo {
+            publicURL
+            size
+            childImageSharp {
+              gatsbyImageData(height: 1400, placeholder: NONE, layout: FULL_WIDTH)
+            }
+          }
+          date
+        }
+      }
+    }
+  }
+}
 `;

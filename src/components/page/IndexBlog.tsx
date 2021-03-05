@@ -3,7 +3,7 @@ import styled from "styled-components";
 import IndexIntro from "./IndexIntro";
 import IndexBlogOld from "./IndexBlogOld";
 import { Link } from "gatsby";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import Zoom from "react-reveal/Zoom";
 import ReadOn from "components/ReadOn";
 import { H3 } from "components/common/TextStyles";
@@ -18,7 +18,7 @@ const Block = styled.div`
   }
 `;
 
-const PostListImage = styled(Img)`
+const PostListImage = styled(GatsbyImage)`
   transition: transform 0.2s ease-in, box-shadow 0.3s ease-in-out;
 `;
 
@@ -59,7 +59,7 @@ const IndexBlogItem = ({ postEdges }) => {
           <Block className="noeffect">
             <Link to={post.path} className="noeffect">
               <PostListImage
-                fluid={post.cover.childImageSharp.fluid}
+                image={post.cover.childImageSharp.gatsbyImageData}
                 alt={post.title}
               />
               <Content>

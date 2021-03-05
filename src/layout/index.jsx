@@ -12,6 +12,10 @@ const Layout = styled.div``;
 
 const Main = styled.main`
   margin: 64px auto 0 auto;
+
+  & > * {
+    padding: var(--var-padding-m) auto;
+  }
 `;
 
 if (typeof window !== "undefined") {
