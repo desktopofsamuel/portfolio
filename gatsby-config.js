@@ -190,7 +190,7 @@ module.exports = {
         name: config.siteTitle,
         short_name: config.siteTitleShort,
         description: config.siteDescription,
-        start_url: config.pathPrefix,
+        start_url: "/",
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
         display: "minimal-ui",
