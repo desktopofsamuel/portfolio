@@ -308,7 +308,10 @@ export const pageQuery = graphql`
             tldr
             cover {
               childImageSharp {
-                gatsbyImageData(layout: FULL_WIDTH, placeholder: DOMINANT_COLOR)
+                gatsbyImageData(
+                  placeholder: DOMINANT_COLOR
+                  transformOptions: { fit: COVER }
+                )
               }
             }
           }
@@ -333,7 +336,10 @@ export const pageQuery = graphql`
             tldr
             cover {
               childImageSharp {
-                gatsbyImageData(layout: FULL_WIDTH, placeholder: DOMINANT_COLOR)
+                gatsbyImageData(
+                  placeholder: DOMINANT_COLOR
+                  transformOptions: { fit: COVER }
+                )
               }
             }
           }

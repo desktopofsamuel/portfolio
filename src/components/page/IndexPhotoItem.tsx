@@ -3,12 +3,17 @@ import styled from "styled-components";
 import { GatsbyImage } from "gatsby-plugin-image";
 import Link from "../common/GatsbyLink";
 
-const Photo = styled.div``;
+const Photo = styled.div`
+  height: 100%;
+
+  & > * {
+    height: 100%;
+  }
+`;
 
 type IndexPhotoItemProps = {
   postEdges: {
     path: string
-    tags: Array<string>
     cover: object
     title: string
     date: string
