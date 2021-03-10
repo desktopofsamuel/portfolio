@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import loadable from "@loadable/component";
+import { SmallText } from "components/common/TextStyles";
 
 const LoadableScroll = loadable(() => import("react-scrollspy"));
 
@@ -43,7 +44,7 @@ export default function TableOfContent(props) {
 
   return (
     <Table>
-      <h6>Table of Content</h6>
+      <SmallText>Table of Content</SmallText>
       <LoadableScroll items={title} currentClassName="is-current">
         {post.items.map(p => (
           <li key={p.url}>
