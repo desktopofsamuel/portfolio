@@ -77,7 +77,7 @@ const FooterContact = () => {
           <h5>Let's Chat</h5>
           <Content>
             I am excited for new opportunities, let's talk about working
-            togther. <br />
+            together. <br />
             <Link
               to="mailto:desktopofsamuel&#64;gmail.com"
               data-splitbee-event="External Link"
@@ -312,6 +312,9 @@ const Footer = () => {
             </FooterItem>
             <FooterItem className="noeffect" to="/photo">
               Photo
+            </FooterItem>
+            <FooterItem className="noeffect" to="/resources">
+              Resources
             </FooterItem>
             <FooterItem className="noeffect" to="/changelog">
               Changelog
