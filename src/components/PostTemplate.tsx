@@ -10,18 +10,18 @@ import TwitterShare from "components/TwitterShare";
 
 const Container = styled(Boxed)`
   display: grid;
-  gap: 3rem;
+  grid-gap: 3rem;
   grid-template-columns: var(--page-container-s) auto;
   padding: var(--var-padding-m) 0;
 
   @media only screen and (max-width: 1024px) {
     display: flex;
-    flex-direction: column-reverse;
     padding: var(--var-padding-m);
   }
 `;
 
-const Sidebar = styled.aside``;
+const Sidebar = styled.aside`
+`;
 
 const Title = styled(H1)`
   font-size: var(--font-size-xl);

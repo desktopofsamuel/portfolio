@@ -1,5 +1,6 @@
 import { Link as GatsbyLink } from "gatsby";
-import React, { Component } from "react";
+import React from "react";
+import { OutboundLink } from "gatsby-plugin-google-gtag";
 import "../../layout/index.css";
 
 const ActiveLink = {
@@ -56,7 +57,7 @@ const Link = ({
     );
   }
   return (
-    <a
+    <OutboundLink
       href={to}
       className={className}
       target={target}
@@ -64,7 +65,7 @@ const Link = ({
       {...other}
     >
       {children}
-    </a>
+    </OutboundLink>
   );
 };
 
