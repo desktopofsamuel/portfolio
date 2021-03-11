@@ -5,7 +5,7 @@ import NavBar from "components/common/NavBar";
 import SEO from "../components/SEO";
 import config from "../../data/SiteConfig";
 import "./index.css";
-import Footer from "../components/common/Footer";
+import Footer from "../components/common/NewFooter";
 // import NewFooter from "../components/common/NewFooter";
 
 const Layout = styled.div``;

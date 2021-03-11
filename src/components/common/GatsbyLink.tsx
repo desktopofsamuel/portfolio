@@ -1,5 +1,5 @@
 import { Link as GatsbyLink } from "gatsby";
-import React, { Component } from "react";
+import React from "react";
 import "../../layout/index.css";
 
 const ActiveLink = {
