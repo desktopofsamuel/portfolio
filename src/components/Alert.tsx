@@ -20,7 +20,12 @@ const Text = styled.p`
   margin-bottom: 0;
 `;
 
-const Alert = ({ to, children }) => {
+type AlertProps = {
+  to: string,
+  children: object,
+};
+
+const Alert = ({ to, children }: AlertProps) => {
   return (
     <GatsbyLink to={to}>
       <Wrapper>{children}</Wrapper>

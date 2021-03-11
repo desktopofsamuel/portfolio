@@ -2,11 +2,10 @@ import React from "react";
 import Helmet from "react-helmet";
 import styled from "styled-components";
 import NavBar from "components/common/NavBar";
-import SEO from "../components/SEO";
+import SEO from "components/SEO";
+import Footer from "components/common/Footer";
 import config from "../../data/SiteConfig";
 import "./index.css";
-import Footer from "../components/common/Footer";
-// import NewFooter from "../components/common/NewFooter";
 
 const Layout = styled.div``;
 

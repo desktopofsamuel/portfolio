@@ -77,7 +77,7 @@ const FooterContact = () => {
           <h5>Let's Chat</h5>
           <Content>
             I am excited for new opportunities, let's talk about working
-            togther. <br />
+            together. <br />
             <Link
               to="mailto:desktopofsamuel&#64;gmail.com"
               data-splitbee-event="External Link"
@@ -301,19 +301,22 @@ const Footer = () => {
       <EndRow>
         <Boxed padding="1rem 1rem 0 1rem">
           <LinkContainer>
-            <FooterItem className="noeffect" to="/about">
+            <FooterItem className="noeffect" to="/about/">
               About
             </FooterItem>
-            <FooterItem className="noeffect" to="/work">
+            <FooterItem className="noeffect" to="/work/">
               Work
             </FooterItem>
-            <FooterItem className="noeffect" to="/blog">
+            <FooterItem className="noeffect" to="/blog/">
               Blog
             </FooterItem>
-            <FooterItem className="noeffect" to="/photo">
+            <FooterItem className="noeffect" to="/photo/">
               Photo
             </FooterItem>
-            <FooterItem className="noeffect" to="/changelog">
+            <FooterItem className="noeffect" to="/resources/">
+              Resources
+            </FooterItem>
+            <FooterItem className="noeffect" to="/changelog/">
               Changelog
             </FooterItem>
           </LinkContainer>
