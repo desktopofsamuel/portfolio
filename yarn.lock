@@ -7800,7 +7800,7 @@ gatsby-plugin-catch-links@3.0.0:
     "@babel/runtime" "^7.12.5"
     escape-string-regexp "^1.0.5"
 
-gatsby-plugin-feed@3.0.0:
+gatsby-plugin-feed@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-feed/-/gatsby-plugin-feed-3.0.0.tgz#141c4b9381cc0759af43961af9932350d8c337a9"
   integrity sha512-hWEuLgh0F02MJZauCnZ9MvX6Seayv7v85oLGDejKiLKYsXKubnUERUtSNsPqW0qkOW/8CJco1J4aRuRxIJINdg==
