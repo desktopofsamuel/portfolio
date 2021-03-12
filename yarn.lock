@@ -7850,18 +7850,6 @@ gatsby-plugin-lodash@4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-lodash/-/gatsby-plugin-lodash-4.0.0.tgz#045dec34f6be5b9c579e3ea6b1bf14d658f6ce64"
   integrity sha512-APheHN5WWJJSLSkhlAYS6H1MaPJAGVGnoTXv+dFkP5/TMxA2pU3uj6zBnx/rGatBBlXFZaV90q/GGCApLzziyA==
-gatsby-plugin-google-gtag@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-gtag/-/gatsby-plugin-google-gtag-3.0.0.tgz#9d8884b256b25f9d62ab70189fd731377d178ee3"
-  integrity sha512-6zTmPUkAHd4NOEK2HY72Xf4VDGjDxvTxUaX4pE8irFqywuOfcdrmKzhbmjPfGh7mwwe1Otj1hyonI8ugKqD1Fg==
-  dependencies:
-    "@babel/runtime" "^7.12.5"
-    minimatch "^3.0.4"
-
-gatsby-plugin-lodash@3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-lodash/-/gatsby-plugin-lodash-3.0.2.tgz#bcd1ba3cee4e081789a202a54875c888751aa525"
-  integrity sha512-lytncA+9CV2fN2m5BnWlqAmehNMlAUTVcwqmpc8aTGkF+B2WxohUl6i9NMIGf4hP7vEyFKhemiM9gocgUORGZw==
   dependencies:
     "@babel/runtime" "^7.12.5"
     babel-plugin-lodash "^3.3.4"
