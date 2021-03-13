@@ -48,7 +48,9 @@ export default function TableOfContent(props) {
       <LoadableScroll items={title} currentClassName="is-current">
         {post.items.map(p => (
           <li key={p.url}>
-            <a href={p.url}>{p.title}</a>
+            <a className="link-toc" href={p.url}>
+              {p.title}
+            </a>
           </li>
         ))}
       </LoadableScroll>
