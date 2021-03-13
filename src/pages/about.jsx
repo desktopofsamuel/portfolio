@@ -237,6 +237,7 @@ const AboutPage = ({ data }) => {
             on my writings.
           </Content>
           <ReadOn
+            className="link-contact"
             href="mailto:desktopofsamuel@gmail.com"
             text="Start Conversation"
           />
