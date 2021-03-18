@@ -11,6 +11,7 @@ import WorkIndex from "components/page/IndexWork";
 import BlogIndex from "components/page/IndexBlog";
 import IndexHero from "components/page/IndexHero";
 import IndexPhoto from "components/page/IndexPhoto";
+import CanvasResources from "components/CanvasResources";
 import { SmallText, BodyMain } from "components/common/TextStyles";
 import Layout from "../layout";
 import config from "../../data/SiteConfig";
@@ -199,6 +200,18 @@ const IndexPageOld = ({ data }) => {
             </Blog>
           </UnevenColumn>
         </Box>
+      </Row>
+      <Row>
+        <IndexIntro
+          index="#03"
+          title="Tools & Resources"
+          description="Best resources and tools I have been using and recommend for getting start in design, code."
+          href="/resources/"
+          label="My Awesome Setup"
+        />
+        <Boxed>
+          <CanvasResources />
+        </Boxed>
       </Row>
       <Row className="full-bleed full-content" id="photography">
         <IndexPhoto photo1Edges={photo1Edges} photo2Edges={photo2Edges} />

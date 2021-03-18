@@ -15,12 +15,14 @@ export const H2 = styled.h2`
   font-family: var(--font-primary);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-l);
+  margin: 0;
 `;
 
 export const H3 = styled.h3`
   font-family: var(--font-primary);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-m);
+  margin: 0;
 `;
 
 export const Subtitle = styled.p`
@@ -28,6 +30,7 @@ export const Subtitle = styled.p`
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-m);
   color: var(--color-text-secondary);
+  margin: 0;
 `;
 
 export const BodyMain = styled.p`

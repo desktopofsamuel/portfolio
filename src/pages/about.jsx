@@ -224,7 +224,7 @@ const AboutPage = ({ data }) => {
         </Boxed>
       </Row>
       <InvertRow id="resume" className="full-bleed">
-        <Boxed padding="2rem 0">
+        <Boxed padding="2rem">
           <small>Resume</small>
           <Resume />
         </Boxed>

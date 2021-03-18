@@ -44,6 +44,7 @@ const FormBackground = styled.div`
     #0099cc 0deg,
     #ff008a 360deg
   );
+
   filter: blur(250px);
   z-index: -100;
 `;
@@ -70,8 +71,7 @@ const Form = () => {
 const MenuWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  color: white;
-
+  color: var(--color-text);
   h5 {
     margin: 0;
   }
@@ -79,7 +79,7 @@ const MenuWrapper = styled.div`
 
 const MenuHeader = styled.small`
   opacity: 0.5;
-  color: white;
+  color: var(--color-text);
   font-weight: var(--font-weight-normal);
 
   &.social {
@@ -246,6 +246,12 @@ const Row = styled.section`
 `;
 
 const FooterRow = styled(Row)`
+  /* background-color: var(--color-secondary-light-700); */
+`;
+
+const FooterBackground = styled.div`
+  width: 500px;
+  position: relative;
   background-color: var(--color-secondary-light-700);
 `;
 
@@ -273,7 +279,9 @@ const Footer = () => {
         <FooterRow className="full-bleed">
           <Boxed>
             <GridRow>
-              <Form />
+              <FooterBackground className="full-bleed">
+                <Form />
+              </FooterBackground>
               <Menu3 />
               <Menu1 />
               <Menu2 />

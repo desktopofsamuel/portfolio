@@ -18,14 +18,16 @@ const Grid = styled.div`
   align-items: center;
 
   @media (max-width: 425px) {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 100%;
     text-align: center;
   }
 `;
 
-const Title = styled(H2)`
-  margin: 0;
+const StyledTitle = styled(H2)``;
+
+const StyledMain = styled(BodyMain)`
+  color: var(--color-text-secondary);
 `;
 
 const Wrapper = styled.div``;
@@ -42,11 +44,11 @@ const ResourcePage = () => {
             <img src={DesignOKR} alt="Design OKR Template" />
           </Wrapper>
           <Wrapper>
-            <Title>Design OKR</Title>
-            <BodyMain>
+            <StyledTitle>Design OKR</StyledTitle>
+            <StyledMain>
               OKR template to get you started to progress your design career!
               With actionable objectives and key results.
-            </BodyMain>
+            </StyledMain>
             <ReadOn
               text="Read How To Use"
               href="/navigating-design-career-with-design-okrs/"
@@ -56,11 +58,11 @@ const ResourcePage = () => {
             <img src={UXDesignCareerKit} alt="UX Design Career Kit" />
           </Wrapper>
           <Wrapper>
-            <Title>UX Design Career Kit</Title>
-            <BodyMain>
+            <StyledTitle>UX Design Career Kit</StyledTitle>
+            <StyledMain>
               My list of favorite and helpful resources for job hunting. Helpful
               tips from Twitter's design leaders are included!
-            </BodyMain>
+            </StyledMain>
             <ReadOn text="Get The Kit" href="/ux-design-career-kit/" />
           </Wrapper>
           <Wrapper>
@@ -68,11 +70,11 @@ const ResourcePage = () => {
             <img src={Apps} alt="Apps & Services" />
           </Wrapper>
           <Wrapper>
-            <H2>Apps & Services</H2>
-            <BodyMain>
+            <StyledTitle>Apps & Services</StyledTitle>
+            <StyledMain>
               A shout out to all my favorite apps, tools, services, games and
               more.
-            </BodyMain>
+            </StyledMain>
             <ReadOn text="Apps & Services" href="/apps/" />
           </Wrapper>
           <Wrapper>
@@ -80,8 +82,8 @@ const ResourcePage = () => {
             <img src={Whatiuse} alt="What I Use" />
           </Wrapper>
           <Wrapper>
-            <H2>What I Use</H2>
-            <BodyMain>Walkthrough of my desk setup & gears</BodyMain>
+            <StyledTitle>What I Use</StyledTitle>
+            <StyledMain>Walkthrough of my desk setup & gears</StyledMain>
             <ReadOn text="What I Use" href="/setup/" />
           </Wrapper>
         </Grid>
