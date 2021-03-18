@@ -90,10 +90,10 @@ const Newsletter = () => {
 
   return (
     <>
-      <FormTitle>Join My Newsletter</FormTitle>
+      <FormTitle>📫 Join My Newsletter</FormTitle>
       <p>
-        If you've found any of my articles useful, subscribe to receive more
-        quality articles straight to your inbox.
+        Subscribe to receive more quality design tips, and insights straight to
+        your inbox.
       </p>
 
       {status === "SUCCESS" && <p>Please go confirm your subscription!</p>}
