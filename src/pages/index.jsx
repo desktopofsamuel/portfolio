@@ -206,7 +206,7 @@ const IndexPageOld = ({ data }) => {
           index="#03"
           title="Tools & Resources"
           description="Best resources and tools I have been using and recommend for getting start in design, code."
-          href="/setup"
+          href="/resources/"
           label="My Awesome Setup"
         />
         <Boxed>
