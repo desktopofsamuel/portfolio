@@ -7854,13 +7854,6 @@ gatsby-plugin-lodash@4.0.0:
     "@babel/runtime" "^7.12.5"
     babel-plugin-lodash "^3.3.4"
     lodash-webpack-plugin "^0.11.6"
-gatsby-plugin-google-gtag@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-gtag/-/gatsby-plugin-google-gtag-3.0.0.tgz#9d8884b256b25f9d62ab70189fd731377d178ee3"
-  integrity sha512-6zTmPUkAHd4NOEK2HY72Xf4VDGjDxvTxUaX4pE8irFqywuOfcdrmKzhbmjPfGh7mwwe1Otj1hyonI8ugKqD1Fg==
-  dependencies:
-    "@babel/runtime" "^7.12.5"
-    minimatch "^3.0.4"
 
 gatsby-plugin-manifest@^3.0.0:
   version "3.0.0"
@@ -10949,7 +10942,6 @@ lock@^1.0.0:
   resolved "https://registry.yarnpkg.com/lock/-/lock-1.1.0.tgz#53157499d1653b136ca66451071fca615703fa55"
   integrity sha1-UxV0mdFlOxNspmRRBx/KYVcD+lU=
 
-<<<<<<< HEAD
 lodash-webpack-plugin@^0.11.6:
   version "0.11.6"
   resolved "https://registry.yarnpkg.com/lodash-webpack-plugin/-/lodash-webpack-plugin-0.11.6.tgz#8204c6b78beb62ce5211217dfe783c21557ecd33"
@@ -10957,8 +10949,6 @@ lodash-webpack-plugin@^0.11.6:
   dependencies:
     lodash "^4.17.20"
 
-=======
->>>>>>> f5400046b298e6c5252a1e3ee6092fe47864f83d
 lodash._reinterpolate@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz#0ccf2d89166af03b3663c796538b75ac6e114d9d"
