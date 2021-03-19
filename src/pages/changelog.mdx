@@ -12,6 +12,7 @@ import PageTitle from "components/PageTitle"
 - ADDED a brand new [Tools & Resources](/resources) page to aggregate all career resources and setup I'm sharing!
 - ADDED new Tools & Resources section on [home page](/) as well
 - CHANGED to Gatsby v3. Switched to Gatsby Cloud for building, Performance score has gone up from 60 to 80s
+- CHANGED Improve build speed by identify heavy package (Lodash, MomentJS) using [Import Cost](https://github.com/wix/import-cost) and [gatsby-plugin-webpack-bundle-analyser-v2](https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/). Refer to this [Gatsby Conference video](https://www.youtube.com/watch?v=x4RfrJiIzBE) for more details. Build time was reduced from 14m to 7m.
 - FIXED blog post layout on mobile for better reading experience
 - FIXED SEO issue with trailing slash, aligning all internal link with trailing slash. Redirection from `/blog` to `/blog/` might affect SEO score
 
@@ -29,7 +30,7 @@ import PageTitle from "components/PageTitle"
 Massive refactoring and re-organising existing repository. Slowly switching components to Typescript.
 - CHANGED Nav Bar's padding to the top of the page
 - CHANGED Font style consistency in the website
-- ADDED a Scroll-tracking Table of Content for blog post ([Learn how to make one for your Gatsby website](https://desktopofsamuel.com/how-to-create-a-scroll-tracking-table-of-content-in-gatsby))
+- ADDED a Scroll-tracking Table of Content for blog post ([Learn how to make one for your Gatsby website](/how-to-create-a-scroll-tracking-table-of-content-in-gatsby/))
 - ADDED a Scroll to Top button in the footer
 
 ## Oct 22, 2020
@@ -96,7 +97,7 @@ My previous focus on the Photo section is to make Gatsby possible to serve as a 
 
 ### Dec 23, 2019
 
-- Added [Photo](http://desktopofsamue.com/photo) Section from previous portfolio
+- Added [Photo](http://desktopofsamue.com/photo/) Section from previous portfolio
 - Added Photo Main & Photo Post
 
 ### May 26, 2019
@@ -118,7 +119,7 @@ My previous focus on the Photo section is to make Gatsby possible to serve as a 
 - Revamped work page design. The section background is dynamic now to match every projects' brand color (manually input from the markdown files).
 - Added mobile navigation and animation with some icons that I drew.
 - Added 404 Page. One small step for man, one giant leap for mankind
-- Added [Work Category Page](http://localhost:8000/categories/ui-ux-design), each service can be viewed individually with relevant projects
+- Added [Work Category Page](/categories/ui-ux-design/), each service can be viewed individually with relevant projects
 - Enhanced landing page experience by cool reveal animation using [React-Reveal](https://www.react-reveal.com/)
 - Enhanced scroll animation using [React Anchor Link Smooth Scroll](https://github.com/mauricevancooten/react-anchor-link-smooth-scroll) when you click Get In Touch on landing page
 - Enhanced blog reading experience especially with code block. Code will highlight according to the language using [Gatsby-Remark-PrismicJS](https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/)
