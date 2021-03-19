@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Img from "gatsby-image";
-import kebabCase from "lodash/kebabcase";
+import kebabCase from "lodash.kebabcase";
 
 const Container = styled.article`
   margin-bottom: var(--padding-m);
