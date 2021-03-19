@@ -22,7 +22,6 @@ module.exports = {
   plugins: [
     "gatsby-remark-images",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-lodash",
     "gatsby-plugin-netlify-cache",
     {
       resolve: "gatsby-source-filesystem",
