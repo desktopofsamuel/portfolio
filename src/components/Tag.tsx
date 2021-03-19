@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Link from "components/common/GatsbyLink";
-import kebabCase from "lodash.kebabCase";
+import kebabCase from "lodash.kebabcase";
 
 const StyledLink = styled(Link)`
   display: inline-block;
