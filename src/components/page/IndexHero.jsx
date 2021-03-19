@@ -132,6 +132,7 @@ const IndexHero = () => {
           <div>
             <Emoji symbol="📬" />{" "}
             <Link
+              className="link-contact"
               to="mailto:desktopofsamuel&#64;gmail.com"
               target="_blank"
               data-splitbee-event="External Link"

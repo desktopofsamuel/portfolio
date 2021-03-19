@@ -220,7 +220,7 @@ const AboutPage = ({ data }) => {
       </Boxed>
 
       <InvertRow id="resume" className="full-bleed">
-        <Boxed padding="2rem 0">
+        <Boxed padding="2rem">
           <small>Resume</small>
           <Resume />
         </Boxed>
@@ -233,6 +233,7 @@ const AboutPage = ({ data }) => {
             on my writings.
           </Content>
           <ReadOn
+            className="link-contact"
             href="mailto:desktopofsamuel@gmail.com"
             text="Start Conversation"
           />

@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { GatsbyImage } from "gatsby-plugin-image";
-import kebabCase from "lodash/kebabCase";
+import Img from "gatsby-image";
+import kebabCase from "lodash.kebabcase";
 
 const Container = styled.article`
   margin-bottom: var(--padding-m);

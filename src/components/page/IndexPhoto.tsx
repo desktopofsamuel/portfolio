@@ -34,7 +34,7 @@ const IndexPhoto = ({ photo1Edges, photo2Edges }) => {
       <IndexPhotoItem postEdges={photo1Edges} />
       <PhotoIntroWrapper>
         <IndexIntro
-          index="#03"
+          index="#04"
           title="Through the lens"
           description="Sets of photos according to cities that I have visited."
           label="More Photos"
@@ -42,14 +42,6 @@ const IndexPhoto = ({ photo1Edges, photo2Edges }) => {
           noMargin
         />
       </PhotoIntroWrapper>
-      {/* <PhotoIntro>
-            <small>03.</small>
-            <h2 className="no-margin">Photography</h2>
-            <Subtitle>
-              Sets of photos according to cities that I have visited.
-            </Subtitle>
-            <ReadOn text="More Photos" href="/photo" />
-          </PhotoIntro> */}
       <IndexPhotoItem postEdges={photo2Edges} />
     </PhotoGrid>
   );

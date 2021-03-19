@@ -79,6 +79,7 @@ const FooterContact = () => {
             I am excited for new opportunities, let's talk about working
             together. <br />
             <Link
+              className="link-contact"
               to="mailto:desktopofsamuel&#64;gmail.com"
               data-splitbee-event="External Link"
               data-splitbee-event-type="Email"

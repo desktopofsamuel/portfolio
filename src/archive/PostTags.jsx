@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import _ from "lodash";
+import kebabCase from "lodash.kebabcase";
 import styled from "styled-components";
 import { Link } from "gatsby";
 
@@ -40,7 +40,7 @@ class PostTags extends Component {
             <Link
               key={tag}
               style={{ border: "none" }}
-              to={`/tags/${_.kebabCase(tag)}`}
+              to={`/tags/${kebabCase(tag)}`}
             >
               <Tag>
                 <h5>{tag}</h5>

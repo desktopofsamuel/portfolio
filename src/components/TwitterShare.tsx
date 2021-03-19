@@ -132,6 +132,7 @@ const TwitterShare = ({ postEdges }) => {
       <ContentWrapper>
         <Title>Enjoy reading the article?</Title>
         <ButtonPill
+          className="link-blogtwittershare"
           to={`https://twitter.com/intent/tweet?text=${postEdges.frontmatter.title}&url=${config.siteUrl}${postEdges.fields.slug}`}
           text="Share on Twitter"
           lefticon={faTwitter}

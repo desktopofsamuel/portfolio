@@ -33,6 +33,7 @@ const Button =
     props.isSecondary
       ? "1px solid var(--color-transparent)"
       : "1px solid var(--color-border)"};
+  margin: 1rem 0;
 
   p {
     margin: 0;
