@@ -2,7 +2,6 @@
 // import { Link, graphql } from "gatsby";
 // import { MDXRenderer } from "gatsby-plugin-mdx";
 // import ZoomImage from "components/ZoomImage";
-// import kebabCase from "lodash/kebabCase";
 // import styled from "styled-components";
 // import PropTypes from "prop-types";
 // import Helmet from "react-helmet";
