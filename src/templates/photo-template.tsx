@@ -111,7 +111,7 @@ const PhotoTemplate = ({ data, pageContext }: PhotoTemplateProps) => {
           <Header>
             <Overlay />
             <Cover
-              fluid={photo.cover.childImageSharp.gatsbyImageData}
+              image={photo.cover.childImageSharp.gatsbyImageData}
               durationFadeIn={1000}
             />
             <TitleWrapper>
