@@ -21,7 +21,7 @@
     "gatsby": "^3.0.4",
     "gatsby-image": "3.0.0",
     "gatsby-plugin-catch-links": "3.0.0",
-    "gatsby-plugin-feed": "^3.0.0",
+    "gatsby-plugin-feed": "^3.1.0",
     "gatsby-plugin-google-analytics": "3.0.0",
     "gatsby-plugin-google-gtag": "^3.0.0",
     "gatsby-plugin-image": "^1.0.0",
