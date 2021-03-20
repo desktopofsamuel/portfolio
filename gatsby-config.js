@@ -260,7 +260,7 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-feed",
+      resolve: "gatsby-plugin-feed-mdx",
       options: {
         setup(ref) {
           const ret = ref.query.site.siteMetadata.rssMetadata;
