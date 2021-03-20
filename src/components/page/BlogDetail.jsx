@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { GatsbyImage } from "gatsby-plugin-image";
-import { H3 } from "components/common/TextStyles";
+import { H2 } from "components/common/TextStyles";
 
 const Grid = styled.div`
   display: grid;
@@ -13,17 +13,18 @@ const Grid = styled.div`
   @media only screen and (max-width: 768px) {
     display: grid;
     grid-template-columns: 1fr;
+    grid-gap: 1rem;
   }
 `;
 
 const ListItem = styled.article`
   display: block;
-  border-bottom: 1pxvar (--color-secondary-light-100) solid;
+  border-bottom: 1px var(--color-secondary-light-100) solid;
   padding-bottom: var(--var-padding-m);
   margin-bottom: var(--padding-m);
 `;
 
-const Title = styled(H3)`
+const Title = styled(H2)`
   margin: 0;
 `;
 
