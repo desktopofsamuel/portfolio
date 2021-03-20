@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { GatsbyImage } from "gatsby-plugin-image";
 import ReadOn from "./ReadOn";
 import Fade from "react-reveal/Fade";
-import { SmallText, H2 } from "components/common/TextStyles";
+import { SmallText, H2, BodyMain } from "./common/TextStyles";
 
 const Container = styled.div`
   display: grid;
@@ -23,27 +23,12 @@ const Wrapper = styled.div`
   }
 `;
 
-const Header = styled.div`
-  /* grid-area: header; */
-
-  h2 {
-    font-size: var(--font-size-xl);
-    margin-top: 1rem;
-  }
-
-  p {
-    color: var(--color-text-secondary);
-  }
-
-  small {
-    color: ${props => props.color};
-  }
+const StyledTitle = styled(H2)`
+  font-size: var(--font-size-xl);
+  margin-top: 1rem;
 `;
 
-const More = styled.div`
-  /* grid-area: action; */
-  align-self: center;
-`;
+const Header = styled.div``;
 
 const ImageContainer = styled.div`
   margin: 1rem 0;
@@ -82,17 +67,16 @@ const WorkDetail = ({ postEdges }) => {
           <Wrapper>
             <Header color={post.color}>
               <SmallText> {post.projectTitle}</SmallText>
-              <H2>{post.shortTitle}</H2>
-              <p>{post.subtitle}</p>
-              <More>
-                <ReadOn text="View Process" href={post.path} />
-              </More>
+              <StyledTitle>{post.shortTitle}</StyledTitle>
+              <BodyMain>{post.subtitle}</BodyMain>
+              <ReadOn text="View Process" href={post.path} />
             </Header>
             <ImageContainer>
               <GatsbyImage
                 image={post.photo.childImageSharp.gatsbyImageData}
                 alt={post.title}
-                fadeIn />
+                fadeIn
+              />
             </ImageContainer>
           </Wrapper>
         </Fade>

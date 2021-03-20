@@ -6,7 +6,7 @@ import { Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import Zoom from "react-reveal/Zoom";
 import ReadOn from "components/ReadOn";
-import { H3 } from "components/common/TextStyles";
+import { H3, BodyMain } from "components/common/TextStyles";
 
 const Block = styled.div`
   padding: var(--var-padding-s);
@@ -29,15 +29,10 @@ const Content = styled.div`
 `;
 
 const Title = styled(H3)`
-  font-size: var(--font-size-m);
-  color: var(--color-text);
   margin-top: 1rem;
 `;
 
-const Paragraph = styled.p`
-  font-size: var(--font-size-xs);
-  color: var(--color-text-secondary);
-`;
+const Paragraph = styled(BodyMain)``;
 
 const IndexBlogItem = ({ postEdges }) => {
   const postList = [];

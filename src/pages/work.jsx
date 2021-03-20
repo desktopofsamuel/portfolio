@@ -8,6 +8,7 @@ import Boxed from "components/utils/Boxed";
 import ReadOn from "components/ReadOn";
 import WorkDetail from "components/WorkDetail";
 import Layout from "../layout";
+import { H2, BodyMain } from "../components/common/TextStyles";
 
 const Row = styled.section`
   padding: var(--var-padding-m) 0;
@@ -20,9 +21,6 @@ const Row = styled.section`
 
 const ClearRow = styled(Row)`
   padding: 0;
-  p {
-    color: var(--color-text-secondary);
-  }
 `;
 const GridProject = styled.div`
   display: grid;
@@ -111,18 +109,18 @@ const WorkPage = ({ data }) => {
           title="Portfolio"
           description="Selected websites and apps showcase since 2015."
         />
-        <Row>
-          <WorkDetail postEdges={postEdges} />
-        </Row>
-        <ClearRow>
-          <h2>More Works</h2>
-          <p>Check out some of my personal work & design projects.</p>
-        </ClearRow>
-        <Row>
-          <Grid>
-            <WorkIndex postEdges={workEdges} detail />
-          </Grid>
-        </Row>
+      </Boxed>
+      <Boxed>
+        <WorkDetail postEdges={postEdges} />
+      </Boxed>
+      <Boxed>
+        <H2>More Works</H2>
+        <BodyMain>
+          Check out some of my personal work & design projects.
+        </BodyMain>
+        <Grid>
+          <WorkIndex postEdges={workEdges} detail />
+        </Grid>
       </Boxed>
     </Layout>
   );
@@ -131,86 +129,109 @@ const WorkPage = ({ data }) => {
 export default WorkPage;
 
 /* eslint no-undef: "off" */
-export const pageQuery = graphql`query WorkQuery {
-  feature: allMdx(
-    sort: {fields: [frontmatter___date], order: ASC}
-    filter: {fileAbsolutePath: {regex: "/work/"}, frontmatter: {draft: {ne: true}, feature: {eq: true}}}
-  ) {
-    edges {
-      node {
-        fields {
-          slug
-          date
+export const pageQuery = graphql`
+  query WorkQuery {
+    feature: allMdx(
+      sort: { fields: [frontmatter___date], order: ASC }
+      filter: {
+        fileAbsolutePath: { regex: "/work/" }
+        frontmatter: { draft: { ne: true }, feature: { eq: true } }
+      }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+            date
+          }
+          excerpt
+          timeToRead
+          frontmatter {
+            title
+            subtitle
+            shortTitle
+            projectTitle
+            smallTitle
+            feature
+            tags
+            color
+            cover {
+              publicURL
+              size
+              childImageSharp {
+                gatsbyImageData(
+                  height: 1200
+                  placeholder: NONE
+                  layout: FULL_WIDTH
+                )
+              }
+            }
+            photo {
+              publicURL
+              size
+              childImageSharp {
+                gatsbyImageData(
+                  height: 1400
+                  placeholder: NONE
+                  layout: FULL_WIDTH
+                )
+              }
+            }
+            date
+          }
         }
-        excerpt
-        timeToRead
-        frontmatter {
-          title
-          subtitle
-          shortTitle
-          projectTitle
-          smallTitle
-          feature
-          tags
-          color
-          cover {
-            publicURL
-            size
-            childImageSharp {
-              gatsbyImageData(height: 1200, placeholder: NONE, layout: FULL_WIDTH)
-            }
+      }
+    }
+    work: allMdx(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: {
+        fileAbsolutePath: { regex: "/work/" }
+        frontmatter: { draft: { ne: true }, feature: { ne: true } }
+      }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+            date
           }
-          photo {
-            publicURL
-            size
-            childImageSharp {
-              gatsbyImageData(height: 1400, placeholder: NONE, layout: FULL_WIDTH)
+          excerpt
+          timeToRead
+          frontmatter {
+            title
+            subtitle
+            shortTitle
+            projectTitle
+            smallTitle
+            feature
+            tags
+            color
+            cover {
+              publicURL
+              size
+              childImageSharp {
+                gatsbyImageData(
+                  height: 1200
+                  placeholder: NONE
+                  layout: FULL_WIDTH
+                )
+              }
             }
+            photo {
+              publicURL
+              size
+              childImageSharp {
+                gatsbyImageData(
+                  height: 1400
+                  placeholder: NONE
+                  layout: FULL_WIDTH
+                )
+              }
+            }
+            date
           }
-          date
         }
       }
     }
   }
-  work: allMdx(
-    sort: {fields: [frontmatter___date], order: DESC}
-    filter: {fileAbsolutePath: {regex: "/work/"}, frontmatter: {draft: {ne: true}, feature: {ne: true}}}
-  ) {
-    edges {
-      node {
-        fields {
-          slug
-          date
-        }
-        excerpt
-        timeToRead
-        frontmatter {
-          title
-          subtitle
-          shortTitle
-          projectTitle
-          smallTitle
-          feature
-          tags
-          color
-          cover {
-            publicURL
-            size
-            childImageSharp {
-              gatsbyImageData(height: 1200, placeholder: NONE, layout: FULL_WIDTH)
-            }
-          }
-          photo {
-            publicURL
-            size
-            childImageSharp {
-              gatsbyImageData(height: 1400, placeholder: NONE, layout: FULL_WIDTH)
-            }
-          }
-          date
-        }
-      }
-    }
-  }
-}
 `;
