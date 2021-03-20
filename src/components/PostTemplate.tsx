@@ -60,7 +60,7 @@ type PostTemplateProps = {
       tags: [ ],
       cover: {
         childImageSharp: {
-          sizes: string,
+          gatsbyImageData: object,
         },
       }
     }
@@ -80,7 +80,7 @@ const PostTemplate = ({ postNode }: PostTemplateProps) => {
         </SmallText>
         <Title>{post.title}</Title>
         <Description>{post.tldr}</Description>
-        <GatsbyImage sizes={postNode.frontmatter.cover.childImageSharp.sizes} />
+        <GatsbyImage image={postNode.frontmatter.cover.childImageSharp.gatsbyImageData} />
         <hr />
         <MDXRenderer>{postNode.body}</MDXRenderer>
         <div>
