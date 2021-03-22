@@ -133,6 +133,10 @@ module.exports = {
             resolve: "gatsby-remark-images",
             options: {
               linkImagesToOriginal: false,
+              maxWidth: 800,
+              loading: "lazy",
+              withWebp: true,
+              quality: 90,
             },
           },
           "gatsby-remark-images-medium-zoom",
