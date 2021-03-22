@@ -1,4 +1,5 @@
 const urljoin = require("url-join");
+const path = require("path");
 const config = require("./data/SiteConfig");
 
 require("dotenv").config({
