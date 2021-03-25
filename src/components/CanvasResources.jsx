@@ -28,14 +28,14 @@ const ImageWrapper = styled.div`
   height: 184px;
 `;
 
-// const Img = styled(StaticImage)`
-//   filter: drop-shadow(-4px 4px 10px rgba(0, 0, 0, 0.25));
-//   transition: var(--transition);
+const Img = styled.img`
+  filter: drop-shadow(-4px 4px 10px rgba(0, 0, 0, 0.25));
+  transition: var(--transition);
 
-//   &:hover {
-//     transform: translateY(0.2px) scale(1.025);
-//   }
-// `;
+  &:hover {
+    transform: translateY(0.2px) scale(1.025);
+  }
+`;
 
 const CanvasResources = () => {
   return (
@@ -47,12 +47,7 @@ const CanvasResources = () => {
             zIndex: "2",
           }}
         >
-          <StaticImage
-            src="../../static/images/20210310-UXDesignCareerKit.png"
-            alt="UX Design Career Kit"
-            placeholder="blurred"
-            layout="fixed"
-          />
+          <Img src={Image1} alt="UX Design Career Kit" />
         </ImageWrapper>
       </Slide>
       <Slide bottom delay={700}>
@@ -63,12 +58,7 @@ const CanvasResources = () => {
             zIndex: "3",
           }}
         >
-          <StaticImage
-            src="../../static/images/20210310-whatiuse.png"
-            alt="What I Use"
-            placeholder="blurred"
-            layout="fixed"
-          />
+          <Img src={Image2} alt="What I Use" />
         </ImageWrapper>
       </Slide>
       <Slide bottom delay={1000}>
@@ -79,12 +69,7 @@ const CanvasResources = () => {
             zIndex: "4",
           }}
         >
-          <StaticImage
-            src="../../content/blog/2021-03-09 Design OKR/20210309-DesignOKR.png"
-            alt="Design OKR"
-            placeholder="blurred"
-            layout="fixed"
-          />
+          <Img src={Image3} alt="Design OKR" />
         </ImageWrapper>
       </Slide>
       <Slide bottom delay={0}>
@@ -95,12 +80,7 @@ const CanvasResources = () => {
             zIndex: "-1",
           }}
         >
-          <StaticImage
-            src="../../static/images/20210310-appsservices.png"
-            alt="Apps & Services"
-            placeholder="blurred"
-            layout="fixed"
-          />
+          <Img src={Image4} alt="Apps & Services" />
         </ImageWrapper>
       </Slide>
     </Container>
