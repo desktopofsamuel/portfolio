@@ -1,8 +1,3 @@
-/** Inter **/
-/* @import url("https://rsms.me/inter/inter.css"); */
-/** Adobe Fonts **/
-@import url("https://use.typekit.net/hey8lez.css");
-
 /* Typography */
 :root {
     --font-primary:  canada-type-gibson, Helvetica, Arial, sans-serif;

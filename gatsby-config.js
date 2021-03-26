@@ -203,6 +203,14 @@ module.exports = {
     },
     // "gatsby-plugin-webpack-bundle-analyzer",
     {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        typekit: {
+          id: process.env.TYPEKIT_ID,
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-webfonts`,
       options: {
         fonts: {
@@ -210,6 +218,7 @@ module.exports = {
             {
               family: "Chivo",
               variants: ["400", "700"],
+              fontDisplay: "swap",
             },
           ],
         },
