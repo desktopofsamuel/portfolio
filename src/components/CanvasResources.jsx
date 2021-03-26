@@ -60,7 +60,7 @@ export default function CanvasResources() {
           }}
         >
           <StaticImage
-            src="../images/20210310-UXDesignCareerKit.png"
+            src="../../static/images/20210310-UXDesignCareerKit.png"
             alt="UX Design Career Kit"
             placeholder="blurred"
           />
@@ -75,7 +75,7 @@ export default function CanvasResources() {
           }}
         >
           <StaticImage
-            src="../images/20210310-whatiuse.png"
+            src="../../static/images/20210310-whatiuse.png"
             alt="What I Use"
             placeholder="blurred"
           />
@@ -105,7 +105,7 @@ export default function CanvasResources() {
           }}
         >
           <StaticImage
-            src="../images/20210310-appsservices.png"
+            src="../../static/images/20210310-appsservices.png"
             alt="Apps & Services"
             placeholder="blurred"
           />
