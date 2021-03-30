@@ -57,9 +57,7 @@ const Image = styled.div`
   }
 `;
 
-const Title = styled.h1`
-  margin-top: 0;
-`;
+const Title = styled.h1``;
 
 const Subtitle = styled.p``;
 
