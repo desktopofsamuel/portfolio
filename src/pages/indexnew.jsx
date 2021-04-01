@@ -1,7 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import styled from "styled-components";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
 import Boxed from "components/utils/Boxed";
 import Column from "components/utils/Column";
@@ -293,9 +293,11 @@ export const pageQuery = graphql`
             cover {
               publicURL
               childImageSharp {
-                fluid(maxHeight: 1200) {
-                  ...GatsbyImageSharpFluid_noBase64
-                }
+                gatsbyImageData(
+                  height: 800
+                  placeholder: NONE
+                  layout: FULL_WIDTH
+                )
               }
             }
           }
@@ -322,7 +324,9 @@ export const pageQuery = graphql`
             category
             tldr
             cover {
-              ...fluidImage
+              childImageSharp {
+                gatsbyImageData(width: 400, layout: CONSTRAINED)
+              }
             }
             date
           }
@@ -345,7 +349,9 @@ export const pageQuery = graphql`
             title
             tldr
             cover {
-              ...fluidImage
+              childImageSharp {
+                gatsbyImageData(layout: FULL_WIDTH, placeholder: DOMINANT_COLOR)
+              }
             }
           }
         }
@@ -368,7 +374,9 @@ export const pageQuery = graphql`
             title
             tldr
             cover {
-              ...fluidImage
+              childImageSharp {
+                gatsbyImageData(layout: FULL_WIDTH, placeholder: DOMINANT_COLOR)
+              }
             }
           }
         }

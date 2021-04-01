@@ -37,7 +37,7 @@ export const BodyMain = styled.p`
   font-family: var(--font-secondary);
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-s);
-  color: var(--color-text);
+  color: var(--color-text-secondary);
 `;
 
 export const SmallText = styled.p`

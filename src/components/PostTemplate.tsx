@@ -2,7 +2,7 @@ import React from "react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import styled from "styled-components";
 import Boxed from "components/utils/Boxed";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import Tag from "components/Tag";
 import { H1, BodyMain, SmallText } from "components/common/TextStyles";
 import PostSidebar from "./PostSidebar";
@@ -60,7 +60,7 @@ type PostTemplateProps = {
       tags: [ ],
       cover: {
         childImageSharp: {
-          sizes: string,
+          gatsbyImageData: object,
         },
       }
     }
@@ -80,7 +80,7 @@ const PostTemplate = ({ postNode }: PostTemplateProps) => {
         </SmallText>
         <Title>{post.title}</Title>
         <Description>{post.tldr}</Description>
-        <Img sizes={postNode.frontmatter.cover.childImageSharp.sizes} />
+        <GatsbyImage image={postNode.frontmatter.cover.childImageSharp.gatsbyImageData} />
         <hr />
         <MDXRenderer>{postNode.body}</MDXRenderer>
         <div>

@@ -133,6 +133,10 @@ module.exports = {
             resolve: "gatsby-remark-images",
             options: {
               linkImagesToOriginal: false,
+              maxWidth: 800,
+              loading: "lazy",
+              withWebp: true,
+              quality: 90,
             },
           },
           "gatsby-remark-images-medium-zoom",
@@ -166,6 +170,7 @@ module.exports = {
       },
     },
     "gatsby-plugin-styled-components",
+    "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-catch-links",
@@ -189,23 +194,22 @@ module.exports = {
         name: config.siteTitle,
         short_name: config.siteTitleShort,
         description: config.siteDescription,
-        start_url: config.pathPrefix,
+        start_url: "/",
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
         display: "minimal-ui",
         icon: "src/favicon.png",
       },
     },
-    /* {
-      resolve: `gatsby-source-cloudinary`,
+    // "gatsby-plugin-webpack-bundle-analyzer",
+    {
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
-        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
-        apiKey: process.env.CLOUDINARY_API_KEY,
-        apiSecret: process.env.CLOUDINARY_API_SECRET,
-        resourceType: `image`,
-        tags: true
-      }
-    }, */
+        typekit: {
+          id: process.env.TYPEKIT_ID,
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-webfonts`,
       options: {
@@ -214,9 +218,17 @@ module.exports = {
             {
               family: "Chivo",
               variants: ["400", "700"],
+              fontDisplay: "swap",
+            },
+            {
+              family: "Inter",
+              variants: ["400", "700"],
+              fontDisplay: "swap",
             },
           ],
         },
+        useMinify: true,
+        usePreload: true,
       },
     },
     "gatsby-plugin-sitemap",
@@ -306,7 +318,6 @@ module.exports = {
                   node {
                     excerpt
                     html
-                    timeToRead
                     fields {
                       slug
                       date
@@ -315,20 +326,6 @@ module.exports = {
                       title
                       cover {
                         publicURL
-                        size
-                        childImageSharp {
-                          sizes(maxWidth: 1140) {
-                            base64
-                            aspectRatio
-                            src
-                            srcSet
-                            srcWebp
-                            srcSetWebp
-                            sizes
-                            originalImg
-                            originalName
-                          }
-                        }
                       }
                       date
                       category

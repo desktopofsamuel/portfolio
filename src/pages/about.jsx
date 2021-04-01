@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import Boxed from "components/utils/Boxed";
 import PageTitle from "components/PageTitle";
@@ -11,20 +11,15 @@ import Resume from "components/Resume";
 import SEO from "components/SEO";
 import Link from "components/common/GatsbyLink";
 import Layout from "../layout";
+import { H2 } from "../components/common/TextStyles";
 
 const Row = styled.section`
   padding: var(--var-padding-m) 0;
-  background: var(--color-white-light-100);
-
-  &:first-child {
-    padding-bottom: 0;
-  }
-
-  h2 {
-    margin-top: 0;
-  }
 `;
 
+const StyledTitle = styled(H2)`
+  margin-top: 0;
+`;
 const InvertRow = styled(Row)`
   background: var(--color-background-reverse);
 `;
@@ -36,9 +31,13 @@ const IntroGrid = styled.div`
   align-items: center;
 `;
 
-const IntroContent = styled.div``;
+const IntroContent = styled.div`
+  h2 {
+    margin: 0;
+  }
+`;
 
-const IntroPhoto = styled(Img)`
+const IntroPhoto = styled(GatsbyImage)`
   height: 100%;
   width: 100%;
   border-radius: 8px;
@@ -139,90 +138,87 @@ const AboutPage = ({ data }) => {
       title="About"
       description="Samuel Wong is a Hong Kong based UI/UX designer specialising in creating delightful user interface & experience."
     >
-      <Row>
-        <Boxed size="small">
-          <IntroGrid>
-            <IntroPhoto
-              fluid={data.cover.childImageSharp.fluid}
-              width="100%"
-              alt="Photo portrait of Samuel Wong"
+      <Boxed size="small">
+        <IntroGrid>
+          <IntroPhoto
+            image={data.cover.childImageSharp.gatsbyImageData}
+            width="100%"
+            alt="Photo portrait of Samuel Wong"
+          />
+          <IntroContent>
+            <StyledTitle as="h1">Hello, My name is Samuel Wong.</StyledTitle>
+            <p>
+              I’m a <strong>UI/UX designer</strong> with over 5 years of
+              experience. I&apos;m pursuing a career in the field because I'm
+              deeply passionate about technology and how it profoundly changes
+              our way of living.
+            </p>
+            <ReadOn text="Let's Chat" href="#contact" />
+          </IntroContent>
+        </IntroGrid>
+      </Boxed>
+
+      <Boxed size="small">
+        <h2>My Journey</h2>
+        <BioContainer>
+          <BioWrapper>
+            <BioSectionTitle
+              title="Interned At Apple"
+              color="linear-gradient(90deg, #53B137 0%, #FBAA20 22.4%, #F16D1A 45.31%, #D5232F 65.1%, #812685 83.33%, #108AD3 100%);"
             />
-            <IntroContent>
-              <h2>Hello, My name is Samuel Wong.</h2>
-              <p>
-                I’m a <strong>UI/UX designer</strong> with over 5 years of
-                experience. I&apos;m pursuing a career in the field because I'm
-                deeply passionate about technology and how it profoundly changes
-                our way of living.
-              </p>
-              <ReadOn text="Let's Chat" href="#contact" />
-            </IntroContent>
-          </IntroGrid>
-        </Boxed>
-      </Row>
-      <Row>
-        <Boxed size="small">
-          <h2>My Journey</h2>
-          <BioContainer>
-            <BioWrapper>
-              <BioSectionTitle
-                title="Interned At Apple"
-                color="linear-gradient(90deg, #53B137 0%, #FBAA20 22.4%, #F16D1A 45.31%, #D5232F 65.1%, #812685 83.33%, #108AD3 100%);"
-              />
-              <p>
-                Majoring in Arts in college, I took a gap year working in iTunes
-                & App Store, Apple. This valuable experience cultivated my
-                interest and knowledge in digital products.
-              </p>
-            </BioWrapper>
-            <BioWrapper>
-              <BioSectionTitle title="Starting my agency" color="#47BA00" />
-              <p>
-                With growing freelance web & design projects, I have started an
-                agency, Playa, in 2015 to help small businesses, entrepreneurs
-                and non-profits launching their projects.
-              </p>
-            </BioWrapper>
-            <BioWrapper>
-              <BioSectionTitle title="switching to product" color="#0176ee" />
-              <p>
-                Currently, I work as a UX/UI consultant in finance sector.
-                Before that, I worked as a Principal Designer at Hyperair, a
-                travel start-up based in Hong Kong.
-              </p>
-            </BioWrapper>
-          </BioContainer>
-        </Boxed>
-      </Row>
-      <Row>
-        <Boxed size="small">
-          <h2>My skills</h2>
-          <SkillItemGrid>
-            <SkillItem
-              title="Interface Design"
-              description="Design has been an integral part of my life. It’s been my passion to learn how to deliver functional and elegant design."
-              items={[
-                "Response Web Design",
-                "User Interface Design",
-                "Component Design",
-                "Design System",
-                "Frontend Development",
-              ]}
-            />
-            <SkillItem
-              title="Experience Strategy"
-              description="Attempting to be an user advocate, I value user experience as well as aligning with business goals."
-              items={[
-                "User Research",
-                "User Testing",
-                "Wireframing",
-                "Prototyping",
-                "Design Validation",
-              ]}
-            />
-          </SkillItemGrid>
-        </Boxed>
-      </Row>
+            <p>
+              Majoring in Arts in college, I took a gap year working in iTunes &
+              App Store, Apple. This valuable experience cultivated my interest
+              and knowledge in digital products.
+            </p>
+          </BioWrapper>
+          <BioWrapper>
+            <BioSectionTitle title="Starting my agency" color="#47BA00" />
+            <p>
+              With growing freelance web & design projects, I have started an
+              agency, Playa, in 2015 to help small businesses, entrepreneurs and
+              non-profits launching their projects.
+            </p>
+          </BioWrapper>
+          <BioWrapper>
+            <BioSectionTitle title="switching to product" color="#0176ee" />
+            <p>
+              Currently, I work as a UX/UI consultant in finance sector. Before
+              that, I worked as a Principal Designer at Hyperair, a travel
+              start-up based in Hong Kong.
+            </p>
+          </BioWrapper>
+        </BioContainer>
+      </Boxed>
+
+      <Boxed size="small">
+        <h2>My skills</h2>
+        <SkillItemGrid>
+          <SkillItem
+            title="Interface Design"
+            description="Design has been an integral part of my life. It’s been my passion to learn how to deliver functional and elegant design."
+            items={[
+              "Response Web Design",
+              "User Interface Design",
+              "Component Design",
+              "Design System",
+              "Frontend Development",
+            ]}
+          />
+          <SkillItem
+            title="Experience Strategy"
+            description="Attempting to be an user advocate, I value user experience as well as aligning with business goals."
+            items={[
+              "User Research",
+              "User Testing",
+              "Wireframing",
+              "Prototyping",
+              "Design Validation",
+            ]}
+          />
+        </SkillItemGrid>
+      </Boxed>
+
       <InvertRow id="resume" className="full-bleed">
         <Boxed padding="2rem">
           <small>Resume</small>
@@ -568,12 +564,10 @@ export default AboutPage;
 // export default AboutPage;
 
 export const pageQuery = graphql`
-  query {
+  {
     cover: file(relativePath: { eq: "images/Profile.webp" }) {
       childImageSharp {
-        fluid(maxWidth: 800) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(width: 800, layout: CONSTRAINED)
       }
     }
     bio: file(relativePath: { eq: "images/Bio.jpg" }) {

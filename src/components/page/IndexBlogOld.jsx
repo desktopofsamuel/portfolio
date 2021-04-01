@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import { FaArrowRight } from "react-icons/fa";
 import PropTypes from "prop-types";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import ReadOn from "components/ReadOn";
 import Zoom from "react-reveal/Zoom";
 
@@ -60,7 +59,7 @@ const Content = styled.div`
   }
 `;
 
-const PostListImage = styled(Img)`
+const PostListImage = styled(GatsbyImage)`
   transition: transform 0.2s ease-in, box-shadow 0.3s ease-in-out;
 `;
 
@@ -93,7 +92,7 @@ class IndexBlog extends React.Component {
         <Block className="noeffect" invert={invert}>
           <Link to={post.path} className="noeffect">
             <PostListImage
-              fluid={post.cover.childImageSharp.fluid}
+              fluid={post.cover.childImageSharp.gatsbyImageData}
               alt={post.title}
             />
             <Content>

@@ -15,7 +15,7 @@ const Grid = styled.div`
   align-items: ${props => (props.isCenter ? "center" : "initial")};
   text-align: ${props => (props.isCenter ? "center" : "initial")};
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1024px) {
     padding: ${props => (props.padding ? props.padding : "1rem")};
     margin: 0 auto;
   }

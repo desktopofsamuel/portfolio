@@ -50,42 +50,31 @@ const BlogPostTemplate = ({ data, pageContext }: BlogPostTemplateProps) => {
 
 export default BlogPostTemplate;
 
-export const pageQuery = graphql`
-  query BlogBySlug($id: String) {
-    blog: mdx(id: { eq: $id }) {
-      id
-      body
-      excerpt
-      tableOfContents
-      frontmatter {
-        path
-        title
-        tldr
-        cover {
-          publicURL
-          size
-          childImageSharp {
-            sizes(maxWidth: 1140) {
-              base64
-              aspectRatio
-              src
-              srcSet
-              srcWebp
-              srcSetWebp
-              sizes
-              originalImg
-              originalName
-            }
-          }
+export const pageQuery = graphql`query BlogBySlug($id: String) {
+  blog: mdx(id: {eq: $id}) {
+    id
+    body
+    excerpt
+    tableOfContents
+    frontmatter {
+      path
+      title
+      tldr
+      cover {
+        publicURL
+        size
+        childImageSharp {
+          gatsbyImageData(layout: FULL_WIDTH)
         }
-        date
-        category
-        tags
       }
-      fields {
-        slug
-        date(formatString: "MMM DD, YYYY", locale: "en")
-      }
+      date
+      category
+      tags
+    }
+    fields {
+      slug
+      date(formatString: "MMM DD, YYYY", locale: "en")
     }
   }
+}
 `;

@@ -6,12 +6,14 @@
     "preserveConstEnums": true,
     "sourceMap": true,
     "baseUrl": ".", 
+    "jsx": "react",
     "paths": {
       "*": ["*", "src/*"],
-      "components": ["src/components"],
-      "layout": ["src/layout"],
+      "components": ["src/components/*"],
+      "layout": ["src/layout/*"],
+      "static": ["src/static/*"]
     }
-  },
+  }
 }
 
   

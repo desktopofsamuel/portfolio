@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { H2 } from "components/common/TextStyles";
 
 const Grid = styled.div`
@@ -13,12 +13,13 @@ const Grid = styled.div`
   @media only screen and (max-width: 768px) {
     display: grid;
     grid-template-columns: 1fr;
+    grid-gap: 1rem;
   }
 `;
 
 const ListItem = styled.article`
   display: block;
-  border-bottom: 1pxvar (--color-secondary-light-100) solid;
+  border-bottom: 1px var(--color-secondary-light-100) solid;
   padding-bottom: var(--var-padding-m);
   margin-bottom: var(--padding-m);
 `;
@@ -33,7 +34,7 @@ const Excerpt = styled.p`
   margin-bottom: 0;
 `;
 
-const PostImage = styled(Img)`
+const PostImage = styled(GatsbyImage)`
   margin-bottom: var(--var-padding-s);
 `;
 
@@ -99,7 +100,7 @@ class PostHero extends React.Component {
             <ListItem key={post.path}>
               <Link to={post.path}>
                 <PostImage
-                  fluid={post.cover.childImageSharp.fluid}
+                  image={post.cover.childImageSharp.gatsbyImageData}
                   alt={post.title}
                 />
                 <Title>{post.title}</Title>
@@ -110,8 +111,8 @@ class PostHero extends React.Component {
           ))}
         </Grid>
         {/* {this.state.visible < postList.length && (
-          <ShowMoreButton onClick={this.loadMore}>Load More </ShowMoreButton>
-        )} */}
+        <ShowMoreButton onClick={this.loadMore}>Load More </ShowMoreButton>
+      )} */}
       </>
     );
   }

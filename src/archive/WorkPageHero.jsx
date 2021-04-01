@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Boxed from "../components/utils/Boxed";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const Section = styled.div`
   min-height: 50vh;
@@ -22,7 +22,7 @@ const Title = styled.h1`
   z-index: 100;
 `;
 
-const Image = styled(Img)`
+const Image = styled(GatsbyImage)`
   background-color: rgba(0, 0, 0, 0);
 
   @media only screen and (max-width: 768px) {
@@ -41,7 +41,7 @@ const WorkPageHero = ({ data }) => {
         <Boxed size="large">
           <Subtitle>{data.title}</Subtitle>
           <Title>{data.subtitle}</Title>
-          <Image fluid={data.cover.childImageSharp.fluid} alt={data.title} />
+          <Image fluid={data.cover.childImageSharp.gatsbyImageData} alt={data.title} />
         </Boxed>
       </section>
     </Section>

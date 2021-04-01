@@ -1,12 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import Img from "gatsby-image";
 import Slide from "react-reveal/Slide";
-import FadeIn from "react-fade-in";
-import { faClock } from "@fortawesome/free-solid-svg-icons";
 import { SmallText } from "components/common/TextStyles";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Grid = styled.div`
   display: flex;
@@ -43,10 +39,6 @@ const Title = styled.h2`
 
 const Excerpt = styled.p`
   font-size: var(--font-size-s);
-`;
-
-const PostImage = styled(Img)`
-  margin-bottom: var(--var-padding-s);
 `;
 
 const ShowMoreButton = styled.button`
