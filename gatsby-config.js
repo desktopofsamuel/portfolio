@@ -305,8 +305,7 @@ module.exports = {
                 author: rssMetadata.author,
                 url: rssMetadata.site_url + edge.node.fields.slug,
                 guid: rssMetadata.site_url + edge.node.fields.slug,
-                // custom_elements: [{ "content:encoded": edge.node.html }],
-                custom_elements: edge.node.html,
+                custom_elements: [{ "content:encoded": edge.node.html }],
               }));
             },
             query: `
