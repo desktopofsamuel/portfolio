@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import ReadOn from "../ReadOn";
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Carousel, { Dots } from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 import Playa from "../../static/images/workshot/Playa.png";
@@ -10,13 +12,9 @@ import TgtAtHomeClub from "../../static/images/workshot/TgtAtHomeClub.png";
 import WaterForFree from "../../static/images/workshot/WaterForFree.png";
 import Pingspace from "../../static/images/workshot/Pingspace.png";
 
-const IconWrapper = styled.div`
-  padding: var(--var-padding-m);
+const IconWrapper = styled(FontAwesomeIcon)`
   cursor: pointer;
-
-  @media only screen and (max-width: 768px) {
-    padding: 0;
-  }
+  margin: 20px;
 `;
 
 const Item = styled.div`
@@ -54,16 +52,8 @@ const WorkList = data => {
       autoPlay={10000}
       animationSpeed={1000}
       infinite
-      arrowLeft={
-        <IconWrapper>
-          <FaAngleLeft size="1.5em" />
-        </IconWrapper>
-      }
-      arrowRight={
-        <IconWrapper>
-          <FaAngleRight size="1.5em" />
-        </IconWrapper>
-      }
+      arrowLeft={<IconWrapper icon={faAngleLeft} size="1.5em" />}
+      arrowRight={<IconWrapper icon={faAngleRight} size="1.5em" />}
       addArrowClickHandler
       breakpoints={{
         768: {

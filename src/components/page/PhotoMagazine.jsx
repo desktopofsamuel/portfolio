@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import PageTitle from "components/PageTitle";
 
 const Grid = styled.div`
@@ -51,7 +51,7 @@ const GridSeparator = styled.div`
   height: 2rem;
 `;
 
-const GridPhoto = styled(Img)`
+const GridPhoto = styled(GatsbyImage)`
   margin-bottom: 0.5rem;
 `;
 
@@ -136,7 +136,10 @@ class PhotoMagazine extends React.Component {
         postList.map(post => (
           <GridItem className="photo-item noeffect" key={post.title}>
             <Link to={post.path} className="noeffect">
-              <GridPhoto sizes={post.cover.childImageSharp.sizes} />
+              <GridPhoto
+                image={post.cover.childImageSharp.gatsbyImageData}
+                alt={post.title}
+              />
             </Link>
             <Link to={post.path} className="noeffect">
               <GridTitle>{post.title}</GridTitle>

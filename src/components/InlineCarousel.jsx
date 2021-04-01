@@ -1,19 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import Img from "gatsby-image";
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Carousel, { Dots } from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
-import Playa from "../../static/images/workshot/Playa.png";
-import CDC from "../../static/images/workshot/CDC.png";
 
-const IconWrapper = styled.div`
-  padding: 1rem;
+const IconWrapper = styled(FontAwesomeIcon)`
   cursor: pointer;
-
-  @media only screen and (max-width: 768px) {
-    padding: 0;
-  }
+  margin: 20px;
 `;
 
 const InlineCarousel = ({ data, children }) => {
@@ -22,16 +16,8 @@ const InlineCarousel = ({ data, children }) => {
       autoPlay={10000}
       animationSpeed={1000}
       infinite
-      arrowLeft={
-        <IconWrapper>
-          <FaAngleLeft size="1.5em" />
-        </IconWrapper>
-      }
-      arrowRight={
-        <IconWrapper>
-          <FaAngleRight size="1.5em" />
-        </IconWrapper>
-      }
+      arrowLeft={<IconWrapper icon={faAngleLeft} size="1.5em" />}
+      arrowRight={<IconWrapper icon={faAngleRight} size="1.5em" />}
       addArrowClickHandler
     >
       {children}

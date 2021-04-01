@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import Zoom from "react-reveal/Zoom";
 import PropTypes from "prop-types";
 import Link from "../common/GatsbyLink";
@@ -32,7 +32,7 @@ const Title = styled.h3`
   color: var(--color-white-light-300);
 `;
 
-const Image = styled(Img)`
+const Image = styled(GatsbyImage)`
   background-color: rgba(0, 0, 0, 0);
 `;
 
@@ -75,7 +75,7 @@ class IndexWork extends React.Component {
                     : post.shortTitle}
                 </Title>
                 <Image
-                  fluid={post.cover.childImageSharp.fluid}
+                  image={post.cover.childImageSharp.gatsbyImageData}
                   alt={post.title}
                   fadeIn
                 />

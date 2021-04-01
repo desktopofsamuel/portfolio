@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const Grid = styled.section`
   margin-top: 2rem;
@@ -26,7 +26,7 @@ const Hero = styled.a`
   margin-bottom: 0;
 `;
 
-const PostImage = styled(Img)`
+const PostImage = styled(GatsbyImage)`
   margin-bottom: var(--var-padding-m);
 `;
 

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const CardContainer = styled.div`
   display: grid;
@@ -21,7 +21,7 @@ const CardContainer = styled.div`
   }
 `;
 
-const Image = styled(Img)``;
+const Image = styled(GatsbyImage)``;
 
 const Title = styled.h3`
   margin-top: 1rem;

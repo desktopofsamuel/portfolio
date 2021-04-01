@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import ReadOn from "components/ReadOn";
 
 const Grid = styled.section``;
@@ -55,7 +55,7 @@ const ListItem = styled.div`
   /* } */
 `;
 
-const WorkImg = styled(Img)``;
+const WorkImg = styled(GatsbyImage)``;
 
 const ListRight = styled.div``;
 class WorkHero extends React.Component {
@@ -96,7 +96,7 @@ class WorkHero extends React.Component {
               </ListLeft>
               <ListRight>
                 <WorkImg
-                  fluid={post.cover.childImageSharp.fluid}
+                  fluid={post.cover.childImageSharp.gatsbyImageData}
                   alt={post.title}
                 />
               </ListRight>

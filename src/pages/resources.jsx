@@ -10,6 +10,7 @@ import UXDesignCareerKit from "../../static/images/20210310-UXDesignCareerKit.pn
 import Apps from "../../static/images/20210310-appsservices.png";
 import Whatiuse from "../../static/images/20210310-whatiuse.png";
 import DesignOKR from "../../content/blog/2021-03-09 Design OKR/20210309-DesignOKR.png";
+import Link from "components/common/GatsbyLink";
 
 const Grid = styled.div`
   display: grid;
@@ -41,7 +42,12 @@ const ResourcePage = () => {
       <Boxed>
         <Grid>
           <Wrapper>
-            <img src={DesignOKR} alt="Design OKR Template" />
+            <Link
+              to="/navigating-design-career-with-design-okrs/"
+              className="noeffect"
+            >
+              <img src={DesignOKR} alt="Design OKR Template" />
+            </Link>
           </Wrapper>
           <Wrapper>
             <StyledTitle>Design OKR</StyledTitle>
@@ -55,7 +61,9 @@ const ResourcePage = () => {
             />
           </Wrapper>
           <Wrapper>
-            <img src={UXDesignCareerKit} alt="UX Design Career Kit" />
+            <Link to="/ux-design-career-kit/" className="noeffect">
+              <img src={UXDesignCareerKit} alt="UX Design Career Kit" />
+            </Link>
           </Wrapper>
           <Wrapper>
             <StyledTitle>UX Design Career Kit</StyledTitle>
@@ -66,8 +74,9 @@ const ResourcePage = () => {
             <ReadOn text="Get The Kit" href="/ux-design-career-kit/" />
           </Wrapper>
           <Wrapper>
-            {" "}
-            <img src={Apps} alt="Apps & Services" />
+            <Link to="/apps/">
+              <img src={Apps} alt="Apps & Services" />
+            </Link>
           </Wrapper>
           <Wrapper>
             <StyledTitle>Apps & Services</StyledTitle>
@@ -78,8 +87,9 @@ const ResourcePage = () => {
             <ReadOn text="Apps & Services" href="/apps/" />
           </Wrapper>
           <Wrapper>
-            {" "}
-            <img src={Whatiuse} alt="What I Use" />
+            <Link to="/setup/" className="noeffect">
+              <img src={Whatiuse} alt="What I Use" />
+            </Link>
           </Wrapper>
           <Wrapper>
             <StyledTitle>What I Use</StyledTitle>

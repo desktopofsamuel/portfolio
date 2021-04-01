@@ -3,10 +3,10 @@ import styled from "styled-components";
 import IndexIntro from "./IndexIntro";
 import IndexBlogOld from "./IndexBlogOld";
 import { Link } from "gatsby";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import Zoom from "react-reveal/Zoom";
 import ReadOn from "components/ReadOn";
-import { H3 } from "components/common/TextStyles";
+import { H3, BodyMain } from "components/common/TextStyles";
 
 const Block = styled.div`
   padding: var(--var-padding-s);
@@ -18,7 +18,7 @@ const Block = styled.div`
   }
 `;
 
-const PostListImage = styled(Img)`
+const PostListImage = styled(GatsbyImage)`
   transition: transform 0.2s ease-in, box-shadow 0.3s ease-in-out;
 `;
 
@@ -29,15 +29,10 @@ const Content = styled.div`
 `;
 
 const Title = styled(H3)`
-  font-size: var(--font-size-m);
-  color: var(--color-text);
   margin-top: 1rem;
 `;
 
-const Paragraph = styled.p`
-  font-size: var(--font-size-xs);
-  color: var(--color-text-secondary);
-`;
+const Paragraph = styled(BodyMain)``;
 
 const IndexBlogItem = ({ postEdges }) => {
   const postList = [];
@@ -59,7 +54,7 @@ const IndexBlogItem = ({ postEdges }) => {
           <Block className="noeffect">
             <Link to={post.path} className="noeffect">
               <PostListImage
-                fluid={post.cover.childImageSharp.fluid}
+                image={post.cover.childImageSharp.gatsbyImageData}
                 alt={post.title}
               />
               <Content>

@@ -1,12 +1,11 @@
 const path = require("path");
 const fs = require("fs");
-const _ = require("lodash");
+const kebabCase = require("lodash.kebabcase");
 const dayjs = require("dayjs");
 const siteConfig = require("./data/SiteConfig");
 
 exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions;
-
   let slug;
 
   if (node.internal.type === "Mdx") {
@@ -14,12 +13,12 @@ exports.onCreateNode = ({ node, actions }) => {
       Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
       Object.prototype.hasOwnProperty.call(node.frontmatter, "path")
     ) {
-      slug = `/${_.kebabCase(node.frontmatter.path)}/`;
+      slug = `/${kebabCase(node.frontmatter.path)}/`;
     } else if (
       Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
       Object.prototype.hasOwnProperty.call(node.frontmatter, "title")
     ) {
-      slug = `/${_.kebabCase(node.frontmatter.title)}/`;
+      slug = `/${kebabCase(node.frontmatter.title)}/`;
     }
     createNodeField({ node, name: "slug", value: slug });
     if (Object.prototype.hasOwnProperty.call(node.frontmatter, "date")) {
@@ -139,7 +138,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
       const tagList = Array.from(tagSet);
       tagList.forEach(tag => {
         createPage({
-          path: `/tags/${_.kebabCase(tag)}/`,
+          path: `/tags/${kebabCase(tag)}/`,
           component: tagPage,
           context: {
             tag,
@@ -150,7 +149,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
       const categoryList = Array.from(categorySet);
       categoryList.forEach(category => {
         createPage({
-          path: `/categories/${_.kebabCase(category)}/`,
+          path: `/categories/${kebabCase(category)}/`,
           component: categoryPage,
           context: {
             category,

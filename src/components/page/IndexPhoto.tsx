@@ -6,7 +6,6 @@ import IndexIntro from "components/page/IndexIntro";
 const PhotoGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 100%;
 
   @media only screen and (min-width: 1024px) {
     grid-template-columns: 1fr 1fr 1fr;

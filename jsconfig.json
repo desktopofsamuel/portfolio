@@ -6,7 +6,9 @@
         "baseUrl": "src",
         "jsx": "react",
         "paths": {
-            "*": ["*", "src/*"]
+            "*": ["*", "src/*"],
+            "@components/*": ["src/compoenents/*"],
+            "@static/*": ["src/static/*"]
         }
     },
     "typeAcquisition": {

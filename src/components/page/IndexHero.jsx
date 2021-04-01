@@ -12,7 +12,7 @@ import Boxed from "../utils/Boxed";
 import Link from "../common/GatsbyLink";
 import Column from "../utils/Column";
 import Emoji from "../common/Emoji";
-import Img from "gatsby-image";
+import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
 import ReadOn from "components/ReadOn";
 
 const Container = styled(Boxed)``;
@@ -57,25 +57,30 @@ const Image = styled.div`
   }
 `;
 
-const Title = styled.h1`
-  margin-top: 0;
-`;
+const Title = styled.h1``;
 
 const Subtitle = styled.p``;
 
 const IndexHero = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      profile: file(relativePath: { eq: "images/Profile.webp" }) {
-        ...fluidImage
-      }
-    }
-  `);
+  // const profilephoto = useStaticQuery(graphql`
+  //   query {
+  //     file(relativePath: { eq: "images/Profile.webp" }) {
+  //       ...fluidImage
+  //     }
+  //   }
+  // `);
 
   return (
     <Container>
       <Image>
-        <Img fluid={data.profile.childImageSharp.fluid} alt="Samuel W." />
+        <GatsbyImage
+          src="../../../static/images/Profile.png"
+          alt="Portrait of Samuel"
+        />
+        {/* <GatsbyImage
+          image={data.profile.childImageSharp.gatsbyImageData}
+          alt="Samuel W."
+        /> */}
       </Image>
       <Title>Samuel W.</Title>
       <Column>
