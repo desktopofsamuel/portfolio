@@ -86,14 +86,14 @@ const ToolPage = ({ data }) => {
       description="A shout out to all my favorite apps, tools, services, games and more."
     >
       <Boxed>
-        {/* <Centered>
+        <Centered>
           <ButtonPill
             lefticon={faChevronLeft}
             text="Back To Tools & Resources"
             to="/resources"
             isSecondary
           />
-        </Centered> */}
+        </Centered>
         <PageTitle
           title="Apps & Services"
           description="A shout out to all my favorite apps, tools, services, games and more."

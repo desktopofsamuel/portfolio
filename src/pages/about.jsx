@@ -138,7 +138,7 @@ const AboutPage = ({ data }) => {
       title="About"
       description="Samuel Wong is a Hong Kong based UI/UX designer specialising in creating delightful user interface & experience."
     >
-      <Boxed size="small">
+      <Boxed size="small" padding="1rem">
         <IntroGrid>
           <IntroPhoto
             image={data.cover.childImageSharp.gatsbyImageData}
@@ -148,17 +148,17 @@ const AboutPage = ({ data }) => {
           <IntroContent>
             <StyledTitle as="h1">Hello, My name is Samuel Wong.</StyledTitle>
             <p>
-              I’m a <strong>UI/UX designer</strong> with over 5 years of
-              experience. I&apos;m pursuing a career in the field because I'm
-              deeply passionate about technology and how it profoundly changes
-              our way of living.
+              I’m a <strong>product designer</strong> with over 5 years of
+              experience. I&apos;m pursuing a career in the field of UX design
+              because I'm deeply passionate about technology and how it
+              profoundly changes our way of living.
             </p>
             <ReadOn text="Let's Chat" href="#contact" />
           </IntroContent>
         </IntroGrid>
       </Boxed>
 
-      <Boxed size="small">
+      <Boxed size="small" padding="1rem">
         <h2>My Journey</h2>
         <BioContainer>
           <BioWrapper>
@@ -191,7 +191,7 @@ const AboutPage = ({ data }) => {
         </BioContainer>
       </Boxed>
 
-      <Boxed size="small">
+      <Boxed size="small" padding="1rem">
         <h2>My skills</h2>
         <SkillItemGrid>
           <SkillItem

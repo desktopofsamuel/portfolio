@@ -74,7 +74,7 @@ const ResourcePage = () => {
             <ReadOn text="Get The Kit" href="/ux-design-career-kit/" />
           </Wrapper>
           <Wrapper>
-            <Link to="/apps/">
+            <Link to="/apps/" className="noeffect">
               <img src={Apps} alt="Apps & Services" />
             </Link>
           </Wrapper>
