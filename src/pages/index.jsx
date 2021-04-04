@@ -204,7 +204,7 @@ const IndexPageOld = ({ data }) => {
         <IndexIntro
           index="#03"
           title="Tools & Resources"
-          description="Best resources and tools I have been using and recommend for getting start in design, code."
+          description="Best resources and tools I have been using. Guide on getting started in design & code."
           href="/resources/"
           label="My Awesome Setup"
         />
