@@ -2,11 +2,11 @@
 
 ## License
 
-All rights reserved for my articles and personal portfolio `/content/blog` and `/content/work` folder. As well as all graphic asset in `/static` folder.
-Rest of the site are under the same license as [GatsbyJS](https://github.com/gatsbyjs/gatsby) MIT License. 
+All rights reserved for my articles, photos and portfolio `/content/blog`, `/content/photo` and `/content/work` folder. As well as all graphic assets in `/static` folder.
+Rest of the site is under the same license as [GatsbyJS](https://github.com/gatsbyjs/gatsby) MIT License. 
 
 ## Features
-- Multiple Post Type (Blog & Portfolio)
+- Multiple Post Types (Blog, Work & Photo)
 - Two taxonomies (Tags for Blog & Categories for Portfolio)
 - Social media support with refined SEO component setup
 
@@ -16,4 +16,4 @@ This site is built on [GatsbyJS](https://next.gatsbyjs.org) and [Gatsby Advance 
 
 ---
 
-   Last Update: 27 Apr, 2019   
+   Last Update: 4 Apr, 2021  
