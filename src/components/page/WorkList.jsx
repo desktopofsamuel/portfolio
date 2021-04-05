@@ -4,7 +4,7 @@ import ReadOn from "../ReadOn";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Carousel, { Dots } from "@brainhubeu/react-carousel";
+import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 import Playa from "../../static/images/workshot/Playa.png";
 import CDC from "../../static/images/workshot/CDC.png";
@@ -52,8 +52,8 @@ const WorkList = data => {
       autoPlay={10000}
       animationSpeed={1000}
       infinite
-      arrowLeft={<IconWrapper icon={faAngleLeft} size="1.5em" />}
-      arrowRight={<IconWrapper icon={faAngleRight} size="1.5em" />}
+      arrowLeft={<IconWrapper icon={faAngleLeft} size="1x" />}
+      arrowRight={<IconWrapper icon={faAngleRight} size="1x" />}
       addArrowClickHandler
       breakpoints={{
         768: {

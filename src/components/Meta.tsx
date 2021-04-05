@@ -46,6 +46,8 @@ const Value =
   color: var(--color-text);
   font-size: ${props =>
     props.isLarge ? "var(--font-size-l)" : "var(--font-size-s)"};
+    font-weight: ${props =>
+      props.isLarge ? "var(--font-weight-bold)" : "var(--font-weight-regular)"};
   margin: 0;
   margin-bottom: var(--padding-s);
 `;

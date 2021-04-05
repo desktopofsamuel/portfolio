@@ -16,8 +16,8 @@ const InlineCarousel = ({ data, children }) => {
       autoPlay={10000}
       animationSpeed={1000}
       infinite
-      arrowLeft={<IconWrapper icon={faAngleLeft} size="1.5em" />}
-      arrowRight={<IconWrapper icon={faAngleRight} size="1.5em" />}
+      arrowLeft={<IconWrapper icon={faAngleLeft} size="1x" />}
+      arrowRight={<IconWrapper icon={faAngleRight} size="1x" />}
       addArrowClickHandler
     >
       {children}
