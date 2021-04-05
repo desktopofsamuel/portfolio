@@ -311,13 +311,14 @@ module.exports = {
             query: `
             {
               allMdx(
-                limit: 1000,
-                sort: { order: DESC, fields: [fields___date] },
+                limit: 1000
+                filter: {fileAbsolutePath: {regex: "/blog|photo|work/"}, frontmatter: {draft: {ne: true}}}
+                sort: {order: DESC, fields: frontmatter___date}
               ) {
                 edges {
                   node {
+                    id
                     excerpt
-                    html
                     fields {
                       slug
                       date
@@ -331,6 +332,7 @@ module.exports = {
                       category
                       tags
                     }
+                    html
                   }
                 }
               }
