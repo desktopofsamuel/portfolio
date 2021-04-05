@@ -54,7 +54,7 @@
     "gatsby-remark-responsive-iframe": "3.0.0",
     "gatsby-source-airtable": "^2.1.1",
     "gatsby-source-filesystem": "3.0.0",
-    "gatsby-transformer-remark": "3.0.0",
+    "gatsby-transformer-remark": "^3.2.0",
     "gatsby-transformer-sharp": "^3.1.0",
     "lighten-darken-color": "^1.0.0",
     "lodash.kebabcase": "^4.1.1",

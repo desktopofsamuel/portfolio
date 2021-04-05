@@ -2,14 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import Boxed from "components/utils/Boxed";
 import PageTitle from "components/PageTitle";
+import { StaticImage } from "gatsby-plugin-image";
 import { H2, BodyMain } from "components/common/TextStyles";
 import ReadOn from "components/ReadOn";
 import Layout from "../layout";
-import Resource1 from "../../static/SVG/Resource.svg";
-import UXDesignCareerKit from "../../static/images/20210310-UXDesignCareerKit.png";
-import Apps from "../../static/images/20210310-appsservices.png";
-import Whatiuse from "../../static/images/20210310-whatiuse.png";
-import DesignOKR from "../../content/blog/2021-03-09 Design OKR/20210309-DesignOKR.png";
 import Link from "components/common/GatsbyLink";
 
 const Grid = styled.div`
@@ -46,7 +42,11 @@ const ResourcePage = () => {
               to="/navigating-design-career-with-design-okrs/"
               className="noeffect"
             >
-              <img src={DesignOKR} alt="Design OKR Template" />
+              <StaticImage
+                src="../../content/blog/2021-03-09 Design OKR/20210309-DesignOKR.png"
+                alt="Design OKR Template"
+                placeholder="blurred"
+              />
             </Link>
           </Wrapper>
           <Wrapper>
@@ -62,7 +62,11 @@ const ResourcePage = () => {
           </Wrapper>
           <Wrapper>
             <Link to="/ux-design-career-kit/" className="noeffect">
-              <img src={UXDesignCareerKit} alt="UX Design Career Kit" />
+              <StaticImage
+                src="../../static/images/20210310-UXDesignCareerKit.png"
+                alt="UX Design Career Kit"
+                placeholder="blurred"
+              />
             </Link>
           </Wrapper>
           <Wrapper>
@@ -75,7 +79,11 @@ const ResourcePage = () => {
           </Wrapper>
           <Wrapper>
             <Link to="/apps/" className="noeffect">
-              <img src={Apps} alt="Apps & Services" />
+              <StaticImage
+                src="../../static/images/20210310-appsservices.png"
+                alt="Apps & Services"
+                placeholder="blurred"
+              />
             </Link>
           </Wrapper>
           <Wrapper>
@@ -88,7 +96,11 @@ const ResourcePage = () => {
           </Wrapper>
           <Wrapper>
             <Link to="/setup/" className="noeffect">
-              <img src={Whatiuse} alt="What I Use" />
+              <StaticImage
+                src="../../static/images/20210310-whatiuse.png"
+                alt="What I Use"
+                placeholder="blurred"
+              />
             </Link>
           </Wrapper>
           <Wrapper>
