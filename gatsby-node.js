@@ -59,7 +59,6 @@ const query = `
           date
           tags
           category
-          tldr
         }
       }
     }
