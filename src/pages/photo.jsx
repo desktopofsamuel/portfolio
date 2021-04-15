@@ -42,33 +42,37 @@ export default PhotoPage;
 
 /* eslint no-undef: "off" */
 
-export const pageQuery = graphql`query PhotoQuery {
-  photo: allMdx(
-    filter: {fileAbsolutePath: {regex: "/photo/"}, frontmatter: {draft: {ne: true}}}
-    sort: {fields: [frontmatter___date], order: DESC}
-  ) {
-    edges {
-      node {
-        fields {
-          slug
-          date(formatString: "MMM DD, YYYY", locale: "en")
-        }
-        excerpt(pruneLength: 70)
-        frontmatter {
-          title
-          tldr
-          cover {
-            publicURL
-            size
-            childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH)
+export const pageQuery = graphql`
+  query PhotoQuery {
+    photo: allMdx(
+      filter: {
+        fileAbsolutePath: { regex: "/photo/" }
+        frontmatter: { draft: { ne: true } }
+      }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+            date(formatString: "MMM DD, YYYY", locale: "en")
+          }
+          excerpt(pruneLength: 70)
+          frontmatter {
+            title
+            tldr
+            cover {
+              publicURL
+              size
+              childImageSharp {
+                gatsbyImageData(layout: FULL_WIDTH)
+              }
             }
           }
         }
       }
     }
   }
-}
 `;
 
 /* 
