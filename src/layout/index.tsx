@@ -1,6 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import styled from "styled-components";
+import { PageProps } from "gatsby";
 import NavBar from "components/common/NavBar";
 import SEO from "components/SEO";
 import Footer from "components/common/Footer";
@@ -19,10 +20,18 @@ if (typeof window !== "undefined") {
   require("react-scrollspy");
 }
 
-const LayoutTemplate = ({ children, title, description, keywords }) => {
+type LayoutTemplateProps = {
+  title?: string,
+  description?: string,
+  keywords?: string,
+};
+
+const LayoutTemplate: React.FC = (props: PageProps & LayoutTemplateProps) => {
+  const { children, title, description, keywords } = props;
   return (
     <Layout>
       <SEO />
+      {console.log(title)}
       <Helmet title={`${title}  | ${config.siteTitle}`}>
         <meta name="twitter:title" content={`${title} | ${config.siteTitle}`} />
         <meta property="og:title" content={`${title} | ${config.siteTitle}`} />
@@ -40,11 +49,19 @@ const LayoutTemplate = ({ children, title, description, keywords }) => {
 
 export default LayoutTemplate;
 
-LayoutTemplate.defaultProps = {
+const defaultLayoutProps: LayoutTemplateProps = {
   title: config.siteTitle,
   description: config.siteDescription,
   keywords: config.siteKeywords,
 };
+
+LayoutTemplate.defaultProps = defaultLayoutProps;
+
+// LayoutTemplate.defaultProps = {
+//   title: config.siteTitle,
+//   description: config.siteDescription,
+//   keywords: config.siteKeywords,
+// };
 
 /* <MDXProvider
         components={{

@@ -84,7 +84,7 @@ type PhotoTemplateProps = {
         title: string,
         cover: {
           childImageSharp: {
-            fluid: object
+            gatsbyImageData: object
           }
         }
       }
@@ -110,9 +110,7 @@ const PhotoTemplate = ({ data, pageContext }: PhotoTemplateProps) => {
         <PhotoLayout>
           <Header>
             <Overlay />
-            <Cover
-              image={photo.cover.childImageSharp.gatsbyImageData}
-              durationFadeIn={1000}
+            <Cover image={photo.cover.childImageSharp.gatsbyImageData}
             />
             <TitleWrapper>
               <Title>{photo.title}</Title>

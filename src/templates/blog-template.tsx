@@ -1,8 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Helmet from "react-helmet";
 import Layout from "../layout";
-import config from "../../data/SiteConfig";
 import SEO from "components/SEO";
 import PostTemplate from "components/PostTemplate";
 import Related from "components/Related";
