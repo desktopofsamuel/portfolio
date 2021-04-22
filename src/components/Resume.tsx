@@ -121,7 +121,7 @@ const Block = styled.section`
 
 const ResumeSection = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
 
   @media only screen and (max-width: 1024px) {
     grid-template-columns: 1fr;
@@ -147,6 +147,7 @@ const Resume = () => {
             content="Design cross-platform experience and interfaces in the finance sector"
             meta="2021 - Now"
             haveGrid
+            noBorder
           />
           <ResumeItem
             title="Principal Designer"
@@ -154,6 +155,7 @@ const Resume = () => {
             meta="2019 - 2021"
             image={HyperAir}
             haveGrid
+            noBorder
           />
           <ResumeItem
             title="Co-founder & Director"
@@ -161,6 +163,7 @@ const Resume = () => {
             meta="2015 - 2019"
             image={Playa}
             haveGrid
+            noBorder
           />
           <ResumeItem
             title="Cross Content Intern"
@@ -168,6 +171,7 @@ const Resume = () => {
             meta="2013 - 2014"
             image={Apple}
             haveGrid
+            noBorder
           />
         </ResumeSection>
       </Block>
@@ -200,7 +204,7 @@ const Resume = () => {
           />
         </div>
       </Block>
-      <Block>
+      {/* <Block>
         <ResumeSectionTitle>Tools</ResumeSectionTitle>
         <div>
           <ResumeItem
@@ -219,12 +223,12 @@ const Resume = () => {
             meta="Analytics"
           />
         </div>
-      </Block>
+      </Block> */}
       <Block>
         <ResumeSectionTitle>Languages</ResumeSectionTitle>
         <div>
-          <ResumeItem noBorder content="Native in Cantonese" />
-          <ResumeItem noBorder content="Professional Proficiency in English" />
+          <ResumeItem noBorder content="Chinese (Cantonese)" />
+          <ResumeItem noBorder content="English" />
         </div>
       </Block>
     </Section>

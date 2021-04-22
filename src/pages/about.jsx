@@ -1,6 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import Boxed from "components/utils/Boxed";
 import PageTitle from "components/PageTitle";
@@ -11,7 +10,7 @@ import Resume from "components/Resume";
 import SEO from "components/SEO";
 import Link from "components/common/GatsbyLink";
 import Layout from "../layout";
-import { H2 } from "../components/common/TextStyles";
+import { H2, SmallText, BodyMain } from "../components/common/TextStyles";
 
 const Row = styled.section`
   padding: var(--var-padding-m) 0;
@@ -51,10 +50,14 @@ const IntroPhoto = styled(GatsbyImage)`
 const BioContainer = styled.div`
   background: #eaf1f6;
   display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: var(--var-padding-s);
   padding: var(--var-padding-m);
   border-radius: var(--border-radius);
+
+  @media only screen and (max-width: 768px) {
+    display: block;
+  }
 `;
 
 const BioWrapper = styled.div``;
@@ -138,27 +141,32 @@ const AboutPage = ({ data }) => {
       title="About"
       description="Samuel Wong is a Hong Kong based UI/UX designer specialising in creating delightful user interface & experience."
     >
-      <Boxed size="small" padding="1rem">
+      <Boxed padding="2rem 0 1rem 0">
         <IntroGrid>
-          <IntroPhoto
-            image={data.cover.childImageSharp.gatsbyImageData}
-            width="100%"
-            alt="Photo portrait of Samuel Wong"
-          />
-          <IntroContent>
+          <Boxed size="small" padding="2rem 0">
             <StyledTitle as="h1">Hello, My name is Samuel Wong.</StyledTitle>
-            <p>
-              I’m a <strong>product designer</strong> with over 5 years of
-              experience. I&apos;m pursuing a career in the field of UX design
-              because I'm deeply passionate about technology and how it
-              profoundly changes our way of living.
-            </p>
+            <BodyMain>
+              I got into product design because I'm deeply passionate about
+              technology and how it profoundly changes our way of living.
+              Working on range of problems, including finance, travel and
+              communication, I help solve users' problem and creating delightful
+              interfaces & experience for the past 6 years.
+            </BodyMain>
             <ReadOn text="Let's Chat" href="#contact" />
-          </IntroContent>
+          </Boxed>
+          <StaticImage
+            loading="eager"
+            src="../../static/images/profile-2014.jpg"
+            alt="Portrait of Samuel Wong"
+            placeholder="blurred"
+            width={1920}
+            height={1280}
+          />
+          <IntroContent></IntroContent>
         </IntroGrid>
       </Boxed>
 
-      <Boxed size="small" padding="1rem">
+      <Boxed padding="2rem 0">
         <h2>My Journey</h2>
         <BioContainer>
           <BioWrapper>
@@ -191,7 +199,7 @@ const AboutPage = ({ data }) => {
         </BioContainer>
       </Boxed>
 
-      <Boxed size="small" padding="1rem">
+      {/* <Boxed size="small" padding="1rem">
         <h2>My skills</h2>
         <SkillItemGrid>
           <SkillItem
@@ -217,7 +225,7 @@ const AboutPage = ({ data }) => {
             ]}
           />
         </SkillItemGrid>
-      </Boxed>
+      </Boxed> */}
 
       <InvertRow id="resume" className="full-bleed">
         <Boxed padding="2rem">
@@ -562,16 +570,3 @@ export default AboutPage;
 // };
 
 // export default AboutPage;
-
-export const pageQuery = graphql`
-  {
-    cover: file(relativePath: { eq: "images/Profile.webp" }) {
-      childImageSharp {
-        gatsbyImageData(width: 800, layout: CONSTRAINED)
-      }
-    }
-    bio: file(relativePath: { eq: "images/Bio.jpg" }) {
-      ...fluidImage
-    }
-  }
-`;
