@@ -22,6 +22,7 @@ const PhotoIntroWrapper = styled.div`
   padding: 1rem;
   display: grid;
   place-content: center;
+  overflow: hidden;
 
   @media only screen and (max-width: 768px) {
     grid-column: span 2;
