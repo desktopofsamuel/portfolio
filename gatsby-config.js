@@ -81,6 +81,7 @@ module.exports = {
           {
             baseId: `appW4gVPhW2puIptz`,
             tableName: `Tech`,
+            mapping: { Description: "text/markdown" },
           },
           {
             baseId: `appW4gVPhW2puIptz`,
@@ -233,6 +234,16 @@ module.exports = {
     },
     "gatsby-plugin-sitemap",
     "gatsby-plugin-typescript",
+    // {
+    //   resolve: `gatsby-plugin-graphql-codegen`,
+    //   options: {
+    //     fileName: `./static/gatsby-graphql.ts`,
+    //     documentPaths: [
+    //       "./src/**/*.{ts,tsx}",
+    //       "./node_modules/gatsby-*/**/*.js",
+    //     ],
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {

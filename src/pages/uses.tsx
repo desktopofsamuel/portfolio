@@ -16,10 +16,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Centered from "components/utils/Centered";
 import Layout from "../layout";
+import { string } from "prop-types";
 
 // import "react-tabs/style/react-tabs.css";
 
-const TabsStyled = styled(Tabs)`
+const TabsStyled = styled.div`
   display: grid;
   place-content: center;
   grid-gap: 2rem;
@@ -30,7 +31,7 @@ const TabsStyled = styled(Tabs)`
 `;
 
 const TabGrid = styled.div`
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -70,20 +71,41 @@ const TabListStyled = styled(TabList)`
 
 const TabPanelStyled = styled(TabPanel)``;
 
-// type ToolPageProps = {
-//   data: {
-//     tech: {
-//       edges: object,
-//     },
-//   },
-// };
+type Props = {
+  data: {
+    software: {
+      edges: {
+        node: {
+          id: String,
+          data: {
+            Description: {
+              childMdx: {
+                body: object,
+              },
+            },
+            Link: string,
+            Image: {
+              url: string,
+            },
+            Name: string,
+            Category: string,
+            Platform: string,
+            CTA: string,
+            ExtraLink: string,
+          },
+        },
+      },
+    },
+  },
+};
 
-const ToolPage = ({ data }) => {
-  const techEdges = data.tech.edges;
+const ToolPage = ({ data }: Props) => {
+  const softwareEdges = data.software.edges;
+  const hardwareEdges = data.hardware.edges;
   return (
     <Layout
-      title="Apps & Services"
-      description="A shout out to all my favorite apps, tools, services, games and more."
+      title="My Setup"
+      description=" A shout out to all my favorite apps, tools, services, games and more."
     >
       <Boxed>
         <Centered>
@@ -95,8 +117,18 @@ const ToolPage = ({ data }) => {
           />
         </Centered>
         <PageTitle
-          title="Apps & Services"
-          description="A shout out to all my favorite apps, tools, services, games and more."
+          title="What I Use"
+          description={[
+            <span>
+              Inspired by the{" "}
+              <a href="https://uses.tech/" target="_blank">
+                community
+              </a>
+              {", "}I created a list to share my love to some hardwares, apps,
+              services that I use.
+            </span>,
+            ,
+          ]}
         />
       </Boxed>
       <Boxed>
@@ -116,8 +148,17 @@ const ToolPage = ({ data }) => {
             </Tab>
           </TabListStyled> */}
           {/* <TabPanelStyled> */}
+          <h2>🖥️ Hardware</h2>
           <TabGrid>
-            {techEdges
+            {hardwareEdges
+              // .filter(t => t.node.data.Category === "Desktop")
+              .map(item => (
+                <CardApp postEdges={item} />
+              ))}
+          </TabGrid>
+          <h2>📋 Software</h2>
+          <TabGrid>
+            {softwareEdges
               // .filter(t => t.node.data.Category === "Desktop")
               .map(item => (
                 <CardApp postEdges={item} />
@@ -161,26 +202,26 @@ export default ToolPage;
 
 export const pageQuery = graphql`
   query AppsQuery {
-    tech: allAirtable(
-      filter: { table: { eq: "Tech" }, data: { Status: { eq: "Published" } } }
+    hardware: allAirtable(
+      filter: {
+        table: { eq: "Tech" }
+        data: { Category: { eq: "Hardware" }, Status: { eq: "Published" } }
+      }
+      sort: { fields: data___ID }
+    ) {
+      edges {
+        ...tech
+      }
+    }
+    software: allAirtable(
+      filter: {
+        table: { eq: "Tech" }
+        data: { Category: { ne: "Hardware" }, Status: { eq: "Published" } }
+      }
       sort: { fields: data___Name }
     ) {
       edges {
-        node {
-          id
-          data {
-            Description
-            Link
-            Image {
-              url
-            }
-            Name
-            Category
-            Platform
-            CTA
-            ExtraLink
-          }
-        }
+        ...tech
       }
     }
   }

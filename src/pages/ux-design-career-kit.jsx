@@ -142,7 +142,7 @@ export const pageQuery = graphql`
             Author
             AuthorLink
             Category
-            Description
+            Text
             Handle
             ID
             Status

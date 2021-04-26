@@ -78,24 +78,7 @@ const ResourcePage = () => {
             <ReadOn text="Get The Kit" href="/ux-design-career-kit/" />
           </Wrapper>
           <Wrapper>
-            <Link to="/apps/" className="noeffect">
-              <StaticImage
-                src="../../static/images/20210310-appsservices.png"
-                alt="Apps & Services"
-                placeholder="blurred"
-              />
-            </Link>
-          </Wrapper>
-          <Wrapper>
-            <StyledTitle>Apps & Services</StyledTitle>
-            <StyledMain>
-              A shout out to all my favorite apps, tools, services, games and
-              more.
-            </StyledMain>
-            <ReadOn text="Apps & Services" href="/apps/" />
-          </Wrapper>
-          <Wrapper>
-            <Link to="/setup/" className="noeffect">
+            <Link to="/uses/" className="noeffect">
               <StaticImage
                 src="../../static/images/20210310-whatiuse.png"
                 alt="What I Use"
@@ -105,8 +88,8 @@ const ResourcePage = () => {
           </Wrapper>
           <Wrapper>
             <StyledTitle>What I Use</StyledTitle>
-            <StyledMain>Walkthrough of my desk setup & gears</StyledMain>
-            <ReadOn text="What I Use" href="/setup/" />
+            <StyledMain>Walkthrough of my hardware & software setup</StyledMain>
+            <ReadOn text="What I Use" href="/uses/" />
           </Wrapper>
         </Grid>
       </Boxed>
