@@ -75,7 +75,7 @@ type ToolCardProps = {
       data: {
         Name: string,
         Category: string,
-        Description: string,
+        Text: string,
         platform: string,
         image: string,
         Link: string,
@@ -116,7 +116,7 @@ const CardResource = ({ postEdges }: ToolCardProps) => {
             </IconWrapper>
           </Flex>
         </Link>
-        <Description>{item.data.Description}</Description>
+        <Description>{item.data.Text}</Description>
         <Link to={item.data.AuthorLink} target="_blank" className="noeffect">
           <SmallText>{item.data.Handle || item.data.Author}</SmallText>
         </Link>

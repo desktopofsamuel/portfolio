@@ -1,11 +1,13 @@
 import React from "react";
 import Link from "./common/GatsbyLink";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 import styled from "styled-components";
 import { usePalette } from "react-palette";
 import { LightenDarkenColor } from "lighten-darken-color";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome/";
 import Tag from "components/Tag";
+import { H3, BodyMain } from "components/common/TextStyles";
 
 const Icon = styled(FontAwesomeIcon)`
   margin-left: 4px;
@@ -33,18 +35,27 @@ const CTA = styled(Link)`
     text-align: center;
     width: 100%;
     border-radius: 8px;
+    right: 0;
   }
 `;
 
-const Stack = styled.div`
+type StackProps = {
+  isHardware: boolean,
+};
+
+const Stack =
+  styled.div <
+  StackProps >
+  `
   position: relative;
   display: grid;
-  grid-template-columns: 48px auto;
-  align-items: center;
+  grid-template-columns: ${props =>
+    props.isHardware ? "200px auto" : "100px auto"};
+  place-content: center center;
   grid-gap: var(--var-padding-m);
   border-radius: 16px;
   border: 1px solid var(--color-background);
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 1rem;
   font-family: var(--font-primary);
   transition: var(--transition);
   height: inherit;
@@ -71,12 +82,23 @@ const Stack = styled.div`
   }
 `;
 
-const LogoWrapper = styled.div`
+type Props = {
+  isHardware: boolean,
+};
+
+const LogoWrapper =
+  styled.div <
+  Props >
+  `
+  display: grid;
+  place-content: center center;
   /* background-color: ${props => props.color}; */
   & > * {
-    width: 48px;
-    height: 48px;
+    width: ${({ isHardware }) => (isHardware === true && "200px") || "100px"};
+    height: ${({ isHardware }) => (isHardware === true && "200px") || "100px"};
   }
+
+
 `;
 
 const ThumbnailWrapper = styled.div`
@@ -90,16 +112,15 @@ const ThumbnailWrapper = styled.div`
   font-weight: var(--font-weight-bold);
 `;
 
-const Title = styled.h3`
+const Title = styled(H3)`
   display: inline-block;
-  font-size: var(--font-size-m);
+  font-size: var(--font-size-l);
   font-weight: var(--font-weight-bold);
   margin: 0;
   margin-bottom: 1rem;
 `;
 
-const Description = styled.p`
-  font-size: var(--font-size-xs);
+const Description = styled(BodyMain)`
   color: var(--color-text-secondary);
   margin: 0;
 `;
@@ -116,12 +137,15 @@ const Platform = styled.span`
 const ContentWrapper = styled.div``;
 
 type ToolCardProps = {
+  isHardware?: boolean,
   postEdges: {
     node: {
       id: string,
       data: {
         Name: string,
-        Description: string,
+        Description: {
+          childMDX: object,
+        },
         platform: string,
         image: string,
         Link: string,
@@ -134,7 +158,11 @@ type ToolCardProps = {
   },
 };
 
-const ToolCard = ({ postEdges }: ToolCardProps) => {
+const defaultProps: ToolCardProps = {
+  isHardware: false,
+};
+
+const ToolCard = ({ postEdges, isHardware }: ToolCardProps) => {
   const item = postEdges.node;
   const thumbnail = item.data.Name.slice(0, 1);
   const { data, loading, error } = !!item.data.Image
@@ -148,9 +176,9 @@ const ToolCard = ({ postEdges }: ToolCardProps) => {
       key={item.id}
       className="noeffect"
     >
-      <Stack>
+      <Stack isHardware={isHardware}>
         {!!item.data.Image ? (
-          <LogoWrapper color={data.lightMuted}>
+          <LogoWrapper color={data.lightMuted} isHardware={isHardware}>
             {/* {console.log(data.lightMuted)} */}
             <img src={item.data.Image[0].url} alt={`${item.data.Name} Logo`} />
           </LogoWrapper>
@@ -160,7 +188,11 @@ const ToolCard = ({ postEdges }: ToolCardProps) => {
         <ContentWrapper>
           <Title>{item.data.Name}</Title>
           {!!item.data.Platform && <Platform>{item.data.Platform}</Platform>}
-          <Description>{item.data.Description}</Description>
+          <Description>
+            <MDXRenderer>
+              {!!item.data.Description && item.data.Description.childMdx.body}
+            </MDXRenderer>
+          </Description>
         </ContentWrapper>
         {!!item.data.CTA && (
           <CTA to={item.data.ExtraLink} target="_blank" className="noeffect">
@@ -177,5 +209,7 @@ const ToolCard = ({ postEdges }: ToolCardProps) => {
     </Link>
   );
 };
+
+ToolCard.defaultProps = defaultProps;
 
 export default ToolCard;

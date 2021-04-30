@@ -52,26 +52,21 @@ const Value =
   margin-bottom: var(--padding-s);
 `;
 
-type MetaProps = {
+type Props = {
   icon: string,
   label: string,
   value: string,
   isLarge: boolean,
 };
 
-const defaultProps: MetaProps = {
+const defaultProps: Props = {
   icon: "",
   label: "",
   value: "",
   isLarge: false,
 };
 
-const Meta: React.FC<MetaProps> = ({
-  icon,
-  label,
-  value,
-  isLarge,
-}: MetaProps) => {
+const Meta: React.FC<Props> = ({ icon, label, value, isLarge }) => {
   return (
     <div>
       <Head>

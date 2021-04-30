@@ -64,7 +64,7 @@ const CardThread = ({ postEdges }) => {
           <img src={item.data.Image[0].url} />
         </ImageWrapper>
         <Title>{item.data.Name}</Title>
-        <Description>{item.data.Description}</Description>
+        <Description>{item.data.Text}</Description>
         <SmallText>{item.data.Handle || item.data.Author}</SmallText>
       </ContentWrapper>
     </Card>

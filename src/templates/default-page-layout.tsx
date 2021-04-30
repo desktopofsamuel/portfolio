@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import { PageProps } from "gatsby";
 import styled from "styled-components";
 import Boxed from "components/utils/Boxed";
 import { Helmet } from "react-helmet";
 import SEO from "components/SEO";
 import Layout from "../layout";
 import config from "../../data/SiteConfig";
+import { fromPromise } from "public/render-page";
 // import Sidebar from "components/Sidebar";
 
 const Main = styled.main`
@@ -34,7 +36,7 @@ const Container = styled(Boxed)`
 
 const Sidebar = styled.aside``;
 
-type DefaultPageLayoutProps = {
+type Props = {
   pageContext: {
     frontmatter: {
       title: string,
@@ -44,11 +46,11 @@ type DefaultPageLayoutProps = {
   path: string,
 };
 
-const DefaultPageLayout = ({
+const DefaultPageLayout: React.FC<PageProps> = ({
   pageContext,
   children,
   path,
-}: DefaultPageLayoutProps) => {
+}: Props) => {
   return (
     <Layout>
       <Helmet>

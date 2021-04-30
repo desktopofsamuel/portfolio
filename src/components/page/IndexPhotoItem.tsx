@@ -4,14 +4,21 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import Link from "../common/GatsbyLink";
 
 const Photo = styled.div`
+  overflow: hidden;
   height: 100%;
+  width: 100%;
 
   & > * {
     height: 100%;
+    transition: transform 1s ease-in-out;
+  }
+
+  &:hover > * {
+    transform: scale(1.05)
   }
 `;
 
-type IndexPhotoItemProps = {
+type Props = {
   postEdges: {
     path: string
     cover: object
@@ -22,7 +29,7 @@ type IndexPhotoItemProps = {
   }[]
 }
 
-const IndexPhotoItem = ({ postEdges }:IndexPhotoItemProps) => {
+const IndexPhotoItem = ({ postEdges }:Props) => {
   const postList = [];
   postEdges.forEach(postEdge => {
     postList.push({
