@@ -153,7 +153,7 @@ const ToolPage = ({ data }: Props) => {
             {hardwareEdges
               // .filter(t => t.node.data.Category === "Desktop")
               .map(item => (
-                <CardApp postEdges={item} />
+                <CardApp postEdges={item} isHardware={true} />
               ))}
           </TabGrid>
           <h2>📋 Software</h2>
@@ -161,7 +161,7 @@ const ToolPage = ({ data }: Props) => {
             {softwareEdges
               // .filter(t => t.node.data.Category === "Desktop")
               .map(item => (
-                <CardApp postEdges={item} />
+                <CardApp postEdges={item} isHardware={false} />
               ))}
           </TabGrid>
           {/* </TabPanelStyled> */}

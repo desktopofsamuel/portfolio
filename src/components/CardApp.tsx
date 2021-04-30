@@ -35,14 +35,23 @@ const CTA = styled(Link)`
     text-align: center;
     width: 100%;
     border-radius: 8px;
+    right: 0;
   }
 `;
 
-const Stack = styled.div`
+type StackProps = {
+  isHardware: boolean,
+};
+
+const Stack =
+  styled.div <
+  StackProps >
+  `
   position: relative;
   display: grid;
-  grid-template-columns: 100px auto;
-  align-items: center;
+  grid-template-columns: ${props =>
+    props.isHardware ? "200px auto" : "100px auto"};
+  place-content: center center;
   grid-gap: var(--var-padding-m);
   border-radius: 16px;
   border: 1px solid var(--color-background);
@@ -73,14 +82,23 @@ const Stack = styled.div`
   }
 `;
 
-const LogoWrapper = styled.div`
+type Props = {
+  isHardware: boolean,
+};
+
+const LogoWrapper =
+  styled.div <
+  Props >
+  `
   display: grid;
   place-content: center center;
   /* background-color: ${props => props.color}; */
   & > * {
-    width: 48px;
-    height: 48px;
+    width: ${({ isHardware }) => (isHardware === true && "200px") || "100px"};
+    height: ${({ isHardware }) => (isHardware === true && "200px") || "100px"};
   }
+
+
 `;
 
 const ThumbnailWrapper = styled.div`
@@ -119,6 +137,7 @@ const Platform = styled.span`
 const ContentWrapper = styled.div``;
 
 type ToolCardProps = {
+  isHardware?: boolean,
   postEdges: {
     node: {
       id: string,
@@ -139,7 +158,11 @@ type ToolCardProps = {
   },
 };
 
-const ToolCard = ({ postEdges }: ToolCardProps) => {
+const defaultProps: ToolCardProps = {
+  isHardware: false,
+};
+
+const ToolCard = ({ postEdges, isHardware }: ToolCardProps) => {
   const item = postEdges.node;
   const thumbnail = item.data.Name.slice(0, 1);
   const { data, loading, error } = !!item.data.Image
@@ -153,9 +176,9 @@ const ToolCard = ({ postEdges }: ToolCardProps) => {
       key={item.id}
       className="noeffect"
     >
-      <Stack>
+      <Stack isHardware={isHardware}>
         {!!item.data.Image ? (
-          <LogoWrapper color={data.lightMuted}>
+          <LogoWrapper color={data.lightMuted} isHardware={isHardware}>
             {/* {console.log(data.lightMuted)} */}
             <img src={item.data.Image[0].url} alt={`${item.data.Name} Logo`} />
           </LogoWrapper>
@@ -186,5 +209,7 @@ const ToolCard = ({ postEdges }: ToolCardProps) => {
     </Link>
   );
 };
+
+ToolCard.defaultProps = defaultProps;
 
 export default ToolCard;

@@ -5,8 +5,8 @@ import PageTitle from "components/PageTitle";
 import { StaticImage } from "gatsby-plugin-image";
 import { H2, BodyMain } from "components/common/TextStyles";
 import ReadOn from "components/ReadOn";
-import Layout from "../layout";
 import Link from "components/common/GatsbyLink";
+import Layout from "../layout";
 
 const Grid = styled.div`
   display: grid;
