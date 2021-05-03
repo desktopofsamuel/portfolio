@@ -31,7 +31,6 @@ const LayoutTemplate: React.FC = (props: PageProps & LayoutTemplateProps) => {
   return (
     <Layout>
       <SEO />
-      {console.log(title)}
       <Helmet title={`${title}  | ${config.siteTitle}`}>
         <meta name="twitter:title" content={`${title} | ${config.siteTitle}`} />
         <meta property="og:title" content={`${title} | ${config.siteTitle}`} />

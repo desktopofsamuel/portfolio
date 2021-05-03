@@ -48,7 +48,8 @@ const BlogPostTemplate = ({ data, pageContext }: BlogPostTemplateProps) => {
 
 export default BlogPostTemplate;
 
-export const pageQuery = graphql`query BlogBySlug($id: String) {
+export const pageQuery = graphql`
+query BlogBySlug($id: String) {
   blog: mdx(id: {eq: $id}) {
     id
     body

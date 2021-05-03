@@ -8,7 +8,7 @@ export const bloglisting = graphql`
           slug
           date(formatString: "MMM DD, YYYY", locale: "en")
         }
-        excerpt(pruneLength: 300)
+        excerpt(pruneLength: 200)
         timeToRead
         frontmatter {
           title
