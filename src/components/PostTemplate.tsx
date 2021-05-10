@@ -7,6 +7,7 @@ import Tag from "components/Tag";
 import { H1, BodyMain, SmallText } from "components/common/TextStyles";
 import PostSidebar from "./PostSidebar";
 import TwitterShare from "components/TwitterShare";
+import Feedback from 'components/Feedback'
 
 const Container = styled(Boxed)`
   display: grid;
@@ -93,6 +94,7 @@ const PostTemplate = ({ postNode }: PostTemplateProps) => {
           })}
         </div>
       </Main>
+      {/* <Feedback/> */}
       <Sidebar>
         <PostSidebar postToc={postToc} />
         

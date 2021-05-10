@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { graphql } from "gatsby";
 import Boxed from "components/utils/Boxed";
 import PageTitle from "components/PageTitle";
