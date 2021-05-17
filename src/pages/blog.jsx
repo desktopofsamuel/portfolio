@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { graphql } from "gatsby";
 import Boxed from "components/utils/Boxed";
 import PageTitle from "components/PageTitle";
@@ -8,6 +8,7 @@ import BlogDetail from "../components/page/BlogDetail";
 import BlogList from "../components/page/BlogList";
 import Link from "../components/common/GatsbyLink";
 import { SmallText } from "components/common/TextStyles";
+import BlogParallel from "components/page/BlogParallel";
 
 const Row = styled.section`
   padding: var(--var-padding-m) 0;
@@ -35,10 +36,10 @@ const BlogPage = ({ data }) => {
           <BlogDetail postEdges={postEdges} />
         </Row>
       </Boxed>
-      <Boxed size="small">
+      <Boxed size="large">
         <SmallText>All posts</SmallText>
         <Row id="latest">
-          <BlogList postEdges={blogEdges} />
+          <BlogParallel postEdges={blogEdges} />
         </Row>
       </Boxed>
     </Layout>

@@ -11,7 +11,7 @@ import {
   faLinkedin,
   faMedium,
 } from "@fortawesome/free-brands-svg-icons";
-import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons/faChevronUp";
 import { PageData, AboutData } from "../../../data/FooterMenu";
 
 /* Newsletter Form */

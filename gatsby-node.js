@@ -59,6 +59,7 @@ const query = `
           date
           tags
           category
+          tldr
         }
       }
     }
@@ -118,6 +119,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
         id: node.id,
         category: node.frontmatter.category,
         tag: node.frontmatter.tags,
+        tldr: node.frontmatter.tldr,
       },
     });
 
