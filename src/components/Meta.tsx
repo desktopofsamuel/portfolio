@@ -2,14 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faMobileAlt,
-  faMobile,
-  faBullhorn,
-  faCalendarAlt,
-  faMugHot,
-  faUser,
-} from "@fortawesome/free-solid-svg-icons";
+import { faMobileAlt } from "@fortawesome/free-solid-svg-icons/faMobileAlt";
+import { faMobile } from "@fortawesome/free-solid-svg-icons/faMobile";
+import { faBullhorn } from "@fortawesome/free-solid-svg-icons/faBullhorn";
+import { faCalendarAlt } from "@fortawesome/free-solid-svg-icons/faCalendarAlt";
+import { faMugHot } from "@fortawesome/free-solid-svg-icons/faMugHot";
+import { faUser } from "@fortawesome/free-solid-svg-icons/faUser";
 
 library.add(faMobileAlt, faMobile, faMugHot, faBullhorn, faCalendarAlt, faUser);
 

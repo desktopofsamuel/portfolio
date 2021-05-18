@@ -4,7 +4,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import styled from "styled-components";
 import { usePalette } from "react-palette";
 import { LightenDarkenColor } from "lighten-darken-color";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons/faArrowRight";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome/";
 import Tag from "components/Tag";
 import { H3, BodyMain } from "components/common/TextStyles";

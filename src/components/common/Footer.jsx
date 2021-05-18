@@ -1,15 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import Boxed from "components/utils/Boxed";
+import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
-import {
-  faTwitter,
-  faInstagram,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons/faChevronUp";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons/faTwitter";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons/faInstagram";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons/faLinkedin";
 import Icon from "components/common/Icon";
 import Link from "components/common/GatsbyLink";
+
+library.add(faTwitter, faInstagram, faLinkedin, faChevronUp);
 
 /* Back To Top Button */
 const ScrollToTopContainer = styled.div`
@@ -39,7 +40,7 @@ const scrollTop = () => {
 const ScrollToTop = () => {
   return (
     <ScrollToTopContainer onClick={scrollTop}>
-      <FontAwesomeIcon icon={faChevronUp} title="Back To Top" />
+      <FontAwesomeIcon icon={["fa", "chevron-up"]} title="Back To Top" />
     </ScrollToTopContainer>
   );
 };
@@ -96,7 +97,7 @@ const FooterContact = () => {
               <Icon
                 to="https://www.linkedin.com/in/wongchunlong/"
                 target="_blank"
-                icon={faLinkedin}
+                icon={["fab", "linkedin"]}
                 title="Linkedin"
                 data-splitbee-event="External Link"
                 data-splitbee-event-type="Linkedin"
@@ -104,7 +105,7 @@ const FooterContact = () => {
               <Icon
                 to="https://www.twitter.com/desktopofsamuel/"
                 target="_blank"
-                icon={faTwitter}
+                icon={["fab", "twitter"]}
                 title="Twitter"
                 data-splitbee-event="External Link"
                 data-splitbee-event-type="twitter"
@@ -115,7 +116,7 @@ const FooterContact = () => {
                 data-splitbee-event="External Link"
                 data-splitbee-event-type="instagram"
                 target="_blank"
-                icon={faInstagram}
+                icon={["fab", "instagram"]}
                 title="Instagram"
               />
             </IconList>

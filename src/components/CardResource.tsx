@@ -2,7 +2,7 @@ import React from "react";
 import Link from "./common/GatsbyLink";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
+import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons/faExternalLinkAlt";
 import Icon from "components/common/Icon";
 import { SmallText } from "components/common/TextStyles";
 import randomColor from "randomcolor";

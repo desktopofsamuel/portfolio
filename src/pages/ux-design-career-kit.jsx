@@ -8,7 +8,7 @@ import CardThread from "components/CardThread";
 import ReadOn from "components/ReadOn";
 import Centered from "components/utils/Centered";
 import ButtonPill from "components/button-pill";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons/faChevronLeft";
 import { H2, H3, BodyMain } from "components/common/TextStyles";
 import Layout from "../layout";
 

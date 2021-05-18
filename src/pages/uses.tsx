@@ -6,18 +6,9 @@ import PageTitle from "components/PageTitle";
 import Boxed from "components/utils/Boxed";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import ButtonPill from "components/button-pill";
-import {
-  faPencilRuler,
-  faDollarSign,
-  faDesktop,
-  faMobileAlt,
-  faLaptop,
-  faChevronLeft,
-} from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons/faChevronLeft";
 import Centered from "components/utils/Centered";
 import Layout from "../layout";
-import { string } from "prop-types";
-
 // import "react-tabs/style/react-tabs.css";
 
 const TabsStyled = styled.div`

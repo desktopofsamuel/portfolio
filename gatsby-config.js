@@ -202,7 +202,7 @@ module.exports = {
         icon: "src/favicon.png",
       },
     },
-    // "gatsby-plugin-webpack-bundle-analyzer",
+    "gatsby-plugin-webpack-bundle-analyzer",
     {
       resolve: "gatsby-plugin-web-font-loader",
       options: {

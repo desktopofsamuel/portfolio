@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import ReadOn from "../ReadOn";
-import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
-import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { faAngleLeft } from "@fortawesome/free-solid-svg-icons/faAngleLeft";
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons/faAngleRight";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
