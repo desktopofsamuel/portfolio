@@ -66,6 +66,20 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://beta.readng.co/rss/collection/UfVaj`,
+        name: `Readng`,
+        // Optional
+        // Read parser document: https://github.com/bobby-brennan/rss-parser#readme
+        parserOption: {
+          customFields: {
+            item: ["title", "link", "pubDate", "guid"],
+          },
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-splitbee`,
       options: {
         includeInDevelopment: false,
