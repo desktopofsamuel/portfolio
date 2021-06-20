@@ -40,12 +40,19 @@ export const BodyMain = styled.p`
   color: var(--color-text-secondary);
 `;
 
+export const BodySecondary = styled.p`
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold-alt);
+  font-size: var(--font-size-s);
+  color: var(--color-text);
+`;
+
 export const SmallText = styled.p`
   font-family: var(--font-primary);
   font-weight: var(--font-weight-regular);
   text-transform: uppercase;
   line-height: normal;
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.075rem;
   margin-top: 0;
   color: var(--color-text-secondary);

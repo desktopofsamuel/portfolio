@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons/faTwitter";
 import { H3, BodyMain } from "components/common/TextStyles";
 import ButtonPill from "components/button-pill";
 import config from "../../data/SiteConfig";

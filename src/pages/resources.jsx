@@ -6,17 +6,14 @@ import { StaticImage } from "gatsby-plugin-image";
 import { H2, BodyMain } from "components/common/TextStyles";
 import ReadOn from "components/ReadOn";
 import Link from "components/common/GatsbyLink";
+import Column from "components/utils/Column";
 import Layout from "../layout";
 
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: 50% auto;
+const Grid = styled(Column)`
   gap: var(--var-padding-m);
   align-items: center;
 
-  @media (max-width: 425px) {
-    display: grid;
-    grid-template-columns: 100%;
+  @media (max-width: 600px) {
     text-align: center;
   }
 `;

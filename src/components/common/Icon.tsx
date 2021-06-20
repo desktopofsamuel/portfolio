@@ -14,7 +14,7 @@ const IconWrapper = styled(FontAwesomeIcon)`
 
 type IconProps = {
   to: string,
-  icon: string,
+  icon: [string],
   target: "_blank" | "_self",
   title: string,
   size: string,

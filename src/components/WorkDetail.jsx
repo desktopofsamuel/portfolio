@@ -7,7 +7,7 @@ import { SmallText, H2, BodyMain } from "./common/TextStyles";
 
 const Container = styled.div`
   display: grid;
-  grid-gap: 4rem;
+  grid-gap: 2rem;
 `;
 
 const Wrapper = styled.div`

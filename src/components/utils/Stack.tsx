@@ -9,10 +9,10 @@ const Wrapper = styled.div`
 `;
 
 type StackProps = {
-  children: object,
-  spacing: "string",
+  spacing: string,
 };
-const Stack = ({ children, spacing }: StackProps) => {
+
+const Stack: React.FC<StackProps> = ({ children, spacing }) => {
   return <Wrapper>{children}</Wrapper>;
 };
 

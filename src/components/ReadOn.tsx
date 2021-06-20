@@ -1,15 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import GatsbyLink from "./common/GatsbyLink";
+import { SmallText } from "components/common/TextStyles";
 
 type Props = {
   isSecondary: boolean,
 };
 
-const Button =
-  styled.div <
-  Props >
-  `
+// prettier-ignore
+const Button = styled.div <Props>`
   text-transform: uppercase;
   cursor: pointer;
   display: inline-flex;
@@ -22,10 +21,7 @@ const Button =
 
   p {
     color: var(--color-text-secondary);
-    font-family: var(--font-primary);
     font-weight: var(--font-weight-bold);
-    font-size: var(--font-size-2xs);
-    letter-spacing: 0.075rem;
     margin-bottom: 0;
     margin-right: 8px;
     transition: var(--transition);
@@ -86,7 +82,7 @@ const ReadOn: React.FC<ButtonReadOnProps> = ({
 }: ButtonReadOnProps) => (
   <GatsbyLink to={href} target={target} className="noeffect">
     <Button isSecondary={isSecondary}>
-      <p>{text}</p>
+      <SmallText>{text}</SmallText>
       <span>→</span>
     </Button>
   </GatsbyLink>

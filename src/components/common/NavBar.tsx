@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import "../../layout/index.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faTimes } from "@fortawesome/free-solid-svg-icons/faTimes";
+import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
 import Popup from "reactjs-popup";
 import FadeIn from "react-fade-in";
 import Link from "components/common/GatsbyLink";
@@ -80,20 +81,19 @@ const NavItemIcon = styled.div`
 `;
 
 const MenuIcon = styled(FontAwesomeIcon)`
-  font-size: 12px;
+  font-size: 16px;
   border-bottom: none;
   color: var(--secondary-700);
-  max-width: 16px;
-  max-height: 16px;
 `;
 
 const MobileItem = styled(Link)`
   display: block;
   border-bottom: none;
-  margin: 0;
+  margin: 3rem 0;
+  width: 100vw;
 
   h1 {
-    margin: 2rem 0;
+    margin: 0;
   }
 `;
 
@@ -141,7 +141,7 @@ const NewNavBar = () => {
         </NavItem>
       </Navigation>
       <NavItemIcon onClick={setOpen} className="noeffect">
-        <MenuIcon icon={faBars} size="lg" />
+        <MenuIcon icon={faBars} />
       </NavItemIcon>
       <Popup
         lockScroll

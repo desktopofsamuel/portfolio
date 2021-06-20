@@ -39,11 +39,13 @@ const BlogParallel = ({ postEdges }) => {
   return postList.map(post => (
     <Grid to={post.path} className="noeffect" key={post.title}>
       <Wrapper>
-        <Image
-          image={post.cover.childImageSharp.gatsbyImageData}
-          alt={post.title}
-          loading="lazy"
-        ></Image>
+        {post.cover && (
+          <Image
+            image={post.cover.childImageSharp.gatsbyImageData}
+            alt={post.title}
+            loading="lazy"
+          ></Image>
+        )}
       </Wrapper>
       <Wrapper>
         <SmallText>

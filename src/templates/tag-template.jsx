@@ -7,6 +7,7 @@ import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import PageTitle from "components/PageTitle";
 import Boxed from "components/utils/Boxed";
+import BlogParallel from "components/page/BlogParallel";
 
 const Container = styled.section`
   @media only screen and (max-width: 1280px) {
@@ -32,7 +33,7 @@ export default class TagTemplate extends React.Component {
             <PageTitle subtitle={`Discover Post tagged`} title={`${tag}`} />
           </Hero>
           <Container>
-            <PostList postEdges={postEdges} />
+            <BlogParallel postEdges={postEdges} />
           </Container>
         </Boxed>
       </Layout>

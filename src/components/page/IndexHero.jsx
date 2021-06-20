@@ -1,18 +1,10 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faTwitter,
-  faInstagram,
-  faMedium,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
 import Boxed from "../utils/Boxed";
 import Link from "../common/GatsbyLink";
 import Column from "../utils/Column";
 import Emoji from "../common/Emoji";
-import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import ReadOn from "components/ReadOn";
 
 const Container = styled(Boxed)``;
@@ -43,7 +35,7 @@ const ContactWrapper = styled.div`
     font-size: 12px;
   }
 
-  @media only screen and (max-width: 425px) {
+  @media only screen and (max-width: 480px) {
     margin-top: 2rem;
   }
 `;
