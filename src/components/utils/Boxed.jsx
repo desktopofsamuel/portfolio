@@ -8,7 +8,7 @@ const Grid = styled.div`
     (props.size === "medium" && "var(--page-container-m)") ||
     (props.size === "small" && "var(--page-container-s)") ||
     `var(--page-container-m)`};
-  padding: ${props => (props.padding ? props.padding : "0rem")};
+  padding: ${props => (props.padding ? props.padding : "0 0 4rem 0")};
   margin: 0 auto;
   display: flex;
   flex-direction: column;

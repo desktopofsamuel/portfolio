@@ -141,7 +141,7 @@ const AboutPage = ({ data }) => {
       title="About"
       description="Samuel Wong is a Hong Kong based UI/UX designer specialising in creating delightful user interface & experience."
     >
-      <Boxed padding="2rem 0 1rem 0">
+      <Boxed>
         <IntroGrid>
           <Boxed size="small" padding="2rem 0">
             <StyledTitle as="h1">Hello, My name is Samuel Wong.</StyledTitle>
@@ -166,7 +166,7 @@ const AboutPage = ({ data }) => {
         </IntroGrid>
       </Boxed>
 
-      <Boxed padding="2rem 0">
+      <Boxed>
         <h2>My Journey</h2>
         <BioContainer>
           <BioWrapper>
