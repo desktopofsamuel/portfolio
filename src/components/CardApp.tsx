@@ -28,7 +28,7 @@ const CTA = styled(Link)`
     color: var(--color-white-light-500);
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 480px) {
     position: relative;
     bottom: 0;
     margin: 0 auto;
@@ -43,10 +43,8 @@ type StackProps = {
   isHardware: boolean,
 };
 
-const Stack =
-  styled.div <
-  StackProps >
-  `
+//prettier-ignore
+const Stack = styled.div <StackProps>`
   position: relative;
   display: grid;
   grid-template-columns: ${props =>
@@ -71,7 +69,7 @@ const Stack =
     }
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 480px) {
     grid-template-columns: auto;
     background-color: var(--color-white-light-300);
     border: 1px solid var(--color-primary-light-100);

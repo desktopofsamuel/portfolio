@@ -11,7 +11,7 @@ const Container = styled.article`
   grid-gap: var(--var-padding-m);
   grid-template-columns: [left] 30% [right] 70%;
 
-  @media only screen and (max-width: 425px) {
+  @media only screen and (max-width: 480px) {
     margin-bottom: 100px;
     display: block;
   }
@@ -39,7 +39,7 @@ const ListLeft = styled.div`
   margin-top: 20px;
   border-top: 1px solid #000;
 
-  @media only screen and (max-width: 425px) {
+  @media only screen and (max-width: 480px) {
     border-top: none;
   }
 `;

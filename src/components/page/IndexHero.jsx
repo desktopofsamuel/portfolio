@@ -35,7 +35,7 @@ const ContactWrapper = styled.div`
     font-size: 12px;
   }
 
-  @media only screen and (max-width: 425px) {
+  @media only screen and (max-width: 480px) {
     margin-top: 2rem;
   }
 `;
