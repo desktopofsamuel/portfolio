@@ -14,25 +14,6 @@ const Container = styled.section`
   }
 `;
 
-const Row = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: var(--padding-l);
-`;
-
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-
-  @media only screen and (max-width: 768px) {
-    display: block;
-  }
-`;
-
-const Hero = styled.div`
-  padding: var(--padding-m) 0 var(--padding-m) 0;
-`;
-
 type CategoryPageProps = {
   data: {
     allMdx: {
@@ -52,14 +33,12 @@ const CategoryPageTemplate = ({ data, pageContext }: CategoryPageProps) => {
 
   return (
     <Layout
-      title={`Discover blog articles in ${category}`}
+      title={`${category}`}
       description={`Blog articles on ${category}. UI/UX and web development tutorials, resources, journals and more`}
     >
       <PageTitle title={`${category}`} />
       <Boxed>
-        <Container>
-          <PostList category="none" postEdges={postEdges} />
-        </Container>
+        <PostList category="none" postEdges={postEdges} />
       </Boxed>
     </Layout>
   );

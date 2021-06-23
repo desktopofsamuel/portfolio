@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { graphql } from "gatsby";
+import React from "react";
+import { PageProps, graphql } from "gatsby";
 import Boxed from "components/utils/Boxed";
 import PageTitle from "components/PageTitle";
 import styled from "styled-components";
 import Layout from "../layout";
 import BlogDetail from "../components/page/BlogDetail";
-import BlogList from "../components/page/BlogList";
-import Link from "../components/common/GatsbyLink";
 import { SmallText } from "components/common/TextStyles";
 import BlogParallel from "components/page/BlogParallel";
 
@@ -15,7 +13,7 @@ const Row = styled.section`
   background: var(--color-background);
 `;
 
-const BlogPage = ({ data }) => {
+const BlogPage: React.FC<PageProps> = ({ data }) => {
   const postEdges = data.feature.edges;
   const blogEdges = data.blog.edges;
 
@@ -60,7 +58,7 @@ export const pageQuery = graphql`
       sort: { fields: [frontmatter___date], order: DESC }
       limit: 8
     ) {
-      ...bloglisting
+      ...bloglist
     }
     blog: allMdx(
       filter: {
@@ -69,7 +67,7 @@ export const pageQuery = graphql`
       }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
-      ...bloglisting
+      ...bloglist
     }
   }
 `;

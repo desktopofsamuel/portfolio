@@ -78,9 +78,9 @@ const query = `
 }
 `;
 const postPage = path.resolve("src/templates/blog-template.tsx");
-const workPage = path.resolve("src/templates/work-template.jsx");
+const workPage = path.resolve("src/templates/work-template.tsx");
 const photoPage = path.resolve("src/templates/photo-template.tsx");
-const tagPage = path.resolve("src/templates/tag-template.jsx");
+const tagPage = path.resolve("src/templates/tag-template.tsx");
 const categoryPage = path.resolve("src/templates/category-template.tsx");
 
 exports.createPages = async ({ graphql, actions: { createPage } }) => {
