@@ -168,6 +168,7 @@ module.exports = {
       resolve: "gatsby-plugin-google-analytics",
       options: {
         trackingId: config.googleAnalyticsID,
+        enableWebVitalsTracking: true,
       },
     },
     "gatsby-plugin-styled-components",
