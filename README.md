@@ -1,8 +1,8 @@
-# [desktopofsamuel.com](desktopofsamuel.com/?ref=github) | Portfolio of Samuel Wong
+# [desktopofsamuel.com](https://desktopofsamuel.com/?ref=github) | Portfolio of Samuel Wong
 
 ---
 
-Welcome to the source code of my [website](desktopofsamuel.com/?ref=github). This is the second iteration of my Gatsby website. You can see the source code of [v1 here](https://github.com/desktopofsamuel/portfolio-v1).
+Welcome to the source code of my [website](https://desktopofsamuel.com/?ref=github). This is the second iteration of my Gatsby website. You can see the source code of [v1 here](https://github.com/desktopofsamuel/portfolio-v1).
 
 ## License
 
