@@ -3,7 +3,7 @@ import Link from "./common/GatsbyLink";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import styled from "styled-components";
 import { usePalette } from "react-palette";
-import { LightenDarkenColor } from "lighten-darken-color";
+// import { LightenDarkenColor } from "lighten-darken-color"; package removed
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons/faArrowRight";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome/";
 import Tag from "components/Tag";

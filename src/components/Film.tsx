@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { H3, BodyMain, SmallText } from "./common/TextStyles";
 
 const Container = styled.div`
   background: var(--color-white-light-300);
@@ -11,10 +12,12 @@ const Container = styled.div`
 const Spacer = styled.div``;
 
 const Wrapper = styled.div`
-  padding: 2rem 1rem 0 0;
+  display: grid;
+  grid-gap: 8px;
+  align-content: center;
 `;
 
-const Title = styled.h3`
+const Title = styled(H3)`
   margin: 0;
   display: inline;
 `;
@@ -24,18 +27,18 @@ const Poster = styled.img`
   transform: scale(1.085);
 `;
 
-const Rating = styled.p`
-  font-size: 24px;
+const Rating = styled(BodyMain)`
+  font-size: var(--font-size-xs);
   color: var(--color-primary-light-700);
   margin: 0;
 `;
 
-const Director = styled.p`
+const Director = styled(BodyMain)`
   color: var(--color-text-secondary);
   margin: 0;
 `;
 
-const Year = styled.p`
+const Year = styled(SmallText)`
   margin: 0;
   display: inline;
   margin-left: 8px;
@@ -51,7 +54,13 @@ type FilmProps = {
   director: string,
 };
 
-const Film = ({ poster, title, year, rating, director }: FilmProps) => (
+const Film: React.FC<FilmProps> = ({
+  poster,
+  title,
+  year,
+  rating,
+  director,
+}) => (
   <Container>
     <Poster src={poster} alt={title} title={title} />
     <Spacer />

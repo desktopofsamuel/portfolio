@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { SmallText } from "./common/TextStyles";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMobileAlt } from "@fortawesome/free-solid-svg-icons/faMobileAlt";
@@ -23,15 +24,7 @@ const Icon = styled(FontAwesomeIcon)`
   margin-top: 4px;
 `;
 
-const Label = styled.p`
-  font-family: var(--font-primary);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text-secondary);
-  letter-spacing: 0.12em;
-  font-size: 14px;
-  text-transform: uppercase;
-  margin: 0;
-`;
+const Label = styled(SmallText)``;
 
 type ValueProps = {
   isLarge: boolean,

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import styled from "styled-components";
 import Link from "components/common/GatsbyLink";
 import { GatsbyImage } from "gatsby-plugin-image";
@@ -21,7 +21,28 @@ const Wrapper = styled.div``;
 
 const Image = styled(GatsbyImage)``;
 
-const BlogParallel = ({ postEdges }) => {
+export type BlogDataProps = {
+  postEdges: [
+    {
+      node: {
+        frontmatter: {
+          tags: [string],
+          cover: object,
+          title: string,
+          category: string,
+        },
+        fields: {
+          slug: string,
+          date: string,
+        },
+        excerpt: string,
+        timeToRead: number,
+      },
+    },
+  ],
+};
+
+const BlogParallel = ({ postEdges }: PostEdgesProps) => {
   const postList = [];
   postEdges.forEach(postEdge => {
     postList.push({

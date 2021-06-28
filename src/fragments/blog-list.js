@@ -1,7 +1,7 @@
 import { graphql } from "gatsby";
 
-export const bloglisting = graphql`
-  fragment bloglisting on MdxConnection {
+export const bloglist = graphql`
+  fragment bloglist on MdxConnection {
     edges {
       node {
         fields {

@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { PageProps, graphql } from "gatsby";
 import styled from "styled-components";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Helmet from "react-helmet";
@@ -37,27 +37,7 @@ const SecondaryTitle = styled(Subtitle)`
   line-height: 1.8;
 `;
 
-const Quote = styled.h3`
-  font-family: var(--font-tertiary);
-  padding-top: var(--var-padding-m);
-  font-size: var(--font-size-l);
-  font-weight: var(--font-weight-bold-alt);
-  letter-spacing: -1px;
-  margin: 0;
-  grid-column: span 8;
-`;
-
-const Meta = styled.small`
-  margin: 0;
-`;
-
-const Opening = styled.div`
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-gap: 36px;
-`;
-
-const WorkPageTemplate = ({ pageContext, data }) => {
+const WorkPageTemplate: React.FC<PageProps> = ({ pageContext, data }) => {
   const path = "/work" + pageContext.slug;
   const postEdges = data.mdx.frontmatter;
 
@@ -88,30 +68,31 @@ const WorkPageTemplate = ({ pageContext, data }) => {
 
 export default WorkPageTemplate;
 
-export const pageQuery = graphql`query WorkPostQuery($id: String) {
-  mdx(id: {eq: $id}) {
-    id
-    body
-    excerpt
-    frontmatter {
-      title
-      subtitle
-      shortTitle
-      projectTitle
-      intro
-      year
-      role
-      team
-      path
-      tags
-      color
-      cover {
-        publicURL
-        childImageSharp {
-          gatsbyImageData(placeholder: NONE, layout: FULL_WIDTH)
+export const pageQuery = graphql`
+  query WorkPostQuery($id: String) {
+    mdx(id: { eq: $id }) {
+      id
+      body
+      excerpt
+      frontmatter {
+        title
+        subtitle
+        shortTitle
+        projectTitle
+        intro
+        year
+        role
+        team
+        path
+        tags
+        color
+        cover {
+          publicURL
+          childImageSharp {
+            gatsbyImageData(placeholder: NONE, layout: FULL_WIDTH)
+          }
         }
       }
     }
   }
-}
 `;
