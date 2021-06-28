@@ -1,18 +1,11 @@
 import React from "react";
 import Helmet from "react-helmet";
-import styled from "styled-components";
 import { PageProps } from "gatsby";
 import NavBar from "components/common/NavBar";
 import SEO from "components/SEO";
 import Footer from "components/common/Footer";
 import config from "../../data/SiteConfig";
 import "./index.css";
-
-const Layout = styled.div``;
-
-const Main = styled.main`
-  margin: 64px auto 0 auto;
-`;
 
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
@@ -29,7 +22,7 @@ type LayoutTemplateProps = {
 const LayoutTemplate: React.FC = (props: PageProps & LayoutTemplateProps) => {
   const { children, title, description, keywords } = props;
   return (
-    <Layout>
+    <>
       <SEO />
       <Helmet title={`${title}  | ${config.siteTitle}`}>
         <meta name="twitter:title" content={`${title} | ${config.siteTitle}`} />
@@ -40,9 +33,9 @@ const LayoutTemplate: React.FC = (props: PageProps & LayoutTemplateProps) => {
         <meta name="keywords" content={keywords} />
       </Helmet>
       <NavBar />
-      <Main>{children}</Main>
+      <main>{children}</main>
       <Footer />
-    </Layout>
+    </>
   );
 };
 
