@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import GatsbyLink from "./common/GatsbyLink";
-import { SmallText } from "components/common/TextStyles";
+import { BodyMain } from "components/common/TextStyles";
 
 type Props = {
   isSecondary: boolean,
@@ -9,7 +9,7 @@ type Props = {
 
 // prettier-ignore
 const Button = styled.div <Props>`
-  text-transform: uppercase;
+
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
@@ -19,7 +19,7 @@ const Button = styled.div <Props>`
     (isSecondary === true && "none") || "1px var(--color-border) solid"};
   border-radius: 36px;
 
-  p {
+  ${BodyMain} {
     color: var(--color-text-secondary);
     font-weight: var(--font-weight-bold);
     margin-bottom: 0;
@@ -29,14 +29,11 @@ const Button = styled.div <Props>`
     &:active {
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     }
-
-    &:hover {
-      color: var(--color-text);
-    }
   }
 
   span {
     font-size: var(--font-size-m);
+    color: var(--color-primary-500);
     line-height: 0;
     margin-top: -4px;
   }
@@ -50,12 +47,16 @@ const Button = styled.div <Props>`
   }
 
   &:hover {
+    color: var(--color-primary-500);
+
     & {
       border-color: var(--color-secondary-light-300);
+      
     }
 
-    p {
-      margin-right: 16px;
+    ${BodyMain} {
+      color: var(--color-primary-500);
+      margin-right: 12px;
     }
   }
 `;
@@ -82,7 +83,7 @@ const ReadOn: React.FC<ButtonReadOnProps> = ({
 }: ButtonReadOnProps) => (
   <GatsbyLink to={href} target={target} className="noeffect">
     <Button isSecondary={isSecondary}>
-      <SmallText>{text}</SmallText>
+      <BodyMain>{text}</BodyMain>
       <span>→</span>
     </Button>
   </GatsbyLink>
