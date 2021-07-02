@@ -9,6 +9,7 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons/faInstagram";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons/faLinkedin";
 import Icon from "components/common/Icon";
 import Link from "components/common/GatsbyLink";
+import { SmallText } from "./TextStyles";
 
 library.add(faTwitter, faInstagram, faLinkedin, faChevronUp);
 
@@ -60,11 +61,13 @@ const SectionContainer = styled.section`
 
 const Section = styled.div`
   display: block;
-
-  h5 {
-    color: var(--color-title);
-  }
 `;
+
+const Title = styled(SmallText)`
+  font-weight: var(--font-weight-bold);
+  color: var(--color-title);
+`;
+
 const Content = styled.div`
   font-size: 14px;
   margin-bottom: 24px;
@@ -75,7 +78,7 @@ const FooterContact = () => {
     <Boxed>
       <SectionContainer>
         <Section>
-          <h5>Let's Chat</h5>
+          <Title>Let's Chat</Title>
           <Content>
             I am excited for new opportunities, let's talk about working
             together. <br />
@@ -90,7 +93,7 @@ const FooterContact = () => {
           </Content>
         </Section>
         <Section>
-          <h5>Keep In Touch</h5>
+          <Title>Keep In Touch</Title>
           <Content>
             Follow my social media and see what I'm up to.
             <IconList>
@@ -123,7 +126,7 @@ const FooterContact = () => {
           </Content>
         </Section>
         <Section>
-          <h5>Subscribe</h5>
+          <Title>Subscribe</Title>
           <Content>
             I write regularly on the subject of design and technology. Feel free
             to subscribe via{" "}

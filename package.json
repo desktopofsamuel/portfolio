@@ -94,7 +94,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.6.1",
-    "gatsby-cli": "^3.3.0",
+    "gatsby-cli": "^3.8.0",
     "prettier": "^1.14.3",
     "remark-cli": "^6.0.0",
     "remark-preset-lint-recommended": "^3.0.1",

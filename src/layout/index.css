@@ -21,6 +21,10 @@ html {
   scroll-behavior: auto; 
 }
 
+main {
+  margin: 64px auto 0 auto;
+}
+
 body {
   margin: 0;
   background: var(--color-background);
