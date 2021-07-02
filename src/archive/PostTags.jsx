@@ -1,55 +1,55 @@
-import React, { Component } from "react";
-import kebabCase from "lodash.kebabcase";
-import styled from "styled-components";
-import { Link } from "gatsby";
+// import React, { Component } from "react";
+// import kebabCase from "lodash.kebabcase";
+// import styled from "styled-components";
+// import { Link } from "gatsby";
 
-const Tag = styled.div`
-  display: inline-block;
-  text-transform: capitalize;
-  background: #ededed;
-  color: #a9a9a9;
-  border: none;
-  padding: 0.5em 1em;
-  margin-right: 8px;
-  margin-bottom: 8px;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
+// const Tag = styled.div`
+//   display: inline-block;
+//   text-transform: capitalize;
+//   background: #ededed;
+//   color: #a9a9a9;
+//   border: none;
+//   padding: 0.5em 1em;
+//   margin-right: 8px;
+//   margin-bottom: 8px;
+//   cursor: pointer;
+//   transition: all 0.2s ease-in-out;
 
-  &:hover {
-    background: var(--color-primary-light-700);
-    color: #ffffff;
-  }
+//   &:hover {
+//     background: var(--color-primary-light-700);
+//     color: #ffffff;
+//   }
 
-  & h5 {
-    margin: 0;
-    font-weight: 600;
-  }
+//   & h5 {
+//     margin: 0;
+//     font-weight: 600;
+//   }
 
-  & a {
-    border-bottom: none;
-  }
-`;
+//   & a {
+//     border-bottom: none;
+//   }
+// `;
 
-class PostTags extends Component {
-  render() {
-    const { tags } = this.props;
-    return (
-      <div className="post-tag-container">
-        {tags &&
-          tags.map(tag => (
-            <Link
-              key={tag}
-              style={{ border: "none" }}
-              to={`/tags/${kebabCase(tag)}`}
-            >
-              <Tag>
-                <h5>{tag}</h5>
-              </Tag>
-            </Link>
-          ))}
-      </div>
-    );
-  }
-}
+// class PostTags extends Component {
+//   render() {
+//     const { tags } = this.props;
+//     return (
+//       <div className="post-tag-container">
+//         {tags &&
+//           tags.map(tag => (
+//             <Link
+//               key={tag}
+//               style={{ border: "none" }}
+//               to={`/tags/${kebabCase(tag)}`}
+//             >
+//               <Tag>
+//                 <h5>{tag}</h5>
+//               </Tag>
+//             </Link>
+//           ))}
+//       </div>
+//     );
+//   }
+// }
 
-export default PostTags;
+// export default PostTags;
