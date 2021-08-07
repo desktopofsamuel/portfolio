@@ -20,11 +20,9 @@ const Header = styled.div`
 `;
 
 const Title = styled(H1)`
-  font-family: var(--font-tertiary);
+  font-family: var(--font-primary);
   padding-top: var(--var-padding-m);
   font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold-alt);
-  letter-spacing: -2px;
   margin: 0;
 `;
 
