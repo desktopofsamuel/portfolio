@@ -355,3 +355,11 @@ figure {
 .no-margin {
   margin: 0;
 }
+
+/* .gatsby-resp-image-wrapper {
+  background-color: lightgray;
+} */
+
+#gatsby-focus-wrapper > main > div > div.work > p > span > picture > img {
+  box-shadow: none!important;
+}

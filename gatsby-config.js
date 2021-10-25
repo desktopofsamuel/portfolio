@@ -124,7 +124,7 @@ module.exports = {
           default: require.resolve("./src/templates/default-page-layout.tsx"),
         },
         extensions: [`.mdx`, `md`],
-        remarkPlugins: [require("remark-unwrap-images")],
+        // remarkPlugins: [require("remark-unwrap-images")],
         plugins: [
           `gatsby-remark-images`,
           `gatsby-remark-images-medium-zoom`, // Important!
@@ -134,6 +134,7 @@ module.exports = {
             resolve: "gatsby-remark-images",
             options: {
               linkImagesToOriginal: false,
+              backgroundColor: `#FBFBFB`,
               maxWidth: 1280,
               loading: "lazy",
               withWebp: true,
