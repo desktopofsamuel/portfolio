@@ -26,6 +26,7 @@ const Wrapper = styled.div`
 const StyledTitle = styled(H2)`
   font-size: var(--font-size-xl);
   margin-top: 1rem;
+  color: ${props => (props.color ? `${props.color}` : "black")};
 `;
 
 const Header = styled.div``;
@@ -67,7 +68,7 @@ const WorkDetail = ({ postEdges }) => {
           <Wrapper>
             <Header color={post.color}>
               <SmallText> {post.projectTitle}</SmallText>
-              <StyledTitle>{post.shortTitle}</StyledTitle>
+              <StyledTitle color={post.color}>{post.shortTitle}</StyledTitle>
               <BodyMain>{post.subtitle}</BodyMain>
               <ReadOn text="View Process" href={post.path} />
             </Header>

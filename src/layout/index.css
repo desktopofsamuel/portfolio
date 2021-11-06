@@ -193,6 +193,10 @@ button {
   cursor: pointer;
 }
 
+hr {
+  border-top: 1px dashed var(--color-secondary-light-300);
+}
+
 /* Unorder List Style */
 
 ul {

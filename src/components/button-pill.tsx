@@ -81,8 +81,15 @@ const ButtonPill: React.FC<ButtonReadOnProps> = ({
   target,
   isSolid,
   isSecondary,
+  onClick,
 }: ButtonReadOnProps) => (
-  <Button to={to} target={target} isSecondary={isSecondary} isSolid={isSolid}>
+  <Button
+    to={to}
+    target={target}
+    isSecondary={isSecondary}
+    isSolid={isSolid}
+    onClick={onClick}
+  >
     <FontAwesomeIcon
       size="1x"
       icon={lefticon}

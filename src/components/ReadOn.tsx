@@ -51,7 +51,7 @@ const Button = styled.div <Props>`
     color: var(--color-primary-500);
 
     & {
-      border-color: var(--color-secondary-light-300);
+      border-color: var(--color-primary-500);
       
     }
 
