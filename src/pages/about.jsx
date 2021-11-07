@@ -144,7 +144,7 @@ const AboutPage = ({ data }) => {
       <Boxed>
         <IntroGrid>
           <Boxed size="small" padding="2rem 0">
-            <StyledTitle as="h1">Hello, My name is Samuel Wong.</StyledTitle>
+            <StyledTitle as="h1">Hello, my name is Samuel Wong.</StyledTitle>
             <BodyMain>
               I got into product design because I'm deeply passionate about
               technology and how it profoundly changes our way of living.
@@ -183,8 +183,8 @@ const AboutPage = ({ data }) => {
           <BioWrapper>
             <BioSectionTitle title="Starting my agency" color="#47BA00" />
             <p>
-              With growing freelance web & design projects, I have started an
-              agency, Playa, in 2015 to help small businesses, entrepreneurs and
+              With growing freelance web & design projects, I founded a digital
+              agency, Playa, to help small businesses, entrepreneurs, and
               non-profits launching their projects.
             </p>
           </BioWrapper>

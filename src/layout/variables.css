@@ -1,7 +1,7 @@
 /* Typography */
 :root {
-    --font-primary:  canada-type-gibson, Helvetica, Arial, sans-serif;
-    --font-secondary: Chivo, Calibre, Georgia, serif;
+    --font-primary:  Chivo, canada-type-gibson, Helvetica, Arial, sans-serif;
+    --font-secondary: Chivo, Calibre, Georgia, sans-serif;
     --font-tertiary: clarendon-urw, Georgia, IBM Plex Mono, Courier, Menlo, Consolas, Monaco, "Lucida Console", monospace;
     --font-weight-bold: 600;
     --font-weight-regular: 400;

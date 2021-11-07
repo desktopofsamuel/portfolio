@@ -33,9 +33,10 @@ const Button = styled.div <Props>`
 
   span {
     font-size: var(--font-size-m);
-    color: var(--color-primary-500);
+    color: var(--color-text-secondary);
     line-height: 0;
     margin-top: -4px;
+    transition: var(--transition);
   }
 
   & {
@@ -50,8 +51,12 @@ const Button = styled.div <Props>`
     color: var(--color-primary-500);
 
     & {
-      border-color: var(--color-secondary-light-300);
+      border-color: var(--color-primary-500);
       
+    }
+
+    span {
+      color: var(--color-primary-500);
     }
 
     ${BodyMain} {

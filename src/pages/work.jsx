@@ -61,7 +61,7 @@ export default WorkPage;
 export const pageQuery = graphql`
   query WorkQuery {
     feature: allMdx(
-      sort: { fields: [frontmatter___date], order: ASC }
+      sort: { fields: [frontmatter___date], order: DESC }
       filter: {
         fileAbsolutePath: { regex: "/work/" }
         frontmatter: { draft: { ne: true }, feature: { eq: true } }

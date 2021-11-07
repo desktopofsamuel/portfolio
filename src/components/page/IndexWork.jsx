@@ -4,32 +4,33 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import Zoom from "react-reveal/Zoom";
 import PropTypes from "prop-types";
 import Link from "../common/GatsbyLink";
+import { SmallText, BodyMain, H3 } from "../common/TextStyles";
 
 const Card = styled.div`
   height: 100%;
-  background-color: ${props => (props.color ? `${props.color}` : "black")};
-  padding: var(--var-padding-m);
+  /* background-color: ${props =>
+    props.color ? `${props.color}` : "black"}; */
+  padding: var(--var-padding-m) var(--var-padding-m) 0 var(--var-padding-m);
   /* margin-bottom: var(--padding-m); */
   transition: var(--transition);
-  border-radius: 8px;
+  border-radius: 24px;
   content-visibility: auto;
+  border: 1px solid var(--color-secondary-light-100);
 
   &:hover {
     transform: scale(1.01, 1.01);
-    box-shadow: 0 25px 40px 0 rgba(0, 0, 0, 0.08);
+    box-shadow: 0 30px 40px 0 rgba(0, 0, 0, 0.07);
   }
 `;
 
-const Subtitle = styled.h6`
-  color: var(--color-white-light-300);
-  font-weight: 400;
-  letter-spacing: 1.5px;
-  margin: 0;
+const Subtitle = styled(SmallText)`
+  color: var(--color-title);
 `;
 
-const Title = styled.h3`
+const Title = styled(H3)`
   margin-top: 16px;
-  color: var(--color-white-light-300);
+  font-size: var(--font-size-xl);
+  color: ${props => (props.color ? `${props.color}` : "black")};
 `;
 
 const Image = styled(GatsbyImage)`
@@ -65,15 +66,16 @@ class IndexWork extends React.Component {
         {postList.map(post => (
           <Zoom key={post.title}>
             <Link to={`/work${post.path}`} className="noeffect">
-              <Card key={post.path} color={post.color}>
+              <Card key={post.path}>
                 <Subtitle>
                   {detail ? post.smallTitle : post.projectTitle}
                 </Subtitle>
-                <Title>
+                <Title color={post.color}>
                   {detail
                     ? `${post.projectTitle} — ${post.shortTitle}`
                     : post.shortTitle}
                 </Title>
+                <BodyMain>{post.subtitle}</BodyMain>
                 <Image
                   image={post.cover.childImageSharp.gatsbyImageData}
                   alt={post.title}
