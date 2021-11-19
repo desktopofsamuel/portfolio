@@ -7,6 +7,9 @@ import Link from "../common/GatsbyLink";
 import { SmallText, BodyMain, H3 } from "../common/TextStyles";
 
 const Card = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
   height: 100%;
   /* background-color: ${props =>
     props.color ? `${props.color}` : "black"}; */
@@ -16,6 +19,7 @@ const Card = styled.div`
   border-radius: 24px;
   content-visibility: auto;
   border: 1px solid var(--color-secondary-light-100);
+  align-items: flex-start;
 
   &:hover {
     transform: scale(1.01, 1.01);
@@ -30,6 +34,7 @@ const Subtitle = styled(SmallText)`
 const Title = styled(H3)`
   margin-top: 16px;
   font-size: var(--font-size-xl);
+  letter-spacing: -0.75px;
   color: ${props => (props.color ? `${props.color}` : "black")};
 `;
 
@@ -80,6 +85,7 @@ class IndexWork extends React.Component {
                   image={post.cover.childImageSharp.gatsbyImageData}
                   alt={post.title}
                   fadeIn
+                  style={{ width: "100%", height: "100%" }}
                 />
               </Card>
             </Link>
