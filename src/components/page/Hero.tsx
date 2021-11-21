@@ -31,6 +31,7 @@ const Wrapper =
   padding: var(--var-padding-l);
   display: grid;
   grid-auto-rows: auto;
+  grid-gap: 20px;
   align-items: center;
   justify-content: center;
   text-align: center;
