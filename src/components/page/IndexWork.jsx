@@ -27,9 +27,7 @@ const Card = styled.div`
   }
 `;
 
-const Subtitle = styled(SmallText)`
-  color: var(--color-title);
-`;
+const Subtitle = styled(SmallText)``;
 
 const Title = styled(H3)`
   margin-top: 16px;
@@ -85,7 +83,7 @@ class IndexWork extends React.Component {
                   image={post.cover.childImageSharp.gatsbyImageData}
                   alt={post.title}
                   fadeIn
-                  style={{ width: "100%", height: "100%" }}
+                  style={{ width: "100%", objectFit: "cover" }}
                 />
               </Card>
             </Link>

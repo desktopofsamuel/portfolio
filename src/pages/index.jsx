@@ -179,7 +179,7 @@ const IndexPageOld = ({ data }) => {
           <IndexIntro
             index="#01"
             title="Interaction and Experience Design"
-            description="View my extensive experience delivering products in corporations and start-ups"
+            description="Extensive experience delivering products in corporations and start-ups"
             href="/work/"
             label="View my process"
           />
