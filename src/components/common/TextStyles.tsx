@@ -53,7 +53,7 @@ export const SmallText = styled.p`
   text-transform: uppercase;
   line-height: normal;
   font-size: 14px;
-  letter-spacing: 0.075rem;
+  letter-spacing: 0.025rem;
   margin-top: 0;
   color: var(--color-text-secondary);
 `;

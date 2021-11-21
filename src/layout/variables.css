@@ -1,7 +1,7 @@
 /* Typography */
 :root {
-    --font-primary:  canada-type-gibson, Helvetica, Arial, sans-serif;
-    --font-secondary: Chivo, Calibre, Georgia, serif;
+    --font-primary:  Chivo, canada-type-gibson, Helvetica, Arial, sans-serif;
+    --font-secondary: Chivo, Calibre, Georgia, sans-serif;
     --font-tertiary: clarendon-urw, Georgia, IBM Plex Mono, Courier, Menlo, Consolas, Monaco, "Lucida Console", monospace;
     --font-weight-bold: 600;
     --font-weight-regular: 400;
@@ -61,6 +61,7 @@
 
 
   /* Semantic Color */
+  --color-primary-500: var(--color-primary-light-500);
   --color-primary-highlight: var(--color-primary-light-300);
   --color-background: var(--color-white-light-100);
   --color-background-alt: var(--color-white-light-300);
@@ -77,7 +78,8 @@
   --border-radius: 24px;
 
   /* Dark Mode Preview */
-  /* --color-background: var(--color-primary-light-700);
+  /* --color-primary-500: var(--color-primary-dark-500);
+  --color-background: var(--color-primary-light-700);
   --color-background-alt: var(--color-primary-shades-500);
   --color-text: var(--color-white-light-100);
   --color-text-secondary: var(--color-secondary-light-300);

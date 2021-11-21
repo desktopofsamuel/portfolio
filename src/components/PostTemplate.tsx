@@ -80,6 +80,7 @@ const PostTemplate = ({ postNode }: PostTemplateProps) => {
         </SmallText>
         <Title>{post.title}</Title>
         <Description>{post.tldr}</Description>
+        {/* <SmallText>By Samuel Wong</SmallText> */}
         <GatsbyImage image={postNode.frontmatter.cover.childImageSharp.gatsbyImageData} />
         <hr />
         <MDXRenderer>{postNode.body}</MDXRenderer>
