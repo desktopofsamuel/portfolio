@@ -148,6 +148,10 @@ const WorkIndexGrid = styled.div`
   &:first-child {
     grid-column: span 2;
   }
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const StyledBox = styled(Box)`

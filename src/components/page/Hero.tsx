@@ -44,6 +44,17 @@ const HStack = styled.div`
   margin: 0 auto;
 `;
 
+const ButtonStack = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: var(--var-padding-s);
+  margin: 0 auto;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+
 const rotate = keyframes`
    0%   { transform: scale(1)   translate(10px, -30px); }
   38%  { transform: scale(0.8, 1) translate(80vw, 30vh) rotate(160deg); }
@@ -118,10 +129,10 @@ const Hero = ({
         Full-stack UI/UX designer crafting websites &<br /> mobile applications
         with bespoke experience.
       </Description>
-      <HStack>
+      <ButtonStack>
         <ReadOn text="Read my portfolio" href="/work/" target="_self" />
         <ReadOn text="View my CV" href="/about/#resume" target="_self" />
-      </HStack>
+      </ButtonStack>
       <HStack>
         {" "}
         <Icon

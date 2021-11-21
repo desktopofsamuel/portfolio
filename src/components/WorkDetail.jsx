@@ -25,6 +25,7 @@ const Wrapper = styled.div`
 
 const StyledTitle = styled(H2)`
   font-size: var(--font-size-xl);
+  letter-spacing: -0.75px;
   margin-top: 1rem;
   color: ${props => (props.color ? `${props.color}` : "black")};
 `;
