@@ -18,7 +18,7 @@ const Wrapper = styled.div`
   grid-gap: 2rem;
   grid-template-columns: 4fr 8fr;
 
-  @media only screen and (max-width: 1280px) {
+  @media only screen and (max-width: 767px) {
     display: block;
   }
 `;

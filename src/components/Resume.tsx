@@ -3,6 +3,7 @@ import styled, { StyledFunction } from "styled-components";
 import HyperAir from "../../static/about/hyperair.svg";
 import Playa from "../../static/about/playa.svg";
 import Apple from "../../static/about/apple.svg";
+import HSBC from "../../static/about/hsbc.svg";
 
 /*Resume Item Component*/
 type ItemWrapperProps = {
@@ -23,7 +24,7 @@ const ItemWrapper =
 `;
 
 const ItemTitle = styled.h3`
-  font-size: 1.5rem;
+  font-size: var(--font-size-m);
   color: var(--color-white-light-300);
   margin: 0;
 `;
@@ -144,8 +145,9 @@ const Resume = () => {
         <ResumeSection>
           <ResumeItem
             title="UX/UI Consultant"
-            content="Design cross-platform experience and interfaces in the finance sector"
+            content="Design end-to-end stock trading journeys finance sector"
             meta="2021 - Now"
+            image={HSBC}
             haveGrid
             noBorder
           />
