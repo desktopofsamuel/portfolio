@@ -10,7 +10,7 @@ const Wrapper =
   styled.div <
   Props >
   `
-  margin: 2rem 0 4rem 0;
+  margin: 2rem 0 var(--var-padding-m) 0;
 
   display: grid;
   place-content: ${props =>

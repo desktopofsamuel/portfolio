@@ -30,9 +30,8 @@ const Card = styled.div`
 const Subtitle = styled(SmallText)``;
 
 const Title = styled(H3)`
-  margin-top: 16px;
-  font-size: var(--font-size-xl);
-  letter-spacing: -0.75px;
+  font-size: var(--font-size-l);
+  letter-spacing: -0.5px;
   color: ${props => (props.color ? `${props.color}` : "black")};
 `;
 
