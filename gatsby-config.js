@@ -23,6 +23,8 @@ module.exports = {
     "gatsby-remark-images",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-netlify-cache",
+    // "gatsby-plugin-perf-budgets",
+    // "gatsby-plugin-webpack-bundle-analyser-v2",
     {
       resolve: "gatsby-source-filesystem",
       options: {
