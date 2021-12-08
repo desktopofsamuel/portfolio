@@ -65,7 +65,7 @@ const BlogPage: React.FC<PageProps> = ({ data }) => {
           <BlogDetail postEdges={postEdges} />
         </Row>
       </Boxed>
-      <Boxed size="large">
+      <Boxed>
         <SmallText>All posts</SmallText>
         <Row id="latest">
           <BlogParallel postEdges={list} />

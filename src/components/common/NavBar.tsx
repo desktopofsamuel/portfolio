@@ -7,8 +7,9 @@ import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
 import Popup from "reactjs-popup";
 import FadeIn from "react-fade-in";
 import Link from "components/common/GatsbyLink";
+import Boxed from "../utils/Boxed";
 
-const Container = styled.div`
+const Container = styled(Boxed)`
   width: 100%;
   min-height: 48px;
   position: relative;
@@ -21,7 +22,7 @@ const Container = styled.div`
   align-items: center;
   z-index: 100;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1024px) {
     position: fixed;
     top: 0;
     padding: 0 1rem;
@@ -30,6 +31,7 @@ const Container = styled.div`
     border-bottom: 1px var(--color-border) solid;
   }
 `;
+
 
 const SiteID = styled.div``;
 
@@ -104,7 +106,7 @@ const MobileNav = styled.div`
 const NewNavBar = () => {
   const [open, setOpen] = useState(false);
   return (
-    <Container>
+    <Container as="nav">
       <SiteID>
         <Title to="/" className="noeffect">
           Samuel Wong
