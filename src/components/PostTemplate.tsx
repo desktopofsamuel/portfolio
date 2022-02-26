@@ -21,6 +21,10 @@ const Container = styled(Boxed)`
 `;
 
 const Sidebar = styled.aside`
+
+@media only screen and (max-width: 1024px) {
+    display: none;
+  }
 `;
 
 const Title = styled(H1)`
