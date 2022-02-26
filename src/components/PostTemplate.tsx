@@ -52,6 +52,12 @@ const Main = styled.article`
   }
 `;
 
+const TagWrapper = styled.div`
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+`
+
 type PostTemplateProps = {
   postNode: {
     fields: {
@@ -88,7 +94,7 @@ const PostTemplate = ({ postNode }: PostTemplateProps) => {
         <GatsbyImage image={postNode.frontmatter.cover.childImageSharp.gatsbyImageData} />
         <hr />
         <MDXRenderer>{postNode.body}</MDXRenderer>
-        <div>
+        <TagWrapper>
           {post.tags.map(tag => {
             return (
               <Tag tag={tag} key={tag}>
@@ -96,7 +102,7 @@ const PostTemplate = ({ postNode }: PostTemplateProps) => {
               </Tag>
             );
           })}
-        </div>
+        </TagWrapper>
       </Main>
       <Sidebar>
         <PostSidebar postToc={postToc} />
