@@ -15,18 +15,10 @@ library.add(faTwitter, faInstagram, faLinkedin, faChevronUp);
 
 /* Back To Top Button */
 const ScrollToTopContainer = styled.div`
-  background-color: var(--color-primary-light-500);
-  height: 62px;
-  width: 62px;
   display: none;
   font-size: var(--font-size-m);
-  color: var(--color-white-light-100);
   cursor: pointer;
   transition: var(--transition);
-
-  &:hover {
-    background-color: var(--color-secondary-light-500);
-  }
 
   @media only screen and (min-width: 768px) {
     display: grid;
@@ -41,7 +33,11 @@ const scrollTop = () => {
 const ScrollToTop = () => {
   return (
     <ScrollToTopContainer onClick={scrollTop}>
-      <FontAwesomeIcon icon={["fa", "chevron-up"]} title="Back To Top" />
+      <FontAwesomeIcon
+        icon={["fa", "chevron-up"]}
+        size={8}
+        title="Back To Top"
+      />
     </ScrollToTopContainer>
   );
 };
@@ -167,9 +163,7 @@ const Row = styled.section`
   padding: var(--var-padding-s) 0;
 `;
 
-const EndRow = styled.section`
-  padding-bottom: 0;
-`;
+const EndRow = styled.section``;
 
 const FooterItem = styled(Link)`
   display: flex;
@@ -213,7 +207,7 @@ const IconList = styled.div`
   flex-direction: row;
 `;
 
-const CreditText = styled.p`
+const CreditText = styled(SmallText)`
   font-size: var(--font-size-2xs);
   color: var(--color-text-secondary);
   margin: 0;
@@ -221,7 +215,6 @@ const CreditText = styled.p`
 
 const LinkContainer = styled.div`
   margin-top: 2rem;
-  width: 100%;
   justify-content: center;
   display: flex;
 
@@ -235,9 +228,12 @@ const LinkContainer = styled.div`
 const CreditContainer = styled.div`
   margin-top: 2rem;
   min-height: 62px;
-  padding: var(--var-padding-s);
-  background-color: var(--color-primary-light-100);
+  padding: var(--var-padding-s) 0;
+  // background-color: var(--color-primary-light-100);
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 
   @media only screen and (max-width: 767px) {
     text-align: left;
@@ -303,8 +299,9 @@ const Footer = () => {
       <Row>
         <FooterContact />
       </Row>
+
       <EndRow>
-        <Boxed padding="1rem 1rem 0 1rem">
+        <Boxed>
           <LinkContainer>
             <FooterItem className="noeffect" to="/about/">
               About
@@ -325,17 +322,15 @@ const Footer = () => {
               Changelog
             </FooterItem>
           </LinkContainer>
-          <CreditContainer className="full-bleed">
+          <CreditContainer>
             <CreditText>
               Design & Code by Samuel Wong © 2018 - {new Date().getFullYear()} |
               Built with <Link to="https://www.gatsbyjs.org">Gatsby</Link>.
-            </CreditText>
+            </CreditText>{" "}
+            <ScrollToTop />
           </CreditContainer>
         </Boxed>
       </EndRow>
-      <ScrollToWrapper>
-        <ScrollToTop />
-      </ScrollToWrapper>
     </Container>
   );
 };

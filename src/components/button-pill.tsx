@@ -73,22 +73,26 @@ const defaultProps: ButtonReadOnProps = {
   isSolid: false,
 };
 
-const ButtonPill: React.FC<ButtonReadOnProps> = ({
-  to,
-  text,
-  lefticon,
-  righticon,
-  target,
-  isSolid,
-  isSecondary,
-  onClick,
-}: ButtonReadOnProps) => (
+const ButtonPill: React.FC<ButtonReadOnProps> = (
+  {
+    to,
+    text,
+    lefticon,
+    righticon,
+    target,
+    isSolid,
+    isSecondary,
+    onClick,
+  }: ButtonReadOnProps,
+  ...props
+) => (
   <Button
     to={to}
     target={target}
     isSecondary={isSecondary}
     isSolid={isSolid}
     onClick={onClick}
+    {...props}
   >
     <FontAwesomeIcon
       size="1x"

@@ -7,12 +7,13 @@ import ButtonPill from "components/button-pill";
 import config from "../../data/SiteConfig";
 
 const Wrapper = styled.div`
-  background-color: var(--color-white-light-500);
+  background-color: var(--color-white-light-300);
   border: 1px var(--color-secondary-light-100) solid;
   padding: 1rem;
   border-radius: 16px;
   display: grid;
-  grid-template-columns: max-content auto;
+  align-items: center;
+  grid-template-columns: repeat(3, minmax(auto-fit, auto));
 `;
 
 const Entrance = keyframes`
@@ -37,8 +38,8 @@ const Singing = keyframes`
 
 const Animation = styled.div`
   position: relative;
+  min-height: 50px;
   top: -20px;
-  left: 10px;
 
   > * {
     opacity: 0;
@@ -113,7 +114,7 @@ const ContentWrapper = styled.div`
   grid-gap: 1rem;
 `;
 
-const Title = styled(H3)`
+const Title = styled(BodyMain)`
   margin: 0;
 `;
 
@@ -129,16 +130,16 @@ const TwitterShare = ({ postEdges }) => {
           <FontAwesomeIcon icon={faTwitter} />
         </TwitterLogoWrapper>
       </Animation>
-      <ContentWrapper>
-        <Title>Enjoy reading the article?</Title>
-        <ButtonPill
-          className="link-blogtwittershare"
-          to={`https://twitter.com/intent/tweet?text=${postEdges.frontmatter.title}&url=${config.siteUrl}${postEdges.fields.slug}`}
-          text="Share on Twitter"
-          lefticon={faTwitter}
-          isSolid
-        />
-      </ContentWrapper>
+
+      <Title>Enjoy reading the article?</Title>
+      <ButtonPill
+        to={`https://twitter.com/intent/tweet?text=${postEdges.frontmatter.title}&url=${config.siteUrl}${postEdges.fields.slug}`}
+        text="Share on Twitter"
+        lefticon={faTwitter}
+        isSolid
+        isSecondary
+        style={{ margin: "0" }}
+      />
     </Wrapper>
   );
 };

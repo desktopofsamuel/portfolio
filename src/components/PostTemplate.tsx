@@ -21,6 +21,10 @@ const Container = styled(Boxed)`
 `;
 
 const Sidebar = styled.aside`
+
+@media only screen and (max-width: 1024px) {
+    display: none;
+  }
 `;
 
 const Title = styled(H1)`
@@ -47,6 +51,12 @@ const Main = styled.article`
     letter-spacing: 1px;
   }
 `;
+
+const TagWrapper = styled.div`
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+`
 
 type PostTemplateProps = {
   postNode: {
@@ -84,7 +94,7 @@ const PostTemplate = ({ postNode }: PostTemplateProps) => {
         <GatsbyImage image={postNode.frontmatter.cover.childImageSharp.gatsbyImageData} />
         <hr />
         <MDXRenderer>{postNode.body}</MDXRenderer>
-        <div>
+        <TagWrapper>
           {post.tags.map(tag => {
             return (
               <Tag tag={tag} key={tag}>
@@ -92,7 +102,7 @@ const PostTemplate = ({ postNode }: PostTemplateProps) => {
               </Tag>
             );
           })}
-        </div>
+        </TagWrapper>
       </Main>
       <Sidebar>
         <PostSidebar postToc={postToc} />

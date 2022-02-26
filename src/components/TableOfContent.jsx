@@ -8,13 +8,13 @@ const LoadableScroll = loadable(() => import("react-scrollspy"));
 const Table = styled.nav`
   display: flex;
   flex-direction: column;
-  background-color: var(--color-white-light-300);
-  border-radius: 8px;
-  padding: 1rem;
   transition: 0.5s all ease-in-out;
 
   .is-current {
     font-weight: var(--font-weight-bold);
+    background-color: var(--color-primary-light-100);
+    border-left: 3px solid var(--color-primary-light-500);
+    transition: 0.5s all ease-in-out;
   }
 
   h6 {
@@ -24,15 +24,24 @@ const Table = styled.nav`
 
   li {
     font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+    border-left: 1px solid var(--color-secondary-light-100);
+    padding: 0.5rem 0 0.5rem 1rem;
   }
 
   ul {
     padding: 0;
   }
+  ul li {
+    margin-bottom: 0;
+  }
 
   ul li::before {
     content: none;
     margin: 0;
+  }
+  ul li a {
+    border-bottom: none;
   }
 `;
 
