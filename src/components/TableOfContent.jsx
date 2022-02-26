@@ -9,7 +9,6 @@ const Table = styled.nav`
   display: flex;
   flex-direction: column;
   transition: 0.5s all ease-in-out;
-  text-decoration: none;
 
   .is-current {
     font-weight: var(--font-weight-bold);
