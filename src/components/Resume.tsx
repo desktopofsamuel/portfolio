@@ -145,7 +145,7 @@ const Resume = () => {
         <ResumeSection>
           <ResumeItem
             title="UX/UI Consultant"
-            content="Design end-to-end stock trading journeys finance sector"
+            // content="Design end-to-end stock trading journeys finance sector"
             meta="2021 - Now"
             image={HSBC}
             haveGrid
@@ -153,7 +153,7 @@ const Resume = () => {
           />
           <ResumeItem
             title="Principal Designer"
-            content="Lead design direction, initiate and execute design workflow as the first designer onboard."
+            // content="Lead design direction, initiate and execute design workflow as the first designer onboard."
             meta="2019 - 2021"
             image={HyperAir}
             haveGrid
@@ -161,7 +161,7 @@ const Resume = () => {
           />
           <ResumeItem
             title="Co-founder & Director"
-            content="Manage and design app and website development projects for start-ups and businesses."
+            // content="Manage and design app and website development projects for start-ups and businesses."
             meta="2015 - 2019"
             image={Playa}
             haveGrid
@@ -169,7 +169,7 @@ const Resume = () => {
           />
           <ResumeItem
             title="Cross Content Intern"
-            content="Curate editorial content for iTunes & App Store in  a year-long internship"
+            // content="Curate editorial content for iTunes & App Store in  a year-long internship"
             meta="2013 - 2014"
             image={Apple}
             haveGrid

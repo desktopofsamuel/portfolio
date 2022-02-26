@@ -3,10 +3,11 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import { GatsbyImage } from "gatsby-plugin-image";
 import PageTitle from "components/PageTitle";
+import { H2 } from "../common/TextStyles";
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 340px));
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   grid-gap: 36px 24px;
 
   .intro {
@@ -23,7 +24,8 @@ const Grid = styled.div`
   }
 
   @media only screen and (max-width: 767px) {
-    display: block;
+    display: flex;
+    flex-direction: column;
 
     .noeffect:nth-child(4n + 1) {
       display: inline;
@@ -55,11 +57,15 @@ const GridPhoto = styled(GatsbyImage)`
   margin-bottom: 0.5rem;
 `;
 
-const GridTitle = styled.h2`
+const GridTitle = styled(H2)`
   font-size: var(--font-size-m);
   font-weight: var(--font-weight-bold);
   margin-top: 0;
   margin-bottom: 0;
+
+  @media only screen and (max-width: 767px) {
+    font-size: var(--font-size-l);
+  }
 `;
 
 const GridContentWrapper = styled.div``;
