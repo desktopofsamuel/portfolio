@@ -22,7 +22,7 @@ module.exports = {
   plugins: [
     "gatsby-remark-images",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-netlify-cache",
+    "gatsby-plugin-netlify",
     // "gatsby-plugin-perf-budgets",
     // "gatsby-plugin-webpack-bundle-analyser-v2",
     {
