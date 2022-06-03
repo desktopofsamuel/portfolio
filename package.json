@@ -30,7 +30,7 @@
     "gatsby-plugin-image": "^1.1.2",
     "gatsby-plugin-lodash": "4.0.0",
     "gatsby-plugin-manifest": "^3.0.0",
-    "gatsby-plugin-mdx": "^2.2.0",
+    "gatsby-plugin-mdx": "^2.14.1",
     "gatsby-plugin-netlify-cache": "^1.2.0",
     "gatsby-plugin-nprogress": "^3.0.0",
     "gatsby-plugin-offline": "^4.0.0",
